@@ -1,0 +1,317 @@
+########################
+# bspwm && sxhkd files #
+#                      #
+########################
+
+# edit bspwm files
+super + {_,alt + ,shift + }o
+    exo-open .config/{sxhkd/sxhkdrc,bspwm/autostart.sh,bspwm/bspwmrc}
+
+# reload sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# reload picom cause its buggy
+super + Pause
+    "$bin"/start-picom
+
+# caps lock
+shift + Escape
+    xdotool key Caps_Lock
+
+
+
+########################
+# independent commands #
+#                      #
+########################
+
+# open functions file
+super + {_,alt + }a
+    exo-open /home/rob/.{aliases,bashrc}
+
+# rofi logout script
+super + BackSpace
+    "$bin"/rofi-scripts -l
+alias vf='vifm'
+
+# rofi mount drives script
+super + m
+    "$bin"/rofi-scripts -m
+
+# open files
+super  + space
+    "$bin"/opi -o
+
+# edit files
+super  + alt + space
+    "$bin"/opi -e /etc /home/rob
+
+# ask opi which dir to search
+super + ctrl + space
+	"$bin"/opi -a
+
+# open directories
+ctrl + space
+    "$bin"/opi -d
+
+# copy files
+super + grave
+    "$bin"/opi -c
+
+# move to blueberry
+super + alt + m
+	$TERMINAL -e "bash --rcfile /home/rob/.bashrc -c 'vifm /home/rob/ /media/blueberry/'" & disown
+
+# rofi
+alt + space
+	rofi -modi "run,ssh" -show run
+
+# dmenu
+super + d
+	dmenu_run
+
+# telegram
+super + g
+    telegram-desktop
+
+# screenshot
+Print
+    flameshot gui
+
+# screenshot current monitor
+super + Print
+	flameshot screen -c
+
+# screenshot current window
+ctrl + Print
+    "$bin"/win-scrot
+
+# gui file manager
+super + t
+    thunar
+
+# vifm
+super + f
+	$TERMINAL -e "bash --rcfile /home/rob/.bashrc -c vifm" & disown
+
+# tui file manager
+super + n
+    $TERMINAL -e "bash --rcfile /home/rob/.bashrc -c nnf" & disown
+
+# gotop
+ctrl + shift + Escape
+    $TERMINAL -e "ytop" & disown
+
+# launch browser
+super + b
+    chromium
+
+# launch alt browser
+super + alt + b
+    firefox --new-window --private-window
+
+# terminal emulator
+super + Return
+	$TERMINAL & disown
+
+# alt terminal emulator
+super + shift + Return
+	alacritty
+
+# vim
+super + v
+    $TERMINAL -e nvim & disown
+
+# Pulseaudio sound manager
+super + p
+    pavucontrol
+
+# clipboard popup
+super + alt + v
+    clipmenu -p Copy -i
+
+# toggle redshift
+super + F12
+    "$bin"/redshift.sh -t
+
+####################
+# Volume Control   #
+#                  #
+####################
+XF86AudioLowerVolume
+    /usr/bin/pulseaudio-ctl down 2 && "$bin"/sinkctrl -v
+
+XF86AudioRaiseVolume
+    /usr/bin/pulseaudio-ctl up 2 && "$bin"/sinkctrl -v
+
+shift + XF86AudioLowerVolume
+    /usr/bin/pulseaudio-ctl down 1 && "$bin"/sinkctrl -v
+
+shift + XF86AudioRaiseVolume
+    /usr/bin/pulseaudio-ctl up 1 && "$bin"/sinkctrl -v
+
+XF86AudioStop
+    /usr/bin/pulseaudio-ctl mute && "$bin"/sinkctrl -v
+super + Insert
+    "$bin"/sinkctrl -c
+
+
+####################
+# bspwm hotkeys    #
+#                  #
+####################
+
+
+# resize mode
+super + r : {Left,Right}
+  INC={-10,+10}; bspc node @east -r $INC || bspc node @west -r $INC
+
+super + r : {Down,Up}
+  INC={+10,-10}; bspc node @north -r $INC || bspc node @south -r $INC
+
+# reload bspwm config file
+super + shift + Escape
+	bspwm -r
+
+# close and kill
+super + {_,shift + }c
+	bspc node -{c,k}
+
+# window gap +5
+super + equal
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` + 5 ))
+
+# window gap -5
+super + minus
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` - 5 ))
+
+# Restore original gap
+super + plus
+    bspc config top_padding 25; bspc config -d focused window_gap 10
+
+
+#
+# nodes
+#
+
+
+# rotate nodes
+super + bracket{left,right}
+	bspc node @/ -R {90,-90}
+
+# circulate nodes
+super + {semicolon,apostrophe}
+	bspc node @/ --circulate {backward,forward}
+
+# flip nodes
+super + {_,shift + }backslash
+	bspc node @/ --flip {vertical,horizontal}
+
+# focus the node in the given direction
+alt + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+# vim keys for sane people
+alt + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# swap node in given direction
+super + {Left,Down,Up,Right}
+    bspc node -s {west,south,north,east} -f
+
+# vim keys for sane people
+super + alt + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+# receptacles
+super + {_,shift} + i
+    insert={true,false}; \
+    $insert && bspc node -i || \
+    for win in `bspc query -N -n .leaf.!window`; do bspc node $win -k ; done;
+
+# receptacle thing
+super + alt + i
+	"$bin"/receptacle-swap
+
+# toggle node states
+super + {F5,F6,F7,F8}
+    bspc node --state "~"{tiled,floating,pseudo_tiled,fullscreen}
+
+# set fullscreen
+super + F11
+	bspc desktop -l next
+
+# stick node to workspace
+super + F10
+	bspc node -g sticky
+
+#cycle through nodes
+alt +{_,shift+} Tab
+	bspc node -f {next,prev}.local
+
+#cycle through nodes
+super +{_,shift+} Tab
+	bspc node -f {next,prev}
+
+#
+# workspaces
+#
+
+
+# send node to next workspace with focus
+super + alt + {comma,period}
+    bspc node -d {prev,next}.local -f
+
+# send node to next workspace without focus
+super + shift + {comma,period}
+    bspc node -d {prev,next}.local
+
+# move workspaces within monitor
+super + {comma,period}
+    bspc desktop -f {prev,next}.local
+
+# focus or send to the given workspace
+super + {_,shift +, alt + }{1-9}
+	bspc {desktop -f,node -d,desktop -s} {1-9}.local
+
+# add/remove local workspace
+super + alt + {Insert,Delete}
+    bspc {monitor -a n,desktop -r}
+
+
+#
+# monitors
+#
+
+
+# move node to different monitor
+super + shift + {Left,Right}
+    bspc node -m {prev,next} -f
+
+# move node to different monitor without focus
+super + shift + alt + {Left,Right}
+    bspc node -m {prev,next}
+
+
+# changed focused monitor
+super + ctrl + {Left,Right}
+	bspc monitor -f {prev,next}
+
+
+#
+# preselect
+#
+
+
+# preselect the direction
+alt + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# preselect ratio
+alt + ctrl + {1-9}
+    bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+alt + ctrl + space
+	bspc node -p cancel

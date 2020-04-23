@@ -1,0 +1,24 @@
+rofi.font: Overpass 16
+rofi.lines: 6
+rofi.monitor: -4
+rofi.eh: 1
+rofi.padding: 30
+rofi.width: 25
+rofi.bw: 0
+rofi.dpi: 96
+!rofi.terminal: /usr/bin/xfce4-terminal
+rofi.fullscreen: false
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.show-icons: false
+rofi.location: 0
+rofi.yoffset: -100
+
+!                  'background', 'border', 'separator'
+rofi.color-window: argb:aa000000, #cbcbcb, #98beff
+
+! State:                 'bg',      'fg',      'bgalt',       'hlbg',     'hlfg'
+rofi.color-normal: argb:00000000, #eeeeee, argb:00000000, argb:aa98beff, #eeeeee
+rofi.color-urgent: argb:00000000, #eeeeee, argb:00303541, argb:aa98beff, #8e4ceb
+rofi.color-active: argb:00000000, #eeeeee, argb:00000000, argb:aa98beff, #8e4ceb
+

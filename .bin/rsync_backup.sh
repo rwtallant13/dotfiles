@@ -60,9 +60,9 @@ fn_display_usage() {
 fn_parse_date() {
 	# Converts YYYY-MM-DD-HHMMSS to YYYY-MM-DD HH:MM:SS and then to Unix Epoch.
 	case "$OSTYPE" in
-		linux*) date -d "${1:0:10} ${1:11:2}:${1:13:2}:${1:15:2}" +%s ;;
-		cygwin*) date -d "${1:0:10} ${1:11:2}:${1:13:2}:${1:15:2}" +%s ;;
-		netbsd*) date -d "${1:0:10} ${1:11:2}:${1:13:2}:${1:15:2}" +%s ;;
+		linux*) date -d "${1:0:10} ${1:11:2}:${1:13:2}:${1:15:2}" ;;
+		cygwin*) date -d "${1:0:10} ${1:11:2}:${1:13:2}:${1:15:2}" ;;
+		netbsd*) date -d "${1:0:10} ${1:11:2}:${1:13:2}:${1:15:2}" ;;
 		darwin8*) yy=`expr ${1:0:4}`
 			mm=`expr ${1:5:2} - 1`
 			dd=`expr ${1:8:2}`

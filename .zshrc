@@ -66,6 +66,9 @@ source ~/.zkbd/$TERM*
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 bindkey '\e.' insert-last-word
+insert-first-word () { zle insert-last-word -- -1 1 }
+zle -N insert-first-word
+bindkey '^[,' insert-first-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 backward-kill-dir () {

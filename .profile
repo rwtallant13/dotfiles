@@ -13,6 +13,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 export QT_QPA_PLATFORMTHEME=gtk2
 export _JAVA_AWT_WM_NONREPARENTING=1
 export CM_LAUNCHER=rofi
+export CM_DIR="$XDG_CACHE_HOME"/clipmenud
 export TERMINAL=/usr/bin/termite
 
 # Path

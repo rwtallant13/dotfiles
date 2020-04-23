@@ -1,0 +1,117 @@
+#!/bin/bash
+
+defSink=$(pactl list short sinks | grep -v hdmi | grep pci | awk '{print $1}')
+numSinks=$(pactl list short sinks| wc -l)
+
+_nextSink() {
+    oldSink=$(tail -1 "$sinkFile")
+    nextSink=$(($oldSink + 1))
+    if [[ nextSink -gt numSinks ]]; then
+        nextSink=1
+    fi
+    newSink=$(head -1 "$sinkFile" | cut -d' ' -f"$nextSink")
+    sed -i "2s/.*/$nextSink/" "$sinkFile"
+}
+
+_notify() {
+    SINK="$(pacmd list-sinks | grep '*' -A60 | grep 'device.description' | cut -d '=' -f 2 | tr -d \")"
+
+    VOL="$(pacmd list-sinks |
+            awk '/^\s+name: /{indefault = $2 == "<'$(pacmd stat | awk -F": " '/^Default sink name: /{print $2}')'>"}
+                /^\s+volume: / && indefault {print $5; exit}')"
+
+    if [ "$(pacmd list-sinks |grep -A60 '*' | grep 'muted: yes')" ]
+    then
+        notify-send --hint=string:x-dunst-stack-tag:output -u normal "$SINK" "Muted"  -i /usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-muted.svg
+    else
+        notify-send --hint=string:x-dunst-stack-tag:output -u normal "$SINK" "$VOL"  -i /usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-high.svg
+    fi
+
+}
+
+_moveSinks() {
+    pacmd list-sink-inputs | grep index | while read line
+    do
+    pacmd move-sink-input `echo "$line" | cut -f2 -d' '` "$newSink"
+    done
+}
+
+_changeSink() {
+    pacmd set-default-sink "$newSink"
+}
+
+_default() {
+    newSink="$defSink"
+    _changeSink
+    _moveSinks
+    sleep 1s &&
+    _notify
+    exit 0
+}
+
+_rename(){
+    name="$(pacmd list-sinks | grep '*' -A60 | grep 'device.description' | cut -d ' ' -f 3 | tr -d \")"
+
+    while true; do
+        if [[ "$name" = "Speakers" || "$name" = "Headphones" || "$name" = "hdmi" ]]; then
+            sleep 120
+            echo "Sink names already set"
+        else
+            pacmd update-sink-proplist $(pactl list sinks short | rg hdmi | cut -f2) "device.description=hdmi"
+
+            pacmd update-sink-proplist $(pactl list sinks short | rg usb | cut -f2) "device.description=Headphones"
+
+            pacmd update-sink-proplist $(pactl list sinks short | grep -v hdmi | grep pci | cut -f2) "device.description=Speakers"
+
+            sleep 120
+        fi
+    done
+}
+
+_cycle(){
+    if ls /tmp/current-sink* 1> /dev/null 2>&1; then
+        sinkFile="$(fd current-sink /tmp/)"
+        _nextSink
+        _changeSink
+        _moveSinks
+        _notify
+    else
+        sinkFile="$(mktemp -t current-sink.XXXX)"
+        echo $(pactl list short sinks | cut -f1) > "$sinkFile"
+        echo 1 >> "$sinkFile"
+    fi
+}
+
+_help(){
+    cat <<- EOF
+Usage: sinkctl [OPT] (OPT)
+
+Options:
+    -d, default         select default sink
+    -c, cycle           cycle through sinks
+    -r, rename          run sinks properly
+    -v, vol             show volume notification
+
+EOF
+}
+
+case "$1" in
+-d|default)
+    _default
+    exit 0
+    ;;
+-v|vol)
+    _notify
+    exit 0
+    ;;
+-r|rename)
+    _rename &
+    ;;
+-c|cycle)
+    _cycle
+    ;;
+*)
+    _help
+    ;;
+esac
+

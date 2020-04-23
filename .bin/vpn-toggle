@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+#vpn.sh
+
+NAME="$(nmcli con show --active | grep vpn | cut -d' ' -f1)"
+
+if [ "$1" = "list" ]; then
+    nmcli con show | grep vpn | cut -d' ' -f 1
+    exit 0
+fi
+
+VPN="${1:-"US_East"}"
+if [ -z $NAME ]; then
+    nmcli con up id "$VPN"
+else
+    nmcli con down id "$NAME"
+fi

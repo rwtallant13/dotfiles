@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+Name=$(basename "$0")
+Version="0.1"
+
+_usage() {
+    cat <<- EOF
+Usage:   $Name [options]
+
+Options:
+
+     -h      Display this message
+     -m      Mount drives
+     -w      Switch between open windows
+     -s      Search by keyword
+     -l      Session logout / reboot
+
+EOF
+}
+
+#  Handle command line arguments
+while getopts ":hwmsl" opt; do
+    case $opt in
+        h)
+            _usage
+            exit 0
+            ;;
+        w)
+            rofi -modi window -show window -hide-scrollbar \
+                -eh 1 -padding 50 -line-padding 4
+            ;;
+
+        m)
+            ANS=$(echo "Blueberry|MX100|SSD|Laptop|Windows" | \
+            rofi -sep "|" -dmenu -i -p 'System' "")
+                case "$ANS" in
+                    *Blueberry) /home/rob/.bin/mnt bb ;;
+                    *MX100) /home/rob/.bin/mnt mx100;;
+                    *SSD) /home/rob/.bin/mnt ssd;;
+                    *Laptop) /home/rob/.bin/mnt laptop ;;
+                    *Windows) /home/rob/.bin/mnt windows;;
+                esac
+                ;;
+        s)
+            echo "" | rofi -lines 2 -dmenu -p "Search" | xargs -I{} xdg-open https://duckduckgo.com/?q={}
+
+            ;;
+        l)
+            ANS=$(echo "Lock|Logout|Suspend|Reboot|Bootup Win|Shutdown" | \
+            rofi -sep "|" -dmenu -i -font "Overpass 20" -width 25 -p 'System' "")
+                case "$ANS" in
+                    *Lock) betterlockscreen --lock dimblur --off 30 ;;
+                    *Logout) bspc quit ;;
+                    *Suspend) betterlockscreen --suspend dimblur ;;
+                    *Reboot) systemctl reboot ;;
+                    *"Bootup Win") /home/rob/.bin/bootup windows ;;
+                    *Shutdown) systemctl -i poweroff
+                esac
+            ;;
+        *)
+            echo -e "Option does not exist: -$OPTARG"
+            _usage
+            exit 1
+    esac
+done
+shift $((OPTIND - 1))
+
+
+exit 0

@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+if [ -n $1 ]
+then
+    DIR="$1"
+else
+    DIR="$(pwd)"
+fi
+
+find $DIR -maxdepth 1 -mindepth 1 -type d | while read dir; do
+  printf "%-25.25s : " "$dir"
+  fd . "$dir" -a -uu -t f | wc -l
+done | sort -t ':' -nk2

@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+_help() {
+    cat <<- EOF
+Usage: mnt [drive]
+
+Drives:
+
+    laptop
+    bb / blueberry
+    bb-dir
+    mx100
+    ssd
+    win / windows
+
+EOF
+}
+
+case $1 in
+    laptop)
+        sshfs rob@192.168.2.14:/home/rob /media/laptop
+        ;;
+    bb|blueberry)
+        sshfs -o reconnect,follow_symlinks,ServerAliveInterval=30,ServerAliveCountMax=3 rob@192.168.2.21:/data/ /media/blueberry
+        ;;
+    bb-dir)
+        sshfs -o reconnect,ServerAliveInterval=30,ServerAliveCountMax=3 bb:"$2" /media/bb-dir/
+        ;;
+    mx100)
+        sudo mount UUID=06281093281083B9 /media/mx100
+        ;;
+    ssd)
+        sudo mount UUID=CE7A626D7A6251EF /media/ssd
+        ;;
+    win|windows)
+        sudo mount UUID=A880036B80033F76 /media/windows
+        ;;
+    *)
+        _help
+        ;;
+esac

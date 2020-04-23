@@ -1,0 +1,13 @@
+#!/bin/bash
+
+file="$1"
+
+if [[ -t 0 ]]; then
+    nvim -o $*
+elif [[ -z "$file" ]]; then
+    $TERMINAL  -e "nvim -o $*"
+elif [[ -w "$file" ]]; then
+    $TERMINAL  -e "nvim -o $*"
+elif [[ ! -w "$file" ]]; then
+    $TERMINAL -e "sudoedit $*"
+fi

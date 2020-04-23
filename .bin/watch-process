@@ -1,0 +1,60 @@
+#!/bin/bash
+# watch process either given or fzf chosen and log some stuff
+PID="no"
+if [[ -n "$1" ]]; then
+    PID="$1"
+else
+    PID=$(ps -ef | sed 1d | fzf -m -0 | awk '{print $2}')
+    if [[ -z "$PID" ]]; then
+        echo "no process selected"
+        exit 1
+    fi
+fi
+
+COMMAND=$(ps --no-headers -p "$PID" -o command | cut -d ' ' -f 1)
+FILENAME=${COMMAND// /_}
+STARTTIME=$(ps --no-headers -p "$PID" -o lstart)
+MAX_CPU="0"
+MAX_MEM="0"
+TIME="0"
+
+_notify() {
+    notify-send -t 8000 "Process ended" "$COMMAND $PID"
+}
+
+_output() {
+    cat <<- EOF
+$COMMAND pid:       $PID
+Started:            $STARTTIME
+Finished:           $(date '+%a %b %e %T %Y')
+Time Elapsed: $TIME
+Max CPU usage:      $MAX_CPU
+Max MEM usage:      $MAX_MEM
+
+EOF
+}
+
+_time() {
+    TIME=$(ps --no-headers -p "$PID" -o etime)
+}
+
+_cpu() {
+    CPU=$(printf %.0f $(ps --no-headers -p "$PID" -o %cpu))
+    if [[ "$CPU" -ge "$MAX_CPU" ]]; then
+        MAX_CPU="$CPU"
+    fi
+}
+
+_mem() {
+    MEM=$(printf %.0f $(ps --no-headers -p "$PID" -o %mem))
+    if [[ "$MEM" -ge "$MAX_MEM" ]]; then
+        MAX_MEM="$MEM"
+    fi
+}
+
+while [ -d /proc/$PID ]; do
+    _cpu
+    _time
+    _mem
+    sleep 0.5
+done && _notify & _output >> ~/docs/processes/"$FILENAME".txt &

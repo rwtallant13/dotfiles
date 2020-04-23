@@ -1,0 +1,116 @@
+#!/bin/bash
+Name=$(basename "$0")
+
+
+_runInput(){
+    [ -z "$1" ] && echo "no file provided" && exit 0
+    while read -r file
+    do
+        echo "" | HandBrakeCLI  --all-audio --preset-import-file /home/rob/.config/ghb/custom-media-encode.json -e nvenc_h264 -i "$file" -o "${file%.*}-new".mp4
+
+        if [ $? != 0 ]
+        then
+            printf "$file had problems \n" >> errors.log
+        fi
+    done < "$1"
+
+}
+
+_runFile(){
+    [ -z "$1" ] && echo "no file provided" && exit 0
+
+    file="$1"
+    HandBrakeCLI --all-audio --preset-import-file /home/rob/.config/ghb/custom-media-encode.json -e nvenc_h264 -i "$file" -o "${file%.*}-new".mp4
+}
+
+_clean(){
+    [ -z "$1" ] && echo "no file provided" && exit 0
+    while read -r file
+    do
+        rm -I "$file"
+    done < "$1"
+    exit 0
+}
+
+_runDir(){
+    if [[ ! "$1" ]]; then
+        echo "no directory provided" && exit 0
+    fi
+#     echo "$*"
+    for file in $(fd . $* -a -t f); do
+        echo "$file"
+        HandBrakeCLI --all-audio --preset-import-file /home/rob/.config/ghb/custom-media-encode.json -e nvenc_h264 -i "$file" -o "${file%.*}-new".mp4
+    done
+    exit 0
+}
+
+_metadata(){
+    fd . "$1" -t f --exec check-media -m "{}" \;
+}
+
+_locateMedia(){
+    fd . "$1" -t f --exec check-media -f "{}" \;
+}
+
+_show_help() {
+    cat <<- EOF
+Usage:   $Name [option] [path]
+
+Options:
+     -h, help       Display this message
+     -d, dir        Run on all files in directory
+     -f, file       Run on individual file
+     -c, clean      Remove all files from encode file - for after encoding is done
+     -l, locate     Locate media in path that is not AAC
+     -i, input      Run on all files in given file
+     -m, meta       Rename metadata same as filename
+EOF
+}
+
+if [[ $# -eq 0 ]]; then
+    _show_help
+fi
+
+while [[ $# -gt 0 ]] ;
+do
+    opt="$1";
+    shift;              #expose next argument
+    case "$opt" in
+    "help"|-h )
+        _show_help
+        exit 0
+        ;;
+    "dir"|-d )
+        arg="$*"; shift;
+        _runDir "$arg"
+        shift
+        ;;
+    "file"|-f)
+        arg="$1"; shift;
+        _runFile "$arg"
+        shift
+        ;;
+    "clean"|-c)
+        arg="$1"; shift;
+        _clean "$arg"
+        shift
+        ;;
+    "locate"|-l)
+        arg="$1"; shift;
+        _locateMedia "$arg"
+        shift
+        ;;
+    "input"|-i)
+        arg="$1"; shift;
+        _runInput "$arg"
+        shift
+        ;;
+    "meta"|-m)
+        arg="$1"; shift;
+        _metadata "$arg"
+        shift
+        ;;
+        *) printf >&2 "Invalid option\n\n"; _show_help; exit 1;;
+   esac
+done
+

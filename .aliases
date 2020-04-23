@@ -1,0 +1,162 @@
+#
+# ~/.aliases
+#
+
+# system
+alias s='sudo'
+alias sudo='sudo '
+alias udb='sudo updatedb'
+alias backup-log='tac /home/rob/docs/backup_logs/latest | less'
+alias udev-reload='sudo udevadm control --reload-rules && sudo udevadm trigger'
+alias timers='systemctl list-timers'
+alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias dots-old='/usr/bin/git --git-dir=$HOME/docs/dotfiles/ --work-tree=$HOME'
+alias dots='yadm'
+alias dots-tracked='dots ls-tree -r master --name-only | less'
+alias myip='curl http://ipecho.net/plain; echo'
+alias S='sudo systemctl'
+alias J='sudo journalctl'
+
+# pacman
+alias pac='sudo pacman -S'
+alias pacu='sudo pacman -Syu'
+alias pacs='sudo pacman -Ss'
+alias pacq='sudo pacman -Qs'
+alias pacf='sudo pacman -F'
+alias pacl='sudo pacman -Ql'
+alias pacr='pacman -Rncs'
+alias remove-orphans='sudo pacman -Rns $(pacman -Qtdq)'
+alias pacrepo='sudo reflector -c US -c CA --protocol https --age 48 --sort rate --save /etc/pacman.d/mirrorlist'
+
+#python
+alias pipi='pip install --user'
+
+#ls
+alias la='ls -hNa --color=auto --group-directories-first'
+alias lla='ls -hlNa --color=auto --group-directories-first'
+alias ll='ls -hlN --color=auto --group-directories-first'
+alias ls='ls -hN --color=auto --group-directories-first'
+alias lr='ls -RhN --color=auto --group-directories-first'
+
+# commands
+alias grep='grep --color=auto'
+alias gt='ytop'
+alias hb='HandBrakeCLI'
+alias hist='history'
+alias iftop='sudo iftop -b'
+alias n='nnf'
+alias ndu='nnn -S'
+alias bandwhich='sudo bandwhich'
+alias cpu-speed=' watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
+alias pb='curl -F "f:1=<-" ix.io'
+alias pf='pfetch && colorpanes'
+alias rmr='rm -rf'
+alias rf='rg --files --hidden'
+alias tb='nc termbin.com 9999'
+alias v='nvim'
+alias V='sudoedit'
+alias vf='vifm'
+alias vfm='vifm /media/blueberry/media'
+alias yt-audio='youtube-dl -x --audio-format mp3'
+alias xc='xclip -selection clipboard'
+alias chxbin='chmod a+x /home/rob/.bin/*'
+
+
+
+#
+# ~/.functions
+#
+
+fcd() {
+	$(__fzf_cd__)
+}
+
+kw(){
+    nohup kwrite "$@" & disown
+    }
+
+fzo(){
+    dir="${@:-"."}"
+    sel="$(fd . -H "$dir"| fzf)"
+    if [[ -d "$sel" ]] ; then
+        cd "$sel"
+    elif [[ -f "$sel" ]]; then
+        nohup exo-open "$sel" >/dev/null 2>&1 & disown
+    fi
+    }
+
+open(){
+    nohup xdg-open "$@" >/dev/null 2>&1 & disown
+    }
+
+timeof(){
+    local pid
+
+    pid=$(ps -e -o pid,user,cmd | sed 1d | fzf -m | awk '{print $1}')
+
+    if [ "x$pid" != "x" ]
+    then
+        ps -p "$pid" -o etime,command
+    fi
+    }
+
+vlc-yt(){
+    vlc "$(youtube-dl --get-url --format best $1)"
+    }
+
+hist_dedup() {
+
+    tac ~/.config/bash_history | awk '! x[$0]++' | tac > ~/bash_hist_clean ;
+
+    mv ~/.config/bash_history ~/.config/bash_history_old ;
+
+    mv ~/bash_hist_clean ~/.config/bash_history ;
+
+    }
+
+fv() {
+	local file
+    dir="${1:-"."}"
+	file="$( fd . $dir --hidden -t f -i | fzf -m -e -0 -1)"
+
+	if [[ -n $file ]]
+	then
+		v "$file"
+	fi
+    }
+
+fkill() {
+    local pid
+    if [ "$UID" != "0" ]; then
+        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
+    else
+        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+    fi
+
+    if [ "x$pid" != "x" ]
+    then
+        echo $pid | xargs kill -${1:-9}
+    fi
+    }
+
+fzaux() {
+    local pid
+    if [ "$UID" != "0" ]; then
+        ps -f -u $UID | sed 1d | fzf -m
+    else
+        ps -ef | sed 1d | fzf -m
+    fi
+}
+
+fman() {
+    man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
+}
+
+pman() {
+     man -Tpdf "$1" | zathura - >/dev/null 2>&1 & disown
+    }
+
+fdchars() {
+    fd -H | grep -E '\s|\*|\?|\$|%|'\ ''
+
+}

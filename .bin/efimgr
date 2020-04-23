@@ -1,0 +1,9 @@
+#!/bin/bash
+
+UUID="$(blkid | grep "497A-0E93" | awk '{print $1}')"
+PART="$(echo "$UUID"|grep -Eo '[0-9]')"
+UUID=${UUID::-2}
+
+#echo $UUID $PART
+sudo efibootmgr --disk "$UUID" --part "$PART" --create --label "Arch Linux" --loader /vmlinuz-linux --unicode 'root=UUID=b603b821-17de-487d-87fb-cdab40f24b42 rw initrd=\initramfs-linux.img loglevel=2 quiet module_blacklist=i2c_nvidia_gpu,iTCO_wdt nowatchdog nouveau.modeset=0 nvidia-drm.modeset=1'
+

@@ -1,0 +1,53 @@
+[global]
+    font = Overpass 14
+    markup = full
+    format = "<b>%s</b>\n%b"
+    sort = yes
+    indicate_hidden = yes
+    alignment = center
+    bounce_freq = 0
+    show_age_threshold = -1
+    word_wrap = yes
+    ignore_newline = no
+    geometry = "260x120-5+31"
+    stack_duplicates = true
+    shrink = false
+    transparency = 35
+    idle_threshold = 0
+    monitor = 0
+    #follow = mouse
+    sticky_history = no
+    history_length = 10
+    show_indicators = no
+    line_height = 6
+    separator_height = 2
+    padding = 10
+    horizontal_padding = 10
+    frame_color = "#2d2d2d"
+    separator_color = frame
+    frame_width = 2
+    corner_radius = 3
+    startup_notification = false
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/chromium
+    #icon_position = off
+    #icon_path = /usr/share/icons/Papirus/24x24/status/:
+    #max_icon_size = 32
+
+[shortcuts]
+
+[urgency_low]
+    background = "#090000"
+    foreground = "#FFFFFF"
+    timeout = 3
+
+[urgency_normal]
+    background = "#090000"
+    foreground = "#FFFFFF"
+    timeout = 3
+
+[urgency_critical]
+    background = "#090000"
+    foreground = "#bf616a"
+    frame_color = "#bf616a"
+    timeout = 5

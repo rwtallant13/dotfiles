@@ -1,0 +1,32 @@
+#!/bin/bash
+
+
+_checkFormat(){
+    echo $1
+        format="$(mediainfo --Inform="Video;%Format%\n" "$1")"
+        echo $format
+        if [[ "$format" = "HEVC" ]]; then
+            echo "$format"
+            echo "$1" >> media-to-encode.txt
+        fi
+}
+
+_checkMeta(){
+#    echo $1
+    metaName="$(mediainfo "$1" | grep "Kai")"
+    if [[ "$metaName" ]]; then
+        name="$(basename "$1")" 
+        name="${name%.*}"
+        echo $name
+        #exiftool -overwrite_original -Title="$name" "$1"
+    fi
+}
+
+case $1 in
+    -m|meta)
+        _checkMeta "$2"
+        ;;
+    -f|format)
+        _checkFormat "$2"
+        ;;
+esac

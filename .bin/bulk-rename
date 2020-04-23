@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ $# -eq 0 ]]; then
+    /usr/lib/Thunar/ThunarBulkRename *
+else
+    /usr/lib/Thunar/ThunarBulkRename "$@"
+fi

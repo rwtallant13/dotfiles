@@ -29,7 +29,8 @@ nmap WQ ZZ
 nmap WW :w<cr>
 nmap Q! ZQ
 noremap <Del> "_x
-noremap <C-Del> "_daw
+inoremap <C-Del> <C-o>"_dw
+nnoremap <C-Del> "_dw
 
 " buffers / tabs
 noremap <C-T> :tabnew<cr>

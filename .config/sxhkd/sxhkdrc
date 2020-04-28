@@ -101,7 +101,7 @@ super + n
 
 # gotop
 ctrl + shift + Escape
-    $TERMINAL -e "ytop" & disown
+    $TERMINAL -e "ytop || gotop" & disown
 
 # launch browser
 super + b
@@ -109,7 +109,7 @@ super + b
 
 # launch alt browser
 super + alt + b
-    chromium --new-window --incognito
+    firefox --new-window --private-window
 
 # terminal emulator
 super + Return

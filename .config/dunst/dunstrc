@@ -12,7 +12,7 @@
     geometry = "260x120-5+31"
     stack_duplicates = true
     shrink = false
-    transparency = 35
+    transparency = 25
     idle_threshold = 0
     monitor = 0
     #follow = mouse
@@ -23,7 +23,7 @@
     separator_height = 2
     padding = 10
     horizontal_padding = 10
-    frame_color = "#2d2d2d"
+    frame_color = "#888888"
     separator_color = frame
     frame_width = 2
     corner_radius = 3
@@ -37,12 +37,12 @@
 [shortcuts]
 
 [urgency_low]
-    background = "#090000"
+    background = "#000000"
     foreground = "#FFFFFF"
     timeout = 3
 
 [urgency_normal]
-    background = "#090000"
+    background = "#000000"
     foreground = "#FFFFFF"
     timeout = 3
 

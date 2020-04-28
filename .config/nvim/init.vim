@@ -10,16 +10,19 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'itchyny/lightline.vim'
     Plug 'arcticicestudio/nord-vim'
+    Plug 'nelstrom/vim-visual-star-search'
     Plug 'Lenovsky/nuake'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/limelight.vim'
 call plug#end()
 
 let g:lightline = {
       \ 'colorscheme': 'wombat', }
 
 " Basic Mappings
-let mapleader =","
+let mapleader =" "
 map Q <Nop>
 map QQ :q<cr>
 nmap WQ ZZ
@@ -27,22 +30,35 @@ nmap WW :w<cr>
 nmap Q! ZQ
 noremap <Del> "_x
 noremap <C-Del> "_daw
-nmap ; :
-noremap <F3> :set nu!<CR>
-inoremap <F3> <C-O>:set nu!<CR>
-noremap <leader>f :Files<cr>
+
+" buffers / tabs
 noremap <C-T> :tabnew<cr>
 nmap <tab> :tabNext<cr>
 nmap <leader><tab> :Buffers<cr>
 
+" fzf open file
+noremap <leader>f :Files<cr>
+
 " select all lines
 map <C-a> <esc>ggVG<CR>
+
+" toggle line numbers
+noremap <F3> :set nu!<CR>
+inoremap <F3> <C-O>:set nu!<CR>
+
+" distraction free mode
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+map <F8> :Goyo<CR>
 
 " sudo write file
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " faster replace all
-nnoremap S :%s///g<Left><Left><Left>
+nnoremap <leader>r :%s///g<Left><Left><Left>
+
+" toggle spellcheck
+map <F7> :setlocal spell! spelllang=en_us<CR>
 
 " popup terminal
 nnoremap <F4> :Nuake<CR>
@@ -57,10 +73,9 @@ map <C-Left> <C-w>h
 map <C-Down> <C-w>j
 map <C-Up> <C-w>k
 map <C-Right> <C-w>l
-
+" quick splits
 map <leader>sv  :vs<cr>
 map <leader>sh  :sp<cr>
-
 
 " Disable automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -72,9 +87,13 @@ autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 autocmd BufNewFile,BufRead vifmrc :set filetype=vifm
 autocmd BufNewFile,BufRead ~/.vifm/colors/* :set filetype=vifm
 
+" Auto-resize splits when Vim gets resized.
+autocmd VimResized * wincmd =
+
 " deletes trailing whitespace and newlines at end of file on save
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritepre * %s/\n\+\%$//e
+
 
 syntax on
 colorscheme nord
@@ -100,8 +119,9 @@ set clipboard+=unnamedplus
 set splitbelow splitright
 set shortmess=IFA
 "set termguicolors
-"set nohlsearch
+set nohlsearch
 
+let g:limelight_conceal_ctermfg = '8'
 let g:nord_cursor_line_number_background = 1
 hi clear CursorLine
 hi clear CursorLineNR

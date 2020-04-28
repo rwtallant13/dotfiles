@@ -3,12 +3,12 @@ re='^[0-9]+$'
 opt="${1:-"-d"}"
 
 if  [[ $opt == "-d" ]]; then
-    killall nvfancontrol
+    #killall nvfancontrol
     sleep 1s && nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=0
     echo "GPU Fan Speed set to 0%"
     exit 0
 elif [[ $opt == "-s" && $2 =~ $re ]]; then
-    killall nvfancontrol
+    #killall nvfancontrol
     sleep 1s && nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=$2
     echo "GPU Fan Speed set to $2"
     exit 0

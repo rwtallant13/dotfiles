@@ -28,7 +28,7 @@ ZSH_HIGHLIGHT_STYLES[redirection]=fg=yellow
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list ''
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s

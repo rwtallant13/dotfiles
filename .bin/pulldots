@@ -1,18 +1,18 @@
 #!/bin/bash
 
 PS3='Please enter your choice: '
-options=("Option 1" "Option 2" "Option 3" "Quit")
+options=("nvim" "vifm" "zshrc" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
         "nvim")
-            scp rob-pc:~/.config/nvim/init.vim ~/.config/nvim/init.vim
+            scp laptop:~/.config/nvim/init.vim ~/.config/nvim/init.vim
             ;;
         "vifm")
-            scp rob-pc:~/.config/vifm/vifmrc ~/.config/vifm/vifmrc
+            scp laptop:~/.config/vifm/vifmrc ~/.config/vifm/vifmrc
             ;;
         "zshrc")
-            scp rob-pc:~/.zshrc ~/.zshrc
+            scp laptop:~/.zshrc ~/.zshrc
             ;;
         "Quit")
             break

@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 _colors(){
-    echo $1
-    case $1 in 
+    case "$1" in
         red)
             color="ff0000"
             ;;
@@ -18,17 +17,23 @@ _colors(){
         purple)
             color="ff00ff"
             ;;
+        white)
+            color="ffffff"
+            ;;
+        *)
+            color="$1"
+            ;;
     esac
     hue fixed $color
 }
 
 opt=${1:-"default"}
 
-case $opt in 
-    color)
+case $opt in
+    -c|color)
         _colors $2
         ;;
-    default)
+    -d|default)
         hue profile apply rgb
         ;;
     off)

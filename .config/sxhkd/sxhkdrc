@@ -1,4 +1,4 @@
-########################
+#########################
 # bspwm && sxhkd files #
 #                      #
 ########################
@@ -109,7 +109,7 @@ super + b
 
 # launch alt browser
 super + alt + b
-    firefox --new-window --private-window
+    chromium --new-window --incognito
 
 # terminal emulator
 super + Return

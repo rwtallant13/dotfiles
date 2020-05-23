@@ -8,8 +8,8 @@ SAVEHIST=100000
 
 
 # source .profile for PATH
-[[ -f "$HOME"/.profile ]] && \
-    . "$HOME"/.profile
+#[[ -f "$HOME"/.profile ]] && \
+#    . "$HOME"/.profile
 
 # source aliases and functions
 [[ -e "$HOME"/.aliases ]] && \
@@ -35,7 +35,7 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*:(ssh|scp|ftp|sftp):*' hosts $hosts
 zstyle ':completion:*:(ssh|scp|ftp|sftp):*' users $users
 
-autoload -Uz compinit && compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump
+autoload -Uz compinit && compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 autoload bashcompinit && bashcompinit
 #setopt ZLE
 setopt COMPLETE_ALIASES

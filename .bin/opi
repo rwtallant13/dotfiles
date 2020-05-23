@@ -10,7 +10,7 @@ _opiOpen(){
 
 _opiDir(){
     dir="${*:-"/home/rob/"}"
-    file=$( fd . $dir -H -a -t d -t l | $rofi_dmenu )
+    file=$( fd . $dir -H -a -t d -t l | $rofi_dmenu -p "Dir")
     [[ -z $file ]] || $TERMINAL -e "vifm $file"
 }
 
@@ -46,13 +46,24 @@ _opiCopy(){
     fd . $dir -H -a -t f -i | $rofi_dmenu -p "Copy" | xclip -selection c
 }
 
+_opiProject (){
+    project="$(fd --max-depth=2 . ~/projects ~/school | rofi -i -dmenu -lines 8 -width 40 -padding 20 -multi-select)"
+    echo $project
+    if [[ -z "$project" ]]; then
+        exit 0;
+    else
+        atom "$project"
+    fi
+}
+
 _help() {
     cat <<- EOF
-Usage: opi command [path] 
+Usage: opi command [path]
 
 Commands:
      -h, help      Display this message
      -a, ask       Ask which dir to search
+     -p, proj      Ask what project to open in atom
      -c, copy      copy output
      -o, open      Open file
      -d, dir       Open dir
@@ -69,6 +80,9 @@ case "$1" in
     -a|ask )
         _opiAsk
         exit 0
+        ;;
+    -p|proj )
+        _opiProject
         ;;
     -c|copy )
         if [[ -n $2 ]]; then

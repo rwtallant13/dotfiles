@@ -3,7 +3,7 @@
 func="${1:-"win"}"
 
 win() {
-	maim -B -u -b 3 -f png --color=0,0,0 -s | xclip -selection clipboard -t image/png && notify-send -t 2000 "Current Window Captured" "Copied to Clipboard"
+	maim -B -u -b 3 -s | xclip -selection clipboard -t image/png && notify-send -t 2000 "Current Window Captured" "Copied to Clipboard"
 }
 
 screen() {

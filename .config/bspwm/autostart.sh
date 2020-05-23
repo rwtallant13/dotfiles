@@ -12,5 +12,6 @@
 /home/rob/.bin/mnt bb &
 /home/rob/.bin/sinkctrl -r
 /home/rob/.bin/sinkctrl -d &
+/home/rob/.bin/ssr.sh launch
 /usr/bin/nm-applet &
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &

@@ -52,8 +52,7 @@ alias pf='pfetch && colorpanes'
 alias rmr='rm -rf'
 alias rf='rg --files --hidden'
 alias tb='nc termbin.com 9999'
-alias v='nvim'
-alias V='sudoedit'
+alias v='/home/rob/.bin/nv'
 alias vf='vifm'
 alias vfm='vifm /media/blueberry/media'
 alias yt-audio='youtube-dl -x --audio-format mp3'
@@ -66,7 +65,7 @@ alias chxbin='chmod a+x /home/rob/.bin/*'
 # ~/.functions
 #
 
-fcd() {
+fzcd() {
 	$(__fzf_cd__)
 }
 

@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'kovetskiy/sxhkd-vim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'itchyny/lightline.vim'
+    Plug 'preservim/nerdtree'
     Plug 'arcticicestudio/nord-vim'
     Plug 'nelstrom/vim-visual-star-search'
     Plug 'Lenovsky/nuake'
@@ -29,8 +30,15 @@ nmap WQ ZZ
 nmap WW :w<cr>
 nmap Q! ZQ
 noremap <Del> "_x
-inoremap <C-Del> <C-o>"_dw
-nnoremap <C-Del> "_dw
+inoremap <C-Del> <C-o>"_de
+nnoremap <C-Del> "_de
+nmap <C-h> a<C-W><esc>
+
+" copy/paste
+noremap <Leader>y "+y
+noremap <Leader>p "+p
+noremap <Leader>Y "*y
+noremap <Leader>P "*p
 
 " buffers / tabs
 noremap <C-T> :tabnew<cr>
@@ -95,6 +103,12 @@ autocmd VimResized * wincmd =
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritepre * %s/\n\+\%$//e
 
+" nerd tree
+let g:NERDTreeShowHidden=1
+let g:NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeQuitOnOpen=0
+" Open nerd tree at the current file or close nerd tree if pressed again.
+nmap <leader>t :NERDTreeToggle
 
 syntax on
 colorscheme nord
@@ -116,7 +130,7 @@ set ignorecase
 set smartcase
 set cursorline
 set t_Co=256
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 set splitbelow splitright
 set shortmess=IFA
 "set termguicolors

@@ -5,21 +5,21 @@
 
 # edit bspwm files
 super + {_,alt + ,shift + }o
-    exo-open .config/{sxhkd/sxhkdrc,bspwm/autostart.sh,bspwm/bspwmrc}
+	exo-open .config/{sxhkd/sxhkdrc,bspwm/autostart.sh,bspwm/bspwmrc}
 
 # reload sxhkd
 super + Escape
-    pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd
 
-# reload picom cause its buggy
-super + Pause
-    "$bin"/start-picom
 
 # caps lock
 shift + Escape
-    xdotool key Caps_Lock
+	xdotool key Caps_Lock
 
 
+# reload bspwm config file
+super + shift + Escape
+	bspwm -r
 
 ########################
 # independent commands #
@@ -28,56 +28,66 @@ shift + Escape
 
 # open functions file
 super + {_,alt + }a
-    exo-open /home/rob/.{aliases,bashrc}
+	exo-open /home/rob/.{aliases,bashrc}
+
+super + shift + a
+	setxkbmap -option caps:escape
 
 # rofi logout script
 super + BackSpace
-    "$bin"/rofi-scripts -l
-alias vf='vifm'
+	"$bin"/rofi-scripts -l
 
 # rofi mount drives script
 super + m
-    "$bin"/rofi-scripts -m
+	"$bin"/rofi-scripts -m
 
 # open files
 super  + space
-    "$bin"/opi -o
+	"$bin"/opi -o
+
+# open files
+control  + space
+	"$bin"/opi -o
+
+# open dir
+super + alt + f
+	"$bin"/opi -d
 
 # edit files
 super  + alt + space
-    "$bin"/opi -e /etc /home/rob
+	"$bin"/opi -e /etc /home/rob
 
 # ask opi which dir to search
 super + ctrl + space
 	"$bin"/opi -a
 
-# open directories
-ctrl + space
-    "$bin"/opi -d
-
 # copy files
 super + grave
-    "$bin"/opi -c
+	"$bin"/opi -c
+
+# open project in atom
+super + alt + p
+	"$bin"/opi -p
 
 # move to blueberry
 super + alt + m
-	$TERMINAL -e "bash --rcfile /home/rob/.bashrc -c 'vifm /home/rob/ /media/blueberry/'" & disown
+	$TERMINAL -e "bash --rcfile /home/rob/.bashrc -c 'vifm /home/rob/downloads /media/blueberry/'"
 
 # rofi
 alt + space
 	rofi -modi "run,ssh" -show run
 
 # dmenu
-super + d
-	dmenu_run
+#super + d
+#	dmenu_run
 
 # telegram
 super + g
-    telegram-desktop
+	telegram-desktop
 
 # screenshot
 Print
-    flameshot gui
+	flameshot gui
 
 # screenshot current monitor
 super + Print
@@ -85,35 +95,38 @@ super + Print
 
 # screenshot current window
 ctrl + Print
-    "$bin"/win-scrot
+	"$bin"/win-scrot
+
+super + shift + Print
+	"$bin"/ssr.sh record
 
 # gui file manager
 super + t
-    thunar
+	thunar
 
 # vifm
 super + f
-	$TERMINAL -e "bash --rcfile /home/rob/.bashrc -c vifm" & disown
+	$TERMINAL -e "bash --rcfile /home/rob/.bashrc -c vifm"
 
 # tui file manager
 super + n
-    $TERMINAL -e "bash --rcfile /home/rob/.bashrc -c nnf" & disown
+    $TERMINAL -e "bash --rcfile /home/rob/.bashrc -c nnf"
 
 # gotop
 ctrl + shift + Escape
-    $TERMINAL -e "ytop || gotop" & disown
+	$TERMINAL -e "bashtop"
 
 # launch browser
 super + b
-    chromium
+	chromium
 
 # launch alt browser
 super + alt + b
-    firefox --new-window --private-window
+	firefox --new-window --private-window
 
 # terminal emulator
-super + Return
-	$TERMINAL & disown
+{alt,super} + Return
+	$TERMINAL
 
 # alt terminal emulator
 super + shift + Return
@@ -121,40 +134,42 @@ super + shift + Return
 
 # vim
 super + v
-    $TERMINAL -e nvim & disown
+	$TERMINAL -e nvim
 
 # Pulseaudio sound manager
 super + p
-    pavucontrol
+	pavucontrol
 
 # clipboard popup
 super + alt + v
-    clipmenu -p Copy -i
+	clipmenu -p Copy -i
 
 # toggle redshift
-super + F12
-    "$bin"/redshift.sh -t
+super + F1
+	"$bin"/redshift.sh -t
 
 ####################
 # Volume Control   #
 #                  #
 ####################
+
 XF86AudioLowerVolume
-    /usr/bin/pulseaudio-ctl down 2 && "$bin"/sinkctrl -v
+	/usr/bin/pulseaudio-ctl down 2 && "$bin"/sinkctrl -v
 
 XF86AudioRaiseVolume
-    /usr/bin/pulseaudio-ctl up 2 && "$bin"/sinkctrl -v
+	/usr/bin/pulseaudio-ctl up 2 && "$bin"/sinkctrl -v
 
 shift + XF86AudioLowerVolume
-    /usr/bin/pulseaudio-ctl down 1 && "$bin"/sinkctrl -v
+	/usr/bin/pulseaudio-ctl down 1 && "$bin"/sinkctrl -v
 
 shift + XF86AudioRaiseVolume
-    /usr/bin/pulseaudio-ctl up 1 && "$bin"/sinkctrl -v
+	/usr/bin/pulseaudio-ctl up 1 && "$bin"/sinkctrl -v
 
-XF86AudioStop
-    /usr/bin/pulseaudio-ctl mute && "$bin"/sinkctrl -v
-super + Insert
-    "$bin"/sinkctrl -c
+XF86AudioMute
+	/usr/bin/pulseaudio-ctl mute && "$bin"/sinkctrl -v
+
+super + F12
+	"$bin"/sinkctrl -c
 
 
 ####################
@@ -165,14 +180,11 @@ super + Insert
 
 # resize mode
 super + r : {Left,Right}
-  INC={-10,+10}; bspc node @east -r $INC || bspc node @west -r $INC
+	INC={-10,+10}; bspc node @east -r $INC || bspc node @west -r $INC
 
 super + r : {Down,Up}
-  INC={+10,-10}; bspc node @north -r $INC || bspc node @south -r $INC
+	INC={+10,-10}; bspc node @north -r $INC || bspc node @south -r $INC
 
-# reload bspwm config file
-super + shift + Escape
-	bspwm -r
 
 # close and kill
 super + {_,shift + }c
@@ -180,15 +192,15 @@ super + {_,shift + }c
 
 # window gap +5
 super + equal
-    bspc config -d focused window_gap $((`bspc config -d focused window_gap` + 5 ))
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` + 5 ))
 
 # window gap -5
 super + minus
-    bspc config -d focused window_gap $((`bspc config -d focused window_gap` - 5 ))
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` - 5 ))
 
 # Restore original gap
 super + plus
-    bspc config top_padding 25; bspc config -d focused window_gap 10
+	bspc config top_padding 25; bspc config -d focused window_gap 10
 
 
 #
@@ -212,13 +224,17 @@ super + {_,shift + }backslash
 alt + {Left,Down,Up,Right}
 	bspc node -f {west,south,north,east}
 
+# focus multiple nodes in the given direction
+super + alt + {Left,Down,Up,Right}
+	bspc node -f @{west,south,north,east}
+
 # vim keys for sane people
 alt + {h,j,k,l}
 	bspc node -f {west,south,north,east}
 
 # swap node in given direction
 super + {Left,Down,Up,Right}
-    bspc node -s {west,south,north,east} -f
+	bspc node -s {west,south,north,east} -f
 
 # vim keys for sane people
 super + alt + {h,j,k,l}
@@ -236,7 +252,7 @@ super + alt + i
 
 # toggle node states
 super + {F5,F6,F7,F8}
-    bspc node --state "~"{tiled,floating,pseudo_tiled,fullscreen}
+	bspc node --state "~"{tiled,floating,pseudo_tiled,fullscreen}
 
 # set fullscreen
 super + F11
@@ -258,27 +274,28 @@ super +{_,shift+} Tab
 # workspaces
 #
 
-
-# send node to next workspace with focus
+# move selected nodes through workspaces
 super + alt + {comma,period}
-    bspc node -d {prev,next}.local -f
+	bspc node -d {prev,next}.local -f
 
-# send node to next workspace without focus
+# move selected nodes through workspaces without focus
 super + shift + {comma,period}
-    bspc node -d {prev,next}.local
+	bspc node -d {prev,next}.local
 
 # move workspaces within monitor
 super + {comma,period}
-    bspc desktop -f {prev,next}.local
+	bspc desktop -f {prev,next}.local
+
+# move workspaces within monitor
+control + {comma,period}
+	bspc desktop -f {prev,next}.local
 
 # focus or send to the given workspace
-super + {_,shift +, alt + }{1-9}
-	bspc {desktop -f,node -d,desktop -s} {1-9}.local
+super + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} {1-9}.local
 
-# add/remove local workspace
-super + alt + {Insert,Delete}
-    bspc {monitor -a n,desktop -r}
-
+super + alt + {1-9}
+	bspc node -d {1-9}.local -f
 
 #
 # monitors
@@ -287,11 +304,11 @@ super + alt + {Insert,Delete}
 
 # move node to different monitor
 super + shift + {Left,Right}
-    bspc node -m {prev,next} -f
+	bspc node -m {prev,next} -f
 
 # move node to different monitor without focus
 super + shift + alt + {Left,Right}
-    bspc node -m {prev,next}
+	bspc node -m {prev,next}
 
 
 # changed focused monitor
@@ -310,7 +327,7 @@ alt + ctrl + {Left,Down,Up,Right}
 
 # preselect ratio
 alt + ctrl + {1-9}
-    bspc node -o 0.{1-9}
+	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 alt + ctrl + space

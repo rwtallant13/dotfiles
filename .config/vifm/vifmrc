@@ -207,7 +207,7 @@ filextype *.html,*.htm
         \ {Open with dwb}
         \ $BROWSER %f %i &,
         \ {Open with firefox}
-        \ firefox %f %i &,
+        \ chromium %f %i &,
 filetype *.html,*.htm links, lynx
 
 " Object
@@ -219,10 +219,10 @@ fileviewer *.[1-8] man ./%c | col -b
 
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-        \ {View in sxiv}
-        \ sxiv %f %i &,
         \ {View in viewnoir}
         \ viewnoir %f %i &,
+        \ {View in sxiv}
+        \ sxiv %f %i &,
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
          \ identify %f
 

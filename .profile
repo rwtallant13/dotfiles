@@ -33,10 +33,9 @@ export ATOM_HOME="$XDG_DATA_HOME"/atom
 export CCACHE_CONFIGPATH="$XDG_CONFIG_HOME"/ccache.config
 export CCACHE_DIR=$XDG_CACHE_HOME/ccache
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
-export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+#export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export GOPATH="$XDG_DATA_HOME"/go
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export LESSHISTFILE=-
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export TERMINFO="$XDG_DATA_HOME"/terminfo
@@ -45,9 +44,6 @@ export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
 export TASKDATA="$XDG_DATA_HOME"/task
 export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
-export RXVT_SOCKET=$XDG_RUNTIME_DIR/urxvtd
-#export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
-#export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
@@ -70,6 +66,6 @@ export ssd=/media/ssd/
 export bin=/home/rob/.bin
 
 # Commands
-if [ -z "$SSH_CLIENT" ]; then
+if [ $DISPLAY ]; then
     setxkbmap -option caps:escape
 fi

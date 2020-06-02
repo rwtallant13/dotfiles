@@ -47,15 +47,6 @@ export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
-#Shell Stuff
-export FZF_DEFAULT_OPTS="--reverse --color=bw --multi --cycle --border=sharp"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200' --no-height --exact"
-export FZF_CTRL_T_COMMAND="fd . --hidden"
-export FZF_ALT_C_COMMAND='fd . --hidden -t d'
-export FZF_CTRL_R_OPTS='--exact'
-export NNN_PLUG='r:renamer;m:-mediainfo;p:-_less -iR $nnn*'
-export NNN_BMS='h:~/;d:~/downloads/;p:/home/rob/pics/;b:/home/rob/.bin/;c:~/.config/;b:/media/blueberry;e:/etc/'
-export PF_INFO="ascii title os wm kernel uptime pkgs memory"
 
 # shortcuts
 export bb=/media/blueberry

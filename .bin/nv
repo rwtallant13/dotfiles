@@ -8,17 +8,17 @@ fi
 
 if [[ -t 0 ]]; then
     if [[ -z "$file" ]]; then
-        nvim -o $*
+        nvim $*
     elif [[ -w "$file" ]]; then
-       nvim -o $*
+       nvim $*
     elif [[ ! -w "$file" ]]; then
         sudo nvim $*
     fi
 else
     if [[ -z "$file" ]]; then
-        $TERMINAL -e "nvim -o $*"
+        $TERMINAL -e "nvim $*"
     elif [[ -w "$file" ]]; then
-        $TERMINAL -e "nvim -o $*"
+        $TERMINAL -e "nvim $*"
     elif [[ ! -w "$file" ]]; then
         $TERMINAL -e "sudo nvim $*"
     fi

@@ -36,6 +36,7 @@ alias lla='ls -hlNa --color=auto --group-directories-first'
 alias ll='ls -hlN --color=auto --group-directories-first'
 alias ls='ls -hN --color=auto --group-directories-first'
 alias lr='ls -RhN --color=auto --group-directories-first'
+alias lb='ls -hN --color=auto --group-directories-first /home/rob/.bin/'
 
 # commands
 alias grep='grep --color=auto'
@@ -73,13 +74,13 @@ kw(){
     nohup kwrite "$@" & disown
     }
 
-fzo(){
+se(){
     dir="${@:-"."}"
     sel="$(fd . -H "$dir"| fzf)"
     if [[ -d "$sel" ]] ; then
         cd "$sel"
     elif [[ -f "$sel" ]]; then
-        nohup exo-open "$sel" >/dev/null 2>&1 & disown
+        /home/rob/.bin/nv "$sel"
     fi
     }
 

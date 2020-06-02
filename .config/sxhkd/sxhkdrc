@@ -41,6 +41,10 @@ super + BackSpace
 super + m
 	"$bin"/rofi-scripts -m
 
+# search selected text
+super + s
+	"$bin"/selsearch
+
 # open files
 super  + space
 	"$bin"/opi -o
@@ -63,7 +67,7 @@ super + ctrl + space
 
 # copy files
 super + grave
-	"$bin"/opi -c
+	rofi -show window
 
 # open project in atom
 super + alt + p
@@ -236,10 +240,6 @@ alt + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -s {west,south,north,east} -f
 
-# vim keys for sane people
-super + alt + {h,j,k,l}
-	bspc node -s {west,south,north,east}
-
 # receptacles
 super + {_,shift} + i
     insert={true,false}; \
@@ -248,7 +248,7 @@ super + {_,shift} + i
 
 # receptacle thing
 super + alt + i
-	"$bin"/receptacle-swap
+	"$bin"/bspscripts receptacle
 
 # toggle node states
 super + {F5,F6,F7,F8}
@@ -261,6 +261,18 @@ super + F11
 # stick node to workspace
 super + F10
 	bspc node -g sticky
+
+# hide nodes
+super + h
+	"$bin"/bspscripts hide
+
+# unhide nodes
+super + alt + h
+	"$bin"/bspscripts unhide
+
+# equalize nodes
+super + e
+	"$bin"/bspscripts equal
 
 #cycle through nodes
 alt +{_,shift+} Tab

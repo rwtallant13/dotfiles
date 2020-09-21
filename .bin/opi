@@ -5,7 +5,8 @@ rofi_dmenu='rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-selec
 
 _opiOpen(){
     dir="${*:-"/home/rob/"}"
-    fd . $dir -H -t f -i | $rofi_dmenu -p "Open" | xargs -r -L 1 exo-open
+    fd . $dir -H -t f -i | $rofi_dmenu -p "Open" | xargs -L 1 -r exo-open
+
 }
 
 _opiDir(){
@@ -16,29 +17,18 @@ _opiDir(){
 
 _opiEdit(){
     dir="${*:-"/home/rob/"}"
-    file=$( fd . $dir -H -t f -i | $rofi_dmenu -p "Edit" )
-
-    if [[ -z "$file" ]]; then
-        exit 0
-    elif [[ -w "$file" ]]; then
-        $TERMINAL -e "nvim $file"
-    elif [[ ! -w "$file" ]]; then
-        $TERMINAL -e "sudo nvim $file"
-    fi
+    files="$( fd . $dir -H -t f -i | $rofi_dmenu -p "Edit" )"
+    for file in $files; do
+        /home/rob/.bin/nv $file &
+    done
 }
 
 _opiAsk() {
     dir="$(rofi -p "Search" -dmenu)"
-    [[ -z "$file" ]] && exit 0
     file=$( fd . $dir -H -t f -i | $rofi_dmenu -p "Search" )
+    [[ -z "$file" ]] && exit 0
 
-    if [[ -z "$file" ]]; then
-        exit 0
-    elif [[ -w "$file" ]]; then
-        $TERMINAL -e "nvim $file"
-    elif [[ ! -w "$file" ]]; then
-        $TERMINAL -e "sudo nvim $file"
-    fi
+    /home/rob/.bin/nv $file
 }
 
 _opiCopy(){
@@ -48,12 +38,9 @@ _opiCopy(){
 
 _opiProject (){
     project="$(fd --max-depth=2 . ~/projects ~/school | rofi -i -dmenu -lines 8 -width 40 -padding 20 -multi-select)"
-    echo $project
-    if [[ -z "$project" ]]; then
-        exit 0;
-    else
-        atom "$project"
-    fi
+    [[ -z "$project" ]] && exit 0
+    atom $project
+
 }
 
 _help() {

@@ -6,7 +6,7 @@ export PAGER=/usr/bin/less
 export NNN_USE_EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
-export BROWSER=/usr/bin/chromium
+export BROWSER=/usr/bin/firefox
 
 export XDG_CURRENT_DESKTOP="GNOME"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
@@ -14,7 +14,7 @@ export QT_QPA_PLATFORMTHEME=gtk2
 export _JAVA_AWT_WM_NONREPARENTING=1
 export CM_LAUNCHER=rofi
 export CM_DIR="$XDG_CACHE_HOME"/clipmenud
-export TERMINAL=/usr/bin/termite
+export TERMINAL=$(which termite)
 
 # Path
 export PATH=/home/rob/.bin:$PATH
@@ -22,7 +22,6 @@ export PATH=/usr/lib/elixir/bin:$PATH
 export PATH=/usr/local/bin/:$PATH
 export PATH=/home/rob/.android:$PATH
 export PATH=/home/rob/.local/bin:$PATH
-export PATH=/opt/:$PATH
 export PATH=/home/rob/.go/bin:$PATH
 export PATH=/home/rob/.gem/ruby/2.7.0/bin:$PATH
 export PATH="$XDG_DATA_HOME"/cargo/bin:$PATH
@@ -51,12 +50,8 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 # shortcuts
 export bb=/media/blueberry
 export media=/media/blueberry/media
+export other=/media/blueberry/media/tempdata/Data/Google/Other/Stuff/.hidden
 export backups=/media/blueberry/backups/rob-pc
 export mx100=/media/mx100/
 export ssd=/media/ssd/
 export bin=/home/rob/.bin
-
-# Commands
-if [ $DISPLAY ]; then
-    setxkbmap -option caps:escape
-fi

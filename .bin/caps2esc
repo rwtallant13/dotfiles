@@ -1,17 +1,7 @@
 #!/bin/bash
 
-_setcaps(){
-    while true; do
-        setxkbmap -option caps:escape
-        sleep 300
-    done
-}
-
-
-while true; do
-    if [[ ! $(pgrep caps2esc|grep bash) ]]; then
-        _setcaps
-    else
-        sleep 300
-    fi
+while true
+do
+    setxkbmap -option caps:escape
+    sleep 60
 done

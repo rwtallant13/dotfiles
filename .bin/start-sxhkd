@@ -1,5 +1,0 @@
-#!/bin/bash
-
-. /home/rob/.profile
-
-sxhkd -s $HOME/.cache/sxhkd.fifo &

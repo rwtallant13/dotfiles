@@ -1,52 +1,54 @@
-HISTFILE=~/.config/zhistory
+HISTFILE=~/.config/zsh/history
 HISTSIZE=100000
 SAVEHIST=100000
 
-# syntax highlighting
-[[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
-    . /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
-# source .profile for PATH
-#[[ -f "$HOME"/.profile ]] && \
-#    . "$HOME"/.profile
+PROMPT='%B%F{blue}%n%f %F{white}%b%c%f %B%F{blue}$ '
 
 # source aliases and functions
 [[ -e "$HOME"/.aliases ]] && \
    . "$HOME"/.aliases
 
-
-#export TERM=xterm-256color
-
-PROMPT='%B%F{blue}%n%f %F{white}%b%c%f %B%F{blue}$ '
-
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=cyan,underline
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=cyan,underline
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=cyan
 ZSH_HIGHLIGHT_STYLES[redirection]=fg=yellow
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f6569,bg=bold,underline"
 
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list ''
+#zstyle ':completion:*' list-colors ''
+#zstyle ':completion:*' matcher-list ''
+zstyle ':completion:*' insert-tab false
 zstyle ':completion:*' rehash true
-zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*:(ssh|scp|ftp|sftp):*' hosts $hosts
 zstyle ':completion:*:(ssh|scp|ftp|sftp):*' users $users
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle :compinstall filename '/home/rob/.zshrc'
+
 
 autoload -Uz compinit && compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 autoload bashcompinit && bashcompinit
 #setopt ZLE
-setopt COMPLETE_ALIASES
-setopt EXTENDED_GLOB
-setopt NONOMATCH
-setopt AUTO_CD
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_EXPIRE_DUPS_FIRST
-setopt INC_APPEND_HISTORY
-zstyle :compinstall filename '/home/rob/.zshrc'
+setopt complete_aliases
+setopt extended_glob
+setopt nonomatch
+setopt auto_cd
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_expire_dups_first
+setopt inc_append_history
+setopt auto_menu
+setopt always_to_end
+setopt complete_in_word
+unsetopt flow_control
+unsetopt menu_complete
 
 # vim/emacs mode.
 #bindkey -v
@@ -69,6 +71,9 @@ bindkey '\e.' insert-last-word
 insert-first-word () { zle insert-last-word -- -1 1 }
 zle -N insert-first-word
 bindkey '^[,' insert-first-word
+autoload -U copy-earlier-word
+zle -N copy-earlier-word
+bindkey "\e/" copy-earlier-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 backward-kill-dir () {
@@ -77,20 +82,41 @@ backward-kill-dir () {
 }
 zle -N backward-kill-dir
 bindkey '^H' backward-kill-dir
+# expand-or-complete-or-list-files
+function expand-or-complete-or-list-files() {
+    if [[ $#BUFFER == 0 ]]; then
+        BUFFER="ls "
+        CURSOR=3
+        zle list-choices
+        zle backward-kill-word
+    else
+        zle expand-or-complete
+    fi
+}
+zle -N expand-or-complete-or-list-files
+# bind to tab
+bindkey '^I' expand-or-complete-or-list-files
 bindkey '^[u' undo
 bindkey '^[r' redo
 bindkey '5~' kill-whole-line
-
-# source fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+exit_zsh() { exit }
+zle -N exit_zsh
+bindkey '^D' exit_zsh
 
 # exports
-export FZF_DEFAULT_OPTS="--reverse --exact --no-color --multi --cycle --border=sharp --height=50% --no-info"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200' --no-height --exact"
+export FZF_DEFAULT_OPTS="--preview-window noborder --reverse --exact --no-color --multi --cycle --border=sharp --height=50% --no-info"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50' --exact"
 export FZF_CTRL_T_COMMAND="fd . --hidden"
 export FZF_ALT_C_COMMAND='fd . --hidden -t d'
 export FZF_CTRL_R_OPTS='--exact'
 export NNN_PLUG='r:renamer;m:-mediainfo;p:-_less -iR $nnn*'
 export NNN_BMS='h:~/;d:~/downloads/;p:/home/rob/pics/;b:/home/rob/.bin/;c:~/.config/;b:/media/blueberry;e:/etc/'
 export PF_INFO="ascii title os wm kernel uptime pkgs memory"
+
+# source plugins
+source /usr/share/fzf/key-bindings.zsh
+#source /usr/share/fzf/completion.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced)"
+export _ZL_DATA=/home/rob/.config/zlua

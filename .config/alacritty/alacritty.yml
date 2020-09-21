@@ -34,8 +34,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 3
-    y: 3
+    x: 5
+    y: 5
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -154,7 +154,7 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 2
+    y: 1
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
@@ -180,7 +180,7 @@ font:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night Bright)
 colors:
@@ -227,14 +227,14 @@ colors:
 
   # Bright colors
   bright:
-   black:   '0x777F83'
-   red:     '0xF07178'
-   green:   '0xC3E88D'
-   yellow:  '0xFFCB6B'
-   blue:    '0x82AAFF'
-   magenta: '0xC792EA'
-   cyan:    '0x89DDFF'
-   white:   '0xEEFFFF'
+   black:   '0x5F6569'
+   red:     '0xDB6C72'
+   green:   '0x97DB84'
+   yellow:  '0xE6B965'
+   blue:    '0x7094E0'
+   magenta: '0xB682D9'
+   cyan:    '0x6BC8ED'
+   white:   '0xDAE5E6'
 
   # Dim colors
   #
@@ -290,7 +290,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.75
+background_opacity: 0.8
 
 selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

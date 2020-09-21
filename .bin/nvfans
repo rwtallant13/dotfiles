@@ -17,10 +17,12 @@ while sleep 1; do
     echo "temp:" $avg
 
     if (($avg < 65 )); then
-        speed=20
-    elif (($avg >= 65 && $avg <= 72)); then
+        speed=15
+    elif (($avg >= 65 && $avg < 70)); then
+        speed=25
+    elif (($avg >= 70 && $avg < 75)); then
         speed=30
-    elif (($avg >= 72 && $avg <= 80)); then
+    elif (($avg >= 75 && $avg < 80)); then
         speed=40
     elif (($avg >= 80)); then
         speed=50

@@ -3,10 +3,9 @@
 #
 
 # system
-alias s='sudo'
 alias sudo='sudo '
 alias udb='sudo updatedb'
-alias backup-log='tac /home/rob/docs/backup_logs/latest | less'
+alias last-backup='cat "$(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1)"'
 alias udev-reload='sudo udevadm control --reload-rules && sudo udevadm trigger'
 alias timers='systemctl list-timers'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
@@ -14,7 +13,9 @@ alias dots='yadm'
 alias dots-tracked='yadm list -a|less'
 alias myip='curl http://ipecho.net/plain; echo'
 alias S='sudo systemctl'
+alias s='systemctl'
 alias J='sudo journalctl'
+alias rdb='rdiff-backup'
 
 # pacman
 alias pac='sudo pacman -S'
@@ -39,31 +40,42 @@ alias lr='ls -RhN --color=auto --group-directories-first'
 alias lb='ls -hN --color=auto --group-directories-first /home/rob/.bin/'
 
 # commands
+alias df='df -h'
+alias cmds='compgen -c | fzf'
+alias rm='rm -I'
 alias grep='grep --color=auto'
-alias gt='ytop'
+alias gt='gotop'
+alias gcp='g++'
 alias hb='HandBrakeCLI'
 alias hist='history'
 alias iftop='sudo iftop -b'
+alias lfm='lf /media/blueberry/media'
+alias mclog='ssh bb journalctl -f -u minecraft@vanilla.service'
+alias mcctrl='ssh -t bb /home/rob/bin/mcctrl'
+alias m='micro'
 alias n='nnf'
 alias ndu='nnn -S'
 alias bandwhich='sudo bandwhich'
 alias cpu-speed=' watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
 alias pb='curl -F "f:1=<-" ix.io'
 alias pf='pfetch && colorpanes'
+alias pilog='ssh -t pi pihole -t'
 alias rmr='rm -rf'
 alias rf='rg --files --hidden'
 alias tb='nc termbin.com 9999'
 alias v='/home/rob/.bin/nv'
 alias vf='vifm'
 alias vfm='vifm /media/blueberry/media'
-alias yt-audio='youtube-dl -x --audio-format mp3'
+alias yta='youtube-dl -x --audio-format mp3'
 alias xc='xclip -selection clipboard'
-alias chxbin='chmod a+x /home/rob/.bin/*'
-
+alias zz='z -c'
+alias zi='z -i'
+alias zf='z -I'
+alias zb='z -b'
 
 
 #
-# ~/.functions
+# functions
 #
 
 fzcd() {
@@ -74,6 +86,22 @@ kw(){
     nohup kwrite "$@" & disown
     }
 
+pkglist(){
+    pacman -Qqne > /home/rob/docs/pacman-pkgs
+    pacman -Qqme > /home/rob/docs/yay-pkgs
+
+    pacman -Qq | fzf --height=100% --preview 'pacman -Qi {}' --layout=reverse
+    }
+
+mkcd(){
+	mkdir -p "$1" && cd "$1"
+}
+
+chx(){
+    chmod +x $1
+}
+
+
 se(){
     dir="${@:-"."}"
     sel="$(fd . -H "$dir"| fzf)"
@@ -83,6 +111,12 @@ se(){
         /home/rob/.bin/nv "$sel"
     fi
     }
+
+swap()
+{
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
+}
 
 open(){
     nohup xdg-open "$@" >/dev/null 2>&1 & disown
@@ -97,6 +131,16 @@ timeof(){
     then
         ps -p "$pid" -o etime,command
     fi
+    }
+
+cpf(){
+    if [[ $1 ]]; then
+        cat "$1" | xclip -selection clipboard
+    else
+        echo 'file required'
+        exit 0
+    fi
+
     }
 
 vlc-yt(){
@@ -126,15 +170,12 @@ fv() {
 
 fkill() {
     local pid
-    if [ "$UID" != "0" ]; then
-        pid=$(ps -f -u $UID | sed 1d | fzf -m | awk '{print $2}')
-    else
-        pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-    fi
+
+    pid=$(ps -eo user,pid,etime,cmd | sed 1d | fzf -m | awk '{print $2}')
 
     if [ "x$pid" != "x" ]
     then
-        echo $pid | xargs kill -${1:-9}
+        echo $pid | xargs sudo kill -${1:-9}
     fi
     }
 
@@ -156,6 +197,6 @@ pman() {
     }
 
 fdchars() {
-    fd -H | grep -E '\s|\*|\?|\$|%|'\ ''
+    fd -H $* | grep -E '\s|\*|\?|\$|%|'\ ''
 
 }

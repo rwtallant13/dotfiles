@@ -1,6 +1,0 @@
-#!/bin/sh
-
-pacman -Qqne > /home/rob/docs/pacman-pkgs
-pacman -Qqme > /home/rob/docs/yay-pkgs
-
-cat "/home/rob/docs/pacman-pkgs" "/home/rob/docs/yay-pkgs" | less

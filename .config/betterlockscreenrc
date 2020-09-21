@@ -12,6 +12,5 @@ ringwrongcolor=f07178ff
 verifcolor=ffffffff
 timecolor=ffffffff
 datecolor=ffffffff
-loginbox=00000066
+loginbox=00000000
 locktext='Type password to unlock...'
-

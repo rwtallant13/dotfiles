@@ -1,25 +1,30 @@
 #!/bin/bash
 
-file="$1"
-
-if [[ ! -e "$file" ]]; then
-    touch "$file"
+if [[ -z $1 ]]; then
+    exit 0
 fi
 
-if [[ -t 0 ]]; then
-    if [[ -z "$file" ]]; then
-        nvim $*
-    elif [[ -w "$file" ]]; then
-       nvim $*
-    elif [[ ! -w "$file" ]]; then
-        sudo nvim $*
-    fi
-else
-    if [[ -z "$file" ]]; then
-        $TERMINAL -e "nvim $*"
-    elif [[ -w "$file" ]]; then
-        $TERMINAL -e "nvim $*"
-    elif [[ ! -w "$file" ]]; then
+file=$1
+dir=${file%/*}
+
+_sudo(){
+    if [[ -t 0 ]]; then
+        sudo nvim "$*"
+    else
         $TERMINAL -e "sudo nvim $*"
     fi
+}
+
+_vim(){
+    if [[ -t 0 ]]; then
+       nvim "$*"
+    else
+        $TERMINAL -e "nvim $*"
+    fi
+}
+
+if [[ ! -w $dir ]]; then
+    _sudo "$*"
+else
+    _vim "$*"
 fi

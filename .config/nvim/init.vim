@@ -6,8 +6,8 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-    Plug 'kovetskiy/sxhkd-vim'
     Plug 'jiangmiao/auto-pairs'
+    Plug 'kovetskiy/sxhkd-vim'
     Plug 'itchyny/lightline.vim'
     Plug 'preservim/nerdtree'
     Plug 'arcticicestudio/nord-vim'
@@ -89,7 +89,7 @@ map <leader>sh  :sp<cr>
 " Disable automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " reload sxhkd automatically
-autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+autocmd BufWritePost *sxhkdrc !pkill -USR1 -x sxhkd
 " Run xrdb whenever Xdefaults or Xresources are updated.
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 " vifmrc syntax
@@ -118,7 +118,7 @@ set noshowmode
 set tabstop=4
 set nostartofline
 set shiftwidth=4
-set expandtab
+set noexpandtab
 set nocompatible
 set number
 set numberwidth=1

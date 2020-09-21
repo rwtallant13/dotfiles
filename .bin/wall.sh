@@ -32,7 +32,7 @@ _blur() {
     rm "temp_logo.png"
 }
 _update() {
-    feh --bg-fill $1 --bg-fill $1 --bg-fill $1
+    feh --no-fehbg --bg-fill $1 --bg-fill $1 --bg-fill $1
 
     betterlockscreen -r 1920x1200 -u "$1"
 

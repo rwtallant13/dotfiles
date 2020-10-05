@@ -3438,3 +3438,14 @@ la
 la .config
 ls .config/autostart
 yadm commit -a
+yadm push
+yadm -h
+man yadm
+la
+ls .config/nvim 
+ls .config/nvim/nvim.d
+rm -rf .config/nvim/nvim.d
+la
+v .Xresources
+yadm add .Xresources
+yadm commit -a

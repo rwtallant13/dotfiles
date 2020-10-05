@@ -1,0 +1,80 @@
+Xft.dpi:			    96
+Xcursor.theme:			Simple-and-Soft
+Xft.lcdfilter:			lcddefault
+Xft.antialias:          1
+Xft.hinting:			1
+Xft.hintstyle:			hintfull
+Xft.autohint:			0
+Xft.rgba:				rgb
+URxvt*depth:			32
+URxvt*scrollBar:		false
+URxvt*termName:			xterm-256color
+URxvt*font:             xft:OverpassMono Nerd Font:style=Regular:size=13, xft:symbola:size=15
+*font:                  xft:Overpass Mono:style=Regular:size=13
+
+!! URLs
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+!! keybindings
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+URxvt*iso14755 :        false
+URxvt*lineSpace:		-2
+URxvt*letterSpace:		0
+URxvt*internalBorder:	4
+URxvt*buffered:			true
+URxvt*saveLines:		99999
+URxvt*hold:			    false
+URxvt*jumpScroll:		false
+*.cursorBlink:		0
+*.cursorUnderline:	0
+
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+
+
+! black
+*.color0:			#888888
+*.color8:			#888888
+
+! red
+*.color1:			#F07178
+*.color9:			#F07178
+
+! green
+*.color2:			#7AC46D
+*.color10:			#7AC46D
+
+! yellow
+*.color3:			#FFCB6B
+*.color11:			#FFCB6B
+
+! blue
+*.color4:			#82AAFF
+*.color12:			#82AAFF
+
+!magenta
+*.color5:			#C792EA
+*.color13:			#C792EA
+
+! cyan
+*.color6:			#89DDFF
+*.color14:			#89DDFF
+
+! white
+*.color7:			#EEFFFF
+*.color15:			#EEFFFF
+
+*.foreground:			#FFFFFF
+URxvt.background:		[75]#000000
+*.background:           #000000
+!*.cursorColor:			#FFFFFF
+!*.cursorColor2:		#FFFFFF
+*.colorUL:			    #4186E0
+
+
+*alpha:                 0.80

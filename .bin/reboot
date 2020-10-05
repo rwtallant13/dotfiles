@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+reboot=/usr/bin/reboot
+
+if [[ -z $1 ]]; then
+    $reboot
+fi
+
+case $1 in
+    windows|win)
+        sudo efibootmgr --bootnext $(efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | sed s/.$//) && $reboot
+        ;;
+    uefi)
+        systemctl reboot --firmware-setup
+        ;;
+    *)
+        echo "'win[dows]' or 'uefi'"
+        ;;
+esac

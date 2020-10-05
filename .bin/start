@@ -1,0 +1,37 @@
+#!/bin/bash
+. /home/rob/.profile
+# Program functions
+
+_picom(){
+    picom --experimental-backends --backend glx -b --config /home/rob/.config/picom/picom.conf &
+}
+
+_polybar(){
+    polybar dp &
+    polybar dvi &
+    polybar hdmi &
+}
+
+_dunst(){
+    /usr/bin/dunst &
+}
+
+_sxhkd(){
+until sxhkd -s $HOME/.cache/sxhkd.fifo; do
+    notify-send "sxhkd crashed with exit code $?.  Respawning.." >&2
+    sleep 1
+done
+
+}
+
+_pulse(){
+	pulseaudio -k;pulseaudio --start
+}
+
+# Terminate already running instances
+killall -q "$1"
+
+# Wait until the processes have been shut down
+while pgrep -x "$1" >/dev/null; do sleep 0.25; done
+
+_"${1}"

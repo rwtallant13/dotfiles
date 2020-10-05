@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+#mediainfo --Inform="General;File Name=%CompleteName%\nFile Size=%FileSize/String1%" "$@";
+
+#mediainfo --Inform="Video;Resolution=%Width%x%Height%\nCodec=%CodecID%\nBitrate= %BitRate/String%" "$@";
+
+#mediainfo --Inform="Video;Resolution=%Width%x%Height%\nCodec=%CodecID%\nBitrate= %BitRate/String%" "$@";
+
+for f in $(fd . "$1" -t f -e mp4 -e mkv); do
+	#bitrate="$(mediainfo --Inform="Video;%OverallBitRate%" "$f")"
+	mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" "$f"
+
+done | sort -t ':' -nk1

@@ -6,15 +6,16 @@ export PAGER=/usr/bin/less
 export NNN_USE_EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
-export BROWSER=/usr/bin/firefox
+export BROWSER=/usr/bin/chromium
 
 export XDG_CURRENT_DESKTOP="GNOME"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
 export QT_QPA_PLATFORMTHEME=gtk2
+export QT_STYLE_OVERRIDE=gtk2
 export _JAVA_AWT_WM_NONREPARENTING=1
 export CM_LAUNCHER=rofi
 export CM_DIR="$XDG_CACHE_HOME"/clipmenud
-export TERMINAL=$(which termite)
+export TERMINAL=/usr/bin/xfce4-terminal
 
 # Path
 export PATH=/home/rob/.bin:$PATH
@@ -34,6 +35,7 @@ export CCACHE_DIR=$XDG_CACHE_HOME/ccache
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 #export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export GOPATH="$XDG_DATA_HOME"/go
+export DIFFPROG='nvim -d'
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export LESSHISTFILE=-
 export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
@@ -50,7 +52,6 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 # shortcuts
 export bb=/media/blueberry
 export media=/media/blueberry/media
-export other=/media/blueberry/media/tempdata/Data/Google/Other/Stuff/.hidden
 export backups=/media/blueberry/backups/rob-pc
 export mx100=/media/mx100/
 export ssd=/media/ssd/

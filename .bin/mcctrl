@@ -1,0 +1,32 @@
+#!/bin/bash
+
+_help(){
+    cat <<- EOF
+Usage: mcctrl (OPT) (port)
+
+Options:
+    no args             connect to 1.16 server
+    -b, bukkit          connect to 1.15 server
+    -p, port [#]        select port for mcrcon
+EOF
+}
+
+
+if [[ -z "$1" ]]; then
+    /opt/minecraft/tools/mcrcon/mcrcon -H localhost -P 25576 -p Waterb0ttle54 -t
+    exit 0
+fi
+
+
+if [[ -n "$1" ]]; then
+
+    case "$1" in
+        -p|port)
+            /opt/minecraft/tools/mcrcon/mcrcon -H localhost -P "$2" -p Waterb0ttle54 -t
+            ;;
+        -b|bukkit)
+            /opt/minecraft/tools/mcrcon/mcrcon -H localhost -P 25575 -p Waterb0ttle54 -t
+            ;;
+        *) _help
+    esac
+fi

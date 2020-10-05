@@ -13,9 +13,9 @@ _sleep(){
 }
 
 
-time="$(date +%k%M)"
+time="$(date +%H%M)"
 
-if [[ $time -gt 550 && $time -lt 630 ]]; then
+if [[ $time -gt 0550 && $time -lt 0630 ]]; then
     sudo -u rob hue power off
     _backup
     _sleep

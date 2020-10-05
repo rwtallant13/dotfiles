@@ -118,5 +118,5 @@ source /usr/share/fzf/key-bindings.zsh
 #source /usr/share/fzf/completion.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced)"
+eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once)"
 export _ZL_DATA=/home/rob/.config/zlua

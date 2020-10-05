@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+pgks-to-remove=$(pacman -Qqe | fzf --height=100% --preview 'pacman -Qi {}' --layout=reverse)
+sudo pacman -Rncs $pkgs-to-remove

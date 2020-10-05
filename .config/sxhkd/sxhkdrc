@@ -5,7 +5,7 @@
 
 # edit bspwm files
 super + {_,alt + ,shift + }o
-	exo-open ~/.config/{sxhkd/sxhkdrc,bspwm/autostart.sh,bspwm/bspwmrc}
+	xdg-open ~/.config/{sxhkd/sxhkdrc,bspwm/autostart.sh,bspwm/bspwmrc}
 
 # reload sxhkd
 super + Escape
@@ -28,7 +28,7 @@ super + shift + Escape
 
 # open functions file
 super + {_,alt + }a
-	exo-open /home/rob/.{aliases,bashrc}
+	xdg-open /home/rob/.{aliases,bashrc}
 
 super + shift + a
 	"$bin"/caps2esc
@@ -66,12 +66,12 @@ super + grave
 	rofi -show window
 
 # open project in atom
-super + alt + p
-	"$bin"/opi -p
+super + alt + c
+	"$bin"/opi -c
 
 # move to blueberry
 super + m
-	/usr/bin/termite -e 'vifm /home/rob /media/blueberry/'
+	/usr/bin/xfce4-terminal -e 'vifm /home/rob/downloads/torrents /media/blueberry/'
 
 # rofi
 alt + space
@@ -99,19 +99,19 @@ super + Print
 
 # gui file manager
 super + t
-	thunar
+	pcmanfm
 
 # vifm
 super + f
-	/usr/bin/termite -e vifm
+	/usr/bin/xfce4-terminal -e vifm
 
 # tui file manager
 super + n
-    /usr/bin/termite -e nnf
+    /usr/bin/xfce4-terminal -e nnf
 
 # system monitor
 ctrl + shift + Escape
-	/usr/bin/termite -e btm
+	/usr/bin/xfce4-terminal -e btm
 
 # launch browser
 super + b
@@ -135,7 +135,7 @@ super + shift + Return
 
 # vim
 super + v
-	/usr/bin/termite -e nvim
+	/usr/bin/xfce4-terminal -e nvim
 
 # Pulseaudio sound manager
 super + p
@@ -267,15 +267,9 @@ super + {F5,F6,F7,F8}
 super + F11
 	bspc desktop -l next
 
-# stick node to workspace
-super + F10
-	bspc node -g sticky
-
 # hide nodes
 super +{_,alt +} h
 	"$bin"/bspscripts {_,un}hide
-
-
 
 # equalize nodes
 super + e

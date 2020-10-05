@@ -1,0 +1,3440 @@
+cat .pulse-cookie
+cat pacman-pkgs yay-pkgs >> pkgs
+diff --new-line-format="" --unchanged-line-format="" pkgs documents/pacman-pkgs
+diff --new-line-format="" --unchanged-line-format="" pkgs documents/pacman-pkgs | wc -l
+rm pacman-pkgs yay-pkgs
+mv pkgs old_pkgs
+cat documents/pacman-pkgs documents/yay-pkgs >> pkgs
+grep -F -x -v -f old_pkgs pkgs | wc -l
+grep -F -x -v -f old_pkgs pkgs
+pac calcurse
+grep -F -x -v -f pkgs old_pkgs > digg
+less digg
+wc -l pkgs
+wc -l old_pkgs
+(pacman -Qqn && pacman  -Qqm) > pkgs
+less pkgs
+grep -F -x -v -f pkgs old_pkgs
+grep -F -x -v -f pkgs old_pkgs | wc -l
+grep -F -x -v -f pkgs old_pkgs > diff
+rm digg
+mv The-Boys/ ../
+mv ../The-Boys/ ./
+less diff
+yay -S filebot
+documents/
+ls JoJo-Bizarre-Adventures/
+rm -rf JoJo-Bizarre-Adventures/
+rm -rf kd-brochure/
+ls invoices/
+rm CharlieandSarge-Invoice.pdf
+rm test.md
+cd projects/
+rm -rf sites/
+ls ideas/
+filecount.sh ideas/
+find -name "* *" -type f | perl-rename 'y/ //'
+find -name "* *" -type f | perl-rename 's/ //g'
+cd OnePiece/
+xrdb
+pacf xrdb
+pac extra/xorg-xrdb
+pac xorg-apps
+alacritty
+pac cpupower
+pac base
+pac bind-tools
+pac ffmpegthumbnailer dkms linux-headers gnu-netcat grub netctl net-tools nmap pacutils systemd-swap thunar-archive-plugin thunar-volman
+cd /media/blueberry/media/shows/OnePiece/
+lr One_Piece_Season_0*
+rm -rf One_Piece_Season_0*
+find -name "* *" -type f | perl-rename 's/-/-E/g'
+find -name "* *" -type f | perl-rename 's/\-/\-E/g'
+find -name "* *" -type f
+find -type f
+perl-rename
+fd -t f | perl-rename 's/\-/\-E/g'
+fd -t f -e mp4 -e mmkv -e avi | wc -l
+fd -t f -e mp4 -e mkv  | wc -l
+mv Futurama/Futurama_S06E26__Reincarnation.avi Futurama/Futurama_S06E26_Reincarnation.avi
+fd -t f -e avi
+cd movies/
+fd -t f -e srtr | wc -l
+fd -t f|wc -l
+fd -t f -e mp4 -e mkv -e avi | wc -l
+cat .bin/polybar.sh
+polybar dp &
+polybar dvi &
+polybar hdmi &
+killall polybar
+vf Boruto\:\ Naruto\ Next\ Generations\ \(Dub\)\ \(01-52\)/
+S enable ntpdate.service
+fd -H | grep -E '\s|\*|\?|\$|%'
+fd -H | grep -E '\s|\*|\?|\$|%' | wc -l
+fd -E music -H | grep -E '\s|\*|\?|\$|%' | wc -l
+fd -E music -H | grep -E '\s|\*|\?|\$|%'
+fd -E music -H | grep -E '\s|\*|\?|\$|%|' ''
+touch 'this thing'
+fd -E music -H | grep -E '\s|\*|\?|\$|%|'\ ''
+rm this\ thing
+mv Birds-of-Prey-And-the-Fantabulous-Emancipation-of-One-Harley-Quinn/English-srt Birds-of-Prey-And-the-Fantabulous-Emancipation-of-One-Harley-Quinn/English.srt
+fd -t f -e srt | wc -l
+mv Joker2019/ Joker
+locate termite.desktop
+locate xfce4-terminal.desktop
+sudo cp /usr/share/applications/xfce4-terminal.desktop /usr/share/applications/termite.desktop
+mimeo .bashrc
+rm -rf /usr/share/applications/termite.desktop
+sudo rm -rf /usr/share/applications/termite.desktop
+ls /usr/share/applications/termite.desktop
+sv /usr/share/applications/termite.desktop
+exo-open --launch TerminalEmulator
+open
+exo-open --launch TerminalEmulator .bashrc
+exo-open --launch TerminalEmulator v .bashrc
+exo-open --launch TerminalEmulator vim
+v .config/mimeapps.list
+sv /etc/X11/xorg.conf
+bspc -r *
+bspc rule -r *
+sudo nvidia-settings
+sv /etc/lightdm/lightdm-gtk-greeter.conf
+asdasd asdas asd  asd
+ls color-scripts/
+ls color-scripts/color-scripts/
+sxiv color-scripts/preview/color-scripts-preview/*
+mv color-scripts/color-scripts/{colortest,panes,blocks1} .bin/
+pac gcolor
+pac gcolor2
+rg color .config/termite/config
+pfetch && panes
+v .bin/panes
+git clone https://github.com/stark/color-scripts
+mv color-scripts/color-scripts/panes .bin/panes
+rm -rf color-scripts/
+panes
+xdg-settings
+xdg-settings --help
+man xdg-settings
+xdg-mime query default .bashrc
+xdg-mime query filetype .bashrc
+xdg-mime query default text/plain
+sudo pacr mimeo xdg-utils-mimeo
+pac xdg-utils
+sudo pacr mimeo
+pac perl-file-mimeinfo
+cp /usr/share/applications/nvim.desktop .local/share/applications/
+v .local/share/applications/nvim.desktop
+mimeopen -d .bashrc
+man mimeopen
+mimetype -d .bashrc
+mimetype -d .xinitrc
+mv /usr/share/applications/nvim.desktop ~/nvim.desktop
+sudo mv /usr/share/applications/nvim.desktop ~/nvim.desktop
+update-desktop-database .local/share/applications/
+update-desktop-database /usr/share/applications/
+sudo update-desktop-database /usr/share/applications/
+sudo mv nvim.desktop /usr/share/applications/nvim.desktop
+xdg-open .bashrc
+sv /usr/share/applications/nvim.desktop
+xdg-open ~/.bashrc
+x-terminal-emulator
+locate terminal
+rm -rf .config/lxterminal/
+rm -rf .config/kitty/
+rm -rf .config/coc
+rm -rf .config/conky
+rm -rf .config/sakura
+rm -rf .config/nvfancontrol.conf
+sv /usr/share/applications/exo-terminal-emulator.desktop
+locate exo
+vf $media
+man exo-open
+exo-open .bashrc
+locate telegram-desktop
+sv /usr/bin/telegram-
+locate telegram
+sv /usr/share/applications/telegramdesktop.desktop
+XDG_CURRENT_DESKTOP=gnome telegram-desktop
+sudo pacr xdg-desktop-portal-gtk
+echo $XDG_SESSION_DESKTOP
+pac xdg-desktop-portal-kde
+XDG_CURRENT_DESKTOP=kde telegram-desktop
+pac xdg-desktop-portal-gtk
+pac xdg-desktop-portal
+echo $XDG_CURRENT_DESKTOP
+sv /etc/environment
+sv /etc/profile
+ls /etc/fonts/
+mkdir "$XDG_DATA_HOME"/fonts
+ls .fonts/
+mv .fonts/fonts.conf /home/rob/.local/share/fonts/
+rm -rf .fonts/
+/usr/local/share/kbd/keymap
+rg ctrls
+rg -H ctrls
+rg --hidden ctrls
+blocks1
+mv .bin/blocks1 .bin/colorblocks
+mv .bin/panes .bin/colorpanes
+pac hostname
+pac core/inetutils
+hostname
+pacf hostname
+sudo pacr filebot
+ls .java/
+man xidlehook
+xidlehook --help
+kill -9 xidlelook
+kilalll -9 xidlelock
+killalll -9 xidlelock
+killall -9 xidlelock
+notify-send -t 2000 "Xidlehook crashed" "Respawning..."
+journalctl -r
+man journal
+cargo install xidlehook
+autolock.sh
+bspc -l
+bspc desktop -l
+bspc desktop -l monocle
+bspc desktop -l tiled
+bspc desktop -l CYCLE_DIRCYCLE_DIR
+bspc desktop -l next
+pac lxsession
+/usr/bin/lxpolkit &
+ls .config/autostart/
+locate autostart
+yay -S ytop
+sudo pacr gotop-bin
+S enable systemd-swa
+alias timers
+systemctl list-timers --all
+ls $XDG_CONFIG_HOME/gtk-2.0/gtkrc
+cat $XDG_CONFIG_HOME/gtk-2.0/gtkrc
+mkdir .config/Nvidia
+nvidia-settings --config="$XDG_CONFIG_HOME"/Nvidia/sttings
+alias
+nvidia-settings --config="$XDG_CONFIG_HOME"/Nvidia/settings
+lxclipboard
+pacman -Q | grep lx
+pac lxpolkit
+lxsession-default
+lxsession-default-
+lxsession-default-apps
+lxsession-default-terminal
+ls $XDG_DATA_HOME
+ls /home/rob/.local/share/fonts/
+pac lxappearance
+ls .config/lxsession-default-apps/settings.conf
+cat .config/lxsession-default-apps/settings.conf
+rm -rf .config/filebot/
+locate gtk2
+locate gtk-2.0
+rm -rf .config/gtk-{1,2}*
+sv /etc/gtk-2.0/gtkrc
+sudo mv gtk* /etc/gtk-2.0/
+sudo chown root:root /etc/gtk-2.0/*
+rm -rf .xinitrc
+cat .vimrc
+cat .viminfo
+ls .openvpn/
+v .bash_profile
+mkdir "$XDG_CONFIG_HOME"/gtk-1.0/
+ls "$XDG_DATA_HOME"/fonts
+filecount.sh
+sudo pacr colormgr
+pacf colormgr
+ls .icons/
+cat .icons/default/index.theme
+locate index.theme | grep -i default
+cat $(locate index.theme | grep -i default)
+rm -rf .icons/
+rm -rf .nv/
+mkdir $XDG_CACHE_HOME/nv
+ls $XDG_CACHE_HOME/nv
+ls change tty shellls . $HOME/.bashrc
+ls . $HOME/.bashrc
+ls  $HOME/.bashrc
+setxkbmap se
+man setxkbmap
+rofi
+sv /etc/lightdm/Xsession
+sudo nvim /etc/lightdm/Xsession
+pac cava
+yay cava
+cavca
+cava
+sudo pacr cava
+yay cli-visualizer
+sudo pacr cli-visualizer
+mv .config/nvim/init.vim ~/
+mv init.vim .config/nvim/init.vim
+ncd /media/ssd/
+ndu /media/ssd/
+nvim .profile
+exit
+ls .config/
+rm -rf .config/cava/ .config/lxsession-default-apps/
+pac zsh
+cp .config/bash_history .config/zhistory
+man bindkey
+bindkey
+nvim .zshrc
+v .config/gtk-2.0/gtkrc
+pac tree
+v settings.ini
+mv .config/gtk-2.0/gtkrc ~/.gtkrc-2.0
+sudo mv .gtkrc-2.0 /etc/gtk-2.0/gtkrc
+sudo lxappearance
+ls /etc/gtk-2.0
+ls /etc/gtk-2.0/gtk
+ls /etc/gtk-2.0/gtkrc
+ll /etc/gtk-2.0/
+sudo chown root:root /etc/gtk-2.0/gtkrc
+rm -rf .config/gtk-2.0
+sudo vlc
+sudo simplescreenrecorder
+v .gtkrc-2.0
+echo $GTK2_RC_FILES
+sudo ln -s /home/rob/.zshrc /root/.zshrc
+sv status
+pacman -Syu --overwrite /usr/lib\*/p11-kit-trust.so
+sudo pacman -Syu --overwrite /usr/lib\*/p11-kit-trust.so
+yay -Pw
+zle -al > zsh_bindkey.txt
+less zsh_bindkey.txt
+quoted-inset
+quoted-insert
+bindkey -l
+bindkey -M
+bindkey -M isearch
+bindkey -M listscroll
+bindkey -M command
+rm zsh_bindkey.txt
+mv .zcompdump .cache/zcompdump
+less .zcompdump
+stat .zcompdump
+sudo rm -rf .zcompdump
+ls .zcompdump
+diff .cache/zcompdump .zcompdump
+rm -rf .cache/zcompdump
+ls .cache/zcompdump
+mkdir -p .cache/zsh
+compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump\
+ls "$XDG_CACHE_HOME"/zsh/zcompdump\
+less /home/rob/.cache/zsh/zcompdump
+less .bash_history
+rm -rf .bash_history
+start-picom
+pac keepass
+pac keepassxc
+rm -rf .config/leafpad .config/l3afpad
+sudo rm -rf .local/share/.go
+mv lastpass_export.csv documents
+less .gtkrc-2.0
+ll .gtkrc-2.0
+rm -rf .gtkrc-2.0
+sudo rm -rf .gtkrc-2.0
+locate .gtkrc-2.0
+locate gtkrc-2.0
+ll /etc/gtk-2.0/gtkrc
+less /usr/share/themes/Default/gtk-2.0-key/gtkrc
+less .config/gtk-3.0
+less .config/gtk-3.0/settings.ini
+ll .config/gtk-3.0/settings.ini
+pac adapta-gtk-theme
+lxappearance
+pac qt5
+pac qt5-base
+export | grep gtk
+ls "$XDG_CONFIG_HOME"/gtk-2.0/
+mkdir "$XDG_CONFIG_HOME"/gtk-2.0/
+mv .gtkrc-2.0 "$XDG_CONFIG_HOME"/gtk-2.0/
+mv /home/rob/.config/gtk-2.0/.gtkrc-2.0 "$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+pac screenkey
+pacf screenkey
+yay screenkey
+locate dialog-information
+telegram-desktop
+less documents/lastpass_export.csv
+stat .local/share/keepassxc/*
+sudo rm -f .local/share/keepassxc/Passwords.kdbx
+v .bin/pixel-files
+rm -rf test
+nano .config/nvim/init.vim
+ls ~/.config/chromium/NativeMessagingHosts
+keepassxc-proxy
+which keepassxc-proxy
+miniterm.py
+sudo pacr pyserial
+sudo pacr community/python-pyserial
+sudo pacr python-pyserial
+. .zshrc
+source .zshrc
+echo this is a thing
+echo "this is a thing"
+pac nextcloud-client
+pac spectrewm
+pac spectrwm
+mkdir -p .config/spectrwm
+cp /etc/spectrwm
+cp /etc/spectrwm.conf .config/spectrwm
+ll .config/spectrwm/spectrwm.conf
+man keepassxc
+keepassxc
+fd nanorc
+fd -H nanorc
+bspc node --state ~fullscreen
+bspc node --state ~tiled
+du .xsession-errors
+tail .xsession-errors
+pac libpam-gnome-keyring
+pacf libpam-gnome-keyring
+pacs gnome-keyring
+pac libgnome-keyring
+sudo pacr picom-tryone-git
+ls .cache/yay
+sudo rm -rf .cache/yay/picom-tryone-git
+yay picom-tryone-git
+v .config/spectrwm/spectrwm.conf
+sudo pacr yubico
+sudo pacr yubico-c-client
+cp .config/bspwm/autostart.sh .config/spectrwm/
+locate spectrwm_us.conf\
+locate spectrwm_us.conf
+cp /etc/spectrwm/spectrwm_us.conf  ~/.config/spectrwm/spectrwm_us.conf
+v ~/.config/spectrwm/spectrwm_us.conf
+sudo pacr spectrwm
+rm -rf .config/spectrwm
+ls .gtk-bookmarks
+less .gtk-bookmarks
+for run in {1..10}\
+  xcolor\
+done
+for run in {1..8}\
+  xcolor\
+done
+rm .gtk-bookmarks
+.local/share/fonts/fonts.conf
+v .local/share/fonts/fonts.conf
+cd /tmp
+cd /boot
+cd EFI
+cd ../grub
+cd /
+cd /home/rob
+cd -2
+bspc node --state ~floating
+unsetopt | grep auto
+ls -1 **/*.(sh|py)
+bspc node --state "~"psuedo_tiled
+bspc node --state "~"pseudo_tiled
+yay bitwarden
+pacr keepassxc
+sudo pacr keepassxc
+ls  /etc/nginx/sites-available/
+sudo ls  /etc/nginx
+sudo ls /etc/nginx/
+locate nginx
+locate pass.rwt13.xyz
+ls fullchain.pem
+sudo ls /etc/letsencrypt/live/pass.rwt13.xyz/fullchain.pem
+sudo ls /etc/letsencrypt/live/pass.rwt13.xyz/ful
+sudo ls /etc/letsencrypt/live/pass.rwt13.xyz/
+yay -S bibata-cursor-theme bibata-cursor-translucent
+curl https://github.com/KaizIqbal/Bibata_Cursor/archive/v0.4.2.tar.gz
+yay -S bibata-cursor-theme
+git clone https://github.com/Silicasandwhich/Bibata_Cursor_Transulent.git
+cd Bibata_Cursor_Translucent/
+cd Bibata_Cursor_Transulent
+chmod +x build.sh
+./build.sh
+./Installer_Bibata.sh
+chmod +x ./Installer_Bibata.sh
+sudo ./Installer_Bibata.sh
+rm -rf Bibata_Cursor_Transulent
+sudo pacr bibata-cursor-theme
+ls /usr/share/icons
+sudo rm -rf /usr/share/icons/Bibata_*
+yay xcursor-breeze
+pac capitaine-cursors
+ls .icons/default/index.theme
+sudo rm -rf .icons
+locate index.theme | grep Default
+locate index.theme
+scp .zshrc bb:~/.zshrc
+v .config/termite/config
+v .config/polybar/bspwm-bar
+rm .config/keepassxc
+rm -r .config/keepassxc
+V /usr/share/icons/default/index.theme
+locate capitaine
+v ~/.config/gtk-3.0/settings.ini
+dots add .config/bspwm/*
+locate zsh|grep autosuggest
+locate zsh|grep substring
+locate zsh
+v /etc/zsh/zprofile
+v /etc/profile
+locate zsh|grep down
+locate zsh|grep or*search
+locate zsh|grep or.*search
+ssh -t rob@192.168.2.21
+rm -rf .zshrc
+cat .zshrc|sc
+cat .zshrc|xc
+yay arc-gtk-theme-jnsh-git
+sxiv pictures/backgrounds/landscapes
+sxiv pictures/backgrounds/blurred
+less .bin/wa
+less .bin/wall.sh
+fd /home/rob/pictures/backgrounds/to-blur/
+fd . /home/rob/pictures/backgrounds/to-blur/
+wall.sh -s /home/rob/pictures/backgrounds/to-blur/60301.jpg
+for wall in $(fd . /home/rob/pictures/backgrounds/to-blur); do wall.sh -s "$wall"; done
+wall.sh -s /home/rob/pictures/backgrounds/to-blur/72gujosn4n621.jpg
+ffmpegthumbnailer
+pac tumblr
+pac tumblrt
+pac tumbler
+locate thumbnail
+ls .cache/thumbnails
+less .bin/opi
+wall.sh
+wall.sh -u /home/rob/pictures/backgrounds/blurred/blurred_697726.jpg
+wall.sh -u /home/rob/pictures/backgrounds/blurred/blurred_1038770.jpg
+thunar pictures/backgrounds/to-blur
+less .bin/extract
+pac unrar
+extract downloads/2160p\ Exact\ +-\ 1\ pixel.rar
+unrar x 2160p Exact +- 1 pixel
+unrar x downloads/2160p\ Exact\ +-\ 1\ pixel.rar
+ls 2160p\ Exact\ +-\ 1\ pixel
+wall.sh -u /home/rob/pictures/backgrounds/blurred/blurred_891205.jpg
+wall.sh -u /home/rob/pictures/backgrounds/blurred/blurred_75256.jpg
+wall.sh -u /home/rob/pictures/backgrounds/blurred/blurred_1065441.jpg
+wall.sh -u /home/rob/pictures/backgrounds/blurred/blurred_NcUw98L.jpg
+wall.sh -u /home/rob/pictures/backgrounds/landscapes/macOS/10-15-8-Night.jpg
+wall.sh -u /home/rob/pictures/backgrounds/landscapes/macOS/10-14-Mojave-16.jpg
+wall.sh -u /home/rob/pictures/backgrounds/landscapes/macOS/10-14-Mojave-12.jpg
+V /usr/share/icons/default
+rm -rf .icons
+sudo pacr arc-gtk-theme-jnsh-git
+sudo pacr xcursor-breeze
+pac emacs
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d\
+~/.emacs.d/bin/doom install
+ls .emacs.d
+rg Overpass .emacs.d
+v .emacs.d/init.el
+rg font .emacs.d
+emacs -nw
+emacs -Q -nw
+pac emacs-nox
+emacs
+pac pa-applet
+yay pa-applet
+pacf pa-applet
+which doom
+.emacs.d/bin/doom help
+sudo pacr emacs
+sudo pacr emacs-nox
+rmr .emacs.d .doom.d
+rm hw3.doc
+rm bitwarden.txt
+locate sxiv.desktop
+pac xed
+pacr mousepad
+sudo pacr mousepad
+locate xed.desktop
+locate xed
+locate xed | grep .desktop
+locate xed | grep desktop
+locate gnome-disk-image-mounter.desktop
+fd gif.gif --exec rm
+fd gif.gif
+sxiv
+cd pictures/backgrounds/landscapes/macOS
+sxiv *
+pwd *Dawn*
+fd Dawn
+fd Dawn --exec pwd
+fd Dawn --exec realpath
+wall.sh -u $(fd Dawn --exec realpath)
+for run in {1..8}; do xcolor; done
+sxiv pictures/backgrounds/landscapes/macOS/*
+wall.sh pictures/backgrounds/landscapes/macOS/10-15-7-Dusk.jpg
+wall.sh -u pictures/backgrounds/landscapes/macOS/10-15-7-Dusk.jpg
+wall.sh -u pictures/backgrounds/landscapes/macOS/10-15-5-Afternoon.jpg
+wall.sh -u /home/rob/pictures/backgrounds/landscapes/macOS/10-15-6-Evening.jpg
+V /usr/share/nvim/runtime/colors/ron.vim
+locate ron.vim
+cp /usr/share/nvim/runtime/colors/ron.vim ~
+v ron.vim
+rm ron.vim
+notify-send -t 2000 "Pausing lock and suspend"
+notify-send -t 2000 "Pausing lock and suspend" ""
+notify-send -t 2000 "Pausing lock and suspend" " "
+notify-send -t 2000 "Pausing lock and suspend" "h "
+pac rust
+rust
+cargo update
+cargo install --git https://github.com/rschmukler/caffeinate --force
+cargo uninstall caffeinate
+cargo install caffeinate
+cargo install --git https://github.com/rschmukler/caffeinat
+cargo install --git https://github.com/rschmukler/caffeinate
+RUST_BACKTRACE=1 caffeinate
+sudo rm -rf /tmp/xidlehook.sock
+killall xidlehook
+ps axco command | grep -w '^[x]idlehook'
+killall autolock
+killall -9 xidlehook
+autolock -p
+autolock -u
+pacf hist
+pictures/backgrounds/landscapes
+mkdir current
+rg '2:@' .bin
+rg '2:@' ~/.bin/
+rg '@' ~/.bin/
+man ln
+wall.sh -a *
+ln -s landscapes/macOS/* current
+unlink current/10-14-Mojave-*
+ fd . current/ -t l --exec unlink
+ls current
+wall.sh -u pictures/backgrounds/landscapes/macOS/10-15-1-Dawn.jpg
+v ~/.bashrc
+wall.sh -b catalina-phone.png
+ncdu -x /
+V /etc/systemd/journald.conf\
+S restart systemd-journald
+yay -S ner-fonts-hack
+rm catalina-phone.png
+this is a thing
+unzip Overpass.zip
+mkdir overpass
+mv Overpass* overpass
+sudo pacr nerd-fonts-complete
+locate fonts
+locate Mono
+ls /usr/share/fonts
+mv overpass /usr/share/fonts
+sudo mv overpass /usr/share/fonts
+ll /usr/share/fonts/noto
+sudo chown root:root /usr/share/fonts/overpass/*
+ll /usr/share/fonts/overpass/*
+less /etc/xdg/nvim/sysinit.vim
+sudo rm /etc/xdg/nvim/sysinit.vim
+pac spellcheck
+pacf spellcheck
+yay spellcheck
+alias xc
+xc < .bin/autolock
+xc < .bin/encode-media
+wc -l .bin/*
+xc < .bin/opi
+open thi stha thisdf asd
+opi -c documents
+rg '@' .bin
+rg '$@' .bin
+rg '${@' .bin
+rg '$?@' .bin
+unsetopt | less
+setopt
+unsetopt
+rm .cache/i3lock/*
+rm .cache/i3lock/current/*
+ls .cache/i3lock/current/*
+betterlockscreen -r 1920x1200 -u pictures/backgrounds/landscapes/macOS/10-15-2-Morning.jpg
+betterlockscreen -r 1920x1080 -u pictures/backgrounds/landscapes/macOS/10-15-2-Morning.jpg
+man betterlockscreen
+rm Ducky\ One\ 2\ SF\ Usermanual.pdf
+unzip nerd-fonts-hack.tar.gz
+which extract
+extract butt
+extract nerd-fonts-hack.tar.gz
+ls nerd-fonts-hack
+cat nerd-fonts-hack/nerd-fonts-hack.install
+rm -rf .cache/i3lock
+wall.sh -u pictures/backgrounds/landscapes/macOS/10-15-2-Morning.jpg
+sudo pacr nvidia nvidia-lts
+betterlockscreen --help
+betterlockscreen -s
+sudo bootctl --path=/boot install
+ls /boot/loader/loader.conf
+V /boot/loader/loader.conf
+sudo mkdir /etc/pacman.d/hooks
+V /boot/loader/entries/arch-lts.conf
+sudo ls /boot/4874762ff5a3490b9419aa640813d71c
+ncdu /boot
+sudo rm -rf /boot/grub
+ls /boot/EFI/grub
+sudo rm -rf /boot/EFI/grub
+pacr lxsession
+sudo pacr lxsession
+ls /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+locte xfce-polkit
+locate xfce-polkit
+pac polkit-kde-agent
+pac mate-polkit
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+systemctl status sshd
+which xfce4-clipman
+which nm-applet
+rename_sinks
+ls .bin/s
+ls .bin/s*
+rg _help .bin
+rg _help -A10 .bin
+man rg
+rg -N _help -A10 .bin
+rg --help
+rg --help | less
+v .bin/rename_sinks
+mv .bin/change-sink .bin/sinkctrl
+.bin/sinkctrl -c
+.bin/sinkctrl
+rm .bin/rename_sinks
+rm .bin/change-sink
+ls .bin/screens.sh
+less .bin/screens.sh
+echo this > true
+less true
+rm true
+echo tru e
+chattr -i .config/user-dirs.dirs
+mv documents docs
+mv pictures pics
+mv videos vids
+rg pics .bin
+rg pic .bin
+rg pictures .bin
+rg documents .bin
+rg downloads .bin
+rg videos .bin
+sudo pacr simple-and-soft-cursor
+sudo pacr nerd-fonts-hack
+grep dpi .Xresources
+systemctl restart sshd
+pac xwininfo
+pacf xwininfo
+xwinfo
+centermouse
+rm .bin/centermouse
+zenity
+zenity --help
+zenity --calendar
+zenity --calendar | xclip -s
+zenity --calendar | xclip -selection -c
+zenity --calendar | xclip -selection
+zenity --calendar | xsel
+[200~04/23/2020
+sclip
+xclip
+zenity --calendar | xclip
+zenity --calendar | xclip -selection clipboard
+zenity --calendar | xclip -selection clipboard primary
+v .bin/zcal
+chxscripts
+V /boot/loader/entries/arch.conf
+pacl xclip
+pac clipmenu
+export CM_LAUNCHER=rofi
+sudo pacr xfce4-clipman
+sudo pacr xfce4-clipman-plugin
+which clipmenud
+clipmenu --help
+echo $XDG_RUNTIME_DIR,
+pac clipnotify
+pacr dmenu
+sudo pacr dmenu
+ls .b
+bspc quit
+clipmenu -p copy
+sleep 2s && flameshot gui
+less .bin/nv
+[ -t =0 ] && echo true
+[ -t 0 ] && echo true
+[ -t 1 ] && echo true
+if [[ -t 0  ]]; then echo true; fi
+if [[ -t 1 ]]; then echo true; fi
+v -p .bashrc
+$FZF_DEFAULT_COMMAND
+fd --type f --hidden
+fd --type f --hidden|wc -l
+v nv
+v -p .bashrc .zshrc
+v *rc
+v .*rc
+dots add .zshrc
+rm .config/bash_history_old
+rm .config/filelightrc
+ls .config/java
+rm -rf .config/java
+rm -rf gedit Nextcloud Mousepad qt5ct xed
+sudo pacr qt5ct xed
+echo $SESSION_TYPE
+echo "$SSH_CLIENT"
+echo "$SSH_TTY"
+ls do
+locate vim/*vim
+locate .vim
+locate .vim | grep nvim | grep vifm
+sudo cp "locate vifm.vim" /usr/share/nvim/runtime/syntax
+sudo cp "$(locate vifm.vim)" /usr/share/nvim/runtime/syntax
+locate vifm.vim | xargs sudo cp {} /usr/share/nvim/runtime/syntax/
+sudo ls /usr/share/vifm/vim/syntax
+locate .vim | grep nvim
+ls /usr/share/nvim/runtime/syntax/
+sudo cp /usr/share/vifm/vim/syntax/vifm.vim /usr/share/nvim/runtime/syntax/
+locate vim/plugin
+sudo rm /usr/share/vifm/vim/plugin/vifm.vim
+sudo cp /usr/share/vifm/vim/plugin/vifm.vim /usr/share/vifm/vim/plugin/vifm.vim
+locate ftdetect
+sudo cp /usr/share/vifm/vim/ftdetect/vifm.vim /usr/share/vim/vimfiles/ftdetect
+sudo cp /usr/share/vifm/vim/ftdetect/vifm-rename.vim /usr/share/vim/vimfiles/ftdetect
+locate vifm.vim
+locate vim/syntax
+ls .config/nvim/plugged/nord-vim/colors/nord.vim
+less .config/nvim/plugged/nord-vim/colors/nord.vim
+v .config/nvim/init.vim \\
+scp laptop:.config/nvim/init.vim .config/nvim/init.vim
+sudo pacr gnome-keyring
+sudo pacr libsecfet
+sudo pacr libsecret
+protontricks 232090 regedit
+fc-cache
+man locate
+alias v
+alias V
+mkdir nvim.d
+wall.sh -u pics/backgrounds/landscapes/macOS/10-15-7-Dusk.jpg
+wall.sh -u pics/backgrounds/landscapes/macOS/10-15-1-Dawn.jpg
+ls .config/nvim/plugged
+v init.vim
+echo this
+less less
+ls -la > this
+less this
+rm this
+pac minecraft
+pacf minecraft
+yay minecraft-launcher
+s ufw allow 25575
+source compinstall
+pkill -9 discord*
+alias pacf
+binkey -v
+bindkey -v
+bindkey -e
+compinit
+compinsta;;
+compinstall
+v .zshr
+locate zsh-auto
+pacf zsh-autosuggestions
+touch .bin/sinkctrl2
+rm .bin/sinkctrl2
+pac zsh-completions
+rm -rf .zcompdump
+autoload -Uz zsh-newuser-install &&  zsh-newuser-install -f
+J -eu lightdm
+autoload -Uz promptinit\
+promptinit
+promptinit
+prompt -l
+la | wc -l
+function fzaux
+alias fzaux
+functions
+functions | grep fzf
+functions | grep fzaux
+functions | grep -A5 fzaux
+functions | grep -A10 fzaux
+dots commit -a -m "stuff"
+mv 7kgkoysahpw31.gif vibes.gif
+mpv --wid=0 vibes.gif
+rm vibes.gif
+vpn-toggle
+journalctl -xe NM_CONNECTION=78d739f7-09c2-4577-8199-b6cdc561902b + NM_DEVICE=enp0s25
+journalctl -rxe NM_CONNECTION=78d739f7-09c2-4577-8199-b6cdc561902b + NM_DEVICE=enp0s25
+for module in nf_nat_pptp nf_conntrack_pptp nf_conntrack_proto_gre\
+do \
+    modprobe $module\
+done
+rm .nvidia-settings-rc
+sudoedit .zshrc
+sudoedit /etc/pacman.conf
+which nv
+nv .config/zhistory .zshrc
+V /root/.aliases
+ll /root
+sudo ll /root
+sudo la sudo ll /root
+sudo la /root
+sudo ln -s /home/rob/.profile /root/.profile
+ls '"$HOME"/.zshrc'
+ll pics/backgrounds/landscapes/macOS/catalina-phone-night*
+viewnoir
+viewnior pics/backgrounds/landscapes/macOS/catalina-phone-night.png
+wall.sh -h
+wall.sh -b pics/backgrounds/landscapes/macOS/catalina-phone-night.png
+yay syncthing
+pac yadm
+pacf yadm
+yay yadm-git
+yadm stash pop
+dots commit -a -m "final"
+yadm clone https://gitlab.com/rwtallant13/newdots.git
+dots add .Xresources
+yadm stash show -p
+yadm stash apply
+rm .Xresources
+rm -rf .Xresources
+dots commit -a -m "xresources"
+yadm clone https://gitlab.com/rwtallant13/newdots.git -f
+git config --global user.email "rwtallant13@gmail.com"
+yadm init
+yadm init -f
+yadm add .zshrc
+yadm add .bashrc
+yadm add .aliases .profile
+cd .config
+yadm add alacritty/alacritty.yml
+yadm add bspwm/*
+yadm add dunst/dunstrc
+yadm add nano/nanorc
+yadm add nvim/init.vim
+yadm add picom/picom.conf
+ls .config/polybar/launch.sh
+ll .config/polybar/launch.sh
+rm -rf .config/polybar/launch.sh
+dots add polybar/*
+dots add rofi/config
+dots add termite/config
+dots add vifm/vifmrc
+dots add betterlockscreenrc
+dots add user-dirs.dirs
+yadm remote add origin git@gitlab.com:rwtallant13/dots.git
+yadm push -u origin master
+yadm add .config/sxhkd/sxhkdrc
+dots add .config/redshift/redshift.conf
+dots add .config/kusti8/hue_plus.conf
+dots add .config/vifm/vifmrc
+dots add .config/rofi/config
+dots add .config/termite/config
+dots add .config/mimeapps.list .config/compton.conf
+dots add .config/betterlockscreenrc
+ls docs/dotfiles
+sudo rm -rf docs/dotfiles
+less .config/Trolltech.conf
+less .config/QtProject.conf
+ls -la
+ls -la ls -la
+ls docs/backup_logs
+less docs/backup_logs/latest
+ls docs/backup_logs/latest
+rm docs/backup_logs/latest
+rm docs/backup_logs/2020-04-23-060105.log
+less docs/backup_logs/2020-04-23-060105.log
+cp /etc/rsnapshot.conf /etc/rsnapshot.conf.default
+V /etc/rsnapshot.conf
+V /etc/systemd/system/rsnapshot@.service
+V /etc/systemd/system/rsnapshot-day.timer
+V /etc/systemd/system/rsnapshot-week.timer
+V /etc/systemd/system/rsnapshot-month.timer
+systemctl enable --now rsnapshot-day.timer\
+systemctl enable --now rsnapshot-week.timer\
+systemctl enable --now rsnapshot-month.timer\
+S disable backup.timer
+sudo systemctl start rsnapshot@day
+systemctl status rsnapshot@day.service
+pacr rsnapshot
+ls /home/rob/docs/backup_exclude.txt
+chxbinls
+less .bin/rdiff-oneliner
+mv .bin/rdiff-backup .bin/system-backup
+ssh -C rob@192.168.2.21 rdiff-backup --server
+iotop
+sudo iotop
+v .Xresources
+pacr rdiff-backup
+mv system-backup.sh system-backup
+vf $backups
+v .bin/rsync_backup.sh
+vpn-toggle -l
+ufw status
+S disale rsnapshot*
+S disable rsnapshot*
+S disable rsnapshot-day.timer rsnapshot-month.timer rsnapshot-week.timer
+locate clipmenu
+S enable clipmenud
+S enable clipmenud.service
+S enable --user clipmenud
+systemctl enable --user clipmenud
+rm .config/autostart/Nextcloud.desktop
+rm .config/autostart/xfce4-clipman-plugin-autostart.desktop
+rm .config/autostart/*
+ls /etc/xdg/autostart
+man clipmenud
+man clipmenu
+mkdir "$XDG_CACHE_HOME"/clipmenud
+mkdir /home/rob/.cache/clipmenud/clipmenu.6.rob
+touch /home/rob/.cache/clipmenud/clipmenu.6.rob/line_cache
+clipmenu
+cat /home/rob/.cache/clipmenud/clipmenu.6.rob/line_cache
+clipmenud --help
+clipctl
+sudo mv /run/user/1000/clipmenu.6.rob/ .cache/clipmenud/
+ls /run/user/1000
+less .config/systemd/user/default.target.wants/clipmenud.service
+man clipdel
+clipdel --help
+v .config
+echo $CM_DIR
+ls $CM_DIR
+echo $TMPDIR
+ls /run/user/1000/clipmenu.6.rob
+clipdel .*
+clipdel -d .*
+locate clipmenu.6
+rm -rf .cache/clipmenud/clipmenu.6.rob
+ls .cache
+ls .cache/clipmenud
+S status clipmenud
+S status --user clipmenud
+S status --user clipmenu
+systemctl status --user clipmenu
+systemctl --type=service
+systemctl --type=service | grep clipmenu
+systemctl list-unit-files | grep clipmenu
+systemctl --user list-unit-files | grep clipmenu
+systemctl --user edit clipmenud
+ls ls .config/systemd/user/clipmenud.service.d/override.conf
+rm -rf .config/systemd/user/clipmenud.service.d/override.conf
+systemctl status --user clipmenud
+J -r
+J -r | grep clip
+J -r -b | grep clip
+systemctl disable --user clipmenud
+ls /home/rob/.config/systemd/user/clipmenud.service.d
+rm -rf /home/rob/.config/systemd/user/clipmenud.service.d
+ls /home/rob/.config/systemd/user/
+systemctl list-unit-files
+S enable backup.timer
+timers
+timers --all
+S status backup.timer
+nv .bashrc .zshrc
+locate sxhkd
+v /usr/share/doc/bspwm/examples/sxhkdrc
+less .vimrc
+rm .vimrc
+ln -s /home/rob/.config/nvim/init.vim /home/rob/.vimrc
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \\
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+rm .bin/notes
+ls .bin/notes
+ls "${HOME}/docs/notes"
+cd "${HOME}/docs/notes"
+ls notes
+cd docs/notes
+ls -al
+ls -alF
+scp bb:drive.txt ~/
+rm drive*
+pac sd
+sd --help
+echo test test1 tert2 > test
+sd test nest test
+cat test
+v .config/dunst/dunstrc
+hfzau
+sata GPUCache
+sudo rm -rf GPUCache
+pip --user uninstall hue-plus
+pip  uninstall --user hue-plus
+pip  uninstall hue-plus
+pip  uninstall miniterm
+pip freeze --user
+ls .local/share/bin
+ls .local/bin
+pacf miniterm.py
+pip  uninstall pyserial
+pip freeze
+pac python-pyserial
+clipmenud
+systemctl daemon-reload
+rm test
+/usr/bin/clipmenud &
+/home/rob/.bin/sinkctrl -r
+/home/rob/.bin/sinkctrl -d
+v .bin/pu
+v .bin/pulldots
+pulldots
+less .pulse-cookie
+less .fehbg
+yadm --help
+yadm show
+yadm status
+which dots-old
+rm docs/time_abbrv.txt
+rm docs/oldpkgs
+rm docs/Firefox_Recovery_Codes.txt docs/mk730-rma2form.pdf
+rm docs/novaclasses08_19.pdf
+cp school/ITP100/DesignAndDeskCheck.doc school/ITP100/hw6
+yay openjpeg
+pacr openjpeg
+sudo pacr openjpeg
+alias remove-orphans
+stat GPUCache
+v .config/vifm/vifminfo
+v .bash
+hue fixed red
+hue fixed color red
+hue fixed 00ff00
+hue fixed ff0000
+hue.sh color red
+hue.sh -h
+hue fixed ffffff
+hue --help
+hue fixed --help
+hue.sh -c purple
+hue.sh -d
+encode-media -h
+encode-media -l /media/blueberry/media/shows/
+cd $media
+wc -l media-to-encode.txt
+sort media-to-encode.txt
+sort media-to-encode.txt > media-to-encode2.txt
+mv media-to-encode2.txt media-to-encode.txt
+ndu $media/shows/Sword-Art-Online
+vf $media/shows/Sword-Art-Online
+ls > ~/SAO_files
+v SAO_files
+ndu $media/shows/
+chromium --help
+man chromium
+autolock
+autolock -h
+autolock -d
+autolock -e
+xc < SAO_files
+ll /etc/localtime
+ll /usr/share/zoneinfo/US/East
+ll /usr/share/zoneinfo/US/Eastern
+sudo -i
+less media-to-encode.txt
+rm SAO_files
+mv media-to-encode.txt docs
+tmux
+autoload zkbd && zkbd
+tput cols
+lines
+tput lines
+tmux -v
+tmux -V
+cp -R hw5 finalProject
+cd finalProject
+rm hw5.zip
+open picture.png
+rm picture.png
+touch page5.html
+touch page4.html
+pac gotop
+less tmux-client-141336.log
+rm tmux-client-141336.log
+atom school/ITE170/finalProject
+ls pics
+ls GPUCache
+less GPUCache/index
+pac xwallpaper
+mv walld .bin
+sdsd
+an sxiv
+man sxiv
+v .bin/walld
+man echo
+sxiv -t -o -r -b -g 500x500+500+200 "$HOME/pics/backgrounds/"
+xrandr --listactivemonitors | grep "+" | awk '{print $4}' | awk NR==1
+xrandr --listactivemonitors | grep "+" | awk '{print $4}' | awk NR==2
+xrandr --listactivemonitors
+sed -i "s|xwallpaper.*|xwallpaper  --$SingleWallOptions $wall1|" xwallpaper
+mkdir .config
+mkdir .config/Wall-d
+touch .config/Wall-d/defaultwallpaper.sh
+v .config/Wall-d/defaultwallpaper.sh
+chmod a+x .config/Wall-d/defaultwallpaper.sh
+walld
+xwallpaper --no-randr /home/rob/pics/backgrounds/landscapes/macOS/10-15-8-Night.jpg
+wall.sh -u pics/backgrounds/landscapes/macOS/10-15-8-Night.jpg
+rm .bin/walld
+rm -r .config/Wall-d
+ll .steampath
+ls /home/rob/.steam/sdk32/steam
+rm -rf .steampath
+ll .steampid
+ls /home/rob/.steam/steam.pid
+pac bashtop
+which bashtop
+ls "$XDG_CACHE_HOME"/nv
+rm -rf "$XDG_CACHE_HOME"/nv
+mkdir "$XDG_CACHE_HOME"/nv
+echo y"$XDG_CACHE_HOME"/nv
+echo "$XDG_CACHE_HOME"/nv
+ls .java
+ll .java/fonts/1.8.0_242/fcinfo-1-rob-pc-Arch-rolling-en.properties
+rm -rf .java
+rm -rf .pulse-cookie
+lasd
+ls  /usr/local/share/ca-certificates/
+sudo ls  /usr/local/share/ca-certificates/
+locate ca-certificates
+ls /usr/share/ca-certificates
+sudo mkdir /usr/share/ca-certificates/bitwarden
+v school/ITE170/finalProject
+ls projects
+fd --max-depth=2 ./projects
+fd --max-depth=2 . ./projects
+atom "$(fd --max-depth=2 . ./projects | $rofi_dmenu -p "Project")"
+atom /home/rob/school/HIS101
+opi -p
+pacman -Q dhcpcd
+V /etc/sudoers
+mkdir .minecraft/mods
+mv downloads/OptiFine_1.14.4_HD_U_F5.jar .minecraft/mods
+mv .minecraft/mods/OptiFine_1.14.4_HD_U_F5.jar .minecraft/mods/optifine-1.14.4-HDUF5.jar
+mv page1.html index.html
+mv ITE-final.txt cpu_socket.png socket-arm.* thermal-paste.p* school/ITE170/finalProject
+rm socket-arm.gif
+mv socket-arm.js ~
+open socket-arm.html
+mv ~/socket-arm.js ./
+chromium socket-arm.html
+rm ~/cpu_socket.png
+mv ~/socket-arm.* ./
+rm socket-arm.html
+rm socket-arm.js
+viewnior cpu_socket.png
+pb < .bin/sinkctrl
+cat .bin/sinkctrl | pb
+sinkctrl
+ls /etc/init/lightdm.conf
+ls /etc/init/
+mkdir bukkit
+cd bukkit
+git config --global --unset core.autocrlf
+java -jar BuildTools.jar
+rm downloads/bukkit
+rm -r downloads/bukkit
+rm -fr downloads/bukkit
+mkdir downloads/minecraft
+mv downloads/*.jar downloads/minecraft
+dns.sh -h
+dns.sh google
+dns.sh -c
+dig youtube.com
+dns.sh pi
+v .config/polybar/modules
+alias myip
+man bspwm
+bspc node -f "~"
+bspc node -f "~@"
+bspc node -f "~@@\
+bspc node -f "~"@
+bspc node -f "~"@
+bspc node -f ~
+bashop
+sudo vim /etc/modprobe.d/hid_apple.conf
+sudo update-initramfs -u
+pac linux
+mv cpu_cooler_installation.prproj IMG_0054.mp4 school/ITE170/finalProject
+mv IMG_0054.mp4 cpu_cooler_installation.mp4
+mediainfo cpu_cooler_installation.mp4
+nvim -r .swp
+nvim -r .local/share/nvim/swap/%home%rob%ITE-final.txt.swp
+nvim -r school/ITE170/finalProject/ITE-final.txt
+.local/share/nvim/swap
+rm -rf %home%rob.sw*
+fd spectre
+fd spectr
+fd spectr -e rm
+nvim -r
+nvim school/ITE170/finalProject/ITE-final.txt
+nvim ITE-final.txt
+nvim -r ITE-final.txt
+ls downloads/minecraft
+rm downloads/minecraft/Dynmap-3.0-beta-10-spigot.jar
+rm downloads/minecraft/dynmap-2.5.jar
+rm downloads/minecraft/Tekkit_Server_v1.2.9g.zip
+rm downloads/minecraft/LeftHandMap-1.0-SNAPSHOT-all.jar
+rm -rf /tmp/current-sink.6syj
+mvn -gs "$XDG_CONFIG_HOME"/maven/settings.xml
+ls school/ITE170/finalProject
+du -ah school/ITE170/finalProject
+mediainfo *.png
+mv ite-final/* school/ITE170/finalProject
+mv ~/ite-final/* school/ITE170/finalProject
+mv ~/ite-final/* ./
+mediainfo *.jpg
+mediainfo ~/ite-final/*
+ls ~/ite-final
+rm -rf ~/ite-final
+ls ~
+mv ~/*.png ./
+rm *.jpg
+zip * finalProject.zip
+zip finalProject.zip *
+pac shellcheck
+diff /etc/profile /etc/profile.pacnew
+ffmpeg -i recording_2020_05_05_23_42_02.mp4 -vf "transpose=1" twerking.mp4
+ffmpeg -i recording_2020_05_05_23_42_02.mp4 -map_metadata 0 -metadata:s:v rotate="90" -codec copy twerking.mp4
+ffmpeg -i twerking.mp4 -ss 00:00:00 -t 00:04:00 -c copy twerkingbaby.mp4
+open twerkingbaby.mp4
+rm twerking.mp4
+v itp-cheetsheet.txt
+pac lsd
+pac exa
+exa -a
+flameshot
+flameshot -h
+sleep 3s && flameshot screen
+sleep 3s && flameshot screen -c
+time exa
+time ls
+lsd -l
+lsd -a
+lsd -la
+find current-sink /tmp
+find /tmp -name current-sink
+find -name current-sink
+find -name current-sink /tmp
+find /tmp -name "current-sink"
+ls /tmp/current-sink.67R4
+find /tmp -name "current-sink"*
+find /tmp -name "current-sink"* 2>/dev/null
+rm -rf /tmp/current*
+sinkctrl -r
+ls /tmp/nvim*
+ls /tmp/nvim*/0/
+ls /tmp/nvim*/*
+la /tmp
+less /tmp/empty-file.txt
+"$bin"/sinkctrl -c
+if find /tmp -name "current_sink"* 2>/dev/null; then\
+        sinkFile="$(find /tmp -name "current_sink"* 2>/dev/null)"\
+        _nextSink\
+        _changeSink\
+        _moveSinks\
+        _notify\
+    else\
+        _mkfile\
+    fi
+cat /home/rob/.bin/sinkctrl
+cat /tmp/current_sink.ixJc
+sinkctrl -c
+pac hyperfine
+pac pastel
+pacf pastel
+yay pastel
+pacq | grep linux
+rofi --help | grep bg
+rofi --help | grep background
+rofi --help | grep color
+rofi --help | grep padding
+rofi --help | grep border
+rofi --help | grep -i border
+cat .bin/notes
+notes im tryna do a thing
+ls docs/notes
+less docs/notes/2020-05.txt
+date
+date --help
+grep date .bin
+grep date .bin/*
+date +%F-%H-%M
+date +%F
+date +%D
+notes
+cat docs/notes/*
+rm docs/notes/*
+notes this is a thing
+v docs/notes/2020-05.txt
+cat .bin/notes|xc
+lsusb
+udisks
+pac udisks
+pac udisk
+pac udisks2
+udisksctl
+blkid
+mount /dev/sde1
+mkdir tmp
+mount /dev/sde1 tmp/
+sudo mount /dev/sde1 tmp/
+dd bs=4M if=downloads/archlinux-2020.05.01-x86_64.iso of=/dev/sde status=progress oflag=sync
+sudo dd bs=4M if=downloads/archlinux-2020.05.01-x86_64.iso of=/dev/sde status=progress oflag=sync
+groups
+less /boot/loader/entries/arch.conf
+ls /boot/loader/entries/arch.conf
+ls /boot/
+ls /boot/loader/entries
+ls .bin/mnt
+yay office-code-pro
+killall xfce4-terminal
+pac 	ttf-anonymous-pro
+pacr 	ttf-anonymous-pro
+sudo pacr 	ttf-anonymous-pro
+sudo pacr office-code-pro
+v /etc/shadow.pacnew
+v /etc/shadow
+V /etc/shadow
+sudo diff /etc/shadow /etc/shadow.pacnew
+pac viewnoir
+pac viewnior
+pacr sxiv
+sudo pacr sxiv
+bspc
+bspc query -N --names
+bspc query -N
+pac xtitle
+pacf xtitle
+yay xtitle
+xtitle $(bspc query -N -n
+xtitle $(bspc query -N -n)
+xtitle $(bspc query -N)
+xtitle
+xtitle -i
+xtitle -s
+cd docs
+pac unbuffer
+pacf unbuffer
+pac expect
+unbuffer xtitle -sf "%u\n" | xargs -l1 xprop -id | grep 'WM_CLASS(STRING) = ' --line-buffered | cut -d\" -f4
+unbuffer xtitle -sf "%u\n" | xargs -l1 xprop -id
+fehbg
+./.fehbg
+pacq linux
+pacq |grep linux
+pac tuxboot
+pacf tuxboot
+yay tuxboot
+fdisk -l
+sudo -l
+sudo fdisk -l
+sudo fdisk -l /dev/sdd
+mkfs.vfat -F 32 /dev/sde1
+sudo mkfs.vfat -F 32 /dev/sde1
+unzip downloads/gparted-live-1.1.0-1-amd64.iso -d /run/media/rob/0890-EE63
+mv downloads/gparted-live-1.1.0-1-amd64.iso /run/media/rob/0890-EE63
+dd bs=4M if=downloads/gparted-live-1.1.0-1-amd64.iso of=/dev/sde status=progress oflag=sync
+sudo dd bs=4M if=downloads/gparted-live-1.1.0-1-amd64.iso of=/dev/sde status=progress oflag=sync
+ls /run/media/rob/ARCHISO_EFI/
+sudo fdisk -l /dev/sde
+unzip downloads/gparted-live-1.1.0-1-amd64.zip -d /run/media/rob/2061-1553
+cd /run/media/rob/2061-1553/utils/linux/
+./makeboot.sh /dev/sde1
+bash ./makeboot.sh /dev/sde1
+sudo fdisk /dev/sde
+sudo bash ./makeboot.sh /dev/sde1
+yay amidst
+pac python3-pillow pyton3-dev python3-numpy
+pac python-pillow python-dev python-numpy
+pac python-pillow  python-numpy
+cd Minecraft-Overviewer
+mnt
+mkdir world_map
+./overviewer.py /media/bb-dir/minecraft/bukkit/world /home/rob/world_map
+open world_map/index.html
+thunar world_map/index.html
+thunat world_map
+thunar world_map
+zip world_map/* world_map.zip
+zip world_map.zip world_map/*
+rm -rf Minecraft-Overviewer GPUCache world_map*
+amidst
+sudo umount /media/bb-dir
+ls /usr/share/fzf/ | grep completion.bash
+V /etc/pacman.d/hooks/100-systemd-boot.hook
+mnt bb-dir /opt
+./.minecraft/overviewer.py /media/bb-dir/minecraft/bukkit/world /home/rob/.minecraft/world_map
+./.minecraft/Minecraft-Overviewer/overviewer.py /media/bb-dir/minecraft/bukkit/world /home/rob/.minecraft/world_map
+rm -rf .minecraft/Minecraft-Overviewer
+git clone git://github.com/overviewer/Minecraft-Overviewer.git
+mv Minecraft-Overviewer .minecraft
+cd .minecraft/Minecraft-Overviewer
+python3 setup.py build
+./overviewer.py /media/bb-dir/minecraft/bukkit/world /home/rob/.minecraft/world_map
+chromium ../world_map/index.html
+ .bin/win-scrot
+man xclip
+v .config/gtk-3.0/gtk.css
+convert -coalesce downloads/minecraft/Lodestone_Compass_BE1.gif out%05d.pgm
+mkdir minecraft_compass
+mv out00* minecraft_compass
+ls minecraft_compass
+viewnior minecraft_compass/out00266
+viewnior minecraft_compass/out00266.pgm
+viewnior minecraft_compass/out00001.pgm
+rm minecraft_compass/*
+pac termite
+true true
+which discord
+ls /opt
+rg '$?' .bin
+rg '?' .bin
+rg '\$?' .bin
+rg '\$\?' .bin
+v .bin/encode-media
+ls /opt/discord
+ls /opt/disr
+echo $?
+unzip downloads/minecraft/Xray_Ultimate_1.12_v2.3.1.zip -d ./.minecraft/resourcepacks
+unzip downloads/minecraft/Xray_Ultimate_1.12_v2.3.1.zip -d ./.minecraft/resourcepacks/xray
+unzip downloads/minecraft/Xray_Ultimate_1.15_v3.3.2.zip -d ./.minecraft/resourcepacks/xray
+echo $DISPLAY
+V /etc/ssh/ssh_config
+V /etc/ssh/sshd_config
+sudo nvim /etc/ssh/sshd_config
+echo $EDITOR
+sudo vim /etc/ssh/sshd_config
+rm -rf .cache/zsh/zcompdump
+rm -rf GPUCache minecraft_compass
+less .Xauthority
+ls tmp
+rm -rf tmp
+v .bin/rofi-scripts
+command=help
+unset command
+echo $command
+nv .zshrc
+nv .profile
+nv /etc/profile
+which nnf
+cat nnf
+cat /home/rob/.local/bin/nnf
+ssh laptop
+efibootmgr -h
+vpn-toggle -h
+vpn-toggle list
+vpn-toggle Canada_Toronto
+S enable resume@rob.service
+yayyay
+simplescreenrecorder --help
+less .ssr/settings.conf
+simplescreenrecorder --start-recording
+pac kazam
+yay kazam
+v .ssr/settings.conf
+ls .ssr/input-profiles/fullscreen.conf
+v .ssr/input-profiles/fullscreen.conf
+man simplescreenrecorder
+ls .ssr/input-profiles
+ls .ssr/input-profiles/follow-screen.conf
+v .ssr/input-profiles/follow-screen.conf
+ll .bin/ssr.sh
+rm -rf .ssr/input-profiles/*
+ls .ssr
+pac obs-studio
+obs --help
+which simplescreenrecorder
+/usr/bin/simplescreenrecorder -h
+2>/dev/null 1>&2 /usr/bin/simplescreenrecorder --start-hidden &
+cp .ssr/settings.conf .ssr/nvenc.conf
+v .ssr/nvenc.conf
+simplescreenrecorder -h
+simplescreenrecorder --settingsfile=.ssr/nvenc.conf
+ls .ssr/output-profiles
+v .ssr/fullscreen.conf
+simplescreenrecorder --start-hidden  --settingsfile=/home/rob/.ssr/fullscreen.conf
+v .bin/ssr.sh
+ssr.sh record
+rg for .bin
+nvidia-settings -q gpucoretemp
+nvfans 30
+nvfans -s 30
+nvidia-settings -q gpucoretemp -t
+nvidia-settings -q gpucoretemp -t | awk NR=1
+nvidia-settings -q gpucoretemp -t | awk NR==1
+v .bin/screens.sh
+sleep 10
+pkill signal
+pkill signal-desktop
+rm -rf GPUCache
+rm -rf downloads/minecraft/earth_1-4000_1-15_creative_no_features.zip
+man unzip
+killall deluge
+fkill -9 deluge
+mediainfo Knives-Out.mp4
+tail -f .cache/sxhkd.fifo
+less .cache/sxhkd.fifo
+less -f .cache/sxhkd.fifo
+less .zshrc
+ls /usr/share/fzf/key-bindings.zsh
+ls /usr/share/fzf/
+. /usr/share/fzf/key-bindings.zsh
+FZF_CTRL_R_OPTS=''
+ls /etc/profile
+ll /etc/profile
+ls /etc/lightdm/Xsession
+wc .bin
+wc .bin/ofi
+wc .bin/opi
+wc -h
+wc --help
+wc -w
+wc -w .bin/opi
+grep awk .bin
+grep awk .bin/
+grep awk .bin/*
+a=17 b=1
+sum=$(( $a + $b ))
+echo $sum
+unset a b sum
+pac pandoc
+pac pandoc-bin
+yay pandoc-bin
+neofetch
+/home/rob/.bin/ssr.sh launch
+ll .bin/thing
+ll .bin
+sudo chown rob:rob .bin/*
+v .bin/thing
+rm signal-2020-05-22-181132.png
+killall nvfans
+dots-tracked
+dots add .bin/*
+v /etc/pacman.conf
+ls .m2
+fd -e ovpn
+ll docs/rwt13.ovpn
+scp bb:blueberry.ovpn docs
+yay lf
+yay -S lf
+pacf c-p
+lf -remote 'load'
+fd -t f --exec-batch mv {} ./
+rm -r Season\ *
+nmap
+S stop NetworkManager
+v .ssh/known_hosts
+df -ha GPUCACHE
+df -ha GPUcache
+du -ha GPUCache
+fzf --no-info
+ls downloads
+;yay
+man bspoc
+bspc query -N .hidden.floating
+rm -rf .bin/thing
+ls .bin\
+ls .bin
+cat .bin/pixel-files
+man bspc\
+man bspc
+rg sticky .config/sxhkd
+realpath .bin/bspscripts
+bspc node -g hidden
+bspscripts hide
+bspc query -N hidden
+bspc query -N .hidden
+bspc query -N .hidden.local
+bspc node $(bspc query -N -n .hidden | tail -n1) -g hidden=off
+cat .bin/receptacle-swap
+rofi -show run
+less .bin/colorpanes
+less .bin/autolock
+bspscripts
+caffeinate
+pac yad
+yad --notification
+yad --calender
+man yad
+yad --app
+ls -hNa --color=auto --group-directories-first /home/rob/.bin/
+colortest
+color{blocks,panes,test}
+pgrep -h
+pgrep caps2esc
+killall caps2esc
+v .bin/bootup
+man if
+man test
+man rofi
+rofi -show window
+bspc node @/ --flip vertical
+bspc node @/ --flip horizontal
+sxhkd
+v .bin/selsearch
+bspc query -N -n .hidden
+xtitle $(bspc query -N -n .hidden)
+unbuffer xtitle -sf "%u\n" | xargs -l1 xprop -id | grep 'WM_CLASS(STRING) = ' --line-buffered | cut -d\" -f4 $(bspc query -N -n .hidden)
+unbuffer xtitle -sf "%u\n" | xargs -l1 xprop -id | grep 'WM_CLASS(STRING) = ' --line-buffered
+unbuffer xtitle -sf "%u\n" | bspc query -N -n .hidden | grep 'WM_CLASS(STRING) = ' --line-buffered
+xtitle -sf "%u\n" | bspc query -N -n .hidden | grep 'WM_CLASS(STRING) = ' --line-buffered
+xtitle -sf "%u\n" | bspc query -N -n .hidden
+xtitle -sf "%u\n" $( bspc query -N -n .hidden)
+man xtitle
+xtitle -h
+xtitle ---help
+xtitle --help
+ssh 192.168.2.21 -L 8888:localhost:32400
+rg sed .bin
+dots commit
+dots commit -a
+dots push
+nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=30
+/home/rob/.bin/ssr.sh laun40
+nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=40
+nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=15
+nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=60
+cat .bin/bootup
+mv .bin/bootup /bin/reboot
+mv .bin/bootup .bin/reboot
+reboot windows
+v .bin/re
+v .bin/reboot
+whichi reboot
+mv .bin/reboot .bin/reboo2t
+which reboot
+bspc rule -a discord:discord focus=on monitor=DP-0 state=tiled desktop=^9\
+bspc rule -a discord:discord focus=on monitor=DP-0 state=tiled desktop=^9
+bspc rule -a discord:discord follow=on monitor=DP-0 desktop=^9
+cat docs/backup_exclude.txt
+ls .local/share
+ls .local/share/Colossal\ Order
+S status backup
+fd | grep mozzila
+fd | grep moz
+fd -H | grep moz
+ls /tmp
+man udisks
+rm -rf .bin/re
+cat .bin/reboo
+cat .bin/reboot
+cat .bin/reboo2t
+diff .bin/reboo2t .bin/reboot
+rm -rf .bin/reboo2t
+v .bin/wake-script.sh
+rm -rf .bin/wake-script.sh
+bspc node --layer below
+bspc node --layer normal
+bspc node --flag marked
+bspscripts move east
+bspscripts move west
+bspscripts move south
+bspc node -p cancel
+cat .bin/pkglist
+v .config/nvim/init.vim
+bspc node @/ --circulate backward ; bspc node @/ -R -90
+bspc node @/ --circulate backward ; bspc node @/ -R 90
+bspc node @/ --circulate backward
+bspc node @/ --circulate backward && bspc node @/ -R 90
+bspc node @/ --circulate backward && bspc node @/ -R -90
+compgen -c
+compgen -c | grep edit
+date -d "${1:0:10} ${1:11:2}:${1:13:2}:${1:15:2}"
+date -j -f "%Y-%m-%d-%H%M%S"
+funcdate () {\
+date -d "${1:0:10} ${1:11:2}:${1:13:2}:${1:15:2}"}
+funcdate () {\
+date -d "${1:0:10} ${1:11:2}:${1:13:2}"}
+funcdate "2020-05-28-0600"
+sudo systemctl status backup.service
+sudo systemctl daemon-reload
+sudo -u rob hue power off
+sudo -u rob hue power on
+hue.sh
+man udisksctl
+la /
+grep -E 'rsync:|rsync error:' '/home/rob/docs/backup_logs//2020-06-03-051705.log\
+rg sudo .bin
+alias rm
+mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
+sudo mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
+yay -Syyuu
+date -d "${1:0:10} ${1:11:2}:${1:13:2}"
+sudo pacman -U /home/rob/downloads/ungoogled-chromium-81.0.4044.138-1-x86_64.pkg.tar.xz
+pac chromium
+pac tesseract
+pac tesseract-data-eng
+head -2 .zshrc
+dunstify
+dunstify --action="openAction" "Message received"
+dunstify --action="replyAction,reply" "Message received"
+pac python3-psutil
+pac python-psutil
+man tesseract
+quantity=12
+echo "$quantity * 100 > 50" | bc -l
+echo 100 > 50 | wc -l
+echo 100 > 50 | bc -l
+rm 50
+echo "100 > 50" | bc -l
+man bc
+rg "((" .bin
+rg '((' .bin
+rg '*' .bin
+maim -s "$IMAGE_FILE"
+maim -s tmp.png
+man maim
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null:
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null|head -n1|grep -o "\d\.\d*"
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null|head -n1
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null | awk NR==1
+rg NR .bin
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null | awk NR==2
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null | awk NR==5
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null | grep gray
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null | rg tmp
+convert "$IMAGE_FILE" -colorspace gray -resize 1x1 -fx "debug(u)" null:|head -n1|grep -o "\d\.\d*"\
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null:|head -n1|grep -o "\d\.\d*"
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null: > txt
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null > txt
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)"
+convert tmp.png -colorspace gray -resize 1x1
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null
+man convert
+identify -format "%[colorspace]   <== %f\n"  *.png
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null > file.txt 2>&1
+cat file.txt
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null 2> >(grep -i gray)
+((.1 * 80))
+echo ((.1 * 80))
+echo $((.1 * 80))
+quantity=$(convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null 2> >(grep -i gray) | cut -d'=' -f2)
+antity=$(convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null 2> >(grep -i gray) | cut -d'=' -f2)
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null 2> >(grep -i gray) | cut -d'=' -f2
+quantity=$(convert "$IMAGE_FILE" -colorspace gray -resize 1x1 -fx "debug(u)" null 2> >(grep -i gray) | cut -d'=' -f2)
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null: 2>&1|head -n1|grep -o "\d\.\d*"
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null: 2>&1
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null: 2>&1 | head
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null: 2>&1 | head 1
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null: 2>&1 | head -1
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null: 2>&1 | head -1| cut -d'=' -f2)
+convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null: 2>&1 | head -1| cut -d'=' -f2
+man dunstify
+dunstify --help
+ocr_sel
+ps -fc
+ps -fc -u rob
+ps -cf -u rob
+ps -f -u rob
+ps axc
+ps ax
+ps -elf
+ps -eo comm,etime,user
+an ps
+man ps
+hist
+ffmpeg -i downloads/BrazzersExxtra\ -\ Adriana\ Chechik,\ Franceska\ Jaimes,\ Holly\ Hendrix,\ Isis\ Love,\ Kayla\ Kayden,\ Mandy\ Muse\ -\ Best\ Of\ Brazzers\ Anal\ Extravaganza/BrazzersExxtra\ -\ Best\ Of\ Brazzers\ Anal\ Extravaganza.mp4 -ss 00:00:00 -t 00:15:17 -c copy -o analroomates.mp4
+ffmpeg -i downloads/BrazzersExxtra\ -\ Adriana\ Chechik,\ Franceska\ Jaimes,\ Holly\ Hendrix,\ Isis\ Love,\ Kayla\ Kayden,\ Mandy\ Muse\ -\ Best\ Of\ Brazzers\ Anal\ Extravaganza/BrazzersExxtra\ -\ Best\ Of\ Brazzers\ Anal\ Extravaganza.mp4 -ss 00:00:00 -t 00:15:17 -c copy analroomates.mp4
+yay firefox-extension-video-download-helper
+pac vdhcoapp
+yay -Rns firefox-extension-video-download-helper
+yay vdhcoapp
+yay vdhcoapp-bin
+pacr vdhcoapp-bin
+sudo pacr vdhcoapp-bin
+v .bin/ocr_sel
+nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=20
+nimv .bin/nv
+nvim .bin/nv
+nv file
+nv name
+v /etc/systemd/system/caps2esc.timer
+pacr bitwarden-bin amidst
+sudo pacr bitwarden-bin amidst
+S enable --now caps2esc.timer
+man alacritty
+source .profile
+killall sxhkd
+rf | wc -l
+nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=0
+less /home/rob/.cache/gotop/errors.log
+sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf.bak
+sudo mv xorg.conf /etc/X11/xorg.conf
+nvfans
+v .bin/nvfans
+v /etc/X11/xorg.conf.ba
+v /etc/X11/xorg.conf.bak
+l .bin
+$TERMINAL -e "bash --rcfile /home/rob/.bashrc -c 'vifm /home/rob/downloads /media/blueberry/'"
+$TERMINAL -e bash --rcfile /home/rob/.bashrc -c 'vifm /home/rob/downloads /media/blueberry/'
+rg "$TERMINAL" .bin
+rg "TERMINAL" .bin
+thing=yes
+this=$(echo $thing)
+thing=/home/rob/.zshrc
+this=$(grep zsh $thing)
+echo $this
+ssh
+v /etc/systemd/system/caps2esc.service
+shutdown now
+S status caps2es
+S status caps2esc
+S disable caps2esc
+locate caps2esc
+nvim '/etc/systemd/system/caps2esc.service'
+nvim '/etc/systemd/system/caps2esc.service' '/etc/systemd/system/caps2esc.timer\
+$TERMINAL -e nvim '/etc/systemd/system/caps2esc.service' '/etc/systemd/system/caps2esc.timer'
+alacritty -e nvim '/etc/systemd/system/caps2esc.service' '/etc/systemd/system/caps2esc.timer'
+opi -e /home /etc
+sudo nvim '/etc/systemd/system/caps2esc.service' '/etc/systemd/system/caps2esc.timer'
+$TERMINAL -e sudo nvim '/etc/systemd/system/caps2esc.service' '/etc/systemd/system/caps2esc.timer'
+opi -e
+exo-open .zshrc pics/scrots/neofetches.png
+exo-open '.zshrc' 'pics/scrots/neofetches.png'
+exo-open .config/neofetch/config.conf
+exo-open '/home/rob/.fdignore' '/home/rob/.dmrc'
+opi -o
+file="$(fd . /home/rob -H -t f -i | $rofi_dmenu -p "Open")"
+file="$(fd . /home/rob -H -t f -i | rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-select -p "Open")"
+file=$(fd . /home/rob -H -t f -i | rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-select -p "Open")
+exo-open $file
+v .bin/nv
+yay gotop-bin
+nvim ".bashrc .zshrc"
+man mapfiles
+pac mapfiles
+pacf mapfiles
+man mapfile
+pacf mapfile
+ll .m2
+rm -rf .m2
+cp /etc/systemd/system/caps2esc.* .config/systemd/user
+S enable --user caps2esc.timer
+systemctl enable --user caps2esc.timer
+systemctl status caps2esc
+v .config/systemd/user/caps2esc.timer
+v .config/systemd/user/caps2esc.service
+systemctl status caps2esc.service
+rm -rf .config/systemd/user/*
+systemctl disable caps2esc
+systemctl disable --user caps2esc
+v .bin/caps2esc
+v /boot/loader/entries/arch.conf
+v /boot/loader/entries/arch-lts.conf
+ls /boot
+ls /boot/EFI
+dmesg
+man dmesg
+nm-applet
+caps2esc
+man journalctl
+journalctl -g opotimus
+journalctl -g boondocc
+journalctl --grep="boondoc"
+journalctl -u minecraft@bukkit.service --grep="boondoc"
+yay ytop-bin
+pacr ytop
+sudo pacr ytop
+sudo pacr ytop-bin
+sudo dd bs=4M if=downloads/void-live-x86_64-20191109.iso of=/dev/sde status=progress oflag=sync
+sudo cp /boot/loader/entries/arch.conf /boot/loader/entries/void.conf
+v /boot/loader/entries/void.conf
+mount /dev/sda4 /mnt
+sudo mount /dev/sda4 /mnt
+ls /mnt
+ls /mnt/etc/fstab
+v /mnt/etc/fstab
+v /etc/fstab
+ls /mnt/boot
+chroot /mnt
+modprob efivars
+modprobe efivars
+sudo modprobe efivars
+sudo chroot /mnt
+pac refind
+refind-install
+git clone https://github.com/anthon38/refind-black.git
+sudo mv refind-black /boot/EFI/refind/themes/
+sudo mkdir /boot/EFI/refind/themes/
+ls /boot/EFI/refind/themes/
+v /boot/EFI/refind/refind.conf
+yay xbps-git
+ping google.com
+sudo pacr amidstd
+sudo pacr amidst
+sudo pacr admist
+v /etc/ssh/ssh_config
+pacr syncthing
+sudo pacr syncthing
+rmr GPUCache
+rg ps .bin
+rg while .bin
+v .bin/start-sxhkd
+v .bin/redshift.sh
+ll ~
+sudo chown rob:rob level.dat
+scp bb:level.dat ~
+vf .minecraft/screenshots
+pac filelight
+pacr xorg-font-utils
+sudo pacr xorg-font-utils
+v /home/rob/.cache/gotop/errors.log
+pac ytop
+yay ytop
+ping 192.168.1.13
+pac system-config-printer
+S enable --now cups
+S enable --now cupss
+S enable --now cupss.service
+S enable --now cupsd.service
+S enable --now cups.cupsd.service
+pac cups
+S enable --now org.cups.cupsd.service
+pac 	nss-mdns
+S enable --now avahi-daemon.service
+v /etc/nsswitch.conf
+yay brother-hl3170cdw
+sudo shutdown
+S restart org.cups.cupsd.service
+sudo systemctl status org.cups.cupsd.service
+pac mousepad
+pac jq
+man jq
+ls test
+sed '/essentials./d' ./test
+sed '!/essentials./d' ./test
+awk '!/essentials./d' ./test
+awk '!/essentials./' ./test
+awk '/essentials./' ./test
+awk '/essentials./' ./test > right
+v right
+rm test right
+v .bashrc
+rg 2 .bin
+chromium reddit.com 2>/dev/null 1>&2
+pacman -Sii electron
+pacman -Qi electron
+pacman -Qi electron | grep Required
+mousepad
+bspc rule -a *:minecraft-launcher monitor=DP-0 desktop=6 focus=on\
+bspc rule -a Minecraft*:Minecraft* monitor=DP-0 desktop=7 focus=on\
+bspc node -d 7
+yay minecraft
+echo "[pulse] \n allow-moves=yes" >> .alsoftrc
+v .alsoftrc
+bspc rule -a minecraft-launcher:"Minecraft Launcher" 'monitor=DP-0:^6' focus=on
+bspc rule -l
+man bsp
+man bspc
+bspc node -m DP-0#^2
+bspc node -m DP-0^2
+bspc node -m DP-0
+bspc node -m DP-0 ^2
+bspc node -m "DP-0:^2"
+bspc node -m DP-0:^2
+bspc desktop -f ^3
+bspc desktop -f '^3'
+bspc node -m 'DP-0:^2'
+bspc node -m 'DP-0\:\^2'
+bspc node -m DP-0\:\^2
+bspc node -m DP\-0\:\^2
+bspc node -m DP\-0\^2
+bspc node -m DP\-0\
+bspc node -m DP\-0
+bspc node -m DP\-0#^3
+bspc node -m DP\-0\#^3
+bspc node -m DP\-0\#\^3
+bolt
+bolt --launch
+boly --search
+bolt --search
+mkdir .config/bolt
+v .config/bolt/paths
+cp .fdignore .config/bolt/filters
+v .config/bolt/filters
+rm -rf .config/bolt
+rm .bin/bolt
+jyay
+ncdu /
+ncdu / -x
+pacman -Sc
+sudo pacman -Sc
+yay -Sc
+man deluge
+deluge-console info
+man deluge-console
+deluge-console connect
+cd ~/downloads
+cd torrents/\[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(01-066\ +\ Extras\)\ \[BD\ 1080p\]\[Dual\ Audio\]
+vf ~/downloads/torrents/\[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(01-066\ +\ Extras\)\ \[BD\ 1080p\]\[Dual\ Audio\]
+cd ~/downloads/torrents/\[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(01-066\ +\ Extras\)\ \[BD\ 1080p\]\[Dual\ Audio\]
+mv downloads/torrents/\[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(01-066\ +\ Extras\)\ \[BD\ 1080p\]\[Dual\ Audio\] downloads/torrents/Boruto
+ls downloads/torrents/Boruto
+encode-media -d downloads/torrents/Boruto
+ytop
+encode-media -f Boruto-S02E66.mkv
+encode-media -f Boruto-S02E61.mkv
+ping youtube.com
+pacman -Q electron
+pacman -U /var/cache/pacman/pkg/electron-9.0.5-1-x86_64.pkg.tar.zst
+sudo pacman -U /var/cache/pacman/pkg/electron-9.0.5-1-x86_64.pkg.tar.zst
+signal-desktop
+rm -rf downloads/minecraft/worldedit-bukkit-7.1.0.jar
+pac marktext
+yay marktext
+yay marktext-bin
+sudo ps aux
+sudo ps aux | tail
+sudo ps aux | less
+yay -S pure
+yay -S pure-prompt
+yay zsh-pure-prompt
+docs
+yay -Rns zsh-pure-prompt
+pacr nextcloud
+sudo pacr nextcloud*
+yay -Ss nextcloud
+yay -Qs nextcloud
+sudo pacr nextcloud-client
+shtop
+bashtop
+sudo pacr kwallet
+tassk
+task
+steam
+export hw=/media/blueberry/media/tempdata/Data/Google/Other/Stuff/.hidden/.lilgirl
+viewnior $hw/signal-2020-07-05-194559.jpeg
+yay gotop
+sudo pacr gotop
+sudo pacr gotop-git
+v .minecraft/optionsof.txt
+rm -rf .minecraft/options*
+yay freeglu
+yay gl-gsync-demo
+gl-gsync-demo
+ssh-copy-id
+ssh-copy-id pi
+ssh-copy-id pi -f
+v .ssh/authorized_keys
+grep TERM .*
+selsearch
+man xsel
+xsetroot -solid
+xsetroot -solid black
+rm .fehbg
+xsetroot -solid black -noreset
+rg feh
+sudo pacr feh
+pac betterautolock
+yay betterautolock
+locate betterlockscreen
+v /usr/bin/betterlockscreen
+v .config/betterlockscreenrc
+cat .bin/wall.sh
+v .bin/wall.sh
+man magick
+man feh
+locate big-sur
+.bin/wall.sh update /home/rob/pics/backgrounds/landscapes/macOS/big-sur-7.jpg
+.bin/wall.sh update /home/rob/pics/backgrounds/landscapes/macOS/big-sur-8.jpg
+.bin/wall.sh update /home/rob/pics/backgrounds/landscapes/macOS/big-sur-3.jpg
+.bin/wall.sh update /home/rob/pics/backgrounds/landscapes/macOS/big-sur-2.jpg
+.bin/wall.sh update /home/rob/pics/backgrounds/landscapes/macOS/big-sur-2-top.jpg
+ $TERMINAL -e vifm
+ $TERMINAL -e vifm /home/rob
+rofi_dmenu='rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-select'
+fd . $dir -H -a -t d -t l | $rofi_dmenu -p "Dir"
+locate backup.service
+viewnior plot.svg
+sudo systemctl disable NetworkManager-wait-online.service
+locate mkinicpio
+locate mkinitcpio
+dmesg | grep SSS
+grep . -r /sys/devices/system/cpu/vulnerabilities/
+v /etc/pam.d/system-login
+ps -o user $(pgrep Xorg)
+pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
+which pkglist
+v /home/rob/.bin/pkglist
+cat /home/rob/.bin/pkglist
+rm -rf .bin/pkglist
+man fzf
+pacreport --unowned-files
+systemctl --failed
+s systemctl daemon-reload
+S daemon-reload
+locate pacnew
+locate pacsave
+mv /home/rob/.config/zhistory /home/rob/.config/zhistory_bad
+fc -R /home/rob/.config/zhistory
+chromium
+pac expac
+expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
+pac python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expacchromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
+pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expacchromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
+pacman -Scc
+sudo pacman -Scc
+yay -Scc
+y
+pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
+pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity --force
+pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl
+pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity --overwrite '*'
+rm plot.svg
+cd .minecraft/assets/
+.minecraft
+fd light
+fd lightmap
+rm -rf resourcepacks/xray/assets/minecraft/optifine/lightmap
+scp bb:bin/gotop ../.bin
+gotop
+../.bin
+./gotop
+yay -S bottom
+bottom
+fd cargo
+fd -H cargo
+locate bottom
+locate btm
+which btm
+pacr pipewire
+sudo pacr pipewire
+pac micro
+yay -S micro
+?
+pacf modprobe
+ls .config/bottom/bottom.toml
+v .config/bottom/bottom.toml
+v .bin/win-scrot
+mv .bin/win-scrot .bin/scrot
+pacr xfce4-terminal
+sudo pacr xfce4-terminal
+exo-open .bin/scrot
+sudo ln -s /usr/bin/xterm /usr/bin/alacritty
+sudo ln -s /usr/bin/alacritty /usr/bin/xterm
+xdg-open .bin/scrot
+sudo pacr awesome-terminal-fonts
+pacman -Qil
+pacman -Qqil
+pacman -Qq
+pacman -Qil neovim
+pacman -Qi neovim
+v .bin/pkglist
+v .bin/pkgclear
+pacman -Qq|grep lib
+pacman -Qqm
+pacman -Qqn
+pacman -Qqn|grep lib
+pacman -Qqe|grep lib
+man pacman
+chxbin
+pkgclear
+sudo ln -s /usr/bin/termite /usr/bin/xterm
+xterm .config/sxhkd/sxhkdrc
+xdg-open .config/sxhkd/sxhkdrc
+tr '\0' '\n' < /proc/`pidof bspwm`/environ | grep TERM
+rm -rf /usr/bin/xterm
+sudo rm -rf /usr/bin/xterm
+pac xdg-terminal
+pacf xdg-terminal
+locate .keyring
+journalctl -eu lightdm
+v /home/rob/.local/share/keyrings/login.keyring
+pacr alacritty
+sudo pacr alacritty
+v .config/sxhkd/sxhkdrc
+ll /usr/bin/xterm
+/usr/bin/termite -e bash --rcfile /home/rob/.bashrc -c 'vifm /home/rob/downloads /media/blueberry/'
+bash --rcfile
+/usr/bin/termite -e bash -c  'vifm /home/rob/downloads /media/blueberry/'
+/usr/bin/termite -e bash -c  vifm /home/rob/downloads /media/blueberry/
+/usr/bin/termite -e bash  vifm /home/rob/downloads /media/blueberry/
+/usr/bin/termite -e vifm /home/rob/downloads /media/blueberry/
+\[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(067\ -\ 079\)\ \[BD\ 1080p\]\[Dual\ Audio\]
+mv \[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(067\ -\ 079\)\ \[BD\ 1080p\]\[Dual\ Audio\] Boruto
+mv downloads/torrents/\[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(067\ -\ 079\)\ \[BD\ 1080p\]\[Dual\ Audio\] Boruto
+Boruto
+encode-media -f Boruto/Boruto-067.mkv
+pac wireguard-tools wireguard-dkms
+ls /etc/wireguard
+sudo ls /etc/wireguard
+locate wireguard
+encode-media -d Boruto/
+mv downloads/torrents/\[Reaktor\]\ JoJo\'s\ Bizarre\ Adventure\ -\ Complete\ \[1080p\]\[x265\]\[10-bit\]\[Dual-Audio\] downloads/torrents/jojo
+downloads/torrents/jojo
+encode-media -d ./
+ls Boruto
+rm -r Boruto
+jojo
+rm -r jojo
+/boot
+EFI
+.bin
+rg efibootmgr
+v efimgr
+modprobe nvidia
+pac linux-zen
+v .bin/efimgr
+ls /boot/EFI/
+sudo bootctl install
+efibootmgr -b 0004 -B
+sudo efibootmgr -b 0004 -B
+S status lightdm
+pac nvidia-dkms
+pac linux-zen-headers
+dfsdf
+lsblk -f
+journalctl
+S unmask cups.service
+pac pfetch
+yay pfetch
+S status cups
+pacr pfetch
+S status org.cups.cupsd.service
+S disable org.cups.cupsd.service
+journalctl -r -p warn
+S disable dunst.service
+locate .service
+S disable --now --user dunst.service
+systemctl disable --now --user dunst.service
+systemctl disable --now --user thunar.service
+systemctl disable --now --user colord-session.service
+systemctl disable --now --user clipmenud.service
+S disable caps2esc.service
+v pacr rsnapshot
+sudo rm -rf /etc/systemd/system/rsnapshot@.service
+sudo rm -rf /etc/systemd/system/caps2esc.service
+locate id_pub
+locate .pub
+cat /home/rob/.ssh/id_rsa.pub
+xcat .ssh/id_rsa.pub
+ssh 68.183.60.201
+v .ssh/config
+cat .ssh/id_rsa
+git pull https://github.com/dylanaraps/pfetch.git
+make
+make install
+rm -r pfetch
+sudo pacr pfetch
+git clone https://github.com/dylanaraps/pfetch.git
+cd pfetch
+locate pfetch
+rm -rf pfetch
+pfetch
+v /boot/loader/loader.conf
+ssh ytk
+uname -r
+journalctl -r -p err
+S disable caps2esc.timer
+locate caps2esc.timer
+sudo rm -rf /etc/systemd/system/caps2esc.timer
+sudo pacr rsnapshot
+sudo pacr /etc/systemd/system/rsnapshot-*
+sudo rm -rf /etc/systemd/system/rsnapshot-*
+ls /etc/systemd/system/
+systemctl --type=service --state=active
+sudo pacr upower
+S disable upower.service
+sudo pacr nextcloud
+bspscripts equal
+deluge-gtk
+rm .config/deluge/state/*.torrent
+fcd
+gcc test.c -o test
+timeof chromium
+rm -rf .local/share/vifm/Trash/000_*
+find . -mtime +100 -print
+docs/backup_logs
+find . -mtime +30 -print
+find . -mtime +30 -print | wc -l
+find . -mtime +30 -print --delete
+find . -mtime +30 -print -delete
+mv docs/backup_logs docs/backup
+mv docs/backup_exclude.txt docs/backup/
+ls docs/backup/backup_exclude.txt
+mkdir docs/backup/logs
+mv docs/backup/2020-0* docs/backup/logs
+locate backup.timer
+pacman -Qm
+pacr gl-sync-demo
+sudo pacr gl-sync-demo
+pac nvidia
+sudo pacr gl-gsync-demo
+sudo pacr nvidia
+rg calc .bin
+ping 192.168.2.21
+ssh rob@blueberry
+aptu
+downloads/torrents/Doom.Patrol.S02.PROPER.WEBRip.x264-ION10
+fd -e srt
+fd -e srt --exec mv ./
+fd -e srt --exec  mv {} ./
+sshbb
+ffmpeg -i vids/fullscreen--2020-08-19_17.15.56.mkv -c copy shulker_unloader.mp4
+unzip downloads/minecraft/VanillaTweaks_d171471_UNZIP_ME.zip
+vf $other
+cat /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+locate networkmanager.conf
+locate NetworkManager.conf
+v /etc/NetworkManager/NetworkManager.conf
+man 5 NetworkManager.conf
+pulseaudio -start
+pulseaudio -s
+reflector--help
+S start reflector.service
+.
+man cp
+mv ~/downloads/torrents/\[JAM_CLUB\]_Boku_no_Hero_Academia_the_Movie_2_Heroes_Rising_\[1080p\]\[RUS\]\[DUB\].mkv ./My-Hero-Academia_Heroes-Rising.mkv
+history | awk '{print $2}'
+history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n 10
+history
+history -h
+history --help
+history 0 | awk '{print $2}' | sort | uniq -c | sort -nr | head -n 10
+sudo pacr linux-zen
+sudo pacr linux-zen linuz-zen-headers
+sudo pacr linux-zen linux-zen-headers
+pac light-locker
+pacq | grep lock
+sudo pacr local/betterautolock local/betterlockscreen local/i3lock-color
+pac feh
+man light-locker
+pgrep light-locker
+v .bin/autolock
+pac pm-utils
+pac pm-util
+pacf pm-utils
+unzip downloads/minecraft/VanillaTweaks_r357719.zip
+rm -rf armored\ elytra\ v1.0.3.zip player\ head\ drops\ v1.1.0.zip
+rm -rf downloads/minecraft/VanillaTweaks_*
+ls downloads/minecraft/VanillaTweaks_r604607.zip
+rm -rf  .minecraft/resourcepacks/*
+ls .minecraft/resourcepacks/*
+ls .minecraft/resourcepacks/
+man xdo
+xdo pointer_motion
+xdo pointer_motion scroll
+man xdotool
+xdotool mousemove click 4
+xdotool click 4
+while true; do xdotool click 4 && sleep 0.1s; done
+ls .minecraft
+ncdu .minecraft
+mv downloads/minecraft/slimeblockFloor .minecraft/saves
+unzip downloads/minecraft/Climbable_Chains_1.1.zip
+mkdir climable_chains
+mv pack.mcmeta data climable_chains
+ls ls
+ls climable_chains
+ls .config/Nvidia
+sudo rm -rf .config/Nvidia/sttings
+htop
+pac glances
+pacq glances
+pacf glances
+pacs glances
+btm -b
+man btm
+btm -h
+btm -ba
+btm -a
+btm -a -b
+journalctl -r -p warning
+S disable thunar.service
+locate thunar.service
+S disable --user thunar.service
+systemctl disable --user thunar.service
+locate resume.service
+locate resume@
+v /etc/systemd/system/resume@.service
+S disable resume@rob.service
+xrandr --dpi
+fkill
+[A
+pac libva-vdpau-driver libvdpau-va-gl
+pac nvidia-utils
+pac libva-utils
+pac vdpauinfo
+pac libva-vdpau-driver
+rg xsel
+rg .bin xsel
+rg xsel .bin
+rg -H xsel
+pac xscreensaver
+pacf org.freedesktop.ScreenSaver
+pacman -Fy org.freedesktop.ScreenSaver
+sudo pacman -Fy org.freedesktop.ScreenSaver
+sudo pacman -Fy org.freedesktop.ScreenSaver.service
+light-locker &
+light-locker-command -l
+pac upower
+S enable upower
+nvidia-settings --help
+less .xsession-errors.old
+dm-tool lock
+yay betterlockscreen
+yay betterlock
+wall.sh -u pics/backgrounds/landscapes/macOS/10-15-6-Evening.jpg
+pac mpv
+mpv --hwdec=auto vids/ofi-2019-07-28_13.46.00.mp4
+vainfo
+vdpauinfo
+grep -iE 'vdpau | dri driver' /var/log/Xorg.0.log
+media
+show
+shows
+rg ova
+fd -i ova
+fd
+fd|grep ova
+fd|grep Ova
+fd|grep OVA
+vfmacq zsh
+pacq zsh
+pac 	zsh-autosuggestions
+locate zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions.git
+sudo rm -rf zsh-autosuggestions
+git clone https://github.com/marlonrichert/zsh-autocomplete.git
+sudo mv zsh-autocomplete /usr/share/zsh/plugins
+locate zsh-autcomplete
+locate zsh-autocomplete
+ls /usr/share/zsh/plugins/zsh-autocomplete
+ls /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+sudo pacr gconf
+journalctl -r -b 1
+journalctl -r -b
+last reboot
+last -x shutdown
+rg -h
+rg -e shutdown -e reboot /var/log
+sudo rg -e shutdown -e reboot /var/log
+journalctl --list-boot
+v /etc/systemd/journald.conf
+ls /usr/share/zsh/plugins/
+ssh -t bb
+echo $TERM
+echo $COLORTERM
+fd termite.terminfo
+fd -H termite.terminfo
+infocmp > termite.terminfo
+scp termite.terminfo bb:~/
+xcolor
+systemctl list-unit-files | grep enabled
+systemctl | grep running
+sudo pacr xcalib
+sudo pacr displaycal
+sudo pacr colord
+sudo pacr xiccd
+ls /usr/lib/systemd/user
+sudo rm -rf /usr/lib/systemd/user/colord-session.service
+systemctl disable --user colord.service
+S disable colord
+xiccd
+colormgr
+locate xiccd.desktop
+colormgr get-devices
+v /etc/X11/xorg.conf
+xrandr
+find /media/blueberry/backups/rob-pc -maxdepth 1 -type d -name \"????-??-??-????\" -prune | sort -r
+find /media/blueberry/backups/rob-pc/ -maxdepth 1 -type d -name \"????-??-??-????\" -prune | sort -r
+find /media/blueberry/backups/rob-pc/ -maxdepth 1 -type d -name \"????-??-??-????\"
+find /media/blueberry/backups/rob-pc/ -maxdepth 1 -type d
+rm -rf docs/backup/logs/*
+less docs/backup/backup_exclude.txt
+rm -rf .bin/rsync_backup.sh
+rdiff-backup --help
+ls docs/backup/
+ssh rob@192.168.2.21
+ssh root@192.168.2.21
+ssh bb "bash"
+man rdiff
+v /etc/systemd/system/backup.service
+v /etc/systemd/system/backup.timer
+rm -rf /media/blueberry/backups/rob-pc
+sudo .bin/system-backup
+rm -rf bin
+ls home
+ls home/rob
+la home/rob
+rm -rf *
+ls /home/rob/docs/backup/backup_exclude.txt
+v /home/rob/docs/backup/backup_exclude.txt
+.bin/system-backup
+mv docs/backup/backup_exclude.txt docs
+rm -rf docs/backup/
+ls docs
+rm -rf docs/lolmeme.png
+ls rob-laptop
+rm -rf blueberry
+sudo rm -rf *
+cd /media/blueberry/media/shows/
+cd ../..
+lr
+fd -d --maxdepth=1
+fd -d --maxdepth 1
+fd -d --maxdepth 2
+fd -d --maxdepth=4
+fd -t d -d 1
+fd -t d -d 2
+ls rob-pc
+rob-pc
+nvtop
+less .chpwd-recent-dirs
+rm -rf .chpwd-recent-dirs
+zsh
+v .bin/notes
+xc < rdiff-backup-data/session_statistics.2020-09-01T17:10:29-04:00.data
+xc < rdiff-backup-data/session_statistics.2020-09-02T06:00:41-04:00.data
+sudo ufw allow deluge
+ufw allow 8112
+sudo ufw allow 8112
+sudo ufw allow 8113
+sudo ufw reload
+cp -a home/rob/.minecraft/screenshots/* ~/.minecraft/screenshots
+ls ~/.minecraft/screenshots
+ls -Art rdiff-backup-data/session_statistics.2020-09-0* | tail -n 1
+ls rdiff-backup-data/session_statistics.2020-09-0*
+system-backup
+sudo pacr vdpau
+sudo pacr vdpauinfo
+echo $
+echo $VDPAU_DRIVER
+yay libva-vdpau-driver-chromium
+yay -S libva-vdpau-driver-chromium
+pacr cacafire
+sudo pacr cacafire
+pacf cacafire
+sudo pacr libcaca
+v ~/.bin/system-backup
+start-sxhkd
+cd -
+curl https://www.dynmap.us/builds/dynmap/?C=M;O=D
+curl https://www.dynmap.us/builds/dynmap/?C=M;O=D | grep spigot
+curl https://www.dynmap.us/builds/dynmap/?C=M;O=D 2>&1 | grep spigot
+curl -v https://www.dynmap.us/builds/dynmap/?C=M;O=D 2>&1 | grep spigot
+curl -v --silent https://www.dynmap.us/builds/dynmap/?C=M;O=D 2>&1 | grep spigot
+curl -v --stderr - https://www.dynmap.us/builds/dynmap/?C=M;O=D | grep spigot
+pac transmission-gtk
+pac transmission-gtk transmission-cli
+sudo pacr deluge-gtk
+pac ttf-tinos
+ffmpeg -i vids/fullscreen--2020-09-04_02.49.12.mkv  -c copy new_house.mp4
+S start reflector.timer
+opi -e /home
+nv /etc/fstab
+opi -e /etc
+$TERMINAL -e nvim /etc/fstab
+$TERMINAL -e "nvim /etc/fstab"
+cp docs/invoices/Charlie\ and\ Sarge\ -\ Sheet1.pdf docs/invoices/charliesarge.pdf
+pac picom
+pac picom-git
+yay -S picom-git
+seq 1 10
+ll /.bin/mks
+ll .bin/mks
+rm -rf .bin/mks
+mks
+cpf .zshrc
+cat .bin/start-*
+v home/rob/.bin/mks
+chx
+chx .bin/*
+chmod +x .bin/mks
+mks .bin/start
+exo-open .config/sxhkd/sxhkdrc
+v .config/bspwm/autostart.sh
+ls .config/autostart
+S status sxhkd.service
+S disable sxhkd.service
+systemctl --user disable sxhkd.service
+systemctl disable --user sxhkd.service
+rm -rf .bin/start-*
+v .bin/bspscripts
+pac z.lua
+pac lua
+extract downloads/z.lua-1.8.7.tar.gz
+sudo mkdir /usr/share/z.lua
+sudo cp z.lua-1.8.7/* /usr/share/z.lua
+sudo cp -r z.lua-1.8.7/* /usr/share/z.lua
+ll /usr/share/z.lua
+pwd /usr/share/z.lua/z.lua
+realpath /usr/share/z.lua/z.lua
+z bin
+z docs
+z do
+z -I vim
+z .bin
+z -l docs
+z -i bin
+z -i .bin
+cd ../downloads
+cd ~/docs
+cd ~/downloads/torrents
+cd /media/blueberry/media/
+z down
+z ~
+sudo ufw remove 8112
+sudo ufw deny 8112
+sudo ufw deny 8113
+ufw -h
+sudo ufw delete11
+sudo ufw delete 11
+sudo ufw delete 10
+sudo ufw delete 6
+pip3 install --user transmissionrpc
+pac wheel
+ls downloads/minecraft/
+unzip downloads/minecraft/Xray_Ultimate_1.16_v3.5.4.zip
+mkdir xray
+mv assets pack.* xray
+rm -rf z.lua-1.8.7
+rm -rf DSC01374*
+rm -rf new_house.mp4
+mv xray .minecraft/resourcepacks
+cd /media/blueberry
+cd /media/blueberry/backups
+cd ~
+cd vids
+cd /etc
+cd /etc/systemd/system/
+cd projects
+cd school
+ls blueberry
+cd..
+cd .bin
+rm bulk-rename pulldots switch-kernel.sh template.sh watch-process zcal
+v encode-media
+rg chromium
+rg -h chromium
+rg -H chromium
+v thing
+v .bin/mks
+mks thing
+head /var/log/pacman.log
+rob-pc/rdiff-backup-data
+find ./ -name session_statistics -printf '%T+ %p\n' | sort -r | head
+find ./ -name session_statistics -maxdepth 1 -printf '%T+ %p\n' | sort -r | head
+find ./ -maxdeptch 1 -name session_statistics -printf '%T+ %p\n' | sort -r | head
+find ./ -maxdepth 1 -name session_statistics -printf '%T+ %p\n' | sort -r | head
+find ./ -maxdepth 1 -name session_statistics
+find session
+find session*
+find ./ -maxdepth 1 -name session_statistics*
+find session_stat* -maxdepth 1
+find session_stat* -maxdepth 1 -printf '%T+ %p\n' | sort -r | head
+find session_stat* -maxdepth 1 -printf '%T+ %p\n' | sort -r | head 1
+find session_stat* -maxdepth 1 -printf '%T+ %p\n' | sort -r | head -1
+fd -h
+man ls
+journalctl -r -u backup.service
+ssh bb rdiff-backup --server
+ssh rob@192.168.2.21 rdiff-backup --server
+journalctl -f -u backup.service
+sudo rm sxhkd.service
+man rdiff-backup
+rdiff-backup --calculate-average
+rdiff-backup --calculate-average $backups/rdiff-backup-data
+rdiff-backup --calculate-average $backups/rdiff-backup-data/*statistics*
+pac rsnapshot
+sudo pacr rdiff-backup
+sudo cp /etc/rsnapshot.conf /etc/rsnapshot.conf.default
+v /etc/rsnapshot.conf
+ls $backups
+realpath docs/backup_exclude.txt
+man rsnapshot
+s
+S enable --now backup.service
+pac rdiff-backup
+S enable --now backup.timer
+S start backup.timer
+systemctl status backup.service
+v docs/backup/backup_exclude.txt
+v docs/backup_exclude.txt
+S enable reflector.timer
+while true; do xdotool click 4 && sleep 0.025s; done
+rm thing
+less .zlua
+mv .zlua .config/zlua
+ls .local/share/nvim/swap
+rm -rf .local/share/nvim/swap/*
+z --
+nvim
+v
+v /etc/xdg/reflector/reflector.conf
+/media/blueberry/backups/rob-pc/rdiff-backup-data/
+S status reflector.timer
+S status backup.service
+$backups
+ls rdiff-backup-data
+ls increments
+ls backup.log
+less backup.log
+less error_log.2020-09-07T03:56:40-04:00.data
+sudo rm -rf rob-pc
+S start backup.service
+/usr/bin/ssh -t rob@192.168.2.21 tmux new -A ssh
+/usr/bin/ssh -t rob@192.168.2.21 tmux new -A
+sudo ufw allow 51413
+S restart NetworkManager
+pac qbittorrent
+sudo pacr transmission-gtk
+sudo pacr transmission-cli
+sudo ufw status numbered
+sudo ufw remove 5
+sudo ufw delete 5
+sudo ufw delete 8
+sudo ufw status
+minecraft-launcher
+pacman -Q rofi
+rofi --help | grep updage-config
+rofi --help | grep upgrade-config
+rofi -upgrade-config
+ls /home/rob/.config/rofi/config.rasi
+v /home/rob/.config/rofi/config.rasi
+rm -rf /home/rob/.config/rofi/config
+locate rofi-sensible-terminal
+termite --exec ssh bb
+termite --exec="ssh bb"
+v /usr/bin/rofi-sensible-terminal
+command -v termite
+xfce4-terminal ssh bb
+xfce4-terminal -e ssh bb
+xfce4-terminal --exec ssh bb
+xfce4-terminal --help
+xfce4-terminal --execute ssh bb
+rofi --help
+rofi --help | grp -e
+rofi --help | grep -e
+rofi --help | grep '-e'
+termite -e
+termite -e b
+termite -e -e
+exec termite ssh bb
+termite ssh bb
+termite - essh bb
+termite -e ssh bb
+termite -e "ssh bb"
+scp bb:/usr/bin/xfce4-terminal.wrapper ~/
+sudo mv xfce4-terminal.wrapper /usr/bin
+rofi-sensible-terminal ssh bb
+mv downloads/minecraft/boondocc_skin.png downloads/minecraft/boondocc_skin_old.png
+ffmpeg -i vids/fullscreen--2020-09-08_21.25.32.mkv   -c copy dope_cave.mp4
+mv dope_cave.mp4 vids
+ls vids
+ls .config/user-dirs.dirs
+ll .config/user-dirs.dirs
+chattr -l .config/user-dirs.dirs
+sudo chattr -i .config/user-dirs.dirs
+v .config/user-dirs.dirs
+sudo chattr +i .config/user-dirs.dirs
+ls .nv
+rg case .bin
+rg -C 3case .bin
+rg -C3 case .bin
+v .bin/hue.sh
+adb devices
+adb shell
+upower --dump
+ssh bb echo true
+echo $BROWSER
+rg $BROWSER
+rg --hidden $BROWSER
+sudo pacr gnome-desktop
+l
+mv .bin/notes .bin/note
+[200~filecount
+fzfd
+rm .bin/colorblocks
+colorblocks
+colorpanes
+pf
+z sys
+locate reflector.service
+v /usr/lib/systemd/system/reflector.service
+locate reflector/timer
+locate reflector.timer
+fd -t f --exec mv {} other
+rm -rf school
+school
+fd -d 1 -t f --exec mv {} other
+rm -rf other
+ls HIS101
+mkdir other
+fd -d 1 -t f --exec mv {} other/
+ls other
+mkdir ITP132
+ITP132
+v Example\ Erroneous\ Programs.txt
+gcc 16.cpp -o 16
+gcc 16.cpp -lstdc++ -o 16
+v ~/.aliases
+scrot win
+man sxhkd
+xev -event keyboard
+locate .sw
+hyperfine
+man hyperfine
+z etc
+v ~/.zshrc
+z
+fd | wc -l
+fd -H -I | wc -l
+time fd -H -I | wc -l
+time fd -H | wc -l
+ncdu
+start sxhkd
+mkdir lf
+locate lfrc
+v /usr/share/doc/lf/lfrc.example
+cp /usr/share/doc/lf/lfrc.example lf/lfrc
+v lf/lfrc
+pac w3m
+z lf
+cd .config/lf
+v draw_img.sh
+realpath draw_img.sh
+ls /home/rob/.config/lf/draw_img.sh
+ll /home/rob/.config/lf/*
+ll /home/rob/.config/lf/
+ll /home/rob/.config/lf
+ll /home/rob/.config/
+chown -R rob:rob draw_img.sh
+sudo chown -R rob:rob draw_img.sh
+chx /home/rob/.config/lf/draw_img.sh
+/home/rob/.config/lf/draw_img.sh
+ll /home/rob/.config/lf/draw_img.sh
+v lfrc
+rm -rf draw_img.sh
+pacf cp-p
+pac vidir
+yay vidir
+v .bin/start
+sudo loginctl list-sessions
+sudo loginctl kill-session 5
+;f
+efibootmgr
+efibootmgr -v
+.local
+share
+filecount
+..
+fd -H | wc -l
+fd -H -t f | wc -l
+mkcd .config/zsh
+v .fdignore
+filecount .local/share
+cd -h
+man cd
+mv ../zhistory ./history
+this
+echo
+z back
+lf --doc
+lf --doc | grep history
+lf /etc
+mimeopen
+mimeopen .config/sxhkd/sxhkdrc
+locate neovim.desktop
+rm -rf /home/rob/.local/share/applications/nvim.desktop
+pacman -Q picom-git
+unlink /media/blueberry/other/
+ll /media/blueberry/other/
+ll /media/blueberry/other/other
+ll /media/blueberry/other
+unlink /media/blueberry/other
+unlink /media/blueberry/other/other
+vlc.desktop
+locate vlc.desktop
+pac unoconv
+unoconv -f pdf school/ITP132/Unit\ 1-Microprocessor\ and\ Instruction\ Set_Internal\ Organization.pptx
+ls school/ITP132/Unit\ 1-Microprocessor\ and\ Instruction\ Set_Internal\ Organization.pptx
+mks .bin/remove_spaces
+v .bin/remove_spaces
+open Unit1-MicroprocessorandInstructionSet_InternalOrganization.pdf
+cd ..
+mkdir ITE221
+mv ITP132/Unit1-MicroprocessorandInstructionSet_InternalOrganization.p* ITE221
+ITE221
+git clone https://github.com/Naheel-Azawy/cp-p.git
+cd cp-p
+sudo make install
+rm -rf cp-p
+tail /var/log/pacman.log
+tail -30 /var/log/pacman.log
+pacman -Q qbittorrent
+tail -100 /var/log/pacman.log | grep upgraded | grep qt5
+pacman -U /var/cache/pacman/pkg/qt5-base-5.15.0-5-x86_64.pkg.tar.zst
+sudo pacman -U /var/cache/pacman/pkg/qt5-base-5.15.0-5-x86_64.pkg.tar.zst
+pac delug
+pac deluge-gtk
+pacr transmission
+sudo pacr transmission
+ssr.sh
+ssr.sh launch
+simplescreenrecorder
+flameshot qui
+flameshot gui
+bandwhich
+cpu-speed
+zz
+zi
+zf
+zb
+z media
+fdchars -I tempdata/*
+fdchars -E tempdata/*
+cd movies
+cd ../shows
+fdchars
+qmv -h
+qmv --help
+ls | qmv --format=single-column -
+yay S vidir
+vidir --help
+vidir -h
+man vidir
+pacr vidir
+sudo pacr vidir
+qbittorrent
+yay -S vidir
+qmv
+vifm --help
+vifm
+vifm -c rename
+vifm -c +rename
+man qcp
+pac massren
+yay -S massren
+massren  --config
+massren  --config editor nvim
+massren --config include_header 0
+massren
+pacr massren
+sudo pacr massren
+mks .bin/renamer
+echo hi | cat /dev/stdin
+rg EOF  .bin
+v .bin/m
+v .bin/mnt
+mktemp -h
+mktemp --hep
+mktemp --help
+rg mktemp .bin
+time find /tmp/current_sink.*
+find -maxdepth 1
+fd -d 1
+fd -d 1 -H
+man fd
+fd -d 1 -H -j 1
+renamer
+renamer .bin/*
+qmv -f do
+fd Trash
+fd -H Trash
+fd -H -i Trash
+find Trash
+find ./ Trash
+find ./ Trash -type d
+ls | wm -f do -
+ls | qmv -f do -
+ls | qmv -f do
+man qmc
+man qmv
+vidir
+v .config/lf/lfrc
+lf
+pacr deluge
+sudo pacr deluge
+flameshot --help
+rg gtk2
+rg -H gtk2
+rg --hidden gtk2
+pacman -S qt5ct qt5-styleplugins
+sudo pacman -S qt5ct qt5-styleplugins
+less .xsession-errors
+rg QT_QPA_PLATFORMTHEME
+pac qt5ct
+qt5ct
+locate gtkrc
+pac breeze
+pac oxygen
+pac gtk2
+v .config/Trolltech.conf
+yay qt5-styleplugins
+echo $QT_QPA_PLATFORMTHEME
+v /etc/environment
+micro
+rm testmicro
+micro .bin/filecount
+m .bin/note
+pacr lf
+v .bin/t
+tail -f .xsession-errors
+chx .bin/t
+m .bin/t
+rm .bin/t
+ls .bin/
+pac xmenu
+pacf xmenu
+yay xmenu
+less .aliases
+/media/blueberry/media/movies
+fd -t f -e mkv
+fd -t f -e mkv|mp4
+fd -t f -e mkv -e mp4
+fd -t f -e mkv -e mp4 --exec mediainfo {};
+fd -t f -e mkv -e mp4 --exec echo {};mediainfo {}|grep "Bit rate";
+fd -t f -e mkv -e mp4 --exec echo {}&&mediainfo {}|grep "Bit rate";
+fd -t f -e mkv -e mp4 --exec mediainfo {}|grep "Bit rate";
+grep --help
+fd -t f -e mkv -e mp4 --exec mediainfo {}|grep -e "Bit rate" -e "Complete name"
+fd -t f -e mkv -e mp4 --exec mediainfo {}|grep A20 "Complete name" |grep -e "Bit rate" -e "Complete name"
+fd -t f -e mkv -e mp4 --exec mediainfo {}|rg A20 "Complete name" |grep -e "Bit rate" -e "Complete name"
+fd -t f -e mkv -e mp4 --exec mediainfo {}|rg  "Complete name" -A20 |grep -e "Bit rate" -e "Complete name"
+pkglist
+sleep 1m
+sleep 25m && killall firefox
+pgrep firefoc
+pgrep Firefox
+ssh bb -e /home/rob/bin/mcctrl
+scp bb:bin/mcctrl .bin
+man bash
+ssh bb 'bash -s' < .bin/mcctrl
+ssh bb 'bash -c /home/rob/bin/mcctrl'
+ssh bb /opt/minecraft/tools/mcrcon/mcrcon -H localhost -P 25576 -p Waterb0ttle54 -t
+ssh bb '/opt/minecraft/tools/mcrcon/mcrcon -H localhost -P 25576 -p Waterb0ttle54 -t'
+v /etc/ssh/sshd_config
+S restart sshd
+ssh bb mcctrl
+ssh bb /home/rob/bin/mcctrl
+ssh bb which mcctrl
+ssh bb locate mcctrl
+pgrep firefox
+man pgrep
+pgrep -x firefox
+pgrep -f firefox
+pkill firefox
+man pkill
+pkill -f firefox
+ssh bb -o LocalCommand="mcctrl"
+man ssh
+ssh -t bb 'mcctrl'
+ssh -t bb /home/rob/bin/mcctrl
+man mediainfo
+mediainfo --help
+fd /media/blueberry/media/movies -t f -e mkv -e mp4 --exec mediainfo --Inform="Video;%BitRate%" {}
+fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec mediainfo --Inform="Video;%BitRate%" {}
+mediainfo /media/blueberry/media/movies/LOTR/LOTR-1_The_Fellowship_of_the_Ring.mp4
+fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec mediainfo --Inform="Video;%Completename%,%BitRate%" {}
+fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec mediainfo --Inform="Video;%CompleteName%,%BitRate%" {}
+fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec shortinfo {};
+fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec bash -i -c shortinfo {};
+fzaux
+mks .bin/shortinfo
+fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec mediainfo --Inform="General;%CompleteName%,Video;%BitRate%" {}
+fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec shortinfo {}
+shortinfo /media/blueberry/media/movies/1917/1917.mp4
+v .bin/shortinfo
+shortinfo /media/blueberry/media/movies/1917
+fd . /media/blueberry/media/movies/ -t f -e mp4 -e mkv
+mediainfo FileName=/media/blueberry/media/movies/Anime/Bleach/Bleach_Diamond-Dust-Rebellion.mkv
+mediainfo /media/blueberry/media/movies/Anime/Bleach/Bleach_Diamond-Dust-Rebellion.mkv
+shortinfo /media/blueberry/media/movies/
+mediainfo --info-parameters | less\
+
+less .bin/filecount
+df
+echo "alias df='df -h'" >> .aliases
+fd . RARBG*
+fd RARBG* .
+fd RARBG* . -e exe -e txt --exec rm -rf {};
+fd RARBG* . -e exe -e txt
+v .config/vifm/vifmrc
+fd -t f
+fd -t f | wc -l
+shortinfo JoJo-S04E01-GoldenWind.mp4
+mv downloads/minecraft/BSL_v7.2.zip .minecraft/shaderpacks
+mv downloads/minecraft/SEUS-Renewed-v1.0.1.zip .minecraft/shaderpacks
+v /etc/mkinitcpio.conf
+compgen -c | fzf
+cat
+v /usr/share/fzf/key-bindings.zsh
+eval compgen
+compgen
+eval compgen -c
+rm -rf .minecraft/shaderpacks/*
+less .bin/start
+killall picom
+picom --experimental-backends --backend glx -b --config /home/rob/.config/picom/picom.conf
+man picom
+locate xfce4-terminal.wrapper
+sudo rm -rf /usr/bin/xfce4-terminal.wrapper
+yay -S nerd-fonts-hack
+scp bb:bin/check-swap .bin
+swapon --show
+du -f
+du -h
+df -h
+sudo parted /dec/sdd print free
+sudo parted /dev/sdd print free
+pac systemd-swap
+S enable systemd-swap
+v /etc/systemd/swap.conf
+man swap.conf 5
+echo $CONFIG_ZSWAP_DEFAULT_ON
+grep -R . /sys/module/zswap/parameters
+sysctl vm.swappiness
+v /etc/sysctl.d/99-swappiness.conf
+v /etc/systemd/system/timers.target.wants/reflector.timer
+ssh pi pihole -t
+alias mcctrl
+ssh -t pi pihole -t
+pilog
+ip a
+alias mclog
+132
+v 16.cpp
+16
+./16
+ssh pi
+flameshot config
+v  ~/.config/gtk-3.0/gtk.css
+find
+lsblk
+pacu
+ll
+lla
+rm netdata-bb.pdf
+rm .config/zhistory_bad
+.config
+rm -rf Bitwarden bashtop Mousepad massren transmission compton.conf
+ls autostart
+yadm commit
+yadm commit -a
+yadm add .bin/*
+yadm add .config/flameshot/flameshot.ini
+yadm add .config/bottom
+v .zshrc
+rm .config/zhistory
+yadm add .config/zlua
+yadm add .config/lf/lfrc
+yadm add .config/zsh/history
+yadm add .config/qBittorrent/qBittorrent.conf
+yadm list -a
+yadm add .fdignore
+ls .config
+ssh bb cat /opt/minecraft/vanilla/plugins/WorldEdit/config.yml | xc
+open ExampleErroneousPrograms.txt
+v hw1.txt
+mv hw1.txt Tallant_Robert-A1.txt
+z ite
+v Microprocessor_performance.txt
+pac geekbench
+pac geekbench5
+yay -S geekbench
+geekbench -h
+geekbench --compute-list
+geekbench --sysinfo
+geekbench --compute --save ./geekbench
+geekbench --compute
+geekbench --compute | tee ./geekbench
+tail -f geekbench
+rm geekbench
+remove-
+la
+fd . ~/
+fd RARBG* /media/blueberry/media/movies -e exe -e txt
+fd RARBG* /media/blueberry/media/movies -e exe -e txt --exec rm {};
+fd RARBG* /media/blueberry/media/movies
+check-swap
+v .mozilla/firefox/3zvlgup7.default-release-1569356723307
+mkdir .mozilla/firefox/3zvlgup7.default-release-1569356723307/chrome
+v .mozilla/firefox/3zvlgup7.default-release-1569356723307/chrome/userChrome.css
+v .bin/sinkctrl
+sinkctrl -R
+man zip
+zip -qdg config.yml
+zip -qdg config.yml config.zip
+zip -qdg config.zip config.yml
+rm config.*
+man find
+mclog
+pwd
+man pwd
+mks .bin/test
+test
+.bin/test
+v .bin/test
+rm .bin/test
+man rsync
+v .bin/system-backup
+date +%I%M
+date "+%Y-%b-%d-%I%M"
+date "+%F-%I%M"
+z van
+backup-log
+ls .bin
+ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1
+less $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1 )
+cat $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1 )
+last-backup
+ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data
+ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/*.log
+less $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/*.log)
+ls /media/blueberry/backups/rob-pc/rdiff-backup-data/*.log
+ls /media/blueberry/backups/rob-pc/rdiff-backup-data/
+cat $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/*.log)
+cmd
+cmds
+unoconv -f pdf school/ITP132/2-Microprocessor\ and\ Instruction\ Set_Internal\ Organization\ -\ HW\ \&\ CPU\ .pptx
+z 132
+date +%k%M
+man date
+v .config/zsh/history
+ls *.c
+fd . *c
+mkdir ex
+ex
+rm *
+cd
+rm -r ex
+pulseaudio -k;pulseaudio --start
+z 221
+remove_spaces
+unoconv -f pdf ./Unit3_DataRepresentation.pptx
+rm *pptx
+z shows
+My-Hero-Academia
+shortinfo ./
+v ~/.bin/shortinfo
+mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" MyHeroAcademia_s1e01.mp4
+man mv
+start pulse
+S status pulseaudio
+S status --user pulseaudio
+systemctl status --user pulseaudio
+systemctl --user disable pulseaudio
+systemctl --user stop pulseaudio
+pulseaudio -k
+pulseaudio --start
+downloads/torrents/
+mkdir izotope
+mv izotope* iZotope/
+mv iZotope* iZotope/
+ls iZotope/
+tar cvzf izotope.tar.gz iZotope/
+vf
+ls iZotope
+sudo passwd
+man sudo
+pac spacaemanfm
+pac spacemanfm
+yay spacemanfm
+yay spacefm
+pac pcmanfm
+pcmanfm
+pacr thunar
+sudo pacr thunar
+rg -H exo-open
+rg --hidden exo-open
+v .bin/op
+v .bin/opi
+rg  exo-open .aliases
+sudo pacr xfce4
+man termite
+fv
+locate pcmanfm.desktop
+myip
+remove-orphans
+su
+sudo su
+pacf fz.sh
+yay -S fz.sh
+curl "https://raw.githubusercontent.com/changyuheng/fz/master/{fz.sh}" \\
+    -o ~/.bash_completion.d/z"#1"
+curl "https://raw.githubusercontent.com/changyuheng/fz/master/{fz.sh}"
+curl "https://raw.githubusercontent.com/changyuheng/fz/master/{fz.sh}" > fz.sh
+ls
+less fz.sh
+chmod a+x fz.sh
+locate bash_completion.d
+sudo mv fz.sh /home/rob/.local/etc/bash_completion.d/
+realpath /home/rob/.local/etc/bash_completion.d/fz.sh
+pac linux linux-lts
+systemd-analyze blame
+systemd-analyze 
+systemd-analyze time
+systemd-analyze critical-chain
+systemd-analyze plot > plot.svg
+open plot.svg
+systemd-analyze
+yay -S ungoogled-chromium
+ sudo pacman-key --keyserver hkp://keyserver.ubuntu.com -r 3056513887B78AEB 8A9E14A07010F7E3
+ sudo pacman-key --lsign-key 3056513887B78AEB
+ sudo pacman-key --lsign-key 8A9E14A07010F7E3 
+yay -S ungoogled-chromium-bin
+pacman -S chaotic-aur/ungoogled-chromium-bin
+sudo pacman -S chaotic-aur/ungoogled-chromium-bin
+sudo pacman -Syu chaotic-aur/ungoogled-chromium-bin
+sudo pacman -Syu chaotic-aur/ungoogled-chromium
+udb
+locate chromium.desktop
+v /usr/share/applications/chromium.desktop
+pgrep chromium
+sleep 22m && pkill -f chromium
+pacf sws_scale
+pacf libswscale
+ssh b
+yay -Q
+yay -Qm
+start polybar
+zenity --info --text="$(uptime --pretty)" --no-wrap
+pac alacritty
+/usr/bin/alacritty -e 'vifm /home/rob/downloads/torrents /media/blueberry/'
+pac xfce4-terminal
+locate nvim.dektop
+locate nvim.desktop
+v /usr/share/applications/nvim.desktop
+xprop
+echo $TERMINAL
+btm
+bb
+ffmpeg -i screen-20200911-132235.mp4  -map_metadata 0 -metadata:s:v rotate="90" -codec copy twerking.mp4      
+pac qt5-styleplugins
+yay -S --rebuild qt5-styleplugins
+sudo pacr qt5ct
+pac xournal++
+pac xournal
+pacf xournal
+pac xournalpp
+pac vnstat
+S enable vnstat
+bash
+vnstat
+reboot
+ll school/ITE221/
+chown -R rob:rob school/ITE221/*
+sudo chown -R rob:rob school/ITE221/*
+ay
+ssh bb
+ping http://www.aparebikes.com/?v=1d20b5ff1ee9
+ping aparebikes.com
+cal
+vfm
+pac thunar
+thunar
+mcctrl
+ndu
+pacdiff
+sudo echo $EDITOR
+sudo ln -s /home/rob/.config/nvim/init.vim /etc/xdg/nvim/sysinit.vim
+v /etc/xdg/nvim/sysinit.vim
+man nvim
+v .profile
+sudo pacdiff
+man reflector
+reflector --help
+v .aliases
+pacrepo
+yay
+la
+la .config
+ls .config/autostart
+yadm commit -a

@@ -5,7 +5,7 @@ rofi_dmenu='rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-selec
 
 _opiOpen(){
     dir="${*:-"/home/rob/"}"
-    fd . $dir -H -t f -i | $rofi_dmenu -p "Open" | xargs -L 1 -r exo-open
+    fd . $dir -H -t f -i | $rofi_dmenu -p "Open" | xargs -L 1 -r xdg-open
 
 }
 

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xdg-open https://duckduckgo.com/?q=$(python -c "import sys, urllib.parse; print(urllib.parse.quote_plus(sys.argv[1]))" "$(xsel)")

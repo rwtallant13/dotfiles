@@ -1,0 +1,14 @@
+*[Gg]radle*
+*[Cc]ache*
+*[Ss]team*
+*[Aa]ndroid*
+*[Cc]argo*
+*[Cc]hromium*
+*[Ll]ib*
+*[Nn]pm*
+*zkbd*
+*[Tt]elegram*
+*[Mm]ozilla*
+**/nvim/swap/*
+**/.local/lib/*
+**/.local/share/*

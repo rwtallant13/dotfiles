@@ -3449,3 +3449,9 @@ la
 v .Xresources
 yadm add .Xresources
 yadm commit -a
+locate *.service
+ls .config/systemd/user/yadm.service
+v .config/systemd/user/yadm.service
+yadm commit -a "weekly update" && yadm push
+yadm commit "weekly update" && yadm push
+yadm commit -a -m "weekly update" && yadm push

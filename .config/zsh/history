@@ -959,7 +959,6 @@ mv .bin/rdiff-backup .bin/system-backup
 ssh -C rob@192.168.2.21 rdiff-backup --server
 iotop
 sudo iotop
-v .Xresources
 pacr rdiff-backup
 mv system-backup.sh system-backup
 vf $backups
@@ -1894,7 +1893,6 @@ file="$(fd . /home/rob -H -t f -i | $rofi_dmenu -p "Open")"
 file="$(fd . /home/rob -H -t f -i | rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-select -p "Open")"
 file=$(fd . /home/rob -H -t f -i | rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-select -p "Open")
 exo-open $file
-v .bin/nv
 yay gotop-bin
 nvim ".bashrc .zshrc"
 man mapfiles
@@ -2640,7 +2638,6 @@ chmod +x .bin/mks
 mks .bin/start
 exo-open .config/sxhkd/sxhkdrc
 v .config/bspwm/autostart.sh
-ls .config/autostart
 S status sxhkd.service
 S disable sxhkd.service
 systemctl --user disable sxhkd.service
@@ -2756,7 +2753,6 @@ ls .local/share/nvim/swap
 rm -rf .local/share/nvim/swap/*
 z --
 nvim
-v
 v /etc/xdg/reflector/reflector.conf
 /media/blueberry/backups/rob-pc/rdiff-backup-data/
 S status reflector.timer
@@ -3207,7 +3203,6 @@ rm .config/zhistory_bad
 rm -rf Bitwarden bashtop Mousepad massren transmission compton.conf
 ls autostart
 yadm commit
-yadm commit -a
 yadm add .bin/*
 yadm add .config/flameshot/flameshot.ini
 yadm add .config/bottom
@@ -3238,7 +3233,6 @@ geekbench --compute | tee ./geekbench
 tail -f geekbench
 rm geekbench
 remove-
-la
 fd . ~/
 fd RARBG* /media/blueberry/media/movies -e exe -e txt
 fd RARBG* /media/blueberry/media/movies -e exe -e txt --exec rm {};
@@ -3431,17 +3425,13 @@ v .profile
 sudo pacdiff
 man reflector
 reflector --help
-v .aliases
 pacrepo
 yay
-la
 la .config
 ls .config/autostart
-yadm commit -a
 yadm push
 yadm -h
 man yadm
-la
 ls .config/nvim 
 ls .config/nvim/nvim.d
 rm -rf .config/nvim/nvim.d
@@ -3451,7 +3441,26 @@ yadm add .Xresources
 yadm commit -a
 locate *.service
 ls .config/systemd/user/yadm.service
-v .config/systemd/user/yadm.service
 yadm commit -a "weekly update" && yadm push
 yadm commit "weekly update" && yadm push
 yadm commit -a -m "weekly update" && yadm push
+systemctl --user enable yadm.timer
+v .aliases
+v .config/systemd/user/yadm.timer
+systemctl --user daemon-reload
+systemctl --user start yadm.timer
+systemctl --user status yadm.timer
+journalctl -f -u yadm.service
+journalctl r -u yadm.service
+v .config/systemd/user/yadm.service
+journalctl -r -u yadm.service
+systemctl --user status yadm.service
+systemctl --user start yadm.service
+journalctl --user -xe
+v .bin/nv
+v
+journalctl --user -fxe
+systemctl --user start yadm.service
+journalctl --user -xe
+systemctl --user status yadm.service
+systemctl --user daemon-reload

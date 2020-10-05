@@ -2,6 +2,7 @@
 # ~/.aliases
 #
 
+
 # system
 alias sudo='sudo '
 alias udb='sudo updatedb'
@@ -13,7 +14,7 @@ alias dots='yadm'
 alias dots-tracked='yadm list -a|less'
 alias myip='curl http://ipecho.net/plain; echo'
 alias S='sudo systemctl'
-alias s='systemctl'
+alias s='systemctl --user'
 alias J='sudo journalctl'
 alias rdb='rdiff-backup'
 

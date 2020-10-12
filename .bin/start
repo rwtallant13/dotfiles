@@ -3,7 +3,7 @@
 # Program functions
 
 _picom(){
-    picom --experimental-backends --backend glx -b --config /home/rob/.config/picom/picom.conf &
+    picom --experimental-backends --backend glx -b --config /home/rob/.config/picom/picom.conf
 }
 
 _polybar(){
@@ -13,7 +13,7 @@ _polybar(){
 }
 
 _dunst(){
-    /usr/bin/dunst &
+	/usr/bin/dunst
 }
 
 _sxhkd(){
@@ -24,14 +24,27 @@ done
 
 }
 
+_ssr(){
+    2>/dev/null 1>&2 simplescreenrecorder --start-hidden --settingsfile=/home/rob/.ssr/fullscreen.conf &
+
+}
+
+_dpms(){
+	xset s 1215 1215
+
+	xset dpms 1215 1215 1215
+}
+
 _pulse(){
 	pulseaudio -k;pulseaudio --start
 }
 
-# Terminate already running instances
-killall -q "$1"
 
-# Wait until the processes have been shut down
-while pgrep -x "$1" >/dev/null; do sleep 0.25; done
+for i in $*; do
+	pkill "$i"
 
-_"${1}"
+	# Wait until the processes have been shut down
+	while pgrep -x "$i" >/dev/null; do sleep 0.25; done
+
+	2>/dev/null 1>&2 _$i &
+done

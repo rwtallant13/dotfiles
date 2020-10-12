@@ -82,7 +82,6 @@ backward-kill-dir () {
 }
 zle -N backward-kill-dir
 bindkey '^H' backward-kill-dir
-# expand-or-complete-or-list-files
 function expand-or-complete-or-list-files() {
     if [[ $#BUFFER == 0 ]]; then
         BUFFER="ls "
@@ -94,7 +93,6 @@ function expand-or-complete-or-list-files() {
     fi
 }
 zle -N expand-or-complete-or-list-files
-# bind to tab
 bindkey '^I' expand-or-complete-or-list-files
 bindkey '^[u' undo
 bindkey '^[r' redo

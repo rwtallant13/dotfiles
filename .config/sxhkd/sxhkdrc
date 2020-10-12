@@ -97,9 +97,13 @@ Print
 super + Print
 	flameshot screen -c
 
+# screenshot whole display
+super + shift + Print
+	flameshot full -c
+
 # gui file manager
 super + t
-	pcmanfm
+	thunar
 
 # vifm
 super + f
@@ -155,19 +159,19 @@ super + F1
 ####################
 
 XF86AudioLowerVolume
-	/usr/bin/pulseaudio-ctl down 2 && "$bin"/sinkctrl -v
+	/usr/bin/pamixer -d 2 && "$bin"/sinkctrl -v
 
 XF86AudioRaiseVolume
-	/usr/bin/pulseaudio-ctl up 2 && "$bin"/sinkctrl -v
+	/usr/bin/pamixer -i 2 && "$bin"/sinkctrl -v
 
 shift + XF86AudioLowerVolume
-	/usr/bin/pulseaudio-ctl down 1 && "$bin"/sinkctrl -v
+	/usr/bin/pamixer -d 1 && "$bin"/sinkctrl -v
 
 shift + XF86AudioRaiseVolume
-	/usr/bin/pulseaudio-ctl up 1 && "$bin"/sinkctrl -v
+	/usr/bin/pamixer -i 1 && "$bin"/sinkctrl -v
 
 XF86AudioMute
-	/usr/bin/pulseaudio-ctl mute && "$bin"/sinkctrl -v
+	/usr/bin/pamixer --toggle-mute && "$bin"/sinkctrl -v
 
 # switch audio outputs
 super + Insert

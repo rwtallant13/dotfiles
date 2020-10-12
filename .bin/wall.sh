@@ -31,8 +31,9 @@ _blur() {
     # Delete temporary file
     rm "temp_logo.png"
 }
+
 _update() {
-    feh --no-fehbg --bg-fill $1 --bg-fill $1 --bg-fill $1
+	echo "feh --bg-scale $*" > /home/rob/.fehbg
 
     betterlockscreen -r 1920x1200 -u "$1"
 
@@ -74,7 +75,7 @@ EOF
 
 case "$1" in
     -u|update)
-        _update "$2"
+        _update ${*:2}
         ;;
     -n|new)
         _new "$2"

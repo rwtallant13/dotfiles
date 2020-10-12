@@ -67,7 +67,7 @@ foreground_bold = #dddddd
 background = #000000
 
 # 20% background transparency (requires a compositor)
-background = rgba(00, 00, 00, 0.75)
+background = rgba(00, 00, 00, 0.8)
 
 color0 = #777F83
 color1 = #F07178

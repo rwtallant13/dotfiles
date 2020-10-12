@@ -1,5 +1,0 @@
-#!/usr/bin/sh
-
-receptacle=$(bspc query -N -n ".leaf.!window.local" | awk NR==1)
-
-bspc node -n "$receptacle"

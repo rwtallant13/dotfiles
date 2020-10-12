@@ -99,8 +99,16 @@ mkcd(){
 	mkdir -p "$1" && cd "$1"
 }
 
+mks(){
+	if [ "$1" ]; then
+		printf '#!/bin/bash\n\n' > "$1" && chmod +x "$1" && nv /home/rob/.bin/"$1"
+	else
+		nv
+	fi
+}
+
 chx(){
-    chmod +x $1
+    chmod +x $*
 }
 
 

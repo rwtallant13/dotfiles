@@ -64,9 +64,7 @@ fd -t f|wc -l
 fd -t f -e mp4 -e mkv -e avi | wc -l
 cat .bin/polybar.sh
 polybar dp &
-polybar dvi &
 polybar hdmi &
-killall polybar
 vf Boruto\:\ Naruto\ Next\ Generations\ \(Dub\)\ \(01-52\)/
 S enable ntpdate.service
 fd -H | grep -E '\s|\*|\?|\$|%'
@@ -388,8 +386,6 @@ bspc node --state ~fullscreen
 bspc node --state ~tiled
 du .xsession-errors
 tail .xsession-errors
-pac libpam-gnome-keyring
-pacf libpam-gnome-keyring
 pacs gnome-keyring
 pac libgnome-keyring
 sudo pacr picom-tryone-git
@@ -603,7 +599,6 @@ wall.sh -a *
 ln -s landscapes/macOS/* current
 unlink current/10-14-Mojave-*
  fd . current/ -t l --exec unlink
-ls current
 wall.sh -u pictures/backgrounds/landscapes/macOS/10-15-1-Dawn.jpg
 v ~/.bashrc
 wall.sh -b catalina-phone.png
@@ -695,7 +690,6 @@ rg --help | less
 v .bin/rename_sinks
 mv .bin/change-sink .bin/sinkctrl
 .bin/sinkctrl -c
-.bin/sinkctrl
 rm .bin/rename_sinks
 rm .bin/change-sink
 ls .bin/screens.sh
@@ -715,7 +709,6 @@ rg documents .bin
 rg downloads .bin
 rg videos .bin
 sudo pacr simple-and-soft-cursor
-sudo pacr nerd-fonts-hack
 grep dpi .Xresources
 systemctl restart sshd
 pac xwininfo
@@ -882,7 +875,6 @@ viewnior pics/backgrounds/landscapes/macOS/catalina-phone-night.png
 wall.sh -h
 wall.sh -b pics/backgrounds/landscapes/macOS/catalina-phone-night.png
 yay syncthing
-pac yadm
 pacf yadm
 yay yadm-git
 yadm stash pop
@@ -1068,7 +1060,6 @@ clipmenud
 systemctl daemon-reload
 rm test
 /usr/bin/clipmenud &
-/home/rob/.bin/sinkctrl -r
 /home/rob/.bin/sinkctrl -d
 v .bin/pu
 v .bin/pulldots
@@ -1297,7 +1288,6 @@ v itp-cheetsheet.txt
 pac lsd
 pac exa
 exa -a
-flameshot
 flameshot -h
 sleep 3s && flameshot screen
 sleep 3s && flameshot screen -c
@@ -1414,7 +1404,6 @@ pac expect
 unbuffer xtitle -sf "%u\n" | xargs -l1 xprop -id | grep 'WM_CLASS(STRING) = ' --line-buffered | cut -d\" -f4
 unbuffer xtitle -sf "%u\n" | xargs -l1 xprop -id
 fehbg
-./.fehbg
 pacq linux
 pacq |grep linux
 pac tuxboot
@@ -1557,7 +1546,6 @@ nvfans -s 30
 nvidia-settings -q gpucoretemp -t
 nvidia-settings -q gpucoretemp -t | awk NR=1
 nvidia-settings -q gpucoretemp -t | awk NR==1
-v .bin/screens.sh
 sleep 10
 pkill signal
 pkill signal-desktop
@@ -1596,16 +1584,13 @@ pac pandoc
 pac pandoc-bin
 yay pandoc-bin
 neofetch
-/home/rob/.bin/ssr.sh launch
 ll .bin/thing
 ll .bin
 sudo chown rob:rob .bin/*
 v .bin/thing
 rm signal-2020-05-22-181132.png
 killall nvfans
-dots-tracked
 dots add .bin/*
-v /etc/pacman.conf
 ls .m2
 fd -e ovpn
 ll docs/rwt13.ovpn
@@ -1774,7 +1759,6 @@ rm 50
 echo "100 > 50" | bc -l
 man bc
 rg "((" .bin
-rg '((' .bin
 rg '*' .bin
 maim -s "$IMAGE_FILE"
 maim -s tmp.png
@@ -1856,7 +1840,6 @@ less /home/rob/.cache/gotop/errors.log
 sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf.bak
 sudo mv xorg.conf /etc/X11/xorg.conf
 nvfans
-v .bin/nvfans
 v /etc/X11/xorg.conf.ba
 v /etc/X11/xorg.conf.bak
 l .bin
@@ -2019,7 +2002,6 @@ v .alsoftrc
 bspc rule -a minecraft-launcher:"Minecraft Launcher" 'monitor=DP-0:^6' focus=on
 bspc rule -l
 man bsp
-man bspc
 bspc node -m DP-0#^2
 bspc node -m DP-0^2
 bspc node -m DP-0
@@ -2052,7 +2034,6 @@ jyay
 ncdu /
 ncdu / -x
 pacman -Sc
-sudo pacman -Sc
 yay -Sc
 man deluge
 deluge-console info
@@ -2118,16 +2099,13 @@ xsetroot -solid black
 rm .fehbg
 xsetroot -solid black -noreset
 rg feh
-sudo pacr feh
 pac betterautolock
 yay betterautolock
 locate betterlockscreen
 v /usr/bin/betterlockscreen
 v .config/betterlockscreenrc
 cat .bin/wall.sh
-v .bin/wall.sh
 man magick
-man feh
 locate big-sur
 .bin/wall.sh update /home/rob/pics/backgrounds/landscapes/macOS/big-sur-7.jpg
 .bin/wall.sh update /home/rob/pics/backgrounds/landscapes/macOS/big-sur-8.jpg
@@ -2168,7 +2146,6 @@ pac python python-ordered-set tbb blender i3lock-color liblouis linux-firmware p
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expacchromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
 pacman -Scc
 sudo pacman -Scc
-yay -Scc
 y
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity --force
@@ -2222,7 +2199,6 @@ pacman -Qqn|grep lib
 pacman -Qqe|grep lib
 man pacman
 chxbin
-pkgclear
 sudo ln -s /usr/bin/termite /usr/bin/xterm
 xterm .config/sxhkd/sxhkdrc
 xdg-open .config/sxhkd/sxhkdrc
@@ -2349,7 +2325,6 @@ ls docs/backup/backup_exclude.txt
 mkdir docs/backup/logs
 mv docs/backup/2020-0* docs/backup/logs
 locate backup.timer
-pacman -Qm
 pacr gl-sync-demo
 sudo pacr gl-sync-demo
 pac nvidia
@@ -2381,9 +2356,6 @@ man cp
 mv ~/downloads/torrents/\[JAM_CLUB\]_Boku_no_Hero_Academia_the_Movie_2_Heroes_Rising_\[1080p\]\[RUS\]\[DUB\].mkv ./My-Hero-Academia_Heroes-Rising.mkv
 history | awk '{print $2}'
 history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n 10
-history
-history -h
-history --help
 history 0 | awk '{print $2}' | sort | uniq -c | sort -nr | head -n 10
 sudo pacr linux-zen
 sudo pacr linux-zen linuz-zen-headers
@@ -2504,7 +2476,6 @@ rg -h
 rg -e shutdown -e reboot /var/log
 sudo rg -e shutdown -e reboot /var/log
 journalctl --list-boot
-v /etc/systemd/journald.conf
 ls /usr/share/zsh/plugins/
 ssh -t bb
 echo $TERM
@@ -2529,7 +2500,6 @@ colormgr
 locate xiccd.desktop
 colormgr get-devices
 v /etc/X11/xorg.conf
-xrandr
 find /media/blueberry/backups/rob-pc -maxdepth 1 -type d -name \"????-??-??-????\" -prune | sort -r
 find /media/blueberry/backups/rob-pc/ -maxdepth 1 -type d -name \"????-??-??-????\" -prune | sort -r
 find /media/blueberry/backups/rob-pc/ -maxdepth 1 -type d -name \"????-??-??-????\"
@@ -2564,7 +2534,6 @@ rm -rf blueberry
 sudo rm -rf *
 cd /media/blueberry/media/shows/
 cd ../..
-lr
 fd -d --maxdepth=1
 fd -d --maxdepth 1
 fd -d --maxdepth 2
@@ -2628,8 +2597,6 @@ seq 1 10
 ll /.bin/mks
 ll .bin/mks
 rm -rf .bin/mks
-mks
-cpf .zshrc
 cat .bin/start-*
 v home/rob/.bin/mks
 chx
@@ -2643,7 +2610,6 @@ S disable sxhkd.service
 systemctl --user disable sxhkd.service
 systemctl disable --user sxhkd.service
 rm -rf .bin/start-*
-v .bin/bspscripts
 pac z.lua
 pac lua
 extract downloads/z.lua-1.8.7.tar.gz
@@ -2824,7 +2790,6 @@ ls .nv
 rg case .bin
 rg -C 3case .bin
 rg -C3 case .bin
-v .bin/hue.sh
 adb devices
 adb shell
 upower --dump
@@ -2836,7 +2801,6 @@ sudo pacr gnome-desktop
 l
 mv .bin/notes .bin/note
 [200~filecount
-fzfd
 rm .bin/colorblocks
 colorblocks
 colorpanes
@@ -2901,7 +2865,6 @@ rm -rf draw_img.sh
 pacf cp-p
 pac vidir
 yay vidir
-v .bin/start
 sudo loginctl list-sessions
 sudo loginctl kill-session 5
 ;f
@@ -2910,7 +2873,6 @@ efibootmgr -v
 .local
 share
 filecount
-..
 fd -H | wc -l
 fd -H -t f | wc -l
 mkcd .config/zsh
@@ -2986,8 +2948,6 @@ yay S vidir
 vidir --help
 vidir -h
 man vidir
-pacr vidir
-sudo pacr vidir
 qbittorrent
 yay -S vidir
 qmv
@@ -3038,13 +2998,11 @@ v .config/lf/lfrc
 lf
 pacr deluge
 sudo pacr deluge
-flameshot --help
 rg gtk2
 rg -H gtk2
 rg --hidden gtk2
 pacman -S qt5ct qt5-styleplugins
 sudo pacman -S qt5ct qt5-styleplugins
-less .xsession-errors
 rg QT_QPA_PLATFORMTHEME
 pac qt5ct
 qt5ct
@@ -3060,9 +3018,7 @@ micro
 rm testmicro
 micro .bin/filecount
 m .bin/note
-pacr lf
 v .bin/t
-tail -f .xsession-errors
 chx .bin/t
 m .bin/t
 rm .bin/t
@@ -3084,7 +3040,6 @@ fd -t f -e mkv -e mp4 --exec mediainfo {}|grep -e "Bit rate" -e "Complete name"
 fd -t f -e mkv -e mp4 --exec mediainfo {}|grep A20 "Complete name" |grep -e "Bit rate" -e "Complete name"
 fd -t f -e mkv -e mp4 --exec mediainfo {}|rg A20 "Complete name" |grep -e "Bit rate" -e "Complete name"
 fd -t f -e mkv -e mp4 --exec mediainfo {}|rg  "Complete name" -A20 |grep -e "Bit rate" -e "Complete name"
-pkglist
 sleep 1m
 sleep 25m && killall firefox
 pgrep firefoc
@@ -3107,7 +3062,6 @@ man pgrep
 pgrep -x firefox
 pgrep -f firefox
 pkill firefox
-man pkill
 pkill -f firefox
 ssh bb -o LocalCommand="mcctrl"
 man ssh
@@ -3203,10 +3157,8 @@ rm .config/zhistory_bad
 rm -rf Bitwarden bashtop Mousepad massren transmission compton.conf
 ls autostart
 yadm commit
-yadm add .bin/*
 yadm add .config/flameshot/flameshot.ini
 yadm add .config/bottom
-v .zshrc
 rm .config/zhistory
 yadm add .config/zlua
 yadm add .config/lf/lfrc
@@ -3214,7 +3166,6 @@ yadm add .config/zsh/history
 yadm add .config/qBittorrent/qBittorrent.conf
 yadm list -a
 yadm add .fdignore
-ls .config
 ssh bb cat /opt/minecraft/vanilla/plugins/WorldEdit/config.yml | xc
 open ExampleErroneousPrograms.txt
 v hw1.txt
@@ -3241,7 +3192,6 @@ check-swap
 v .mozilla/firefox/3zvlgup7.default-release-1569356723307
 mkdir .mozilla/firefox/3zvlgup7.default-release-1569356723307/chrome
 v .mozilla/firefox/3zvlgup7.default-release-1569356723307/chrome/userChrome.css
-v .bin/sinkctrl
 sinkctrl -R
 man zip
 zip -qdg config.yml
@@ -3258,13 +3208,11 @@ test
 v .bin/test
 rm .bin/test
 man rsync
-v .bin/system-backup
 date +%I%M
 date "+%Y-%b-%d-%I%M"
 date "+%F-%I%M"
 z van
 backup-log
-ls .bin
 ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1
 less $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1 )
 cat $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1 )
@@ -3291,7 +3239,6 @@ cd
 rm -r ex
 pulseaudio -k;pulseaudio --start
 z 221
-remove_spaces
 unoconv -f pdf ./Unit3_DataRepresentation.pptx
 rm *pptx
 z shows
@@ -3314,7 +3261,6 @@ mv izotope* iZotope/
 mv iZotope* iZotope/
 ls iZotope/
 tar cvzf izotope.tar.gz iZotope/
-vf
 ls iZotope
 sudo passwd
 man sudo
@@ -3336,8 +3282,6 @@ man termite
 fv
 locate pcmanfm.desktop
 myip
-remove-orphans
-su
 sudo su
 pacf fz.sh
 yay -S fz.sh
@@ -3345,7 +3289,6 @@ curl "https://raw.githubusercontent.com/changyuheng/fz/master/{fz.sh}" \\
     -o ~/.bash_completion.d/z"#1"
 curl "https://raw.githubusercontent.com/changyuheng/fz/master/{fz.sh}"
 curl "https://raw.githubusercontent.com/changyuheng/fz/master/{fz.sh}" > fz.sh
-ls
 less fz.sh
 chmod a+x fz.sh
 locate bash_completion.d
@@ -3368,9 +3311,7 @@ pacman -S chaotic-aur/ungoogled-chromium-bin
 sudo pacman -S chaotic-aur/ungoogled-chromium-bin
 sudo pacman -Syu chaotic-aur/ungoogled-chromium-bin
 sudo pacman -Syu chaotic-aur/ungoogled-chromium
-udb
 locate chromium.desktop
-v /usr/share/applications/chromium.desktop
 pgrep chromium
 sleep 22m && pkill -f chromium
 pacf sws_scale
@@ -3378,7 +3319,6 @@ pacf libswscale
 ssh b
 yay -Q
 yay -Qm
-start polybar
 zenity --info --text="$(uptime --pretty)" --no-wrap
 pac alacritty
 /usr/bin/alacritty -e 'vifm /home/rob/downloads/torrents /media/blueberry/'
@@ -3388,8 +3328,6 @@ locate nvim.desktop
 v /usr/share/applications/nvim.desktop
 xprop
 echo $TERMINAL
-btm
-bb
 ffmpeg -i screen-20200911-132235.mp4  -map_metadata 0 -metadata:s:v rotate="90" -codec copy twerking.mp4      
 pac qt5-styleplugins
 yay -S --rebuild qt5-styleplugins
@@ -3402,21 +3340,16 @@ pac vnstat
 S enable vnstat
 bash
 vnstat
-reboot
 ll school/ITE221/
 chown -R rob:rob school/ITE221/*
 sudo chown -R rob:rob school/ITE221/*
 ay
-ssh bb
 ping http://www.aparebikes.com/?v=1d20b5ff1ee9
 ping aparebikes.com
 cal
-vfm
 pac thunar
-thunar
 mcctrl
 ndu
-pacdiff
 sudo echo $EDITOR
 sudo ln -s /home/rob/.config/nvim/init.vim /etc/xdg/nvim/sysinit.vim
 v /etc/xdg/nvim/sysinit.vim
@@ -3425,8 +3358,6 @@ v .profile
 sudo pacdiff
 man reflector
 reflector --help
-pacrepo
-yay
 la .config
 ls .config/autostart
 yadm push
@@ -3435,7 +3366,6 @@ man yadm
 ls .config/nvim 
 ls .config/nvim/nvim.d
 rm -rf .config/nvim/nvim.d
-la
 v .Xresources
 yadm add .Xresources
 yadm commit -a
@@ -3445,22 +3375,313 @@ yadm commit -a "weekly update" && yadm push
 yadm commit "weekly update" && yadm push
 yadm commit -a -m "weekly update" && yadm push
 systemctl --user enable yadm.timer
-v .aliases
 v .config/systemd/user/yadm.timer
-systemctl --user daemon-reload
 systemctl --user start yadm.timer
 systemctl --user status yadm.timer
 journalctl -f -u yadm.service
 journalctl r -u yadm.service
-v .config/systemd/user/yadm.service
 journalctl -r -u yadm.service
-systemctl --user status yadm.service
-systemctl --user start yadm.service
-journalctl --user -xe
 v .bin/nv
-v
 journalctl --user -fxe
 systemctl --user start yadm.service
 journalctl --user -xe
-systemctl --user status yadm.service
 systemctl --user daemon-reload
+systemctl --user status yadm.service
+.bin/sinkctrl
+.bin/sinkctrl -v
+/usr/bin/pulseaudio-ctl up 2
+pac pulseaudio-ctl
+v
+sudo pacr pulseaudio-ctrl
+sudo pacr pulseaudio-ctl
+pac pamixer
+which pamixer
+pamixer -i 2
+pamixer -i 20
+pamixer -d 20
+v .bin/sinkctrl
+pamixer --get-volume-human
+pamixer --default-source
+pamixer -h
+pamixer --list-sources
+pamixer --list-sources | grep hdmi
+pamixer --list-sources | grep hdmi | cut -f1
+pamixer --list-sources | grep hdmi | cut -d' ' -f1
+find /tmp -name asidj
+find /tmp -name asidj 2>/dev/null
+mv tmp .bin/sinkctrl
+chx .bin/sinkctrl
+/home/rob/.bin/ssr.sh launch
+/home/rob/.bin/sinkctrl -r
+pacq -m
+pacman -qm
+sudo pacr xbps-git
+pac yadm
+yay yadm
+pacr vidir
+sudo pacr vidir
+sudo pacr geekbench
+sudo pacr ytop-bin marktext-bin
+sudo pacr nerd-fonts-hack
+wc -l .zshrc
+cpf .zshrc
+ssh bb
+pacman -Qm
+rg -H dialog-information
+rg -h dialog-information
+pacdiff
+yay pacman-contrib
+pactree
+S enable paccache.timer
+v /etc/pacman.conf
+ls .config
+pacr pcmanfm
+sudo pacr pcmanfm
+sudo mkdir -p /etc/opt/chrome/policies/managed/ && echo '{ "URLWhitelist": ["zoom://*"] }' |sudo tee /etc/opt/chrome/policies/managed/whitelist.json
+tail /etc/opt/chrome/policies/managed/whitelist.json 
+sudo rm -rf /etc/opt/chrome/policies/managed/whitelist.json
+rg --hidden dialog-information
+pac qt-creator
+pac qtcreator
+yay eclipse
+sudo paccache
+sudo paccache -r
+yay -Scc
+z itp
+rm ~/bitwarden_export_20201006141233.csv
+v /etc/systemd/journald.conf
+S enable systemd-journald.service
+factor {2..1000} | awk 'NF==2{print $2}'
+factor {2..1000} 
+factor {2..10000} | awk 'NF==2{print $2}'
+factor {2..100000} | awk 'NF==2{print $2}'
+factor {2..100000} | awk 'NF==2{print $2}' | wc -l
+factor {2..1000000} | awk 'NF==2{print $2}' 
+time factor {2..100000} | awk 'NF==2{print $2}' 
+man factor
+factor 12
+factor 13
+factor {2..10}
+wall.sh -u pics/backgrounds/landscapes/macOS/big-sur-7-top.jpg
+pac nitrogen
+which nitrogen
+nitrogen --set-scaled pics/backgrounds/landscapes/macOS/big-sur-7-top1080.jpg 
+nitrogen --set-scaled pics/backgrounds/landscapes/macOS/big-sur-8-top.jpg
+pac read-edid
+ sudo get-edid  | parse-edid 
+sudo  sudo get-edid  | parse-edid 
+sudo  sudo get-edid  | sudo parse-edid 
+su
+btm
+xrandr -h
+xrandr --help
+man nvidia-settings
+nvidia-settings -q all | grep DP
+xrandr
+v .bin/scr
+v .bin/screens.sh
+nitrogen --head=3 --set-scaled pics/backgrounds/landscapes/macOS/big-sur-8-top.jpg
+xrandr | grep " connected " | awk '{ print$1 }'
+xrandr | grep " connected "
+wall.sh -u pics/backgrounds/landscapes/macOS/big-sur-7-top1080.jpg
+xrandr | grep " connected " |wc -l
+wall.sh -u pics/backgrounds/landscapes/macOS/big-sur-8-top.jpg
+man nitrogren
+man nitrogen
+nitrogen --force-setter=xwindows --set-scaled pics/backgrounds/landscapes/macOS/big-sur-8-top.jpg
+nitrogen --head=1 --set-scaled pics/backgrounds/landscapes/macOS/big-sur-8-top.jpg
+nitrogen --head=2 --set-scaled pics/backgrounds/landscapes/macOS/big-sur-8-top.jpg
+nitrogen --head=0 --set-scaled pics/backgrounds/landscapes/macOS/big-sur-8-top.jpg
+rg '((' .bin
+rg '+' .bin
+v .bin/nvfans
+rm *1080*
+viewnior 10-14-Mojave-12.jpg
+wall.sh -u pics/backgrounds/landscapes/macOS/big-sur-3-top.jpg
+rg
+rf
+mv ~/pexels-eberhard-grossgasteiger-1303502.jpg ../mountain.jpg
+wall.sh -u pics/backgrounds/landscapes/mountain.jpg
+mv ~/macos ./
+sleep 5s && flameshot full
+flameshot
+flameshot --help
+flameshot full -c
+sleep 5s && flameshot full -c
+..
+ls current
+rmr current
+ls night
+viewnior night/593197.jpg
+rmr night
+mv landscapes/macOS ./
+macOS
+remove_spaces
+ls
+cp *{left,right}* ../
+ls ../
+mkdir ../lr
+mv ../Appearance_Dark-left.png ../Appearance_Dark-right.png ../Appearance_Light-left.png ../Appearance_Light-right.png ../lr
+ls ../lr
+pacq
+man bspc
+pacr feh
+sudo pacr feh
+nitrogen --restore
+bspc config top_padding $(($PANEL_HEIGHT))
+vf
+$media/shows
+MyHeroAcademia
+cp ~/downloads/torrents/My\ Hero\ Academia\ S04\ 1080p\ Dual\ Audio\ WEBRip\ AAC\ x265-EMBER/S04E01-The\ Scoop\ on\ U.A.\ Class\ 1-A.mkv ./Season4/MyHeroAcademia_S4E01.mkv
+rm ./Season4/MyHeroAcademia_S4E01.mp4
+vfm
+ssh bb btm
+lr
+procfs
+v .bin/dotu
+history -h
+history --help
+history yadm
+v .config/systemd/user/yadm.service
+yadm add .bin/*
+dots-tracked
+chx .bin/dotu
+la .bin/*
+v .bin/set-dpms
+rm .bin/set-dpms
+v .config/bspwm/autostart.sh 
+start polybar
+pgrep pulse
+/home/rob/.bin/start picom polybar dunst dpms
+start picom
+less .xsession-errors
+v .bin/s
+v .bin/start
+v /usr/share/applications/chromium.desktop
+cp /usr/share/applications/chromium-browser.desktop ~/.local/share/applications
+cp /usr/share/applications/chromium.desktop ~/.local/share/applications
+man killall
+man pkill
+sinkctrl -r -d
+pamixer --default-source "$(pamixer --list-sources | grep hdmi | cut -d' ' -f1)"
+name="$(pacmd list-sinks | grep '*' -A60 | grep 'device.description' | cut -d ' ' -f 3 | tr -d \")"\
+\
+    while true; do\
+        if [[ "$name" = "Speakers" || "$name" = "Headphones" || "$name" = "hdmi" ]]; then\
+            sleep 120\
+            echo "Sink names already set"\
+        else\
+            pacmd update-sink-proplist $(pactl list sinks short | rg hdmi | cut -f2) "device.description=hdmi"\
+\
+            pacmd update-sink-proplist $(pactl list sinks short | rg usb | cut -f2) "device.description=Headphones"\
+\
+            pacmd update-sink-proplist $(pactl list sinks short | grep -v hdmi | grep pci | cut -f2) "device.description=Speakers"\
+\
+            sleep 120\
+        fi\
+    done\
+
+/home/rob/.bin/sinkctrl -r -d
+v .bin/renamer
+rm -rf .bin/renamer
+rm .bin/pixel-files
+rm .bin/receptacle-swap
+v .bin/bspscripts
+.bin/bspscripts receptacle
+fzfd
+v .bin/fzfd
+rm .bin/fzfd
+pkgclear
+rm -rf .bin/pkgclear
+ytm
+rm .bin/ytm
+ls .bin
+v .bin/dns.sh
+mv .bin/dns.sh .bin/dnsset
+mv .bin/hue.sh
+v .bin/hue.sh
+mv .bin/hue.sh .bin/sethue
+v .bin/sethue
+v .bin/calc
+v .bin/check-
+v .bin/check-media
+rm .bin/ocr_sel
+rm .bin/selsearch
+rm .bin/note
+cat .bin/mks
+rm .bin/mks
+mks
+zle
+zle list-choices
+history
+rm downloads/zsh-autosuggestions_0.5.0+3.4_amd64.deb
+bb
+v .bin/system-backup
+pacrepo
+screen.sh
+.bin/screens.sh
+nvidia-settings --assign CurrentMetaMode="DPY-0: nvidia-auto-select @1920x1080 +0+0 {ViewPortIn=1920x1080,ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On,ForceFullCompositionPipeline=On}, DPY-2: nvidia-auto-select @1920x1080+1920+0 {ViewPortIn=1920x1080, ViewPortOut=1920x1080+0+0,ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, DPY-1:1920x1080 @1920x1080 +3840+0 {ViewPortIn=1920x1080,ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On,ForceFullCompositionPipeline=On}"
+.bin/screens.sh 2
+nvidia-settings -q screens
+nvidia-settings -q all
+nvidia-settings -q CurrentMetaMode
+screens.sh 3
+screens.sh 2
+tail -f .xsession-errors
+fkill polybar
+fkill 
+pkill polybar
+killall polybar
+polybar dvi &
+xset q
+echo - -e
+v ~/.local/share/applications/chromium.desktop
+pac libpam-gnome-keyring
+pacf libpam-gnome-keyring
+ls /lib/x86_64-linux-gnu/security/pam_gnome_keyring.so
+pac libgnome-keyring libsevret gnome-keyring
+pac libgnome-keyring libsecret gnome-keyring
+v /etc/pam.d/login
+sudo test -f ~/.gnome2/keyrings/login.keyring && echo "Have 'login' keyring"
+reboot
+pac urxvt
+pac rxvt-unicode
+udb
+locate urxvt.desktop
+pac seahorse
+seahorse
+man feh
+wall.sh -u pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Light-right.png 
+feh --bg-scale pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Light-right.png
+feh --bg-scale pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Dark-right.png
+lq
+thunar
+.fehbg
+v ./.fehbg
+wall.sh -u pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Dark-right.png 
+v .fehbg
+./.fehbg
+tail -f .xsession-errors\\
+
+less .xsession-errors\\
+
+la
+pacr lf
+sudo pacr lf
+pkglist
+remove-orphans
+pacreport > pacreport.txt
+less pacreport.txt
+paccache
+paccache -h
+sudo pacman -Sc
+man pacreport
+v .zshrc
+v .aliases
+yay
+v .bin/wall.sh
+ls /usr/share/pixmaps
+realpath /usr/share/pixmaps/big-sur-8-top.jpg
+betterlockscreen -r 1920x1200 -u /usr/share/pixmaps/big-sur-8-top.jpg
+vfm
+yay

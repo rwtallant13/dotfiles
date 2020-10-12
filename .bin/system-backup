@@ -8,7 +8,7 @@ _backup(){
 }
 
 _sleep(){
-    sleep 2s && sudo -u rob /home/rob/.bin/hue.sh
+    sleep 2s && sudo -u rob /home/rob/.bin/sethue
     systemctl suspend
 }
 

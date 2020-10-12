@@ -1,7 +1,7 @@
 #!/bin/bash
 
-defSink=$(pactl list short sinks | grep -v hdmi | grep pci | awk '{print $1}')
 numSinks=$(pactl list short sinks| wc -l)
+
 
 _nextSink() {
     oldSink=$(tail -1 "$sinkFile")
@@ -13,19 +13,8 @@ _nextSink() {
     sed -i "2s/.*/$nextSink/" "$sinkFile"
 }
 
-_notify() {
-    SINK="$(pacmd list-sinks | grep '*' -A60 | grep 'device.description' | cut -d '=' -f 2 | tr -d \")"
-
-    VOL="$(pacmd list-sinks |
-            awk '/^\s+name: /{indefault = $2 == "<'$(pacmd stat | awk -F": " '/^Default sink name: /{print $2}')'>"}
-                /^\s+volume: / && indefault {print $5; exit}')"
-
-    if [ "$(pacmd list-sinks |grep -A60 '*' | grep 'muted: yes')" ]
-    then
-        notify-send --hint=string:x-dunst-stack-tag:output -u normal "$SINK" "Muted"  -i /usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-muted.svg
-    else
-        notify-send --hint=string:x-dunst-stack-tag:output -u normal "$SINK" "$VOL"  -i /usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-high.svg
-    fi
+_changeSink() {
+    pacmd set-default-sink "$newSink"
 }
 
 _moveSinks() {
@@ -35,17 +24,38 @@ _moveSinks() {
     done
 }
 
-_changeSink() {
-    pacmd set-default-sink "$newSink"
+_notify() {
+    SINK="$(pacmd list-sinks | grep '*' -A60 | grep 'device.description' | cut -d '=' -f 2 | tr -d \")"
+    VOL="$(pamixer --get-volume-human)"
+	notify-send --hint=string:x-dunst-stack-tag:output -u normal "$SINK" "$VOL"
 }
 
 _default() {
-    newSink="$defSink"
-    _changeSink
-    _moveSinks
-    sleep 1s &&
+	pamixer --default-source "$(pamixer --list-sources | grep hdmi | cut -d' ' -f1)"
+	_moveSinks
+	sleep 1s &&
     _notify
     exit 0
+}
+
+_mkfile(){
+    rm -rf /tmp/current_sink*
+    sinkFile="$(mktemp -t current_sink.XXXX)"
+    echo $(pactl list short sinks | cut -f1) > "$sinkFile"
+    echo 1 >> "$sinkFile"
+}
+
+_cycle(){
+	sinkFile="$(find /tmp -name "current_sink"* 2>/dev/null)"
+    if [[ -z $sinkFile ]]; then
+        _mkfile
+    fi
+
+    _nextSink
+    _changeSink
+    _moveSinks
+    _notify
+
 }
 
 _rename(){
@@ -67,24 +77,6 @@ _rename(){
     done
 }
 
-_mkfile(){
-    rm -rf /tmp/current_sink*
-    sinkFile="$(mktemp -t current_sink.XXXX)"
-    echo $(pactl list short sinks | cut -f1) > "$sinkFile"
-    echo 1 >> "$sinkFile"
-}
-
-_cycle(){
-    if [[ -e $(find /tmp -name "current_sink"* 2>/dev/null) ]]; then
-        sinkFile="$(find /tmp -name "current_sink"* 2>/dev/null)"
-        _nextSink
-        _changeSink
-        _moveSinks
-        _notify
-    else
-        _mkfile
-    fi
-}
 
 _help(){
     cat <<- EOF
@@ -100,25 +92,28 @@ Options:
 EOF
 }
 
-case "$1" in
-    -d|default)
-        _default
-        exit 0
-        ;;
-    -R|reset)
-        _mkfile
-        ;;
-    -v|vol)
-        _notify
-        exit 0
-        ;;
-    -r|rename)
-        _rename &
-        ;;
-    -c|cycle)
-        _cycle
-        ;;
-    *)
-        _help
-        ;;
-esac
+for arg in "$@"; do
+    shift
+    case "$arg" in
+		-d|default)
+			_default
+			exit 0
+			;;
+		-R|reset)
+			_mkfile
+			;;
+		-v|vol)
+			_notify
+			exit 0
+			;;
+		-r|rename)
+			_rename &
+			;;
+		-c|cycle)
+			_cycle
+			;;
+		*)
+			_help
+			;;
+	esac
+done

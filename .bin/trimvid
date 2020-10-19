@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -e
+
+re='^[0-9]+$'
+
+if [[ $# -gt 1 ]]; then
+	for var in "$@"; do
+    	if [[ -f "$var" ]]; then
+			file="$var"
+		elif [[ $var =~ $re ]] ; then
+			time="$var"
+		else
+			opt="$var"
+		fi
+	done
+fi
+
+newfile="$file-trim"
+
+if [[ "$opt" == "end" ]]; then
+	ffmpeg -sseof 0 -t $time  -i "$file" -vcodec copy -acodec copy "$newfile"
+else
+	ffmpeg -ss 0 -t $time -i "$file" -vcodec copy -acodec copy "$newfile"
+fi

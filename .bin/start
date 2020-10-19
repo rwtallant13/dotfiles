@@ -6,10 +6,8 @@ _picom(){
     picom --experimental-backends --backend glx -b --config /home/rob/.config/picom/picom.conf
 }
 
-_polybar(){
-    polybar dp &
-    polybar dvi &
-    polybar hdmi &
+_pbar(){
+    /home/rob/.bin/pbar.sh
 }
 
 _dunst(){
@@ -24,8 +22,8 @@ done
 
 }
 
-_ssr(){
-    2>/dev/null 1>&2 simplescreenrecorder --start-hidden --settingsfile=/home/rob/.ssr/fullscreen.conf &
+_obs(){
+    2>/dev/null 1>&2 obs --profile Default --minimize-to-tray &
 
 }
 

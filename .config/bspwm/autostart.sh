@@ -3,7 +3,7 @@
 # bspwm autostart
 #/home/rob/.fehbg
 #/usr/bin/nitrogen --restore
-/home/rob/.bin/start picom polybar dunst dpms ssr
+/home/rob/.bin/start picom pbar dunst dpms obs
 /home/rob/.bin/nvfans &
 /home/rob/.bin/autolock enable &
 /home/rob/.bin/mnt bb &

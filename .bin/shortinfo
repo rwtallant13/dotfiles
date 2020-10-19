@@ -7,8 +7,15 @@
 
 #mediainfo --Inform="Video;Resolution=%Width%x%Height%\nCodec=%CodecID%\nBitrate= %BitRate/String%" "$@";
 
-for f in $(fd . "$1" -t f -e mp4 -e mkv); do
+if [[ -d "$1" ]]; then
+	vids="$(fd . "$1" -t f -e mp4 -e mkv)"
+else
+	vids="$*"
+fi
+
+for f in "$vids"; do
 	#bitrate="$(mediainfo --Inform="Video;%OverallBitRate%" "$f")"
 	mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" "$f"
+	mediainfo --Inform="Video;Resolution=%Width%x%Height%\nCodec=%CodecID%\nBitrate= %BitRate/String%" "$f";
 
 done | sort -t ':' -nk1

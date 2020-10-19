@@ -92,7 +92,7 @@ pkglist(){
     pacman -Qqne > /home/rob/docs/pacman-pkgs
     pacman -Qqme > /home/rob/docs/yay-pkgs
 
-    pacman -Qq | fzf --height=100% --preview 'pacman -Qi {}' --layout=reverse
+    pacman -Qqe | fzf --height=100% --preview 'pacman -Qi {}' --layout=reverse
     }
 
 mkcd(){
@@ -100,7 +100,8 @@ mkcd(){
 }
 
 mks(){
-	if [ "$1" ]; then
+	echo $1
+	if [[ -n "$1" ]]; then
 		printf '#!/bin/bash\n\n' > "$1" && chmod +x "$1" && nv /home/rob/.bin/"$1"
 	else
 		nv

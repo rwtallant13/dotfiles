@@ -27,11 +27,17 @@ set undolevels=100
 " Use Vim's format of help file (has highlighting and "hyperlinks").
 set novimhelp
 
+" Hide ../
+set dotdirs=
+
 " Selected color scheme
 colorscheme Default
 
 " Time Format
 set timefmt=%m/%d\ %H:%M
+
+" Custom column layout
+windo set viewcolumns=-{name}..,10{size},15{atime}
 
 " Show list of matches on tab completion in command-line mode
 set wildmenu
@@ -86,6 +92,7 @@ map <C-l> <C-w>l
 map <C-o> <C-w>o
 map <C-s> <C-w>s
 map <C-v> <C-w>v
+nnoremap T :!nout thunar <cr>
 nnoremap ! :shell<cr>
 nnoremap s :sort<cr>
 nnoremap w :view<cr>
@@ -93,7 +100,7 @@ vnoremap w :view<cr>gv
 nnoremap o :file &<cr>l
 cnoremap ndu !nnn -S<cr>
 map ,f :filter
-map SA :invert o <cr>
+map SS :invert o <cr>
 nnoremap <C-a> :norm ggVG<cr><cr>
 qnoremap <s-tab> :norm gt
 " substitute in all files
@@ -111,7 +118,7 @@ command! togglesort
          \ |    set sort=+name
          \ |    echo 'Sorted by name'
          \ |endif
-nnoremap SS :togglesort<cr>
+nnoremap SA :togglesort<cr>
 
 " yank current directory path into the clipboard
 nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
@@ -146,7 +153,7 @@ nnoremap <f2> cw
 nnoremap cc cw<c-u>
 
 " Open console in current directory
-nnoremap ,t :!$TERMINAL %i &<cr>
+nnoremap $ :!$TERMINAL %i &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart<cr>

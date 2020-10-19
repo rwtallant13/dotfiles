@@ -471,7 +471,6 @@ locate zsh|grep autosuggest
 locate zsh|grep substring
 locate zsh
 v /etc/zsh/zprofile
-v /etc/profile
 locate zsh|grep down
 locate zsh|grep or*search
 locate zsh|grep or.*search
@@ -683,7 +682,6 @@ ls .bin/s
 ls .bin/s*
 rg _help .bin
 rg _help -A10 .bin
-man rg
 rg -N _help -A10 .bin
 rg --help
 rg --help | less
@@ -1475,7 +1473,6 @@ rg '$?' .bin
 rg '?' .bin
 rg '\$?' .bin
 rg '\$\?' .bin
-v .bin/encode-media
 ls /opt/discord
 ls /opt/disr
 echo $?
@@ -1526,7 +1523,6 @@ ll .bin/ssr.sh
 rm -rf .ssr/input-profiles/*
 ls .ssr
 pac obs-studio
-obs --help
 which simplescreenrecorder
 /usr/bin/simplescreenrecorder -h
 2>/dev/null 1>&2 /usr/bin/simplescreenrecorder --start-hidden &
@@ -2096,7 +2092,6 @@ selsearch
 man xsel
 xsetroot -solid
 xsetroot -solid black
-rm .fehbg
 xsetroot -solid black -noreset
 rg feh
 pac betterautolock
@@ -2123,7 +2118,6 @@ locate mkinicpio
 locate mkinitcpio
 dmesg | grep SSS
 grep . -r /sys/devices/system/cpu/vulnerabilities/
-v /etc/pam.d/system-login
 ps -o user $(pgrep Xorg)
 pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'
 which pkglist
@@ -2207,7 +2201,6 @@ rm -rf /usr/bin/xterm
 sudo rm -rf /usr/bin/xterm
 pac xdg-terminal
 pacf xdg-terminal
-locate .keyring
 journalctl -eu lightdm
 v /home/rob/.local/share/keyrings/login.keyring
 pacr alacritty
@@ -2787,7 +2780,6 @@ sudo chattr -i .config/user-dirs.dirs
 v .config/user-dirs.dirs
 sudo chattr +i .config/user-dirs.dirs
 ls .nv
-rg case .bin
 rg -C 3case .bin
 rg -C3 case .bin
 adb devices
@@ -2904,7 +2896,6 @@ pac unoconv
 unoconv -f pdf school/ITP132/Unit\ 1-Microprocessor\ and\ Instruction\ Set_Internal\ Organization.pptx
 ls school/ITP132/Unit\ 1-Microprocessor\ and\ Instruction\ Set_Internal\ Organization.pptx
 mks .bin/remove_spaces
-v .bin/remove_spaces
 open Unit1-MicroprocessorandInstructionSet_InternalOrganization.pdf
 cd ..
 mkdir ITE221
@@ -2968,7 +2959,6 @@ mks .bin/renamer
 echo hi | cat /dev/stdin
 rg EOF  .bin
 v .bin/m
-v .bin/mnt
 mktemp -h
 mktemp --hep
 mktemp --help
@@ -2977,7 +2967,6 @@ time find /tmp/current_sink.*
 find -maxdepth 1
 fd -d 1
 fd -d 1 -H
-man fd
 fd -d 1 -H -j 1
 renamer
 renamer .bin/*
@@ -3096,7 +3085,6 @@ fd . RARBG*
 fd RARBG* .
 fd RARBG* . -e exe -e txt --exec rm -rf {};
 fd RARBG* . -e exe -e txt
-v .config/vifm/vifmrc
 fd -t f
 fd -t f | wc -l
 shortinfo JoJo-S04E01-GoldenWind.mp4
@@ -3198,7 +3186,6 @@ zip -qdg config.yml
 zip -qdg config.yml config.zip
 zip -qdg config.zip config.yml
 rm config.*
-man find
 mclog
 pwd
 man pwd
@@ -3275,7 +3262,6 @@ sudo pacr thunar
 rg -H exo-open
 rg --hidden exo-open
 v .bin/op
-v .bin/opi
 rg  exo-open .aliases
 sudo pacr xfce4
 man termite
@@ -3338,7 +3324,6 @@ pacf xournal
 pac xournalpp
 pac vnstat
 S enable vnstat
-bash
 vnstat
 ll school/ITE221/
 chown -R rob:rob school/ITE221/*
@@ -3349,16 +3334,12 @@ ping aparebikes.com
 cal
 pac thunar
 mcctrl
-ndu
 sudo echo $EDITOR
 sudo ln -s /home/rob/.config/nvim/init.vim /etc/xdg/nvim/sysinit.vim
 v /etc/xdg/nvim/sysinit.vim
-man nvim
-v .profile
 sudo pacdiff
 man reflector
 reflector --help
-la .config
 ls .config/autostart
 yadm push
 yadm -h
@@ -3425,11 +3406,9 @@ sudo pacr ytop-bin marktext-bin
 sudo pacr nerd-fonts-hack
 wc -l .zshrc
 cpf .zshrc
-ssh bb
 pacman -Qm
 rg -H dialog-information
 rg -h dialog-information
-pacdiff
 yay pacman-contrib
 pactree
 S enable paccache.timer
@@ -3508,7 +3487,6 @@ flameshot
 flameshot --help
 flameshot full -c
 sleep 5s && flameshot full -c
-..
 ls current
 rmr current
 ls night
@@ -3516,8 +3494,6 @@ viewnior night/593197.jpg
 rmr night
 mv landscapes/macOS ./
 macOS
-remove_spaces
-ls
 cp *{left,right}* ../
 ls ../
 mkdir ../lr
@@ -3529,12 +3505,10 @@ pacr feh
 sudo pacr feh
 nitrogen --restore
 bspc config top_padding $(($PANEL_HEIGHT))
-vf
 $media/shows
 MyHeroAcademia
 cp ~/downloads/torrents/My\ Hero\ Academia\ S04\ 1080p\ Dual\ Audio\ WEBRip\ AAC\ x265-EMBER/S04E01-The\ Scoop\ on\ U.A.\ Class\ 1-A.mkv ./Season4/MyHeroAcademia_S4E01.mkv
 rm ./Season4/MyHeroAcademia_S4E01.mp4
-vfm
 ssh bb btm
 lr
 procfs
@@ -3554,9 +3528,7 @@ start polybar
 pgrep pulse
 /home/rob/.bin/start picom polybar dunst dpms
 start picom
-less .xsession-errors
 v .bin/s
-v .bin/start
 v /usr/share/applications/chromium.desktop
 cp /usr/share/applications/chromium-browser.desktop ~/.local/share/applications
 cp /usr/share/applications/chromium.desktop ~/.local/share/applications
@@ -3610,14 +3582,11 @@ rm .bin/selsearch
 rm .bin/note
 cat .bin/mks
 rm .bin/mks
-mks
 zle
 zle list-choices
 history
 rm downloads/zsh-autosuggestions_0.5.0+3.4_amd64.deb
-bb
 v .bin/system-backup
-pacrepo
 screen.sh
 .bin/screens.sh
 nvidia-settings --assign CurrentMetaMode="DPY-0: nvidia-auto-select @1920x1080 +0+0 {ViewPortIn=1920x1080,ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On,ForceFullCompositionPipeline=On}, DPY-2: nvidia-auto-select @1920x1080+1920+0 {ViewPortIn=1920x1080, ViewPortOut=1920x1080+0+0,ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, DPY-1:1920x1080 @1920x1080 +3840+0 {ViewPortIn=1920x1080,ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On,ForceFullCompositionPipeline=On}"
@@ -3641,7 +3610,6 @@ pacf libpam-gnome-keyring
 ls /lib/x86_64-linux-gnu/security/pam_gnome_keyring.so
 pac libgnome-keyring libsevret gnome-keyring
 pac libgnome-keyring libsecret gnome-keyring
-v /etc/pam.d/login
 sudo test -f ~/.gnome2/keyrings/login.keyring && echo "Have 'login' keyring"
 reboot
 pac urxvt
@@ -3665,10 +3633,8 @@ tail -f .xsession-errors\\
 
 less .xsession-errors\\
 
-la
 pacr lf
 sudo pacr lf
-pkglist
 remove-orphans
 pacreport > pacreport.txt
 less pacreport.txt
@@ -3677,11 +3643,264 @@ paccache -h
 sudo pacman -Sc
 man pacreport
 v .zshrc
-v .aliases
-yay
 v .bin/wall.sh
 ls /usr/share/pixmaps
 realpath /usr/share/pixmaps/big-sur-8-top.jpg
 betterlockscreen -r 1920x1200 -u /usr/share/pixmaps/big-sur-8-top.jpg
+ncdu pics
+mnt 
+mnt ssd
+mnt mx100
 vfm
+cd Season4
+fd ~/downloads/torrents -e mkv
+fd . ~/downloads/torrents -e mkv
+fd . ~/downloads/torrents -e mkv --exec mv {} ./ ;
+pacrepo
+v /etc/pacman.d/gnupg/gpg.conf
+pacman-key --refresh-keys
+sudo pacman-key --refresh-keys
+ssh bb
+v .bin/pbar.sh
+xrandr | awk '/ connected / {print $1;}'
+v .config/polybar/*
+rm .config/polybar/polybar-sxhkd.sh
+chx .bin/pbar.sh
+pbar.sh
+mv .config/polybar/modules .config/polybar/config
+rm .config/polybar/bspwm-bar
+v .config/polybar/config
+start pbar
+pacr embree
+sudo pacr embree
+rm pacreport.txt
+rm .fehbg
+mv .xournalpp .config/xournalpp
+rm -rf .xournalpp
+pacr xournalpp
+sudo pacr xournalpp
+pacr bashtop
+sudo pacr bashtop
+sudo pacr boost
+sudo pacr boost boost-lib
+sudo pacr boost boost-libs
+sudo pacr boost 
+pkglist
+obs
+rm -rf .ssr
+sudo pacr simplescreenrecorder
+obs --profile Default --minimize-to-tray
+obs --profile Default --minimize-to-tray -p
+man obs
+obs --help
+v .aliases
+man nvim
+mks
+mks .bin/nout
+ls .bin/nout
+v .bin/nout
+v .bin/start
+la .bin
+pacman -Qkk |& grep warning
+rg append /etc/profile.d
+ndu
+mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" /home/rob/vids/fullscreen--2020-05-22_15.26.24
+mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" /home/rob/vids/fullscreen--2020-05-22_15.26.24\ \(1\).mp4
+shortinfo /home/rob/vids/fullscreen--2020-05-22_15.26.24
+shortinfo /home/rob/vids/fullscreen--2020-05-22_15.26.24\ \(1\).mp4
+pacdiff
+v ~/.bin/start
+man vifm
+v /etc/pro
+v .profile
+la .config
+v .config/rgconf
+man rg
+rg appendpath /etc
+less .xsession-errorsq
+less .xsession-errors
+pacf /etc/profile
+v /etc/profile
+vim
+pacman -Fy
+sudo pacman -Fy
+vids
+v .config/vifm/colors/Default.vifm
+v .config/vifm/vifmrc
+v /etc/pam.d/lightdm-autologin
+locate .keyring
+sudo rg pam_faildelay /etc/pam.d
+sudo rg nodelay /etc/pam.d
+sudo rg delay /etc/pam.d
+sudo rg pam /etc/pam.d
+sudo rg fail /etc/pam.d
+v /etc/pam.d/system-login
+pacr electron5
+sudo pacr electron5
+rg pam_unix /etc/pam.d
+bash
+rdiff-backup -r 30d bb::/data/media/backups/rob-pc/etc/pam.d ./
+rdiff-backup -r 30d bb::/data/backups/rob-pc/etc/pam.d ./
+rdiff-backup -r 30d bb::/data/backups/rob-pc/etc/pam.d ./temp
+rdiff-backup -r 30D bb::/data/backups/rob-pc/etc/pam.d ./temp
+ls temp
+rg nofail temp
+rdiff-backup -r 60D bb::/data/backups/rob-pc/etc/pam.d ./temp
+v /etc/pam.d/system-auth
+v /etc/pam.d/login
+v /etc/pam.d/passwd
+rg delay /etc/pam.d
+v temp/system-lo
+v temp/system-login
+rg delay temp
+rdiff-backup -r 90D bb::/data/backups/rob-pc/etc/pam.d ./temp
+sudo rg delay temp
+rmr temp
+ncdu rob-pc
+rg delay ./
+sudo rg delay ./
+grep delay
+v login.2020-10-10T06:00:43-04:00.diff.gz
+v polkit-1.2020-09-27T06:01:02-04:00.diff.gz
+~
+vf vids
+cp /etc/systemd/system/backup.service /etc/systemd/system/obs_cleanup.service
+sudo cp /etc/systemd/system/backup.service /etc/systemd/system/obs_cleanup.service
+sudo cp /etc/systemd/system/backup.timer /etc/systemd/system/obs_cleanup.timer
+v /etc/systemd/system/obs_cleanup.timer
+v /etc/systemd/system/obs_cleanup.service
+fd . /home/rob/vids recording
+fd recording /home/rob/vids 
+man fd
+fd recording /home/rob/vids -e mkv -X rm -rf {} ;
+fd recording /home/rob/vids -e mkv
+S enable obs_cleanup.timer
+S start obs_cleanup.timer
+S start obs_cleanup.service
+yay
+bb
+pac losslesscut
+yay losslesscut
+pac vidcutter
+pac vidcutter --overwrite
+pac  --overwrite vidcutter
+pac  vidcutter --overwrite /usr/lib/python3.8/site-packages/PyQt5/*
+pac  vidcutter --force
+pac vidcutter 
+pac  --force vidcutter
+sudo pacman -S vidcutter --overwrite \*
+sudo pacr vidcutter
+pac avidemux-qt
+encode-media
+encode-media -f /media/mx100/Videos/Call of Duty  Black Ops Cold War/Call of Duty  Black Ops Cold War 2020.10.15 - 19.57.42.05.DVR.mp4
+v .bin/encode-media
+Videos
+Call\ of\ Duty\ \ World\ at\ War
+la
+Call\ of\ Duty\ \ Black\ Ops\ Cold\ War
+fd . ./
+~/.bin/remove_spaces
+ls "./Rocket League/Rocket League "
+ls "./Rocket League/"
+$mx100
+ls
+..
+find . -name "* *" -type f | rename 's/ /_/g'
+pac rename
+pacf rename
+which rename
+find . -name "**" -type f | /usr/bin/vendor_perl/rename 's/ /_/g'
+vf
+fd . ./ -e mp4
+v .bin/remove_spaces
+man find
+remove_spaces
+v ~/.bin/remove_spaces
+find . -name "* *" -type f -exec rm -rf {} +
+find . -name "* *"  -exec rm -rf {} +
+v .bin/trimvid
+man ffmpeh
+man ffmpeg
+pac kdenlive
+yay video-trimmer
+rg case .bin
+v .bin/mnt
+v .bin/opi
+encode-media -f /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.DVR
+encode-media -f /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.mp4
+ls /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.mp4
+ls /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.DVR
+vf /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/
+ls /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.DVR.mp4
+encode-media -f /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.DVR-00.00.06.533-00.00.31.066.mp4
+yay
+vfm
+yay
+vpn-toggle
+journalctl -xe NM_CONNECTION=78d739f7-09c2-4577-8199-b6cdc561902b + NM_DEVICE=enp0s25
+ restart NetworkManager
+S restart NetworkManager
+vpn-toggle
+reboot
+la
+rmr .avidemux6
+la
+less .xsession-errors
+vfm
+ssh bb
+efibootmgr -h
+efibootmgr 
+v /boot/loader/loader.conf
+sudo rm -rf /boot/loader/entries/arch-zen.conf
+v /boot/loader/entries/arch-lts.conf
+v /boot/loader/loader.conf
+efibootmgr -B -b 0001
+sudo efibootmgr -B -b 0001
+yay
+hyperfine 
+hyperfine rf
+rf
+hyperfine 
+hyperfine rg --files
+alias rf
+hyperfine 'rg --files'
+v projects/python/vidcut
+./projects/python/vidcut
+chmod a+x ./projects/python/vidcut
+./projects/python/vidcut
+v projects/python/vidcut
+./projects/python/vidcut
+v projects/python/vidcut
+./projects/python/vidcut
+yay
+la
+lr
+S start obs_cleanup.service
+ls vids
+v /etc/systemd/system/obs_cleanup.service
+timers
+journalctl -r -u obs_cleanup.service
+v /etc/systemd/system/obs_cleanup.timer
+v /etc/systemd/system/obs_cleanup.service
+v /etc/systemd/system/obs_cleanup.timer
+sudo systemctl daemon-reload
+S start obs_cleanup.service
+journalctl -r -u obs_cleanup.service
+ls vids
+sudo systemctl daemon-reload
+S start obs_cleanup.service
+ls vids
+/usr/bin/fd recording /home/rob/vids -e mkv -X rm -rf {} ;
+ls vids
+/usr/bin/fd recording /home/rob/vids -e mkv -x rm -rf {} ;
+ls vids
+/usr/bin/fd recording /home/rob/vids -e mkv 
+/usr/bin/fd recording /home/rob/vids -e mkv -X rm -rf {} ;
+/usr/bin/fd recording /home/rob/vids -e mkv 
+rm vids/2020-10-14_1*
+ls vids
+rm vids/fullscreen--2020-0*
+ls -Art .vim
+ls -Art vids
+vf vids
 yay

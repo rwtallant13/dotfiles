@@ -1,4 +1,5 @@
 #!/bin/bash
 
-for file in *; do newfile=$( echo "$file" | tr -d \\n | sed 's/ //g' );
-   test "$file" != "$newfile" && mv "$file" "$newfile"; done
+find . -name "* *" -type f | /usr/bin/vendor_perl/rename 's/ /_/g' &&\
+
+find . -name "* *" -exec rm -rf {} +

@@ -33,6 +33,7 @@ alias pacrepo='sudo reflector -c US -c CA --protocol https --age 48 --sort score
 alias pipi='pip install --user'
 
 #ls
+alias l='ls -hN --color=auto --group-directories-first'
 alias la='ls -hNa --color=auto --group-directories-first'
 alias lla='ls -hlNa --color=auto --group-directories-first'
 alias ll='ls -hlN --color=auto --group-directories-first'
@@ -56,7 +57,6 @@ alias mcctrl='ssh -t bb /home/rob/bin/mcctrl'
 alias m='micro'
 alias n='nnf'
 alias ndu='nnn -S'
-alias bandwhich='sudo bandwhich'
 alias cpu-speed=' watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
 alias pb='curl -F "f:1=<-" ix.io'
 alias pf='pfetch && colorpanes'
@@ -66,15 +66,8 @@ alias rf='rg --files --hidden'
 alias tb='nc termbin.com 9999'
 alias v='/home/rob/.bin/nv'
 alias vf='vifm'
-alias vfm='vifm /media/blueberry/media'
-alias wcl='wc -l'
-alias yta='youtube-dl -x --audio-format mp3'
+alias vfm='vifm /media/blueberry/media /home/rob/downloads/torrents'
 alias xc='xclip -selection clipboard'
-alias zz='z -c'
-alias zi='z -i'
-alias zf='z -I'
-alias zb='z -b'
-
 
 #
 # functions

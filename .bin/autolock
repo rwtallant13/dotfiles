@@ -2,7 +2,7 @@
 
 _lock() {
 
-    until xidlehook --not-when-audio --not-when-fullscreen --timer 1500 "betterlockscreen --lock dimblur" "" --socket "/tmp/xidlehook.sock" ; do
+    until xidlehook --not-when-audio --not-when-fullscreen --timer 1500 "betterlockscreen --lock blur" "" --socket "/tmp/xidlehook.sock" ; do
     #echo "Xidlehook crashed with exit code $?.  Respawning.." >&2
     #notify-send -t 2000 "Xidlehook crashed" "Respawning..."
     sleep 1
@@ -29,7 +29,7 @@ _pause(){
 
 _help(){
     cat <<- EOF
-Usage: autolock [option] 
+Usage: autolock [option]
 
 Options:
     -h, help        show this message

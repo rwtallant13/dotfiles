@@ -107,7 +107,7 @@ chx(){
 
 
 se(){
-    dir="${@:-"."}"
+    dir="${@:-"~"}"
     sel="$(fd . -H "$dir"| fzf)"
     if [[ -d "$sel" ]] ; then
         cd "$sel"
@@ -126,7 +126,7 @@ open(){
     nohup xdg-open "$@" >/dev/null 2>&1 & disown
     }
 
-timeof(){
+watchproc(){
     local pid
 
     pid=$(ps -e -o pid,user,cmd | sed 1d | fzf -m | awk '{print $1}')
@@ -137,7 +137,7 @@ timeof(){
     fi
     }
 
-cpf(){
+yf(){
     if [[ $1 ]]; then
         cat "$1" | xclip -selection clipboard
     else

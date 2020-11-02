@@ -49,9 +49,9 @@ while getopts ":hwmsl" opt; do
             ANS=$(echo "Lock|Logout|Suspend|Reboot|Bootup Win|Shutdown" | \
             rofi -sep "|" -dmenu -i -font "Overpass 26" -color-window argb:dd000000  -padding 400 -fullscreen -auto-select -p 'System' "")
                 case "$ANS" in
-                    *Lock) betterlockscreen --lock dimblur --off 30 ;;
+                    *Lock) betterlockscreen --lock blur --off 30 ;;
                     *Logout) bspc quit ;;
-                    *Suspend) betterlockscreen --suspend dimblur ;;
+                    *Suspend) betterlockscreen --suspend blur ;;
                     *Reboot) systemctl reboot ;;
                     *"Bootup Win") /home/rob/.bin/bootup windows ;;
                     *Shutdown) systemctl -i poweroff

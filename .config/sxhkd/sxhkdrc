@@ -83,7 +83,7 @@ alt + space
 
 # telegram
 super + g
-	2>/dev/null 1>&2 telegram-desktop &
+	nullify telegram-desktop &
 
 # screenshot current window
 ctrl + Print
@@ -119,7 +119,7 @@ ctrl + shift + Escape
 
 # launch browser
 super + b
-	2>/dev/null 1>&2 $BROWSER &
+	nullify $BROWSER &
 
 # alt browser
 super + shift + b

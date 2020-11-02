@@ -8,7 +8,7 @@ if [ "$1" = "list" ]; then
     exit 0
 fi
 
-VPN="${1:-"US_East"}"
+VPN="${1:-"US_DC"}"
 if [ -z $NAME ]; then
     nmcli con up id "$VPN"
 else

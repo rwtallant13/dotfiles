@@ -3,7 +3,8 @@
 # bspwm autostart
 #/home/rob/.fehbg
 #/usr/bin/nitrogen --restore
-/home/rob/.bin/start picom pbar dunst dpms obs
+/home/rob/.bin/pbar.sh
+/home/rob/.bin/start picom dunst dpms obs polkit
 /home/rob/.bin/nvfans &
 /home/rob/.bin/autolock enable &
 /home/rob/.bin/mnt bb &
@@ -11,4 +12,3 @@
 /home/rob/.bin/caps2esc &
 /usr/bin/clipmenud &
 /usr/bin/nm-applet &
-/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &

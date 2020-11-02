@@ -22,8 +22,12 @@ done
 
 }
 
+_polkit(){
+	nullify /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+}
+
 _obs(){
-    2>/dev/null 1>&2 obs --profile Default --minimize-to-tray &
+    nullify obs --profile Default --minimize-to-tray &
 
 }
 

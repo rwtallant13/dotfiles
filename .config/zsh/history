@@ -950,7 +950,6 @@ sudo iotop
 pacr rdiff-backup
 mv system-backup.sh system-backup
 vf $backups
-v .bin/rsync_backup.sh
 vpn-toggle -l
 ufw status
 S disale rsnapshot*
@@ -1009,7 +1008,6 @@ ls /home/rob/.config/systemd/user/clipmenud.service.d
 rm -rf /home/rob/.config/systemd/user/clipmenud.service.d
 ls /home/rob/.config/systemd/user/
 systemctl list-unit-files
-S enable backup.timer
 timers --all
 S status backup.timer
 nv .bashrc .zshrc
@@ -1493,13 +1491,11 @@ echo $command
 nv .zshrc
 nv .profile
 nv /etc/profile
-which nnf
 cat nnf
 cat /home/rob/.local/bin/nnf
 ssh laptop
 vpn-toggle -h
 vpn-toggle list
-vpn-toggle Canada_Toronto
 S enable resume@rob.service
 yayyay
 simplescreenrecorder --help
@@ -1576,7 +1572,6 @@ pac pandoc-bin
 yay pandoc-bin
 neofetch
 ll .bin/thing
-ll .bin
 sudo chown rob:rob .bin/*
 v .bin/thing
 rm signal-2020-05-22-181132.png
@@ -2050,7 +2045,6 @@ sudo ps aux | less
 yay -S pure
 yay -S pure-prompt
 yay zsh-pure-prompt
-docs
 yay -Rns zsh-pure-prompt
 pacr nextcloud
 sudo pacr nextcloud*
@@ -2088,7 +2082,6 @@ pac betterautolock
 yay betterautolock
 locate betterlockscreen
 v /usr/bin/betterlockscreen
-v .config/betterlockscreenrc
 cat .bin/wall.sh
 man magick
 locate big-sur
@@ -2207,7 +2200,6 @@ mv \[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(067\ -\ 079\)\ \[BD\
 mv downloads/torrents/\[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(067\ -\ 079\)\ \[BD\ 1080p\]\[Dual\ Audio\] Boruto
 Boruto
 encode-media -f Boruto/Boruto-067.mkv
-pac wireguard-tools wireguard-dkms
 ls /etc/wireguard
 sudo ls /etc/wireguard
 locate wireguard
@@ -2221,7 +2213,6 @@ jojo
 rm -r jojo
 /boot
 EFI
-.bin
 rg efibootmgr
 v efimgr
 modprobe nvidia
@@ -2281,7 +2272,6 @@ sudo rm -rf /etc/systemd/system/caps2esc.timer
 sudo pacr rsnapshot
 sudo pacr /etc/systemd/system/rsnapshot-*
 sudo rm -rf /etc/systemd/system/rsnapshot-*
-ls /etc/systemd/system/
 systemctl --type=service --state=active
 sudo pacr upower
 S disable upower.service
@@ -2291,7 +2281,6 @@ deluge-gtk
 rm .config/deluge/state/*.torrent
 fcd
 gcc test.c -o test
-timeof chromium
 rm -rf .local/share/vifm/Trash/000_*
 find . -mtime +100 -print
 docs/backup_logs
@@ -2346,7 +2335,6 @@ sudo pacr local/betterautolock local/betterlockscreen local/i3lock-color
 pac feh
 man light-locker
 pgrep light-locker
-v .bin/autolock
 pac pm-utils
 pac pm-util
 pacf pm-utils
@@ -2379,7 +2367,6 @@ pac glances
 pacq glances
 pacf glances
 pacs glances
-btm -b
 man btm
 btm -h
 btm -ba
@@ -2416,7 +2403,6 @@ light-locker-command -l
 pac upower
 S enable upower
 nvidia-settings --help
-less .xsession-errors.old
 dm-tool lock
 yay betterlockscreen
 yay betterlock
@@ -2465,7 +2451,6 @@ fd -H termite.terminfo
 infocmp > termite.terminfo
 scp termite.terminfo bb:~/
 xcolor
-systemctl list-unit-files | grep enabled
 systemctl | grep running
 sudo pacr xcalib
 sudo pacr displaycal
@@ -2493,7 +2478,6 @@ ssh rob@192.168.2.21
 ssh root@192.168.2.21
 ssh bb "bash"
 man rdiff
-v /etc/systemd/system/backup.service
 v /etc/systemd/system/backup.timer
 rm -rf /media/blueberry/backups/rob-pc
 sudo .bin/system-backup
@@ -2537,7 +2521,6 @@ cp -a home/rob/.minecraft/screenshots/* ~/.minecraft/screenshots
 ls ~/.minecraft/screenshots
 ls -Art rdiff-backup-data/session_statistics.2020-09-0* | tail -n 1
 ls rdiff-backup-data/session_statistics.2020-09-0*
-system-backup
 sudo pacr vdpau
 sudo pacr vdpauinfo
 echo $
@@ -2672,21 +2655,16 @@ man rdiff-backup
 rdiff-backup --calculate-average
 rdiff-backup --calculate-average $backups/rdiff-backup-data
 rdiff-backup --calculate-average $backups/rdiff-backup-data/*statistics*
-pac rsnapshot
 sudo pacr rdiff-backup
 sudo cp /etc/rsnapshot.conf /etc/rsnapshot.conf.default
-v /etc/rsnapshot.conf
 ls $backups
-realpath docs/backup_exclude.txt
 man rsnapshot
 s
 S enable --now backup.service
 pac rdiff-backup
 S enable --now backup.timer
 S start backup.timer
-systemctl status backup.service
 v docs/backup/backup_exclude.txt
-v docs/backup_exclude.txt
 S enable reflector.timer
 while true; do xdotool click 4 && sleep 0.025s; done
 rm thing
@@ -2707,7 +2685,6 @@ ls backup.log
 less backup.log
 less error_log.2020-09-07T03:56:40-04:00.data
 sudo rm -rf rob-pc
-S start backup.service
 /usr/bin/ssh -t rob@192.168.2.21 tmux new -A ssh
 /usr/bin/ssh -t rob@192.168.2.21 tmux new -A
 sudo ufw allow 51413
@@ -3102,7 +3079,6 @@ ssh pi pihole -t
 alias mcctrl
 ssh -t pi pihole -t
 pilog
-ip a
 alias mclog
 132
 v 16.cpp
@@ -3113,7 +3089,6 @@ flameshot config
 v  ~/.config/gtk-3.0/gtk.css
 find
 lsblk
-pacu
 ll
 lla
 rm netdata-bb.pdf
@@ -3171,7 +3146,6 @@ test
 .bin/test
 v .bin/test
 rm .bin/test
-man rsync
 date +%I%M
 date "+%Y-%b-%d-%I%M"
 date "+%F-%I%M"
@@ -3187,18 +3161,15 @@ less $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/*.log)
 ls /media/blueberry/backups/rob-pc/rdiff-backup-data/*.log
 ls /media/blueberry/backups/rob-pc/rdiff-backup-data/
 cat $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/*.log)
-cmd
 cmds
 unoconv -f pdf school/ITP132/2-Microprocessor\ and\ Instruction\ Set_Internal\ Organization\ -\ HW\ \&\ CPU\ .pptx
 z 132
 date +%k%M
-man date
 ls *.c
 fd . *c
 mkdir ex
 ex
 rm *
-cd
 rm -r ex
 pulseaudio -k;pulseaudio --start
 z 221
@@ -3241,7 +3212,6 @@ v .bin/op
 rg  exo-open .aliases
 sudo pacr xfce4
 man termite
-fv
 locate pcmanfm.desktop
 sudo su
 pacf fz.sh
@@ -3299,7 +3269,6 @@ pacf xournal
 pac xournalpp
 pac vnstat
 S enable vnstat
-vnstat
 ll school/ITE221/
 chown -R rob:rob school/ITE221/*
 sudo chown -R rob:rob school/ITE221/*
@@ -3383,7 +3352,6 @@ rg -h dialog-information
 yay pacman-contrib
 pactree
 S enable paccache.timer
-v /etc/pacman.conf
 pacr pcmanfm
 sudo mkdir -p /etc/opt/chrome/policies/managed/ && echo '{ "URLWhitelist": ["zoom://*"] }' |sudo tee /etc/opt/chrome/policies/managed/whitelist.json
 tail /etc/opt/chrome/policies/managed/whitelist.json 
@@ -3395,7 +3363,6 @@ yay eclipse
 sudo paccache
 sudo paccache -r
 yay -Scc
-z itp
 rm ~/bitwarden_export_20201006141233.csv
 v /etc/systemd/journald.conf
 S enable systemd-journald.service
@@ -3442,7 +3409,6 @@ nitrogen --head=2 --set-scaled pics/backgrounds/landscapes/macOS/big-sur-8-top.j
 nitrogen --head=0 --set-scaled pics/backgrounds/landscapes/macOS/big-sur-8-top.jpg
 rg '((' .bin
 rg '+' .bin
-v .bin/nvfans
 rm *1080*
 viewnior 10-14-Mojave-12.jpg
 wall.sh -u pics/backgrounds/landscapes/macOS/big-sur-3-top.jpg
@@ -3479,7 +3445,6 @@ cp ~/downloads/torrents/My\ Hero\ Academia\ S04\ 1080p\ Dual\ Audio\ WEBRip\ AAC
 rm ./Season4/MyHeroAcademia_S4E01.mp4
 ssh bb btm
 procfs
-v .bin/dotu
 history -h
 history --help
 history yadm
@@ -3534,7 +3499,6 @@ pkgclear
 rm -rf .bin/pkgclear
 ytm
 rm .bin/ytm
-ls .bin
 v .bin/dns.sh
 mv .bin/dns.sh .bin/dnsset
 mv .bin/hue.sh
@@ -3552,7 +3516,6 @@ zle
 zle list-choices
 history
 rm downloads/zsh-autosuggestions_0.5.0+3.4_amd64.deb
-v .bin/system-backup
 screen.sh
 .bin/screens.sh
 nvidia-settings --assign CurrentMetaMode="DPY-0: nvidia-auto-select @1920x1080 +0+0 {ViewPortIn=1920x1080,ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On,ForceFullCompositionPipeline=On}, DPY-2: nvidia-auto-select @1920x1080+1920+0 {ViewPortIn=1920x1080, ViewPortOut=1920x1080+0+0,ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, DPY-1:1920x1080 @1920x1080 +3840+0 {ViewPortIn=1920x1080,ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On,ForceFullCompositionPipeline=On}"
@@ -3562,11 +3525,9 @@ nvidia-settings -q all
 nvidia-settings -q CurrentMetaMode
 screens.sh 3
 screens.sh 2
-tail -f .xsession-errors
 fkill polybar
 fkill 
 pkill polybar
-killall polybar
 polybar dvi &
 xset q
 echo - -e
@@ -3579,7 +3540,6 @@ pac libgnome-keyring libsecret gnome-keyring
 sudo test -f ~/.gnome2/keyrings/login.keyring && echo "Have 'login' keyring"
 pac urxvt
 pac rxvt-unicode
-udb
 locate urxvt.desktop
 pac seahorse
 seahorse
@@ -3594,8 +3554,6 @@ v ./.fehbg
 wall.sh -u pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Dark-right.png 
 v .fehbg
 ./.fehbg
-tail -f .xsession-errors\\
-
 less .xsession-errors\\
 
 pacr lf
@@ -3607,8 +3565,6 @@ paccache
 paccache -h
 sudo pacman -Sc
 man pacreport
-v .zshrc
-v .bin/wall.sh
 ls /usr/share/pixmaps
 realpath /usr/share/pixmaps/big-sur-8-top.jpg
 betterlockscreen -r 1920x1200 -u /usr/share/pixmaps/big-sur-8-top.jpg
@@ -3624,12 +3580,10 @@ pacrepo
 v /etc/pacman.d/gnupg/gpg.conf
 pacman-key --refresh-keys
 sudo pacman-key --refresh-keys
-v .bin/pbar.sh
 xrandr | awk '/ connected / {print $1;}'
 v .config/polybar/*
 rm .config/polybar/polybar-sxhkd.sh
 chx .bin/pbar.sh
-pbar.sh
 mv .config/polybar/modules .config/polybar/config
 rm .config/polybar/bspwm-bar
 v .config/polybar/config
@@ -3660,11 +3614,9 @@ mks
 mks .bin/nout
 ls .bin/nout
 v .bin/nout
-v .bin/start
 la .bin
 pacman -Qkk |& grep warning
 rg append /etc/profile.d
-ndu
 mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" /home/rob/vids/fullscreen--2020-05-22_15.26.24
 mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" /home/rob/vids/fullscreen--2020-05-22_15.26.24\ \(1\).mp4
 shortinfo /home/rob/vids/fullscreen--2020-05-22_15.26.24
@@ -3672,7 +3624,6 @@ shortinfo /home/rob/vids/fullscreen--2020-05-22_15.26.24\ \(1\).mp4
 v ~/.bin/start
 man vifm
 v /etc/pro
-v .profile
 la .config
 v .config/rgconf
 man rg
@@ -3751,7 +3702,6 @@ fd . ./
 ls "./Rocket League/Rocket League "
 ls "./Rocket League/"
 $mx100
-..
 find . -name "* *" -type f | rename 's/ /_/g'
 pac rename
 pacf rename
@@ -3760,7 +3710,6 @@ find . -name "**" -type f | /usr/bin/vendor_perl/rename 's/ /_/g'
 fd . ./ -e mp4
 v .bin/remove_spaces
 man find
-remove_spaces
 v ~/.bin/remove_spaces
 find . -name "* *" -type f -exec rm -rf {} +
 find . -name "* *"  -exec rm -rf {} +
@@ -3775,12 +3724,7 @@ ls /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWa
 vf /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/
 ls /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.DVR.mp4
 encode-media -f /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.DVR-00.00.06.533-00.00.31.066.mp4
-journalctl -xe NM_CONNECTION=78d739f7-09c2-4577-8199-b6cdc561902b + NM_DEVICE=enp0s25
  restart NetworkManager
-S restart NetworkManager
-vpn-toggle
-rmr .avidemux6
-less .xsession-errors
 efibootmgr -h
 efibootmgr 
 sudo rm -rf /boot/loader/entries/arch-zen.conf
@@ -3798,11 +3742,9 @@ chmod a+x ./projects/python/vidcut
 v projects/python/vidcut
 ./projects/python/vidcut
 lr
-timers
 v /etc/systemd/system/obs_cleanup.service
 v /etc/systemd/system/obs_cleanup.timer
 journalctl -r -u obs_cleanup.service
-sudo systemctl daemon-reload
 S start obs_cleanup.service
 /usr/bin/fd recording /home/rob/vids -e mkv -x rm -rf {} ;
 /usr/bin/fd recording /home/rob/vids -e mkv -X rm -rf {} ;
@@ -3830,7 +3772,6 @@ v .bin/check-media
 rg 2 .bin
 rg EOF  .bin
 v .bin/sinkctrl
-chx .bin/*
 trimvid -e 15 /media/mx100/Videos/Call of Duty  Black Ops Cold War/Call of Duty  Black Ops Cold War 2020.10.18 - 20.05.42.03.DVR.mp4
 man ffmpeg
 v .bin/trimvid
@@ -3850,15 +3791,10 @@ pacr openshot
 sudo pacr openshot
 pac shotcut
 nvtop
-pacdiff
-sudo pacdiff
 ls /sys/class/drm/card0/device/vendor
 cat /sys/class/drm/card0/device/vendor
-v .aliases
 ncdu
-ssh bb
 ls .con
-~
 ls .config/dconf
 rmr .openshot_qt
 du
@@ -3872,15 +3808,11 @@ fd Trash -H
 ls .local/share/Trash
 ncdu .local/share/Trash
 .local/share/Trash
-vf
 ls .cache
 v temp.c[[
 v temp.cpp
 gcp temp.cpp
-./a.out
 rm a.out temp.cpp
-ls
-reboot
 hist
 v .config/zsh/history
 bc
@@ -3890,9 +3822,7 @@ yay discord-arch-electron
 yay -S discord_arch_electron
 discord
 ls /var/cache/pacman/pkg/youtube-dl-2020.09.20-1-any.pkg.tar.zst
-vfm
 cal
-la
 ls .config/Meltytech
 less .config/pulseaudio-ctl/config
 rm .config/pulseaudio-ctl/config
@@ -3913,8 +3843,6 @@ ls .config/autostart
 ls .config
 rmr .config/pcmanfm
 sudo pacr pcmanfm
-yay
-pkglist
 avidemux3_qt5
 pacr avidemux-qt5
 sudo pacr avidemux-qt5
@@ -3931,7 +3859,236 @@ tesseract-data-eng\
 wireguard-dkms\
 wireguard-tools
 sudo pacr  catdoc exa gcolor2 rxvt-unicode seahorse tesseract tesseract-data-eng wireguard-dkms wireguard-tools
-bb
-myip
 scp bb:rwt13-bb.ovpn ./
 docker ps
+pac tint2
+pacr pac tint2
+sudo pacr tint2
+fv
+mv rwt13-bb.ovpn docs
+docs
+open Untitled.png
+rm Untitled.png
+rmr notes/
+ls processes
+rmr processes
+ls $bin
+~
+v .bin/dotu
+.bin
+mv dnsset setdns
+pacf supress
+pacf quiet
+mv nout quiet
+rg nout
+rg ~/ nout
+rg -H ~/ nout
+rg --hidden ~/ nout
+..
+rg --hidden nout
+quiet telegram-desktop
+pacf null
+mv .bin/quiet .bin/nullify
+v .bin/nvfans
+v .bin/autolock
+v .bin/wall.sh
+ betterlockscreen -r 1920x1200 -u pics/backgrounds/macOS/ColorBurst3.jpg 
+v .config/betterlockscreenrc
+betterlockscreen -h
+rg dimblur
+rg --hidden dimblur
+ps -Flww -p $(pgrep telegram-desktop)
+pgrep telegram-desktop
+ps -Flww -p $(pgrep chromium)
+ps -Flww -p $(pgrep zsh)
+pacf pidstat
+pac sysstat
+pidstat
+pidstat $(pgrep zsh)
+pidstat -p $(pgrep zsh)
+btm -b
+yay procmon
+pac procmon
+timeof chromium
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
+man pidstat
+pidstat --help
+S start ntp-date.service
+cmd
+ls /etc/systemd/system/
+ls /etc/systemd/system/ntpdate.service.d
+locate ntp*service
+systemctl list-unit-files | grep enabled
+S start ntpdate.service
+vnstat
+ndu
+ls .cache/.fr-*
+sudo rm -rf .cache/.fr-*
+sudo rm -rf .cache/.nv
+polybar -m
+echo $MONITOR
+ls .local/share/vifm/Trash
+yay nwg-launchers
+nwgbar
+nwgdmenu
+v school/ITE221/RAM_history.txt
+git clone https://github.com/NVCC-ITP-132-BWS/Assignment2_Sequence-Machine-Compiler.git
+atom Assignment2_Sequence-Machine-Compiler/
+monitors=($(polybar -m | cut -d ':' -f 1))
+echo $monitors
+polybar -m | cut -d ':' -f 1
+echo $monitors[1]
+echo $monitors[2]
+pbar.sh
+start obs
+v .bin/start
+ls .bin/*
+rg start .config/bspwm/autostart.sh
+/home/rob/.bin/start picom dunst dpms obs polkit
+obs --profile Default
+z itp
+pac rsnapshot
+v /var/lib/systemd/timers/stamp-rsnapshot-day.timer
+yay rsnapshot-systemd
+udb
+v /etc/systemd/system/rsnapshot-daily@.service
+v /etc/systemd/system/rsnapshot-daily@.timer
+v /etc/rsnapshot.conf
+rsnapshot configtest
+locate rsnapshot
+rsnapshot -t hourly
+yay timeshift
+timeshift
+chx .bin/*
+rsync_backup.sh -h
+rsync_backup.sh --rsync-get-flags
+realpath docs/backup_exclude.txt
+v docs/backup_exclude.txt
+mkdir -p -- "bb:/data/backups/rob-pc" ; touch "bb:/data/backups/rob-pc/backup.marker"
+rm bb:
+rmr bb:
+rsync_backup.sh / bb:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt --dry-run
+mkdir -p -- "rob@192.168.2.21/data/backups/rob-pc" ; touch "rob@192.168.2.21/data/backups/rob-pc/backup.marker"
+rmr rob@192.168.2.21
+ssh bb touch /data/backups/rob-pc/backup.marker
+rsync_backup.sh / rob@192.168.2.21/data/backups/rob-pc /home/rob/docs/backup_exclude.txt --dry-run
+rsync_backup.sh / rob@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt --dry-run
+v .bin/rsync_backup.sh
+echo $LOG_DIR
+ls .
+ls ./
+ls .*
+mkdir docs/logs
+mv .rsync_backup/2020-10-28-121435.log docs/logs
+rmr .rsync_backup
+date -d "${1:0:10} ${1:11:2}:${1:13:2}:${1:15:2}" +%s
+man date
+grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-10-28-123938.log\
+'
+grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-10-28-123938.log'
+less docs/logs/rsync_backup/2020-10-28-123938.log
+mv docs/logs/2020-10-28-121435.log docs/logs/rsync_backup
+grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-10-28-124655.log'
+system-backup
+man rsync
+Assignment2_Sequence-Machine-Compiler
+gcp smc.cpp
+./a.out
+less OUT,\ Error\ Logs/output.txt
+open /home/rob/school/ITP132/Assignment2_Sequence-Machine-Compiler/Assignment 2 - Sequence Machine Compiler.pdf
+open "/home/rob/school/ITP132/Assignment2_Sequence-Machine-Compiler/Assignment 2 - Sequence Machine Compiler.pdf"
+ssh bb
+polybar -c .config/polybar/config2 
+polybar -c .config/polybar/config2 bar
+killall polybar
+fd .stl
+v downloads/files/node804_adapter.stl
+man nnn
+nnn /media/blueberry/media
+nnn /media/blueberry/media /home/rob
+v .profile
+. ./.profile
+nnn -de
+v .zshrc
+nnn
+which nnf
+v /home/rob/.local/bin/nnf
+v /etc/systemd/system/backup.service
+ll .bin
+v .bin/system-backup
+ls .bin
+ls .bin/rsync_backup.sh
+systemctl status backup.service
+rsync_backup.sh 
+realpath .bin/rsync_backup.sh
+sudo systemctl daemon-reload
+S start backup.service
+vf
+n
+rg NNN .zsh
+rg NN
+rg NNN 
+rg -h NNN 
+rg -H NNN  .zsh
+rg -H NNN .zshrc 
+S enable backup.timer
+timers
+ip
+ip a
+myip
+se
+tail -f .xsession-errors\\
+
+v .bin/pbar.sh
+journalctl -xe NM_CONNECTION=78d739f7-09c2-4577-8199-b6cdc561902b + NM_DEVICE=enp0s25
+ls /etc/NetworkManager/system-connections
+sudo ls /etc/NetworkManager/system-connections
+sudo rm /etc/NetworkManager/system-connections/US_East.nmconnection
+sudo ls /etc/NetworkManager/system-connections/US_East.nmconnection
+reboot
+vpn-toggle
+vpn-toggle Canada_Toronto
+sudo tail -f /var/log/syslog
+journalctl -xe NM_CONNECTION=07950d11-60fa-4a4a-a34c-19b8d86f8bda + NM_DEVICE=enp0s25
+mv downloads/pia .config/
+rm -rf .config/pia
+mv -f downloads/pia .config/
+.config/pia
+ls
+v US_Washington_DC.ovpn
+cd
+v .bin/vpn-toggle
+v .aliases
+journalctl -xe NM_CONNECTION=ce7967bb-0cb3-44e8-b4e9-bd445112eceb + NM_DEVICE=enp0s25
+journalctl -u NetworkManager.service
+journalctl -r -u NetworkManager.service
+v .config/pia/US_Washington_DC.ovpn
+sudo pacman -U downloads/openvpn-2.4.9-2-x86_64.pkg.tar.zst
+v /etc/pacman.conf
+pacu
+vpn-toggle 
+yay -S plex-media-player
+bb
+pacdiff
+sudo pacdiff
+yay
+ls .avidemux6/config3
+v .avidemux6/config3
+pacr avidemux
+sudo pacr avidemux
+sudo pacr avidemux6
+pkglist
+rmr .avidemux6
+remove_spaces
+pac wireguard
+pac wireguard-tools
+pac wireguard-tools wireguard-dkms
+yay networkmanager-wireguard
+S restart NetworkManager
+vfm
+la
+tail -f .xsession-errors
+less .xsession-errors
+less .xsession-errors.old
+less .xsession-errors
+yay

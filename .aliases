@@ -46,6 +46,7 @@ alias bb='ssh bb'
 alias df='df -h'
 alias cmd='compgen -c | fzf'
 alias rm='rm -I'
+alias rm-empty='fd -t d -x rmdir --ignore-fail-on-non-empty {}'
 alias grep='grep --color=auto'
 alias gt='gotop'
 alias gcp='g++'
@@ -61,7 +62,7 @@ alias cpu-speed=' watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
 alias pb='curl -F "f:1=<-" ix.io'
 alias pf='pfetch && colorpanes'
 alias pilog='ssh -t pi pihole -t'
-alias rmr='rm -rf'
+alias rmr='rm -rfi'
 alias rf='rg --files --hidden'
 alias tb='nc termbin.com 9999'
 alias v='/home/rob/.bin/nv'
@@ -93,9 +94,9 @@ mkcd(){
 }
 
 mks(){
-	echo $1
+	p=/home/rob/.bin/${1##*/}
 	if [[ -n "$1" ]]; then
-		printf '#!/bin/bash\n\n' > "$1" && chmod +x "$1" && nv /home/rob/.bin/"$1"
+		printf '#!/bin/bash\n\n' > "$p" && chmod +x "$p" && nv "$p"
 	else
 		nv
 	fi
@@ -107,7 +108,7 @@ chx(){
 
 
 se(){
-    dir="${@:-"~"}"
+    dir="${@:-"$HOME"}"
     sel="$(fd . -H "$dir"| fzf)"
     if [[ -d "$sel" ]] ; then
         cd "$sel"

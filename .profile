@@ -25,6 +25,7 @@ export PATH=/home/rob/.android:$PATH
 export PATH=/home/rob/.local/bin:$PATH
 export PATH=/home/rob/.go/bin:$PATH
 export PATH=/home/rob/.gem/ruby/2.7.0/bin:$PATH
+export PATH=/opt/piavpn/bin:$PATH
 export PATH="$XDG_DATA_HOME"/cargo/bin:$PATH
 
 # clean home dir

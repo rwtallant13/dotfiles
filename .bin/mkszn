@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+[[ -z "$1" ]] && echo "Number of Seasons required" && exit 0
+
+inputNum="$1"
+printf -v inputNum "%02d" $inputNum
+
+for i in {01..$inputNum}; do
+
+	mkdir Season$i && fd "S$i" -d 1 --exec mv -i {} ./Season$i/
+
+done

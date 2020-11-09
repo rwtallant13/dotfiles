@@ -28,7 +28,7 @@ super + shift + Escape
 
 # open functions file
 super + {_,alt + }a
-	xdg-open /home/rob/.{aliases,bashrc}
+	xdg-open /home/rob/.{aliases,zshrc}
 
 super + shift + a
 	"$bin"/caps2esc
@@ -36,10 +36,6 @@ super + shift + a
 # rofi logout script
 super + BackSpace
 	"$bin"/rofi-scripts -l
-
-# search selected text
-super + shift + s
-	"$bin"/selsearch
 
 # open files
 super  + space
@@ -61,11 +57,7 @@ super  + alt + space
 super + ctrl + space
 	"$bin"/opi -a
 
-# copy files
-super + grave
-	rofi -show window
-
-# open project in atom
+# copy file name
 super + alt + c
 	"$bin"/opi -c
 

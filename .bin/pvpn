@@ -1,0 +1,83 @@
+#!/bin/bash
+
+
+_background(){
+	piactl background "$1"
+}
+
+_toggle(){
+
+	if [[ "$1" =~ ^d ]]; then
+		piactl disconnect
+	elif [[ "$1" =~ ^u ]]; then
+		piactl connect
+	else
+		state="$(piactl get connectionstate)"
+		if [[ $state =~ ^Disconnect ]]; then
+			piactl connect
+		elif [[ $state =~ ^Connect ]]; then
+			piactl disconnect
+		fi
+	fi
+
+}
+
+_reconnect(){
+	piactl disconnect && piactl connect
+
+}
+
+
+_region(){
+	set -e
+	prog='rofi -i -dmenu -lines 12  -width 40 -padding 20'
+	region="$(piactl get regions | $prog)"
+	piactl set region "$region"
+	_reconnect
+}
+
+_ip(){
+	piactl get vpnip
+}
+
+
+_help() {
+    cat <<- EOF
+Usage: pvpn [command] <arg>
+
+Commands:
+       	  -h, help			Display this message
+       	  -r, region			Select Region and reconnect
+          -R, reconnect			Disconnect and reconnect to server
+       	  -r, toggle <up|down>		Toggle VPN connection
+       	  -ip, ip			Get IP of connected server
+       	  -bg, bg <enable|disable>	Control background daemon for PIA
+EOF
+}
+
+opt="${1:-"toggle"}"
+
+case "$opt" in
+    -h|help )
+        _help
+        exit 0
+        ;;
+    -ip|ip )
+		_ip
+        exit 0
+		;;
+	-R|reconnect )
+		_reconnect
+		;;
+    -r|region )
+		_region "$2"
+        ;;
+    -t|toggle )
+		_toggle "$2"
+        ;;
+    -bg|bg )
+		_background "$2"
+        ;;
+
+    *) printf >&2 "Invalid option\n\n"; _help; exit 1;;
+esac

@@ -94,7 +94,6 @@ exo-open --launch TerminalEmulator vim
 v .config/mimeapps.list
 sv /etc/X11/xorg.conf
 bspc -r *
-bspc rule -r *
 sudo nvidia-settings
 sv /etc/lightdm/lightdm-gtk-greeter.conf
 asdasd asdas asd  asd
@@ -201,7 +200,6 @@ bspc desktop -l next
 pac lxsession
 /usr/bin/lxpolkit &
 ls .config/autostart/
-locate autostart
 yay -S ytop
 sudo pacr gotop-bin
 S enable systemd-swa
@@ -1594,7 +1592,6 @@ df -ha GPUCACHE
 df -ha GPUcache
 du -ha GPUCache
 fzf --no-info
-ls downloads
 ;yay
 man bspoc
 bspc query -N .hidden.floating
@@ -1817,7 +1814,6 @@ S enable --now caps2esc.timer
 man alacritty
 source .profile
 killall sxhkd
-rf | wc -l
 nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=0
 less /home/rob/.cache/gotop/errors.log
 sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf.bak
@@ -1825,7 +1821,6 @@ sudo mv xorg.conf /etc/X11/xorg.conf
 nvfans
 v /etc/X11/xorg.conf.ba
 v /etc/X11/xorg.conf.bak
-l .bin
 $TERMINAL -e "bash --rcfile /home/rob/.bashrc -c 'vifm /home/rob/downloads /media/blueberry/'"
 $TERMINAL -e bash --rcfile /home/rob/.bashrc -c 'vifm /home/rob/downloads /media/blueberry/'
 rg "$TERMINAL" .bin
@@ -1981,7 +1976,6 @@ yay minecraft
 echo "[pulse] \n allow-moves=yes" >> .alsoftrc
 v .alsoftrc
 bspc rule -a minecraft-launcher:"Minecraft Launcher" 'monitor=DP-0:^6' focus=on
-bspc rule -l
 man bsp
 bspc node -m DP-0#^2
 bspc node -m DP-0^2
@@ -2122,7 +2116,6 @@ pac python python-ordered-set tbb blender i3lock-color liblouis linux-firmware p
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expacchromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
 pacman -Scc
 sudo pacman -Scc
-y
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity --force
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl
@@ -2345,7 +2338,6 @@ ls downloads/minecraft/VanillaTweaks_r604607.zip
 rm -rf  .minecraft/resourcepacks/*
 ls .minecraft/resourcepacks/*
 ls .minecraft/resourcepacks/
-man xdo
 xdo pointer_motion
 xdo pointer_motion scroll
 man xdotool
@@ -2417,7 +2409,6 @@ show
 shows
 rg ova
 fd -i ova
-fd
 fd|grep ova
 fd|grep Ova
 fd|grep OVA
@@ -2436,7 +2427,6 @@ ls /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 sudo pacr gconf
 journalctl -r -b 1
 journalctl -r -b
-last reboot
 last -x shutdown
 rg -h
 rg -e shutdown -e reboot /var/log
@@ -2454,7 +2444,6 @@ xcolor
 systemctl | grep running
 sudo pacr xcalib
 sudo pacr displaycal
-sudo pacr colord
 sudo pacr xiccd
 ls /usr/lib/systemd/user
 sudo rm -rf /usr/lib/systemd/user/colord-session.service
@@ -2678,7 +2667,6 @@ v /etc/xdg/reflector/reflector.conf
 /media/blueberry/backups/rob-pc/rdiff-backup-data/
 S status reflector.timer
 S status backup.service
-$backups
 ls rdiff-backup-data
 ls increments
 ls backup.log
@@ -2749,13 +2737,11 @@ echo $BROWSER
 rg $BROWSER
 rg --hidden $BROWSER
 sudo pacr gnome-desktop
-l
 mv .bin/notes .bin/note
 [200~filecount
 rm .bin/colorblocks
 colorblocks
 colorpanes
-pf
 z sys
 locate reflector.service
 v /usr/lib/systemd/system/reflector.service
@@ -2785,7 +2771,6 @@ man hyperfine
 z etc
 v ~/.zshrc
 z
-fd | wc -l
 fd -H -I | wc -l
 time fd -H -I | wc -l
 time fd -H | wc -l
@@ -2823,7 +2808,6 @@ efibootmgr -v
 .local
 share
 filecount
-fd -H | wc -l
 fd -H -t f | wc -l
 mkcd .config/zsh
 v .fdignore
@@ -2875,7 +2859,6 @@ pacr transmission
 sudo pacr transmission
 ssr.sh
 ssr.sh launch
-simplescreenrecorder
 flameshot qui
 flameshot gui
 bandwhich
@@ -2889,7 +2872,6 @@ fdchars -I tempdata/*
 fdchars -E tempdata/*
 cd movies
 cd ../shows
-fdchars
 qmv -h
 qmv --help
 ls | qmv --format=single-column -
@@ -2901,7 +2883,6 @@ qbittorrent
 yay -S vidir
 qmv
 vifm --help
-vifm
 vifm -c rename
 vifm -c +rename
 man qcp
@@ -2922,7 +2903,6 @@ mktemp --help
 rg mktemp .bin
 time find /tmp/current_sink.*
 find -maxdepth 1
-fd -d 1
 fd -d 1 -H
 fd -d 1 -H -j 1
 renamer
@@ -3041,7 +3021,6 @@ fd . RARBG*
 fd RARBG* .
 fd RARBG* . -e exe -e txt --exec rm -rf {};
 fd RARBG* . -e exe -e txt
-fd -t f
 fd -t f | wc -l
 shortinfo JoJo-S04E01-GoldenWind.mp4
 mv downloads/minecraft/BSL_v7.2.zip .minecraft/shaderpacks
@@ -3084,7 +3063,6 @@ alias mclog
 v 16.cpp
 16
 ./16
-ssh pi
 flameshot config
 v  ~/.config/gtk-3.0/gtk.css
 find
@@ -3180,7 +3158,6 @@ My-Hero-Academia
 shortinfo ./
 v ~/.bin/shortinfo
 mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" MyHeroAcademia_s1e01.mp4
-man mv
 start pulse
 S status pulseaudio
 S status --user pulseaudio
@@ -3257,7 +3234,6 @@ pac xfce4-terminal
 locate nvim.dektop
 locate nvim.desktop
 v /usr/share/applications/nvim.desktop
-xprop
 echo $TERMINAL
 ffmpeg -i screen-20200911-132235.mp4  -map_metadata 0 -metadata:s:v rotate="90" -codec copy twerking.mp4      
 pac qt5-styleplugins
@@ -3303,7 +3279,6 @@ systemctl --user status yadm.timer
 journalctl -f -u yadm.service
 journalctl r -u yadm.service
 journalctl -r -u yadm.service
-v .bin/nv
 journalctl --user -fxe
 systemctl --user start yadm.service
 journalctl --user -xe
@@ -3387,7 +3362,6 @@ pac read-edid
 sudo  sudo get-edid  | parse-edid 
 sudo  sudo get-edid  | sudo parse-edid 
 su
-btm
 xrandr -h
 xrandr --help
 man nvidia-settings
@@ -3434,7 +3408,6 @@ mkdir ../lr
 mv ../Appearance_Dark-left.png ../Appearance_Dark-right.png ../Appearance_Light-left.png ../Appearance_Light-right.png ../lr
 ls ../lr
 pacq
-man bspc
 pacr feh
 sudo pacr feh
 nitrogen --restore
@@ -3558,7 +3531,6 @@ less .xsession-errors\\
 
 pacr lf
 sudo pacr lf
-remove-orphans
 pacreport > pacreport.txt
 less pacreport.txt
 paccache
@@ -3576,7 +3548,6 @@ cd Season4
 fd ~/downloads/torrents -e mkv
 fd . ~/downloads/torrents -e mkv
 fd . ~/downloads/torrents -e mkv --exec mv {} ./ ;
-pacrepo
 v /etc/pacman.d/gnupg/gpg.conf
 pacman-key --refresh-keys
 sudo pacman-key --refresh-keys
@@ -3622,7 +3593,6 @@ mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" /home/rob/vids/fu
 shortinfo /home/rob/vids/fullscreen--2020-05-22_15.26.24
 shortinfo /home/rob/vids/fullscreen--2020-05-22_15.26.24\ \(1\).mp4
 v ~/.bin/start
-man vifm
 v /etc/pro
 la .config
 v .config/rgconf
@@ -3716,7 +3686,6 @@ find . -name "* *"  -exec rm -rf {} +
 man ffmpeh
 yay video-trimmer
 v .bin/mnt
-v .bin/opi
 encode-media -f /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.DVR
 encode-media -f /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.mp4
 ls /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.mp4
@@ -3733,7 +3702,6 @@ v /boot/loader/loader.conf
 efibootmgr -B -b 0001
 sudo efibootmgr -B -b 0001
 hyperfine rf
-rf
 hyperfine 
 hyperfine rg --files
 alias rf
@@ -3741,7 +3709,6 @@ hyperfine 'rg --files'
 chmod a+x ./projects/python/vidcut
 v projects/python/vidcut
 ./projects/python/vidcut
-lr
 v /etc/systemd/system/obs_cleanup.service
 v /etc/systemd/system/obs_cleanup.timer
 journalctl -r -u obs_cleanup.service
@@ -3767,7 +3734,6 @@ ls -Art | head -30
 sudo rm MylfBlows.20.10.19.Alix.Lynx.Ill.Help.You.Relax.XXX.720p.MP4-XXX
 sudo rm -rf MylfBlows.20.10.19.Alix.Lynx.Ill.Help.You.Relax.XXX.720p.MP4-XXX
 uname -r
-rg case .bin
 v .bin/check-media
 rg 2 .bin
 rg EOF  .bin
@@ -3803,7 +3769,6 @@ fd Trash
 fd . -h Trash
 fd . Trash  -H  
 fd . -H Trash
-man fd
 fd Trash -H
 ls .local/share/Trash
 ncdu .local/share/Trash
@@ -3817,7 +3782,6 @@ hist
 v .config/zsh/history
 bc
 man bc
-df -h
 yay discord-arch-electron
 yay -S discord_arch_electron
 discord
@@ -3840,7 +3804,6 @@ rmr .config/calcurse
 pacr calcurse
 sudo pacr calcurse
 ls .config/autostart
-ls .config
 rmr .config/pcmanfm
 sudo pacr pcmanfm
 avidemux3_qt5
@@ -3864,7 +3827,6 @@ docker ps
 pac tint2
 pacr pac tint2
 sudo pacr tint2
-fv
 mv rwt13-bb.ovpn docs
 docs
 open Untitled.png
@@ -3906,7 +3868,6 @@ pac sysstat
 pidstat
 pidstat $(pgrep zsh)
 pidstat -p $(pgrep zsh)
-btm -b
 yay procmon
 pac procmon
 timeof chromium
@@ -3921,7 +3882,6 @@ locate ntp*service
 systemctl list-unit-files | grep enabled
 S start ntpdate.service
 vnstat
-ndu
 ls .cache/.fr-*
 sudo rm -rf .cache/.fr-*
 sudo rm -rf .cache/.nv
@@ -3940,17 +3900,13 @@ polybar -m | cut -d ':' -f 1
 echo $monitors[1]
 echo $monitors[2]
 pbar.sh
-start obs
-v .bin/start
 ls .bin/*
 rg start .config/bspwm/autostart.sh
 /home/rob/.bin/start picom dunst dpms obs polkit
-obs --profile Default
 z itp
 pac rsnapshot
 v /var/lib/systemd/timers/stamp-rsnapshot-day.timer
 yay rsnapshot-systemd
-udb
 v /etc/systemd/system/rsnapshot-daily@.service
 v /etc/systemd/system/rsnapshot-daily@.timer
 v /etc/rsnapshot.conf
@@ -4023,7 +3979,6 @@ rsync_backup.sh
 realpath .bin/rsync_backup.sh
 sudo systemctl daemon-reload
 S start backup.service
-vf
 n
 rg NNN .zsh
 rg NN
@@ -4035,8 +3990,6 @@ S enable backup.timer
 timers
 ip
 ip a
-myip
-se
 tail -f .xsession-errors\\
 
 v .bin/pbar.sh
@@ -4045,7 +3998,6 @@ ls /etc/NetworkManager/system-connections
 sudo ls /etc/NetworkManager/system-connections
 sudo rm /etc/NetworkManager/system-connections/US_East.nmconnection
 sudo ls /etc/NetworkManager/system-connections/US_East.nmconnection
-reboot
 vpn-toggle
 vpn-toggle Canada_Toronto
 sudo tail -f /var/log/syslog
@@ -4054,24 +4006,18 @@ mv downloads/pia .config/
 rm -rf .config/pia
 mv -f downloads/pia .config/
 .config/pia
-ls
 v US_Washington_DC.ovpn
 cd
-v .bin/vpn-toggle
-v .aliases
 journalctl -xe NM_CONNECTION=ce7967bb-0cb3-44e8-b4e9-bd445112eceb + NM_DEVICE=enp0s25
 journalctl -u NetworkManager.service
 journalctl -r -u NetworkManager.service
 v .config/pia/US_Washington_DC.ovpn
 sudo pacman -U downloads/openvpn-2.4.9-2-x86_64.pkg.tar.zst
-v /etc/pacman.conf
 pacu
 vpn-toggle 
 yay -S plex-media-player
-bb
 pacdiff
 sudo pacdiff
-yay
 ls .avidemux6/config3
 v .avidemux6/config3
 pacr avidemux
@@ -4085,10 +4031,254 @@ pac wireguard-tools
 pac wireguard-tools wireguard-dkms
 yay networkmanager-wireguard
 S restart NetworkManager
-vfm
-la
 tail -f .xsession-errors
-less .xsession-errors
 less .xsession-errors.old
+ls .bin/nullify
+df -h
+mkdir Season{01..22}
+for i in 01..22; echo $i; done
+for i in 01..22; do echo $i; done
+for i in {01..22}; do echo $i; done
+for i in {01..22}; do fd . "-S$i"; done
+for i in {01..22}; do fd . "S$i"; done
+for i in {01..22}; do fd ./ "S$i"; done
+for i in {01..22}; do fd "S$i"; done
+for i in {01..22}; do fd "S$i" --exec mv {} ./Season$i/; done
+ls Season01
+ls Season02
+ls Season03
+ls Season04
+ls Season22
+v $(which fdchars )
+fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|',''
+man vf
+man vifm
+vifm --choose-files - < fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|',''
+vifm --choose-files - <$( fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|','')
+vifm --choose-files <$( fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|','')
+vifm --choose-files $( fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|','')
+vifm
+mks .bin/mkszn
+usb
+locate mkszn
+mkszn
+v .bin/mkszn
+rmr Season\{01..04\}
+man fd
+mkszn 4 
+rmr Season0*
+mkszn 7
+man mv
+mkszn 4
+mkszn 2
+pf
+last reboot
+ssh pi
+ssh rob@192.168.2.41
+ssh pi@192.168.2.41
+ssh pi@192.168.2.41 bash
+ssh pi@192.168.2.41 sh
+ssh pi@192.168.2.41 mv .bashrc .f
+ssh pi@192.168.2.41 
+fd | wc -l
+fd -H | wc -l
+fv
+lr
+fd
+fd -t f
+start obs
+obs --profile Default
+pac simplescreenrecorder
+mkdir -p $XDG_CONFIG_HOME/simplescreenrecorder/
+l
+rmr .ssr
+y
+vf
+$backups
+fd -d 1
+sudo rm -rf 2020-10-28-123936 2020-10-28-124441 2020-10-28-124654 2020-10-28-124929 
+simplescreenrecorder
+fd -d 2
+ls .config
+find %s %a -print , -type d \( ! -readable -o ! -executable \) -prune
+find bin  -print , -type d \( ! -readable -o ! -executable \) -prune
+find .bin  -print , -type d \( ! -readable -o ! -executable \) -prune
+rf
+rf | wc -l
+pacr colord
+sudo pacr colord
+l .bin
+calc
+less .bin/bspscripts
+mkszn 3
+fd -e mkv
+fd -e mkv -x mv {} ./
+chmod +x downloads/pia-linux-2.5.1-05676.run
+./downloads/pia-linux-2.5.1-05676.run
+ls downloads
+udb
+locate pia
+ls /opt/piavpn/bin/pia-client
+.//opt/piavpn/bin/pia-client
+./opt/piavpn/bin/pia-client
+/opt/piavpn/bin/pia-client
+nullify /opt/piavpn/bin/pia-client
+/opt/piavpn/bin/pia-client -h
+ls /opt/piavpn/bin/
+/opt/piavpn/bin/piactl
+piactl background enable
+piactl connect
+v /opt/piavpn/bin/run-in-terminal.sh
+v /opt/piavpn/bin/openvpn-updown.sh
+rg rule .config/bspwm/bspwmrc
+bspc rule -a pia-client:privateinternetaccess -o hidden
+bspc rule -a pia-client:privateinternetaccess -o state=hidden
+bspc rule -a pia-client: -o state=hidden
+bspc rule -a pia-client:* -o state=hidden
+bspc rule -a pia-client -o state=hidden
+bspc rule -a pia-client -o monitor=DP-0
+bspc rule -a pia-client -o monitor=DVI-D-0
+xprop -id pia-client WM_NAME | grep -oP '"\K[^"\047]+(?=["\047])'
+bspc query -T -m
+xprop
+xdo hide -N pia-client
+xdo hide -N privateinternetaccess
+man xdo
+xdo show -N privateinternetaccess
+xdo close -N privateinternetaccess
+which pia-client
+sleep 1.5s
+b
+myip
+piactl 
+piactl disconnect
+v .bin/vpn-toggle
+v .aliases
+mks .bin/pia.sh
+piactl get connectionstate
+opi
+pia.sh
+piactl set region
+piactl set region && echo true
+pia.sh -r
+pia.sh -r dc
+piactl get regions
+piactl background disable
+piactl get pubip
+piactl get vpnip
+piactl get pubip && echo true
+bspc rule -a privateinternetaccess -o hidden=on && /opt/piavpn/bin/pia-client
+man bspc
+v .config/bspwm/bspwmrc
+bspc rule 
+bspc rule -h
+bspc rule -r *
+bspc rule -r pia-client:*
+bspc rule -r *:*
+bspc rule -l
+v .bin/pia.sh
+v .bin/opi
+pia.sh -r 
+v .bin/nv
+rg set .bin
+mv .bin/pia.sh .bin/vpn
+mv .bin/vpn-toggle .bin/vpn-nm
+v .bin/vpn
+.bin/vpn
+.bin/vpn down
+.bin/vpn -t 
+.bin/vpn -t down
+.bin/vpn 
+.bin/vpn a
+.bin/vpn -r
+region="$(piactl get regions | $prog)"\
+	piactl set region "$region"
+region="$(piactl get regions | fzf)"\
+	piactl set region "$region"
+piactl set region "$region"
+piactl set region "$(piactl get regions | fzf)"
+piactl set region auto
+vpn toggle
+rofi -h
+rofi -h | grep text
+rofi -h | grep size
+rg font .config/rofi/config.rasi
+rofi -h | grep font
+rofi -h | grep -C3font
+rofi -h | grep -C3 font
+vpn -r 
+mv .bin/vpn .bin/pvpn
+mv .bin/vpn-nm .bin/nmvpn
+piactl
+sleep 3s && flameshot gui
+lb
+pgrep nm-applet
+start nm-applet
+la
+rg case .bin
+ndu
+fd -e sub -e idx
+fd -e sub -e idx -x mv {} subs/
+fd -e sub -e idx -x mv {} ./subs/
+fd -e sub -e idx -x mv {} ./Subs/
+pia-client -q
+man pia-client
+pia-client --help
+/opt/piavpn
+rg '-q'
+rg '\-q'
+ls bin
+locate autostart
+v /home/rob/.config/autostart/pia-client.desktop
+pia-client --quiet
+start vpn
+pgrep pia
+btm -b
+start pia
+v .bin/start
+/opt/piavpn/bin/pia-client --quiet\
+
+start pia-client
+v .bin/nullify
+2>/dev/null 1>&2 /opt/piavpn/bin/pia-client --quiet &
 less .xsession-errors
+se
+v /etc/pacman.conf
+pvpn -h
+v .bin/pvpn
+pacr chaotic-aur/nwg-launchers
+sudo pacr chaotic-aur/nwg-launchers
+sudo pacr nwg-launchers
+pacrepo
 yay
+pac discord
+remove-orphans
+pac pacman-contrib
+fdchars
+btm
+reboot
+fd extra -x rmdir {}
+fd extra
+fd -t d -x rmdir {}
+rmdir -h
+rmdir --help
+~/docs
+mkdir -p this/{that,that2}
+ls
+fd -t d -x rmdir --ignore-fail-on-non-empty {}
+ls this
+rmr this
+bb
+vfm
+yay
+pacr plexmediaplayer
+sudo pacr plexmediaplayer
+pkglist
+sudo pacr plex-media-player
+yay
+la
+lsblk
+v /etc/pacman.conf
+pacrepo
+yay
+pac picom

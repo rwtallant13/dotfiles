@@ -105,6 +105,8 @@ nnoremap <C-a> :norm ggVG<cr><cr>
 qnoremap <s-tab> :norm gt
 " substitute in all files
 nnoremap ca :%s/
+nnoremap J :jobs<cr>
+nnoremap P :put! &<cr>
 
 " toggle between sorting: by name <--> by size <--> by mtime
 command! togglesort

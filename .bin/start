@@ -22,6 +22,16 @@ done
 
 }
 
+_nm-applet(){
+	/usr/bin/nm-applet
+}
+
+_pia-client(){
+	/opt/piavpn/bin/piactl background enable
+	nullify /opt/piavpn/bin/pia-client --quiet
+
+}
+
 _polkit(){
 	nullify /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 }
@@ -31,6 +41,10 @@ _obs(){
 
 }
 
+_ssr(){
+	nullify simplescreenrecorder --start-hidden --settingsfile=/home/rob/.ssr/fullscreen.conf &
+}
+
 _dpms(){
 	xset s 1215 1215
 
@@ -38,7 +52,7 @@ _dpms(){
 }
 
 _pulse(){
-	pulseaudio -k;pulseaudio --start
+	pulseaudio -k && pulseaudio --start
 }
 
 
@@ -48,5 +62,5 @@ for i in $*; do
 	# Wait until the processes have been shut down
 	while pgrep -x "$i" >/dev/null; do sleep 0.25; done
 
-	2>/dev/null 1>&2 _$i &
+	_$i &
 done

@@ -107,6 +107,7 @@ qnoremap <s-tab> :norm gt
 nnoremap ca :%s/
 nnoremap J :jobs<cr>
 nnoremap P :put! &<cr>
+nnoremap H :history <cr>
 
 " toggle between sorting: by name <--> by size <--> by mtime
 command! togglesort
@@ -126,7 +127,7 @@ nnoremap SA :togglesort<cr>
 nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
 
 " yank current file path into the clipboard
-nnoremap yf :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
+nnoremap yp :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
 
 " yank current filename without path into the clipboard
 nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
@@ -134,27 +135,21 @@ nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') 
 " yank root of current file's name into the clipboard
 nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
 
+command! FZFcd :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME -H -a -t d -t l | fzf --height 10 --layout=default 2>/dev/tty'))
+command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME -H -a | fzf  --height 10 --layout=default 2>/dev/tty'))
 
-" Interactionwith system clipboard
-if executable('xclip')
-    " Yank current directory path into the clipboard
-    nnoremap yd :!echo %d | xclip %i<cr>
-    " Yank current file path into the clipboard
-    nnoremap yf :!echo %c:p | xclip %i<cr>
-elseif executable('xsel')
-    " Yank current directory path into primary and selection clipboards
-    nnoremap yd :!echo -n %d | xsel --input --primary %i &&
-                \ echo -n %d | xsel --clipboard --input %i<cr>
-    " Yank current file path into into primary and selection clipboards
-    nnoremap yf :!echo -n %c:p | xsel --input --primary %i &&
-                \ echo -n %c:p | xsel --clipboard --input %i<cr>
-endif
+nnoremap <c-f> :FZFcd<cr>
+nnoremap <c-g> :FZFfind<cr>
+
+command! FZFjump :set noquickview | :execute 'goto' fnameescape(term('zsh -ic "_zlua -I -t ." 2>/dev/tty'))
+
+nnoremap <c-j> :FZFjump<cr>
 
 " Mappings for faster renaming
 nnoremap <f2> cw
 nnoremap cc cw<c-u>
 
-" Open console in current directory
+" Open terminal in current directory
 nnoremap $ :!$TERMINAL %i &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm

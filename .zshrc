@@ -1,3 +1,5 @@
+# -- general -----------------------------------------------------
+
 HISTFILE=~/.config/zsh/history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -8,6 +10,17 @@ PROMPT='%B%F{blue}%n%f %F{white}%b%c%f %B%F{blue}$ '
 [[ -e "$HOME"/.aliases ]] && \
    . "$HOME"/.aliases
 
+autoload -Uz compinit && compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
+autoload bashcompinit && bashcompinit
+
+# emacs mode
+bindkey -e
+
+source ~/.zkbd/$TERM*
+
+
+# -- style --------------------------------------------------------
+
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=cyan,underline
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=cyan,underline
@@ -17,8 +30,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f6569,bg=bold,underline"
 
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
-#zstyle ':completion:*' list-colors ''
-#zstyle ':completion:*' matcher-list ''
+zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' insert-tab false
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
@@ -28,13 +40,12 @@ zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
-zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 zstyle :compinstall filename '/home/rob/.zshrc'
 
 
-autoload -Uz compinit && compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
-autoload bashcompinit && bashcompinit
+# -- setopts ---------------------------------------------------------
+
 #setopt ZLE
 setopt complete_aliases
 setopt extended_glob
@@ -50,11 +61,8 @@ setopt complete_in_word
 unsetopt flow_control
 unsetopt menu_complete
 
-# vim/emacs mode.
-#bindkey -v
-bindkey -e
 
-source ~/.zkbd/$TERM*
+# -- keybinds ---------------------------------------------------------
 
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
 [[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
@@ -67,21 +75,34 @@ source ~/.zkbd/$TERM*
 [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+
+
+bindkey '5~' kill-whole-line
+bindkey '^[u' undo
+bindkey '^[r' redo
+
 bindkey '\e.' insert-last-word
+
 insert-first-word () { zle insert-last-word -- -1 1 }
 zle -N insert-first-word
 bindkey '^[,' insert-first-word
+
 autoload -U copy-earlier-word
 zle -N copy-earlier-word
 bindkey "\e/" copy-earlier-word
+
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+
+
 backward-kill-dir () {
     local WORDCHARS=${WORDCHARS/\/}
     zle backward-kill-word
 }
 zle -N backward-kill-dir
 bindkey '^H' backward-kill-dir
+
+
 function expand-or-complete-or-list-files() {
     if [[ $#BUFFER == 0 ]]; then
         BUFFER="ls "
@@ -94,14 +115,13 @@ function expand-or-complete-or-list-files() {
 }
 zle -N expand-or-complete-or-list-files
 bindkey '^I' expand-or-complete-or-list-files
-bindkey '^[u' undo
-bindkey '^[r' redo
-bindkey '5~' kill-whole-line
+
+
 exit_zsh() { exit }
 zle -N exit_zsh
 bindkey '^D' exit_zsh
 
-# exports
+# -- exports -------------------------------------------------------
 export FZF_DEFAULT_OPTS="--preview-window noborder --reverse --exact --no-color --multi --cycle --border=sharp --height=50% --no-info"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50' --exact"
 export FZF_CTRL_T_COMMAND="fd . --hidden"
@@ -109,6 +129,8 @@ export FZF_ALT_C_COMMAND='fd . --hidden -t d'
 export FZF_CTRL_R_OPTS='--exact'
 export NNN_BMS='h:~/;d:~/downloads/;p:/home/rob/pics/;c:~/.config/;b:/media/blueberry;e:/etc/;B:/media/blueberry/backups/rob-pc/latest/'
 export PF_INFO="ascii title os wm kernel uptime pkgs memory"
+export _ZL_DATA=/home/rob/.config/zlua
+# -- source --------------------------------------------------------
 
 # source plugins
 source /usr/share/fzf/key-bindings.zsh
@@ -116,4 +138,4 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once)"
-export _ZL_DATA=/home/rob/.config/zlua
+source /usr/share/autojump/autojump.zsh

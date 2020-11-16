@@ -12,3 +12,4 @@
 **/nvim/swap/*
 **/.local/lib/*
 **/.local/share/*
+**/.thumbnails/*

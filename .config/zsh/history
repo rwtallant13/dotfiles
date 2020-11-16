@@ -187,7 +187,6 @@ kilalll -9 xidlelock
 killalll -9 xidlelock
 killall -9 xidlelock
 notify-send -t 2000 "Xidlehook crashed" "Respawning..."
-journalctl -r
 man journal
 cargo install xidlehook
 autolock.sh
@@ -489,11 +488,9 @@ wall.sh -s /home/rob/pictures/backgrounds/to-blur/72gujosn4n621.jpg
 ffmpegthumbnailer
 pac tumblr
 pac tumblrt
-pac tumbler
 locate thumbnail
 ls .cache/thumbnails
 less .bin/opi
-wall.sh
 wall.sh -u /home/rob/pictures/backgrounds/blurred/blurred_697726.jpg
 wall.sh -u /home/rob/pictures/backgrounds/blurred/blurred_1038770.jpg
 thunar pictures/backgrounds/to-blur
@@ -853,7 +850,6 @@ do \
 done
 rm .nvidia-settings-rc
 sudoedit .zshrc
-sudoedit /etc/pacman.conf
 which nv
 nv .config/zhistory .zshrc
 V /root/.aliases
@@ -887,7 +883,6 @@ yadm init -f
 yadm add .zshrc
 yadm add .bashrc
 yadm add .aliases .profile
-cd .config
 yadm add alacritty/alacritty.yml
 yadm add bspwm/*
 yadm add dunst/dunstrc
@@ -1055,7 +1050,6 @@ v .bin/pu
 v .bin/pulldots
 pulldots
 less .pulse-cookie
-less .fehbg
 yadm --help
 yadm show
 yadm status
@@ -1219,7 +1213,6 @@ dig youtube.com
 dns.sh pi
 v .config/polybar/modules
 alias myip
-man bspwm
 bspc node -f "~"
 bspc node -f "~@"
 bspc node -f "~@@\
@@ -1371,7 +1364,6 @@ v /etc/shadow.pacnew
 v /etc/shadow
 V /etc/shadow
 sudo diff /etc/shadow /etc/shadow.pacnew
-pac viewnoir
 pac viewnior
 pacr sxiv
 sudo pacr sxiv
@@ -1422,7 +1414,6 @@ pac python3-pillow pyton3-dev python3-numpy
 pac python-pillow python-dev python-numpy
 pac python-pillow  python-numpy
 cd Minecraft-Overviewer
-mnt
 mkdir world_map
 ./overviewer.py /media/bb-dir/minecraft/bukkit/world /home/rob/world_map
 open world_map/index.html
@@ -2325,7 +2316,6 @@ sudo pacr linux-zen linux-zen-headers
 pac light-locker
 pacq | grep lock
 sudo pacr local/betterautolock local/betterlockscreen local/i3lock-color
-pac feh
 man light-locker
 pgrep light-locker
 pac pm-utils
@@ -2374,13 +2364,11 @@ locate resume@
 v /etc/systemd/system/resume@.service
 S disable resume@rob.service
 xrandr --dpi
-fkill
 [A
 pac libva-vdpau-driver libvdpau-va-gl
 pac nvidia-utils
 pac libva-utils
 pac vdpauinfo
-pac libva-vdpau-driver
 rg xsel
 rg .bin xsel
 rg xsel .bin
@@ -2497,7 +2485,6 @@ ls rob-pc
 rob-pc
 less .chpwd-recent-dirs
 rm -rf .chpwd-recent-dirs
-zsh
 v .bin/notes
 xc < rdiff-backup-data/session_statistics.2020-09-01T17:10:29-04:00.data
 xc < rdiff-backup-data/session_statistics.2020-09-02T06:00:41-04:00.data
@@ -2513,9 +2500,6 @@ ls rdiff-backup-data/session_statistics.2020-09-0*
 sudo pacr vdpau
 sudo pacr vdpauinfo
 echo $
-echo $VDPAU_DRIVER
-yay libva-vdpau-driver-chromium
-yay -S libva-vdpau-driver-chromium
 pacr cacafire
 sudo pacr cacafire
 pacf cacafire
@@ -2541,9 +2525,7 @@ opi -e /etc
 $TERMINAL -e nvim /etc/fstab
 $TERMINAL -e "nvim /etc/fstab"
 cp docs/invoices/Charlie\ and\ Sarge\ -\ Sheet1.pdf docs/invoices/charliesarge.pdf
-pac picom
 pac picom-git
-yay -S picom-git
 seq 1 10
 ll /.bin/mks
 ll .bin/mks
@@ -2554,7 +2536,6 @@ chx
 chmod +x .bin/mks
 mks .bin/start
 exo-open .config/sxhkd/sxhkdrc
-v .config/bspwm/autostart.sh
 S status sxhkd.service
 S disable sxhkd.service
 systemctl --user disable sxhkd.service
@@ -2579,7 +2560,6 @@ z -i bin
 z -i .bin
 cd ../downloads
 cd ~/docs
-cd ~/downloads/torrents
 cd /media/blueberry/media/
 z down
 z ~
@@ -2601,14 +2581,9 @@ rm -rf z.lua-1.8.7
 rm -rf DSC01374*
 rm -rf new_house.mp4
 mv xray .minecraft/resourcepacks
-cd /media/blueberry
-cd /media/blueberry/backups
 cd ~
 cd vids
-cd /etc
-cd /etc/systemd/system/
 cd projects
-cd school
 ls blueberry
 cd..
 cd .bin
@@ -2766,11 +2741,9 @@ scrot win
 man sxhkd
 xev -event keyboard
 locate .sw
-hyperfine
 man hyperfine
 z etc
 v ~/.zshrc
-z
 fd -H -I | wc -l
 time fd -H -I | wc -l
 time fd -H | wc -l
@@ -2803,15 +2776,11 @@ yay vidir
 sudo loginctl list-sessions
 sudo loginctl kill-session 5
 ;f
-efibootmgr
 efibootmgr -v
 .local
 share
-filecount
 fd -H -t f | wc -l
 mkcd .config/zsh
-v .fdignore
-filecount .local/share
 cd -h
 man cd
 mv ../zhistory ./history
@@ -2839,7 +2808,6 @@ unoconv -f pdf school/ITP132/Unit\ 1-Microprocessor\ and\ Instruction\ Set_Inter
 ls school/ITP132/Unit\ 1-Microprocessor\ and\ Instruction\ Set_Internal\ Organization.pptx
 mks .bin/remove_spaces
 open Unit1-MicroprocessorandInstructionSet_InternalOrganization.pdf
-cd ..
 mkdir ITE221
 mv ITP132/Unit1-MicroprocessorandInstructionSet_InternalOrganization.p* ITE221
 ITE221
@@ -3034,9 +3002,7 @@ compgen
 eval compgen -c
 rm -rf .minecraft/shaderpacks/*
 less .bin/start
-killall picom
 picom --experimental-backends --backend glx -b --config /home/rob/.config/picom/picom.conf
-man picom
 locate xfce4-terminal.wrapper
 sudo rm -rf /usr/bin/xfce4-terminal.wrapper
 yay -S nerd-fonts-hack
@@ -3066,7 +3032,6 @@ v 16.cpp
 flameshot config
 v  ~/.config/gtk-3.0/gtk.css
 find
-lsblk
 ll
 lla
 rm netdata-bb.pdf
@@ -3204,7 +3169,6 @@ sudo mv fz.sh /home/rob/.local/etc/bash_completion.d/
 realpath /home/rob/.local/etc/bash_completion.d/fz.sh
 pac linux linux-lts
 systemd-analyze blame
-systemd-analyze 
 systemd-analyze time
 systemd-analyze critical-chain
 systemd-analyze plot > plot.svg
@@ -3213,7 +3177,7 @@ systemd-analyze
 yay -S ungoogled-chromium
  sudo pacman-key --keyserver hkp://keyserver.ubuntu.com -r 3056513887B78AEB 8A9E14A07010F7E3
  sudo pacman-key --lsign-key 3056513887B78AEB
- sudo pacman-key --lsign-key 8A9E14A07010F7E3 
+ sudo pacman-key --lsign-key 8A9E14A07010F7E3
 yay -S ungoogled-chromium-bin
 pacman -S chaotic-aur/ungoogled-chromium-bin
 sudo pacman -S chaotic-aur/ungoogled-chromium-bin
@@ -3228,14 +3192,13 @@ ssh b
 yay -Q
 yay -Qm
 zenity --info --text="$(uptime --pretty)" --no-wrap
-pac alacritty
 /usr/bin/alacritty -e 'vifm /home/rob/downloads/torrents /media/blueberry/'
 pac xfce4-terminal
 locate nvim.dektop
 locate nvim.desktop
 v /usr/share/applications/nvim.desktop
 echo $TERMINAL
-ffmpeg -i screen-20200911-132235.mp4  -map_metadata 0 -metadata:s:v rotate="90" -codec copy twerking.mp4      
+ffmpeg -i screen-20200911-132235.mp4  -map_metadata 0 -metadata:s:v rotate="90" -codec copy twerking.mp4
 pac qt5-styleplugins
 yay -S --rebuild qt5-styleplugins
 sudo pacr qt5ct
@@ -3261,7 +3224,7 @@ reflector --help
 yadm push
 yadm -h
 man yadm
-ls .config/nvim 
+ls .config/nvim
 ls .config/nvim/nvim.d
 rm -rf .config/nvim/nvim.d
 v .Xresources
@@ -3329,7 +3292,7 @@ pactree
 S enable paccache.timer
 pacr pcmanfm
 sudo mkdir -p /etc/opt/chrome/policies/managed/ && echo '{ "URLWhitelist": ["zoom://*"] }' |sudo tee /etc/opt/chrome/policies/managed/whitelist.json
-tail /etc/opt/chrome/policies/managed/whitelist.json 
+tail /etc/opt/chrome/policies/managed/whitelist.json
 sudo rm -rf /etc/opt/chrome/policies/managed/whitelist.json
 rg --hidden dialog-information
 pac qt-creator
@@ -3337,17 +3300,16 @@ pac qtcreator
 yay eclipse
 sudo paccache
 sudo paccache -r
-yay -Scc
 rm ~/bitwarden_export_20201006141233.csv
 v /etc/systemd/journald.conf
 S enable systemd-journald.service
 factor {2..1000} | awk 'NF==2{print $2}'
-factor {2..1000} 
+factor {2..1000}
 factor {2..10000} | awk 'NF==2{print $2}'
 factor {2..100000} | awk 'NF==2{print $2}'
 factor {2..100000} | awk 'NF==2{print $2}' | wc -l
-factor {2..1000000} | awk 'NF==2{print $2}' 
-time factor {2..100000} | awk 'NF==2{print $2}' 
+factor {2..1000000} | awk 'NF==2{print $2}'
+time factor {2..100000} | awk 'NF==2{print $2}'
 man factor
 factor 12
 factor 13
@@ -3355,12 +3317,12 @@ factor {2..10}
 wall.sh -u pics/backgrounds/landscapes/macOS/big-sur-7-top.jpg
 pac nitrogen
 which nitrogen
-nitrogen --set-scaled pics/backgrounds/landscapes/macOS/big-sur-7-top1080.jpg 
+nitrogen --set-scaled pics/backgrounds/landscapes/macOS/big-sur-7-top1080.jpg
 nitrogen --set-scaled pics/backgrounds/landscapes/macOS/big-sur-8-top.jpg
 pac read-edid
- sudo get-edid  | parse-edid 
-sudo  sudo get-edid  | parse-edid 
-sudo  sudo get-edid  | sudo parse-edid 
+ sudo get-edid  | parse-edid
+sudo  sudo get-edid  | parse-edid
+sudo  sudo get-edid  | sudo parse-edid
 su
 xrandr -h
 xrandr --help
@@ -3428,11 +3390,10 @@ chx .bin/dotu
 la .bin/*
 v .bin/set-dpms
 rm .bin/set-dpms
-v .config/bspwm/autostart.sh 
+v .config/bspwm/autostart.sh
 start polybar
 pgrep pulse
 /home/rob/.bin/start picom polybar dunst dpms
-start picom
 v .bin/s
 v /usr/share/applications/chromium.desktop
 cp /usr/share/applications/chromium-browser.desktop ~/.local/share/applications
@@ -3499,7 +3460,6 @@ nvidia-settings -q CurrentMetaMode
 screens.sh 3
 screens.sh 2
 fkill polybar
-fkill 
 pkill polybar
 polybar dvi &
 xset q
@@ -3517,16 +3477,13 @@ locate urxvt.desktop
 pac seahorse
 seahorse
 man feh
-wall.sh -u pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Light-right.png 
+wall.sh -u pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Light-right.png
 feh --bg-scale pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Light-right.png
 feh --bg-scale pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Dark-right.png
 lq
-thunar
 .fehbg
 v ./.fehbg
-wall.sh -u pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Dark-right.png 
-v .fehbg
-./.fehbg
+wall.sh -u pics/backgrounds/macOS/Appearance_Dark-left.png pics/backgrounds/macOS/Appearance_Dark-right.png
 less .xsession-errors\\
 
 pacr lf
@@ -3541,7 +3498,7 @@ ls /usr/share/pixmaps
 realpath /usr/share/pixmaps/big-sur-8-top.jpg
 betterlockscreen -r 1920x1200 -u /usr/share/pixmaps/big-sur-8-top.jpg
 ncdu pics
-mnt 
+mnt
 mnt ssd
 mnt mx100
 cd Season4
@@ -3558,7 +3515,6 @@ chx .bin/pbar.sh
 mv .config/polybar/modules .config/polybar/config
 rm .config/polybar/bspwm-bar
 v .config/polybar/config
-start pbar
 pacr embree
 sudo pacr embree
 rm pacreport.txt
@@ -3569,10 +3525,9 @@ pacr xournalpp
 sudo pacr xournalpp
 pacr bashtop
 sudo pacr bashtop
-sudo pacr boost
 sudo pacr boost boost-lib
 sudo pacr boost boost-libs
-sudo pacr boost 
+sudo pacr boost
 obs
 rm -rf .ssr
 sudo pacr simplescreenrecorder
@@ -3645,19 +3600,17 @@ cp /etc/systemd/system/backup.service /etc/systemd/system/obs_cleanup.service
 sudo cp /etc/systemd/system/backup.service /etc/systemd/system/obs_cleanup.service
 sudo cp /etc/systemd/system/backup.timer /etc/systemd/system/obs_cleanup.timer
 fd . /home/rob/vids recording
-fd recording /home/rob/vids 
+fd recording /home/rob/vids
 fd recording /home/rob/vids -e mkv -X rm -rf {} ;
 fd recording /home/rob/vids -e mkv
 S enable obs_cleanup.timer
 S start obs_cleanup.timer
 pac losslesscut
 yay losslesscut
-pac vidcutter
 pac vidcutter --overwrite
 pac  --overwrite vidcutter
 pac  vidcutter --overwrite /usr/lib/python3.8/site-packages/PyQt5/*
 pac  vidcutter --force
-pac vidcutter 
 pac  --force vidcutter
 sudo pacman -S vidcutter --overwrite \*
 pac avidemux-qt
@@ -3675,7 +3628,6 @@ $mx100
 find . -name "* *" -type f | rename 's/ /_/g'
 pac rename
 pacf rename
-which rename
 find . -name "**" -type f | /usr/bin/vendor_perl/rename 's/ /_/g'
 fd . ./ -e mp4
 v .bin/remove_spaces
@@ -3695,14 +3647,14 @@ ls /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWa
 encode-media -f /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyBlackOpsColdWar2020.10.15-19.57.42.05.DVR-00.00.06.533-00.00.31.066.mp4
  restart NetworkManager
 efibootmgr -h
-efibootmgr 
+efibootmgr
 sudo rm -rf /boot/loader/entries/arch-zen.conf
 v /boot/loader/entries/arch-lts.conf
 v /boot/loader/loader.conf
 efibootmgr -B -b 0001
 sudo efibootmgr -B -b 0001
 hyperfine rf
-hyperfine 
+hyperfine
 hyperfine rg --files
 alias rf
 hyperfine 'rg --files'
@@ -3715,7 +3667,7 @@ journalctl -r -u obs_cleanup.service
 S start obs_cleanup.service
 /usr/bin/fd recording /home/rob/vids -e mkv -x rm -rf {} ;
 /usr/bin/fd recording /home/rob/vids -e mkv -X rm -rf {} ;
-/usr/bin/fd recording /home/rob/vids -e mkv 
+/usr/bin/fd recording /home/rob/vids -e mkv
 rm vids/2020-10-14_1*
 ls vids
 rm vids/fullscreen--2020-0*
@@ -3767,7 +3719,7 @@ du
 du -a
 fd Trash
 fd . -h Trash
-fd . Trash  -H  
+fd . Trash  -H
 fd . -H Trash
 fd Trash -H
 ls .local/share/Trash
@@ -3794,7 +3746,6 @@ rmr .config/pulseaudio-ctl/
 rmr .config/qt5ct
 rmr .config/vidcutter
 pacr vidcutter
-sudo pacr vidcutter
 rmr .config/xournalpp
 rmr .config/Meltytech
 pacr darktable
@@ -3810,7 +3761,6 @@ avidemux3_qt5
 pacr avidemux-qt5
 sudo pacr avidemux-qt5
 sudo pacr avidemux-qt
-man fzf
 sudo pacr bandwhich\
 catdoc\
 exa\
@@ -3846,15 +3796,13 @@ rg nout
 rg ~/ nout
 rg -H ~/ nout
 rg --hidden ~/ nout
-..
 rg --hidden nout
 quiet telegram-desktop
 pacf null
 mv .bin/quiet .bin/nullify
 v .bin/nvfans
 v .bin/autolock
-v .bin/wall.sh
- betterlockscreen -r 1920x1200 -u pics/backgrounds/macOS/ColorBurst3.jpg 
+ betterlockscreen -r 1920x1200 -u pics/backgrounds/macOS/ColorBurst3.jpg
 v .config/betterlockscreenrc
 betterlockscreen -h
 rg dimblur
@@ -3875,7 +3823,6 @@ ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
 man pidstat
 pidstat --help
 S start ntp-date.service
-cmd
 ls /etc/systemd/system/
 ls /etc/systemd/system/ntpdate.service.d
 locate ntp*service
@@ -3899,7 +3846,6 @@ echo $monitors
 polybar -m | cut -d ':' -f 1
 echo $monitors[1]
 echo $monitors[2]
-pbar.sh
 ls .bin/*
 rg start .config/bspwm/autostart.sh
 /home/rob/.bin/start picom dunst dpms obs polkit
@@ -3954,7 +3900,7 @@ less OUT,\ Error\ Logs/output.txt
 open /home/rob/school/ITP132/Assignment2_Sequence-Machine-Compiler/Assignment 2 - Sequence Machine Compiler.pdf
 open "/home/rob/school/ITP132/Assignment2_Sequence-Machine-Compiler/Assignment 2 - Sequence Machine Compiler.pdf"
 ssh bb
-polybar -c .config/polybar/config2 
+polybar -c .config/polybar/config2
 polybar -c .config/polybar/config2 bar
 killall polybar
 fd .stl
@@ -3965,7 +3911,6 @@ nnn /media/blueberry/media /home/rob
 v .profile
 . ./.profile
 nnn -de
-v .zshrc
 nnn
 which nnf
 v /home/rob/.local/bin/nnf
@@ -3975,19 +3920,17 @@ v .bin/system-backup
 ls .bin
 ls .bin/rsync_backup.sh
 systemctl status backup.service
-rsync_backup.sh 
-realpath .bin/rsync_backup.sh
+rsync_backup.sh
 sudo systemctl daemon-reload
 S start backup.service
 n
 rg NNN .zsh
 rg NN
-rg NNN 
-rg -h NNN 
+rg NNN
+rg -h NNN
 rg -H NNN  .zsh
-rg -H NNN .zshrc 
+rg -H NNN .zshrc
 S enable backup.timer
-timers
 ip
 ip a
 tail -f .xsession-errors\\
@@ -3998,34 +3941,27 @@ ls /etc/NetworkManager/system-connections
 sudo ls /etc/NetworkManager/system-connections
 sudo rm /etc/NetworkManager/system-connections/US_East.nmconnection
 sudo ls /etc/NetworkManager/system-connections/US_East.nmconnection
-vpn-toggle
 vpn-toggle Canada_Toronto
-sudo tail -f /var/log/syslog
 journalctl -xe NM_CONNECTION=07950d11-60fa-4a4a-a34c-19b8d86f8bda + NM_DEVICE=enp0s25
 mv downloads/pia .config/
 rm -rf .config/pia
 mv -f downloads/pia .config/
 .config/pia
 v US_Washington_DC.ovpn
-cd
 journalctl -xe NM_CONNECTION=ce7967bb-0cb3-44e8-b4e9-bd445112eceb + NM_DEVICE=enp0s25
 journalctl -u NetworkManager.service
 journalctl -r -u NetworkManager.service
 v .config/pia/US_Washington_DC.ovpn
 sudo pacman -U downloads/openvpn-2.4.9-2-x86_64.pkg.tar.zst
-pacu
-vpn-toggle 
+vpn-toggle
 yay -S plex-media-player
-pacdiff
 sudo pacdiff
 ls .avidemux6/config3
 v .avidemux6/config3
 pacr avidemux
 sudo pacr avidemux
 sudo pacr avidemux6
-pkglist
 rmr .avidemux6
-remove_spaces
 pac wireguard
 pac wireguard-tools
 pac wireguard-tools wireguard-dkms
@@ -4052,7 +3988,6 @@ ls Season22
 v $(which fdchars )
 fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|',''
 man vf
-man vifm
 vifm --choose-files - < fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|',''
 vifm --choose-files - <$( fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|','')
 vifm --choose-files <$( fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|','')
@@ -4065,25 +4000,20 @@ mkszn
 v .bin/mkszn
 rmr Season\{01..04\}
 man fd
-mkszn 4 
 rmr Season0*
 mkszn 7
 man mv
-mkszn 4
 mkszn 2
 pf
 last reboot
 ssh pi
 ssh rob@192.168.2.41
-ssh pi@192.168.2.41
 ssh pi@192.168.2.41 bash
 ssh pi@192.168.2.41 sh
 ssh pi@192.168.2.41 mv .bashrc .f
-ssh pi@192.168.2.41 
+ssh pi@192.168.2.41
 fd | wc -l
 fd -H | wc -l
-fv
-lr
 fd
 fd -t f
 start obs
@@ -4093,10 +4023,9 @@ mkdir -p $XDG_CONFIG_HOME/simplescreenrecorder/
 l
 rmr .ssr
 y
-vf
 $backups
 fd -d 1
-sudo rm -rf 2020-10-28-123936 2020-10-28-124441 2020-10-28-124654 2020-10-28-124929 
+sudo rm -rf 2020-10-28-123936 2020-10-28-124441 2020-10-28-124654 2020-10-28-124929
 simplescreenrecorder
 fd -d 2
 ls .config
@@ -4109,15 +4038,12 @@ pacr colord
 sudo pacr colord
 l .bin
 calc
-less .bin/bspscripts
 mkszn 3
 fd -e mkv
 fd -e mkv -x mv {} ./
 chmod +x downloads/pia-linux-2.5.1-05676.run
 ./downloads/pia-linux-2.5.1-05676.run
 ls downloads
-udb
-locate pia
 ls /opt/piavpn/bin/pia-client
 .//opt/piavpn/bin/pia-client
 ./opt/piavpn/bin/pia-client
@@ -4140,7 +4066,6 @@ bspc rule -a pia-client -o monitor=DP-0
 bspc rule -a pia-client -o monitor=DVI-D-0
 xprop -id pia-client WM_NAME | grep -oP '"\K[^"\047]+(?=["\047])'
 bspc query -T -m
-xprop
 xdo hide -N pia-client
 xdo hide -N privateinternetaccess
 man xdo
@@ -4149,18 +4074,14 @@ xdo close -N privateinternetaccess
 which pia-client
 sleep 1.5s
 b
-myip
-piactl 
 piactl disconnect
 v .bin/vpn-toggle
-v .aliases
 mks .bin/pia.sh
 piactl get connectionstate
 opi
 pia.sh
 piactl set region
 piactl set region && echo true
-pia.sh -r
 pia.sh -r dc
 piactl get regions
 piactl background disable
@@ -4168,9 +4089,8 @@ piactl get pubip
 piactl get vpnip
 piactl get pubip && echo true
 bspc rule -a privateinternetaccess -o hidden=on && /opt/piavpn/bin/pia-client
-man bspc
 v .config/bspwm/bspwmrc
-bspc rule 
+bspc rule
 bspc rule -h
 bspc rule -r *
 bspc rule -r pia-client:*
@@ -4178,17 +4098,16 @@ bspc rule -r *:*
 bspc rule -l
 v .bin/pia.sh
 v .bin/opi
-pia.sh -r 
+pia.sh -r
 v .bin/nv
 rg set .bin
 mv .bin/pia.sh .bin/vpn
 mv .bin/vpn-toggle .bin/vpn-nm
 v .bin/vpn
-.bin/vpn
 .bin/vpn down
-.bin/vpn -t 
+.bin/vpn -t
 .bin/vpn -t down
-.bin/vpn 
+.bin/vpn
 .bin/vpn a
 .bin/vpn -r
 region="$(piactl get regions | $prog)"\
@@ -4206,15 +4125,13 @@ rg font .config/rofi/config.rasi
 rofi -h | grep font
 rofi -h | grep -C3font
 rofi -h | grep -C3 font
-vpn -r 
+vpn -r
 mv .bin/vpn .bin/pvpn
 mv .bin/vpn-nm .bin/nmvpn
 piactl
 sleep 3s && flameshot gui
-lb
 pgrep nm-applet
 start nm-applet
-la
 rg case .bin
 ndu
 fd -e sub -e idx
@@ -4241,22 +4158,15 @@ v .bin/start
 start pia-client
 v .bin/nullify
 2>/dev/null 1>&2 /opt/piavpn/bin/pia-client --quiet &
-less .xsession-errors
-se
-v /etc/pacman.conf
 pvpn -h
 v .bin/pvpn
 pacr chaotic-aur/nwg-launchers
 sudo pacr chaotic-aur/nwg-launchers
 sudo pacr nwg-launchers
-pacrepo
-yay
 pac discord
-remove-orphans
 pac pacman-contrib
 fdchars
 btm
-reboot
 fd extra -x rmdir {}
 fd extra
 fd -t d -x rmdir {}
@@ -4264,21 +4174,301 @@ rmdir -h
 rmdir --help
 ~/docs
 mkdir -p this/{that,that2}
-ls
 fd -t d -x rmdir --ignore-fail-on-non-empty {}
 ls this
 rmr this
-bb
-vfm
-yay
 pacr plexmediaplayer
 sudo pacr plexmediaplayer
 pkglist
 sudo pacr plex-media-player
-yay
-la
 lsblk
 v /etc/pacman.conf
+mkszn 4
+mv ~/downloads/torrents/\[LostYears\]\ Sword\ Art\ Online\ -\ Alicization\ -\ War\ of\ Underworld\ -\ 13\ \(S04E13\)\ \(WEB\ 1080p\ Hi10P\ AAC\)\ \[04780030\].mkv ./SwordArtOnline_S04E13.mkv
+pac pkg-config
+timers
+alias udev-reload
+pacdiff
+sudoedit /etc/pacman.conf
+Season01
+rename -nv -- 's/-\w+?[.]mkv$/.mkv/' *.mkv
+which rename
+locate perl-rename
+/usr/bin/perl-rename -nv -- 's/-\w+?[.]mkv$/.mkv/' *.mkv
+ls | sed 's/\(.*\)\(-.*\)/mv \"&\" \"\1.mp3\"/'
+pac mmv
+yay mmv
+yay -S mmv
+mmv
+mmv */mkv
+mmv *.mkv
+find . -maxdepth 1 -type f -name '?????????????*' -exec perl-rename 's/.{22}$//' {} +
+rename -n 's/.{12}$//' *
+rename -n 's/(.{10}).*(\.mkv)$/$1$2/' *.mkv
+perl-rename -n 's/(.{10}).*(\.mkv)$/$1$2/' *.mkv
+perl-rename -n 's/(.{22}).*(\.mkv)$/$1$2/' *.mkv
+perl-rename -n 's/(.{23}).*(\.mkv)$/$1$2/' *.mkv
+echo %f
+echo $%f
+perl-rename -n 's/(.{23}).*(\.mkv)$/$1$2/' <$(fd -t f -e mkv)
+perl-rename -n 's/(.{23}).*(\.mkv)$/$1$2/' < $(fd -t f -e mkv)
+perl-rename -n 's/(.{23}).*(\.mkv)$/$1$2/' < "$(fd -t f -e mkv)"
+fd -t f -e mkv | perl-rename -n 's/(.{23}).*(\.mkv)$/$1$2/'
+fd -t f -e mp4 | perl-rename -n 's/(.{24}).*(\.mp4)$/$1$2/'
+fd -t f -e mp4 | perl-rename 's/(.{24}).*(\.mp4)$/$1$2/'
+fd -e avi
+fd -t f -e avi | perl-rename -n 's/(.{24}).*(\.avi)$/$1$2/'
+fd -t f -e avi | perl-rename 's/(.{24}).*(\.avi)$/$1$2/'
+pac vidcutter
+sudo pacr vidcutter
+remove-orphans
+yay -S video-trimmer
+sudo pacr losslesscut
+ls pics/backgrounds/macOS/ColorBurst3-tall.jpg
+ll pics/backgrounds/macOS/ColorBurst3-tall.jpg
+pac feh
+less .fehbg
+feh --bg-scale pics/backgrounds/macOS/ColorBurst2-tall.jpg
+mks vw
+pac viewnoir
+v .bin/vw
+vw pics/backgrounds/macOS/ColorBurst3-tall.jpg pics/backgrounds/macOS/ColorBurst2-tall.jpg
+man viewnior
+fv
+ll .thumbnails
+fd .thumbnails | wc -l
+fd .thumbnails
+fd -H  .thumbnails
+fd -aH  .thumbnails
+fd . .thumbnails
+fd . .thumbnails |
+fd . .thumbnails | wc -l
+v .fdignore
+lr
+pacu
+man bspwm
+bspc node -t
+mv picom.conf\ \! picom.conf
+wall.sh -u pics/backgrounds/macOS/ColorBurst2-tall.jpg
+/usr/share/pixmaps
+sudo rm blurred_*
+sudo rm big-sur-*
+sudo rm 10-1*
+v .fehbg
+downloads/minecraft
+ls *.heic
+mkdir downloads/pics
+fd -e heic -x mv {} ../pics/
+../pics/
+for i in *.heic; do echo $i; done
+ls /home/rob/pics/backgrounds/macOS/
+less .xsession-errors
+sudo pacr vdpauinfo libva-utils libva-mesa-driver mesa-vdpau
+pac libva-mesa-driver mesa-vdpau
+pac  libva-vdpau-driver
+pac libvdpau-va-gl
+yay  libva-vdpau-driver-chromium
+yay -Scc
+echo $VDPAU_DRIVER
+yay  -S libva-vdpau-driver-chromium
+v ~/.config/chromium-flags.conf
+ssh 192.168.2.21 -L 8888:localhost:80
+myip
+pacr minecraft-launcher
+pac multimc
+sudo pacr minecraft-launcher
+yay jdk-openj9
+yay -S jdk8-openj9-bin
+which jre9
+which java
+cmd
+multimc --help
+multimc -l
+multimc -l -h
+multimc -l 1.16.4
+archlinux-java status
+pac minecraft-launcher
+filecount
+filecount .local
+filecount .local/share
+zsh
+rmr .local/share/multimc
+journalctl -r
+locate pia
+v /opt/piavpn/etc/settings.json
+feh --bg-scale pics/backgrounds/macOS/ColorBurst2.jpg
+./.fehbg
+cat ./.fehbg
+feh --no-fehbg --bg-scale '/home/rob/pics/backgrounds/macOS/ColorBurst2-tall.jpg'
+kill -9 picom
+man picom
+pkill -9 picom
+picom --experimental-backends -b
+kill -6 picom
+pkill -6 picom
+pbar.sh
+start pbar
+pactree -r 
+pactree -r fd
+pactree fd
+ll /etc/shadow
+locate chk_p
+locate chk
+ll /usr/bin/unix_chkpwd
+rmr Takeout javasharedresources
+unzip downloads/minecraft/takeout-20201112T194436Z-001.zip 
+rmr Takeout 
+man docker-compose
+v .bin/wall.sh
+less ./.fehbg
+wall.sh
+realpath .bin/rsync_backup.sh
+wall.sh -u pics/backgrounds/macOS/ColorBurst3-tall.jpg
+wall.sh -U pics/backgrounds/macOS/ColorBurst3-tall.jpg
+yay prettyping
+prettyping 8.8.8.8
+vfm
+less .bin/bspscripts
+bspc query -N -n ".leaf.
+bspc query -N -n '.leaf.!window.local'
+bspc query -N -n
+bspc query -N -n .leaf
+man bspc
+xprop
+bspc query -N -n '.leaf.!window'
+bb
+pkill -9 thunar
 pacrepo
-yay
+reboot
+thunar
+yay -S picom-git
+yay -S --rebuild picom-git
+yay --rebuild picom-git
+pkill picom
+pac  xcompmgr
+xcompmgr -c -l0 -t0 -r0 -o.00
+unoconv -f pdf school/ITE221/10\ -\ Pheripheral\ Devices.pptx 
+school/ITE221/10\ -\ Pheripheral\ Devices.pptx
+school/ITE221/
+open 10\ -\ Pheripheral\ Devices.pptx
+open 10\ -\ Pheripheral\ Devices.pdf
+yay microsoft-edge-dev-bin
 pac picom
+killall picom
+sudo tail -f /var/log/syslog
+rm ~/.config/picom/log
+yay picom-git
+less .config/picom/log
+killall start
+fkill
+less ~/.config/picom/log
+picom --experimental-backends 
+tail -f ~/.config/picom/log
+start picom
+pac alacritty
+vw pics/backgrounds/macOS/Appearance
+vw pics/backgrounds/macOS/Appearance*
+remove_spaces
+yay raw-thumbnailer
+killall thunar
+pac tumbler
+heif-convert CatalinaSilhouette.heic CatalinaSilhouette.jpg
+mks persist
+fd $HOME -H -a -t d -t l
+man fzf
+v .aliases
+z | cut -f2
+z | cut -d' ' -f2 
+z | cut -d'\t' -f2 
+z | awk ${print 2}
+z | awk {print $2}
+z | awk '{print $2}'
+vw Wave.heic
+for i in *.heic; do heif-convert "$i" "${i%.*}.jpg"; done
+rm *.heic
+mv *.jpg /home/rob/pics/backgrounds/macOS/
+vf
+goto
+lb
+less .bin/rename-file
+mv Sword\ Art\ Online\ -\ Alicization\ -\ War\ of\ Underworld\ -\ 14\ -\ End\ to\ Eternity\ \[KaiDubs\]\ \[1080p\].mp4 SwordArtOnline_S04E14.mkv
+yay
+z -I -t
+z -I -t .
+man z
+z -i
+z -I
+z -I $HOME
+z -I .
+z -I it
+z -h
+z -l | cut -f2
+z -l | cut -d' ' -f10
+z -l | cut  -f1-
+z -l | cut  -d' '-f1-
+z -l | cut  -d' ' -f1-
+man cut
+z -l | cut  -d' ' -f1
+z -l | cut  -d' ' -f2
+z -l | awk '{print $2}'
+which z
+_zlua
+zsh "_zlua"
+zsh -e "_zlua"
+zsh -h
+zsh --help
+zsh -c "_zlua"
+zsh -c "z"
+zsh -ic "_zlua"
+mks zl
+cat /tmp/z_list
+cat /tmp/z_list|fzf
+zl
+rm .bin/zl
+vifm -h
+vifm -h | grep history
+man vifm
+pac autojump
+rg cargo
+/home/rob/.local/share/cargo/bin
+ls
+udb
+locate cargo/bin
+_j
+yay autojump
+echo "source /usr/share/autojump/autojump.zsh" >> ~/.zhrc
+ls /usr/share/autojump/autojump.zsh
+se
+echo "source /usr/share/autojump/autojump.zsh" >> ~/.zshrc
+rm ~/.zhrc
+autojump
+cd pics
+cd pics/backgrounds/macOS
+cd /media/blueberry/backups
+cd ~/.bin
+cd ~/downloads/torrents
+cd /etc/systemd/system/
+cd school
+cd ITE221
+..
+cd ITP132
+z -l
+cd /home/rob/projects
+cd /media/blueberry
+cd /media/blueberry/media/movies
+cd ..
+cd shows
+cd /media/mx100
+cd .config
+cd /etc
+jc
+autojump --help
+autojump --complete 
+man autojump
+v .zshrc
+la
+j
+z
+cd
+j --stat
+yay

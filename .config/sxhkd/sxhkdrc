@@ -129,6 +129,9 @@ super + alt + b
 super + shift + Return
 	xfce4-terminal
 
+super + alt + Return
+	alacritty
+
 # vim
 super + v
 	/usr/bin/xfce4-terminal -e nvim

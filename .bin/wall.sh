@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 currentDir="/home/rob/pics/backgrounds/current/"
 
 _blur() {
@@ -32,62 +34,64 @@ _blur() {
     rm "temp_logo.png"
 }
 
-_update() {
+_get_file(){
+	file="$(realpath "$1")"
+}
+
+_update_feh(){
+	feh --bg-scale $*
 	echo "feh --bg-scale $*" > /home/rob/.fehbg
+}
 
+_update_lock(){
     betterlockscreen -r 1920x1200 -u "$1"
+}
 
-    name=$(basename $1)
+_update_lightdm(){
+	name=$(basename $1)
     pixmap="/usr/share/pixmaps/$name"
     sudo cp $1 $pixmap
     sudo sed -i "/background = /c\background = $pixmap" /etc/lightdm/lightdm-gtk-greeter.conf
 }
 
-_new() {
-    wall="$(fd -a . ~/pics/backgrounds/current/ | shuf -n 1)"
-    _update "$wall"
+_update_all() {
+	_update_feh "$1"
+	_update_lock "$1"
+	_update_lightdm "$1"
 }
 
-_addCurrent() {
-    for var in "$*"; do
-        path="$(realpath "$var")"
-        ln -s "$path" "$currentDir"
-    done
-}
-
-_clearCurrent(){
-    fd . "$currentDir" -t l --exec unlink
-}
 
 _help(){
     cat <<- EOF
-Usage: wall.sh [command] [path(s)]
+Usage: wall.sh [command] [path]
 
 Commands:
-    -u, update      update wallpaper with selection
-    -b, blur        add blurred penrose to wallpaper
-    -a, add         add wallpaper(s) to current dir
-    -n, new         select new wallpaper from currentWall dir
-    -c, clear       clear all links in currentWall dir
+    -f, feh		update feh background
+    -d, lightdm		update lightdm background
+    -l, lock		update betterlockscreen
+    -U, update-all	update wallpaper with selection
+    -b, blur		add blurred penrose to wallpaper
 
 EOF
 }
 
+_get_file "${@: -1}"
+
 case "$1" in
-    -u|update)
-        _update ${*:2}
+	-f|feh )
+		_update_feh "$file"
+		;;
+	-d|lightdm )
+		_update_lightdm "$file"
+		;;
+	-l|lock )
+		_update_lock "$file"
+		;;
+	-U|update-all)
+        _update_all "$file"
         ;;
-    -n|new)
-        _new "$2"
-        ;;
-    -b|blur)
-        _blur "$2"
-        ;;
-    -a|add)
-        _addCurrent "${*:2}"
-        ;;
-    -c|clear)
-        _clearCurrent
+	-b|blur)
+        _blur "$file"
         ;;
     *)
         _help

@@ -72,6 +72,14 @@ set statusline="%A %8u:%-7g %5E %15d "
 " bookmarks
 " :mark mark /full/directory/path [filename]
 mark h ~/
+mark B /media/blueberry/backups/rob-pc/latest
+mark M /media/blueberry/media/movies
+mark s /media/blueberry/media/shows
+mark m /media/blueberry/media
+mark c /home/rob/.config
+mark b /media/blueberry
+mark d /home/rob/downloads
+mark e /etc
 
 
 " What should be saved automatically between vifm sessions.
@@ -135,8 +143,8 @@ nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') 
 " yank root of current file's name into the clipboard
 nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
 
-command! FZFcd :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME -H -a -t d -t l | fzf --height 10 --layout=default 2>/dev/tty'))
-command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME -H -a | fzf  --height 10 --layout=default 2>/dev/tty'))
+command! FZFcd :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME  ./ -H -a -t d -t l | fzf --height 10 --layout=default 2>/dev/tty'))
+command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME ./ -H -a | fzf  --height 10 --layout=default 2>/dev/tty'))
 
 nnoremap <c-f> :FZFcd<cr>
 nnoremap <c-g> :FZFfind<cr>

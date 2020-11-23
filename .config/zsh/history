@@ -388,7 +388,6 @@ pac libgnome-keyring
 sudo pacr picom-tryone-git
 ls .cache/yay
 sudo rm -rf .cache/yay/picom-tryone-git
-yay picom-tryone-git
 v .config/spectrwm/spectrwm.conf
 sudo pacr yubico
 sudo pacr yubico-c-client
@@ -1064,7 +1063,6 @@ pacr openjpeg
 sudo pacr openjpeg
 alias remove-orphans
 stat GPUCache
-v .config/vifm/vifminfo
 v .bash
 hue fixed red
 hue fixed color red
@@ -1501,7 +1499,6 @@ ls .ssr/input-profiles/follow-screen.conf
 v .ssr/input-profiles/follow-screen.conf
 ll .bin/ssr.sh
 rm -rf .ssr/input-profiles/*
-ls .ssr
 pac obs-studio
 which simplescreenrecorder
 /usr/bin/simplescreenrecorder -h
@@ -1667,7 +1664,6 @@ S status backup
 fd | grep mozzila
 fd | grep moz
 fd -H | grep moz
-ls /tmp
 man udisks
 rm -rf .bin/re
 cat .bin/reboo
@@ -1870,7 +1866,6 @@ ls /boot
 ls /boot/EFI
 dmesg
 man dmesg
-nm-applet
 caps2esc
 man journalctl
 journalctl -g opotimus
@@ -2093,7 +2088,6 @@ v /home/rob/.bin/pkglist
 cat /home/rob/.bin/pkglist
 rm -rf .bin/pkglist
 pacreport --unowned-files
-systemctl --failed
 s systemctl daemon-reload
 S daemon-reload
 locate pacnew
@@ -2350,7 +2344,6 @@ pacq glances
 pacf glances
 pacs glances
 man btm
-btm -h
 btm -ba
 btm -a
 btm -a -b
@@ -2468,7 +2461,6 @@ v /home/rob/docs/backup/backup_exclude.txt
 .bin/system-backup
 mv docs/backup/backup_exclude.txt docs
 rm -rf docs/backup/
-ls docs
 rm -rf docs/lolmeme.png
 ls rob-laptop
 rm -rf blueberry
@@ -2514,7 +2506,6 @@ curl -v https://www.dynmap.us/builds/dynmap/?C=M;O=D 2>&1 | grep spigot
 curl -v --silent https://www.dynmap.us/builds/dynmap/?C=M;O=D 2>&1 | grep spigot
 curl -v --stderr - https://www.dynmap.us/builds/dynmap/?C=M;O=D | grep spigot
 pac transmission-gtk
-pac transmission-gtk transmission-cli
 sudo pacr deluge-gtk
 pac ttf-tinos
 ffmpeg -i vids/fullscreen--2020-09-04_02.49.12.mkv  -c copy new_house.mp4
@@ -2609,7 +2600,6 @@ find session_stat* -maxdepth 1
 find session_stat* -maxdepth 1 -printf '%T+ %p\n' | sort -r | head
 find session_stat* -maxdepth 1 -printf '%T+ %p\n' | sort -r | head 1
 find session_stat* -maxdepth 1 -printf '%T+ %p\n' | sort -r | head -1
-fd -h
 journalctl -r -u backup.service
 ssh bb rdiff-backup --server
 ssh rob@192.168.2.21 rdiff-backup --server
@@ -2651,7 +2641,6 @@ sudo rm -rf rob-pc
 /usr/bin/ssh -t rob@192.168.2.21 tmux new -A ssh
 /usr/bin/ssh -t rob@192.168.2.21 tmux new -A
 sudo ufw allow 51413
-pac qbittorrent
 sudo pacr transmission-gtk
 sudo pacr transmission-cli
 sudo ufw status numbered
@@ -2772,7 +2761,6 @@ v lfrc
 rm -rf draw_img.sh
 pacf cp-p
 pac vidir
-yay vidir
 sudo loginctl list-sessions
 sudo loginctl kill-session 5
 ;f
@@ -2844,10 +2832,7 @@ qmv -h
 qmv --help
 ls | qmv --format=single-column -
 yay S vidir
-vidir --help
 vidir -h
-man vidir
-qbittorrent
 yay -S vidir
 qmv
 vifm --help
@@ -2885,7 +2870,6 @@ ls | wm -f do -
 ls | qmv -f do -
 ls | qmv -f do
 man qmc
-man qmv
 vidir
 v .config/lf/lfrc
 lf
@@ -2969,7 +2953,6 @@ fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec mediainfo --Inform=
 fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec mediainfo --Inform="Video;%CompleteName%,%BitRate%" {}
 fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec shortinfo {};
 fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec bash -i -c shortinfo {};
-fzaux
 mks .bin/shortinfo
 fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec mediainfo --Inform="General;%CompleteName%,Video;%BitRate%" {}
 fd . /media/blueberry/media/movies -t f -e mkv -e mp4 --exec shortinfo {}
@@ -3097,7 +3080,6 @@ backup-log
 ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1
 less $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1 )
 cat $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1 )
-last-backup
 ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data
 ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/*.log
 less $(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/*.log)
@@ -3533,7 +3515,6 @@ rm -rf .ssr
 sudo pacr simplescreenrecorder
 obs --profile Default --minimize-to-tray
 obs --profile Default --minimize-to-tray -p
-man obs
 obs --help
 man nvim
 mks
@@ -3558,7 +3539,6 @@ pacf /etc/profile
 v /etc/profile
 vim
 pacman -Fy
-sudo pacman -Fy
 v .config/vifm/colors/Default.vifm
 v .config/vifm/vifmrc
 v /etc/pam.d/lightdm-autologin
@@ -3631,7 +3611,6 @@ pacf rename
 find . -name "**" -type f | /usr/bin/vendor_perl/rename 's/ /_/g'
 fd . ./ -e mp4
 v .bin/remove_spaces
-man find
 v ~/.bin/remove_spaces
 find . -name "* *" -type f -exec rm -rf {} +
 find . -name "* *"  -exec rm -rf {} +
@@ -3785,7 +3764,6 @@ rmr notes/
 ls processes
 rmr processes
 ls $bin
-~
 v .bin/dotu
 .bin
 mv dnsset setdns
@@ -3967,7 +3945,6 @@ pac wireguard-tools
 pac wireguard-tools wireguard-dkms
 yay networkmanager-wireguard
 S restart NetworkManager
-tail -f .xsession-errors
 less .xsession-errors.old
 ls .bin/nullify
 df -h
@@ -3999,14 +3976,11 @@ locate mkszn
 mkszn
 v .bin/mkszn
 rmr Season\{01..04\}
-man fd
 rmr Season0*
 mkszn 7
 man mv
-mkszn 2
 pf
 last reboot
-ssh pi
 ssh rob@192.168.2.41
 ssh pi@192.168.2.41 bash
 ssh pi@192.168.2.41 sh
@@ -4023,7 +3997,6 @@ mkdir -p $XDG_CONFIG_HOME/simplescreenrecorder/
 l
 rmr .ssr
 y
-$backups
 fd -d 1
 sudo rm -rf 2020-10-28-123936 2020-10-28-124441 2020-10-28-124654 2020-10-28-124929
 simplescreenrecorder
@@ -4133,7 +4106,6 @@ sleep 3s && flameshot gui
 pgrep nm-applet
 start nm-applet
 rg case .bin
-ndu
 fd -e sub -e idx
 fd -e sub -e idx -x mv {} subs/
 fd -e sub -e idx -x mv {} ./subs/
@@ -4159,14 +4131,12 @@ start pia-client
 v .bin/nullify
 2>/dev/null 1>&2 /opt/piavpn/bin/pia-client --quiet &
 pvpn -h
-v .bin/pvpn
 pacr chaotic-aur/nwg-launchers
 sudo pacr chaotic-aur/nwg-launchers
 sudo pacr nwg-launchers
 pac discord
 pac pacman-contrib
 fdchars
-btm
 fd extra -x rmdir {}
 fd extra
 fd -t d -x rmdir {}
@@ -4196,8 +4166,6 @@ which rename
 locate perl-rename
 /usr/bin/perl-rename -nv -- 's/-\w+?[.]mkv$/.mkv/' *.mkv
 ls | sed 's/\(.*\)\(-.*\)/mv \"&\" \"\1.mp3\"/'
-pac mmv
-yay mmv
 yay -S mmv
 mmv
 mmv */mkv
@@ -4245,7 +4213,6 @@ fd . .thumbnails |
 fd . .thumbnails | wc -l
 v .fdignore
 lr
-pacu
 man bspwm
 bspc node -t
 mv picom.conf\ \! picom.conf
@@ -4262,7 +4229,6 @@ fd -e heic -x mv {} ../pics/
 ../pics/
 for i in *.heic; do echo $i; done
 ls /home/rob/pics/backgrounds/macOS/
-less .xsession-errors
 sudo pacr vdpauinfo libva-utils libva-mesa-driver mesa-vdpau
 pac libva-mesa-driver mesa-vdpau
 pac  libva-vdpau-driver
@@ -4327,18 +4293,14 @@ wall.sh -u pics/backgrounds/macOS/ColorBurst3-tall.jpg
 wall.sh -U pics/backgrounds/macOS/ColorBurst3-tall.jpg
 yay prettyping
 prettyping 8.8.8.8
-vfm
 less .bin/bspscripts
 bspc query -N -n ".leaf.
 bspc query -N -n '.leaf.!window.local'
 bspc query -N -n
 bspc query -N -n .leaf
-man bspc
 xprop
 bspc query -N -n '.leaf.!window'
-bb
 pkill -9 thunar
-pacrepo
 reboot
 thunar
 yay -S picom-git
@@ -4346,25 +4308,19 @@ yay -S --rebuild picom-git
 yay --rebuild picom-git
 pkill picom
 pac  xcompmgr
-xcompmgr -c -l0 -t0 -r0 -o.00
 unoconv -f pdf school/ITE221/10\ -\ Pheripheral\ Devices.pptx 
 school/ITE221/10\ -\ Pheripheral\ Devices.pptx
 school/ITE221/
 open 10\ -\ Pheripheral\ Devices.pptx
 open 10\ -\ Pheripheral\ Devices.pdf
 yay microsoft-edge-dev-bin
-pac picom
-killall picom
 sudo tail -f /var/log/syslog
 rm ~/.config/picom/log
 yay picom-git
 less .config/picom/log
 killall start
-fkill
 less ~/.config/picom/log
-picom --experimental-backends 
 tail -f ~/.config/picom/log
-start picom
 pac alacritty
 vw pics/backgrounds/macOS/Appearance
 vw pics/backgrounds/macOS/Appearance*
@@ -4387,12 +4343,10 @@ vw Wave.heic
 for i in *.heic; do heif-convert "$i" "${i%.*}.jpg"; done
 rm *.heic
 mv *.jpg /home/rob/pics/backgrounds/macOS/
-vf
 goto
 lb
 less .bin/rename-file
 mv Sword\ Art\ Online\ -\ Alicization\ -\ War\ of\ Underworld\ -\ 14\ -\ End\ to\ Eternity\ \[KaiDubs\]\ \[1080p\].mp4 SwordArtOnline_S04E14.mkv
-yay
 z -I -t
 z -I -t .
 man z
@@ -4438,7 +4392,6 @@ _j
 yay autojump
 echo "source /usr/share/autojump/autojump.zsh" >> ~/.zhrc
 ls /usr/share/autojump/autojump.zsh
-se
 echo "source /usr/share/autojump/autojump.zsh" >> ~/.zshrc
 rm ~/.zhrc
 autojump
@@ -4466,9 +4419,136 @@ autojump --help
 autojump --complete 
 man autojump
 v .zshrc
-la
 j
 z
 cd
 j --stat
+/home/rob/.bin/start picom dunst nm-applet dpms obs polkit pia-client
+nm-applet
+fd movies -i rar
+fd movies . -i rar
+fd -i rar movies -E mkv
+fd -i rar movies -E mkv -E mp4
+fd -i rar movies -e 
+fd -i rar movies
+fd -i rar movies | wc -l
+find -iname rar
+find . -iname rar
+find . -iname *rar*
+fd rarbg.txt -e rm {}
+fd rarbg.txt -E rm {}
+fd rarbg.txt --exec rm {}
+fd rarbg.txt
+man fd
+fd '.' -t d --min-depth 1 
+fd  -t d --min-depth 1  '.'
+man find
+fd  -t d --min-depth 1 '\.'
+fd  -t d --min-depth 1 '\.' | qmv
+man qmv
+fd  -t d --min-depth 1 '\.' | qmv -i
+fd  -t d --min-depth 1 '\.' --exec qmv {}
+pac mmv
+yay mmv
+fd  -t d --min-depth 1 '\.' | mmv
+yay vidir
+fd  -t d --min-depth 1 '\.' | vidir
+man vidir
+vidir --help
+fd  -t d --min-depth 1 '\.' | vidir -
+fd  -t d --min-depth 1 '\.' 
+fd  --min-depth 1 '\.' 
+fd  --min-depth 1 '264' 
+fd  --min-depth 1 '264' | vidir -
+ls /tmp
+killall picom
+xcompmgr -c -l0 -t0 -r0 -o.00
+mkszn 2
+ls docs
+less docs/important/pword
+ls .thumbnails
+ls .thumbnails/normal/
+.config/GIMP/2.10/
+fd thumbnail
+~
+rmr .thumbnails
+mv .ssr .config/simplescreenrecorder
+la
+mv .config/simplescreenrecorder .ssr
+ls .ssr
+ls .ssr/simplescreenrecorder
+v .config/vifm/vifminfo
+man obs
+/opt/piavpn/bin/piactl background enable
+dunst --help
+echo "$(echo "scale=1; 100 * $(pacman -Qi $(pacman -Qq) | grep Felix | wc -l) / $(pacman -Qq | wc -l)" | bc) %"
+man bspc
+mks dpms.sh
+realpath .bin/dpms.sh
+v .bin/pvpn
+rmr .bin/start
+logout
+persist picom --experimental-backends
+last-backup
+persist "picom --experimental-backends" &
+tail -f .xsession-errors
+rg persist
+rg -H persist
+rg -h persist
+rg --hidden persist
+rg --hidden "persist picom"
+pac picom
+yay picom-tryone-git
+vf
+fd --help
+fd -h
+$backups
+fd . $HOME ./ 
+ssh root@192.168.2.41
+ssh -vvv pi
+ssh pi
+btm
+less .config/picom/log 
+ll .config/picom/log
+rm .config/picom/log
+sudo pacman -Fy
+pacu
+fzaux
+start picom
+se
+bb
+unoconv -f pdf school/ITE221/11\ -\ Computer\ OS\ Functions\ I.pptx 
+unoconv -f pdf school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pptx 
+open school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pdf 
+ndu
+systemctl --failed
+sudo journalctl -p 3 -xb
+pac newsboat
+btm --theme
+btm -h
+btm --color --help
+btm --color default-light
+btm --color gruvbox
+btm 
+picom
+fkill
+picom --experimental-backends 
+less .xsession-errors
+ls /var/cache/pacman/pkg/qt
+ls /var/cache/pacman/pkg/qt*
+pacman -U /var/cache/pacman/pkg/qt5-base-5.15.2-1-x86_64.pkg.tar.zst
+sudo pacman -U /var/cache/pacman/pkg/qt5-base-5.15.2-1-x86_64.pkg.tar.zst
+yay -S qbittorrent-git
+qbittorrent
+pac qbittorrent
+pacrepo
 yay
+pac deluge
+pac transmission-gtk transmission-cli
+vfm
+ncdu .cache
+ncdu
+ncdu ~/.local/share/
+pacrepo
+yay
+pac deluge-gtk

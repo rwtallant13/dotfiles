@@ -6,7 +6,7 @@
 # system
 alias sudo='sudo '
 alias udb='sudo updatedb'
-alias last-backup='cat "$(ls -Art /media/blueberry/backups/rob-pc/rdiff-backup-data/session_statistics* | tail -n 1)"'
+alias last-backup='vifm /media/blueberry/backups/rob-pc/latest/'
 alias udev-reload='sudo udevadm control --reload-rules && sudo udevadm trigger'
 alias timers='systemctl list-timers'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'

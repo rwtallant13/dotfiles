@@ -10,7 +10,7 @@
 /etc/systemd/system|25|1605468468
 /home/rob/projects|2|1605468610
 /home/rob/school|32|1605469463
-/media/blueberry/backups/rob-pc|4|1604443806
+/media/blueberry/backups/rob-pc|5|1605910771
 /home/rob/school/ITP132|76|1605468491
 /home/rob/.config|13|1605468635
 /home/rob/.config/lf|19|1599774116
@@ -34,6 +34,6 @@
 /home/rob/.config/picom|1|1605116621
 /usr/share/pixmaps|1|1605117355
 /home/rob/downloads/minecraft|3|1605466858
-/home/rob/downloads/pics|1|1605117846
 /home/rob/.local/share/cargo/bin|1|1605467987
 /home/rob/pics|2|1605468420
+/home/rob/.config/GIMP/2.10|1|1605728524

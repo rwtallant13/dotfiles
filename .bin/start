@@ -3,7 +3,7 @@
 # Program functions
 
 _picom(){
-	persist picom --experimental-backends &
+	persist picom --experimental-backends
 }
 
 _pbar(){
@@ -15,7 +15,7 @@ _dunst(){
 }
 
 _sxhkd(){
-	persist sxhkd -s $HOME/.cache/sxhkd.fifo &
+	persist sxhkd -s $HOME/.cache/sxhkd.fifo
 }
 
 _nm-applet(){
@@ -33,12 +33,12 @@ _polkit(){
 }
 
 _obs(){
-    nullify obs --profile Default --minimize-to-tray &
+    nullify obs --profile Default --minimize-to-tray
 
 }
 
 _ssr(){
-	nullify simplescreenrecorder --start-hidden --settingsfile=/home/rob/.ssr/fullscreen.conf &
+	nullify simplescreenrecorder --start-hidden --settingsfile=/home/rob/.ssr/fullscreen.conf
 }
 
 _dpms(){
@@ -58,5 +58,5 @@ for i in $*; do
 	# Wait until the processes have been shut down
 	while pgrep -x "$i" >/dev/null; do sleep 0.25; done
 
-	_$i
+	_$i &
 done

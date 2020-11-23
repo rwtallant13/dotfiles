@@ -1,5 +1,10 @@
 #!/bin/bash
 
+_client(){
+	nullify /opt/piavpn/bin/pia-client --quiet
+
+}
+
 
 _background(){
 	piactl background "$1"
@@ -47,6 +52,7 @@ Usage: pvpn [command] <arg>
 
 Commands:
        	  -h, help			Display this message
+		  -c, client		Open PIA client application
        	  -r, region			Select Region and reconnect
           -R, reconnect			Disconnect and reconnect to server
        	  -r, toggle <up|down>		Toggle VPN connection

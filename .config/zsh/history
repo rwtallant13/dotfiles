@@ -3519,7 +3519,6 @@ shortinfo /home/rob/vids/fullscreen--2020-05-22_15.26.24
 shortinfo /home/rob/vids/fullscreen--2020-05-22_15.26.24\ \(1\).mp4
 v ~/.bin/start
 v /etc/pro
-la .config
 v .config/rgconf
 man rg
 rg appendpath /etc
@@ -3983,7 +3982,6 @@ fd -d 1
 sudo rm -rf 2020-10-28-123936 2020-10-28-124441 2020-10-28-124654 2020-10-28-124929
 simplescreenrecorder
 fd -d 2
-ls .config
 find %s %a -print , -type d \( ! -readable -o ! -executable \) -prune
 find bin  -print , -type d \( ! -readable -o ! -executable \) -prune
 find .bin  -print , -type d \( ! -readable -o ! -executable \) -prune
@@ -4389,7 +4387,6 @@ jc
 autojump --help
 autojump --complete 
 man autojump
-v .zshrc
 j
 z
 j --stat
@@ -4528,7 +4525,6 @@ sudo pacr transmission-gtk
 sudo pacr transmission-cli
 wall.sh -U pics/backgrounds/macOS/ColorBurst5-tall.jpg
 wall.sh -U pics/backgrounds/macOS/ColorBurst4-tall.jpg
-la
 ndu $media/shows/
 ndu $media/movies
 fd pword
@@ -4573,7 +4569,6 @@ rm git
 rmr git
 y
 rm gad
-bb
 systemd-analyze
 systemd-analyze blame
 locate qbittorrent.desktop
@@ -4618,9 +4613,24 @@ du -h
 [[ -e "$HOME"/.config/zsh/antigen.zsh ]] && \\
    source "$HOME"/.config/zsh/antigen.zsh || curl -L git.io/antigen > "$HOME"/.config/zsh/antigen.zsh 
 pkglist
-se
 fzpkgs
 sudo pacr autojump-rs
 fzp
 fzpkgs 
+dotu
+antigen bundle zsh-users/zsh-syntax-highlighting
+sudo pacr $(fzpkgs )
+se
+fzpac
+fzpacr
+less .zshrc.zwc
+mv .antigen .config/antigen
+ls .config/zsh
+mv .config/antigen .config/zsh
+la
+ls .config
+la .config
+v .zshrc
+echo ${(o)color}
+bb
 dotu

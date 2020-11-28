@@ -1,4 +1,4 @@
-# -- general -----------------------------------------------------
+# -- general ------------------------------------------------------------------
 
 HISTFILE=~/.config/zsh/history
 HISTSIZE=100000
@@ -19,7 +19,9 @@ bindkey -e
 source ~/.zkbd/$TERM*
 
 
-# -- plugins ------------------------------------------------------------
+# -- plugins ------------------------------------------------------------------
+
+ADOTDIR=$HOME/.config/zsh/antigen
 
 # make sure antigen is installed
 [[ -e "$HOME"/.config/zsh/antigen.zsh ]] && \
@@ -30,21 +32,27 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+antigen apply
 
 
-# -- plugin opts --------------------------------------------------------
+# -- syntax highlighting ------------------------------------------------------
 
-ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=cyan,underline
-ZSH_HIGHLIGHT_STYLES[precommand]=fg=cyan,underline
-ZSH_HIGHLIGHT_STYLES[arg0]=fg=cyan
-ZSH_HIGHLIGHT_STYLES[redirection]=fg=yellow
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan,underline'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,underline'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[bracket-error]='fg=red,bold,underline'
+ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='fg=green,bold,underline'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f6569,bg=bold,underline"
+
+# -- autosuggestions ----------------------------------------------------------
+
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
 ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char})ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
 
-# -- completion ---------------------------------------------------------
+# -- completion ---------------------------------------------------------------
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' list-colors ''
@@ -61,7 +69,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-
 zstyle :compinstall filename '/home/rob/.zshrc'
 
 
-# -- setopts ---------------------------------------------------------
+# -- setopts ------------------------------------------------------------------
 
 #setopt ZLE
 setopt complete_aliases
@@ -138,6 +146,7 @@ zle -N exit_zsh
 bindkey '^D' exit_zsh
 
 # -- exports -------------------------------------------------------
+
 export FZF_DEFAULT_OPTS="--preview-window noborder --reverse --exact --no-color --multi --cycle --border=sharp --height=50% --no-info"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50' --exact"
 export FZF_CTRL_T_COMMAND="fd . --hidden"

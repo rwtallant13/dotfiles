@@ -26,6 +26,7 @@ alias pacq='sudo pacman -Qs'
 alias pacf='sudo pacman -F'
 alias pacl='sudo pacman -Ql'
 alias pacr='pacman -Rncs'
+alias fzpacr='sudo pacman -Rncs $(fzpkgs)'
 alias rmorphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias pacrepo='sudo reflector -c US -c CA --protocol https --age 48 --sort score --save /etc/pacman.d/mirrorlist'
 

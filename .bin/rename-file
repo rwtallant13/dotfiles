@@ -1,7 +1,0 @@
-#!/bin/bash
-
-shopt -s extglob
-for A in *.mkv; do
-   B=${A/%-+([[:alnum:]_]).mkv/.mkv}
-   [[ $A != "$B" ]] && mv "$A" "$B"
-done

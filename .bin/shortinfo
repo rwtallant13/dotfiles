@@ -1,21 +1,61 @@
 #!/bin/bash
 
 
-#mediainfo --Inform="General;File Name=%CompleteName%\nFile Size=%FileSize/String1%" "$@";
+_sort(){
+	if [[ -d "$1" ]]; then
+		vids="$(fd . "$1" -t f -e mp4 -e mkv)"
+	else
+		vids="$*"
+	fi
 
-#mediainfo --Inform="Video;Resolution=%Width%x%Height%\nCodec=%CodecID%\nBitrate= %BitRate/String%" "$@";
+	for f in "$vids"; do
+		mediainfo --Inform="Video;Resolution=%Width%x%Height%\nCodec=%CodecID%\nBitrate= %BitRate/String%" "$f";
 
-#mediainfo --Inform="Video;Resolution=%Width%x%Height%\nCodec=%CodecID%\nBitrate= %BitRate/String%" "$@";
+	done | sort -t ':' -nk1
 
-if [[ -d "$1" ]]; then
-	vids="$(fd . "$1" -t f -e mp4 -e mkv)"
-else
-	vids="$*"
+}
+
+_list(){
+	if [[ -d "$1" ]]; then
+		vids=($(fd . "$1" -t f -e mp4 -e mkv))
+	else
+		vids="$@"
+	fi
+
+	for f in "${vids[@]}"; do
+		mediainfo --Inform="General;%CompleteName%" "$f"
+		mediainfo --Inform="Video;Resolution=%Width%x%Height%\nCodec=%CodecID%\nBitrate= %BitRate/String%" "$f";
+	done
+}
+
+_help(){
+    cat <<- EOF
+Usage: shortinfo [arg] [path]
+
+Commands:
+    -l, list		list short mediainfo
+    -s, sort		sort input files by bitrate
+
+EOF
+}
+
+if [[ -e "$1" ]]; then
+	opt="list"
+	files="$*"
+elif [[ "$1" = -* ]]; then
+	opt="$1"
+	files="${*:2}"
 fi
 
-for f in "$vids"; do
-	#bitrate="$(mediainfo --Inform="Video;%OverallBitRate%" "$f")"
-	mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" "$f"
-	mediainfo --Inform="Video;Resolution=%Width%x%Height%\nCodec=%CodecID%\nBitrate= %BitRate/String%" "$f";
 
-done | sort -t ':' -nk1
+case "$opt" in
+	-l|list )
+		_list "$files"
+		;;
+	-s|sort )
+		_sort "$files"
+		;;
+    *)
+        _help
+        ;;
+esac

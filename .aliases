@@ -26,7 +26,7 @@ alias pacq='sudo pacman -Qs'
 alias pacf='sudo pacman -F'
 alias pacl='sudo pacman -Ql'
 alias pacr='pacman -Rncs'
-alias remove-orphans='sudo pacman -Rns $(pacman -Qtdq)'
+alias rmorphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias pacrepo='sudo reflector -c US -c CA --protocol https --age 48 --sort score --save /etc/pacman.d/mirrorlist'
 
 #python
@@ -80,14 +80,24 @@ fzcd() {
 
 kw(){
     nohup kwrite "$@" & disown
-    }
+}
+
+pacman-pkgs(){
+	pacman -Qqne | tee /home/rob/docs/pacman-pkgs | less
+}
+
+yay-pkgs(){
+	pacman -Qqme | tee /home/rob/docs/yay-pkgs | less
+}
 
 pkglist(){
-    pacman -Qqne > /home/rob/docs/pacman-pkgs
-    pacman -Qqme > /home/rob/docs/yay-pkgs
+	pacman-pkgs && yay-pkgs
+	pacman -Qqe | less
+}
 
+fzpkgs(){
     pacman -Qqe | fzf --height=100% --preview 'pacman -Qi {}' --layout=reverse
-    }
+}
 
 mkcd(){
 	mkdir -p "$1" && cd "$1"
@@ -115,17 +125,16 @@ se(){
     elif [[ -f "$sel" ]]; then
         /home/rob/.bin/nv "$sel"
     fi
-    }
+}
 
-swap()
-{
+swap(){
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
 }
 
 open(){
     nohup xdg-open "$@" >/dev/null 2>&1 & disown
-    }
+}
 
 watchproc(){
     local pid
@@ -136,7 +145,7 @@ watchproc(){
     then
         ps -p "$pid" -o etime,command
     fi
-    }
+}
 
 yf(){
     if [[ $1 ]]; then
@@ -146,21 +155,21 @@ yf(){
         exit 0
     fi
 
-    }
+}
 
 vlc-yt(){
     vlc "$(youtube-dl --get-url --format best $1)"
-    }
+}
 
 hist_dedup() {
 
-    tac ~/.config/bash_history | awk '! x[$0]++' | tac > ~/bash_hist_clean ;
+    tac ~/.config/bash_history | awk '! x[$0]++' | tac > ~/bash_hist_clean
 
-    mv ~/.config/bash_history ~/.config/bash_history_old ;
+    mv ~/.config/bash_history ~/.config/bash_history_old
 
-    mv ~/bash_hist_clean ~/.config/bash_history ;
+    mv ~/bash_hist_clean ~/.config/bash_history
 
-    }
+}
 
 fv() {
 	local file
@@ -171,7 +180,7 @@ fv() {
 	then
 		v "$file"
 	fi
-    }
+}
 
 fkill() {
     local pid
@@ -182,7 +191,7 @@ fkill() {
     then
         echo $pid | xargs sudo kill -${1:-9}
     fi
-    }
+}
 
 fzaux() {
     local pid

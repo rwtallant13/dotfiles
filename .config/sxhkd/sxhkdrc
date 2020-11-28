@@ -299,10 +299,6 @@ super + {comma,period}
 	bspc desktop -f {prev,next}.local
 
 # move workspaces within monitor
-control + {comma,period}
-	bspc desktop -f {prev,next}.local
-
-# move workspaces within monitor
 control + alt + {comma,period}
 	bspc desktop -f {prev,next}.local
 

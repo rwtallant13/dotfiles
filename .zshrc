@@ -19,15 +19,32 @@ bindkey -e
 source ~/.zkbd/$TERM*
 
 
-# -- style --------------------------------------------------------
+# -- plugins ------------------------------------------------------------
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# make sure antigen is installed
+[[ -e "$HOME"/.config/zsh/antigen.zsh ]] && \
+   source "$HOME"/.config/zsh/antigen.zsh || curl -L git.io/antigen > "$HOME"/.config/zsh/antigen.zsh
+
+antigen bundle hlissner/zsh-autopair
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+
+
+# -- plugin opts --------------------------------------------------------
+
 ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=cyan,underline
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=cyan,underline
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=cyan
 ZSH_HIGHLIGHT_STYLES[redirection]=fg=yellow
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f6569,bg=bold,underline"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char})ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
 
+# -- completion ---------------------------------------------------------
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' list-colors ''
@@ -76,6 +93,8 @@ unsetopt menu_complete
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
+bindkey '^[[1;5B' autosuggest-clear
+bindkey '^[[1;5A' autosuggest-execute
 
 bindkey '5~' kill-whole-line
 bindkey '^[u' undo
@@ -94,14 +113,12 @@ bindkey "\e/" copy-earlier-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
-
 backward-kill-dir () {
     local WORDCHARS=${WORDCHARS/\/}
     zle backward-kill-word
 }
 zle -N backward-kill-dir
 bindkey '^H' backward-kill-dir
-
 
 function expand-or-complete-or-list-files() {
     if [[ $#BUFFER == 0 ]]; then
@@ -116,7 +133,6 @@ function expand-or-complete-or-list-files() {
 zle -N expand-or-complete-or-list-files
 bindkey '^I' expand-or-complete-or-list-files
 
-
 exit_zsh() { exit }
 zle -N exit_zsh
 bindkey '^D' exit_zsh
@@ -130,12 +146,10 @@ export FZF_CTRL_R_OPTS='--exact'
 export NNN_BMS='h:~/;d:~/downloads/;p:/home/rob/pics/;c:~/.config/;b:/media/blueberry;e:/etc/;B:/media/blueberry/backups/rob-pc/latest/'
 export PF_INFO="ascii title os wm kernel uptime pkgs memory"
 export _ZL_DATA=/home/rob/.config/zlua
+
+
 # -- source --------------------------------------------------------
 
-# source plugins
 source /usr/share/fzf/key-bindings.zsh
 #source /usr/share/fzf/completion.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 eval "$(lua /usr/share/z.lua/z.lua --init zsh enhanced once)"
-source /usr/share/autojump/autojump.zsh

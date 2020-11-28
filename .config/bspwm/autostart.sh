@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+!/usr/bin/bash
 . /home/rob/.profile
 # bspwm autostart
 #/home/rob/.fehbg
@@ -9,4 +9,4 @@
 /home/rob/.bin/mnt bb &
 /home/rob/.bin/sinkctrl -r -d
 /home/rob/.bin/caps2esc &
-#/usr/bin/clipmenud &
+/usr/bin/clipmenud &

@@ -1042,7 +1042,6 @@ pip freeze
 pac python-pyserial
 clipmenud
 systemctl daemon-reload
-rm test
 /usr/bin/clipmenud &
 /home/rob/.bin/sinkctrl -d
 v .bin/pu
@@ -1086,7 +1085,6 @@ ndu $media/shows/Sword-Art-Online
 vf $media/shows/Sword-Art-Online
 ls > ~/SAO_files
 v SAO_files
-ndu $media/shows/
 chromium --help
 man chromium
 autolock
@@ -1616,7 +1614,6 @@ pgrep caps2esc
 killall caps2esc
 v .bin/bootup
 man if
-man test
 man rofi
 rofi -show window
 bspc node @/ --flip vertical
@@ -1995,7 +1992,6 @@ jyay
 ncdu /
 ncdu / -x
 pacman -Sc
-yay -Sc
 man deluge
 deluge-console info
 man deluge-console
@@ -2642,7 +2638,6 @@ sudo rm -rf rob-pc
 /usr/bin/ssh -t rob@192.168.2.21 tmux new -A
 sudo ufw allow 51413
 sudo pacr transmission-gtk
-sudo pacr transmission-cli
 sudo ufw status numbered
 sudo ufw remove 5
 sudo ufw delete 5
@@ -2810,7 +2805,6 @@ tail -100 /var/log/pacman.log | grep upgraded | grep qt5
 pacman -U /var/cache/pacman/pkg/qt5-base-5.15.0-5-x86_64.pkg.tar.zst
 sudo pacman -U /var/cache/pacman/pkg/qt5-base-5.15.0-5-x86_64.pkg.tar.zst
 pac delug
-pac deluge-gtk
 pacr transmission
 sudo pacr transmission
 ssr.sh
@@ -2978,7 +2972,6 @@ mv downloads/minecraft/BSL_v7.2.zip .minecraft/shaderpacks
 mv downloads/minecraft/SEUS-Renewed-v1.0.1.zip .minecraft/shaderpacks
 v /etc/mkinitcpio.conf
 compgen -c | fzf
-cat
 v /usr/share/fzf/key-bindings.zsh
 eval compgen
 compgen
@@ -3102,7 +3095,6 @@ unoconv -f pdf ./Unit3_DataRepresentation.pptx
 rm *pptx
 z shows
 My-Hero-Academia
-shortinfo ./
 v ~/.bin/shortinfo
 mediainfo --Inform="General;%OverallBitRate% : %CompleteName%" MyHeroAcademia_s1e01.mp4
 start pulse
@@ -3150,12 +3142,10 @@ locate bash_completion.d
 sudo mv fz.sh /home/rob/.local/etc/bash_completion.d/
 realpath /home/rob/.local/etc/bash_completion.d/fz.sh
 pac linux linux-lts
-systemd-analyze blame
 systemd-analyze time
 systemd-analyze critical-chain
 systemd-analyze plot > plot.svg
 open plot.svg
-systemd-analyze
 yay -S ungoogled-chromium
  sudo pacman-key --keyserver hkp://keyserver.ubuntu.com -r 3056513887B78AEB 8A9E14A07010F7E3
  sudo pacman-key --lsign-key 3056513887B78AEB
@@ -3182,7 +3172,6 @@ v /usr/share/applications/nvim.desktop
 echo $TERMINAL
 ffmpeg -i screen-20200911-132235.mp4  -map_metadata 0 -metadata:s:v rotate="90" -codec copy twerking.mp4
 pac qt5-styleplugins
-yay -S --rebuild qt5-styleplugins
 sudo pacr qt5ct
 pac xournal++
 pac xournal
@@ -3653,7 +3642,6 @@ rm vids/fullscreen--2020-0*
 ls -Art .vim
 vf vids
 fd . ~/downloads/torrents/ -e mp4 -x mv {} ./
-du -h
 ls -h
 man ls
 ls -Art vids
@@ -3668,7 +3656,6 @@ uname -r
 v .bin/check-media
 rg 2 .bin
 rg EOF  .bin
-v .bin/sinkctrl
 trimvid -e 15 /media/mx100/Videos/Call of Duty  Black Ops Cold War/Call of Duty  Black Ops Cold War 2020.10.18 - 20.05.42.03.DVR.mp4
 man ffmpeg
 v .bin/trimvid
@@ -3690,7 +3677,6 @@ pac shotcut
 nvtop
 ls /sys/class/drm/card0/device/vendor
 cat /sys/class/drm/card0/device/vendor
-ncdu
 ls .con
 ls .config/dconf
 rmr .openshot_qt
@@ -3757,7 +3743,6 @@ pac tint2
 pacr pac tint2
 sudo pacr tint2
 mv rwt13-bb.ovpn docs
-docs
 open Untitled.png
 rm Untitled.png
 rmr notes/
@@ -3839,7 +3824,6 @@ locate rsnapshot
 rsnapshot -t hourly
 yay timeshift
 timeshift
-chx .bin/*
 rsync_backup.sh -h
 rsync_backup.sh --rsync-get-flags
 realpath docs/backup_exclude.txt
@@ -3895,7 +3879,6 @@ v /home/rob/.local/bin/nnf
 v /etc/systemd/system/backup.service
 ll .bin
 v .bin/system-backup
-ls .bin
 ls .bin/rsync_backup.sh
 systemctl status backup.service
 rsync_backup.sh
@@ -3996,7 +3979,6 @@ pac simplescreenrecorder
 mkdir -p $XDG_CONFIG_HOME/simplescreenrecorder/
 l
 rmr .ssr
-y
 fd -d 1
 sudo rm -rf 2020-10-28-123936 2020-10-28-124441 2020-10-28-124654 2020-10-28-124929
 simplescreenrecorder
@@ -4070,7 +4052,6 @@ bspc rule -r pia-client:*
 bspc rule -r *:*
 bspc rule -l
 v .bin/pia.sh
-v .bin/opi
 pia.sh -r
 v .bin/nv
 rg set .bin
@@ -4105,7 +4086,6 @@ piactl
 sleep 3s && flameshot gui
 pgrep nm-applet
 start nm-applet
-rg case .bin
 fd -e sub -e idx
 fd -e sub -e idx -x mv {} subs/
 fd -e sub -e idx -x mv {} ./subs/
@@ -4149,7 +4129,6 @@ ls this
 rmr this
 pacr plexmediaplayer
 sudo pacr plexmediaplayer
-pkglist
 sudo pacr plex-media-player
 lsblk
 v /etc/pacman.conf
@@ -4160,7 +4139,6 @@ timers
 alias udev-reload
 pacdiff
 sudoedit /etc/pacman.conf
-Season01
 rename -nv -- 's/-\w+?[.]mkv$/.mkv/' *.mkv
 which rename
 locate perl-rename
@@ -4212,7 +4190,6 @@ fd . .thumbnails
 fd . .thumbnails |
 fd . .thumbnails | wc -l
 v .fdignore
-lr
 man bspwm
 bspc node -t
 mv picom.conf\ \! picom.conf
@@ -4285,7 +4262,6 @@ rmr Takeout javasharedresources
 unzip downloads/minecraft/takeout-20201112T194436Z-001.zip 
 rmr Takeout 
 man docker-compose
-v .bin/wall.sh
 less ./.fehbg
 wall.sh
 realpath .bin/rsync_backup.sh
@@ -4324,7 +4300,6 @@ tail -f ~/.config/picom/log
 pac alacritty
 vw pics/backgrounds/macOS/Appearance
 vw pics/backgrounds/macOS/Appearance*
-remove_spaces
 yay raw-thumbnailer
 killall thunar
 pac tumbler
@@ -4344,7 +4319,6 @@ for i in *.heic; do heif-convert "$i" "${i%.*}.jpg"; done
 rm *.heic
 mv *.jpg /home/rob/pics/backgrounds/macOS/
 goto
-lb
 less .bin/rename-file
 mv Sword\ Art\ Online\ -\ Alicization\ -\ War\ of\ Underworld\ -\ 14\ -\ End\ to\ Eternity\ \[KaiDubs\]\ \[1080p\].mp4 SwordArtOnline_S04E14.mkv
 z -I -t
@@ -4385,8 +4359,6 @@ man vifm
 pac autojump
 rg cargo
 /home/rob/.local/share/cargo/bin
-ls
-udb
 locate cargo/bin
 _j
 yay autojump
@@ -4403,7 +4375,6 @@ cd ~/downloads/torrents
 cd /etc/systemd/system/
 cd school
 cd ITE221
-..
 cd ITP132
 z -l
 cd /home/rob/projects
@@ -4421,7 +4392,6 @@ man autojump
 v .zshrc
 j
 z
-cd
 j --stat
 /home/rob/.bin/start picom dunst nm-applet dpms obs polkit pia-client
 nm-applet
@@ -4473,7 +4443,6 @@ fd thumbnail
 ~
 rmr .thumbnails
 mv .ssr .config/simplescreenrecorder
-la
 mv .config/simplescreenrecorder .ssr
 ls .ssr
 ls .ssr/simplescreenrecorder
@@ -4485,7 +4454,6 @@ echo "$(echo "scale=1; 100 * $(pacman -Qi $(pacman -Qq) | grep Felix | wc -l) / 
 man bspc
 mks dpms.sh
 realpath .bin/dpms.sh
-v .bin/pvpn
 rmr .bin/start
 logout
 persist picom --experimental-backends
@@ -4499,10 +4467,8 @@ rg --hidden persist
 rg --hidden "persist picom"
 pac picom
 yay picom-tryone-git
-vf
 fd --help
 fd -h
-$backups
 fd . $HOME ./ 
 ssh root@192.168.2.41
 ssh -vvv pi
@@ -4515,8 +4481,6 @@ sudo pacman -Fy
 pacu
 fzaux
 start picom
-se
-bb
 unoconv -f pdf school/ITE221/11\ -\ Computer\ OS\ Functions\ I.pptx 
 unoconv -f pdf school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pptx 
 open school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pdf 
@@ -4531,7 +4495,6 @@ btm --color default-light
 btm --color gruvbox
 btm 
 picom
-fkill
 picom --experimental-backends 
 less .xsession-errors
 ls /var/cache/pacman/pkg/qt
@@ -4539,16 +4502,125 @@ ls /var/cache/pacman/pkg/qt*
 pacman -U /var/cache/pacman/pkg/qt5-base-5.15.2-1-x86_64.pkg.tar.zst
 sudo pacman -U /var/cache/pacman/pkg/qt5-base-5.15.2-1-x86_64.pkg.tar.zst
 yay -S qbittorrent-git
-qbittorrent
 pac qbittorrent
-pacrepo
-yay
 pac deluge
 pac transmission-gtk transmission-cli
-vfm
 ncdu .cache
 ncdu
 ncdu ~/.local/share/
+pac deluge-gtk
+$backup
+$backups
+pacman -Qs | grep 5.15.1
+yay -S qt5-styleplugins
+yay -S --rebuild qt5-styleplugins
+yay -S --rebuild aur/qt5-styleplugins
+fkill
+mv /home/rob/.local/share/data/qBittorrent/ /home/rob/.local/share/qBittorrent/
+ls /home/rob/.local/share/qBittorrent/
+rmr /home/rob/.local/share/data/qBittorrent/
+ls /home/rob/.local/share/data/qBittorrent/
+sudo rm -rf /home/rob/.local/share/data/qBittorrent/
+qbittorrent
+pacr transmission-gtk tranmission-cli
+sudo pacr transmission-gtk tranmission-cli
+sudo pacr transmission-gtk 
+sudo pacr transmission-cli
+wall.sh -U pics/backgrounds/macOS/ColorBurst5-tall.jpg
+wall.sh -U pics/backgrounds/macOS/ColorBurst4-tall.jpg
+la
+ndu $media/shows/
+ndu $media/movies
+fd pword
+rm docs/important/pword
+lr docs
+lr
+touch receipts/"this test thing.txt"
+ls receipts
+which remove_spaces
+v /home/rob/.bin/remove_spaces
+docs
+re
+rec
+receipts
+find . -name "* *" -type f | /usr/bin/vendor_perl/rename 's/ //g'
+remove_spaces
+cd
+mv .bin/remove_spaces .bin/rmspaces
+ls .bin
+rm .bin/rename-file
+rmorphans
+yay -Sc
+pacman -Qqme > /home/rob/docs/yay-pkgs > less
+rm less
+pacman -Qqme > /home/rob/docs/yay-pkgs < less
+pacman -Qqme > /home/rob/docs/yay-pkgs %(< less)
+pacman -Qqme > /home/rob/docs/yay-pkgs $(< less)
+touch .bin/thing
+chmod +x '$*'
+chx .bin/*
+lb
+rm .bin/thing
+man tee
+pacman -Qqme | tee test | less
+rm .bin/dpms.sh
+git clone https://github.com/brianpcurran/gandi-automatic-dns.git ~/git/gandi-automatic-dns
+rm test
+ls git
+mv git/gandi-automatic-dns/gad ./
+scp ./gad bb:bin
+rm git
+rmr git
+y
+rm gad
+bb
+systemd-analyze
+systemd-analyze blame
+locate qbittorrent.desktop
+udb
+locate qbittorrent
+v /usr/share/applications/org.qbittorrent.qBittorrent.desktop
+fd -i rar -E mkv -E mp4
+cd ../movies
+fd -i rar 
+vf
+shortinfo ./TheMandalorian_S02E01.mkv
+shortinfo ./the.mandalorian.s02e05.1080p.web.h264-ggwp.mkv
+rg case .bin
+v .bin/wall.sh
+v .bin/sinkctrl
+v .bin/pvpn
+man test
+v .bin/opi
+Season01
+Season1
+..
+mv Season1 Season01
+mv Season2 Season02
+ls
+shortinfo ./
+shortinfo /media/blueberry/media/shows/Mandalorian/Season02/TheMandalorian_S02E02.mkv
+shortinfo /media/blueberry/media/shows/Mandalorian/Season02
+shortinfo /media/blueberry/media/shows/Mandalorian/Season01
+shortinfo /media/blueberry/media/shows/Mandalorian/Season01/The_Mandalorian_S01E04.mp4
+shortinfo /media/blueberry/media/shows/Mandalorian/Season01/The_Mandalorian_S01E07.mp4
+echo $ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS
+echo $ZSH_AUTOSUGGEST_ACCEPT_WIDGETS
+yay_pkgs
 pacrepo
 yay
-pac deluge-gtk
+cat
+zsh --vers
+zsh --version
+vfm
+shortinfo Tenet.mkv
+du -h
+[[ -e "$HOME"/.config/zsh/antigen.zsh ]] && \\
+   source "$HOME"/.config/zsh/antigen.zsh || curl -L git.io/antigen > "$HOME"/.config/zsh/antigen.zsh 
+pkglist
+se
+fzpkgs
+sudo pacr autojump-rs
+fzp
+fzpkgs 
+dotu

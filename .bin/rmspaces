@@ -1,0 +1,5 @@
+#!/bin/bash
+
+find . -name "* *" -type f | /usr/bin/vendor_perl/rename 's/ //g' # &&\
+
+#find . -name "* *" -exec rm -rf {} +

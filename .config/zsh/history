@@ -3012,7 +3012,6 @@ ll
 lla
 rm netdata-bb.pdf
 rm .config/zhistory_bad
-.config
 rm -rf Bitwarden bashtop Mousepad massren transmission compton.conf
 ls autostart
 yadm commit
@@ -4572,7 +4571,6 @@ rm gad
 systemd-analyze
 systemd-analyze blame
 locate qbittorrent.desktop
-udb
 locate qbittorrent
 v /usr/share/applications/org.qbittorrent.qBittorrent.desktop
 fd -i rar -E mkv -E mp4
@@ -4592,7 +4590,6 @@ Season1
 ..
 mv Season1 Season01
 mv Season2 Season02
-ls
 shortinfo ./
 shortinfo /media/blueberry/media/shows/Mandalorian/Season02/TheMandalorian_S02E02.mkv
 shortinfo /media/blueberry/media/shows/Mandalorian/Season02
@@ -4603,7 +4600,6 @@ echo $ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS
 echo $ZSH_AUTOSUGGEST_ACCEPT_WIDGETS
 yay_pkgs
 pacrepo
-yay
 cat
 zsh --vers
 zsh --version
@@ -4617,20 +4613,30 @@ fzpkgs
 sudo pacr autojump-rs
 fzp
 fzpkgs 
-dotu
 antigen bundle zsh-users/zsh-syntax-highlighting
 sudo pacr $(fzpkgs )
 se
 fzpac
-fzpacr
 less .zshrc.zwc
 mv .antigen .config/antigen
 ls .config/zsh
 mv .config/antigen .config/zsh
-la
-ls .config
 la .config
 v .zshrc
 echo ${(o)color}
 bb
 dotu
+ls .config
+fzpacr
+.config
+sudo rmr microsoft-edge-dev vidcutter transmission nwg-launchers plex.tv LosslessCut 
+ls
+yay
+rmr .zshrc.zwc /home/rob/.config/zsh/antigen/*.zwc
+la
+ls /home/rob/.config/zsh/antigen/*.zwc
+udb
+locate zwc
+antigen cache-gen
+antigen-reset
+yay

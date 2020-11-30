@@ -27,7 +27,6 @@ ADOTDIR=$HOME/.config/zsh/antigen
 [[ -e "$HOME"/.config/zsh/antigen.zsh ]] && \
    source "$HOME"/.config/zsh/antigen.zsh || curl -L git.io/antigen > "$HOME"/.config/zsh/antigen.zsh
 
-antigen bundle hlissner/zsh-autopair
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -39,7 +38,7 @@ antigen apply
 
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan,underline'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,underline'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[bracket-error]='fg=red,bold,underline'
 ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='fg=green,bold,underline'
@@ -53,6 +52,7 @@ ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
 ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char})ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
 
 # -- completion ---------------------------------------------------------------
+
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' list-colors ''

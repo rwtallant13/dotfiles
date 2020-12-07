@@ -11,6 +11,7 @@
 *[Mm]ozilla*
 **/nvim/swap/*
 **/.local/lib/*
-**/.local/share/*
+**/.local/share/cargo/*
 **/.thumbnails/*
 *zwc*
+**/.git

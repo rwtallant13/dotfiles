@@ -33,7 +33,7 @@ case $1 in
         sudo mount UUID=CE7A626D7A6251EF /media/ssd
         ;;
     win|windows)
-        sudo mount UUID=A880036B80033F76 /media/windows
+        sudo mount UUID=903A3D9F3A3D8370 /media/windows
         ;;
     *)
         _help

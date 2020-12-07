@@ -92,7 +92,8 @@ yay-pkgs(){
 }
 
 pkglist(){
-	pacman-pkgs && yay-pkgs
+	pacman -Qqme > /home/rob/docs/yay-pkgs
+	pacman -Qqne > /home/rob/docs/pacman-pkgs
 	pacman -Qqe | less
 }
 
@@ -117,6 +118,9 @@ chx(){
     chmod +x $*
 }
 
+vw(){
+	viewnior $*
+}
 
 se(){
     dir="${@:-"$HOME"}"

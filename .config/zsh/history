@@ -602,14 +602,10 @@ yay -S ner-fonts-hack
 rm catalina-phone.png
 this is a thing
 unzip Overpass.zip
-mkdir overpass
-mv Overpass* overpass
 sudo pacr nerd-fonts-complete
 locate fonts
 locate Mono
-ls /usr/share/fonts
 mv overpass /usr/share/fonts
-sudo mv overpass /usr/share/fonts
 ll /usr/share/fonts/noto
 sudo chown root:root /usr/share/fonts/overpass/*
 ll /usr/share/fonts/overpass/*
@@ -790,7 +786,6 @@ sudo pacr gnome-keyring
 sudo pacr libsecfet
 sudo pacr libsecret
 protontricks 232090 regedit
-fc-cache
 man locate
 alias v
 alias V
@@ -806,7 +801,6 @@ less this
 rm this
 pac minecraft
 pacf minecraft
-yay minecraft-launcher
 s ufw allow 25575
 source compinstall
 pkill -9 discord*
@@ -852,7 +846,6 @@ sudoedit .zshrc
 which nv
 nv .config/zhistory .zshrc
 V /root/.aliases
-ll /root
 sudo ll /root
 sudo la sudo ll /root
 sudo la /root
@@ -943,7 +936,6 @@ pacr rdiff-backup
 mv system-backup.sh system-backup
 vf $backups
 vpn-toggle -l
-ufw status
 S disale rsnapshot*
 S disable rsnapshot*
 S disable rsnapshot-day.timer rsnapshot-month.timer rsnapshot-week.timer
@@ -1814,7 +1806,6 @@ this=$(echo $thing)
 thing=/home/rob/.zshrc
 this=$(grep zsh $thing)
 echo $this
-ssh
 v /etc/systemd/system/caps2esc.service
 shutdown now
 S status caps2es
@@ -1858,12 +1849,10 @@ rm -rf .config/systemd/user/*
 systemctl disable caps2esc
 systemctl disable --user caps2esc
 v .bin/caps2esc
-v /boot/loader/entries/arch.conf
 ls /boot
 ls /boot/EFI
 dmesg
 man dmesg
-caps2esc
 man journalctl
 journalctl -g opotimus
 journalctl -g boondocc
@@ -1900,7 +1889,6 @@ ping google.com
 sudo pacr amidstd
 sudo pacr amidst
 sudo pacr admist
-v /etc/ssh/ssh_config
 pacr syncthing
 sudo pacr syncthing
 rmr GPUCache
@@ -2200,7 +2188,6 @@ S status lightdm
 pac nvidia-dkms
 pac linux-zen-headers
 dfsdf
-lsblk -f
 journalctl
 S unmask cups.service
 pac pfetch
@@ -2238,7 +2225,6 @@ cd pfetch
 locate pfetch
 rm -rf pfetch
 pfetch
-ssh ytk
 journalctl -r -p err
 S disable caps2esc.timer
 locate caps2esc.timer
@@ -2440,7 +2426,6 @@ less docs/backup/backup_exclude.txt
 rm -rf .bin/rsync_backup.sh
 rdiff-backup --help
 ls docs/backup/
-ssh rob@192.168.2.21
 ssh root@192.168.2.21
 ssh bb "bash"
 man rdiff
@@ -2529,7 +2514,6 @@ systemctl --user disable sxhkd.service
 systemctl disable --user sxhkd.service
 rm -rf .bin/start-*
 pac z.lua
-pac lua
 extract downloads/z.lua-1.8.7.tar.gz
 sudo mkdir /usr/share/z.lua
 sudo cp z.lua-1.8.7/* /usr/share/z.lua
@@ -2642,7 +2626,6 @@ sudo ufw status numbered
 sudo ufw remove 5
 sudo ufw delete 5
 sudo ufw delete 8
-sudo ufw status
 minecraft-launcher
 pacman -Q rofi
 rofi --help | grep updage-config
@@ -2880,11 +2863,9 @@ qt5ct
 locate gtkrc
 pac breeze
 pac oxygen
-pac gtk2
 v .config/Trolltech.conf
 yay qt5-styleplugins
 echo $QT_QPA_PLATFORMTHEME
-v /etc/environment
 micro
 rm testmicro
 micro .bin/filecount
@@ -2922,7 +2903,6 @@ ssh bb 'bash -s' < .bin/mcctrl
 ssh bb 'bash -c /home/rob/bin/mcctrl'
 ssh bb /opt/minecraft/tools/mcrcon/mcrcon -H localhost -P 25576 -p Waterb0ttle54 -t
 ssh bb '/opt/minecraft/tools/mcrcon/mcrcon -H localhost -P 25576 -p Waterb0ttle54 -t'
-v /etc/ssh/sshd_config
 S restart sshd
 ssh bb mcctrl
 ssh bb /home/rob/bin/mcctrl
@@ -2989,11 +2969,9 @@ sudo parted /dec/sdd print free
 sudo parted /dev/sdd print free
 pac systemd-swap
 S enable systemd-swap
-v /etc/systemd/swap.conf
 man swap.conf 5
 echo $CONFIG_ZSWAP_DEFAULT_ON
 grep -R . /sys/module/zswap/parameters
-sysctl vm.swappiness
 v /etc/sysctl.d/99-swappiness.conf
 v /etc/systemd/system/timers.target.wants/reflector.timer
 ssh pi pihole -t
@@ -3470,12 +3448,10 @@ betterlockscreen -r 1920x1200 -u /usr/share/pixmaps/big-sur-8-top.jpg
 ncdu pics
 mnt
 mnt ssd
-mnt mx100
 cd Season4
 fd ~/downloads/torrents -e mkv
 fd . ~/downloads/torrents -e mkv
 fd . ~/downloads/torrents -e mkv --exec mv {} ./ ;
-v /etc/pacman.d/gnupg/gpg.conf
 pacman-key --refresh-keys
 sudo pacman-key --refresh-keys
 xrandr | awk '/ connected / {print $1;}'
@@ -3615,8 +3591,6 @@ encode-media -f /media/mx100/Videos/Call_of_Duty__Black_Ops_Cold_War/CallofDutyB
 efibootmgr -h
 efibootmgr
 sudo rm -rf /boot/loader/entries/arch-zen.conf
-v /boot/loader/entries/arch-lts.conf
-v /boot/loader/loader.conf
 efibootmgr -B -b 0001
 sudo efibootmgr -B -b 0001
 hyperfine rf
@@ -3672,7 +3646,6 @@ pac openshot
 pacr openshot
 sudo pacr openshot
 pac shotcut
-nvtop
 ls /sys/class/drm/card0/device/vendor
 cat /sys/class/drm/card0/device/vendor
 ls .con
@@ -3787,7 +3760,6 @@ S start ntp-date.service
 ls /etc/systemd/system/
 ls /etc/systemd/system/ntpdate.service.d
 locate ntp*service
-systemctl list-unit-files | grep enabled
 S start ntpdate.service
 vnstat
 ls .cache/.fr-*
@@ -3804,13 +3776,11 @@ git clone https://github.com/NVCC-ITP-132-BWS/Assignment2_Sequence-Machine-Compi
 atom Assignment2_Sequence-Machine-Compiler/
 monitors=($(polybar -m | cut -d ':' -f 1))
 echo $monitors
-polybar -m | cut -d ':' -f 1
 echo $monitors[1]
 echo $monitors[2]
 ls .bin/*
 rg start .config/bspwm/autostart.sh
 /home/rob/.bin/start picom dunst dpms obs polkit
-z itp
 pac rsnapshot
 v /var/lib/systemd/timers/stamp-rsnapshot-day.timer
 yay rsnapshot-systemd
@@ -3835,7 +3805,6 @@ rmr rob@192.168.2.21
 ssh bb touch /data/backups/rob-pc/backup.marker
 rsync_backup.sh / rob@192.168.2.21/data/backups/rob-pc /home/rob/docs/backup_exclude.txt --dry-run
 rsync_backup.sh / rob@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt --dry-run
-v .bin/rsync_backup.sh
 echo $LOG_DIR
 ls .
 ls ./
@@ -3852,17 +3821,14 @@ less docs/logs/rsync_backup/2020-10-28-123938.log
 mv docs/logs/2020-10-28-121435.log docs/logs/rsync_backup
 grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-10-28-124655.log'
 system-backup
-man rsync
 Assignment2_Sequence-Machine-Compiler
 gcp smc.cpp
 ./a.out
 less OUT,\ Error\ Logs/output.txt
 open /home/rob/school/ITP132/Assignment2_Sequence-Machine-Compiler/Assignment 2 - Sequence Machine Compiler.pdf
 open "/home/rob/school/ITP132/Assignment2_Sequence-Machine-Compiler/Assignment 2 - Sequence Machine Compiler.pdf"
-ssh bb
 polybar -c .config/polybar/config2
 polybar -c .config/polybar/config2 bar
-killall polybar
 fd .stl
 v downloads/files/node804_adapter.stl
 man nnn
@@ -3891,7 +3857,6 @@ rg -H NNN  .zsh
 rg -H NNN .zshrc
 S enable backup.timer
 ip
-ip a
 tail -f .xsession-errors\\
 
 v .bin/pbar.sh
@@ -3914,7 +3879,6 @@ v .config/pia/US_Washington_DC.ovpn
 sudo pacman -U downloads/openvpn-2.4.9-2-x86_64.pkg.tar.zst
 vpn-toggle
 yay -S plex-media-player
-sudo pacdiff
 ls .avidemux6/config3
 v .avidemux6/config3
 pacr avidemux
@@ -3925,7 +3889,6 @@ pac wireguard
 pac wireguard-tools
 pac wireguard-tools wireguard-dkms
 yay networkmanager-wireguard
-S restart NetworkManager
 less .xsession-errors.old
 ls .bin/nullify
 df -h
@@ -3959,7 +3922,6 @@ v .bin/mkszn
 rmr Season\{01..04\}
 rmr Season0*
 mkszn 7
-man mv
 pf
 last reboot
 ssh rob@192.168.2.41
@@ -3995,7 +3957,6 @@ fd -e mkv
 fd -e mkv -x mv {} ./
 chmod +x downloads/pia-linux-2.5.1-05676.run
 ./downloads/pia-linux-2.5.1-05676.run
-ls downloads
 ls /opt/piavpn/bin/pia-client
 .//opt/piavpn/bin/pia-client
 ./opt/piavpn/bin/pia-client
@@ -4004,7 +3965,6 @@ nullify /opt/piavpn/bin/pia-client
 /opt/piavpn/bin/pia-client -h
 ls /opt/piavpn/bin/
 /opt/piavpn/bin/piactl
-piactl background enable
 piactl connect
 v /opt/piavpn/bin/run-in-terminal.sh
 v /opt/piavpn/bin/openvpn-updown.sh
@@ -4025,7 +3985,6 @@ xdo show -N privateinternetaccess
 xdo close -N privateinternetaccess
 which pia-client
 sleep 1.5s
-b
 piactl disconnect
 v .bin/vpn-toggle
 mks .bin/pia.sh
@@ -4067,7 +4026,6 @@ region="$(piactl get regions | fzf)"\
 	piactl set region "$region"
 piactl set region "$region"
 piactl set region "$(piactl get regions | fzf)"
-piactl set region auto
 vpn toggle
 rofi -h
 rofi -h | grep text
@@ -4102,8 +4060,6 @@ pgrep pia
 btm -b
 start pia
 v .bin/start
-/opt/piavpn/bin/pia-client --quiet\
-
 start pia-client
 v .bin/nullify
 2>/dev/null 1>&2 /opt/piavpn/bin/pia-client --quiet &
@@ -4127,14 +4083,11 @@ rmr this
 pacr plexmediaplayer
 sudo pacr plexmediaplayer
 sudo pacr plex-media-player
-lsblk
-v /etc/pacman.conf
 mkszn 4
 mv ~/downloads/torrents/\[LostYears\]\ Sword\ Art\ Online\ -\ Alicization\ -\ War\ of\ Underworld\ -\ 13\ \(S04E13\)\ \(WEB\ 1080p\ Hi10P\ AAC\)\ \[04780030\].mkv ./SwordArtOnline_S04E13.mkv
 pac pkg-config
 timers
 alias udev-reload
-pacdiff
 sudoedit /etc/pacman.conf
 rename -nv -- 's/-\w+?[.]mkv$/.mkv/' *.mkv
 which rename
@@ -4177,7 +4130,6 @@ pac viewnoir
 v .bin/vw
 vw pics/backgrounds/macOS/ColorBurst3-tall.jpg pics/backgrounds/macOS/ColorBurst2-tall.jpg
 man viewnior
-fv
 ll .thumbnails
 fd .thumbnails | wc -l
 fd .thumbnails
@@ -4230,7 +4182,6 @@ archlinux-java status
 pac minecraft-launcher
 filecount
 filecount .local
-filecount .local/share
 zsh
 rmr .local/share/multimc
 journalctl -r
@@ -4246,7 +4197,6 @@ pkill -9 picom
 picom --experimental-backends -b
 kill -6 picom
 pkill -6 picom
-pbar.sh
 start pbar
 pactree -r 
 pactree -r fd
@@ -4274,7 +4224,6 @@ bspc query -N -n .leaf
 xprop
 bspc query -N -n '.leaf.!window'
 pkill -9 thunar
-reboot
 thunar
 yay -S picom-git
 yay -S --rebuild picom-git
@@ -4304,7 +4253,6 @@ heif-convert CatalinaSilhouette.heic CatalinaSilhouette.jpg
 mks persist
 fd $HOME -H -a -t d -t l
 man fzf
-v .aliases
 z | cut -f2
 z | cut -d' ' -f2 
 z | cut -d'\t' -f2 
@@ -4430,7 +4378,6 @@ ls /tmp
 killall picom
 xcompmgr -c -l0 -t0 -r0 -o.00
 mkszn 2
-ls docs
 less docs/important/pword
 ls .thumbnails
 ls .thumbnails/normal/
@@ -4511,19 +4458,16 @@ pacman -Qs | grep 5.15.1
 yay -S qt5-styleplugins
 yay -S --rebuild qt5-styleplugins
 yay -S --rebuild aur/qt5-styleplugins
-fkill
 mv /home/rob/.local/share/data/qBittorrent/ /home/rob/.local/share/qBittorrent/
 ls /home/rob/.local/share/qBittorrent/
 rmr /home/rob/.local/share/data/qBittorrent/
 ls /home/rob/.local/share/data/qBittorrent/
 sudo rm -rf /home/rob/.local/share/data/qBittorrent/
-qbittorrent
 pacr transmission-gtk tranmission-cli
 sudo pacr transmission-gtk tranmission-cli
 sudo pacr transmission-gtk 
 sudo pacr transmission-cli
 wall.sh -U pics/backgrounds/macOS/ColorBurst5-tall.jpg
-wall.sh -U pics/backgrounds/macOS/ColorBurst4-tall.jpg
 ndu $media/shows/
 ndu $media/movies
 fd pword
@@ -4540,11 +4484,9 @@ rec
 receipts
 find . -name "* *" -type f | /usr/bin/vendor_perl/rename 's/ //g'
 remove_spaces
-cd
 mv .bin/remove_spaces .bin/rmspaces
 ls .bin
 rm .bin/rename-file
-rmorphans
 yay -Sc
 pacman -Qqme > /home/rob/docs/yay-pkgs > less
 rm less
@@ -4554,7 +4496,6 @@ pacman -Qqme > /home/rob/docs/yay-pkgs $(< less)
 touch .bin/thing
 chmod +x '$*'
 chx .bin/*
-lb
 rm .bin/thing
 man tee
 pacman -Qqme | tee test | less
@@ -4576,7 +4517,6 @@ v /usr/share/applications/org.qbittorrent.qBittorrent.desktop
 fd -i rar -E mkv -E mp4
 cd ../movies
 fd -i rar 
-vf
 shortinfo ./TheMandalorian_S02E01.mkv
 shortinfo ./the.mandalorian.s02e05.1080p.web.h264-ggwp.mkv
 rg case .bin
@@ -4599,23 +4539,19 @@ shortinfo /media/blueberry/media/shows/Mandalorian/Season01/The_Mandalorian_S01E
 echo $ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS
 echo $ZSH_AUTOSUGGEST_ACCEPT_WIDGETS
 yay_pkgs
-pacrepo
 cat
 zsh --vers
 zsh --version
-vfm
 shortinfo Tenet.mkv
 du -h
 [[ -e "$HOME"/.config/zsh/antigen.zsh ]] && \\
    source "$HOME"/.config/zsh/antigen.zsh || curl -L git.io/antigen > "$HOME"/.config/zsh/antigen.zsh 
-pkglist
 fzpkgs
 sudo pacr autojump-rs
 fzp
 fzpkgs 
 antigen bundle zsh-users/zsh-syntax-highlighting
 sudo pacr $(fzpkgs )
-se
 fzpac
 less .zshrc.zwc
 mv .antigen .config/antigen
@@ -4624,19 +4560,243 @@ mv .config/antigen .config/zsh
 la .config
 v .zshrc
 echo ${(o)color}
-bb
 dotu
 ls .config
-fzpacr
 .config
 sudo rmr microsoft-edge-dev vidcutter transmission nwg-launchers plex.tv LosslessCut 
-ls
-yay
 rmr .zshrc.zwc /home/rob/.config/zsh/antigen/*.zwc
-la
 ls /home/rob/.config/zsh/antigen/*.zwc
 udb
 locate zwc
 antigen cache-gen
 antigen-reset
+pacr timeshift
+sudo pacr timeshift
+rmorphans
+alias fzpkgs
+function fzpkgs
+alias fzpacr
+which fzpkgs
+sudo pacman -Rncs $(pacman -Qqe | fzf --height=100% --preview 'pacman -Qi {}' --layout=reverse)
+rmspaces
+Subs
+man zsh options
+man zshoptions
+cat .bin/vw
+rm .bin/vw
+mv .bin/color* .local/bin
+mv .bin/encode-media .bin/ncodr
+pacf ncodr
+se 
+ln
+lb
+cd /yay
+ls /root
+sudo ls /root
+sudo mv /root/yay ./
+sudo chown rob:rob ./yay
+sudo chown rob:rob ../yay
+sudo chown -r rob:rob ../yay
+sudo chown -R rob:rob ../yay
+sudo makepkg -si
+yay < /home/rob/docs/pacman-pkgs
+yay -< /home/rob/docs/pacman-pkgs
+yay - < /home/rob/docs/pacman-pkgs
+pacman -S reflector
+sudo pacman -S reflector
+yay -S - < /home/rob/docs/pacman-pkgs
+ls /etc/etc
+mv /etc/etc/* /etc
+sudo mv -f /etc/etc/* /etc/
+man mv
+sudo mv -f /etc/etc/ /etc/
+realpath
+realpath PKGBUILD
+cd yay
+passwd rob
+cd /home/rob/yay
+makepkg -si
+v ../docs/pacman-pkgs
+v /etc/pacman.conf
+pacman -Syy
+sudo pacman -Syy
+pacman-key --init
+yay -S - < ../docs/pacman-pkgs
+cd
+v 
+v docs/pacman-pkgs
+pacman -S - < ../docs/pacman-pkgs
+sudo pacman -S - < docs/pacman-pkgs
+v /etc/pacman.d/gnupg/gpg.conf
+sudo rm -rf /etc/pacman.d/gnupg 
+sudo pacman --init
+sudo pacman-keys --init
+sudo pacman-key --init
+sudo pacman-key --populate archlinux
+ssh
+ssh-keygen
+systemctl enable --now NetworkManager
+sudo rsync -aP rob@192.168.2.21:/data/backups/rob-pc/latest/etc /
+ll /root
+chown root:root -R /etc
+sudo chown root:root -R /etc
+S enable lightdm
+pac lua
+yay ungoogled-chromium
+S enable --now NetworkManager
+sudo rm /etc/pam.d/i3lock
+unzip --help
+unzip downloads/Overpass.zip 
+mkdir overpass
+mv Overpass* overpass
+sudo mv overpass /usr/share/fonts
+ls /usr/share/fonts
+fc-cache
+git clone https://github.com/skywind3000/z.lua.git
+mv z.lua .local/share/
+caps2esc
+sudo rm /etc/systemd/system/betterautolock.service
+sudo rm /etc/xdg/picom.conf.example
+v docs/yay-pkgs
+yay -S - < docs/yay-pkgs
+wall.sh -U pics/backgrounds/macOS/ColorBurst4-tall.jpg
+yay -S - < docs/pacman-pkgs
+pac polybar
+sudo rm /etc/NetworkManager/conf.d/wgpia.conf
+yay piavpn-bin
+pacman -Qme | grep polybar
+pacman -Qne | grep polybar
+git clone https://github.com/NeverDecaf/chromium-web-store.git
+ls docs
+ls /
+sudo mkdir /media
+sudo chown -R rob:rob /media
+mkdir /media/{mx100,ssd,windows,bb-dir,blueberry,laptop}
+ls /media
+pac ntfs-3g
+umount -a
+lsblk
+mount -a
+uid
+id 
+ll /media
+ll /media/mx100
+sudo umount /media/mx100
+sudo cp /boot/loader/entries/arch-lts.conf /boot/loader/entries/arch.conf
+pac sshfs
+v /boot/loader/entries/arch.conf
+v /boot/loader/entries/arch-lts.conf
+pkglist
+v .aliases
+fzpacr
+S enable --now systemd-swap
+v /etc/systemd/swap.conf
+ sysctl vm.swappiness
+vf
+v .bin/rsync_backup.sh
+man rsync
+ls /etc/
+S enable ufw
+systemctl list-unit-files | grep enabled
+ufw status
+sudo ufw status
+sudo system-backup
+sudo ls /root/.ssh
+sudo mv .ssh/config /root/.ssh/
+sudo mv .ssh/known_hosts /root/.ssh/
+sudo mv .ssh/authorized_keys /root/.ssh/
+ll /root/.ssh/
+sudo ll /root/.ssh/
+sudo chown -R root:root /root/.ssh/
+v /etc/ssh/ssh_config
+v /etc/ssh/sshd_config
+sudo ssh-keygen
+sudo ssh-copy-id rob@192.168.2.21
+sudo ssh rob@192.168.2.21
+sudo /home/rob/.bin/rsync_backup.sh / rob@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt
+ls /etc
+ll /etc
+pac osync
+pac osync.sh
+yay osync
+man osync
+osync.sh --help
+v /usr/share/icons/default/index.theme
+fv
+ls ~/.local/share/icons/
+rg capitaine
+rg --hidden capitaine
+/opt/piavpn/bin/pia-client --quiet\
+
+nullify /opt/piavpn/bin/pia-client --quiet
+piactl set region auto
+/opt/piavpn/bin/pia-client --quiet
+piactl background enable
+v /etc/environment
+v ~/.config/Trolltech.conf\
+
+v /etc/xdg/Trolltech.conf
+pac gtk2
+yay -S qt5-styleplugins --rebuild
+ssh rob@192.168.2.21
+ls .ssh
+sudo cp /root/.ssh/au* .ssh
+sudo cp /root/.ssh/authorized_keys .ssh
+sudo cp /root/.ssh/known_hosts .ssh
+sudo cp /root/.ssh/config .ssh
+ll .ssh
+sudo chown -R rob:rob .ssh
+ssh bb
+mnt bb
+vfm
+qbittorrent
+filecount .local/share
+mnt mx100
+lsblk -f
+mnt windows
+v /boot/loader/loader.conf
+v /etc/pacman.d/hooks/100-systemd-boot.hook
+bootctl update
+sudo bootctl update
+reboot
+v /home/rob/.config/polybar/config
+polybar -m | cut -d ':' -f 1
+killall polybar
+pbar.sh
+la
+git clone https://github.com/NVCC-ITP-132-BWS/Assignment2_Sequence-Machine-Compiler https://github.com/NVCC-ITP-132-BWS/Assignment2_1_Stream_Processing_Functions https://github.com/NVCC-ITP-132-BWS/Assignment3_Image_Processor https://github.com/NVCC-ITP-132-BWS/Assignment4_Hashing
+git clone {https://github.com/NVCC-ITP-132-BWS/Assignment2_Sequence-Machine-Compiler,https://github.com/NVCC-ITP-132-BWS/Assignment2_1_Stream_Processing_Functions,https://github.com/NVCC-ITP-132-BWS/Assignment3_Image_Processor,https://github.com/NVCC-ITP-132-BWS/Assignment4_Hashing}
+git clone https://github.com/NVCC-ITP-132-BWS/Assignment2_Sequence-Machine-Compiler
+git clone https://github.com/NVCC-ITP-132-BWS/Assignment2_1_Stream_Processing_Functions
+git clone https://github.com/NVCC-ITP-132-BWS/Assignment3_Image_Processor
+git clone https://github.com/NVCC-ITP-132-BWS/Assignment4_Hashing
+cd school/ITP132/Assignment2_1_Stream_Processing_Functions
+ls
+gcp assignment_2_1.cpp -o assignment_2_1
+./assignment_2_1
+fkill
+S restart NetworkManager
+ping 8.8.8.8
+z itp
+se
+ytk
+ssh ytk
+b
+yay minecraft-launcher
+ls downloads
+nvtop
+pacdiff
+sudo pacdiff
+pacrepo
+bb
 yay
+ip s
+ip a
+ssh bb
+bb
+ssh peach
+v .ssh/config
+ssh peach
+ssh pi
+ping 192.168.2.451
+ping 192.168.2.41

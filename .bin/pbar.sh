@@ -7,7 +7,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Show on all monitors. Systray icons always go in the main one
 monitors=($(polybar -m | cut -d ':' -f 1))
-main=1
+main=0
 
 for ((i=0; i<${#monitors[@]}; i++)); do
     if [ $i -eq $main ]; then
@@ -20,4 +20,3 @@ for ((i=0; i<${#monitors[@]}; i++)); do
         unset TRAY_POS
     fi
 done
-polybar pbar

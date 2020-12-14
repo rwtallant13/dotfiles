@@ -63,7 +63,7 @@ super + alt + c
 
 # move to blueberry
 super + m
-	/usr/bin/xfce4-terminal -e 'vifm /home/rob/downloads/torrents /media/blueberry/'
+	/usr/bin/xfce4-terminal -e 'zsh -ic "vifm /home/rob/downloads/torrents /media/blueberry/"'
 
 # rofi
 alt + space
@@ -99,7 +99,7 @@ super + t
 
 # vifm
 super + f
-	/usr/bin/xfce4-terminal -e vifm
+	/usr/bin/xfce4-terminal -e 'zsh -ic "vifm"'
 
 # tui file manager
 super + n

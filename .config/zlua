@@ -9,8 +9,8 @@
 /etc/systemd/system|25|1605468468
 /home/rob/projects|2|1605468610
 /home/rob/school|32|1605469463
-/home/rob/school/ITP132|78|1607025508
-/home/rob/.config|14|1606597654
+/home/rob/school/ITP132|81|1607734620
+/home/rob/.config|15|1607580257
 /home/rob/.config/lf|19|1599774116
 /home/rob/.local|5|1599852305
 /home/rob/.local/share|3|1606940732
@@ -32,4 +32,7 @@
 /home/rob/pics|2|1605468420
 /home/rob/.config/GIMP/2.10|1|1605728524
 /home/rob/docs/receipts|1|1606162981
-/home/rob/school/ITP132/Assignment2_1_Stream_Processing_Functions|2|1607021480
+/home/rob/school/ITP132/Assignment2_1_Stream_Processing_Functions|3|1607379796
+/home/rob/.config/vifm|1|1607547186
+/home/rob/.config/autostart|1|1607707157
+/home/rob/school/ITP132/FinalExam|2|1607734631

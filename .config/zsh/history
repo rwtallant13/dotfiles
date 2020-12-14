@@ -1197,7 +1197,6 @@ mv downloads/*.jar downloads/minecraft
 dns.sh -h
 dns.sh google
 dns.sh -c
-dig youtube.com
 dns.sh pi
 v .config/polybar/modules
 alias myip
@@ -1349,7 +1348,6 @@ pacr 	ttf-anonymous-pro
 sudo pacr 	ttf-anonymous-pro
 sudo pacr office-code-pro
 v /etc/shadow.pacnew
-v /etc/shadow
 V /etc/shadow
 sudo diff /etc/shadow /etc/shadow.pacnew
 pac viewnior
@@ -1439,7 +1437,6 @@ rm minecraft_compass/*
 pac termite
 true true
 which discord
-ls /opt
 rg '$?' .bin
 rg '?' .bin
 rg '\$?' .bin
@@ -1565,7 +1562,6 @@ fd -t f --exec-batch mv {} ./
 rm -r Season\ *
 nmap
 S stop NetworkManager
-v .ssh/known_hosts
 df -ha GPUCACHE
 df -ha GPUcache
 du -ha GPUCache
@@ -2032,7 +2028,6 @@ yay freeglu
 yay gl-gsync-demo
 gl-gsync-demo
 ssh-copy-id
-ssh-copy-id pi
 ssh-copy-id pi -f
 v .ssh/authorized_keys
 grep TERM .*
@@ -2083,8 +2078,6 @@ pac expac
 expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
 pac python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expacchromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expacchromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
-pacman -Scc
-sudo pacman -Scc
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity --force
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl
@@ -2213,7 +2206,6 @@ locate .pub
 cat /home/rob/.ssh/id_rsa.pub
 xcat .ssh/id_rsa.pub
 ssh 68.183.60.201
-v .ssh/config
 cat .ssh/id_rsa
 git pull https://github.com/dylanaraps/pfetch.git
 make
@@ -2426,7 +2418,6 @@ less docs/backup/backup_exclude.txt
 rm -rf .bin/rsync_backup.sh
 rdiff-backup --help
 ls docs/backup/
-ssh root@192.168.2.21
 ssh bb "bash"
 man rdiff
 v /etc/systemd/system/backup.timer
@@ -2714,7 +2705,6 @@ v ~/.zshrc
 fd -H -I | wc -l
 time fd -H -I | wc -l
 time fd -H | wc -l
-start sxhkd
 mkdir lf
 locate lfrc
 v /usr/share/doc/lf/lfrc.example
@@ -2898,12 +2888,10 @@ pgrep firefoc
 pgrep Firefox
 ssh bb -e /home/rob/bin/mcctrl
 scp bb:bin/mcctrl .bin
-man bash
 ssh bb 'bash -s' < .bin/mcctrl
 ssh bb 'bash -c /home/rob/bin/mcctrl'
 ssh bb /opt/minecraft/tools/mcrcon/mcrcon -H localhost -P 25576 -p Waterb0ttle54 -t
 ssh bb '/opt/minecraft/tools/mcrcon/mcrcon -H localhost -P 25576 -p Waterb0ttle54 -t'
-S restart sshd
 ssh bb mcctrl
 ssh bb /home/rob/bin/mcctrl
 ssh bb which mcctrl
@@ -2946,7 +2934,6 @@ fd . RARBG*
 fd RARBG* .
 fd RARBG* . -e exe -e txt --exec rm -rf {};
 fd RARBG* . -e exe -e txt
-fd -t f | wc -l
 shortinfo JoJo-S04E01-GoldenWind.mp4
 mv downloads/minecraft/BSL_v7.2.zip .minecraft/shaderpacks
 mv downloads/minecraft/SEUS-Renewed-v1.0.1.zip .minecraft/shaderpacks
@@ -3090,7 +3077,6 @@ ls iZotope/
 tar cvzf izotope.tar.gz iZotope/
 ls iZotope
 sudo passwd
-man sudo
 pac spacaemanfm
 pac spacemanfm
 yay spacemanfm
@@ -3271,7 +3257,6 @@ pac read-edid
  sudo get-edid  | parse-edid
 sudo  sudo get-edid  | parse-edid
 sudo  sudo get-edid  | sudo parse-edid
-su
 xrandr -h
 xrandr --help
 man nvidia-settings
@@ -3440,7 +3425,6 @@ pacreport > pacreport.txt
 less pacreport.txt
 paccache
 paccache -h
-sudo pacman -Sc
 man pacreport
 ls /usr/share/pixmaps
 realpath /usr/share/pixmaps/big-sur-8-top.jpg
@@ -3690,7 +3674,6 @@ rmr .config/darktable/
 rmr .config/calcurse
 pacr calcurse
 sudo pacr calcurse
-ls .config/autostart
 rmr .config/pcmanfm
 sudo pacr pcmanfm
 avidemux3_qt5
@@ -3831,13 +3814,11 @@ polybar -c .config/polybar/config2
 polybar -c .config/polybar/config2 bar
 fd .stl
 v downloads/files/node804_adapter.stl
-man nnn
 nnn /media/blueberry/media
 nnn /media/blueberry/media /home/rob
 v .profile
 . ./.profile
 nnn -de
-nnn
 which nnf
 v /home/rob/.local/bin/nnf
 v /etc/systemd/system/backup.service
@@ -3923,13 +3904,11 @@ rmr Season\{01..04\}
 rmr Season0*
 mkszn 7
 pf
-last reboot
 ssh rob@192.168.2.41
 ssh pi@192.168.2.41 bash
 ssh pi@192.168.2.41 sh
 ssh pi@192.168.2.41 mv .bashrc .f
 ssh pi@192.168.2.41
-fd | wc -l
 fd -H | wc -l
 fd
 fd -t f
@@ -3965,7 +3944,6 @@ nullify /opt/piavpn/bin/pia-client
 /opt/piavpn/bin/pia-client -h
 ls /opt/piavpn/bin/
 /opt/piavpn/bin/piactl
-piactl connect
 v /opt/piavpn/bin/run-in-terminal.sh
 v /opt/piavpn/bin/openvpn-updown.sh
 rg rule .config/bspwm/bspwmrc
@@ -4037,7 +4015,6 @@ rofi -h | grep -C3 font
 vpn -r
 mv .bin/vpn .bin/pvpn
 mv .bin/vpn-nm .bin/nmvpn
-piactl
 sleep 3s && flameshot gui
 pgrep nm-applet
 start nm-applet
@@ -4056,7 +4033,6 @@ locate autostart
 v /home/rob/.config/autostart/pia-client.desktop
 pia-client --quiet
 start vpn
-pgrep pia
 btm -b
 start pia
 v .bin/start
@@ -4160,12 +4136,10 @@ pac libva-mesa-driver mesa-vdpau
 pac  libva-vdpau-driver
 pac libvdpau-va-gl
 yay  libva-vdpau-driver-chromium
-yay -Scc
 echo $VDPAU_DRIVER
 yay  -S libva-vdpau-driver-chromium
 v ~/.config/chromium-flags.conf
 ssh 192.168.2.21 -L 8888:localhost:80
-myip
 pacr minecraft-launcher
 pac multimc
 sudo pacr minecraft-launcher
@@ -4353,7 +4327,6 @@ fd rarbg.txt -e rm {}
 fd rarbg.txt -E rm {}
 fd rarbg.txt --exec rm {}
 fd rarbg.txt
-man fd
 fd '.' -t d --min-depth 1 
 fd  -t d --min-depth 1  '.'
 man find
@@ -4375,7 +4348,6 @@ fd  --min-depth 1 '\.'
 fd  --min-depth 1 '264' 
 fd  --min-depth 1 '264' | vidir -
 ls /tmp
-killall picom
 xcompmgr -c -l0 -t0 -r0 -o.00
 mkszn 2
 less docs/important/pword
@@ -4399,8 +4371,6 @@ mks dpms.sh
 realpath .bin/dpms.sh
 rmr .bin/start
 logout
-persist picom --experimental-backends
-last-backup
 persist "picom --experimental-backends" &
 tail -f .xsession-errors
 rg persist
@@ -4415,21 +4385,16 @@ fd -h
 fd . $HOME ./ 
 ssh root@192.168.2.41
 ssh -vvv pi
-ssh pi
 btm
 less .config/picom/log 
 ll .config/picom/log
 rm .config/picom/log
 sudo pacman -Fy
-pacu
 fzaux
-start picom
 unoconv -f pdf school/ITE221/11\ -\ Computer\ OS\ Functions\ I.pptx 
 unoconv -f pdf school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pptx 
 open school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pdf 
 ndu
-systemctl --failed
-sudo journalctl -p 3 -xb
 pac newsboat
 btm --theme
 btm -h
@@ -4469,7 +4434,6 @@ sudo pacr transmission-gtk
 sudo pacr transmission-cli
 wall.sh -U pics/backgrounds/macOS/ColorBurst5-tall.jpg
 ndu $media/shows/
-ndu $media/movies
 fd pword
 rm docs/important/pword
 lr docs
@@ -4483,11 +4447,9 @@ re
 rec
 receipts
 find . -name "* *" -type f | /usr/bin/vendor_perl/rename 's/ //g'
-remove_spaces
 mv .bin/remove_spaces .bin/rmspaces
 ls .bin
 rm .bin/rename-file
-yay -Sc
 pacman -Qqme > /home/rob/docs/yay-pkgs > less
 rm less
 pacman -Qqme > /home/rob/docs/yay-pkgs < less
@@ -4546,7 +4508,6 @@ shortinfo Tenet.mkv
 du -h
 [[ -e "$HOME"/.config/zsh/antigen.zsh ]] && \\
    source "$HOME"/.config/zsh/antigen.zsh || curl -L git.io/antigen > "$HOME"/.config/zsh/antigen.zsh 
-fzpkgs
 sudo pacr autojump-rs
 fzp
 fzpkgs 
@@ -4561,8 +4522,6 @@ la .config
 v .zshrc
 echo ${(o)color}
 dotu
-ls .config
-.config
 sudo rmr microsoft-edge-dev vidcutter transmission nwg-launchers plex.tv LosslessCut 
 rmr .zshrc.zwc /home/rob/.config/zsh/antigen/*.zwc
 ls /home/rob/.config/zsh/antigen/*.zwc
@@ -4572,13 +4531,11 @@ antigen cache-gen
 antigen-reset
 pacr timeshift
 sudo pacr timeshift
-rmorphans
 alias fzpkgs
 function fzpkgs
 alias fzpacr
 which fzpkgs
 sudo pacman -Rncs $(pacman -Qqe | fzf --height=100% --preview 'pacman -Qi {}' --layout=reverse)
-rmspaces
 Subs
 man zsh options
 man zshoptions
@@ -4617,7 +4574,6 @@ passwd rob
 cd /home/rob/yay
 makepkg -si
 v ../docs/pacman-pkgs
-v /etc/pacman.conf
 pacman -Syy
 sudo pacman -Syy
 pacman-key --init
@@ -4685,14 +4641,10 @@ sudo umount /media/mx100
 sudo cp /boot/loader/entries/arch-lts.conf /boot/loader/entries/arch.conf
 pac sshfs
 v /boot/loader/entries/arch.conf
-v /boot/loader/entries/arch-lts.conf
-pkglist
-v .aliases
 fzpacr
 S enable --now systemd-swap
 v /etc/systemd/swap.conf
  sysctl vm.swappiness
-vf
 v .bin/rsync_backup.sh
 man rsync
 ls /etc/
@@ -4714,7 +4666,6 @@ sudo ssh-keygen
 sudo ssh-copy-id rob@192.168.2.21
 sudo ssh rob@192.168.2.21
 sudo /home/rob/.bin/rsync_backup.sh / rob@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt
-ls /etc
 ll /etc
 pac osync
 pac osync.sh
@@ -4731,13 +4682,11 @@ rg --hidden capitaine
 nullify /opt/piavpn/bin/pia-client --quiet
 piactl set region auto
 /opt/piavpn/bin/pia-client --quiet
-piactl background enable
 v /etc/environment
 v ~/.config/Trolltech.conf\
 
 v /etc/xdg/Trolltech.conf
 pac gtk2
-yay -S qt5-styleplugins --rebuild
 ssh rob@192.168.2.21
 ls .ssh
 sudo cp /root/.ssh/au* .ssh
@@ -4746,9 +4695,7 @@ sudo cp /root/.ssh/known_hosts .ssh
 sudo cp /root/.ssh/config .ssh
 ll .ssh
 sudo chown -R rob:rob .ssh
-ssh bb
 mnt bb
-vfm
 qbittorrent
 filecount .local/share
 mnt mx100
@@ -4756,14 +4703,10 @@ lsblk -f
 mnt windows
 v /boot/loader/loader.conf
 v /etc/pacman.d/hooks/100-systemd-boot.hook
-bootctl update
-sudo bootctl update
-reboot
 v /home/rob/.config/polybar/config
 polybar -m | cut -d ':' -f 1
 killall polybar
 pbar.sh
-la
 git clone https://github.com/NVCC-ITP-132-BWS/Assignment2_Sequence-Machine-Compiler https://github.com/NVCC-ITP-132-BWS/Assignment2_1_Stream_Processing_Functions https://github.com/NVCC-ITP-132-BWS/Assignment3_Image_Processor https://github.com/NVCC-ITP-132-BWS/Assignment4_Hashing
 git clone {https://github.com/NVCC-ITP-132-BWS/Assignment2_Sequence-Machine-Compiler,https://github.com/NVCC-ITP-132-BWS/Assignment2_1_Stream_Processing_Functions,https://github.com/NVCC-ITP-132-BWS/Assignment3_Image_Processor,https://github.com/NVCC-ITP-132-BWS/Assignment4_Hashing}
 git clone https://github.com/NVCC-ITP-132-BWS/Assignment2_Sequence-Machine-Compiler
@@ -4771,14 +4714,8 @@ git clone https://github.com/NVCC-ITP-132-BWS/Assignment2_1_Stream_Processing_Fu
 git clone https://github.com/NVCC-ITP-132-BWS/Assignment3_Image_Processor
 git clone https://github.com/NVCC-ITP-132-BWS/Assignment4_Hashing
 cd school/ITP132/Assignment2_1_Stream_Processing_Functions
-ls
-gcp assignment_2_1.cpp -o assignment_2_1
-./assignment_2_1
-fkill
 S restart NetworkManager
 ping 8.8.8.8
-z itp
-se
 ytk
 ssh ytk
 b
@@ -4788,15 +4725,200 @@ nvtop
 pacdiff
 sudo pacdiff
 pacrepo
-bb
-yay
 ip s
-ip a
-ssh bb
-bb
-ssh peach
 v .ssh/config
-ssh peach
-ssh pi
 ping 192.168.2.451
 ping 192.168.2.41
+ip a
+man shutdown
+bn
+dig 176.113.74.44
+cd Assignment2_1_Stream_Processing_Functions
+gcp assignment_2_1.cpp -o assignment_2_1
+./assignment_2_1
+ssh peach
+dig youtube.com
+ssh-copy-id pi
+myip
+v .aliases
+last reboot
+ssh pi
+yay -S chromium-widevine
+scp bb:tautulli.backup-20201208172514.db ~/
+man sudo
+pac redshift-gtk
+yay -S redshift-gtk
+pac redshift
+redshift.sh
+yay -S plata-theme
+gsettings set org.gnome.desktop.interface gtk-theme Plata-Compact
+yay -S qt5-styleplugins --rebuild
+yay-pkgs
+pacman-pkgs
+sethue off
+pac python-pip
+pac python3-pip
+sudo pip3 install hue_plus
+pac portaudio
+qbittorrent --help
+pacman -S qbittorrent-cli
+sudo pacman -S qbittorrent-cli
+sudo pacman -S qbittorrent-nox
+qbittorrent-nox --help
+sudo ufw allow 8085
+fd -e txt -E rm {}
+fd -e txt -x rm {}
+fd -e txt
+fd -e jpg
+fd -e jpg -x rm {}
+fd -e website
+fd -e website -x rm {}
+fd -e mp4
+fd -e mkv | wc -l
+fd  | wc -l
+fd -t f | wc -l
+fd -t f 
+fd -e png
+fd -e png -x rm {}
+fd -t f -X mv ./
+fd -t f -x mv ./
+fd -t f -x mv {} ./
+man mkdir
+mkszn 22
+man nnn
+ndu $media/movies
+su
+ssh root@192.168.2.21
+man ssh-copy-id
+ssh-copy-id root@192.168.2.21
+ssh bbroot
+/home/rob/.bin/rsync_backup.sh / root@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt
+last-backup
+grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-12-09-142948.log'
+S restart sshd
+v /etc/pacman.conf
+pac xidlehook
+yay xidlehook
+ls /home/rob/.local/share/cargo/registry/src/
+ls /home/rob/.local/share/cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.4/src
+sudo /home/rob/.bin/rsync_backup.sh / root@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt
+cd .config/vifm
+v colors/Default.vifm
+sudo mkdir -p /etc/opt/chrome/policies/managed/ && echo '{ "URLWhitelist": ["magnet://*"] }' |sudo tee /etc/opt/chrome/policies/managed/whitelist.json
+ps aux
+pac gvfs
+pac thunar-volman
+pacu
+fzpkgs
+fkill 
+lightdm-gtk-greeter-settings-pkexec
+/home/rob/.bin/persist picom --experimental-backends
+start picom
+start picom &
+/home/rob/.bin/start picom &
+fkill
+persist picom --experimental-backends
+ls .config/autostart
+killall picom
+la
+ls .config
+.config
+rmr LosslessCut microsoft-edge-dev nwg-launchers plex.tv QtProject transmission vidcutter 
+ls /etc
+pac rmlint
+rmlint -h
+rmlint 
+v /home/rob/.config/rmlint.json
+systemctl --failed
+v /etc/shadow
+journalctl -u shadow.service
+pacman -Qi shadow
+pac shadow
+pacman -Qkk shadow
+pacrepairfile
+pacrepairfile -h
+pacrepairfile --package shadow
+pacrepairfile --package=shadow
+sudo pacrepairfile --package=shadow
+sudo pacrepairfile /etc/shadow
+v /etc/passwd
+S restart shadow.service
+journalctl -r -u shadow.service
+S status shadow.service
+rmorphans
+pacman -Scc
+sudo pacman -Scc
+sudo pacman -Sc
+yay -Sc
+rmlint
+/home/rob/rmlint.sh -h
+/home/rob/rmlint.sh n
+sudo find / -xtype l -print
+sudo find /home -xtype l -print -
+sudo find /home -xtype l -print 
+rmr .steam
+ls .steam
+journalctl -p 3 -xb
+sudo journalctl -p 3 -xb
+vfb
+scp -r school/ITP132/Assignment2_1_Stream_Processing_Functions rob-laptop:~/
+ssh rob-laptop
+v .ssh/known_hosts
+scp -r school/ITP132/Assignment2_1_Stream_Processing_Functions laptop:~/
+scp -r school/ laptop:~/school
+LC_ALL=C pacman -V|sed -r 's#[0-9]+#e44#g'|md5sum|cut -c1-6
+ssh bb
+S restart plexmediaserver
+bb
+rust update stable
+pkglist
+pacr piavpn-bin
+nnn
+pvpn client
+pgrep pia
+se
+pia-client
+piactl background enable
+piactl
+piactl connect
+piactl -v connect
+piactl -V connect
+piactl -d
+piactl --debug
+piactl --debug connect
+piactl resetsettings
+sudo pacr piavpn-bin
+ls /opt
+rmr /opt/piavpn
+sudo rmr /opt/piavpn
+yay -Scc
+yay -S piavpn-bin
+pkill pia
+sudo systemctl enable --now piavpn.service
+atom ./
+rm final.spp
+cd school/ITP132/FinalExam
+cat grades.txt
+cat gradeFile.txt
+rm grades.txt
+rm gradeFile.txt
+cat assignments.txt
+remove_spaces
+rmspaces
+mv ITP132-FinalExam.png design_UML.png
+ls
+z itp
+FinalExam
+gcp final.cpp -o final
+./final
+man fd
+vf
+vfm
+man bash
+man zsh
+start sxhkd
+bootctl update
+reboot
+v /boot/loader/entries/arch-lts.conf
+sudo bootctl update
+yay

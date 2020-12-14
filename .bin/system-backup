@@ -4,7 +4,7 @@
 
 _backup(){
     sleep 3s
-	/home/rob/.bin/rsync_backup.sh / rob@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt
+	/home/rob/.bin/rsync_backup.sh / root@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt
 }
 
 _sleep(){

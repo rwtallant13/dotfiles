@@ -37,7 +37,7 @@ colorscheme Default
 set timefmt=%m/%d\ %H:%M
 
 " Custom column layout
-windo set viewcolumns=-{name}..,10{size},15{atime}
+windo set viewcolumns=-15.5{atime},-10.5{size},-{name}..
 
 " Show list of matches on tab completion in command-line mode
 set wildmenu
@@ -100,22 +100,32 @@ map <C-l> <C-w>l
 map <C-o> <C-w>o
 map <C-s> <C-w>s
 map <C-v> <C-w>v
+
+" basics
 nnoremap T :!nout thunar <cr>
 nnoremap ! :shell<cr>
 nnoremap s :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 nnoremap o :file &<cr>l
-cnoremap ndu !nnn -S<cr>
-map ,f :filter
+
+" invert sorting
 map SS :invert o <cr>
+
+" select all
 nnoremap <C-a> :norm ggVG<cr><cr>
-qnoremap <s-tab> :norm gt
+
 " substitute in all files
 nnoremap ca :%s/
+
+" show background jobs
 nnoremap J :jobs<cr>
+
+" put in background
 nnoremap P :put! &<cr>
-nnoremap H :history <cr>
+
+" get real size of all files
+nnoremap ndu :norm ggVGga <cr>
 
 " toggle between sorting: by name <--> by size <--> by mtime
 command! togglesort
@@ -131,6 +141,7 @@ command! togglesort
          \ |endif
 nnoremap SA :togglesort<cr>
 
+
 " yank current directory path into the clipboard
 nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
 
@@ -143,18 +154,18 @@ nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') 
 " yank root of current file's name into the clipboard
 nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
 
-command! FZFcd :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME  ./ -H -a -t d -t l | fzf --height 10 --layout=default 2>/dev/tty'))
+
+command! FZFcd :execute 'cd "'.system('fd . ./ -H -a -t d | fzf 2>/dev/tty').'"'
+
+command! FZFcdHome :execute 'cd "'.system('fd . $HOME -t d -H -a | fzf 2>/dev/tty').'"' | :redr
+
 command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME ./ -H -a | fzf  --height 10 --layout=default 2>/dev/tty'))
 
-nnoremap <c-f> :FZFcd<cr>
-nnoremap <c-g> :FZFfind<cr>
-
-command! FZFjump :set noquickview | :execute 'goto' fnameescape(term('zsh -ic "_zlua -I -t ." 2>/dev/tty'))
-
-nnoremap <c-j> :FZFjump<cr>
+nnoremap <c-f> :FZFfind<cr>
+nnoremap <c-g> :FZFcdHome<cr>
+nnoremap <m-c> :FZFcd<cr>
 
 " Mappings for faster renaming
-nnoremap <f2> cw
 nnoremap cc cw<c-u>
 
 " Open terminal in current directory
@@ -169,13 +180,13 @@ nnoremap ,w :set wrap!<cr>
 " Open in pager
 nnoremap ,p :!less %f<cr>
 
-" Example of standard two-panel file managers mappings
-nnoremap <f3> :!less %f<cr>
-nnoremap <f4> :edit<cr>
-nnoremap <f5> :copy<cr>
-nnoremap <f6> :move<cr>
-nnoremap <f7> :mkdir<space>
-nnoremap <f8> :delete<cr>
+" F keys remapping
+
+nnoremap <f1> :!less %f<cr>
+nnoremap <f2> cw
+nnoremap <f3> :copy<cr>
+nnoremap <f4> :norm ndu <cr>
+nnoremap <F5> :history<cr>
 
 " Use rg instead of grep
 set grepprg='rg %i %a %s'

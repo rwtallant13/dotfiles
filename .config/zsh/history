@@ -824,7 +824,6 @@ autoload -Uz promptinit\
 promptinit
 promptinit
 prompt -l
-la | wc -l
 function fzaux
 alias fzaux
 functions
@@ -1146,7 +1145,6 @@ rm -rf "$XDG_CACHE_HOME"/nv
 mkdir "$XDG_CACHE_HOME"/nv
 echo y"$XDG_CACHE_HOME"/nv
 echo "$XDG_CACHE_HOME"/nv
-ls .java
 ll .java/fonts/1.8.0_242/fcinfo-1-rob-pc-Arch-rolling-en.properties
 rm -rf .java
 rm -rf .pulse-cookie
@@ -2073,7 +2071,6 @@ locate pacnew
 locate pacsave
 mv /home/rob/.config/zhistory /home/rob/.config/zhistory_bad
 fc -R /home/rob/.config/zhistory
-chromium
 pac expac
 expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20
 pac python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expacchromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity
@@ -2128,7 +2125,6 @@ pacman -Qqm
 pacman -Qqn
 pacman -Qqn|grep lib
 pacman -Qqe|grep lib
-man pacman
 chxbin
 sudo ln -s /usr/bin/termite /usr/bin/xterm
 xterm .config/sxhkd/sxhkdrc
@@ -2216,7 +2212,6 @@ git clone https://github.com/dylanaraps/pfetch.git
 cd pfetch
 locate pfetch
 rm -rf pfetch
-pfetch
 journalctl -r -p err
 S disable caps2esc.timer
 locate caps2esc.timer
@@ -2662,8 +2657,6 @@ sudo chattr +i .config/user-dirs.dirs
 ls .nv
 rg -C 3case .bin
 rg -C3 case .bin
-adb devices
-adb shell
 upower --dump
 ssh bb echo true
 echo $BROWSER
@@ -3692,7 +3685,6 @@ wireguard-dkms\
 wireguard-tools
 sudo pacr  catdoc exa gcolor2 rxvt-unicode seahorse tesseract tesseract-data-eng wireguard-dkms wireguard-tools
 scp bb:rwt13-bb.ovpn ./
-docker ps
 pac tint2
 pacr pac tint2
 sudo pacr tint2
@@ -3903,7 +3895,6 @@ v .bin/mkszn
 rmr Season\{01..04\}
 rmr Season0*
 mkszn 7
-pf
 ssh rob@192.168.2.41
 ssh pi@192.168.2.41 bash
 ssh pi@192.168.2.41 sh
@@ -4024,7 +4015,6 @@ fd -e sub -e idx -x mv {} ./subs/
 fd -e sub -e idx -x mv {} ./Subs/
 pia-client -q
 man pia-client
-pia-client --help
 /opt/piavpn
 rg '-q'
 rg '\-q'
@@ -4034,9 +4024,7 @@ v /home/rob/.config/autostart/pia-client.desktop
 pia-client --quiet
 start vpn
 btm -b
-start pia
 v .bin/start
-start pia-client
 v .bin/nullify
 2>/dev/null 1>&2 /opt/piavpn/bin/pia-client --quiet &
 pvpn -h
@@ -4154,8 +4142,6 @@ multimc -l -h
 multimc -l 1.16.4
 archlinux-java status
 pac minecraft-launcher
-filecount
-filecount .local
 zsh
 rmr .local/share/multimc
 journalctl -r
@@ -4349,7 +4335,6 @@ fd  --min-depth 1 '264'
 fd  --min-depth 1 '264' | vidir -
 ls /tmp
 xcompmgr -c -l0 -t0 -r0 -o.00
-mkszn 2
 less docs/important/pword
 ls .thumbnails
 ls .thumbnails/normal/
@@ -4697,7 +4682,6 @@ ll .ssh
 sudo chown -R rob:rob .ssh
 mnt bb
 qbittorrent
-filecount .local/share
 mnt mx100
 lsblk -f
 mnt windows
@@ -4714,7 +4698,6 @@ git clone https://github.com/NVCC-ITP-132-BWS/Assignment2_1_Stream_Processing_Fu
 git clone https://github.com/NVCC-ITP-132-BWS/Assignment3_Image_Processor
 git clone https://github.com/NVCC-ITP-132-BWS/Assignment4_Hashing
 cd school/ITP132/Assignment2_1_Stream_Processing_Functions
-S restart NetworkManager
 ping 8.8.8.8
 ytk
 ssh ytk
@@ -4724,7 +4707,6 @@ ls downloads
 nvtop
 pacdiff
 sudo pacdiff
-pacrepo
 ip s
 v .ssh/config
 ping 192.168.2.451
@@ -4736,13 +4718,9 @@ dig 176.113.74.44
 cd Assignment2_1_Stream_Processing_Functions
 gcp assignment_2_1.cpp -o assignment_2_1
 ./assignment_2_1
-ssh peach
-dig youtube.com
 ssh-copy-id pi
-myip
 v .aliases
 last reboot
-ssh pi
 yay -S chromium-widevine
 scp bb:tautulli.backup-20201208172514.db ~/
 man sudo
@@ -4787,7 +4765,6 @@ man mkdir
 mkszn 22
 man nnn
 ndu $media/movies
-su
 ssh root@192.168.2.21
 man ssh-copy-id
 ssh-copy-id root@192.168.2.21
@@ -4796,7 +4773,6 @@ ssh bbroot
 last-backup
 grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-12-09-142948.log'
 S restart sshd
-v /etc/pacman.conf
 pac xidlehook
 yay xidlehook
 ls /home/rob/.local/share/cargo/registry/src/
@@ -4808,7 +4784,6 @@ sudo mkdir -p /etc/opt/chrome/policies/managed/ && echo '{ "URLWhitelist": ["mag
 ps aux
 pac gvfs
 pac thunar-volman
-pacu
 fzpkgs
 fkill 
 lightdm-gtk-greeter-settings-pkexec
@@ -4820,7 +4795,6 @@ fkill
 persist picom --experimental-backends
 ls .config/autostart
 killall picom
-la
 ls .config
 .config
 rmr LosslessCut microsoft-edge-dev nwg-launchers plex.tv QtProject transmission vidcutter 
@@ -4867,16 +4841,13 @@ v .ssh/known_hosts
 scp -r school/ITP132/Assignment2_1_Stream_Processing_Functions laptop:~/
 scp -r school/ laptop:~/school
 LC_ALL=C pacman -V|sed -r 's#[0-9]+#e44#g'|md5sum|cut -c1-6
-ssh bb
 S restart plexmediaserver
-bb
 rust update stable
 pkglist
 pacr piavpn-bin
 nnn
 pvpn client
 pgrep pia
-se
 pia-client
 piactl background enable
 piactl
@@ -4906,19 +4877,127 @@ cat assignments.txt
 remove_spaces
 rmspaces
 mv ITP132-FinalExam.png design_UML.png
-ls
 z itp
 FinalExam
 gcp final.cpp -o final
 ./final
 man fd
 vf
-vfm
 man bash
 man zsh
 start sxhkd
 bootctl update
-reboot
 v /boot/loader/entries/arch-lts.conf
 sudo bootctl update
+ssh peach
+yay -S flent
+flent
+pac matplotlib
+pac python-matplotlib
+/usr/bin/netperf -P 0 -v 0 -D -0.20 -4  -H 192.168.2.21 -p 12865 -t UDP_RR -l 70 -F /dev/urandom    -- -e 2  -H 192.168.2.21 -k THROUGHPUT,LOCAL_CONG_CONTROL,REMOTE_CONG_CONTROL,TRANSPORT_MSS,LOCAL_TRANSPORT_RETRANS,REMOTE_TRANSPORT_RETRANS,LOCAL_SOCKET_TOS,REMOTE_SOCKET_TOS,DIRECTION,ELAPSED_TIME,PROTOCOL,LOCAL_SEND_SIZE,LOCAL_RECV_SIZE,REMOTE_SEND_SIZE,REMOTE_RECV_SIZE,LOCAL_BYTES_SENT,LOCAL_BYTES_RECVD,REMOTE_BYTES_SENT,REMOTE_BYTES_RECVD
+sudo ufw allow 12865
+flent rrul -p all_scaled -l 60 -H 192.168.2.21 -t testtesttest -o rrul.png
+/usr/bin/netperf -P 0 -v 0 -D -0.20 -4 -Y EF,EF -H 192.168.2.21 -p 12865 -t UDP_RR -l 70 -F /dev/urandom    -- -e 2  -H 192.168.2.21 -k THROUGHPUT,LOCAL_CONG_CONTROL,REMOTE_CONG_CONTROL,TRANSPORT_MSS,LOCAL_TRANSPORT_RETRANS,REMOTE_TRANSPORT_RETRANS,LOCAL_SOCKET_TOS,REMOTE_SOCKET_TOS,DIRECTION,ELAPSED_TIME,PROTOCOL,LOCAL_SEND_SIZE,LOCAL_RECV_SIZE,REMOTE_SEND_SIZE,REMOTE_RECV_SIZE,LOCAL_BYTES_SENT,LOCAL_BYTES_RECVD,REMOTE_BYTES_SENT,REMOTE_BYTES_RECVD
+netpert
+netperf
+vw rrul.png
+flent rrul -p all_scaled -l 60 -H netperf.bufferbloat.net -t testtesttest -o rrul.png
+ld
+flent rrul -p all_scaled -l 60 -H netperf.bufferbloat.net -t 250/250 -o rrul.png
+mv rrul.png rrul-1.png
+mv rrul.png rrul-2.png
+mv rrul.png rrul-3.png
+mv rrul.png rrul-4.png
+flent rrul -p all_scaled -l 60 -H netperf.bufferbloat.net -t 200/150 -o rrul.png
+flent rrul -p all_scaled -l 60 -H netperf.bufferbloat.net -t 500/500 -o rrul.png
+ssh pi
+S restart NetworkManager
+dig youtube.com
+cd .local/share/vifm/Trash
+rm rrul*
+la | wc -l
+killall chromium
+sudo pacr nvidia-dkms wireguard-dkms
+pacu nvidia nvidia-lts wireguard wireguard-lts
+pacu nvidia nvidia-lts wireguard-tools wireguard-lts
+myip
+mv downloads/bitwarden_export_20201214180450.json docs/important/
+rm docs/important/bitwarden_export_20200806143919.csv 
+pia-client --help
+piactl client
+piactl --help
+mkszn 2
+pacrepo
+yay -S chromium 
+yay -S ungoogled-chromium 
+pacman -Syu
+sudo pacman -Syu
+pacr ungoogled-chromium
+sudo pacr ungoogled-chromium
+yay -S --rebuild ungoogled-chromium
+sudo pacman -U /var/cache/pacman/pkg/re2-1:20201101-1-x86_64.pkg.tar.zst
+pf
+pfetch
+pacq ungoogled-chromium
+pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst 
+man pacman
+man pacman.conf
+pacu
+ls school
+ls school/other
+mv school/other school/todo
+ls school/todo
+pac epiphany
+echo $LOGNAME
+sudo usermod -aG plugdev $LOGNAME
+adb -h
+adb --help
+fastboot boot downloads/twrp-3.4.0-1-taimen.img 
+\
+\
+fastboot flashing unlock\
+\
+
+adb reboot bootloader
+adb kill-server
+su
+adb sideload /home/rob/downloads/twrp-installer-3.4.0-1-taimen.zip
+adb push downloads/proton-aosp_taimen_11.3.0-gapps.zip /sdcard
+fastboot devices
+adb push downloads/proton-aosp_taimen_11.3.0-gapps.zip /
+adb push downloads/twrp-installer-3.4.0-1-taimen.zip /sdcard
+docker ps
+vfm
+adb devices
+adb shell
+sudo pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst 
+v /etc/pacman.conf
+chromium
+filecount .local
+filecount .local/share
+filecount
+filecount .cache
+mkdir ~/.local/share/pki/
+mv .pki/nssdb/ ~/.local/share/pki/
+ls .pki
+rmr .pki
+mv .parallel .config/parallel
+ls ..config/parallel
+ls .config/parallel
+ls .java
+ls "$XDG_CONFIG_HOME"/java
+mkdir "$XDG_CONFIG_HOME"/java
+mv .java/fonts /home/rob/.config/java
+ls /home/rob/.config/java
+la
+ls .cert
+bb
+start pia
+se
+start pia-client
+reboot
 yay
+ssh bb
+fd -e mkv -X mv {} ./ ;
+ls
+mkszn 6

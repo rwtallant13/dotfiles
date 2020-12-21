@@ -30,6 +30,9 @@ set novimhelp
 " Hide ../
 set dotdirs=
 
+" nitems or size shown for directories
+set dirsize=size
+
 " Selected color scheme
 colorscheme Default
 
@@ -37,7 +40,8 @@ colorscheme Default
 set timefmt=%m/%d\ %H:%M
 
 " Custom column layout
-windo set viewcolumns=-15.5{atime},-10.5{size},-{name}..
+windo set viewcolumns=-10.5{size},-{name}..,12{atime}
+""windo set viewcolumns=10{size},-{name}..,15{atime}
 
 " Show list of matches on tab completion in command-line mode
 set wildmenu

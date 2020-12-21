@@ -6,7 +6,7 @@ export PAGER=/usr/bin/less
 export NNN_USE_EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
-export BROWSER=/usr/bin/chromium
+export BROWSER=/usr/bin/firefox
 
 export XDG_CURRENT_DESKTOP="GNOME"
 export FZF_DEFAULT_COMMAND='fd --type f --hidden'
@@ -35,6 +35,8 @@ export CCACHE_CONFIGPATH="$XDG_CONFIG_HOME"/ccache.config
 export CCACHE_DIR=$XDG_CACHE_HOME/ccache
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 #export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
+export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export GOPATH="$XDG_DATA_HOME"/go
 export DIFFPROG='nvim -d'
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+media=/media/blueberry/media
+file="${@: -1}"
+
+
+case $1 in
+	show)
+		mv "$file" $media/shows/
+		;;
+	movie)
+		mv "$file" $media/movies/
+	 	;;
+	*)
+		mv "$file" $media/tmp/
+		;;
+esac

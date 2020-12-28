@@ -5,15 +5,16 @@
 
 # system
 alias sudo='sudo '
-alias udb='sudo updatedb'
-alias last-backup='vifm /media/blueberry/backups/rob-pc/latest/'
+alias udb='sudo updatedb.plocate'
+alias locate='plocate'
 alias udev-reload='sudo udevadm control --reload-rules && sudo udevadm trigger'
 alias timers='systemctl list-timers'
-alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias grep='grep --color=auto'
 alias dots='yadm'
 alias dots-tracked='yadm list -a|less'
 alias myip='curl http://ipecho.net/plain; echo'
 alias S='sudo systemctl'
+alias enabledservices='systemctl list-unit-files | grep enabled'
 alias s='systemctl --user'
 alias J='sudo journalctl'
 
@@ -30,9 +31,6 @@ alias fzpacr='sudo pacman -Rncs $(fzpkgs)'
 alias rmorphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias pacrepo='sudo reflector -c US -c CA --protocol https --age 48 --sort score --save /etc/pacman.d/mirrorlist'
 
-#python
-alias pipi='pip install --user'
-
 #ls
 alias l='ls -hN --color=auto --group-directories-first'
 alias la='ls -hNa --color=auto --group-directories-first'
@@ -42,35 +40,36 @@ alias ls='ls -hN --color=auto --group-directories-first'
 alias lr='ls -RhN --color=auto --group-directories-first'
 alias lb='ls -hN --color=auto --group-directories-first /home/rob/.bin/'
 
-# commands
-alias bb='ssh bb'
-alias df='df -h'
-alias cmd='compgen -c | fzf'
+# files
 alias rm='rm -I'
-alias rm-empty='fd -t d -x rmdir --ignore-fail-on-non-empty {}'
-alias grep='grep --color=auto'
-alias gt='gotop'
-alias gcp='g++'
-alias hb='HandBrakeCLI'
-alias hist='history'
-alias iftop='sudo iftop -b'
-alias mclog='ssh bb journalctl -f -u minecraft@vanilla.service'
-alias mcctrl='ssh -t bb /home/rob/bin/mcctrl'
-alias m='micro'
 alias n='nnf'
-alias ndu='nnn -T a'
-alias cpu-speed=' watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
+alias ndu='nnn -CT a'
 alias pb='curl -F "f:1=<-" ix.io'
-alias pf='pfetch && colorpanes'
-alias pilog='ssh -t pi pihole -t'
 alias rmr='rm -rfI'
 alias rf='rg --files --hidden'
 alias tb='nc termbin.com 9999'
 alias v='/home/rob/.bin/nv'
 alias vf='vifm'
-alias vfm='vifm /media/blueberry/media /home/rob/downloads/torrents'
+alias vfm='vifm /media/blueberry/media /media/blueberry/media/tmp '
 alias vfb='vifm /media/blueberry/backups/rob-pc /home/rob'
+
+# commands
+alias df='df -h'
+alias cmd='compgen -c | fzf'
+alias cpuspeed='watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
+alias rm-empty='fd -t d -x rmdir --ignore-fail-on-non-empty {}'
+alias gcp='g++'
+alias hb='HandBrakeCLI'
+alias hist='history'
+alias iftop='sudo iftop -b'
 alias xc='xclip -selection clipboard'
+
+# bb/pi
+alias bb='ssh bb'
+alias pilog='ssh -t pi pihole -t'
+alias mclog='ssh bb journalctl -f -u minecraft@vanilla.service'
+alias mcctrl='ssh -t bb /home/rob/bin/mcctrl'
+
 
 #
 # functions

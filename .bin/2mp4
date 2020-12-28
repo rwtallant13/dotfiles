@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+if [ -z $1 ]; then
+	echo "extension to convert required... exiting"
+	exit 1
+fi
+
+for file in find -name *."$1"; do
+
+	ffmpeg -i $file -c copy "${file%.*}".mp4 -hide_banner && \
+	rm -I $file
+
+done

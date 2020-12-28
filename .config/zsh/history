@@ -1061,7 +1061,6 @@ hue fixed ff0000
 hue.sh color red
 hue.sh -h
 hue fixed ffffff
-hue --help
 hue fixed --help
 hue.sh -c purple
 hue.sh -d
@@ -1600,7 +1599,6 @@ pgrep caps2esc
 killall caps2esc
 v .bin/bootup
 man if
-man rofi
 rofi -show window
 bspc node @/ --flip vertical
 bspc node @/ --flip horizontal
@@ -1973,7 +1971,6 @@ rm .bin/bolt
 jyay
 ncdu /
 ncdu / -x
-pacman -Sc
 man deluge
 deluge-console info
 man deluge-console
@@ -2212,7 +2209,6 @@ git clone https://github.com/dylanaraps/pfetch.git
 cd pfetch
 locate pfetch
 rm -rf pfetch
-journalctl -r -p err
 S disable caps2esc.timer
 locate caps2esc.timer
 sudo rm -rf /etc/systemd/system/caps2esc.timer
@@ -2630,7 +2626,6 @@ xfce4-terminal -e ssh bb
 xfce4-terminal --exec ssh bb
 xfce4-terminal --help
 xfce4-terminal --execute ssh bb
-rofi --help
 rofi --help | grp -e
 rofi --help | grep -e
 rofi --help | grep '-e'
@@ -2656,7 +2651,6 @@ v .config/user-dirs.dirs
 sudo chattr +i .config/user-dirs.dirs
 ls .nv
 rg -C 3case .bin
-rg -C3 case .bin
 upower --dump
 ssh bb echo true
 echo $BROWSER
@@ -2921,7 +2915,6 @@ shortinfo /media/blueberry/media/movies/
 mediainfo --info-parameters | less\
 
 less .bin/filecount
-df
 echo "alias df='df -h'" >> .aliases
 fd . RARBG*
 fd RARBG* .
@@ -3606,7 +3599,6 @@ v .bin/check-media
 rg 2 .bin
 rg EOF  .bin
 trimvid -e 15 /media/mx100/Videos/Call of Duty  Black Ops Cold War/Call of Duty  Black Ops Cold War 2020.10.18 - 20.05.42.03.DVR.mp4
-man ffmpeg
 v .bin/trimvid
 trimvid -e 20 /media/mx100/Videos/Call of Duty  Black Ops Cold War/Call of Duty  Black Ops Cold War 2020.10.18 - 17.48.42.06.DVR.mp4
 echo file /media/mx100/Videos/Call of Duty  Black Ops Cold War/Call of Duty  Black Ops Cold War 2020.10.17 - 22.06.53.06.DVR_Trim.mp4 >>filelist.txt
@@ -3901,7 +3893,6 @@ ssh pi@192.168.2.41 sh
 ssh pi@192.168.2.41 mv .bashrc .f
 ssh pi@192.168.2.41
 fd -H | wc -l
-fd
 fd -t f
 start obs
 obs --profile Default
@@ -4285,7 +4276,6 @@ z -l
 cd /home/rob/projects
 cd /media/blueberry
 cd /media/blueberry/media/movies
-cd ..
 cd shows
 cd /media/mx100
 cd .config
@@ -4315,7 +4305,6 @@ fd rarbg.txt --exec rm {}
 fd rarbg.txt
 fd '.' -t d --min-depth 1 
 fd  -t d --min-depth 1  '.'
-man find
 fd  -t d --min-depth 1 '\.'
 fd  -t d --min-depth 1 '\.' | qmv
 man qmv
@@ -4399,14 +4388,12 @@ pac qbittorrent
 pac deluge
 pac transmission-gtk transmission-cli
 ncdu .cache
-ncdu
 ncdu ~/.local/share/
 pac deluge-gtk
 $backup
 $backups
 pacman -Qs | grep 5.15.1
 yay -S qt5-styleplugins
-yay -S --rebuild qt5-styleplugins
 yay -S --rebuild aur/qt5-styleplugins
 mv /home/rob/.local/share/data/qBittorrent/ /home/rob/.local/share/qBittorrent/
 ls /home/rob/.local/share/qBittorrent/
@@ -4457,7 +4444,6 @@ rmr git
 y
 rm gad
 systemd-analyze
-systemd-analyze blame
 locate qbittorrent.desktop
 locate qbittorrent
 v /usr/share/applications/org.qbittorrent.qBittorrent.desktop
@@ -4466,7 +4452,6 @@ cd ../movies
 fd -i rar 
 shortinfo ./TheMandalorian_S02E01.mkv
 shortinfo ./the.mandalorian.s02e05.1080p.web.h264-ggwp.mkv
-rg case .bin
 v .bin/wall.sh
 v .bin/sinkctrl
 v .bin/pvpn
@@ -4474,7 +4459,6 @@ man test
 v .bin/opi
 Season01
 Season1
-..
 mv Season1 Season01
 mv Season2 Season02
 shortinfo ./
@@ -4583,7 +4567,6 @@ chown root:root -R /etc
 sudo chown root:root -R /etc
 S enable lightdm
 pac lua
-yay ungoogled-chromium
 S enable --now NetworkManager
 sudo rm /etc/pam.d/i3lock
 unzip --help
@@ -4600,7 +4583,6 @@ sudo rm /etc/systemd/system/betterautolock.service
 sudo rm /etc/xdg/picom.conf.example
 v docs/yay-pkgs
 yay -S - < docs/yay-pkgs
-wall.sh -U pics/backgrounds/macOS/ColorBurst4-tall.jpg
 yay -S - < docs/pacman-pkgs
 pac polybar
 sudo rm /etc/NetworkManager/conf.d/wgpia.conf
@@ -4626,7 +4608,6 @@ sudo umount /media/mx100
 sudo cp /boot/loader/entries/arch-lts.conf /boot/loader/entries/arch.conf
 pac sshfs
 v /boot/loader/entries/arch.conf
-fzpacr
 S enable --now systemd-swap
 v /etc/systemd/swap.conf
  sysctl vm.swappiness
@@ -4634,7 +4615,6 @@ v .bin/rsync_backup.sh
 man rsync
 ls /etc/
 S enable ufw
-systemctl list-unit-files | grep enabled
 ufw status
 sudo ufw status
 sudo system-backup
@@ -4681,9 +4661,7 @@ sudo cp /root/.ssh/config .ssh
 ll .ssh
 sudo chown -R rob:rob .ssh
 mnt bb
-qbittorrent
 mnt mx100
-lsblk -f
 mnt windows
 v /boot/loader/loader.conf
 v /etc/pacman.d/hooks/100-systemd-boot.hook
@@ -4730,7 +4708,6 @@ pac redshift
 redshift.sh
 yay -S plata-theme
 gsettings set org.gnome.desktop.interface gtk-theme Plata-Compact
-yay -S qt5-styleplugins --rebuild
 yay-pkgs
 pacman-pkgs
 sethue off
@@ -4763,7 +4740,6 @@ fd -t f -x mv ./
 fd -t f -x mv {} ./
 man mkdir
 mkszn 22
-man nnn
 ndu $media/movies
 ssh root@192.168.2.21
 man ssh-copy-id
@@ -4791,12 +4767,9 @@ lightdm-gtk-greeter-settings-pkexec
 start picom
 start picom &
 /home/rob/.bin/start picom &
-fkill
 persist picom --experimental-backends
 ls .config/autostart
 killall picom
-ls .config
-.config
 rmr LosslessCut microsoft-edge-dev nwg-launchers plex.tv QtProject transmission vidcutter 
 ls /etc
 pac rmlint
@@ -4822,8 +4795,6 @@ S status shadow.service
 rmorphans
 pacman -Scc
 sudo pacman -Scc
-sudo pacman -Sc
-yay -Sc
 rmlint
 /home/rob/rmlint.sh -h
 /home/rob/rmlint.sh n
@@ -4845,7 +4816,6 @@ S restart plexmediaserver
 rust update stable
 pkglist
 pacr piavpn-bin
-nnn
 pvpn client
 pgrep pia
 pia-client
@@ -4883,7 +4853,6 @@ gcp final.cpp -o final
 ./final
 man fd
 vf
-man bash
 man zsh
 start sxhkd
 bootctl update
@@ -4940,9 +4909,7 @@ pf
 pfetch
 pacq ungoogled-chromium
 pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst 
-man pacman
 man pacman.conf
-pacu
 ls school
 ls school/other
 mv school/other school/todo
@@ -4960,22 +4927,15 @@ fastboot flashing unlock\
 
 adb reboot bootloader
 adb kill-server
-su
 adb sideload /home/rob/downloads/twrp-installer-3.4.0-1-taimen.zip
 adb push downloads/proton-aosp_taimen_11.3.0-gapps.zip /sdcard
 fastboot devices
 adb push downloads/proton-aosp_taimen_11.3.0-gapps.zip /
 adb push downloads/twrp-installer-3.4.0-1-taimen.zip /sdcard
 docker ps
-vfm
 adb devices
 adb shell
 sudo pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst 
-v /etc/pacman.conf
-chromium
-filecount .local
-filecount .local/share
-filecount
 filecount .cache
 mkdir ~/.local/share/pki/
 mv .pki/nssdb/ ~/.local/share/pki/
@@ -4989,15 +4949,148 @@ ls "$XDG_CONFIG_HOME"/java
 mkdir "$XDG_CONFIG_HOME"/java
 mv .java/fonts /home/rob/.config/java
 ls /home/rob/.config/java
-la
 ls .cert
-bb
 start pia
-se
 start pia-client
 reboot
-yay
 ssh bb
 fd -e mkv -X mv {} ./ ;
-ls
 mkszn 6
+dirname
+dirname docs
+man dirname
+realpath $(dirname docs)
+dirname /home/rob/docs/backup_exclude.txt
+basename $(dirname /home/rob/docs/backup_exclude.txt)
+locate redshift*.service
+locate redshift.service
+lsblk -f
+journalctl -r -p err
+bb
+systemd-analyze 
+systemd-analyze blame
+systemd-analyze blame | grep mount
+ls /sys/firmware/efi/efivars
+ls /var/cache/pacman/pkg/linux-*
+ls /var/log/pacman.log
+less /var/log/pacman.log
+less -R /var/log/pacman.log
+man less
+yay -S qt5-styleplugins --rebuild
+yay -S --rebuild qt5-styleplugins
+less +F /var/log/pacman.log
+qbittorrent
+yay ungoogled-chromium
+pacman -Sc
+sudo pacman -Sc
+yay -Sc
+pacr steam
+sudo pacr steam
+alias pacr
+man pacman
+fzpacr
+cd ..
+rmr plexmediaplayer task Valve\ Corporation epiphany flatpak autojump calcurse Colossal\ Order cod Meltytech nemo autojump* mc 
+ls G
+rmr kvibes 
+ls data
+la data
+ls composer
+..
+fd
+pac plocte
+pac plocate
+S enable plocate-updatedb.service
+S enable plocate-updatedb.timer
+systemctl list-unit-files | grep enabled
+enabledservices
+S disable updatedb.timer
+sudo pac mlocate
+updatedb
+sudo updatedb
+locate steam
+locate updatedb
+v /etc/updatedb.conf
+su
+time plocate docs
+plocate
+plocate docs
+updatedb.plocate
+sudo updatedb.plocate
+plocate doc
+plocate icons
+which locate
+pacr mlocate
+sudo pacr mlocate
+locate
+locate plocate
+pacr micro
+sudo pacr micro
+nnn -T
+nnn -C
+nnn
+man nnn
+pac bleachbit
+locate DS_Store
+killall -9 bleachbit
+fkill
+sudo bleachbit
+bleachbit
+ncdu
+ls .config
+.config
+rmr bleachbit lf epiphany matplotlib rmlint.* 
+filecount .local
+filecount .local/share
+se
+filecount
+filecount projects
+filecount projects/ideas/
+wall.sh -U pics/backgrounds/macOS/ColorBurst4-tall.jpg
+yay -S ungoogled-chromium-git
+v /etc/pacman.conf
+pacu
+chromium
+mks tmp
+fine *.webm
+find *.webm
+find ./ *.webm
+find ./ -name *.webm
+find -name *.webm
+la | parallel echo {} && echo 2
+la | parallel (echo {} && echo 2)
+man find
+rg .bin set
+rg .bin "\-e"
+man ffmpeg
+mv .bin/tmp .bin/2mp4
+df
+mks mvmedia
+rg case .bin
+rg -C3 case .bin
+echo /media/blueberry/media/shows
+hue
+hue --help
+vfm
+mvmedia show downloads/torrents/The\ Batman\ DVDrip\ Xvid\ Complete\ Series\ 2004-2008 
+ls
+man bash
+la
+pacman p -Qo i3
+pacman -Qo i3
+sudo pacr i3-wm
+man yay
+sudo rm /etc/i3/*
+yay
+rofi --help
+man rofi
+yay
+mkdir .config/simplescreenrecorder
+mv .ssr/* .config/simplescreenrecorder
+rmr .ssr
+la
+ls
+rmr test
+yay
+ssh peach
+S restart NetworkManager

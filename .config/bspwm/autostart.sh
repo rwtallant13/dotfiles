@@ -1,4 +1,4 @@
-!/usr/bin/bash
+#!/usr/bin/bash
 . /home/rob/.profile
 # bspwm autostart
 #/home/rob/.fehbg

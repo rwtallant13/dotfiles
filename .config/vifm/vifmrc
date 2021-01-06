@@ -87,7 +87,7 @@ mark e /etc
 
 
 " What should be saved automatically between vifm sessions.
-set vifminfo=dhistory,chistory,state,tui,shistory,phistory,dirstack,registers,bookmarks,bmarks
+set vifminfo=dhistory,chistory,state,tui,shistory,phistory,dirstack,registers,bookmarks
 
 " my basic mappings
 let mapleader =","
@@ -129,7 +129,7 @@ nnoremap J :jobs<cr>
 nnoremap P :put! &<cr>
 
 " get real size of all files
-nnoremap ndu :norm ggVGga <cr>
+cnoremap ndu :norm ggVGga <cr>
 
 " toggle between sorting: by name <--> by size <--> by mtime
 command! togglesort
@@ -191,6 +191,7 @@ nnoremap <f2> cw
 nnoremap <f3> :copy<cr>
 nnoremap <f4> :norm ndu <cr>
 nnoremap <F5> :history<cr>
+nnoremap <F8> :!shortinfo %f %q<cr>
 
 " Use rg instead of grep
 set grepprg='rg %i %a %s'

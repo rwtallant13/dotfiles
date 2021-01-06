@@ -63,7 +63,7 @@ super + alt + c
 
 # move to blueberry
 super + m
-	/usr/bin/xfce4-terminal -e 'zsh -ic "vifm /home/rob/downloads/torrents /media/blueberry/"'
+	/usr/bin/alacritty -e zsh -ic "vifm /home/rob/downloads/torrents /media/blueberry/"
 
 # rofi
 alt + space
@@ -99,15 +99,15 @@ super + t
 
 # vifm
 super + f
-	/usr/bin/xfce4-terminal -e 'zsh -ic "vifm"'
+	/usr/bin/alacritty -e zsh -ic "vifm"
 
 # tui file manager
 super + n
-    /usr/bin/xfce4-terminal -e nnf
+    /usr/bin/alacritty -e nnf
 
 # system monitor
 ctrl + shift + Escape
-	/usr/bin/xfce4-terminal -e btm
+	/usr/bin/alacritty -e btm
 
 # launch browser
 super + b
@@ -127,14 +127,14 @@ super + alt + b
 
 # alt terminal emulator
 super + shift + Return
-	xfce4-terminal
+	alacritty
 
 super + alt + Return
 	alacritty
 
 # vim
 super + v
-	/usr/bin/xfce4-terminal -e nvim
+	/usr/bin/alacritty -e nvim
 
 # Pulseaudio sound manager
 super + p
@@ -259,11 +259,10 @@ super + alt + i
 	"$bin"/bspscripts receptacle
 
 # toggle node states
-super + {F5,F6,F7,F8}
-	bspc node --state \~{tiled,floating,pseudo_tiled,fullscreen}
+super + {F9,F10,F11}
+	bspc node --state \~{tiled,pseudo_tiled,floating}
 
-# set fullscreen
-super + F11
+super + F12
 	bspc desktop -l next
 
 # hide nodes

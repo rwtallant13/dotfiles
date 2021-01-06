@@ -195,7 +195,6 @@ bspc desktop -l
 bspc desktop -l monocle
 bspc desktop -l tiled
 bspc desktop -l CYCLE_DIRCYCLE_DIR
-bspc desktop -l next
 pac lxsession
 /usr/bin/lxpolkit &
 ls .config/autostart/
@@ -420,8 +419,6 @@ bspc node --state ~floating
 unsetopt | grep auto
 ls -1 **/*.(sh|py)
 bspc node --state "~"psuedo_tiled
-bspc node --state "~"pseudo_tiled
-yay bitwarden
 pacr keepassxc
 sudo pacr keepassxc
 ls  /etc/nginx/sites-available/
@@ -713,7 +710,6 @@ zenity --calendar | xclip -selection
 zenity --calendar | xsel
 [200~04/23/2020
 sclip
-xclip
 zenity --calendar | xclip
 zenity --calendar | xclip -selection clipboard
 zenity --calendar | xclip -selection clipboard primary
@@ -1032,7 +1028,6 @@ pip  uninstall pyserial
 pip freeze
 pac python-pyserial
 clipmenud
-systemctl daemon-reload
 /usr/bin/clipmenud &
 /home/rob/.bin/sinkctrl -d
 v .bin/pu
@@ -1421,7 +1416,6 @@ python3 setup.py build
 ./overviewer.py /media/bb-dir/minecraft/bukkit/world /home/rob/.minecraft/world_map
 chromium ../world_map/index.html
  .bin/win-scrot
-man xclip
 v .config/gtk-3.0/gtk.css
 convert -coalesce downloads/minecraft/Lodestone_Compass_BE1.gif out%05d.pgm
 mkdir minecraft_compass
@@ -1464,7 +1458,6 @@ nv .profile
 nv /etc/profile
 cat nnf
 cat /home/rob/.local/bin/nnf
-ssh laptop
 vpn-toggle -h
 vpn-toggle list
 S enable resume@rob.service
@@ -1631,7 +1624,6 @@ mv .bin/bootup /bin/reboot
 mv .bin/bootup .bin/reboot
 reboot windows
 v .bin/re
-v .bin/reboot
 whichi reboot
 mv .bin/reboot .bin/reboo2t
 which reboot
@@ -1711,7 +1703,6 @@ rg "((" .bin
 rg '*' .bin
 maim -s "$IMAGE_FILE"
 maim -s tmp.png
-man maim
 convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null:
 convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null|head -n1|grep -o "\d\.\d*"
 convert tmp.png -colorspace gray -resize 1x1 -fx "debug(u)" null|head -n1
@@ -1781,7 +1772,6 @@ sudo pacr bitwarden-bin amidst
 S enable --now caps2esc.timer
 man alacritty
 source .profile
-killall sxhkd
 nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=0
 less /home/rob/.cache/gotop/errors.log
 sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf.bak
@@ -2264,7 +2254,6 @@ pulseaudio -s
 reflector--help
 S start reflector.service
 .
-man cp
 mv ~/downloads/torrents/\[JAM_CLUB\]_Boku_no_Hero_Academia_the_Movie_2_Heroes_Rising_\[1080p\]\[RUS\]\[DUB\].mkv ./My-Hero-Academia_Heroes-Rising.mkv
 history | awk '{print $2}'
 history | awk '{print $2}' | sort | uniq -c | sort -nr | head -n 10
@@ -2303,7 +2292,6 @@ ls ls
 ls climable_chains
 ls .config/Nvidia
 sudo rm -rf .config/Nvidia/sttings
-htop
 pac glances
 pacq glances
 pacf glances
@@ -2411,7 +2399,6 @@ rdiff-backup --help
 ls docs/backup/
 ssh bb "bash"
 man rdiff
-v /etc/systemd/system/backup.timer
 rm -rf /media/blueberry/backups/rob-pc
 sudo .bin/system-backup
 rm -rf bin
@@ -2562,10 +2549,8 @@ find session_stat* -maxdepth 1
 find session_stat* -maxdepth 1 -printf '%T+ %p\n' | sort -r | head
 find session_stat* -maxdepth 1 -printf '%T+ %p\n' | sort -r | head 1
 find session_stat* -maxdepth 1 -printf '%T+ %p\n' | sort -r | head -1
-journalctl -r -u backup.service
 ssh bb rdiff-backup --server
 ssh rob@192.168.2.21 rdiff-backup --server
-journalctl -f -u backup.service
 sudo rm sxhkd.service
 man rdiff-backup
 rdiff-backup --calculate-average
@@ -2683,7 +2668,6 @@ gcc 16.cpp -o 16
 gcc 16.cpp -lstdc++ -o 16
 v ~/.aliases
 scrot win
-man sxhkd
 xev -event keyboard
 locate .sw
 man hyperfine
@@ -2930,7 +2914,6 @@ eval compgen
 compgen
 eval compgen -c
 rm -rf .minecraft/shaderpacks/*
-less .bin/start
 picom --experimental-backends --backend glx -b --config /home/rob/.config/picom/picom.conf
 locate xfce4-terminal.wrapper
 sudo rm -rf /usr/bin/xfce4-terminal.wrapper
@@ -2959,7 +2942,6 @@ v 16.cpp
 flameshot config
 v  ~/.config/gtk-3.0/gtk.css
 find
-ll
 lla
 rm netdata-bb.pdf
 rm .config/zhistory_bad
@@ -3096,8 +3078,6 @@ systemd-analyze critical-chain
 systemd-analyze plot > plot.svg
 open plot.svg
 yay -S ungoogled-chromium
- sudo pacman-key --keyserver hkp://keyserver.ubuntu.com -r 3056513887B78AEB 8A9E14A07010F7E3
- sudo pacman-key --lsign-key 3056513887B78AEB
  sudo pacman-key --lsign-key 8A9E14A07010F7E3
 yay -S ungoogled-chromium-bin
 pacman -S chaotic-aur/ungoogled-chromium-bin
@@ -3471,7 +3451,6 @@ less .xsession-errorsq
 pacf /etc/profile
 v /etc/profile
 vim
-pacman -Fy
 v .config/vifm/colors/Default.vifm
 v .config/vifm/vifmrc
 v /etc/pam.d/lightdm-autologin
@@ -3630,7 +3609,6 @@ fd Trash -H
 ls .local/share/Trash
 ncdu .local/share/Trash
 .local/share/Trash
-ls .cache
 v temp.c[[
 v temp.cpp
 gcp temp.cpp
@@ -3787,7 +3765,6 @@ grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-10-28-12393
 less docs/logs/rsync_backup/2020-10-28-123938.log
 mv docs/logs/2020-10-28-121435.log docs/logs/rsync_backup
 grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-10-28-124655.log'
-system-backup
 Assignment2_Sequence-Machine-Compiler
 gcp smc.cpp
 ./a.out
@@ -3805,14 +3782,11 @@ v .profile
 nnn -de
 which nnf
 v /home/rob/.local/bin/nnf
-v /etc/systemd/system/backup.service
 ll .bin
 v .bin/system-backup
 ls .bin/rsync_backup.sh
-systemctl status backup.service
 rsync_backup.sh
 sudo systemctl daemon-reload
-S start backup.service
 n
 rg NNN .zsh
 rg NN
@@ -3820,7 +3794,6 @@ rg NNN
 rg -h NNN
 rg -H NNN  .zsh
 rg -H NNN .zshrc
-S enable backup.timer
 ip
 tail -f .xsession-errors\\
 
@@ -3893,13 +3866,11 @@ ssh pi@192.168.2.41 sh
 ssh pi@192.168.2.41 mv .bashrc .f
 ssh pi@192.168.2.41
 fd -H | wc -l
-fd -t f
 start obs
 obs --profile Default
 pac simplescreenrecorder
 mkdir -p $XDG_CONFIG_HOME/simplescreenrecorder/
 l
-rmr .ssr
 fd -d 1
 sudo rm -rf 2020-10-28-123936 2020-10-28-124441 2020-10-28-124654 2020-10-28-124929
 simplescreenrecorder
@@ -4041,8 +4012,6 @@ sudo pacr plex-media-player
 mkszn 4
 mv ~/downloads/torrents/\[LostYears\]\ Sword\ Art\ Online\ -\ Alicization\ -\ War\ of\ Underworld\ -\ 13\ \(S04E13\)\ \(WEB\ 1080p\ Hi10P\ AAC\)\ \[04780030\].mkv ./SwordArtOnline_S04E13.mkv
 pac pkg-config
-timers
-alias udev-reload
 sudoedit /etc/pacman.conf
 rename -nv -- 's/-\w+?[.]mkv$/.mkv/' *.mkv
 which rename
@@ -4093,7 +4062,6 @@ fd -aH  .thumbnails
 fd . .thumbnails
 fd . .thumbnails |
 fd . .thumbnails | wc -l
-v .fdignore
 man bspwm
 bspc node -t
 mv picom.conf\ \! picom.conf
@@ -4340,7 +4308,6 @@ man obs
 /opt/piavpn/bin/piactl background enable
 dunst --help
 echo "$(echo "scale=1; 100 * $(pacman -Qi $(pacman -Qq) | grep Felix | wc -l) / $(pacman -Qq | wc -l)" | bc) %"
-man bspc
 mks dpms.sh
 realpath .bin/dpms.sh
 rmr .bin/start
@@ -4363,12 +4330,10 @@ btm
 less .config/picom/log 
 ll .config/picom/log
 rm .config/picom/log
-sudo pacman -Fy
 fzaux
 unoconv -f pdf school/ITE221/11\ -\ Computer\ OS\ Functions\ I.pptx 
 unoconv -f pdf school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pptx 
 open school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pdf 
-ndu
 pac newsboat
 btm --theme
 btm -h
@@ -4378,7 +4343,6 @@ btm --color gruvbox
 btm 
 picom
 picom --experimental-backends 
-less .xsession-errors
 ls /var/cache/pacman/pkg/qt
 ls /var/cache/pacman/pkg/qt*
 pacman -U /var/cache/pacman/pkg/qt5-base-5.15.2-1-x86_64.pkg.tar.zst
@@ -4431,7 +4395,6 @@ touch .bin/thing
 chmod +x '$*'
 chx .bin/*
 rm .bin/thing
-man tee
 pacman -Qqme | tee test | less
 rm .bin/dpms.sh
 git clone https://github.com/brianpcurran/gandi-automatic-dns.git ~/git/gandi-automatic-dns
@@ -4454,14 +4417,12 @@ shortinfo ./TheMandalorian_S02E01.mkv
 shortinfo ./the.mandalorian.s02e05.1080p.web.h264-ggwp.mkv
 v .bin/wall.sh
 v .bin/sinkctrl
-v .bin/pvpn
 man test
 v .bin/opi
 Season01
 Season1
 mv Season1 Season01
 mv Season2 Season02
-shortinfo ./
 shortinfo /media/blueberry/media/shows/Mandalorian/Season02/TheMandalorian_S02E02.mkv
 shortinfo /media/blueberry/media/shows/Mandalorian/Season02
 shortinfo /media/blueberry/media/shows/Mandalorian/Season01
@@ -4488,7 +4449,6 @@ mv .antigen .config/antigen
 ls .config/zsh
 mv .config/antigen .config/zsh
 la .config
-v .zshrc
 echo ${(o)color}
 dotu
 sudo rmr microsoft-edge-dev vidcutter transmission nwg-launchers plex.tv LosslessCut 
@@ -4547,7 +4507,6 @@ pacman -Syy
 sudo pacman -Syy
 pacman-key --init
 yay -S - < ../docs/pacman-pkgs
-cd
 v 
 v docs/pacman-pkgs
 pacman -S - < ../docs/pacman-pkgs
@@ -4598,7 +4557,6 @@ mkdir /media/{mx100,ssd,windows,bb-dir,blueberry,laptop}
 ls /media
 pac ntfs-3g
 umount -a
-lsblk
 mount -a
 uid
 id 
@@ -4612,7 +4570,6 @@ S enable --now systemd-swap
 v /etc/systemd/swap.conf
  sysctl vm.swappiness
 v .bin/rsync_backup.sh
-man rsync
 ls /etc/
 S enable ufw
 ufw status
@@ -4679,14 +4636,12 @@ cd school/ITP132/Assignment2_1_Stream_Processing_Functions
 ping 8.8.8.8
 ytk
 ssh ytk
-b
 yay minecraft-launcher
 ls downloads
 nvtop
 pacdiff
 sudo pacdiff
 ip s
-v .ssh/config
 ping 192.168.2.451
 ping 192.168.2.41
 ip a
@@ -4724,8 +4679,6 @@ sudo ufw allow 8085
 fd -e txt -E rm {}
 fd -e txt -x rm {}
 fd -e txt
-fd -e jpg
-fd -e jpg -x rm {}
 fd -e website
 fd -e website -x rm {}
 fd -e mp4
@@ -4805,9 +4758,7 @@ rmr .steam
 ls .steam
 journalctl -p 3 -xb
 sudo journalctl -p 3 -xb
-vfb
 scp -r school/ITP132/Assignment2_1_Stream_Processing_Functions rob-laptop:~/
-ssh rob-laptop
 v .ssh/known_hosts
 scp -r school/ITP132/Assignment2_1_Stream_Processing_Functions laptop:~/
 scp -r school/ laptop:~/school
@@ -4817,7 +4768,6 @@ rust update stable
 pkglist
 pacr piavpn-bin
 pvpn client
-pgrep pia
 pia-client
 piactl background enable
 piactl
@@ -4833,7 +4783,6 @@ ls /opt
 rmr /opt/piavpn
 sudo rmr /opt/piavpn
 yay -Scc
-yay -S piavpn-bin
 pkill pia
 sudo systemctl enable --now piavpn.service
 atom ./
@@ -4854,11 +4803,9 @@ gcp final.cpp -o final
 man fd
 vf
 man zsh
-start sxhkd
 bootctl update
 v /boot/loader/entries/arch-lts.conf
 sudo bootctl update
-ssh peach
 yay -S flent
 flent
 pac matplotlib
@@ -4879,8 +4826,6 @@ mv rrul.png rrul-3.png
 mv rrul.png rrul-4.png
 flent rrul -p all_scaled -l 60 -H netperf.bufferbloat.net -t 200/150 -o rrul.png
 flent rrul -p all_scaled -l 60 -H netperf.bufferbloat.net -t 500/500 -o rrul.png
-ssh pi
-S restart NetworkManager
 dig youtube.com
 cd .local/share/vifm/Trash
 rm rrul*
@@ -4953,7 +4898,6 @@ ls .cert
 start pia
 start pia-client
 reboot
-ssh bb
 fd -e mkv -X mv {} ./ ;
 mkszn 6
 dirname
@@ -4966,7 +4910,6 @@ locate redshift*.service
 locate redshift.service
 lsblk -f
 journalctl -r -p err
-bb
 systemd-analyze 
 systemd-analyze blame
 systemd-analyze blame | grep mount
@@ -4996,7 +4939,6 @@ rmr kvibes
 ls data
 la data
 ls composer
-..
 fd
 pac plocte
 pac plocate
@@ -5027,23 +4969,18 @@ locate plocate
 pacr micro
 sudo pacr micro
 nnn -T
-nnn -C
 nnn
-man nnn
 pac bleachbit
 locate DS_Store
 killall -9 bleachbit
 fkill
 sudo bleachbit
 bleachbit
-ncdu
 ls .config
 .config
 rmr bleachbit lf epiphany matplotlib rmlint.* 
 filecount .local
 filecount .local/share
-se
-filecount
 filecount projects
 filecount projects/ideas/
 wall.sh -U pics/backgrounds/macOS/ColorBurst4-tall.jpg
@@ -5066,31 +5003,254 @@ man ffmpeg
 mv .bin/tmp .bin/2mp4
 df
 mks mvmedia
-rg case .bin
 rg -C3 case .bin
 echo /media/blueberry/media/shows
 hue
 hue --help
-vfm
 mvmedia show downloads/torrents/The\ Batman\ DVDrip\ Xvid\ Complete\ Series\ 2004-2008 
-ls
 man bash
-la
 pacman p -Qo i3
 pacman -Qo i3
 sudo pacr i3-wm
 man yay
 sudo rm /etc/i3/*
-yay
 rofi --help
 man rofi
-yay
 mkdir .config/simplescreenrecorder
 mv .ssr/* .config/simplescreenrecorder
 rmr .ssr
-la
-ls
 rmr test
-yay
-ssh peach
 S restart NetworkManager
+ls .cache
+la .cache
+killall sxhkd
+mkfifo $HOME/.cache/sxhkd.fifo
+sxhkd -s $HOME/.cache/sxhkd.fifo
+man sxhkd
+ll vids/bankai-or-rasengan-2020-12-28_14.06.31.mp4 
+echo $DESKTOP_SESSION
+sudo pacman -Sy xorg-xrandr feh cronie
+sudo pacman -Sy  cronie
+yay dwall
+git clone https://github.com/adi1090x/dynamic-wallpaper.git
+cd dynamic-wallpaper
+chmod +x install.sh
+./install.sh
+cd rob/dynamic-wallpaper
+ls images
+sudo systemctl enable cronie.service --now
+rmr dynamic-wallpaper
+sudo rmr dynamic-wallpaper
+crontab -e
+echo "$SHELL | $DISPLAY | $DESKTOP_SESSION | $DBUS_SESSION_BUS_ADDRESS | $XDG_RUNTIME_DIR"
+ls /usr/share/dynamic-wallpaper/images
+pac thunar-archive-plugin
+mv downloads/mountfuji downloads/maldives downloads/london /usr/share/dynamic-wallpaper/images
+sudo mv downloads/mountfuji downloads/maldives downloads/london /usr/share/dynamic-wallpaper/images
+dwall -h
+dwall -s maldives
+v $(which dwall)
+dwall -s firewatch
+dwall -s beach
+dwall -s -p beach
+dwall -p -s beach
+fd -e jpg
+fd -e jpg -x rm {}
+..
+fd -t f -e txt -x rm {}
+fd -t f -e exe
+fd -t f -e exe -x rm {}
+fd -t f
+fd -t f | less
+fd -t f -e jpg
+fd -t f -e jpg -x rm {}
+fd -t f -e png
+fd -t f -e txt
+which tic
+yay -S murrine
+yay -s murrine
+less .xsession-errors
+htop
+pacman -Fy
+sudo pacman -Fy
+pacf tic
+tic -x termite.terminfo
+locate terminfo
+du -sh /usr/share/terminfo
+du -sh /usr/share/terminfo/t/termite
+ls /usr/share/terminfo/t/termite
+scp /usr/share/terminfo/t/termite peach:/usr/share/terminfo/t/
+yay -S piavpn-bin
+journalctl -f -u backup.service
+system-backup
+ncdu
+S enable backup.service
+S enable backup.timer
+v /etc/systemd/system/backup.timer
+v /etc/systemd/system/backup.service
+journalctl -r -u backup.service
+systemctl daemon-reload
+journalctl -xe
+S start backup.service
+grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-12-30-014554.log'
+man rsync
+watch time
+watch date
+pac bitwarden
+yay bitwarden
+pac apcupsd 
+v /etc/apcupsd/apcupsd.conf
+b
+S enable --now apcupsd.service
+man hdparm
+sudo ufw allow 3551
+find dark
+fd dark
+nnn -C -T a
+nnn -C
+man nnn
+apcaccess status
+hue power off
+which hue
+pac bmon
+bmon
+shortinfo
+shortinfo ./
+mediainfo Attack-on-Titan_S02E12.mkv
+../Season1/
+mediainfo Attack-on-Titan_S01E01.mp4
+../Season3
+mediainfo Attack-on-Titan_S03E01-Smoke_Signal.mkv
+ndu
+pac smartmontools
+smartctl --info /dev/sdd
+sudo smartctl --info /dev/sdd
+smartctl -c  /dev/sdd
+sudo smartctl -c  /dev/sdd
+man smart5
+man smart 5
+man 5 smart
+sudo smartctl -A /dev/sdb | awk '/^241/ { print "TBW: "($10 * 512) * 1.0e-12, "TB" } '
+mks diskinfo
+smartctl -i /dev/sda
+sudo smartctl -i /dev/sda
+diskinfo /dev/sda
+sudo smartctl -A /dev/sda
+sudo smartctl -A /dev/sdd
+diskinfo /dev/sdd
+ sudo pacman-key --keyserver hkp://keyserver.ubuntu.com -r 3056513887B78AEB 8A9E14A07010F7E3
+ sudo pacman-key --lsign-key 3056513887B78AEB
+ sudo pacman-key --lsign-key 8A9E14A07010F7E3 
+alias udev-reload
+S stop backup.timer
+timers
+less .bin/start
+xset -h
+xset dpms force off 
+mks monctl
+xset dpms force standby
+xset dpms force suspend
+man xset
+rg cat .bin
+v .bin/ncodr
+rg case .bin
+v .bin/pvpn
+v .bin/reboot
+scrot -h
+v .bin/scrot
+scrot 
+vfb
+man eval
+vw pics/scrots/scrot_2021-01-03-14-08-46.png 
+man maim
+man tee
+scrot win 
+scrot screen
+vw
+scrot screen save
+vw pics/scrots/scrot_2021-01-03-14-27-18.png 
+vw pics/scrots/scrot_2021-01-03-14-28-23.png
+rm tee -g1920x1080+1920+120 +%F-%H-%M-%S\)\".png
+rm tee \-g1920x1080+1920+120 +%F-%H-%M-%S\)\".png
+rm tee ./-g1920x1080+1920+120 +%F-%H-%M-%S\)\".png
+youtube-dl https://www.pornhub.com/view_video.php?viewkey=ph5f2edb5f68f0e
+youtube-dl https://www.pornhub.com/view_video.php?viewkey=ph5fc7e645e5234
+mv I\ cant\ stop\ to\ fuck\ my\ busty\ stepmom-ph5f2edb5f68f0e.mp4 Stuck\ Step\ Mom\ Becky\ Bandini\ Fucked\ By\ Son-ph5fc7e645e5234.mp4 /media/blueberry/other/Data/Google/Other/.hidden
+pgrep pia
+systemctl status backup.service
+/usr/bin/hue power off
+sethue
+date +%H%M
+ip -json addr
+ssh rob-laptop
+v .ssh/config
+sblk
+lsblk
+curl -fsSL https://raw.githubusercontent.com/manilarome/blurredfox/script/install.sh |\
+bash -s -- stable
+la
+locate chrome
+fd -t d chrome
+fd -t d -H chrome
+fd -t d 
+fd -t d -H
+fd -t d -H | grep chrome
+cat .fdignore
+ls .mozilla/firefox/ocdc4cz2.default-release/chrome/userChrome.css
+v .mozilla/firefox/ocdc4cz2.default-release/chrome/userChrome.css
+v .mozilla/firefox/ocdc4cz2.default-release/chrome/parts/urlbar.css
+v .mozilla/firefox/ocdc4cz2.default-release/chrome/parts/tabbar.css
+rg --bf-tab-selected-bg
+rg '--bf-tab-selected-bg'
+rg -e '--bf-tab-selected-bg'
+.mozilla/firefox/ocdc4cz2.default-release/chrome/parts
+../..
+rmr chrome
+mkdir chrome
+chrome
+v userContent.css
+ssh peach
+cd
+.mozilla
+cd firefox/ocdc4cz2.default-release/chrome
+cd .mozzila/firefox/ocdc4cz2.default-release/chrome
+ls
+ .mozilla/firefox/ocdc4cz2.default-release/chrome
+xclip
+man xclip
+filecount
+v .zshrc
+ssh pi
+ssh bb
+v .fdignore
+cd .mozilla/firefox/ocdc4cz2.default-release/chrome
+pacs dejavu
+bspc desktop -l next
+bspc node --state "~"pseudo_tiled
+start sxhkd
+v sxhkdrc
+man bspc
+yay
+chown rob:rob *
+sudo chown rob:rob *
+ll
+v userChrome.css
+vfm
+bb
+man cp
+cp -b .config/vifm/colors/Default.vifm 
+locate *.bak
+mkbak .config/vifm/colors/Default.vifm 
+ls .config/vifm/colors/Default.vifm
+ls .config/vifm/colors/Default.vifm*
+ssh laptop
+se
+dots add .bin/*
+yadm upgrade
+dots add .bin/*
+dots add .mozilla/firefox/ocdc4cz2.default-release/chrome/*
+ls .config/
+dots add .config/vifm/*
+ls
+la
+dotu

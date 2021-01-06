@@ -4,7 +4,7 @@ HISTFILE=~/.config/zsh/history
 HISTSIZE=100000
 SAVEHIST=100000
 
-PROMPT='%B%F{blue}%n%f %F{white}%b%c%f %B%F{blue}$ '
+PROMPT='%B%F{33}%n%f %F{white}%b%c%f %B%F{33}$ '
 
 # source aliases and functions
 [[ -e "$HOME"/.aliases ]] && \

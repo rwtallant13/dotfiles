@@ -8,15 +8,14 @@ _backup(){
 }
 
 _sleep(){
-    sleep 2s && sudo -u rob /home/rob/.bin/sethue
-    systemctl suspend
+    sleep 2s && /home/rob/.bin/sethue && sudo systemctl suspend
 }
 
 
 time="$(date +%H%M)"
 
 if [[ $time -gt 0550 && $time -lt 0630 ]]; then
-    sudo -u rob hue power off
+    /usr/bin/hue power off
     _backup
     _sleep
 else

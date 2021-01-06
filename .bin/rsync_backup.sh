@@ -596,7 +596,7 @@ while : ; do
 	# Check whether rsync reported any errors
 	# -----------------------------------------------------------------------------
 
-	EXIT_CODE="1"
+	EXIT_CODE="0"
 	if [ -n "$(grep "rsync error:" "$LOG_FILE")" ]; then
 		fn_log_error "Rsync reported an error. Run this command for more details: grep -E 'rsync:|rsync error:' '$LOG_FILE'"
 	elif [ -n "$(grep "rsync:" "$LOG_FILE")" ]; then

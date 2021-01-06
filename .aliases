@@ -43,14 +43,14 @@ alias lb='ls -hN --color=auto --group-directories-first /home/rob/.bin/'
 # files
 alias rm='rm -I'
 alias n='nnf'
-alias ndu='nnn -CT a'
+alias ndu='nnf -C -T a'
 alias pb='curl -F "f:1=<-" ix.io'
 alias rmr='rm -rfI'
 alias rf='rg --files --hidden'
 alias tb='nc termbin.com 9999'
 alias v='/home/rob/.bin/nv'
 alias vf='vifm'
-alias vfm='vifm /media/blueberry/media /media/blueberry/media/tmp '
+alias vfm='vifm /media/blueberry/media /home/rob/downloads/torrents/ '
 alias vfb='vifm /media/blueberry/backups/rob-pc /home/rob'
 
 # commands
@@ -85,6 +85,10 @@ kw(){
 
 pacman-pkgs(){
 	pacman -Qqne | tee /home/rob/docs/pacman-pkgs | less
+}
+
+mkbak(){
+	cp -b ${1} ${1}.bak
 }
 
 yay-pkgs(){

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+_suspend(){
+	xset dpms force suspend
+}
+
+_dpms(){
+	xset s 1215 1215
+	xset dpms 1215 1215 1215
+}
+
+_help(){
+    cat <<- EOF
+Usage: monctl [option]
+
+Options:
+     -h, help       	Display this message
+	 -s, suspend		Suspend monitors
+     -d, dpms        	Run on all files in directory
+EOF
+}
+
+case $1 in
+    -h|help)
+        _help
+		;;
+    -s|suspend)
+        _suspend
+        ;;
+    -d|dpms)
+        _dpms
+        ;;
+esac

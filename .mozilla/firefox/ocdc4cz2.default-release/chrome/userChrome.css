@@ -118,12 +118,12 @@ Here you can comment if you want your buttons to be showed up!
 }
 
 /* This one removes the close button  */
-/*.tabbrowser-tab:not([pinned]) .tab-close-button {
+.tabbrowser-tab:not([pinned]) .tab-close-button {
     display: none !important;
 }
 
 /* This one clears the tabs icon when they're not pinned  */
-.tabbrowser-tab:not([pinned]) .tab-icon-image {
+/*.tabbrowser-tab:not([pinned]) .tab-icon-image {
     display: none !important;
 }
 

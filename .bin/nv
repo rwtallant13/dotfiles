@@ -10,7 +10,7 @@ if [[ -z $1 ]]; then
 fi
 
 file=$1
-dir=${file%/*}
+dir="$(dirname $1)"
 
 _sudo(){
     if [[ -t 0 ]]; then

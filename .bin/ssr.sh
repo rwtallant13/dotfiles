@@ -7,15 +7,20 @@ Usage: ssr.sh [ COMMAND ]
 Commands:
 
     help        print this message
-    launch      start ssr in background
+    open	    start ssr in background
     record      start recording screen following cursor
 
 EOF
 
 }
 
-launch(){
-    2>/dev/null 1>&2 simplescreenrecorder --start-hidden --settingsfile=/home/rob/.ssr/fullscreen.conf &
+open(){
+    2>/dev/null 1>&2 simplescreenrecorder --settingsfile=/home/rob/.ssr/fullscreen.conf &
+
+}
+
+hidden(){
+	2>/dev/null 1>&2 simplescreenrecorder --start-hidden --settingsfile=/home/rob/.ssr/fullscreen.conf &
 
 }
 

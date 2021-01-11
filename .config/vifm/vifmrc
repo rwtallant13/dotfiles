@@ -94,7 +94,7 @@ let mapleader =","
 nnoremap <c-f> :fzf<cr>
 nmap q ZZ
 nmap ; :
-nmap R :restart<cr>
+nnoremap R :restart<cr>
 nmap . za
 map <delete> DD
 map <C-h> <C-w>h
@@ -106,7 +106,8 @@ map <C-s> <C-w>s
 map <C-v> <C-w>v
 
 " basics
-nnoremap T :!nout thunar <cr>
+nnoremap ? =
+nnoremap T :tree <cr>
 nnoremap ! :shell<cr>
 nnoremap s :sort<cr>
 nnoremap w :view<cr>
@@ -115,6 +116,12 @@ nnoremap o :file &<cr>l
 
 " invert sorting
 map SS :invert o <cr>
+
+" split horizontal
+map SH :split!<cr>
+
+" split vertical
+map SV :vsplit!<cr>
 
 " select all
 nnoremap <C-a> :norm ggVG<cr><cr>
@@ -128,24 +135,6 @@ nnoremap J :jobs<cr>
 " put in background
 nnoremap P :put! &<cr>
 
-" get real size of all files
-cnoremap ndu :norm ggVGga <cr>
-
-" toggle between sorting: by name <--> by size <--> by mtime
-command! togglesort
-         \ :if &sort == '-size,+name'
-         \ |    set sort=+mtime
-         \ |    echo 'Sorted by modification date'
-         \ |elseif &sort == '+name'
-         \ |    set sort=-size
-         \ |    echo 'Sorted by size'
-         \ |else
-         \ |    set sort=+name
-         \ |    echo 'Sorted by name'
-         \ |endif
-nnoremap SA :togglesort<cr>
-
-
 " yank current directory path into the clipboard
 nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
 
@@ -158,17 +147,6 @@ nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') 
 " yank root of current file's name into the clipboard
 nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
 
-
-command! FZFcd :execute 'cd "'.system('fd . ./ -H -a -t d | fzf 2>/dev/tty').'"'
-
-command! FZFcdHome :execute 'cd "'.system('fd . $HOME -t d -H -a | fzf 2>/dev/tty').'"' | :redr
-
-command! FZFfind :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME ./ -H -a | fzf  --height 10 --layout=default 2>/dev/tty'))
-
-nnoremap <c-f> :FZFfind<cr>
-nnoremap <c-g> :FZFcdHome<cr>
-nnoremap <m-c> :FZFcd<cr>
-
 " Mappings for faster renaming
 nnoremap cc cw<c-u>
 
@@ -178,20 +156,14 @@ nnoremap $ :!$TERMINAL %i &<cr>
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
 
-" Toggle wrap setting on ,w key
-nnoremap ,w :set wrap!<cr>
-
-" Open in pager
-nnoremap ,p :!less %f<cr>
-
 " F keys remapping
 
-nnoremap <f1> :!less %f<cr>
-nnoremap <f2> cw
-nnoremap <f3> :copy<cr>
-nnoremap <f4> :norm ndu <cr>
+nnoremap <F1> :!ndu <cr>
+nnoremap <F2> cw
+nnoremap <F3> :findfiles<cr>
+nnoremap <F4> :tree! <cr>
 nnoremap <F5> :history<cr>
-nnoremap <F8> :!shortinfo %f %q<cr>
+
 
 " Use rg instead of grep
 set grepprg='rg %i %a %s'
@@ -221,6 +193,15 @@ command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
 command! fzf :set noquickview | :execute 'goto' fnameescape(term('fd . -H | fzf 2>/dev/tty'))
+
+command! fzfcd :execute 'cd "'.system('fd . $HOME -t d -H -a $HOME ./ | fzf 2>/dev/tty').'"' | :redr
+
+command! fzfind :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME ./ -H -a | fzf  --height 10 --layout=default 2>/dev/tty'))
+
+nnoremap <c-f> :FZFfind<cr>
+nnoremap <m-c> :FZFcd<cr>
+
+command findfiles fd . -t f%u
 
 " Open all other defaults
 filetype * xdg-open

@@ -267,7 +267,6 @@ ncd /media/ssd/
 ndu /media/ssd/
 nvim .profile
 exit
-ls .config/
 rm -rf .config/cava/ .config/lxsession-default-apps/
 pac zsh
 cp .config/bash_history .config/zhistory
@@ -412,7 +411,6 @@ cd /tmp
 cd /boot
 cd EFI
 cd ../grub
-cd /
 cd /home/rob
 cd -2
 bspc node --state ~floating
@@ -592,7 +590,6 @@ unlink current/10-14-Mojave-*
 wall.sh -u pictures/backgrounds/landscapes/macOS/10-15-1-Dawn.jpg
 v ~/.bashrc
 wall.sh -b catalina-phone.png
-ncdu -x /
 V /etc/systemd/journald.conf\
 S restart systemd-journald
 yay -S ner-fonts-hack
@@ -1201,7 +1198,6 @@ bspc node -f ~
 bashop
 sudo vim /etc/modprobe.d/hid_apple.conf
 sudo update-initramfs -u
-pac linux
 mv cpu_cooler_installation.prproj IMG_0054.mp4 school/ITE170/finalProject
 mv IMG_0054.mp4 cpu_cooler_installation.mp4
 mediainfo cpu_cooler_installation.mp4
@@ -1470,7 +1466,6 @@ yay kazam
 v .ssr/settings.conf
 ls .ssr/input-profiles/fullscreen.conf
 v .ssr/input-profiles/fullscreen.conf
-man simplescreenrecorder
 ls .ssr/input-profiles
 ls .ssr/input-profiles/follow-screen.conf
 v .ssr/input-profiles/follow-screen.conf
@@ -1487,7 +1482,6 @@ simplescreenrecorder --settingsfile=.ssr/nvenc.conf
 ls .ssr/output-profiles
 v .ssr/fullscreen.conf
 simplescreenrecorder --start-hidden  --settingsfile=/home/rob/.ssr/fullscreen.conf
-v .bin/ssr.sh
 ssr.sh record
 rg for .bin
 nvidia-settings -q gpucoretemp
@@ -1539,7 +1533,6 @@ sudo chown rob:rob .bin/*
 v .bin/thing
 rm signal-2020-05-22-181132.png
 killall nvfans
-dots add .bin/*
 ls .m2
 fd -e ovpn
 ll docs/rwt13.ovpn
@@ -2076,7 +2069,6 @@ scp bb:bin/gotop ../.bin
 gotop
 ../.bin
 ./gotop
-yay -S bottom
 bottom
 fd cargo
 fd -H cargo
@@ -2085,7 +2077,6 @@ locate btm
 which btm
 pacr pipewire
 sudo pacr pipewire
-pac micro
 yay -S micro
 ?
 pacf modprobe
@@ -2160,7 +2151,6 @@ ls /boot/EFI/
 sudo bootctl install
 efibootmgr -b 0004 -B
 sudo efibootmgr -b 0004 -B
-S status lightdm
 pac nvidia-dkms
 pac linux-zen-headers
 dfsdf
@@ -2300,7 +2290,6 @@ man btm
 btm -ba
 btm -a
 btm -a -b
-journalctl -r -p warning
 S disable thunar.service
 locate thunar.service
 S disable --user thunar.service
@@ -2374,7 +2363,6 @@ fd termite.terminfo
 fd -H termite.terminfo
 infocmp > termite.terminfo
 scp termite.terminfo bb:~/
-xcolor
 systemctl | grep running
 sudo pacr xcalib
 sudo pacr displaycal
@@ -2827,7 +2815,6 @@ pac oxygen
 v .config/Trolltech.conf
 yay qt5-styleplugins
 echo $QT_QPA_PLATFORMTHEME
-micro
 rm testmicro
 micro .bin/filecount
 m .bin/note
@@ -4301,7 +4288,6 @@ fd thumbnail
 rmr .thumbnails
 mv .ssr .config/simplescreenrecorder
 mv .config/simplescreenrecorder .ssr
-ls .ssr
 ls .ssr/simplescreenrecorder
 v .config/vifm/vifminfo
 man obs
@@ -4326,7 +4312,6 @@ fd -h
 fd . $HOME ./ 
 ssh root@192.168.2.41
 ssh -vvv pi
-btm
 less .config/picom/log 
 ll .config/picom/log
 rm .config/picom/log
@@ -4450,7 +4435,6 @@ ls .config/zsh
 mv .config/antigen .config/zsh
 la .config
 echo ${(o)color}
-dotu
 sudo rmr microsoft-edge-dev vidcutter transmission nwg-launchers plex.tv LosslessCut 
 rmr .zshrc.zwc /home/rob/.config/zsh/antigen/*.zwc
 ls /home/rob/.config/zsh/antigen/*.zwc
@@ -4565,7 +4549,6 @@ ll /media/mx100
 sudo umount /media/mx100
 sudo cp /boot/loader/entries/arch-lts.conf /boot/loader/entries/arch.conf
 pac sshfs
-v /boot/loader/entries/arch.conf
 S enable --now systemd-swap
 v /etc/systemd/swap.conf
  sysctl vm.swappiness
@@ -4745,7 +4728,6 @@ v /etc/passwd
 S restart shadow.service
 journalctl -r -u shadow.service
 S status shadow.service
-rmorphans
 pacman -Scc
 sudo pacman -Scc
 rmlint
@@ -4800,11 +4782,8 @@ z itp
 FinalExam
 gcp final.cpp -o final
 ./final
-man fd
-vf
 man zsh
 bootctl update
-v /boot/loader/entries/arch-lts.conf
 sudo bootctl update
 yay -S flent
 flent
@@ -4841,7 +4820,6 @@ pia-client --help
 piactl client
 piactl --help
 mkszn 2
-pacrepo
 yay -S chromium 
 yay -S ungoogled-chromium 
 pacman -Syu
@@ -4897,19 +4875,15 @@ ls /home/rob/.config/java
 ls .cert
 start pia
 start pia-client
-reboot
 fd -e mkv -X mv {} ./ ;
 mkszn 6
 dirname
 dirname docs
 man dirname
-realpath $(dirname docs)
-dirname /home/rob/docs/backup_exclude.txt
 basename $(dirname /home/rob/docs/backup_exclude.txt)
 locate redshift*.service
 locate redshift.service
 lsblk -f
-journalctl -r -p err
 systemd-analyze 
 systemd-analyze blame
 systemd-analyze blame | grep mount
@@ -4925,8 +4899,6 @@ less +F /var/log/pacman.log
 qbittorrent
 yay ungoogled-chromium
 pacman -Sc
-sudo pacman -Sc
-yay -Sc
 pacr steam
 sudo pacr steam
 alias pacr
@@ -5056,7 +5028,6 @@ dwall -s -p beach
 dwall -p -s beach
 fd -e jpg
 fd -e jpg -x rm {}
-..
 fd -t f -e txt -x rm {}
 fd -t f -e exe
 fd -t f -e exe -x rm {}
@@ -5069,7 +5040,6 @@ fd -t f -e txt
 which tic
 yay -S murrine
 yay -s murrine
-less .xsession-errors
 htop
 pacman -Fy
 sudo pacman -Fy
@@ -5121,7 +5091,6 @@ mediainfo Attack-on-Titan_S02E12.mkv
 mediainfo Attack-on-Titan_S01E01.mp4
 ../Season3
 mediainfo Attack-on-Titan_S03E01-Smoke_Signal.mkv
-ndu
 pac smartmontools
 smartctl --info /dev/sdd
 sudo smartctl --info /dev/sdd
@@ -5185,10 +5154,8 @@ ip -json addr
 ssh rob-laptop
 v .ssh/config
 sblk
-lsblk
 curl -fsSL https://raw.githubusercontent.com/manilarome/blurredfox/script/install.sh |\
 bash -s -- stable
-la
 locate chrome
 fd -t d chrome
 fd -t d -H chrome
@@ -5208,20 +5175,16 @@ rg -e '--bf-tab-selected-bg'
 rmr chrome
 mkdir chrome
 chrome
-v userContent.css
 ssh peach
-cd
 .mozilla
 cd firefox/ocdc4cz2.default-release/chrome
 cd .mozzila/firefox/ocdc4cz2.default-release/chrome
-ls
  .mozilla/firefox/ocdc4cz2.default-release/chrome
 xclip
 man xclip
 filecount
 v .zshrc
 ssh pi
-ssh bb
 v .fdignore
 cd .mozilla/firefox/ocdc4cz2.default-release/chrome
 pacs dejavu
@@ -5229,14 +5192,9 @@ bspc desktop -l next
 bspc node --state "~"pseudo_tiled
 start sxhkd
 v sxhkdrc
-man bspc
-yay
 chown rob:rob *
 sudo chown rob:rob *
 ll
-v userChrome.css
-vfm
-bb
 man cp
 cp -b .config/vifm/colors/Default.vifm 
 locate *.bak
@@ -5244,13 +5202,146 @@ mkbak .config/vifm/colors/Default.vifm
 ls .config/vifm/colors/Default.vifm
 ls .config/vifm/colors/Default.vifm*
 ssh laptop
-se
-dots add .bin/*
 yadm upgrade
 dots add .bin/*
 dots add .mozilla/firefox/ocdc4cz2.default-release/chrome/*
 ls .config/
 dots add .config/vifm/*
-ls
-la
 dotu
+v userChrome.css
+xcolor
+z chrome
+v userContent.css
+pac micro
+micro
+ssh bb
+micro .config/micro/settings.json
+man bspc
+bspc node -B
+bspc node -E
+~/.bin
+mv bspscripts bspctl
+v bspctl
+..
+v extract_canvas
+v induce_rules
+bspc wm -d
+bspc wm -d > .config/bspwm/extract_canvas 
+chx .config/bspwm/extract_canvas
+ll .config/bspwm/extract_canvas
+ll .config/bspwm/
+ll .config/
+.config/bspwm
+[[ -w ./ ]]
+[[ -w ./ ]] && echo yes
+[[ -w ./ ]] || echo yes
+[[ ! -w ./ ]] && echo yes
+cd /
+v /home/rob/.bin
+v /home/rob/.bin/rmspaces
+realpath $(dirname docs)
+dirname /home/rob/docs/backup_exclude.txt
+cd
+v .config/micro/settings.json
+lsblk
+ls
+sudo install /usr/share/doc/NVIDIA_GLX-1.0/samples/systemd/nvidia-suspend.service /etc/systemd/system
+S enable nvidia-suspend.service
+S enable nvidia-hibernate.service
+S enable nvidia-resume.service
+ls /etc/modules-load.d
+lsmod
+v /etc/modules-load.d/Nvidia-PreserveMem.conf
+v /etc/modules-load.d/nvidia.conf
+rm /etc/modules-load.d/Nvidia-PreserveMem.conf
+sudo rm /etc/modules-load.d/Nvidia-PreserveMem.conf
+v /etc/modules-load.d/nowatchdog.conf
+sae
+sysctl -a
+sudo cat /etc/modules-load.d/*
+sysctl -a | grep NV
+sysctl -a | grep watchdog
+sysctl -a | grep Preserve
+sudo sysctl -a
+sudo sysctl -a | grep Preserve
+sudo sysctl -a | grep nvidia
+v /etc/modprobe.d/nowatchdog.conf
+mv /etc/modprobe.d/nowatchdog.conf /etc/modprobe.d/blacklist.conf
+sudo mv /etc/modprobe.d/nowatchdog.conf /etc/modprobe.d/blacklist.conf
+ls /etc/modprobe.d/
+cat /etc/modprobe.d/*
+sudo 
+sudo sysctl -a | grep Nvidia
+sudo sysctl -a 
+sudo sysctl -a | grep watchdog
+v /etc/modprobe.d/nvidia.conf
+modinfo nvidia
+ cat /proc/sys/kernel/watchdog
+locate nvidia-suspend.service
+v /usr/lib/systemd/system/nvidia-suspend.service
+v /usr/lib/systemd/system/nvidia-resume.service
+v /usr/bin/nvidia-sleep.sh
+nvidia-smi -q -d MEMORY |grep 'FB Memory Usage' -A1
+mkdir .ssr
+ls .ssr
+mv .config/simplescreenrecorder/* .ssr
+man simplescreenrecorder
+v .bin/ssr.sh
+btm
+pac btm
+yay -S bottom
+yay bottom
+ncdu -x /
+fd . downloads projects
+fd . downloads projects | less
+fd . downloads docs | less
+man fd
+ndu
+bb
+vfm
+S status lightdm
+journalctl -u lightdm
+journalctl -u lightdm -r
+S start lightdm
+vf
+ls .cache/
+autoload -Uz compinit && compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
+ls "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
+mkdir .cache/zsh
+ls .zcompcache
+man compinit
+echo  $ZSH_CACHE_DIR\
+
+echo $XDG_CACHE_HOME
+rm -r .zcompcache
+ls .cache/zsh
+se
+la
+v /etc/vimrc
+nv
+sudo nv
+v /boot/loader/entries/arch-lts.conf
+v /boot/loader/entries/arch.conf
+v /etc/modprobe.d/blacklist.conf
+sudo rm /etc/modprobe.d/blacklist.conf
+sudo rm /etc/modprobe.d/nvidia.conf
+v /etc/modules-load.d/module-blacklist.conf
+sudo rm /etc/modules-load.d/*
+reboot
+pac linux-lts nvidia-lts linux-lts-headers
+journalctl -r -p err
+journalctl -r 
+journalctl -r -p warning
+sudo chmod -x /etc/systemd/system/piavpn.service
+ll /etc/systemd/system/piavpn.service
+pacrepo
+pacr libva-vdpau-driver-chromium
+sudo pacr libva-vdpau-driver-chromium
+sudo pacman -Sc
+yay -Sc
+rmorphans
+pac linux
+less .xsession-errors
+yay
+la
+yay

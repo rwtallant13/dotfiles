@@ -10,7 +10,7 @@ PROMPT='%B%F{33}%n%f %F{white}%b%c%f %B%F{33}$ '
 [[ -e "$HOME"/.aliases ]] && \
    . "$HOME"/.aliases
 
-autoload -Uz compinit && compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
+autoload -Uz compinit && compinit -C -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 autoload bashcompinit && bashcompinit
 
 # emacs mode
@@ -63,11 +63,10 @@ zstyle ':completion:*:(ssh|scp|ftp|sftp):*' hosts $hosts
 zstyle ':completion:*:(ssh|scp|ftp|sftp):*' users $users
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*' use-cache true
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 zstyle :compinstall filename '/home/rob/.zshrc'
-
 
 # -- setopts ------------------------------------------------------------------
 
@@ -85,6 +84,7 @@ setopt always_to_end
 setopt complete_in_word
 unsetopt flow_control
 unsetopt menu_complete
+unsetopt PROMPT_SP
 
 
 # -- keybinds ---------------------------------------------------------

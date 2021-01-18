@@ -1310,11 +1310,8 @@ rm docs/notes/*
 notes this is a thing
 v docs/notes/2020-05.txt
 cat .bin/notes|xc
-lsusb
 udisks
 pac udisks
-pac udisk
-pac udisks2
 udisksctl
 blkid
 mount /dev/sde1
@@ -3727,7 +3724,6 @@ timeshift
 rsync_backup.sh -h
 rsync_backup.sh --rsync-get-flags
 realpath docs/backup_exclude.txt
-v docs/backup_exclude.txt
 mkdir -p -- "bb:/data/backups/rob-pc" ; touch "bb:/data/backups/rob-pc/backup.marker"
 rm bb:
 rmr bb:
@@ -4127,7 +4123,6 @@ bspc query -N -n ".leaf.
 bspc query -N -n '.leaf.!window.local'
 bspc query -N -n
 bspc query -N -n .leaf
-xprop
 bspc query -N -n '.leaf.!window'
 pkill -9 thunar
 thunar
@@ -4459,7 +4454,6 @@ mv .bin/encode-media .bin/ncodr
 pacf ncodr
 se 
 ln
-lb
 cd /yay
 ls /root
 sudo ls /root
@@ -4544,7 +4538,6 @@ umount -a
 mount -a
 uid
 id 
-ll /media
 ll /media/mx100
 sudo umount /media/mx100
 sudo cp /boot/loader/entries/arch-lts.conf /boot/loader/entries/arch.conf
@@ -4601,7 +4594,6 @@ sudo cp /root/.ssh/config .ssh
 ll .ssh
 sudo chown -R rob:rob .ssh
 mnt bb
-mnt mx100
 mnt windows
 v /boot/loader/loader.conf
 v /etc/pacman.d/hooks/100-systemd-boot.hook
@@ -4627,7 +4619,6 @@ sudo pacdiff
 ip s
 ping 192.168.2.451
 ping 192.168.2.41
-ip a
 man shutdown
 bn
 dig 176.113.74.44
@@ -4805,7 +4796,6 @@ mv rrul.png rrul-3.png
 mv rrul.png rrul-4.png
 flent rrul -p all_scaled -l 60 -H netperf.bufferbloat.net -t 200/150 -o rrul.png
 flent rrul -p all_scaled -l 60 -H netperf.bufferbloat.net -t 500/500 -o rrul.png
-dig youtube.com
 cd .local/share/vifm/Trash
 rm rrul*
 la | wc -l
@@ -4848,15 +4838,12 @@ fastboot boot downloads/twrp-3.4.0-1-taimen.img
 fastboot flashing unlock\
 \
 
-adb reboot bootloader
 adb kill-server
 adb sideload /home/rob/downloads/twrp-installer-3.4.0-1-taimen.zip
 adb push downloads/proton-aosp_taimen_11.3.0-gapps.zip /sdcard
-fastboot devices
 adb push downloads/proton-aosp_taimen_11.3.0-gapps.zip /
 adb push downloads/twrp-installer-3.4.0-1-taimen.zip /sdcard
 docker ps
-adb devices
 adb shell
 sudo pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst 
 filecount .cache
@@ -4883,7 +4870,6 @@ man dirname
 basename $(dirname /home/rob/docs/backup_exclude.txt)
 locate redshift*.service
 locate redshift.service
-lsblk -f
 systemd-analyze 
 systemd-analyze blame
 systemd-analyze blame | grep mount
@@ -4992,7 +4978,6 @@ mkdir .config/simplescreenrecorder
 mv .ssr/* .config/simplescreenrecorder
 rmr .ssr
 rmr test
-S restart NetworkManager
 ls .cache
 la .cache
 killall sxhkd
@@ -5128,7 +5113,6 @@ v .bin/reboot
 scrot -h
 v .bin/scrot
 scrot 
-vfb
 man eval
 vw pics/scrots/scrot_2021-01-03-14-08-46.png 
 man maim
@@ -5175,7 +5159,6 @@ rg -e '--bf-tab-selected-bg'
 rmr chrome
 mkdir chrome
 chrome
-ssh peach
 .mozilla
 cd firefox/ocdc4cz2.default-release/chrome
 cd .mozzila/firefox/ocdc4cz2.default-release/chrome
@@ -5184,7 +5167,6 @@ xclip
 man xclip
 filecount
 v .zshrc
-ssh pi
 v .fdignore
 cd .mozilla/firefox/ocdc4cz2.default-release/chrome
 pacs dejavu
@@ -5208,13 +5190,10 @@ dots add .mozilla/firefox/ocdc4cz2.default-release/chrome/*
 ls .config/
 dots add .config/vifm/*
 dotu
-v userChrome.css
 xcolor
-z chrome
 v userContent.css
 pac micro
 micro
-ssh bb
 micro .config/micro/settings.json
 man bspc
 bspc node -B
@@ -5243,8 +5222,6 @@ realpath $(dirname docs)
 dirname /home/rob/docs/backup_exclude.txt
 cd
 v .config/micro/settings.json
-lsblk
-ls
 sudo install /usr/share/doc/NVIDIA_GLX-1.0/samples/systemd/nvidia-suspend.service /etc/systemd/system
 S enable nvidia-suspend.service
 S enable nvidia-hibernate.service
@@ -5297,13 +5274,10 @@ fd . downloads projects | less
 fd . downloads docs | less
 man fd
 ndu
-bb
-vfm
 S status lightdm
 journalctl -u lightdm
 journalctl -u lightdm -r
 S start lightdm
-vf
 ls .cache/
 autoload -Uz compinit && compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 ls "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
@@ -5315,8 +5289,6 @@ echo  $ZSH_CACHE_DIR\
 echo $XDG_CACHE_HOME
 rm -r .zcompcache
 ls .cache/zsh
-se
-la
 v /etc/vimrc
 nv
 sudo nv
@@ -5327,21 +5299,128 @@ sudo rm /etc/modprobe.d/blacklist.conf
 sudo rm /etc/modprobe.d/nvidia.conf
 v /etc/modules-load.d/module-blacklist.conf
 sudo rm /etc/modules-load.d/*
-reboot
 pac linux-lts nvidia-lts linux-lts-headers
 journalctl -r -p err
 journalctl -r 
 journalctl -r -p warning
 sudo chmod -x /etc/systemd/system/piavpn.service
 ll /etc/systemd/system/piavpn.service
-pacrepo
 pacr libva-vdpau-driver-chromium
 sudo pacr libva-vdpau-driver-chromium
 sudo pacman -Sc
 yay -Sc
 rmorphans
 pac linux
-less .xsession-errors
-yay
 la
+trash-list
+vfb
+man ncdu
+ncdu -x ./
+fd -t d torrents
+fd -t d torrents -x ls {};
+v docs/backup_exclude.txt
+bb
+S restart NetworkManager
+scp docs/important/backup-peach-2021-01-11.tar.gz peach:/tmp
+ls
+vf
+xfce4-terminal
+less .xsession-errors
+ssh peach
+ip a
+ssh pi
+dig youtube.com
+mkdir {1,2,3}
+ssh bb
+pacrepo
+reboot
+pac gsmartcontrol
+mnt mx100
+lb
+rm .bin/mvmedia
+diskinfo /dev/sdc
+pac udisk
+pac udisks2
+gcc -march=native -v -Q --help=target
+v /etc/makepkg.conf
+z chrome
+v userChrome.css
+cat /sys/block/sdd/queue/scheduler
+lsblk -f
+ll /media
+mv /media/mx100 /media/mx500
+ll /media/mx500
+ll /media/
+se
+xprop
+bspc rule -a privateinternetaccess:pia-client state=pseudo_tiled
+lsblk
+lsusb
+fastboot format userdata
+sudo $(which fastboot) devices
+pac lsusb
+pacf lsusb
+pac usbutils
+lsusb |grep 001 |grep -i intel
+lsusb |grep 8087
+sudo sh -c "echo 'SUBSYSTEM==\"usb\", ATTR{idVendor}==\"8087\", MODE=\"0666\", GROUP=\"plugdev\"' >> /etc/udev/rules.d/51-android.rules"
+sudo service udev restart
+udev-reload
+S restart udev
+fastboot -l devices
+fastboot devices
+sudo fastboot devices
+sudo fastboot format userdata
+adb push downloads/android/* sdcard/Download/
+adb sideload
+adb sideload downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip
+sudo adb sideload downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip
+pac mtpfs
+sudo adb devices
+adb push downloads/android/* /data/media
+adb push downloads/android/* /data/
+adb reboot bootloader
+ls downloads/android/*
+adb push downloads/android/* /sdcard
+fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
+adb devices
+adb shell 
+sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
+yay
+v docs/important/bitwarden_recovery_code.txt
+ls docs/important/
+vfm
+shortinfo AvengersAgeofUltron.mp4
+fd -e sub
+fd -e sub -x ls -l {};
+fd -e sub -x ls -lh {};
+yay
+man fd
+fd -I android
+ls downloads/android
+ll downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip
+adb devices
+adb reboot bootloader
+fastboot boot downloads/twrp-3.4.0-1-taimen.img 
+sudo fastboot boot downloads/twrp-3.4.0-1-taimen.img 
+sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
+adb push downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip /tmp
+sudo fastboot format userdata
+sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
+adb push downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip /tmp
+sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
+adb push downloads/android/open_gapps-arm64-10.0-micro-20210116.zip /tmp
+adb push downloads/android/open_gapps-arm64-11.0-nano-20201121.zip /sdcard
+downloads/android
+ls
+ll
+rmr open_gapps-arm64-10.0-micro-20210116.zip
+adb push EvolutionX_5.3_RMX206X-11-20210116-0629-OFFICIAL.zip /sdcard
+adb reboot bootloader
+sudo fastboot boot twrp-3.5.0_9-0-taimen.img
+adb push EvolutionX_5.3_RMX206X-11-20210116-0629-OFFICIAL.zip /sdcard
+rm EvolutionX_5.3_RMX206X-11-20210116-0629-OFFICIAL.zip
+adb push EvolutionX_5.2_taimen-11-20201212-0027-OFFICIAL.zip /sdcard
+yay
+pacrepo
 yay

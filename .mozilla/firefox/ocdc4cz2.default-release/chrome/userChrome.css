@@ -118,7 +118,7 @@ Here you can comment if you want your buttons to be showed up!
 }
 
 /* This one removes the close button  */
-.tabbrowser-tab:not([pinned]) .tab-close-button {
+/*.tabbrowser-tab:not([pinned]) .tab-close-button {
     display: none !important;
 }
 

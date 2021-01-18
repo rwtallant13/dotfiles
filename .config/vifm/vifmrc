@@ -160,8 +160,8 @@ nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
 
 nnoremap <F1> :!ndu <cr>
 nnoremap <F2> cw
-nnoremap <F3> :findfiles<cr>
-nnoremap <F4> :tree! <cr>
+nnoremap <F3> :tree!<cr>
+nnoremap <F4> :findfiles <cr>
 nnoremap <F5> :history<cr>
 
 

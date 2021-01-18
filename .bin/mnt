@@ -26,8 +26,8 @@ case $1 in
     bb-dir)
         sshfs -o reconnect,ServerAliveInterval=30,ServerAliveCountMax=3 bb:"$2" /media/bb-dir/
         ;;
-    mx100)
-        sudo mount UUID=06281093281083B9 /media/mx100
+    mx500)
+        sudo mount UUID=06281093281083B9 /media/mx500
         ;;
     ssd)
         sudo mount UUID=CE7A626D7A6251EF /media/ssd

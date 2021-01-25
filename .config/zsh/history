@@ -87,7 +87,6 @@ sudo rm -rf /usr/share/applications/termite.desktop
 ls /usr/share/applications/termite.desktop
 sv /usr/share/applications/termite.desktop
 exo-open --launch TerminalEmulator
-open
 exo-open --launch TerminalEmulator .bashrc
 exo-open --launch TerminalEmulator v .bashrc
 exo-open --launch TerminalEmulator vim
@@ -1761,7 +1760,6 @@ pacr bitwarden-bin amidst
 sudo pacr bitwarden-bin amidst
 S enable --now caps2esc.timer
 man alacritty
-source .profile
 nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=0
 less /home/rob/.cache/gotop/errors.log
 sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf.bak
@@ -2572,7 +2570,6 @@ less error_log.2020-09-07T03:56:40-04:00.data
 sudo rm -rf rob-pc
 /usr/bin/ssh -t rob@192.168.2.21 tmux new -A ssh
 /usr/bin/ssh -t rob@192.168.2.21 tmux new -A
-sudo ufw allow 51413
 sudo pacr transmission-gtk
 sudo ufw status numbered
 sudo ufw remove 5
@@ -3599,13 +3596,11 @@ gcp temp.cpp
 rm a.out temp.cpp
 hist
 v .config/zsh/history
-bc
 man bc
 yay discord-arch-electron
 yay -S discord_arch_electron
 discord
 ls /var/cache/pacman/pkg/youtube-dl-2020.09.20-1-any.pkg.tar.zst
-cal
 ls .config/Meltytech
 less .config/pulseaudio-ctl/config
 rm .config/pulseaudio-ctl/config
@@ -3902,7 +3897,6 @@ sleep 1.5s
 piactl disconnect
 v .bin/vpn-toggle
 mks .bin/pia.sh
-piactl get connectionstate
 opi
 pia.sh
 piactl set region
@@ -4139,7 +4133,6 @@ open 10\ -\ Pheripheral\ Devices.pdf
 yay microsoft-edge-dev-bin
 sudo tail -f /var/log/syslog
 rm ~/.config/picom/log
-yay picom-git
 less .config/picom/log
 killall start
 less ~/.config/picom/log
@@ -4300,7 +4293,6 @@ rg -H persist
 rg -h persist
 rg --hidden persist
 rg --hidden "persist picom"
-pac picom
 yay picom-tryone-git
 fd --help
 fd -h
@@ -4644,7 +4636,6 @@ pac python-pip
 pac python3-pip
 sudo pip3 install hue_plus
 pac portaudio
-qbittorrent --help
 pacman -S qbittorrent-cli
 sudo pacman -S qbittorrent-cli
 sudo pacman -S qbittorrent-nox
@@ -4652,7 +4643,6 @@ qbittorrent-nox --help
 sudo ufw allow 8085
 fd -e txt -E rm {}
 fd -e txt -x rm {}
-fd -e txt
 fd -e website
 fd -e website -x rm {}
 fd -e mp4
@@ -4691,7 +4681,6 @@ fzpkgs
 fkill 
 lightdm-gtk-greeter-settings-pkexec
 /home/rob/.bin/persist picom --experimental-backends
-start picom
 start picom &
 /home/rob/.bin/start picom &
 persist picom --experimental-backends
@@ -4803,12 +4792,10 @@ killall chromium
 sudo pacr nvidia-dkms wireguard-dkms
 pacu nvidia nvidia-lts wireguard wireguard-lts
 pacu nvidia nvidia-lts wireguard-tools wireguard-lts
-myip
 mv downloads/bitwarden_export_20201214180450.json docs/important/
 rm docs/important/bitwarden_export_20200806143919.csv 
 pia-client --help
 piactl client
-piactl --help
 mkszn 2
 yay -S chromium 
 yay -S ungoogled-chromium 
@@ -4832,7 +4819,6 @@ echo $LOGNAME
 sudo usermod -aG plugdev $LOGNAME
 adb -h
 adb --help
-fastboot boot downloads/twrp-3.4.0-1-taimen.img 
 \
 \
 fastboot flashing unlock\
@@ -4844,7 +4830,6 @@ adb push downloads/proton-aosp_taimen_11.3.0-gapps.zip /sdcard
 adb push downloads/proton-aosp_taimen_11.3.0-gapps.zip /
 adb push downloads/twrp-installer-3.4.0-1-taimen.zip /sdcard
 docker ps
-adb shell
 sudo pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst 
 filecount .cache
 mkdir ~/.local/share/pki/
@@ -4911,7 +4896,6 @@ sudo updatedb
 locate steam
 locate updatedb
 v /etc/updatedb.conf
-su
 time plocate docs
 plocate
 plocate docs
@@ -4943,7 +4927,6 @@ filecount projects
 filecount projects/ideas/
 wall.sh -U pics/backgrounds/macOS/ColorBurst4-tall.jpg
 yay -S ungoogled-chromium-git
-v /etc/pacman.conf
 pacu
 chromium
 mks tmp
@@ -5042,7 +5025,6 @@ ncdu
 S enable backup.service
 S enable backup.timer
 v /etc/systemd/system/backup.timer
-v /etc/systemd/system/backup.service
 journalctl -r -u backup.service
 systemctl daemon-reload
 journalctl -xe
@@ -5108,7 +5090,6 @@ man xset
 rg cat .bin
 v .bin/ncodr
 rg case .bin
-v .bin/pvpn
 v .bin/reboot
 scrot -h
 v .bin/scrot
@@ -5176,7 +5157,6 @@ start sxhkd
 v sxhkdrc
 chown rob:rob *
 sudo chown rob:rob *
-ll
 man cp
 cp -b .config/vifm/colors/Default.vifm 
 locate *.bak
@@ -5201,7 +5181,6 @@ bspc node -E
 ~/.bin
 mv bspscripts bspctl
 v bspctl
-..
 v extract_canvas
 v induce_rules
 bspc wm -d
@@ -5268,11 +5247,9 @@ btm
 pac btm
 yay -S bottom
 yay bottom
-ncdu -x /
 fd . downloads projects
 fd . downloads projects | less
 fd . downloads docs | less
-man fd
 ndu
 S status lightdm
 journalctl -u lightdm
@@ -5311,7 +5288,6 @@ sudo pacman -Sc
 yay -Sc
 rmorphans
 pac linux
-la
 trash-list
 vfb
 man ncdu
@@ -5319,21 +5295,13 @@ ncdu -x ./
 fd -t d torrents
 fd -t d torrents -x ls {};
 v docs/backup_exclude.txt
-bb
 S restart NetworkManager
 scp docs/important/backup-peach-2021-01-11.tar.gz peach:/tmp
-ls
-vf
 xfce4-terminal
-less .xsession-errors
 ssh peach
 ip a
-ssh pi
 dig youtube.com
 mkdir {1,2,3}
-ssh bb
-pacrepo
-reboot
 pac gsmartcontrol
 mnt mx100
 lb
@@ -5370,7 +5338,6 @@ S restart udev
 fastboot -l devices
 fastboot devices
 sudo fastboot devices
-sudo fastboot format userdata
 adb push downloads/android/* sdcard/Download/
 adb sideload
 adb sideload downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip
@@ -5379,48 +5346,100 @@ pac mtpfs
 sudo adb devices
 adb push downloads/android/* /data/media
 adb push downloads/android/* /data/
-adb reboot bootloader
 ls downloads/android/*
 adb push downloads/android/* /sdcard
 fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
-adb devices
 adb shell 
-sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
-yay
 v docs/important/bitwarden_recovery_code.txt
 ls docs/important/
-vfm
 shortinfo AvengersAgeofUltron.mp4
 fd -e sub
 fd -e sub -x ls -l {};
 fd -e sub -x ls -lh {};
-yay
 man fd
 fd -I android
 ls downloads/android
 ll downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip
-adb devices
-adb reboot bootloader
 fastboot boot downloads/twrp-3.4.0-1-taimen.img 
 sudo fastboot boot downloads/twrp-3.4.0-1-taimen.img 
-sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
 adb push downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip /tmp
-sudo fastboot format userdata
-sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
-adb push downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip /tmp
-sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
 adb push downloads/android/open_gapps-arm64-10.0-micro-20210116.zip /tmp
-adb push downloads/android/open_gapps-arm64-11.0-nano-20201121.zip /sdcard
 downloads/android
-ls
 ll
 rmr open_gapps-arm64-10.0-micro-20210116.zip
 adb push EvolutionX_5.3_RMX206X-11-20210116-0629-OFFICIAL.zip /sdcard
-adb reboot bootloader
-sudo fastboot boot twrp-3.5.0_9-0-taimen.img
-adb push EvolutionX_5.3_RMX206X-11-20210116-0629-OFFICIAL.zip /sdcard
 rm EvolutionX_5.3_RMX206X-11-20210116-0629-OFFICIAL.zip
 adb push EvolutionX_5.2_taimen-11-20201212-0027-OFFICIAL.zip /sdcard
-yay
+ls downloads/android/
+rm downloads/android/EvolutionX_5.2_taimen-11-20201212-0027-OFFICIAL.zip
+sudo fastboot format userdata
+adb push downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip /sdcard
+adb push downloads/android/open_gapps-arm64-11.0-nano-20201121.zip /sdcard
+v downloads/android/Magisk-uninstaller-20201228.zip
+adb push downloads/android/crDroidAndroid-11.0-20210108-taimen-v7.2.zip /sdcard
+adb push downloads/android/Magisk-* /sdcard
+adb push downloads/android/open_gapps-arm64-11.0-nano-20210110-TEST.zip /sdcard
+downloads/android/taimen-rp1a.201005.004.a1
+./flash-all.sh
+sudo ./flash-all.sh
+..
+sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
+adb push {lineage-18.1-20210107-UNOFFICIAL-taimen.zip,open_gapps-arm64-11.0-nano-20201121.zip} /sdcard
+cal
 pacrepo
+bc
+ncdu -x /
+pac picom
+picom --experimental-backends
+yay picom-git
+start picom
+ssh bb
+myip
+open
+which open
+v .bin/open
+xdg-open
+su
+reboot
+pvpn toggle
+v .bin/pvpn
+piactl get connectionstate
+piactl --help
+la
+less .xsession-errors
+v /etc/systemd/system/backup.service
+fd -e txt
+v /etc/pacman.conf
+vfm
+shortinfo The-Dark-Knight.mp4
+man qbittorrent
+qbittorrent --help
+z android
+adb reboot bootloader
+sudo fastboot boot twrp-3.5.0_9-0-taimen.img
+adb push Magisk-* /sdcard
+adb devices
+adb shell
+sudo ufw allow 51413
+bb
+ssh pi
 yay
+ln -s /media ./media
+unlink media
+mkdir media 
+ln -s /media/* media
+ls 
+ls media
+ll media
+source .profile
+fd blueberry
+cd media/blueberry
+ls
+vf
+rofi-scripts -h
+se
+mv .bin/rofi-scripts .bin/rofsci
+start sxhkd
+ls
+yay
+reboot

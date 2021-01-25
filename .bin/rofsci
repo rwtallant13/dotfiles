@@ -31,7 +31,7 @@ while getopts ":hwmsl" opt; do
             ;;
 
         m)
-            ANS=$(echo "Blueberry|MX100|SSD|Laptop|Windows" | \
+            ANS=$(echo "Blueberry|MX500|SSD|Laptop|Windows" | \
             rofi -sep "|" -dmenu -i -p 'System' "")
                 case "$ANS" in
                     *Blueberry) /home/rob/.bin/mnt bb ;;

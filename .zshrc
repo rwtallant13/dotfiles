@@ -150,7 +150,7 @@ bindkey '^D' exit_zsh
 export FZF_DEFAULT_OPTS="--preview-window noborder --reverse --exact --no-color --multi --cycle --border=sharp --height=50% --no-info"
 #export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50' --exact"
 export FZF_CTRL_T_COMMAND="fd . --hidden"
-export FZF_ALT_C_COMMAND='fd . --hidden -t d'
+export FZF_ALT_C_COMMAND='fd . --hidden -t d -t l'
 export FZF_CTRL_R_OPTS='--exact'
 export NNN_BMS='h:~/;d:~/downloads/;p:/home/rob/pics/;c:~/.config/;b:/media/blueberry;e:/etc/;B:/media/blueberry/backups/rob-pc/latest/'
 export PF_INFO="ascii title os wm kernel uptime pkgs memory"

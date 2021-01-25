@@ -35,7 +35,7 @@ super + shift + a
 
 # rofi logout script
 super + BackSpace
-	"$bin"/rofi-scripts -l
+	"$bin"/rofsci -l
 
 # open files
 super  + space
@@ -65,13 +65,16 @@ super + alt + c
 super + m
 	/usr/bin/alacritty -e zsh -ic "vifm /home/rob/downloads/torrents /media/blueberry/"
 
+super + alt + m
+	rofsci -m
+
 # rofi
 alt + space
 	rofi -modi "run,ssh" -show run
 
-# dmenu
-#super + d
-#	dmenu_run
+# qbittorrent
+super + q
+	qbittorrent
 
 # telegram
 super + g

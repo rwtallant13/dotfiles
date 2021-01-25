@@ -204,4 +204,4 @@ nnoremap <m-c> :FZFcd<cr>
 command findfiles fd . -t f%u
 
 " Open all other defaults
-filetype * xdg-open
+filetype * xdg-open %f 2>/dev/null 1>&2

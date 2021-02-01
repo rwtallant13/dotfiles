@@ -29,6 +29,6 @@ record(){
 
 }
 
-func=${1:-"help"}
+func=${1:-"open"}
 
 "$func"

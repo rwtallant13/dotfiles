@@ -365,7 +365,6 @@ sudo pacr python-pyserial
 source .zshrc
 echo this is a thing
 echo "this is a thing"
-pac nextcloud-client
 pac spectrewm
 pac spectrwm
 mkdir -p .config/spectrwm
@@ -1030,7 +1029,6 @@ v .bin/pu
 v .bin/pulldots
 pulldots
 less .pulse-cookie
-yadm --help
 yadm show
 yadm status
 which dots-old
@@ -1081,7 +1079,6 @@ less media-to-encode.txt
 rm SAO_files
 mv media-to-encode.txt docs
 tmux
-autoload zkbd && zkbd
 tput cols
 lines
 tput lines
@@ -1187,7 +1184,6 @@ dns.sh google
 dns.sh -c
 dns.sh pi
 v .config/polybar/modules
-alias myip
 bspc node -f "~"
 bspc node -f "~@"
 bspc node -f "~@@\
@@ -1279,7 +1275,6 @@ if find /tmp -name "current_sink"* 2>/dev/null; then\
         _mkfile\
     fi
 cat /home/rob/.bin/sinkctrl
-cat /tmp/current_sink.ixJc
 sinkctrl -c
 pac hyperfine
 pac pastel
@@ -1759,7 +1754,6 @@ v /etc/systemd/system/caps2esc.timer
 pacr bitwarden-bin amidst
 sudo pacr bitwarden-bin amidst
 S enable --now caps2esc.timer
-man alacritty
 nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=0
 less /home/rob/.cache/gotop/errors.log
 sudo mv /etc/X11/xorg.conf /etc/X11/xorg.conf.bak
@@ -1963,7 +1957,6 @@ encode-media -d downloads/torrents/Boruto
 ytop
 encode-media -f Boruto-S02E66.mkv
 encode-media -f Boruto-S02E61.mkv
-ping youtube.com
 pacman -Q electron
 pacman -U /var/cache/pacman/pkg/electron-9.0.5-1-x86_64.pkg.tar.zst
 sudo pacman -U /var/cache/pacman/pkg/electron-9.0.5-1-x86_64.pkg.tar.zst
@@ -2054,7 +2047,6 @@ pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware 
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity --force
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl
 pacu python python-ordered-set tbb blender i3lock-color liblouis linux-firmware python-cryptography vifm expac chromium intel-gmmlib libqalculate mbedtls ptex python-cffi telegram-desktop youtube-dl zenity --overwrite '*'
-rm plot.svg
 cd .minecraft/assets/
 .minecraft
 fd light
@@ -2352,7 +2344,6 @@ sudo rg -e shutdown -e reboot /var/log
 journalctl --list-boot
 ls /usr/share/zsh/plugins/
 ssh -t bb
-echo $TERM
 echo $COLORTERM
 fd termite.terminfo
 fd -H termite.terminfo
@@ -2733,7 +2724,6 @@ sudo pacman -U /var/cache/pacman/pkg/qt5-base-5.15.0-5-x86_64.pkg.tar.zst
 pac delug
 pacr transmission
 sudo pacr transmission
-ssr.sh
 ssr.sh launch
 flameshot qui
 flameshot gui
@@ -2820,7 +2810,6 @@ ls .bin/
 pac xmenu
 pacf xmenu
 yay xmenu
-less .aliases
 /media/blueberry/media/movies
 fd -t f -e mkv
 fd -t f -e mkv|mp4
@@ -3056,7 +3045,6 @@ realpath /home/rob/.local/etc/bash_completion.d/fz.sh
 pac linux linux-lts
 systemd-analyze time
 systemd-analyze critical-chain
-systemd-analyze plot > plot.svg
 open plot.svg
 yay -S ungoogled-chromium
  sudo pacman-key --lsign-key 8A9E14A07010F7E3
@@ -3140,7 +3128,6 @@ which pamixer
 pamixer -i 2
 pamixer -i 20
 pamixer -d 20
-pamixer --get-volume-human
 pamixer --default-source
 pamixer -h
 pamixer --list-sources
@@ -3157,7 +3144,6 @@ pacq -m
 pacman -qm
 sudo pacr xbps-git
 pac yadm
-yay yadm
 pacr vidir
 sudo pacr vidir
 sudo pacr geekbench
@@ -3264,7 +3250,6 @@ history -h
 history --help
 history yadm
 v .config/systemd/user/yadm.service
-yadm add .bin/*
 dots-tracked
 chx .bin/dotu
 la .bin/*
@@ -3556,7 +3541,6 @@ sudo rm MylfBlows.20.10.19.Alix.Lynx.Ill.Help.You.Relax.XXX.720p.MP4-XXX
 sudo rm -rf MylfBlows.20.10.19.Alix.Lynx.Ill.Help.You.Relax.XXX.720p.MP4-XXX
 uname -r
 v .bin/check-media
-rg 2 .bin
 rg EOF  .bin
 trimvid -e 15 /media/mx100/Videos/Call of Duty  Black Ops Cold War/Call of Duty  Black Ops Cold War 2020.10.18 - 20.05.42.03.DVR.mp4
 v .bin/trimvid
@@ -4444,7 +4428,6 @@ rm .bin/vw
 mv .bin/color* .local/bin
 mv .bin/encode-media .bin/ncodr
 pacf ncodr
-se 
 ln
 cd /yay
 ls /root
@@ -4629,7 +4612,6 @@ pac redshift
 redshift.sh
 yay -S plata-theme
 gsettings set org.gnome.desktop.interface gtk-theme Plata-Compact
-yay-pkgs
 pacman-pkgs
 sethue off
 pac python-pip
@@ -4677,7 +4659,6 @@ sudo mkdir -p /etc/opt/chrome/policies/managed/ && echo '{ "URLWhitelist": ["mag
 ps aux
 pac gvfs
 pac thunar-volman
-fzpkgs
 fkill 
 lightdm-gtk-greeter-settings-pkexec
 /home/rob/.bin/persist picom --experimental-backends
@@ -4727,7 +4708,6 @@ scp -r school/ laptop:~/school
 LC_ALL=C pacman -V|sed -r 's#[0-9]+#e44#g'|md5sum|cut -c1-6
 S restart plexmediaserver
 rust update stable
-pkglist
 pacr piavpn-bin
 pvpn client
 pia-client
@@ -4855,8 +4835,6 @@ man dirname
 basename $(dirname /home/rob/docs/backup_exclude.txt)
 locate redshift*.service
 locate redshift.service
-systemd-analyze 
-systemd-analyze blame
 systemd-analyze blame | grep mount
 ls /sys/firmware/efi/efivars
 ls /var/cache/pacman/pkg/linux-*
@@ -4866,7 +4844,6 @@ less -R /var/log/pacman.log
 man less
 yay -S qt5-styleplugins --rebuild
 yay -S --rebuild qt5-styleplugins
-less +F /var/log/pacman.log
 qbittorrent
 yay ungoogled-chromium
 pacman -Sc
@@ -4927,7 +4904,6 @@ filecount projects
 filecount projects/ideas/
 wall.sh -U pics/backgrounds/macOS/ColorBurst4-tall.jpg
 yay -S ungoogled-chromium-git
-pacu
 chromium
 mks tmp
 fine *.webm
@@ -5033,7 +5009,6 @@ grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-12-30-01455
 man rsync
 watch time
 watch date
-pac bitwarden
 yay bitwarden
 pac apcupsd 
 v /etc/apcupsd/apcupsd.conf
@@ -5153,7 +5128,6 @@ cd .mozilla/firefox/ocdc4cz2.default-release/chrome
 pacs dejavu
 bspc desktop -l next
 bspc node --state "~"pseudo_tiled
-start sxhkd
 v sxhkdrc
 chown rob:rob *
 sudo chown rob:rob *
@@ -5199,7 +5173,6 @@ v /home/rob/.bin
 v /home/rob/.bin/rmspaces
 realpath $(dirname docs)
 dirname /home/rob/docs/backup_exclude.txt
-cd
 v .config/micro/settings.json
 sudo install /usr/share/doc/NVIDIA_GLX-1.0/samples/systemd/nvidia-suspend.service /etc/systemd/system
 S enable nvidia-suspend.service
@@ -5286,7 +5259,6 @@ pacr libva-vdpau-driver-chromium
 sudo pacr libva-vdpau-driver-chromium
 sudo pacman -Sc
 yay -Sc
-rmorphans
 pac linux
 trash-list
 vfb
@@ -5304,7 +5276,6 @@ dig youtube.com
 mkdir {1,2,3}
 pac gsmartcontrol
 mnt mx100
-lb
 rm .bin/mvmedia
 diskinfo /dev/sdc
 pac udisk
@@ -5319,8 +5290,6 @@ ll /media
 mv /media/mx100 /media/mx500
 ll /media/mx500
 ll /media/
-se
-xprop
 bspc rule -a privateinternetaccess:pia-client state=pseudo_tiled
 lsblk
 lsusb
@@ -5383,63 +5352,193 @@ downloads/android/taimen-rp1a.201005.004.a1
 ./flash-all.sh
 sudo ./flash-all.sh
 ..
-sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
 adb push {lineage-18.1-20210107-UNOFFICIAL-taimen.zip,open_gapps-arm64-11.0-nano-20201121.zip} /sdcard
 cal
-pacrepo
 bc
 ncdu -x /
 pac picom
 picom --experimental-backends
 yay picom-git
 start picom
-ssh bb
-myip
 open
 which open
 v .bin/open
 xdg-open
 su
-reboot
 pvpn toggle
 v .bin/pvpn
 piactl get connectionstate
 piactl --help
-la
-less .xsession-errors
 v /etc/systemd/system/backup.service
 fd -e txt
-v /etc/pacman.conf
-vfm
 shortinfo The-Dark-Knight.mp4
 man qbittorrent
 qbittorrent --help
 z android
-adb reboot bootloader
 sudo fastboot boot twrp-3.5.0_9-0-taimen.img
 adb push Magisk-* /sdcard
-adb devices
-adb shell
 sudo ufw allow 51413
-bb
 ssh pi
-yay
 ln -s /media ./media
 unlink media
 mkdir media 
 ln -s /media/* media
 ls 
-ls media
 ll media
 source .profile
 fd blueberry
 cd media/blueberry
-ls
 vf
 rofi-scripts -h
-se
 mv .bin/rofi-scripts .bin/rofsci
 start sxhkd
-ls
-yay
+pac nextcloud
+pac nextcloud-c
+pac nextcloud-client
+systemd-analyze blame
+systemd-analyze 
+systemd-analyze plot > plot.svg
+vw plot.svg
+S disable ntpdate.service
+S enable Systemd-timesyncd
+S enable systemd-timesyncd
+autoload zkbd && zkbd
+echo $TERM
+ping youtube.com
+v /etc/pacman.conf
+v /etc/pacman.d/mirrorlist
+pacrepo
+pacu
+less +F /var/log/pacman.log
+pac linux linux-lts nvidia nvidia-lts
+pactl
+pactl info
+pacmd
+pac pacmd
+pacf pacmd
+man pavucontrol
+pavucontrol -h
+pavucontrol --help-all
+pipewire --help
+pipewire-pulse --help
+pw-cli dump
+pw-cli dump | grep Sound
+pw-cli dump | grep sound
+pac pipewire-pulse
+pw-cli dump short all
+pw-cli dump  Device
+pw-cli
+pw-cli set-param 
+pw-cli set-param 41 device.product.name "Nvidia"
+man pw-cli
+man 2 pw-cli
+man 5 pw-cli
+man 3 pw-cli
+man 1 pw-cli
+pw-cli set-param 41 {
+pw-cli set-param 41 2 { device.product.name: "Nvidia" }
+pw-cli set-param 41 2 '{device.product.name: "Nvidia"}'
+pw-cli set-param 41 9 '{device.product.name: "Nvidia"}'
+pw-cli e 38 2
+pw-cli e 41 9
+pw-cli e 41 8
+pw-cli e 41 12
+pamixer --get-volume-human
+pactl list short sink
+pactl list short sinks
+pactl list short sinks | grep card_name
+pactl list short sinks | grep card-name
+pactl list sinks | grep card-name
+pactl list sinks | grep card_name
+pactl list sinks | grep \.card_name
+pactl list sinks | grep alsa.card_name
+cat /tmp/current_sink.ixJc
+pactl --help
+pactl list sinks
+pactl list sinks short
+pamixer --help
+pamixer --sink 2
+pamixer --list-sinks
+pamixer --sink 47
+pamixer --sink 45
+pamixer --sink 44
+pw-cli -h
+pw-cli info
+pw-cli info all
+pw-cli dump all
+pw-cli dump device
+pw-cli dump short Device
+pw-cli dump short Endpoint
+pw-cli dump short Session
+pw-cli --help
+pw-cli connect
+pw-cli dump short Node
+pac pulseaudio
+yay yadm
+rm plot.svg
+rg 2 .bin
+lb
+se 
+mnt -h
+less .xsession-errors
+cat .bash_logout
+rmr .bash_logout
 reboot
+pac mop
+curl -o ticker.sh https://raw.githubusercontent.com/pstadler/ticker.sh/master/ticker.sh
+chmod a+x ticker.sh
+./ticker.sh AMC
+watch -1 ./ticker.sh AMC
+watch 1 ./ticker.sh AMC
+watch 1 bash -c ./ticker.sh AMC
+watch 1 sh -c ./ticker.sh AMC
+man sh
+sh ./ticker.sh AMC
+watch sh ./ticker.sh AMC
+watch -n 5 -t -c ./ticker.sh AMC
+watch -n 1 -t -c ./ticker.sh AMC
+mv ticker.sh .bin
+yadm add .bin/*
+yadm --help
+cd
+la
+ls media
+yay clight
+pacr clight
+sudo pacr clight
+rmorphans
+pac bash-completions
+pac bash-completion
+pkglist
+yay -S popcorntime
+popcorntime
+adb devices
+adb shell
+adb reboot bootloader
+sudo fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
+pacr libmagisk6
+sudo pacr libmagisk6
+sudo pacr libmagick6
+yay-pkgs
+sudo pacr ungoogled-chromium-bin
+sudo pacr ungoogled-chromium-git
+aliases
+less .aliases
+fzpkgs
+xprop
+ssr.sh
+vfm
+man alacritty
+nextcloud --help
+nextcloudcmd --help
+pac  nextcloud-client-cloudproviders
+se
+ls
+pac bitwarden
+yay
+ssh bb
+pac element-desktop
+myip
+alias myip
+bb
+nextcloudcmd --help

@@ -143,3 +143,6 @@ hi clear CursorLineNR
 augroup CLClear
     autocmd! ColorScheme * hi clear CursorLine
 augroup END
+
+" fix alacritty resizing issue
+autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"

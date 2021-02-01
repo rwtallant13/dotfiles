@@ -2,38 +2,37 @@
 
 _help() {
     cat <<- EOF
-Usage: mnt [drive]
+Usage: mnt [drive] {/path/to/mount}
 
-Drives:
+Drives {default mount}
 
-    laptop
-    bb / blueberry
-    bb-dir
-    mx100
-    ssd
-    win / windows
+    laptop		{/media/laptop}
+    bb / blueberry	{/media/blueberry}
+    bb-dir		{/media/bb-dir}
+    mx100		{/media/mx500}
+    ssd			{/media/ssd}
+    win / windows	{/media/windows}
 
 EOF
 }
 
 case $1 in
     laptop)
-        sshfs rob@192.168.2.14:/home/rob /media/laptop
+        sshfs rob@192.168.2.14:/home/rob "${2:-/media/laptop}"
         ;;
     bb|blueberry)
-        sshfs -o reconnect,follow_symlinks,ServerAliveInterval=30,ServerAliveCountMax=3 rob@192.168.2.21:/data/ /media/blueberry
+        sshfs -o reconnect,follow_symlinks,ServerAliveInterval=30,ServerAliveCountMax=3 rob@192.168.2.21:/data/ "${2:-/media/blueberry}"
         ;;
     bb-dir)
-        sshfs -o reconnect,ServerAliveInterval=30,ServerAliveCountMax=3 bb:"$2" /media/bb-dir/
-        ;;
+        sshfs -o reconnect,ServerAliveInterval=30,ServerAliveCountMax=3 bb:"$2" "${2:-/media/bb-dir}"        ;;
     mx500)
-        sudo mount UUID=06281093281083B9 /media/mx500
+        sudo mount UUID=06281093281083B9 "${2:-/media/mx500}"
         ;;
     ssd)
-        sudo mount UUID=CE7A626D7A6251EF /media/ssd
+        sudo mount UUID=CE7A626D7A6251EF "${2:-/media/ssd}"
         ;;
     win|windows)
-        sudo mount UUID=903A3D9F3A3D8370 /media/windows
+        sudo mount UUID=903A3D9F3A3D8370 "${2:-/media/windows}"
         ;;
     *)
         _help

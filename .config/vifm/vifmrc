@@ -10,7 +10,7 @@ set syscalls
 ""set trash
 
 " This is how many directories to store in the directory history.
-set history=100
+set history=1000
 
 " Automatically resolve symbolic links on l or Enter.
 set nofollowlinks
@@ -101,9 +101,6 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-map <C-o> <C-w>o
-map <C-s> <C-w>s
-map <C-v> <C-w>v
 
 " basics
 nnoremap ? =
@@ -117,11 +114,10 @@ nnoremap o :file &<cr>l
 " invert sorting
 map SS :invert o <cr>
 
-" split horizontal
-map SH :split!<cr>
-
-" split vertical
-map SV :vsplit!<cr>
+"Custom split commands
+map <C-h> <C-w>s
+map <C-v> <C-w>v
+map <C-s> <C-w>o
 
 " select all
 nnoremap <C-a> :norm ggVG<cr><cr>

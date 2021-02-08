@@ -34,6 +34,8 @@ case $1 in
     win|windows)
         sudo mount UUID=903A3D9F3A3D8370 "${2:-/media/windows}"
         ;;
+	nextcloud) mount /media/nextcloud
+		;;
     *)
         _help
         ;;

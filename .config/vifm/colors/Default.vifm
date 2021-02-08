@@ -8,7 +8,7 @@ highlight clear
 
 highlight Win			cterm=none ctermfg=default ctermbg=default
 highlight Directory		cterm=bold ctermfg=33 ctermbg=default
-highlight Link			cterm=bold ctermfg=220 ctermbg=default
+highlight Link			cterm=bold ctermfg=153 ctermbg=default
 highlight BrokenLink	cterm=bold ctermfg=red ctermbg=default
 highlight Socket		cterm=bold ctermfg=magenta ctermbg=default
 highlight Device		cterm=bold ctermfg=red ctermbg=default
@@ -17,7 +17,7 @@ highlight Executable	cterm=bold ctermfg=green ctermbg=default
 highlight Selected		cterm=bold ctermfg=white ctermbg=33
 highlight CurrLine		cterm=bold,ctermfg=default ctermbg=33
 highlight TopLine		cterm=bold ctermfg=white ctermbg=33
-highlight TopLineSel	cterm=bold ctermfg=white ctermbg=default
+highlight TopLineSel	cterm=bold,underline ctermfg=white ctermbg=default
 highlight StatusLine	cterm=bold,inverse ctermfg=white ctermbg=default
 highlight WildMenu		cterm=underline ctermfg=default ctermbg=33
 highlight CmdLine		cterm=bold ctermfg=white ctermbg=33

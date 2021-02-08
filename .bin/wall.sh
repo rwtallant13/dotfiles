@@ -39,8 +39,8 @@ _get_file(){
 }
 
 _update_feh(){
-	feh --bg-scale $*
-	echo "feh --bg-scale $*" > /home/rob/.fehbg
+	feh --bg-fill $*
+	echo "feh --bg-fill $*" > /home/rob/.fehbg
 }
 
 _update_lock(){

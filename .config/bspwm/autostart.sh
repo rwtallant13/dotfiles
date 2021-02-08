@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 . /home/rob/.profile
 # bspwm autostart
-#/home/rob/.fehbg
+/home/rob/.fehbg
 /home/rob/.bin/pbar.sh &
 /home/rob/.bin/start picom dunst nm-applet dpms polkit pia-client
 /home/rob/.bin/nvfans &
@@ -10,3 +10,4 @@
 /home/rob/.bin/sinkctrl -r -d
 /home/rob/.bin/caps2esc &
 /usr/bin/clipmenud &
+xsetroot -cursor_name left_ptr

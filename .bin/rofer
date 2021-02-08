@@ -10,6 +10,7 @@ Usage:   $Name [options]
 Options:
 
      -h      Display this message
+	 -c		 Calculator
      -m      Mount drives
      -w      Switch between open windows
      -s      Search by keyword
@@ -25,13 +26,16 @@ while getopts ":hwmsl" opt; do
             _usage
             exit 0
             ;;
+		c)
+			rofi -color-window argb:cc000000 -lines 15 -width 35 -show calc -modi calc -no-show-match -no-sort
+			;;
         w)
             rofi -modi window -show window -hide-scrollbar \
                 -eh 1 -padding 50 -line-padding 4
             ;;
 
         m)
-            ANS=$(echo "Blueberry|MX500|SSD|Laptop|Windows" | \
+            ANS=$(echo "Blueberry|MX500|SSD|Nextcloud|Laptop|Windows" | \
             rofi -sep "|" -dmenu -i -p 'System' "")
                 case "$ANS" in
                     *Blueberry) /home/rob/.bin/mnt bb ;;
@@ -39,6 +43,7 @@ while getopts ":hwmsl" opt; do
                     *SSD) /home/rob/.bin/mnt ssd;;
                     *Laptop) /home/rob/.bin/mnt laptop ;;
                     *Windows) /home/rob/.bin/mnt windows;;
+					*Nextcloud) /home/rob/.bin/mnt nextcloud;;
                 esac
                 ;;
         s)

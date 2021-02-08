@@ -16,6 +16,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export CM_LAUNCHER=rofi
 export CM_DIR="$XDG_CACHE_HOME"/clipmenud
 export TERMINAL=/usr/bin/xfce4-terminal
+export SXHKD_SHELL=/usr/bin/bash
+export SYSTEMD_EDITOR=nvim
 
 # Path
 export PATH=/home/rob/.bin:$PATH

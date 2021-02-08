@@ -14,7 +14,6 @@ while sleep 1; do
         ((total++))
     done
     avg=$((sum/total))
-    echo "temp:" $avg
 
     if (($avg < 65 )); then
         speed=15

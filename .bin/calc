@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-# rofi-calc script
-rofi -color-window argb:cc000000 -lines 15 -width 35 -show calc -modi calc -no-show-match -no-sort

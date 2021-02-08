@@ -35,7 +35,7 @@ super + shift + a
 
 # rofi logout script
 super + BackSpace
-	"$bin"/rofsci -l
+	"$bin"/rofer -l
 
 # open files
 super  + space
@@ -66,7 +66,7 @@ super + m
 	/usr/bin/alacritty -e zsh -ic "vifm /home/rob/downloads/torrents /media/blueberry/"
 
 super + alt + m
-	rofsci -m
+	rofer -m
 
 # rofi
 alt + space
@@ -78,7 +78,7 @@ super + q
 
 # telegram
 super + g
-	nullify telegram-desktop &
+	chronic telegram-desktop &
 
 # screenshot current window
 ctrl + Print
@@ -105,7 +105,7 @@ super + f
 	/usr/bin/alacritty -e zsh -ic "vifm"
 
 # tui file manager
-super + n
+super + alt + n
     /usr/bin/alacritty -e nnf
 
 # system monitor
@@ -114,7 +114,7 @@ ctrl + shift + Escape
 
 # launch browser
 super + b
-	nullify $BROWSER &
+	chronic $BROWSER &
 
 # alt browser
 super + shift + b
@@ -184,7 +184,7 @@ super + Insert
 
 #rofi help menu
 control + alt + h
-	"$bin"/bspscripts rofi_help
+	"$bin"/bspctl rofi_help
 
 # resize left/right
 super + r : {Left,Right}
@@ -214,14 +214,6 @@ super + plus
 #
 # nodes
 #
-
-# set the node flags
-super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
-
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic
 
 # rotate nodes
 super + bracket{left,right}
@@ -259,30 +251,31 @@ super + {_,shift} + i
 
 # receptacle thing
 super + alt + i
-	"$bin"/bspscripts receptacle
+	"$bin"/bspctl receptacle
 
 # toggle node states
 super + {F9,F10,F11}
-	bspc node --state \~{tiled,pseudo_tiled,floating}
+	bspc node --state ~{tiled,pseudo_tiled,floating}
 
+# monocle layout
 super + F12
 	bspc desktop -l next
 
 # hide nodes
-super +{_,alt +} h
-	"$bin"/bspscripts {_,un}hide
+super +{_,shift +} h
+	"$bin"/bspctl {_,un}hide
 
 # equalize nodes
 super + e
-	"$bin"/bspscripts equal
+	"$bin"/bspctl equal
 
 #cycle through nodes
 alt +{_,shift+} Tab
-	bspc node -f {next,prev}.local
+	bspc node -f {next,prev}.local.!hidden.window
 
 #cycle through nodes
 super +{_,shift+} Tab
-	bspc node -f {next,prev}
+	bspc node -f {next,prev}.!hidden.window
 
 #
 # workspaces

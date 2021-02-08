@@ -10,7 +10,7 @@ set syscalls
 ""set trash
 
 " This is how many directories to store in the directory history.
-set history=1000
+set history=10000
 
 " Automatically resolve symbolic links on l or Enter.
 set nofollowlinks
@@ -56,6 +56,9 @@ set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 " Hide side borders
 set tuioptions-=s
 
+" ctrl - i/o cycle history
+set cpoptions-=t
+
 " Ignore case in search patterns unless it contains at least one uppercase
 set ignorecase
 set smartcase
@@ -72,6 +75,10 @@ set scrolloff=4
 " Set custom status line look
 set statusline="%A %8u:%-7g %5E %15d "
 
+" slowfs for network drives
+set slowfs+=rob@192.168.2.21:/data/
+
+
 " ------------------------------------------------------------------------------
 " bookmarks
 " :mark mark /full/directory/path [filename]
@@ -87,10 +94,9 @@ mark e /etc
 
 
 " What should be saved automatically between vifm sessions.
-set vifminfo=dhistory,chistory,state,tui,shistory,phistory,dirstack,registers,bookmarks
+set vifminfo=dhistory,chistory,tui,dirstack,registers,bookmarks
 
 " my basic mappings
-let mapleader =","
 nnoremap <c-f> :fzf<cr>
 nmap q ZZ
 nmap ; :
@@ -104,12 +110,20 @@ map <C-l> <C-w>l
 
 " basics
 nnoremap ? =
+nnoremap | zR
 nnoremap T :tree <cr>
+nnoremap t tj
 nnoremap ! :shell<cr>
 nnoremap s :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 nnoremap o :file &<cr>l
+
+" Tabs
+nnoremap <Insert> :tabnew<cr>
+nnoremap <PageUp> :tabnext<cr>
+nnoremap <PageDown> :tabprev<cr>
+
 
 " invert sorting
 map SS :invert o <cr>
@@ -119,8 +133,14 @@ map <C-h> <C-w>s
 map <C-v> <C-w>v
 map <C-s> <C-w>o
 
+
+" remap increment number
+noremap Q <C-a>
+noremap A <C-x>
+
 " select all
-nnoremap <C-a> :norm ggVG<cr><cr>
+nnoremap <C-a> ggVG<cr>
+
 
 " substitute in all files
 nnoremap ca :%s/
@@ -159,6 +179,7 @@ nnoremap <F2> cw
 nnoremap <F3> :tree!<cr>
 nnoremap <F4> :findfiles <cr>
 nnoremap <F5> :history<cr>
+nnoremap <F6> :marks<cr>
 
 
 " Use rg instead of grep
@@ -188,14 +209,16 @@ command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
-command! fzf :set noquickview | :execute 'goto' fnameescape(term('fd . -H | fzf 2>/dev/tty'))
 
-command! fzfcd :execute 'cd "'.system('fd . $HOME -t d -H -a $HOME ./ | fzf 2>/dev/tty').'"' | :redr
+command! fzfcd :set noquickview | :execute 'goto' fnameescape(term('fd . -H | fzf 2>/dev/tty'))
+
+command! fzfhome :execute 'cd "'.system('fd -t d -H -a . $HOME ./ | fzf 2>/dev/tty').'"' | :redr
 
 command! fzfind :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME ./ -H -a | fzf  --height 10 --layout=default 2>/dev/tty'))
 
-nnoremap <c-f> :FZFfind<cr>
-nnoremap <m-c> :FZFcd<cr>
+nnoremap <c-f> :fzfind<cr>
+nnoremap <m-c> :fzfhome<cr>
+
 
 command findfiles fd . -t f%u
 

@@ -90,11 +90,12 @@ mark m /media/blueberry/media
 mark c /home/rob/.config
 mark b /media/blueberry
 mark d /home/rob/downloads
+mark t /home/rob/downloads/torrents
 mark e /etc
 
 
 " What should be saved automatically between vifm sessions.
-set vifminfo=dhistory,chistory,tui,dirstack,registers,bookmarks
+set vifminfo=dhistory,chistory,tui,dhistory,dirstack,registers,bookmarks
 
 " my basic mappings
 nnoremap <c-f> :fzf<cr>
@@ -111,8 +112,7 @@ map <C-l> <C-w>l
 " basics
 nnoremap ? =
 nnoremap | zR
-nnoremap T :tree <cr>
-nnoremap t tj
+nnoremap T tj
 nnoremap ! :shell<cr>
 nnoremap s :sort<cr>
 nnoremap w :view<cr>
@@ -174,7 +174,7 @@ nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
 
 " F keys remapping
 
-nnoremap <F1> :!ndu <cr>
+nnoremap <F1> :!nnf -C -T a <cr>
 nnoremap <F2> cw
 nnoremap <F3> :tree!<cr>
 nnoremap <F4> :findfiles <cr>

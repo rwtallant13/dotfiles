@@ -6,9 +6,10 @@ SAVEHIST=100000
 
 PROMPT='%B%F{33}%n%f %F{white}%b%c%f %B%F{33}$ '
 
+
 # source aliases and functions
-[[ -e "$HOME"/.aliases ]] && \
-   . "$HOME"/.aliases
+[[ -e ~/.aliases ]] && \
+   . ~/.aliases
 
 autoload -Uz compinit && compinit -C -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 autoload bashcompinit && bashcompinit

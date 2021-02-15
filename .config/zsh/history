@@ -288,7 +288,6 @@ sudo vlc
 sudo simplescreenrecorder
 v .gtkrc-2.0
 echo $GTK2_RC_FILES
-sudo ln -s /home/rob/.zshrc /root/.zshrc
 sv status
 pacman -Syu --overwrite /usr/lib\*/p11-kit-trust.so
 sudo pacman -Syu --overwrite /usr/lib\*/p11-kit-trust.so
@@ -1073,7 +1072,6 @@ xc < SAO_files
 ll /etc/localtime
 ll /usr/share/zoneinfo/US/East
 ll /usr/share/zoneinfo/US/Eastern
-sudo -i
 less media-to-encode.txt
 rm SAO_files
 mv media-to-encode.txt docs
@@ -1207,7 +1205,6 @@ nvim -r
 nvim school/ITE170/finalProject/ITE-final.txt
 nvim ITE-final.txt
 nvim -r ITE-final.txt
-ls downloads/minecraft
 rm downloads/minecraft/Dynmap-3.0-beta-10-spigot.jar
 rm downloads/minecraft/dynmap-2.5.jar
 rm downloads/minecraft/Tekkit_Server_v1.2.9g.zip
@@ -1972,14 +1969,12 @@ shtop
 bashtop
 sudo pacr kwallet
 tassk
-task
 steam
 export hw=/media/blueberry/media/tempdata/Data/Google/Other/Stuff/.hidden/.lilgirl
 viewnior $hw/signal-2020-07-05-194559.jpeg
 yay gotop
 sudo pacr gotop
 sudo pacr gotop-git
-v .minecraft/optionsof.txt
 rm -rf .minecraft/options*
 yay freeglu
 yay gl-gsync-demo
@@ -2197,7 +2192,6 @@ pacr gl-sync-demo
 sudo pacr gl-sync-demo
 pac nvidia
 sudo pacr gl-gsync-demo
-sudo pacr nvidia
 rg calc .bin
 ping 192.168.2.21
 ssh rob@blueberry
@@ -2476,7 +2470,6 @@ sudo ufw delete 10
 sudo ufw delete 6
 pip3 install --user transmissionrpc
 pac wheel
-ls downloads/minecraft/
 unzip downloads/minecraft/Xray_Ultimate_1.16_v3.5.4.zip
 mkdir xray
 mv assets pack.* xray
@@ -3104,7 +3097,6 @@ systemctl --user status yadm.service
 .bin/sinkctrl -v
 /usr/bin/pulseaudio-ctl up 2
 pac pulseaudio-ctl
-v
 sudo pacr pulseaudio-ctrl
 sudo pacr pulseaudio-ctl
 pac pamixer
@@ -3267,7 +3259,6 @@ name="$(pacmd list-sinks | grep '*' -A60 | grep 'device.description' | cut -d ' 
         fi\
     done\
 
-/home/rob/.bin/sinkctrl -r -d
 v .bin/renamer
 rm -rf .bin/renamer
 rm .bin/pixel-files
@@ -3408,7 +3399,6 @@ sudo rg pam /etc/pam.d
 pacr electron5
 sudo pacr electron5
 rg pam_unix /etc/pam.d
-bash
 rdiff-backup -r 30d bb::/data/media/backups/rob-pc/etc/pam.d ./
 rdiff-backup -r 30d bb::/data/backups/rob-pc/etc/pam.d ./
 rdiff-backup -r 30d bb::/data/backups/rob-pc/etc/pam.d ./temp
@@ -3818,7 +3808,6 @@ rf | wc -l
 pacr colord
 sudo pacr colord
 l .bin
-calc
 mkszn 3
 fd -e mkv
 fd -e mkv -x mv {} ./
@@ -3903,7 +3892,6 @@ mv .bin/vpn .bin/pvpn
 mv .bin/vpn-nm .bin/nmvpn
 sleep 3s && flameshot gui
 pgrep nm-applet
-start nm-applet
 fd -e sub -e idx
 fd -e sub -e idx -x mv {} subs/
 fd -e sub -e idx -x mv {} ./subs/
@@ -3928,7 +3916,6 @@ sudo pacr chaotic-aur/nwg-launchers
 sudo pacr nwg-launchers
 pac discord
 pac pacman-contrib
-fdchars
 fd extra -x rmdir {}
 fd extra
 fd -t d -x rmdir {}
@@ -4020,7 +4007,6 @@ yay  -S libva-vdpau-driver-chromium
 v ~/.config/chromium-flags.conf
 ssh 192.168.2.21 -L 8888:localhost:80
 pacr minecraft-launcher
-pac multimc
 sudo pacr minecraft-launcher
 yay jdk-openj9
 yay -S jdk8-openj9-bin
@@ -4366,7 +4352,6 @@ sudo pacr $(fzpkgs )
 fzpac
 less .zshrc.zwc
 mv .antigen .config/antigen
-ls .config/zsh
 mv .config/antigen .config/zsh
 la .config
 echo ${(o)color}
@@ -4726,7 +4711,6 @@ mv downloads/bitwarden_export_20201214180450.json docs/important/
 rm docs/important/bitwarden_export_20200806143919.csv 
 pia-client --help
 piactl client
-mkszn 2
 yay -S chromium 
 yay -S ungoogled-chromium 
 pacman -Syu
@@ -4740,7 +4724,6 @@ pfetch
 pacq ungoogled-chromium
 pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst 
 man pacman.conf
-ls school
 ls school/other
 mv school/other school/todo
 ls school/todo
@@ -4800,7 +4783,6 @@ pacman -Sc
 pacr steam
 sudo pacr steam
 alias pacr
-man pacman
 fzpacr
 cd ..
 rmr plexmediaplayer task Valve\ Corporation epiphany flatpak autojump calcurse Colossal\ Order cod Meltytech nemo autojump* mc 
@@ -4844,8 +4826,6 @@ locate DS_Store
 killall -9 bleachbit
 sudo bleachbit
 bleachbit
-ls .config
-.config
 rmr bleachbit lf epiphany matplotlib rmlint.* 
 filecount .local
 filecount .local/share
@@ -5067,7 +5047,6 @@ cd .mozzila/firefox/ocdc4cz2.default-release/chrome
 xclip
 man xclip
 filecount
-v .zshrc
 v .fdignore
 cd .mozilla/firefox/ocdc4cz2.default-release/chrome
 pacs dejavu
@@ -5165,7 +5144,6 @@ yay bottom
 fd . downloads projects
 fd . downloads projects | less
 fd . downloads docs | less
-ndu
 S status lightdm
 journalctl -u lightdm
 journalctl -u lightdm -r
@@ -5211,7 +5189,6 @@ v docs/backup_exclude.txt
 S restart NetworkManager
 scp docs/important/backup-peach-2021-01-11.tar.gz peach:/tmp
 xfce4-terminal
-ssh peach
 ip a
 dig youtube.com
 mkdir {1,2,3}
@@ -5291,12 +5268,9 @@ downloads/android/taimen-rp1a.201005.004.a1
 ./flash-all.sh
 sudo ./flash-all.sh
 adb push {lineage-18.1-20210107-UNOFFICIAL-taimen.zip,open_gapps-arm64-11.0-nano-20201121.zip} /sdcard
-cal
 ncdu -x /
-pac picom
 picom --experimental-backends
 yay picom-git
-start picom
 open
 which open
 v .bin/open
@@ -5335,7 +5309,6 @@ S enable systemd-timesyncd
 autoload zkbd && zkbd
 echo $TERM
 ping youtube.com
-v /etc/pacman.conf
 less +F /var/log/pacman.log
 pac linux linux-lts nvidia nvidia-lts
 pactl
@@ -5467,7 +5440,6 @@ z school
 mkdir MUS121
 mkdir HLT110
 z MUS121
-vfb
 bspc node newest.marked.local -n newest.
 bspc node newest.marked.local -n newest.\!automatic
 xev
@@ -5476,8 +5448,6 @@ which bash
 sxhkd
 bspc
 yay webull
-mkdir tmp
-tmp
 yay -Scc
 rm -rf src  Webull%20Desktop%204.2.9.deb.part
 cd..
@@ -5592,7 +5562,6 @@ feh --no-fehbg --bg-fill macOS/Light\ Stream\ Pink.JPG
 feh --no-fehbg --bg-scale macOS/Light\ Stream\ Pink.JPG 
 feh --no-fehbg --bg-scale macOS/Dome-2-dragged.jpg 
 feh --no-fehbg --bg-fill macOS/Dome-2-dragged.jpg 
-pics
 back
 backgrounds
 mv lr abstract
@@ -5608,7 +5577,6 @@ rm *.jpg
 man feh
 feh --bg-fill pics/backgrounds/abstract/alpha-cloud-left.png --bg-fill pics/backgrounds/abstract/alpha-cloud-right.png 
 feh --bg-fill pics/backgrounds/abstract/alpha-cloud-right.png --bg-fill pics/backgrounds/abstract/alpha-cloud-left.png 
-cd pics/backgrounds/abstract
 rm alpha-cloud-*
 feh --bg-fill alpha-cloud-rotate.png
 feh --bg-fill alpha-cloud.png
@@ -5632,7 +5600,6 @@ wall.sh -U pics/backgrounds/abstract/source.png
 /etc
 fd . $HOME -t d -H -a $HOME ./
 fd . $HOME -t d -H -a ./ $HOME
-man fd
 fd -t d -H -a $HOME ./
 fd -t d -H -a . $HOME ./
 z mus
@@ -5756,7 +5723,6 @@ cat rmspaces
 rm rmspaces
 cat 2mp4
 rm 2mp4
-la
 cat caps2esc
 cat calc
 rm calc
@@ -5800,7 +5766,6 @@ xrandr
 xrandr | grep connected
 which mclog
 mclog
-mclog -a
 bb 
 yay paru
 pacr yay
@@ -5819,10 +5784,8 @@ z android
 adb push lineage-18.1-20210203-UNOFFICIAL-taimen.zip /sdcard/
 adb push open_gapps-arm64-11.0-nano-20210130-TEST.zip /sdcard/
 sudo fastboot boot twrp-3.5.0_9-0-taimen.img
-cd
 mnt nextcloud
 ls ext/nextcloud
-ls
 touch -h
 touch --help
 man local
@@ -5843,7 +5806,6 @@ rg \.hidden .config/vifm/
 rg "Other/.hidden" .config/vifm/
 cut -f1 /etc/mtab
 cut -d' ' -f1 /etc/mtab
-se
 ls .config/vifm/vifminfo
 ls .config/vifm/vifminfo*
 v .config/vifm/vifminfo.json
@@ -5857,12 +5819,9 @@ sudo ufw allow 3551
 v /etc/apcupsd/apcupsd.conf
 sudo apcaccess status
 yay
-vfm
 vifm
 vf
 minecraft-launcher --help
-bb
-paru
 ((620/60))
 echo ((620/60))
 echo $((620/60))
@@ -5872,17 +5831,141 @@ sudo echo $EDITOR
 sudo echo $VISUAL
 pac vi
 v /etc/sudoers
-su
 which editor
 visudo
 which nvim
 sudo visudo
-v /etc/pacman.d/mirrorlist
 pacu
 pacman -Syyu
 sudo pacman -Syyu
-v .aliases
-man reflector
+mclog -a
+man pacman
+ls school
+z school/HLT110
+v InternetResources.txt
+feh --bg-fill downloads/simplePlanet.webp 
+mv downloads/simplePlanet.webp pics/backgrounds/abstract/ 
+wall.sh -U pics/backgrounds/abstract/simplePlanet.webp 
+pac libwebp
+cd pics/backgrounds/abstract
+ll source.png
+du source.png
+du simplePlanet.webp
+pac picom
+z hlt
+for i in *.ppt; do unoconv -f pdf "$i"; done
 pacrepo
-pacman -Syyu
-sudo pacman -Syyu
+ls .config
+rmr Bitwarden dyn-wall-rs Nextcloud Popcorn-Time 
+gsmartcontrol
+sudo pacr gsmartcontrol
+rmr gsmartcontrol
+mv ~/.ssr/* ./simplescreenrecorder
+rmr ~/.ssr
+rmr deluge
+ls Dharkael
+ls kusti8
+ls flameshot/
+rmr Dharkael
+rmr chromium
+rmr chromium-flags.conf
+ls pipewire-media-session
+rmr pipewire-media-session
+cd
+task
+.config
+rmr task
+qalc
+man reflector
+sudo reflector --latest 10 --country US --protocol https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy
+v
+rofi --help | grep font
+rofi -font "Overpass 24"
+rofi -font "Overpass 24" -show run
+ssh peach
+scp laptop:pics/backgrounds/abstract/simplePlanet.png pics/backgrounds/abstract
+wall.sh -U pics/backgrounds/abstract/simplePlanet.png 
+start nm-applet
+start picom
+monctl dpms
+/home/rob/.bin/sinkctrl -r -d
+v /etc/pacman.conf
+v /etc/pacman.d/mirrorlist
+v .minecraft/options.txt
+v .minecraft/optionsof.txt
+v .minecraft/launcher_settings.json
+v .minecraft/launcher_profiles.json
+pac multimc
+ls downloads/minecraft
+./downloads/minecraft/OptiFine_1.16.4_HD_U_G5.jar
+java -jar downloads/minecraft/OptiFine_1.16.4_HD_U_G5.jar
+ls downloads/minecraft/
+thunar downloads/minecraft/OptiFine_1.16.4_HD_U_G5_MOD.jar 
+thunar downloads/minecraft/
+thunar .minecraft
+thunar downloads/minecraft
+yes | cp -R .minecraft /home/rob/.local/share/multimc/instances/1.16.5/.minecraft/
+history -c
+calc
+cal
+cal march
+mkszn 2
+mkszn 1
+fdchars | cut -f1 -d'/' | uniq
+fdchars | cut -f1 -d'/' |sort | uniq
+fdcars
+fdchars
+sudo pacr achannarasappa-ticker
+pac firewall-applet
+[aru
+rename
+rename --help
+man fd
+pics
+mkdir tmp
+mv *png tmp
+tmp
+for file in find . -type f ; do\
+	ext="${file##*.}"\
+	path="${file%/*}"\
+	mv file $path/poster."$ext"\
+done
+for file in find . -type f ; do\
+	ext="${file##*.}"\
+	path="${file%/*}"\
+echo $path $ext\
+done
+bash
+sudo pacr nvidia
+nano
+sudo
+v /root/.zshrc
+sudo ln -s /home/rob/.zshrc /root/.zshrc
+ls /root/.zshrc
+sudo ln -s /home/rob/.aliases /root/.aliases
+echo $ENV
+v .aliases
+sudo -i
+\su
+ln -s /root/.zkbd/ /root/.zkbd/
+sudo ln -s /root/.zkbd/ /root/.zkbd/
+sudo ln -s /root/.zkbd/ /root/
+ls /root/
+ls .config/zsh
+grep PS1 .zshrc
+v .zshrc
+vfb
+la
+paru
+S edit reflector.timer
+su
+mediainfo Captain.America.Civil.War.2016.REMASTERED.1080p.BluRay.x265-RARBG.mp4
+bb
+se
+ls
+vfm
+ndu
+which ndu
+nnf -C -T a
+yay
+paru

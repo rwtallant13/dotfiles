@@ -39,6 +39,10 @@ noremap <Leader>y "+y
 noremap <Leader>p "+p
 noremap <Leader>Y "*y
 noremap <Leader>P "*p
+nnoremap <Leader>d "_d
+nnoremap <Leader>p "_dP
+xnoremap <Leader>d "_d
+xnoremap <Leader>p "_dP
 
 " buffers / tabs
 noremap <C-T> :tabnew<cr>

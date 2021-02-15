@@ -51,8 +51,8 @@ highlight {*.djvu,*.htm,*.html,*.shtml,*.css,*.markdown,*.md,*[^0-9].[1-9],
           \*.mkd,*.org,*.pandoc,*.pdc,*.pdf,*.epub,*.fb2,*.tex,*.txt,*.xhtml,
           \*.xml,*.pptx,*.ppt,*.doc,*.docx,*.xls,*.xlsm,*.xlsx,*.mobi,*.rtf,
           \*.less,*.scss,*.log,*.rss,*.xul,*.json,*.yaml,*.yml,*.desktop,*.csv,
-          \*.plist,*.ini,*.cfg,*.rc,*.conf,*.srt,*.spec,*.qrc}
-        \ cterm=none ctermfg=229 ctermbg=default
+          \*.plist,*.ini,*.cfg,*.rc,*.conf,*.srt,*.sub,*.spec,*.qrc}
+        \ cterm=none ctermfg=228 ctermbg=default
 " media
 highlight {*.aac,*.anx,*.asf,*.au,*.avi,*.ts,*.axa,*.axv,*.divx,*.flac,*.m2a,
           \*.m2v,*.m4a,*.m4p,*.m4v,*.mid,*.midi,*.mka,*.mkv,*.mov,*.mp3,*.mp4,

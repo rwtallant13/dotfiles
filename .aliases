@@ -5,6 +5,7 @@
 
 # system
 alias sudo='sudo '
+alias su='sudo -i'
 alias udb='sudo updatedb.plocate'
 alias locate='plocate'
 alias udev-reload='sudo udevadm control --reload-rules && sudo udevadm trigger'
@@ -26,10 +27,11 @@ alias pacq='sudo pacman -Qs'
 alias pacf='sudo pacman -F'
 alias pacl='sudo pacman -Ql'
 alias pacr='pacman -Rncs'
+alias pacy='sudo pacman -Syy'
 alias pacdiff='sudo -E pacdiff'
 alias fzpacr='sudo pacman -Rncs $(fzpkgs)'
 alias rmorphans='sudo pacman -Rns $(pacman -Qtdq)'
-alias pacrepo='sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+alias pacrepo='sudo reflector --latest 10 --country US --protocol https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
 
 #ls
 alias l='ls -hN --color=auto --group-directories-first'

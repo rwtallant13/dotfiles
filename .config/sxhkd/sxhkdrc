@@ -76,6 +76,9 @@ alt + space
 super + q
 	qbittorrent
 
+super + d
+	chronic discord &
+
 # telegram
 super + g
 	chronic telegram-desktop &

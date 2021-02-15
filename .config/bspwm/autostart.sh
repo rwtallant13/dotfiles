@@ -3,10 +3,11 @@
 # bspwm autostart
 /home/rob/.fehbg
 /home/rob/.bin/pbar.sh &
-/home/rob/.bin/start picom dunst nm-applet dpms polkit pia-client
+/home/rob/.bin/start picom nm-applet dunst polkit pia-client
 /home/rob/.bin/nvfans &
 /home/rob/.bin/autolock enable &
 /home/rob/.bin/mnt bb &
+/home/rob/.bin/monctl dpms
 /home/rob/.bin/sinkctrl -r -d
 /home/rob/.bin/caps2esc &
 /usr/bin/clipmenud &

@@ -40,10 +40,6 @@ _ssr(){
 	chronic simplescreenrecorder --start-hidden --settingsfile=/home/rob/.ssr/fullscreen.conf
 }
 
-_dpms(){
-	monctl dpms
-}
-
 _pulse(){
 	pulseaudio -k && pulseaudio --start
 }

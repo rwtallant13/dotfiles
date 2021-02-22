@@ -912,7 +912,6 @@ systemctl enable --now rsnapshot-month.timer\
 S disable backup.timer
 sudo systemctl start rsnapshot@day
 systemctl status rsnapshot@day.service
-pacr rsnapshot
 ls /home/rob/docs/backup_exclude.txt
 chxbinls
 less .bin/rdiff-oneliner
@@ -935,7 +934,6 @@ systemctl enable --user clipmenud
 rm .config/autostart/Nextcloud.desktop
 rm .config/autostart/xfce4-clipman-plugin-autostart.desktop
 rm .config/autostart/*
-ls /etc/xdg/autostart
 man clipmenud
 man clipmenu
 mkdir "$XDG_CACHE_HOME"/clipmenud
@@ -1221,7 +1219,6 @@ mediainfo *.jpg
 mediainfo ~/ite-final/*
 ls ~/ite-final
 rm -rf ~/ite-final
-ls ~
 mv ~/*.png ./
 zip * finalProject.zip
 zip finalProject.zip *
@@ -1778,7 +1775,6 @@ exo-open .zshrc pics/scrots/neofetches.png
 exo-open '.zshrc' 'pics/scrots/neofetches.png'
 exo-open .config/neofetch/config.conf
 exo-open '/home/rob/.fdignore' '/home/rob/.dmrc'
-opi -o
 file="$(fd . /home/rob -H -t f -i | $rofi_dmenu -p "Open")"
 file="$(fd . /home/rob -H -t f -i | rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-select -p "Open")"
 file=$(fd . /home/rob -H -t f -i | rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-select -p "Open")
@@ -1803,7 +1799,6 @@ rm -rf .config/systemd/user/*
 systemctl disable caps2esc
 systemctl disable --user caps2esc
 v .bin/caps2esc
-ls /boot
 ls /boot/EFI
 dmesg
 man dmesg
@@ -2017,7 +2012,6 @@ which pkglist
 v /home/rob/.bin/pkglist
 cat /home/rob/.bin/pkglist
 rm -rf .bin/pkglist
-pacreport --unowned-files
 s systemctl daemon-reload
 S daemon-reload
 locate pacnew
@@ -2153,8 +2147,6 @@ xcat .ssh/id_rsa.pub
 ssh 68.183.60.201
 cat .ssh/id_rsa
 git pull https://github.com/dylanaraps/pfetch.git
-make
-make install
 rm -r pfetch
 sudo pacr pfetch
 git clone https://github.com/dylanaraps/pfetch.git
@@ -2164,7 +2156,6 @@ rm -rf pfetch
 S disable caps2esc.timer
 locate caps2esc.timer
 sudo rm -rf /etc/systemd/system/caps2esc.timer
-sudo pacr rsnapshot
 sudo pacr /etc/systemd/system/rsnapshot-*
 sudo rm -rf /etc/systemd/system/rsnapshot-*
 systemctl --type=service --state=active
@@ -2858,7 +2849,6 @@ fd RARBG* . -e exe -e txt
 shortinfo JoJo-S04E01-GoldenWind.mp4
 mv downloads/minecraft/BSL_v7.2.zip .minecraft/shaderpacks
 mv downloads/minecraft/SEUS-Renewed-v1.0.1.zip .minecraft/shaderpacks
-v /etc/mkinitcpio.conf
 compgen -c | fzf
 v /usr/share/fzf/key-bindings.zsh
 eval compgen
@@ -2874,7 +2864,6 @@ swapon --show
 du -f
 sudo parted /dec/sdd print free
 sudo parted /dev/sdd print free
-pac systemd-swap
 S enable systemd-swap
 man swap.conf 5
 echo $CONFIG_ZSWAP_DEFAULT_ON
@@ -3022,7 +3011,6 @@ chmod a+x fz.sh
 locate bash_completion.d
 sudo mv fz.sh /home/rob/.local/etc/bash_completion.d/
 realpath /home/rob/.local/etc/bash_completion.d/fz.sh
-pac linux linux-lts
 systemd-analyze time
 systemd-analyze critical-chain
 open plot.svg
@@ -3325,7 +3313,6 @@ less .xsession-errors\\
 
 pacr lf
 sudo pacr lf
-pacreport > pacreport.txt
 less pacreport.txt
 paccache
 paccache -h
@@ -3367,7 +3354,6 @@ rm -rf .ssr
 sudo pacr simplescreenrecorder
 obs --profile Default --minimize-to-tray
 obs --profile Default --minimize-to-tray -p
-obs --help
 man nvim
 mks
 mks .bin/nout
@@ -3504,7 +3490,6 @@ rm -rf $(ls -Art | head -30)
 ls -Art | head -30
 sudo rm MylfBlows.20.10.19.Alix.Lynx.Ill.Help.You.Relax.XXX.720p.MP4-XXX
 sudo rm -rf MylfBlows.20.10.19.Alix.Lynx.Ill.Help.You.Relax.XXX.720p.MP4-XXX
-uname -r
 v .bin/check-media
 rg EOF  .bin
 trimvid -e 15 /media/mx100/Videos/Call of Duty  Black Ops Cold War/Call of Duty  Black Ops Cold War 2020.10.18 - 20.05.42.03.DVR.mp4
@@ -3526,7 +3511,6 @@ sudo pacr openshot
 pac shotcut
 ls /sys/class/drm/card0/device/vendor
 cat /sys/class/drm/card0/device/vendor
-ls .con
 ls .config/dconf
 rmr .openshot_qt
 du
@@ -3750,7 +3734,6 @@ sudo pacr avidemux
 sudo pacr avidemux6
 rmr .avidemux6
 pac wireguard
-pac wireguard-tools
 pac wireguard-tools wireguard-dkms
 yay networkmanager-wireguard
 less .xsession-errors.old
@@ -3778,7 +3761,6 @@ vifm --choose-files - <$( fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|','')
 vifm --choose-files <$( fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|','')
 vifm --choose-files $( fd -H $* | grep -E '\s|\*|\?|\$|%|'\ '|','')
 mks .bin/mkszn
-usb
 locate mkszn
 mkszn
 v .bin/mkszn
@@ -3843,7 +3825,6 @@ sleep 1.5s
 piactl disconnect
 v .bin/vpn-toggle
 mks .bin/pia.sh
-opi
 pia.sh
 piactl set region
 piactl set region && echo true
@@ -4006,8 +3987,6 @@ echo $VDPAU_DRIVER
 yay  -S libva-vdpau-driver-chromium
 v ~/.config/chromium-flags.conf
 ssh 192.168.2.21 -L 8888:localhost:80
-pacr minecraft-launcher
-sudo pacr minecraft-launcher
 yay jdk-openj9
 yay -S jdk8-openj9-bin
 which jre9
@@ -4022,7 +4001,6 @@ pac minecraft-launcher
 zsh
 rmr .local/share/multimc
 journalctl -r
-locate pia
 v /opt/piavpn/etc/settings.json
 feh --bg-scale pics/backgrounds/macOS/ColorBurst2.jpg
 feh --no-fehbg --bg-scale '/home/rob/pics/backgrounds/macOS/ColorBurst2-tall.jpg'
@@ -4238,7 +4216,6 @@ ssh -vvv pi
 less .config/picom/log 
 ll .config/picom/log
 rm .config/picom/log
-fzaux
 unoconv -f pdf school/ITE221/11\ -\ Computer\ OS\ Functions\ I.pptx 
 unoconv -f pdf school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pptx 
 open school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pdf 
@@ -4337,7 +4314,6 @@ shortinfo /media/blueberry/media/shows/Mandalorian/Season01/The_Mandalorian_S01E
 echo $ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS
 echo $ZSH_AUTOSUGGEST_ACCEPT_WIDGETS
 yay_pkgs
-cat
 zsh --vers
 zsh --version
 shortinfo Tenet.mkv
@@ -4449,7 +4425,6 @@ pacman -Qme | grep polybar
 pacman -Qne | grep polybar
 git clone https://github.com/NeverDecaf/chromium-web-store.git
 ls docs
-ls /
 sudo mkdir /media
 sudo chown -R rob:rob /media
 mkdir /media/{mx100,ssd,windows,bb-dir,blueberry,laptop}
@@ -4462,9 +4437,6 @@ ll /media/mx100
 sudo umount /media/mx100
 sudo cp /boot/loader/entries/arch-lts.conf /boot/loader/entries/arch.conf
 pac sshfs
-S enable --now systemd-swap
-v /etc/systemd/swap.conf
- sysctl vm.swappiness
 v .bin/rsync_backup.sh
 ls /etc/
 S enable ufw
@@ -4551,7 +4523,6 @@ pac redshift
 redshift.sh
 yay -S plata-theme
 gsettings set org.gnome.desktop.interface gtk-theme Plata-Compact
-pacman-pkgs
 sethue off
 pac python-pip
 pac python3-pip
@@ -4602,10 +4573,8 @@ lightdm-gtk-greeter-settings-pkexec
 start picom &
 /home/rob/.bin/start picom &
 persist picom --experimental-backends
-ls .config/autostart
 killall picom
 rmr LosslessCut microsoft-edge-dev nwg-launchers plex.tv QtProject transmission vidcutter 
-ls /etc
 pac rmlint
 rmlint -h
 rmlint 
@@ -4646,7 +4615,6 @@ LC_ALL=C pacman -V|sed -r 's#[0-9]+#e44#g'|md5sum|cut -c1-6
 S restart plexmediaserver
 rust update stable
 pacr piavpn-bin
-pia-client
 piactl background enable
 piactl
 piactl connect
@@ -4656,7 +4624,6 @@ piactl -d
 piactl --debug
 piactl --debug connect
 piactl resetsettings
-sudo pacr piavpn-bin
 ls /opt
 rmr /opt/piavpn
 sudo rmr /opt/piavpn
@@ -4926,7 +4893,6 @@ scp /usr/share/terminfo/t/termite peach:/usr/share/terminfo/t/
 yay -S piavpn-bin
 journalctl -f -u backup.service
 system-backup
-ncdu
 S enable backup.service
 S enable backup.timer
 v /etc/systemd/system/backup.timer
@@ -5127,7 +5093,6 @@ sudo sysctl -a
 sudo sysctl -a | grep watchdog
 v /etc/modprobe.d/nvidia.conf
 modinfo nvidia
- cat /proc/sys/kernel/watchdog
 locate nvidia-suspend.service
 v /usr/lib/systemd/system/nvidia-suspend.service
 v /usr/lib/systemd/system/nvidia-resume.service
@@ -5162,7 +5127,6 @@ ls .cache/zsh
 v /etc/vimrc
 nv
 sudo nv
-v /boot/loader/entries/arch-lts.conf
 v /boot/loader/entries/arch.conf
 v /etc/modprobe.d/blacklist.conf
 sudo rm /etc/modprobe.d/blacklist.conf
@@ -5203,13 +5167,11 @@ v /etc/makepkg.conf
 z chrome
 v userChrome.css
 cat /sys/block/sdd/queue/scheduler
-lsblk -f
 ll /media
 mv /media/mx100 /media/mx500
 ll /media/mx500
 ll /media/
 bspc rule -a privateinternetaccess:pia-client state=pseudo_tiled
-lsblk
 lsusb
 fastboot format userdata
 sudo $(which fastboot) devices
@@ -5300,7 +5262,6 @@ pac nextcloud
 pac nextcloud-c
 pac nextcloud-client
 systemd-analyze blame
-systemd-analyze 
 systemd-analyze plot > plot.svg
 vw plot.svg
 S disable ntpdate.service
@@ -5379,7 +5340,6 @@ rm plot.svg
 rg 2 .bin
 se 
 mnt -h
-less .xsession-errors
 cat .bash_logout
 rmr .bash_logout
 pac mop
@@ -5401,7 +5361,6 @@ yadm --help
 yay clight
 pacr clight
 sudo pacr clight
-rmorphans
 pac bash-completions
 pac bash-completion
 pkglist
@@ -5435,7 +5394,6 @@ locate config-prefs
 ls /usr/lib/firefox/
 v /usr/lib/firefox/config.js
 v  /usr/lib/firefox/browser/defaults/preferences/config-prefs.js
-xprop
 z school
 mkdir MUS121
 mkdir HLT110
@@ -5451,19 +5409,15 @@ yay webull
 yay -Scc
 rm -rf src  Webull%20Desktop%204.2.9.deb.part
 cd..
-rmr tmp
 git clone https://aur.archlinux.org/webull-desktop.git
 webull-desktop
 curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/webull-desktop.tar.gz
 rmr webull-desktop.tar.gz
-makepkg -si
 ls pkg
 ls pkg/webull-desktop
 v PKGBUILD
-bspc node -i
 man bspx
 man bspwm
-..
 rm -rf webull-desktop
 bspc config single_monocle false
 bspc config single_monocle true
@@ -5597,7 +5551,6 @@ wall.sh -U thing.png
 mv thing.png pics/backgrounds/abstract/source.png
 wall.sh -U pics/backgrounds/abstract/Infinity-Plasma.jpg 
 wall.sh -U pics/backgrounds/abstract/source.png
-/etc
 fd . $HOME -t d -H -a $HOME ./
 fd . $HOME -t d -H -a ./ $HOME
 fd -t d -H -a $HOME ./
@@ -5630,7 +5583,6 @@ media/nextcloud
 ls InstantUpload
 v /etc/davfs2/davfs2.conf
 mv InstantUpload/Camera/PXL_20210201_161857358.mp4 Photos/Uploads/Camera/2021/01/
-ssh pi
 which v
 v .bin/nv
 ssh-copy-id pi
@@ -5644,11 +5596,9 @@ S restart sshd
 ls media
 mv media ext
 sensors
-nvtop
 bspc -r
 bspc wm -r
 ./.config/bspwm/autostart.sh 
-man bspc
 bspc config ignore_ewmh_struts true
 bspc config top_padding         10
 bspc config top_padding         18
@@ -5671,7 +5621,6 @@ mount  ./ext/nextcloud
 ./ext/nextcloud
 rmr ~/docs/invoices/
 yay piavpn-bin
-reboot
 fkill 
 pvpn client
 cat efimgr
@@ -5718,7 +5667,6 @@ ls ext/nextcloud/COD\ clips/Call\ of\ Duty\ \ Black\ Ops\ Cold\ War\ 2.mp4
 man deurlname
 rm .bin/nullify
 ls .bin
-.bin
 cat rmspaces
 rm rmspaces
 cat 2mp4
@@ -5728,7 +5676,6 @@ cat calc
 rm calc
 rofer calc
 cat check-swap
-start sxhkd
 pkill -USR1 -x sxhkd
 v .bin/persist
 persist
@@ -5743,7 +5690,6 @@ zenity --question && echo true
 cat sxhkd .bin/start
 grep sxhkd .bin/start
 persist sxhkd -s $HOME/.cache/sxhkd.fifo
-fkill
 rg --hidden persist
 man rg
 rg --hidden --iglob firefox persist
@@ -5771,7 +5717,6 @@ yay paru
 pacr yay
 sudo pacr yay
 mkdir .config/paru
-udb
 plocate paru.conf
 cp /etc/paru.conf .config/paru
 ll .config/paru/paru.conf
@@ -5790,7 +5735,6 @@ touch -h
 touch --help
 man local
 bspc subscribe node
-bspc subscribe desktop
 bspc subscribe desktop | grep layout
 man read
 bspc subscribe desktop | grep layout | cut -f1- read
@@ -5809,8 +5753,6 @@ cut -d' ' -f1 /etc/mtab
 ls .config/vifm/vifminfo
 ls .config/vifm/vifminfo*
 v .config/vifm/vifminfo.json
-btm
-shutdown now
 S enable avahi-daemon.service
 ping blueberry
 S restart apcupsd
@@ -5818,9 +5760,7 @@ apcaccess status
 sudo ufw allow 3551
 v /etc/apcupsd/apcupsd.conf
 sudo apcaccess status
-yay
 vifm
-vf
 minecraft-launcher --help
 ((620/60))
 echo ((620/60))
@@ -5854,8 +5794,6 @@ du simplePlanet.webp
 pac picom
 z hlt
 for i in *.ppt; do unoconv -f pdf "$i"; done
-pacrepo
-ls .config
 rmr Bitwarden dyn-wall-rs Nextcloud Popcorn-Time 
 gsmartcontrol
 sudo pacr gsmartcontrol
@@ -5871,7 +5809,6 @@ rmr chromium
 rmr chromium-flags.conf
 ls pipewire-media-session
 rmr pipewire-media-session
-cd
 task
 .config
 rmr task
@@ -5889,7 +5826,6 @@ start nm-applet
 start picom
 monctl dpms
 /home/rob/.bin/sinkctrl -r -d
-v /etc/pacman.conf
 v /etc/pacman.d/mirrorlist
 v .minecraft/options.txt
 v .minecraft/optionsof.txt
@@ -5922,9 +5858,7 @@ rename
 rename --help
 man fd
 pics
-mkdir tmp
 mv *png tmp
-tmp
 for file in find . -type f ; do\
 	ext="${file##*.}"\
 	path="${file%/*}"\
@@ -5953,19 +5887,292 @@ sudo ln -s /root/.zkbd/ /root/
 ls /root/
 ls .config/zsh
 grep PS1 .zshrc
-v .zshrc
 vfb
-la
-paru
 S edit reflector.timer
-su
 mediainfo Captain.America.Civil.War.2016.REMASTERED.1080p.BluRay.x265-RARBG.mp4
-bb
-se
-ls
-vfm
 ndu
 which ndu
 nnf -C -T a
+pac ghostwriter
+pac pup
+pacf pup
+par pup
+paru pup
+paru -S pup
+pacf recode
+pac recode
+ls $HOME/.local/bin/gsearch
+ls $HOME/.local/bin/
+gsearch
+echo "#\!/bin/bash" >> $HOME/.local/bin/gsearch
+xclip -selection clipboard -o >> $HOME/.local/bin/gsearch
+chmod +x $HOME/.local/bin/gsearch
+v $HOME/.local/bin/gsearch
+pac ddgr
+pacf ddgr
+yay -S ddgr
+paru -
+paru -S ddgr
+ddgr
+man ddgr
+rm $HOME/.local/bin/gsearch
+recode --help
+recode -l
+node -i
+bspc node -i
+man bspc
+bspc subscribe desktop
+pac jgmenu
+ls /usr/share/icons/*/16x16/legacy
+ls /usr/share/icons/
+man moreutils
+rg termite 
+sudo rm .jgmenu-lockfile
+whicih jgmenu
+which jgmenu
+rm .node_repl_history
+rm .yarnrc
+/usr/bin/jgmenu --at-pointer -vsimple 
+start sxhkd
+chronic /usr/bin/jgmenu --at-pointer --hide-on-startup --simple
+rm .jgmenu-lockfile
+fkil
+chronic /usr/bin/jgmenu --at-pointer --hide-on-startup
 yay
+v .a
+man chronix
+man chroni
+man chronic
+chronic firefox --incognito
+firefox --help
+firefox --private-window
+chronic firefox --private-window
+fzaux
+ls .config/autostart
+se /etc
+lsblk -f
+cat /sys/firmware/efi/fw_platform_size
+ls /etc/pacman.d/hooks
+ls /etc/pacman.d/hooks/nvidia.hook
+locate hooks
+ls /boot/EFI/Linux
+ls /etc/xdg/autostart
+less .xsession-errors
+v /usr/share/applications/jgmenu.desktop
+jgmenu_run init
+jgmenu_run init -h
+man jgmenututorial
+v .config/jgmenu/jgmenurc
+start jgmenu
+jgmenu
+jgmenu_run
+xprop
+locate opi
+locate 'opi'
+locate -b opi
+locate --help
+locate jgmenu
+jgmenu --no-spawn > jgmenu.csv
+fkill
+jgmenu_run init --help
+jgmenu_run init -t
+jgmenu_run init -i
+v ~/.config/jgmenu/prepend.csv
+v append.csv
+v prepend.csv
+jgmenu --help
+jgmenu --no-spawn
+jgmenu_run --no-spawn
+jgmenu_run --help
+locate ofi
+locate ofi.desktop
+ofi
+opi
+opi -o
+rg opi .config/sxhkd/sxhkdrc 
+rg -C2 opi .config/sxhkd/sxhkdrc 
+ls /home/rob/.local/share/applications/
+rm /home/rob/.local/share/applications/chromium.desktop
+v /home/rob/.local/share/applications/ofi.desktop
+mv /home/rob/.local/share/applications/ofi.desktop /home/rob/.local/share/applications/opi.desktop
+v /home/rob/.local/share/applications/opi.desktop
+locate search.icon
+locate search | grep icon
+locate applications
+ncdu /usr/share
+sudo rm /usr/share/popcorntime
+sudo rm -rf /usr/share/popcorntime
+sudo rm -rf /usr/share/dynamic-wallpaper
+find /etc /usr/share | LC_ALL=C pacman -Qqo - 2>&1 >&- >/dev/null | cut -d ' ' -f 5-
+find /etc /usr/share | LC_ALL=C pacman -Qqo - 2>&1 >&- >/dev/null | cut -d ' ' -f 5- > unowned-files.txt
+find /usr/share/applications | LC_ALL=C pacman -Qqo - 2>&1 >&- >/dev/null | cut -d ' ' -f 5- > unowned-files.txt
+find /usr/share/ | LC_ALL=C pacman -Qqo - 2>&1 >&- >/dev/null | cut -d ' ' -f 5- > unowned-files.txt
+tail -f unowned-files.txt
+less unowned-files.txt
+pacreport > pacreport.txt
+pacreport --unowned-files
+sudo pacr gtk-engine-murrine
+pacr pup-bin
+sudo pacr pup-bin
+sudo pacr dyn-wall-rs
+sudo pacr popcorntime
+/usr/share/applications
+.local/share/applications
+rm appimagekit-littleweeb.desktop
+ls .con
+ls .config
+paru replaysorcery
+paru -Ss replaysorcery
+paru  replay-sorcery-git
+systemctl --user enable --now replay-sorcery
+cp /usr/local/etc/replay-sorcery.conf ~/.config/replay-sorcery.conf
+locate replay-sorcery.conf
+cp /usr/etc/replay-sorcery.conf ~/.config/replay-sorcery.conf
+ll ~/.config/replay-sorcery.conf
+v ~/.config/replay-sorcery.conf
+systemctl --user disable --now replay-sorcery
+mediainfo Replay_recording_2021-02-17_13-47-58.mkv
+pac wireguard-tools
+uname -r
+(umask 0077; wg genkey > peer_A.key)
+ wg pubkey < peer_A.key > peer_A.pub
+paru piavpn-bin
+rg notify .bin
+pia-client
+sudo pacr
+sudo pacr piavpn-bin
+sudo rm -rf /opt/piavpn/
+usb
+udb
+locate pia
+chmod +x ./downloads/pia-linux-2.6.1-05824.run
+./downloads/pia-linux-2.6.1-05824.run
+ls /opt/piavpn
+sudo ufw allow 21211
+nvtop
+pac strawberry
+sudo pacr strawberry
+extract se
+extract downloads/telegram/sampler.tar 
+man tar
+rm moc_waveform.cpp moc_window.cpp 
+rm *.o
+rm *.h
+rm *.wav
+rm *.md
+rmr sampler* pc* Makefile src include examples 
+.bin
+v wall.sh
+..
+mkdir tmp
+tmp
+ls ~
+cd ~/downloads/telegram/sampler.tar
+~/downloads/telegram/
+rm tmp
+rmr tmp
+ls sampler
+rmr sampler
+extract ~/downloads/telegram/sampler.tar
+sampler
+make install
+make 
+ls
+cat Makefile
+makepkg -si
+make
+./sampler
+bb
+v .zshrc
+pac booster
+pac busybox
+v /etc/mkinitcpio.
+cat /etc/mkinitcpio.d/linux*
+cat
+sudo cp /boot/loader/entries/arch-lts.conf /boot/loader/entries/booster.conf
+ls /boot/loader/entries/booster.conf
+v /boot/loader/entries/booster.conf
+pac linux linux-lts
+v /etc/pacman.conf
+pacr mkinitcpio
+sudo pacr mkinitcpio
+ls /boot
+v /etc/booster.yaml
+locate nvidia.hook
+v /etc/pacman.d/hooks/nvidia.hook
+rm /etc/pacman.d/hooks/nvidia.hook
+sudo rm /etc/pacman.d/hooks/nvidia.hook
+reboot
+pac mkinitcpio
+pacr booster
+sudo pacr booster
+sudo rm /etc/booster.yaml
+sudo rm /boot/booster-linux*
+sudo rm /boot/loader/entries/booster.conf
+v /boot/loader/entries/arch-lts.conf
+cat /proc/sys/kernel/watchdog
+wdctl
+btm
+comm -12 <(pacman -Qq | sort) <(pacman -Sql chaotic-aur | sort)
+aur-pkgs
+pacman-pkgs
+rmorphans
+vf
+lsblk
+pac systemd-swap
+S enable --now systemd-swap
+v /etc/systemd/swap.conf
+S status systemd-swap
+ls /
+s pacr systemd-swap
+S pacr systemd-swap
+sudo pacr systemd-swap
+S disable --now systemd-swap
+dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
+sudo dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
+su
+sysctl vm.swappiness
+m
+ssh pi
+obs --help
+obs --startreplaybuffer
+frm
+vrm
+shortinfo *
+shortinfo 
+shortinfo -l
+shortinfo -s
+shortinfo -l ./
+pacrepo
+paru
+ncdu
+pacr minecraft-launcher
+sudo pacr minecraft-launcher
+la
+\cp -TRv .minecraft /home/rob/.local/share/multimc/instances/1.16.5/.minecraft/
+ls /etc
+pacr rsnapshot
+sudo pacr rsnapshot
+/etc
+cd
+cat tmp| sort
+v tmp2 
+mv tmp\! tmp
+cat tmp2| sort > tmp
+cat tmp| sort 
+cat tmp| sort > tmp2
+v /etc/mkinitcpio.conf
+paru linux linux-lts
+se
+pacu linux linux-lts
+systemd-analyze 
+shutdown now
+ld downloads/torrents
+ls downloads/torrents
+vfm
+paru
+v /etc/mkinitcpio.conf
+paru linux linux-lts
+paru -S linux linux-lts
+la
 paru

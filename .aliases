@@ -4,34 +4,37 @@
 
 
 # system
-alias sudo='sudo '
-alias su='sudo -i'
-alias udb='sudo updatedb.plocate'
-alias locate='plocate'
-alias udev-reload='sudo udevadm control --reload-rules && sudo udevadm trigger'
-alias timers='systemctl list-timers'
-alias grep='grep --color=auto'
-alias dots='yadm'
 alias dots-tracked='yadm list -a|less'
+alias dots='yadm'
+alias services='systemctl list-unit-files | grep enabled'
+alias grep='grep --color=auto'
+alias J='sudo journalctl'
+alias locate='plocate'
 alias myip='curl http://ipecho.net/plain; echo'
 alias S='sudo systemctl'
-alias enabledservices='systemctl list-unit-files | grep enabled'
 alias s='systemctl --user'
-alias J='sudo journalctl'
+alias sudo='sudo '
+alias sufw='sudo ufw'
+alias su='sudo -i'
+alias timers='systemctl list-timers'
+alias udb='sudo updatedb.plocate'
+alias udev-reload='sudo udevadm control --reload-rules && sudo udevadm trigger'
+
 
 # pacman
-alias pac='sudo pacman -S'
-alias pacu='sudo pacman -Syu'
-alias pacs='sudo pacman -Ss'
-alias pacq='sudo pacman -Qs'
+alias fzpacr='sudo pacman -Rncs $(fzpkgs)'
+alias pacdiff='sudo -E pacdiff'
 alias pacf='sudo pacman -F'
 alias pacl='sudo pacman -Ql'
-alias pacr='pacman -Rncs'
-alias pacy='sudo pacman -Syy'
-alias pacdiff='sudo -E pacdiff'
-alias fzpacr='sudo pacman -Rncs $(fzpkgs)'
-alias rmorphans='sudo pacman -Rns $(pacman -Qtdq)'
+alias pacq='sudo pacman -Qs'
 alias pacrepo='sudo reflector --latest 10 --country US --protocol https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
+alias pacr='pacman -Rncs'
+alias pacs='sudo pacman -Ss'
+alias pac='sudo pacman -S'
+alias pacu='sudo pacman -Syu'
+alias pacy='sudo pacman -Syy'
+alias rmorphans='sudo pacman -Rns $(pacman -Qtdq)'
+alias yay='paru'
 
 #ls
 alias l='ls -hN --color=auto --group-directories-first'
@@ -42,31 +45,31 @@ alias ls='ls -hN --color=auto --group-directories-first'
 alias lr='ls -RhN --color=auto --group-directories-first'
 alias lb='ls -hN --color=auto --group-directories-first /home/rob/.bin/'
 
-# files
-alias rm='rm -I'
-alias n='nnf'
-alias ndu='nnf -C -T a'
-alias pb='curl -F "f:1=<-" ix.io'
-alias rmr='rm -rfI'
-alias rf='rg --files --hidden'
-alias tb='nc termbin.com 9999'
-alias v='/home/rob/.bin/nv'
-alias vf='vifm'
-alias vfm='vifm /media/blueberry/ /home/rob/downloads/torrents/ '
-alias vfb='vifm /media/blueberry/backups/rob-pc /home/rob'
-
-# commands
-alias df='df -h'
+#commands
 alias cmd='compgen -c | fzf'
 alias cpuspeed='watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
-alias rm-empty='fd -t d -x rmdir --ignore-fail-on-non-empty {}'
-alias rmspaces='find . -name "* *" -type f | /usr/bin/vendor_perl/rename 's/ //g' '
+alias df='df -h'
 alias gcp='g++'
 alias hb='HandBrakeCLI'
 alias hist='history'
 alias iftop='sudo iftop -b'
-alias xc='xclip -selection clipboard'
+alias m='micro'
+alias ndu='nnf -C -T a'
+alias n='nnf'
+alias pb='curl -F "f:1=<-" ix.io'
+alias rf='rg --files --hidden'
+alias rm-empty='fd -t d -x rmdir --ignore-fail-on-non-empty {}'
+alias rm='rm -I'
+alias rmr='rm -rfI'
+alias rmspaces='find . -name "* *" -type f | /usr/bin/vendor_perl/rename 's/ //g' '
+alias tb='nc termbin.com 9999'
 alias ticker='ticker --show-fundamentals --show-separator --config $HOME/.config/ticker.yaml'
+alias vfb='vifm /media/blueberry/backups/rob-pc /home/rob'
+alias vfm='vifm /media/blueberry/ /home/rob/downloads/torrents/ '
+alias vf='vifm'
+alias v='/home/rob/.bin/nv'
+alias xc='xclip -selection clipboard'
+
 
 # bb/pi
 alias bb='ssh bb'
@@ -90,20 +93,16 @@ fzcd() {
 	$(__fzf_cd__)
 }
 
-kw(){
-    nohup kwrite "$@" & disown
-}
-
 pacman-pkgs(){
-	pacman -Qqne | tee /home/rob/docs/pacman-pkgs | less
-}
-
-mkbak(){
-	cp -b ${1} ${1}.bak
+	pacman -Qqne | tee /home/rob/docs/pacman-pkgs
 }
 
 aur-pkgs(){
-	pacman -Qqme | tee /home/rob/docs/aur-pkgs | less
+	pacman -Qqme | tee /home/rob/docs/aur-pkgs
+}
+
+backup(){
+	cp -b ${1} ${1}.bak
 }
 
 pkglist(){
@@ -120,7 +119,7 @@ mkcd(){
 	mkdir -p "$1" && cd "$1"
 }
 
-mks(){
+mkbin(){
 	p=/home/rob/.bin/${1##*/}
 	if [[ -n "$1" ]]; then
 		printf '#!/bin/bash\n\n' > "$p" && chmod +x "$p" && nv "$p"
@@ -177,10 +176,6 @@ yf(){
 
 }
 
-vlc-yt(){
-    vlc "$(youtube-dl --get-url --format best $1)"
-}
-
 hist_dedup() {
 
     tac ~/.config/bash_history | awk '! x[$0]++' | tac > ~/bash_hist_clean
@@ -189,17 +184,6 @@ hist_dedup() {
 
     mv ~/bash_hist_clean ~/.config/bash_history
 
-}
-
-fv() {
-	local file
-    dir="${1:-"."}"
-	file="$( fd . $dir --hidden -t f -i | fzf -m -e -0 -1)"
-
-	if [[ -n $file ]]
-	then
-		v "$file"
-	fi
 }
 
 fkill() {
@@ -221,14 +205,6 @@ fzaux() {
         ps -ef | sed 1d | fzf -m
     fi
 }
-
-fman() {
-    man -k . | fzf --prompt='Man> ' | awk '{print $1}' | xargs -r man
-}
-
-pman() {
-     man -Tpdf "$1" | zathura - >/dev/null 2>&1 & disown
-    }
 
 fdchars() {
     fd -H $* | grep -E '\s|\*|\?|\$|%|'\ ''

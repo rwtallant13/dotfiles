@@ -7,15 +7,20 @@ _picom(){
 }
 
 _pbar(){
-    /home/rob/.bin/pbar.sh
+    chronic /home/rob/.bin/pbar.sh
 }
 
 _dunst(){
-	/usr/bin/dunst
+	chronic /usr/bin/dunst
 }
 
 _sxhkd(){
 	sxhkd -s $HOME/.cache/sxhkd.fifo
+}
+
+_jgmenu(){
+	chronic /usr/bin/jgmenu --at-pointer --hide-on-startup
+
 }
 
 _nm-applet(){
@@ -33,7 +38,6 @@ _polkit(){
 
 _obs(){
     chronic obs --profile Default --minimize-to-tray
-
 }
 
 _ssr(){

@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+filename="${1##*/}"
+tmpdir="${filename%.*}"
+
+mkdir $tmpdir && cd $tmpdir
+
 if [ -f "$1" ] ; then
     case "$1" in
         *.tar.bz2)   tar xvjf "$1"    ;;

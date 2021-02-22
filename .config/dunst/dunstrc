@@ -30,9 +30,9 @@
     startup_notification = false
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/chromium
-    #icon_position = off
-    #icon_path = /usr/share/icons/Papirus/24x24/status/:
-    #max_icon_size = 32
+    icon_position = off
+    icon_path = /usr/share/icons/Papirus/32x32/status/:/usr/share/icons/Papirus/32x32/devices/:/usr/share/icons/Adwaita/32x32/legacy/
+    max_icon_size = 32
 
 [shortcuts]
 

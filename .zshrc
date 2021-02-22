@@ -117,7 +117,7 @@ bindkey '^[,' insert-first-word
 
 autoload -U copy-earlier-word
 zle -N copy-earlier-word
-bindkey "\e/" copy-earlier-word
+bindkey "^[/" copy-earlier-word
 
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word

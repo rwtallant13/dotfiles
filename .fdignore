@@ -6,7 +6,6 @@
 *[Ll]ib*
 *[Nn]pm*
 *zkbd*
-*[Tt]elegram*
 **/nvim/swap/*
 **/.local/lib/*
 **/.local/share/cargo/*

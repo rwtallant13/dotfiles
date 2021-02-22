@@ -11,6 +11,11 @@ super + {_,alt + ,shift + }o
 super + Escape
 	pkill -USR1 -x sxhkd
 
+~button3
+    bspc query -D -d 'focused.!occupied' && jgmenu_run
+
+alt + F10
+	notify-send -t 3000 "OBS" "Clip Captured"
 
 # caps lock
 shift + Escape
@@ -129,7 +134,7 @@ super + alt + b
 
 # terminal emulator
 {alt,super} + Return
-	/usr/bin/termite
+	chronic /usr/bin/termite
 
 # alt terminal emulator
 super + shift + Return
@@ -265,7 +270,7 @@ super + F12
 	bspc desktop -l next
 
 # hide nodes
-super +{_,shift +} h
+super +{_,alt +} h
 	"$bin"/bspctl {_,un}hide
 
 # equalize nodes
@@ -294,10 +299,6 @@ super + shift + {comma,period}
 
 # move workspaces within monitor
 super + {comma,period}
-	bspc desktop -f {prev,next}.local
-
-# move workspaces within monitor
-control + alt + {comma,period}
 	bspc desktop -f {prev,next}.local
 
 # focus or send to the given workspace

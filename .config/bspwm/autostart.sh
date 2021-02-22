@@ -3,7 +3,7 @@
 # bspwm autostart
 /home/rob/.fehbg
 /home/rob/.bin/pbar.sh &
-/home/rob/.bin/start picom nm-applet dunst polkit pia-client
+/home/rob/.bin/start picom nm-applet dunst polkit pia-client obs
 /home/rob/.bin/nvfans &
 /home/rob/.bin/autolock enable &
 /home/rob/.bin/mnt bb &

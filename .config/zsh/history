@@ -5626,7 +5626,6 @@ pvpn client
 cat efimgr
 mv rofsci rofer
 /home/rob/.bin/mnt nextcloud
-lb
 ticker.sh
 ticker.sh GME
 yay ticker
@@ -5679,7 +5678,6 @@ cat check-swap
 pkill -USR1 -x sxhkd
 v .bin/persist
 persist
-tail -f .xsession-errors
 persist -h
 zenity --help
 zenity --error
@@ -5707,7 +5705,6 @@ mnt mx500
 sudo mount UUID=06281093281083B9 "${2:-/media/mx500}"
 ls ext/mx500
 mv downloads/minecraft/Enhanced\ Default\ v1.12.zip .minecraft/shaderpacks
-ssh bb
 xrandr
 xrandr | grep connected
 which mclog
@@ -5815,7 +5812,6 @@ rmr task
 qalc
 man reflector
 sudo reflector --latest 10 --country US --protocol https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy
-v
 rofi --help | grep font
 rofi -font "Overpass 24"
 rofi -font "Overpass 24" -show run
@@ -5938,7 +5934,6 @@ chronic /usr/bin/jgmenu --at-pointer --hide-on-startup --simple
 rm .jgmenu-lockfile
 fkil
 chronic /usr/bin/jgmenu --at-pointer --hide-on-startup
-yay
 v .a
 man chronix
 man chroni
@@ -5957,7 +5952,6 @@ ls /etc/pacman.d/hooks/nvidia.hook
 locate hooks
 ls /boot/EFI/Linux
 ls /etc/xdg/autostart
-less .xsession-errors
 v /usr/share/applications/jgmenu.desktop
 jgmenu_run init
 jgmenu_run init -h
@@ -6020,7 +6014,6 @@ sudo pacr popcorntime
 .local/share/applications
 rm appimagekit-littleweeb.desktop
 ls .con
-ls .config
 paru replaysorcery
 paru -Ss replaysorcery
 paru  replay-sorcery-git
@@ -6064,7 +6057,6 @@ rmr sampler* pc* Makefile src include examples
 .bin
 v wall.sh
 ..
-mkdir tmp
 tmp
 ls ~
 cd ~/downloads/telegram/sampler.tar
@@ -6077,12 +6069,10 @@ extract ~/downloads/telegram/sampler.tar
 sampler
 make install
 make 
-ls
 cat Makefile
 makepkg -si
 make
 ./sampler
-bb
 v .zshrc
 pac booster
 pac busybox
@@ -6114,11 +6104,9 @@ cat /proc/sys/kernel/watchdog
 wdctl
 btm
 comm -12 <(pacman -Qq | sort) <(pacman -Sql chaotic-aur | sort)
-aur-pkgs
 pacman-pkgs
 rmorphans
 vf
-lsblk
 pac systemd-swap
 S enable --now systemd-swap
 v /etc/systemd/swap.conf
@@ -6133,7 +6121,6 @@ sudo dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress
 su
 sysctl vm.swappiness
 m
-ssh pi
 obs --help
 obs --startreplaybuffer
 frm
@@ -6143,12 +6130,9 @@ shortinfo
 shortinfo -l
 shortinfo -s
 shortinfo -l ./
-pacrepo
-paru
 ncdu
 pacr minecraft-launcher
 sudo pacr minecraft-launcher
-la
 \cp -TRv .minecraft /home/rob/.local/share/multimc/instances/1.16.5/.minecraft/
 ls /etc
 pacr rsnapshot
@@ -6161,18 +6145,41 @@ mv tmp\! tmp
 cat tmp2| sort > tmp
 cat tmp| sort 
 cat tmp| sort > tmp2
-v /etc/mkinitcpio.conf
-paru linux linux-lts
 se
 pacu linux linux-lts
 systemd-analyze 
 shutdown now
 ld downloads/torrents
 ls downloads/torrents
-vfm
-paru
 v /etc/mkinitcpio.conf
 paru linux linux-lts
 paru -S linux linux-lts
+ssh bb
+ssh pi
+paru -S f2
+v
+mkdir docs/bars
+pacrepo
+aur-pkgs
+aureport
+man aureport
+pacr replay-sorcery-git
+sudo pacr replay-sorcery-git
+lb
+less .xsession-errors
+tail -f .xsession-errors
+mkdir tmp
+ls
 la
+ls .config
 paru
+vfm
+yay
+bb
+pac linux-lts-headers
+cat /sys/block/sdX/../../../../../../idVendor
+cat /sys/block/sda/../../../../../../idVendor
+pac pekwm
+sudo pacr pekwm
+nnf
+lsblk

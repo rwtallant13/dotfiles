@@ -1,0 +1,97 @@
+#!/bin/bash
+
+_nextSink() {
+	numSinks=$(pactl list short sinks| wc -l)
+    oldSink=$(tail -1 "$sinkFile")
+    nextSink=$(($oldSink + 1))
+    if [[ nextSink -gt numSinks ]]; then
+        nextSink=1
+    fi
+    newSinknum=$(head -1 "$sinkFile" | cut -d' ' -f"$nextSink" )
+	newSink=$(pactl list sinks short | grep $newSinknum | awk '{print $2}')
+    sed -i "2s/.*/$nextSink/" "$sinkFile"
+}
+
+
+_moveSinks() {
+
+	pactl set-default-sink "$newSink"
+
+    pactl list sink-inputs | grep "Sink Input" | while read line
+    do
+		pactl move-sink-input "$(echo "$line" | cut -f2 -d'#')" "$newSink"
+    done
+}
+
+_notify() {
+    sink="$(pactl info | grep "Default Sink" | cut -f3 -d' ')"
+	sink_name="$(pactl list sinks | grep -A1 "Name: $sink" | grep "Description:" | cut -f 2- -d' ')"
+    vol="$(pamixer --get-volume-human)"
+	notify-send --hint=string:x-dunst-stack-tag:output -u normal "$sink_name" "$vol"
+}
+
+_default() {
+
+	_moveSinks
+	sleep 1s &&
+    _notify
+    exit 0
+}
+
+_mkfile(){
+    rm -rf /tmp/current_sink*
+    sinkFile="$(mktemp -t current_sink.XXXX)"
+    echo $(pactl list short sinks | cut -f1) > "$sinkFile"
+    echo 1 >> "$sinkFile"
+}
+
+_cycle(){
+	sinkFile="$(find /tmp -name "current_sink"* 2>/dev/null)"
+    if [[ -z $sinkFile ]]; then
+        _mkfile
+    fi
+
+    _nextSink
+    _moveSinks
+    _notify
+
+}
+
+_help(){
+    cat <<- EOF
+Usage: sinkctl [OPT] (OPT)
+
+Options:
+    -d, default         select default sink
+    -c, cycle           cycle through sinks
+    -R, reset           recreate sinks file to update sinks
+    -v, vol             show volume notification
+
+EOF
+}
+
+for arg in "$@"; do
+    shift
+    case "$arg" in
+		-d|default)
+			_default
+			exit 0
+			;;
+		-R|reset)
+			_mkfile
+			;;
+		-v|vol)
+			_notify
+			exit 0
+			;;
+		-r|rename)
+			_rename &
+			;;
+		-c|cycle)
+			_cycle
+			;;
+		*)
+			_help
+			;;
+	esac
+done

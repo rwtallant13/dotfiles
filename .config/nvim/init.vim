@@ -1,15 +1,16 @@
-if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
+if ! filereadable(expand('/home/rob/.config/nvim/autoload/plug.vim'))
 	echo "Downloading junegunn/vim-plug to manage plugins..."
-	silent !mkdir -p ~/.config/nvim/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
+	silent !mkdir -p /home/rob/.config/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > /home/rob/.config/nvim/autoload/plug.vim
 	autocmd VimEnter * PlugInstall
 endif
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('/home/rob/.config/nvim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'kovetskiy/sxhkd-vim'
     Plug 'itchyny/lightline.vim'
     Plug 'preservim/nerdtree'
+	Plug 'luochen1990/rainbow'
     Plug 'arcticicestudio/nord-vim'
     Plug 'nelstrom/vim-visual-star-search'
     Plug 'Lenovsky/nuake'
@@ -98,7 +99,7 @@ autocmd BufWritePost *sxhkdrc !pkill -USR1 -x sxhkd
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 " vifmrc syntax
 autocmd BufNewFile,BufRead vifmrc :set filetype=vifm
-autocmd BufNewFile,BufRead ~/.vifm/colors/* :set filetype=vifm
+autocmd BufNewFile,BufRead /home/rob/.vifm/colors/* :set filetype=vifm
 
 " Auto-resize splits when Vim gets resized.
 autocmd VimResized * wincmd =
@@ -113,6 +114,21 @@ let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeQuitOnOpen=0
 " Open nerd tree at the current file or close nerd tree if pressed again.
 nmap <leader>t :NERDTreeToggle
+
+let g:rainbow_active = 1
+
+" Takes the contents of register " (which is essentially the vim clipboard)
+" and puts them into the system clipboard. Handles the case when the server
+" is being accessed over ssh
+let g:clipboard_sync_command =
+      \  " if [[ -z $SSH_CONNECTION ]]; then                "
+      \. "   ( pbcopy || xsel -i ) 2> /dev/null;            "
+      \. " else                                             "
+      \. "   ssh $(echo $SSH_CONNECTION | cut -d' ' -f1) \  "
+      \. "     '( pbcopy || xsel -i ) 2> /dev/null';        "
+      \. " fi                                               "
+command! SyncClipboard :echo system(g:clipboard_sync_command, @")
+nnoremap <F3> :SyncClipboard<cr>
 
 syntax on
 colorscheme nord

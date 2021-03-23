@@ -7,7 +7,7 @@ _picom(){
 }
 
 _pbar(){
-    chronic /home/rob/.bin/pbar.sh
+    chronic /home/rob/bin/pbar.sh
 }
 
 _dunst(){
@@ -27,7 +27,7 @@ _nm-applet(){
 	/usr/bin/nm-applet
 }
 
-_pia-client(){
+_pia-vpn(){
 	chronic /opt/piavpn/bin/pia-client --quiet
 
 }

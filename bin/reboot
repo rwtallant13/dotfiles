@@ -8,7 +8,7 @@ fi
 
 case $1 in
     windows|win)
-        sudo efibootmgr --bootnext $(efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | sed s/.$//) && $reboot
+        sudo efibootmgr --bootnext $(efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr -d '*' ) && $reboot
         ;;
     uefi)
         systemctl reboot --firmware-setup

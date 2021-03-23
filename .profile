@@ -15,12 +15,12 @@ export QT_STYLE_OVERRIDE=gtk2
 export _JAVA_AWT_WM_NONREPARENTING=1
 export CM_LAUNCHER=rofi
 export CM_DIR="$XDG_CACHE_HOME"/clipmenud
-export TERMINAL=/usr/bin/xfce4-terminal
+export TERMINAL=/usr/bin/alacritty
 export SXHKD_SHELL=/usr/bin/bash
 export SYSTEMD_EDITOR=nvim
 
 # Path
-export PATH=/home/rob/.bin:$PATH
+export PATH=/home/rob/bin:$PATH
 export PATH=/usr/lib/elixir/bin:$PATH
 export PATH=/usr/local/bin/:$PATH
 export PATH=/home/rob/.android:$PATH
@@ -62,4 +62,4 @@ export media=/media/blueberry/media
 export backups=/media/blueberry/backups/rob-pc
 export mx100=/media/mx100/
 export ssd=/media/ssd/
-export bin=/home/rob/.bin
+export bin=/home/rob/bin

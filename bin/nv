@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [[ -z "$1" ]]; then
+	if [[ ! -t 0 ]]; then
+		exit 0
+	fi
+    dir="$(pwd)"
+
+elif [[ -d "$1" ]]; then
+    dir="$1"
+
+elif [[ -e "$1" ]]; then
+    dir="$(dirname $(realpath "$1"))"
+
+elif [[ ! -e "$1" ]]; then
+	dir="$(dirname "$1")"
+fi
+
+_sudo(){
+    if [[ -t 0 ]]; then
+        sudo $EDITOR "$*"
+    else
+        $TERMINAL -e sudo nvim $*
+    fi
+}
+
+_vim(){
+    if [[ -t 0 ]]; then
+       nvim "$*"
+    else
+        $TERMINAL -e nvim $*
+    fi
+}
+
+if [[ ! -w $dir ]]; then
+    _sudo "$*"
+else
+    _vim "$*"
+fi

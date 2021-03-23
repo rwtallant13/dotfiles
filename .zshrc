@@ -4,7 +4,8 @@ HISTFILE=~/.config/zsh/history
 HISTSIZE=100000
 SAVEHIST=100000
 
-PROMPT='%B%F{33}%n%f %F{white}%b%c%f %B%F{33}$ '
+PROMPT='%B%F{33}%n%f %F{white}%(3~|…/%2~|%~)%f %B%F{33}%# '
+#PROMPT="%(5~|%-1~/…/%3~|%4~)"
 
 
 # source aliases and functions
@@ -47,7 +48,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f6569,bg=bold,underline"
 
 # -- autosuggestions ----------------------------------------------------------
 
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_STRATEGY=(history)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
 ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char})ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
@@ -153,8 +154,6 @@ export FZF_DEFAULT_OPTS="--preview-window noborder --reverse --exact --no-color 
 export FZF_CTRL_T_COMMAND="fd . --hidden"
 export FZF_ALT_C_COMMAND='fd . --hidden -t d -t l'
 export FZF_CTRL_R_OPTS='--exact'
-export NNN_BMS='h:~/;d:~/downloads/;p:/home/rob/pics/;c:~/.config/;b:/media/blueberry;e:/etc/;B:/media/blueberry/backups/rob-pc/latest/'
-export PF_INFO="ascii title os wm kernel uptime pkgs memory"
 export _ZL_DATA=/home/rob/.config/zlua
 
 

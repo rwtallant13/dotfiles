@@ -46,10 +46,6 @@ super + BackSpace
 super  + space
 	"$bin"/opi -o
 
-# open files
-control  + space
-	"$bin"/opi -o
-
 # open dir
 super + alt + f
 	"$bin"/opi -d
@@ -141,7 +137,7 @@ super + shift + Return
 	alacritty
 
 super + alt + Return
-	alacritty
+	xfce4-terminal
 
 # vim
 super + v

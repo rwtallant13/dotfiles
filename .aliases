@@ -9,7 +9,6 @@ alias dots='yadm'
 alias services='systemctl list-unit-files | grep enabled'
 alias grep='grep --color=auto'
 alias J='sudo journalctl'
-alias locate='plocate'
 alias myip='curl http://ipecho.net/plain; echo'
 alias S='sudo systemctl'
 alias s='systemctl --user'
@@ -17,7 +16,7 @@ alias sudo='sudo '
 alias sufw='sudo ufw'
 alias su='sudo -i'
 alias timers='systemctl list-timers'
-alias udb='sudo updatedb.plocate'
+alias udb='sudo updatedb'
 alias udev-reload='sudo udevadm control --reload-rules && sudo udevadm trigger'
 
 
@@ -43,7 +42,7 @@ alias lla='ls -hlNa --color=auto --group-directories-first'
 alias ll='ls -hlN --color=auto --group-directories-first'
 alias ls='ls -hN --color=auto --group-directories-first'
 alias lr='ls -RhN --color=auto --group-directories-first'
-alias lb='ls -hN --color=auto --group-directories-first /home/rob/.bin/'
+alias lb='ls -hN --color=auto --group-directories-first /home/rob/bin/'
 
 #commands
 alias cmd='compgen -c | fzf'
@@ -61,18 +60,17 @@ alias rf='rg --files --hidden'
 alias rm-empty='fd -t d -x rmdir --ignore-fail-on-non-empty {}'
 alias rm='rm -I'
 alias rmr='rm -rfI'
-alias rmspaces='find . -name "* *" -type f | /usr/bin/vendor_perl/rename 's/ //g' '
 alias tb='nc termbin.com 9999'
 alias ticker='ticker --show-fundamentals --show-separator --config $HOME/.config/ticker.yaml'
 alias vfb='vifm /media/blueberry/backups/rob-pc /home/rob'
 alias vfm='vifm /media/blueberry/ /home/rob/downloads/torrents/ '
 alias vf='vifm'
-alias v='/home/rob/.bin/nv'
+alias v='/home/rob/bin/nv'
 alias xc='xclip -selection clipboard'
 
 
 # bb/pi
-alias bb='ssh bb'
+alias bb='ssh -X bb'
 alias pilog='ssh -t pi pihole -t'
 alias mcctrl='ssh -t bb /home/rob/bin/mcctrl'
 
@@ -91,6 +89,15 @@ mclog () {
 
 fzcd() {
 	$(__fzf_cd__)
+}
+
+rmspaces(){
+	IFS="\n"
+	for file in *;
+	do
+    	mv "$file" "${file//[[:space:]]}"
+	done
+
 }
 
 pacman-pkgs(){
@@ -120,7 +127,7 @@ mkcd(){
 }
 
 mkbin(){
-	p=/home/rob/.bin/${1##*/}
+	p=/home/rob/bin/${1##*/}
 	if [[ -n "$1" ]]; then
 		printf '#!/bin/bash\n\n' > "$p" && chmod +x "$p" && nv "$p"
 	else
@@ -142,7 +149,7 @@ se(){
     if [[ -d "$sel" ]] ; then
         cd "$sel"
     elif [[ -f "$sel" ]]; then
-        /home/rob/.bin/nv "$sel"
+        /home/rob/bin/nv "$sel"
     fi
 }
 

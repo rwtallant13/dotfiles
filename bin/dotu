@@ -1,5 +1,5 @@
 #!/bin/bash
 
-yadm add /home/rob/.bin/*
+yadm add /home/rob/bin/*
 
 yadm commit -a -m "weekly update" && yadm push

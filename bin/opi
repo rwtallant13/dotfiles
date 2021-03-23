@@ -5,21 +5,21 @@ rofi_dmenu='rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-selec
 
 _opiOpen(){
     dir="${*:-"/home/rob/"}"
-    fd . $dir -H -t f -i | $rofi_dmenu -p "Open" | xargs -L 1 -r xdg-open
+    fd . $dir -H -t f -i | $rofi_dmenu -p "Open" | xargs -L 1 -r mimeo --term 'alacritty -e %s'
 
 }
 
 _opiDir(){
     dir="${*:-"/home/rob/"}"
     file=$( fd . $dir -H -a -t d -t l | $rofi_dmenu -p "Dir")
-    [[ -z $file ]] || $TERMINAL -e "vifm $file"
+    [[ -z $file ]] || $TERMINAL -e vifm $file
 }
 
 _opiEdit(){
     dir="${*:-"/home/rob/"}"
     files="$( fd . $dir -H -t f -i | $rofi_dmenu -p "Edit" )"
     for file in $files; do
-        /home/rob/.bin/nv $file &
+        /home/rob/bin/nv $file &
     done
 }
 
@@ -28,7 +28,7 @@ _opiAsk() {
     file=$( fd . $dir -H -t f -i | $rofi_dmenu -p "Search" )
     [[ -z "$file" ]] && exit 0
 
-    /home/rob/.bin/nv $file
+    /home/rob/bin/nv $file
 }
 
 _opiCopy(){

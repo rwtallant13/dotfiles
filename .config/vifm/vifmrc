@@ -101,6 +101,7 @@ set vifminfo=dhistory,chistory,tui,dhistory,dirstack,registers,bookmarks
 nnoremap <c-f> :fzf<cr>
 nmap q ZZ
 nmap ; :
+nmap ~ 'h
 nnoremap R :restart<cr>
 nmap . za
 map <delete> DD
@@ -161,6 +162,9 @@ nnoremap yp :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:
 nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
 
 " yank root of current file's name into the clipboard
+nnoremap yb :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:t') "is yanked to clipboard"<cr>
+
+" yank basename of current file's name into the clipboard
 nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
 
 " Mappings for faster renaming

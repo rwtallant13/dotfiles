@@ -261,7 +261,6 @@ mv .config/nvim/init.vim ~/
 mv init.vim .config/nvim/init.vim
 ncd /media/ssd/
 ndu /media/ssd/
-exit
 rm -rf .config/cava/ .config/lxsession-default-apps/
 pac zsh
 cp .config/bash_history .config/zhistory
@@ -2360,7 +2359,6 @@ pacf cacafire
 sudo pacr libcaca
 v ~/.bin/system-backup
 start-sxhkd
-cd -
 curl https://www.dynmap.us/builds/dynmap/?C=M;O=D
 curl https://www.dynmap.us/builds/dynmap/?C=M;O=D | grep spigot
 curl https://www.dynmap.us/builds/dynmap/?C=M;O=D 2>&1 | grep spigot
@@ -2428,7 +2426,6 @@ rm -rf z.lua-1.8.7
 rm -rf DSC01374*
 rm -rf new_house.mp4
 mv xray .minecraft/resourcepacks
-cd ~
 cd vids
 cd projects
 ls blueberry
@@ -3921,7 +3918,6 @@ multimc -l -h
 multimc -l 1.16.4
 archlinux-java status
 pac minecraft-launcher
-zsh
 rmr .local/share/multimc
 journalctl -r
 v /opt/piavpn/etc/settings.json
@@ -3984,7 +3980,6 @@ pac tumbler
 heif-convert CatalinaSilhouette.heic CatalinaSilhouette.jpg
 mks persist
 fd $HOME -H -a -t d -t l
-man fzf
 z | cut -f2
 z | cut -d' ' -f2 
 z | cut -d'\t' -f2 
@@ -4064,7 +4059,6 @@ autojump --help
 autojump --complete 
 man autojump
 j
-z
 j --stat
 /home/rob/.bin/start picom dunst nm-applet dpms obs polkit pia-client
 nm-applet
@@ -4286,7 +4280,6 @@ mv /etc/etc/* /etc
 sudo mv -f /etc/etc/* /etc/
 man mv
 sudo mv -f /etc/etc/ /etc/
-realpath
 realpath PKGBUILD
 cd yay
 passwd rob
@@ -4780,7 +4773,6 @@ hue power off
 which hue
 pac bmon
 bmon
-shortinfo
 shortinfo ./
 mediainfo Attack-on-Titan_S02E12.mkv
 ../Season1/
@@ -5197,7 +5189,6 @@ sudo pacr ungoogled-chromium-bin
 sudo pacr ungoogled-chromium-git
 aliases
 less .aliases
-fzpkgs
 ssr.sh
 man alacritty
 nextcloud --help
@@ -6120,7 +6111,6 @@ v /etc/xdg/nvim/sysinit.vim
 sudo nvim
 v /etc/lightdm/lightdm-gtk-greeter.conf
 wall.sh -U pics/backgrounds/abstract/simplePlanet.png
-cat bin/nv
 sudo ln -s /home/rob/.zshrc /root
 sudo unlink /root/.zshrc
 sudo cp /home/rob/.zshrc /root/.zshrc
@@ -6425,7 +6415,6 @@ tmux kill-server
 tmux new-session minecraft 
 ls /etc/conf.d/snapper
 v /etc/conf.d/snapper
-fkill
 ls .local/share/multimc/instances/Forge/.minecraft/mods
 snapper get-config home | grep TIMELINE_CLEANUP
 snapper get-config  | grep TIMELINE_CLEANUP
@@ -6481,7 +6470,6 @@ ls downloads/minecraft/forge
 thunar downloads/minecraft/datapacks
 ls downloads/minecraft/datapacks
 which rmspaces
-pwd
 downloads
 minecraft/bukkit
 /opt/piavpn/bin/
@@ -6659,7 +6647,6 @@ ls /etc/modules-load.d
 pac firejail firetools 
 sudo  apparmor_parser -r /etc/apparmor.d/firejail-default\
 
-v .zshrc
 echo $TERMINAL
 pacr xcfe4-terminal
 sudo pacr xcfe4-terminal
@@ -6683,7 +6670,6 @@ v bin/nv
 paru mimeo
 mimeo nvim
 mimeo -c .zshrc
-dotu
 which dotu
 v bin/dotu
 v docs/important/gitlab-recovery-codes.txt
@@ -6799,7 +6785,6 @@ man setfacl
 basename Ableton\ Live\ 10\ Suite\ v10.1.30\ 64\ Bit\ +\ Plugin\ \[Ita\]\ \[Update\ 18\ 11\ 2020\]
 mkbin xterm
 chx bin/*
-less .xsession-errors
 tar -c --use-compress-program=pigz -f ableton.tar.gz Ableton\ Live\ 10\ Suite\ v10.1.30\ 64\ Bit\ +\ Plugin\ \[Ita\]\ \[Update\ 18\ 11\ 2020\] 
 ll
 ncdu
@@ -6819,7 +6804,6 @@ rm -rf /etc/i3/
 sudo rm -rf /etc/i3/
 pac i3-wm
 i3-sensible-terminal
-xprop
 i3-sensible-terminal nvim .zshrc
 i3-sensible-terminal -e nvim .zshrc
 v bin/xterm
@@ -6845,7 +6829,6 @@ mope .zshrc .config/rgconf
 mv .mozilla/firefox/swkflvvd.default-release/chrome/userC* ~/tmp/
 ls ~/tmp/
 mv  ~/tmp/userC* .mozilla/firefox/swkflvvd.default-release/chrome/
-paru
 zip -h
 zip fabric-mods ~/.local/share/multimc/instances/fabric/.minecraft/mods/* 
 ll 
@@ -6864,8 +6847,6 @@ btm
 reboot uefi
 systemd-analyze 
 se 
-ls
-cd
 v bin/mcctrl
 mkbin mcsync
 chx ~/bin/*
@@ -6907,13 +6888,11 @@ while true ; echo true; done
 while true ; echo true; do
 while true ; do echo true; done
 while true ; do echo true && sleep 2; done
-la
 tmux list-sessions
 tmux attach
 man tmux
 v .config/ssh
 v .ssh/config
-bb
 mkbin mimeo
 v bin/mimeterm
 which mimeo
@@ -6931,13 +6910,10 @@ ta
 v bin/opi
 rm bin/mimeterm
 cat bin/efimgr
-tail -f .xsession-errors
 nv '/etc/fstab'
 opi -e
 opi -e /etc
 /home/rob/bin/nv '/etc/fstab' &
-jobs -l
-fg
 v /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 rm bin/efimgr
@@ -6946,7 +6922,6 @@ rm bin/xdg-terminal
 flameshot 
 flameshot --help
 flameshot launcher
-start sxhkd
 mimeo --help
 mimeo --assoc-help
 pac perl-file-mimeinfo
@@ -6960,17 +6935,13 @@ rm bin/autolock
 cat bin/opout
 rm bin/opout
 mv  bin/pvpn bin/piavpn
-lb
-se
 rm bin/screens.sh
 monctl
 monctl -tv
 nvidia-settings -q CurrentMetaMode
-lb
 cat bin/nv
 rg 'nv' bin
 mv bin/nvfans bin/gpufans
-lb
 diskinfo
 rm bin/diskinfo
 shortinfo
@@ -6982,4 +6953,54 @@ rg 'open' bin
 rm bin/open
 la
 lb
+dotu
+tail -f .xsession-errors
+cp redshift.conf dim.conf
+v dim.conf
+xbacklight -set 50
+killall redshift
+redshift -c .config/redshift/dim.conf 
+start sxhkd
+exit
+cd ~
+realpath
+zsh
+cd
+jobs -l
+fg
+cd -
+echo $HOME
+killall 65034
+fkill
+z
+z mods
+ls
+pwd
+se
+bb
+paru
+sudo pacr linux-hardened-headers-5.11.9.hardened1-1 linux-hardened
+sudo pacr linux-hardened-headers linux-hardened
+sudo pacr linux-hardened-headers 
+fzpkgs
+sudo pacr bleachbit\
+bmon\
+jgmenu\
+python-matplotlib\
+qbittorrent-nox\
+rofi-calc\
+stress\
+valgrind
+man fzf
+pacman -Qqe | fzf --print-query
+pacman -Qqe | fzf --read0
+pacman -Qqe | fzf -d ' ' 
+pacman -Qqe | fzf --print0
+pacman -Qqe | fzf --print0 | tr "\0" " "
+pacman -Qqe | fzf +m --print0 | tr "\0" " "
+less .xsession-errors
+xprop
+v .zshrc
+pacman -Qqe | fzf -m --print0 | tr "\0" " "
+su
 dotu

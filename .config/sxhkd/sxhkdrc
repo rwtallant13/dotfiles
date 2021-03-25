@@ -152,8 +152,8 @@ super + alt + v
 	clipmenu -p Copy -i
 
 # toggle redshift
-super + F1
-	"$bin"/redshift.sh -t
+super {_,shift + } F1
+	"$bin"/redshift.sh -t /home/rob/.config/redshift/{dim.conf,redshift.conf}
 
 ####################
 # Volume Control   #

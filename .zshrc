@@ -51,7 +51,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f6569,bg=bold,underline"
 ZSH_AUTOSUGGEST_STRATEGY=(history)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
-ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char})ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char})
+ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
 
 # -- completion ---------------------------------------------------------------
 
@@ -86,7 +87,10 @@ setopt always_to_end
 setopt complete_in_word
 unsetopt flow_control
 unsetopt menu_complete
-unsetopt PROMPT_SP
+setopt PROMPT_CR
+setopt PROMPT_SP
+export PROMPT_EOL_MARK=""
+
 
 
 # -- keybinds ---------------------------------------------------------
@@ -155,6 +159,7 @@ export FZF_CTRL_T_COMMAND="fd . --hidden"
 export FZF_ALT_C_COMMAND='fd . --hidden -t d -t l'
 export FZF_CTRL_R_OPTS='--exact'
 export _ZL_DATA=/home/rob/.config/zlua
+export _ZL_ECHO=1
 
 
 # -- source --------------------------------------------------------

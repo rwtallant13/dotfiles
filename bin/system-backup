@@ -6,6 +6,8 @@ _backup(){
     sleep 3s
 	#/home/rob/bin/rsync_backup.sh / root@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt
 	sudo snap-sync -q -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -n -c "root home"
+	sudo rsync -avzq --delete /boot root@blueberry:/data/backups/rob-pc/
+
 }
 
 _sleep(){

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/usr/bin/chronic /usr/bin/mimeo --term 'alacritty -e %s' $1

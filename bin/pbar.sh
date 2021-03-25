@@ -14,7 +14,7 @@ for ((i=0; i<${#monitors[@]}; i++)); do
         export TRAY_POS=right
     fi
 
-    MONITOR=${monitors[$i]} polybar --reload pbar &
+    2>/dev/null 1>&2 MONITOR=${monitors[$i]} polybar --reload pbar &
 
     if [ $i -eq $main ]; then
         unset TRAY_POS

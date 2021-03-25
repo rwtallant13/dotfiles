@@ -5,14 +5,14 @@
 
 # edit bspwm files
 super + {_,alt + ,shift + }o
-	xdg-open ~/.config/{sxhkd/sxhkdrc,bspwm/autostart.sh,bspwm/bspwmrc}
+	mimeo ~/.config/{sxhkd/sxhkdrc,bspwm/autostart.sh,bspwm/bspwmrc}
 
 # reload sxhkd
 super + Escape
 	pkill -USR1 -x sxhkd
 
-~button3
-    bspc query -D -d 'focused.!occupied' && jgmenu_run
+#~button3
+#    bspc query -D -d 'focused.!occupied' && jgmenu_run
 
 alt + F10
 	notify-send -t 3000 "OBS" "Clip Captured"
@@ -33,7 +33,7 @@ super + shift + Escape
 
 # open functions file
 super + {_,alt + }a
-	xdg-open /home/rob/.{aliases,zshrc}
+	mimeo /home/rob/.{aliases,zshrc}
 
 super + shift + a
 	"$bin"/caps2esc
@@ -52,7 +52,7 @@ super + alt + f
 
 # edit files
 super  + alt + space
-	"$bin"/opi -e /etc /home/rob
+	"$bin"/opi -o /etc /home/rob
 
 # ask opi which dir to search
 super + ctrl + space

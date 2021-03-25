@@ -18,22 +18,22 @@ fi
 
 _sudo(){
     if [[ -t 0 ]]; then
-        sudo $EDITOR "$*"
+        sudo $EDITOR "$@"
     else
-        $TERMINAL -e sudo nvim $*
+        $TERMINAL -e sudo nvim "$@"
     fi
 }
 
 _vim(){
     if [[ -t 0 ]]; then
-       nvim "$*"
+       nvim "$@"
     else
-        $TERMINAL -e nvim $*
+        $TERMINAL -e nvim "$@"
     fi
 }
 
 if [[ ! -w $dir ]]; then
-    _sudo "$*"
+    _sudo "$@"
 else
-    _vim "$*"
+    _vim "$@"
 fi

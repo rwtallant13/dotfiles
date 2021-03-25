@@ -9,14 +9,28 @@ _dpms(){
 	xset dpms 1215 1215 1215
 }
 
+_screens(){
+
+	if [[ "$1" == "on" ]]; then
+    nvidia-settings --assign CurrentMetaMode="DPY-2: 1920x1080_144 @1920x1080 +1920+120 {ViewPortIn=1920x1080,ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, DPY-0: 1920x1200_75 @1920x1200 +0+0 {ViewPortIn=1920x1200, ViewPortOut=1920x1200+0+0, ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}"
+	elif [[ "$1" == "off" ]]; then
+    nvidia-settings --assign CurrentMetaMode="DPY-2: 1920x1080_144 @1920x1080 +1920+120 {ViewPortIn=1920x1080, ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, DPY-0: 1920x1200_75 @1920x1200 +0+0 {ViewPortIn=1920x1200, ViewPortOut=1920x1200+0+0, ForceCompositionPipeline=On, ForceFullCompositionPipeline=On} DPY-1:1920x1080 @1920x1080 +3840+0 {ViewPortIn=1920x1080,ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On,ForceFullCompositionPipeline=On}"
+	else
+		echo "Set \"on\" or \"off\"?"
+	fi
+
+	nvidia-settings -l
+}
+
 _help(){
     cat <<- EOF
 Usage: monctl [option]
 
 Options:
-     -h, help       	Display this message
-	 -s, suspend		Suspend monitors
-     -d, dpms        	Run on all files in directory
+    -h, help       	Display this message
+    -s, suspend		Suspend monitors
+    -d, dpms        	Set dpms timeout to 20min
+    -tv {on|off}	Enable/Disable tv display
 EOF
 }
 
@@ -30,4 +44,10 @@ case $1 in
     -d|dpms)
         _dpms
         ;;
+	-tv)
+		_screens "$1"
+		;;
+	*)
+		_help
+		;;
 esac

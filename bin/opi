@@ -5,7 +5,7 @@ rofi_dmenu='rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-selec
 
 _opiOpen(){
     dir="${*:-"/home/rob/"}"
-    fd . $dir -H -t f -i | $rofi_dmenu -p "Open" | xargs -L 1 -r mimeo --term 'alacritty -e %s'
+    fd . $dir -H -t f -i | $rofi_dmenu -p "Open" | xargs -L 1 -r /usr/bin/mimeo --term 'alacritty -e %s'
 
 }
 
@@ -19,6 +19,7 @@ _opiEdit(){
     dir="${*:-"/home/rob/"}"
     files="$( fd . $dir -H -t f -i | $rofi_dmenu -p "Edit" )"
     for file in $files; do
+		echo $file
         /home/rob/bin/nv $file &
     done
 }

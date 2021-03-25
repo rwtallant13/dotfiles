@@ -118,7 +118,6 @@ xdg-mime query default text/plain
 sudo pacr mimeo xdg-utils-mimeo
 pac xdg-utils
 sudo pacr mimeo
-pac perl-file-mimeinfo
 cp /usr/share/applications/nvim.desktop .local/share/applications/
 v .local/share/applications/nvim.desktop
 mimeopen -d .bashrc
@@ -237,7 +236,6 @@ filecount.sh
 sudo pacr colormgr
 pacf colormgr
 ls .icons/
-cat .icons/default/index.theme
 locate index.theme | grep -i default
 cat $(locate index.theme | grep -i default)
 rm -rf .icons/
@@ -1414,7 +1412,6 @@ sudo vim /etc/ssh/sshd_config
 rm -rf .cache/zsh/zcompdump
 rm -rf GPUCache minecraft_compass
 less .Xauthority
-ls tmp
 rm -rf tmp
 v .bin/rofi-scripts
 command=help
@@ -1751,7 +1748,6 @@ alacritty -e nvim '/etc/systemd/system/caps2esc.service' '/etc/systemd/system/ca
 opi -e /home /etc
 sudo nvim '/etc/systemd/system/caps2esc.service' '/etc/systemd/system/caps2esc.timer'
 $TERMINAL -e sudo nvim '/etc/systemd/system/caps2esc.service' '/etc/systemd/system/caps2esc.timer'
-opi -e
 exo-open .zshrc pics/scrots/neofetches.png
 exo-open '.zshrc' 'pics/scrots/neofetches.png'
 exo-open .config/neofetch/config.conf
@@ -1842,7 +1838,6 @@ S enable --now cupsd.service
 S enable --now cups.cupsd.service
 pac cups
 S enable --now org.cups.cupsd.service
-pac 	nss-mdns
 S enable --now avahi-daemon.service
 v /etc/nsswitch.conf
 yay brother-hl3170cdw
@@ -2048,7 +2043,6 @@ pacman -Qqe|grep lib
 chxbin
 sudo ln -s /usr/bin/termite /usr/bin/xterm
 xterm .config/sxhkd/sxhkdrc
-xdg-open .config/sxhkd/sxhkdrc
 tr '\0' '\n' < /proc/`pidof bspwm`/environ | grep TERM
 rm -rf /usr/bin/xterm
 sudo rm -rf /usr/bin/xterm
@@ -2156,7 +2150,6 @@ pac nvidia
 sudo pacr gl-gsync-demo
 rg calc .bin
 ping 192.168.2.21
-ssh rob@blueberry
 aptu
 downloads/torrents/Doom.Patrol.S02.PROPER.WEBRip.x264-ION10
 fd -e srt
@@ -2381,9 +2374,6 @@ ffmpeg -i vids/fullscreen--2020-09-04_02.49.12.mkv  -c copy new_house.mp4
 S start reflector.timer
 opi -e /home
 nv /etc/fstab
-opi -e /etc
-$TERMINAL -e nvim /etc/fstab
-$TERMINAL -e "nvim /etc/fstab"
 cp docs/invoices/Charlie\ and\ Sarge\ -\ Sheet1.pdf docs/invoices/charliesarge.pdf
 pac picom-git
 seq 1 10
@@ -2504,7 +2494,6 @@ sudo ufw status numbered
 sudo ufw remove 5
 sudo ufw delete 5
 sudo ufw delete 8
-minecraft-launcher
 pacman -Q rofi
 rofi --help | grep updage-config
 rofi --help | grep upgrade-config
@@ -2780,7 +2769,6 @@ pgrep -f firefox
 pkill firefox
 pkill -f firefox
 ssh bb -o LocalCommand="mcctrl"
-man ssh
 ssh -t bb 'mcctrl'
 ssh -t bb /home/rob/bin/mcctrl
 man mediainfo
@@ -2885,7 +2873,6 @@ check-swap
 v .mozilla/firefox/3zvlgup7.default-release-1569356723307
 mkdir .mozilla/firefox/3zvlgup7.default-release-1569356723307/chrome
 v .mozilla/firefox/3zvlgup7.default-release-1569356723307/chrome/userChrome.css
-man zip
 zip -qdg config.yml
 zip -qdg config.yml config.zip
 zip -qdg config.zip config.yml
@@ -2992,8 +2979,6 @@ zenity --info --text="$(uptime --pretty)" --no-wrap
 /usr/bin/alacritty -e 'vifm /home/rob/downloads/torrents /media/blueberry/'
 pac xfce4-terminal
 locate nvim.dektop
-locate nvim.desktop
-v /usr/share/applications/nvim.desktop
 ffmpeg -i screen-20200911-132235.mp4  -map_metadata 0 -metadata:s:v rotate="90" -codec copy twerking.mp4
 pac qt5-styleplugins
 sudo pacr qt5ct
@@ -3135,7 +3120,6 @@ wall.sh -u pics/backgrounds/landscapes/mountain.jpg
 mv ~/macos ./
 sleep 5s && flameshot full
 flameshot
-flameshot --help
 flameshot full -c
 sleep 5s && flameshot full -c
 ls current
@@ -3232,7 +3216,6 @@ nvidia-settings --assign CurrentMetaMode="DPY-0: nvidia-auto-select @1920x1080 +
 .bin/screens.sh 2
 nvidia-settings -q screens
 nvidia-settings -q all
-nvidia-settings -q CurrentMetaMode
 screens.sh 3
 screens.sh 2
 fkill polybar
@@ -3479,7 +3462,6 @@ v .config/zsh/history
 man bc
 yay discord-arch-electron
 yay -S discord_arch_electron
-discord
 ls /var/cache/pacman/pkg/youtube-dl-2020.09.20-1-any.pkg.tar.zst
 ls .config/Meltytech
 less .config/pulseaudio-ctl/config
@@ -3634,7 +3616,6 @@ fd .stl
 v downloads/files/node804_adapter.stl
 nnn /media/blueberry/media
 nnn /media/blueberry/media /home/rob
-v .profile
 . ./.profile
 nnn -de
 which nnf
@@ -4381,7 +4362,6 @@ pac osync.sh
 yay osync
 man osync
 osync.sh --help
-v /usr/share/icons/default/index.theme
 fv
 ls ~/.local/share/icons/
 rg capitaine
@@ -4720,7 +4700,6 @@ mvmedia show downloads/torrents/The\ Batman\ DVDrip\ Xvid\ Complete\ Series\ 200
 man bash
 pacman p -Qo i3
 pacman -Qo i3
-sudo pacr i3-wm
 man yay
 sudo rm /etc/i3/*
 rofi --help
@@ -4730,7 +4709,6 @@ mv .ssr/* .config/simplescreenrecorder
 rmr test
 la .cache
 killall sxhkd
-sxhkd -s $HOME/.cache/sxhkd.fifo
 man sxhkd
 ll vids/bankai-or-rasengan-2020-12-28_14.06.31.mp4 
 echo $DESKTOP_SESSION
@@ -4786,7 +4764,6 @@ journalctl -f -u backup.service
 journalctl -xe
 S start backup.service
 grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-12-30-014554.log'
-man rsync
 watch time
 watch date
 yay bitwarden
@@ -4899,7 +4876,6 @@ v .fdignore
 cd .mozilla/firefox/ocdc4cz2.default-release/chrome
 pacs dejavu
 bspc node --state "~"pseudo_tiled
-v sxhkdrc
 chown rob:rob *
 sudo chown rob:rob *
 man cp
@@ -4913,7 +4889,6 @@ dots add .bin/*
 dots add .mozilla/firefox/ocdc4cz2.default-release/chrome/*
 ls .config/
 dots add .config/vifm/*
-dotu
 xcolor
 v userContent.css
 pac micro
@@ -5132,7 +5107,6 @@ vw plot.svg
 S disable ntpdate.service
 S enable Systemd-timesyncd
 S enable systemd-timesyncd
-autoload zkbd && zkbd
 echo $TERM
 pac linux linux-lts nvidia nvidia-lts
 pacmd
@@ -5368,7 +5342,6 @@ wall.sh -U pics/backgrounds/abstract/alpha-cloud-1920Ãƒ·1200.jpg
 mv alpha-cloud-1920Ãƒ·1200.jpg alpha-cloud-right
 mv alpha-cloud-right alpha-cloud-right.jpg
 mogrify -format png *.jpg
-ll
 vw
 vw alpha-cloud-left.jpg
 rm Appearance_*
@@ -5477,7 +5450,6 @@ pac moreutils
 umount ext/nextcloud
 ls /media/nextcloud
 unlink ext/*
-ll 
 unlink ext/bb-dir
 unlink ext/blueberry
 unlink ext/laptop
@@ -5629,7 +5601,6 @@ mv ~/.ssr/* ./simplescreenrecorder
 rmr ~/.ssr
 rmr deluge
 ls Dharkael
-ls kusti8
 ls flameshot/
 rmr Dharkael
 rmr chromium
@@ -5652,7 +5623,6 @@ start nm-applet
 start picom
 monctl dpms
 /home/rob/.bin/sinkctrl -r -d
-v /etc/pacman.d/mirrorlist
 v .minecraft/options.txt
 v .minecraft/optionsof.txt
 v .minecraft/launcher_settings.json
@@ -5754,7 +5724,6 @@ which jgmenu
 rm .node_repl_history
 rm .yarnrc
 /usr/bin/jgmenu --at-pointer -vsimple 
-start sxhkd
 chronic /usr/bin/jgmenu --at-pointer --hide-on-startup --simple
 rm .jgmenu-lockfile
 fkil
@@ -5854,7 +5823,6 @@ rg notify .bin
 pia-client
 sudo pacr
 sudo pacr piavpn-bin
-usb
 locate pia
 chmod +x ./downloads/pia-linux-2.6.1-05824.run
 ./downloads/pia-linux-2.6.1-05824.run
@@ -5911,7 +5879,6 @@ sudo rm /boot/booster-linux*
 sudo rm /boot/loader/entries/booster.conf
 comm -12 <(pacman -Qq | sort) <(pacman -Sql chaotic-aur | sort)
 pacman-pkgs
-rmorphans
 pac systemd-swap
 S enable --now systemd-swap
 v /etc/systemd/swap.conf
@@ -5957,7 +5924,6 @@ aureport
 man aureport
 pacr replay-sorcery-git
 sudo pacr replay-sorcery-git
-lb
 mkdir tmp
 yay
 pac linux-lts-headers
@@ -6042,7 +6008,6 @@ mv .bin bin
 nv .profile
 nvim .profile
 nvim .aliases
-v bin/dotu
 v bin/rofer
 rofer
 bin/rofer
@@ -6057,7 +6022,6 @@ sudo loginctl list-sessions
 sudo loginctl kill-session 5
 sudo loginctl kill-session 7
 which reboot
-ls bin
 ls bin/reboot
 export PATH=/home/rob/bin:$PATH
 echo $PATH
@@ -6112,9 +6076,7 @@ sudo mount -t ntfs-3g -o remove_hiberfile /dev/sdb2 /mnt
 sudo os-prober
 sudo mount -t ntfs-3g -o remove_hiberfile /dev/sdb1 /mnt
 sudo mount  /dev/sdb1 /mnt
-ls /etc
 ls /etc/fstab
-pbar.sh
 pac networkmanager
 pacman -Sy
 nmcli general reload
@@ -6130,7 +6092,6 @@ mkdir /media/{mx100,ssd,windows,bb-dir,blueberry,laptop}
 sudo mkdir /media/{mx100,ssd,windows,bb-dir,blueberry,laptop}
 chown rob:rob /media/{mx100,ssd,windows,bb-dir,blueberry,laptop}
 sudo chown rob:rob /media/{mx100,ssd,windows,bb-dir,blueberry,laptop}
-mnt bb
 mkdir .mozilla/firefox/swkflvvd.default-release/chrome
 mv *css .mozilla/firefox/swkflvvd.default-release/chrome
 ls .mozilla/firefox/swkflvvd.default-release/chrome
@@ -6181,7 +6142,6 @@ cat alsa-monitor.conf
 cat /etc/pipewire/media-session.d/alsa-monitor.conf
 pac snap-sync
 pac pv
-v bin/snapper-backup
 mount /dev/sda1 /mnt
 sudo mount /dev/sda1 /mnt
 ls /mnt/EFI
@@ -6231,10 +6191,8 @@ sudo ssh-keygen
 sudo ssh-copy-id rob@192.168.2.21
 sudo snap-sync -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a
 ssh bbroot
-S restart sshd
 ssh rob@192.168.2.21
 rmr docs/logs/rsync_backup
-ls media/nextcloud
 umount media/nextcloud
 cat bin/autolock
 v $HOME/.config/systemd/user/xidlehook.service
@@ -6309,7 +6267,6 @@ systemctl status backup.service
 S enable backup.service
 systemctl status backup.timer
 v bin/s
-v .ssh/config
 echo $FZF_DEFAULT_OPTS
 ls -l .Xauthority
 chmod 0600 ~/.Xauthority
@@ -6331,14 +6288,9 @@ btrfs qgroup show /
 sudo btrfs qgroup show /
 btrfs subvolume list -ts / | wc -l
 sudo btrfs subvolume list -ts / | wc -l
-v /etc/snapper/configs/root
-v /etc/snapper/configs/home
-tmux new
 tmux -h
 tmux select-window -h
 tmux select-window -t
-ncdu
-man tmux
 tmux has-session
 v etc/conf.d/minecraft
 ([[ ! "$1" ]] || [[ ! -f "./.zshrc" ]]) && echo true
@@ -6354,7 +6306,6 @@ v bin/caps2esc
 sudoedit /etc/pacman.conf
 mnt 
 mnt ssd
-mnt nextcloud
 ls /media
 mv /media/mx100 /media/mx500
 sudo mv /media/mx100 /media/mx500
@@ -6369,7 +6320,6 @@ find -mtime +30|wc -l
 find -mtime +90 | wc -l
 fd 2019
 fd 2019 -X rm -rf {};
-tmux attach
 rmr .minecraft
 ls "$XDG_DATA_HOME"/fonts
 ls .fontconfig
@@ -6383,7 +6333,6 @@ rmr ~/.config/simplescreenrecorder
 mkdir ~/.config/simplescreenrecorder
 ls ~/.config/simplescreenrecorder
 rmr .ssr
-ls .ssr
 la .ssr
 git clone https://github.com/MaartenBaert/ssr.git
 ssr
@@ -6405,7 +6354,6 @@ sudo pacr nbted
 paru nbted
 nbted 7fa4497c-7f1d-4636-a0f7-380bbba4f93b.dat
 rm 7fa4497c-7f1d-4636-a0f7-380bbba4f93b.dat
-system-backup
 locate snap-sync
 ls .cache
 snapper  list -t single
@@ -6446,7 +6394,6 @@ lsblk
 mount -s subvolid=5 /dev/nvme0n1p3 /mnt/btr_pool
 sudo mount -s subvolid=5 /dev/nvme0n1p3 /mnt/btr_pool
 mount
-man mount
 mkdir /mnt/btr_pool
 sudo mkdir /mnt/btr_pool
 sudo mount /dev/nvme0n1p3 -s subvolid=5 /mnt/btr_pool
@@ -6476,7 +6423,6 @@ echo true|grep true
 rm .tmux.conf
 tmux kill-server
 tmux new-session minecraft 
-v bin/system-backup
 ls /etc/conf.d/snapper
 v /etc/conf.d/snapper
 fkill
@@ -6491,9 +6437,7 @@ ls /etc/cron.hourly
 ls /etc/cron.monthly
 enabledservices
 grep enable .aliases
-services
 S start snapper-cleanup.service
-udb
 locate snapper-cleanup.service
 which updatedb
 v /etc/updatedb.conf
@@ -6518,7 +6462,6 @@ v /boot/loader/entries/arch-lts.conf
 sudo timedatectl --systohc
 hwclock --systohc
 sudo hwclock --systohc
-zip -h
 man fd
 fd -t d -x zip {} {/}.zip;
 fd -t d -d 1 -x zip {} {/}.zip;
@@ -6532,15 +6475,12 @@ for file in *.jpg;\
 do\
     mv "$file" "${file//[[:space:]]}"\
 done
-se 
 rmspaces
 ls | grep v 
-vf
 ls downloads/minecraft/forge
 thunar downloads/minecraft/datapacks
 ls downloads/minecraft/datapacks
 which rmspaces
-v .aliases
 pwd
 downloads
 minecraft/bukkit
@@ -6573,7 +6513,6 @@ man test
 realpath bin/renamesub
 man basename
 v bin/renamesubs
-chx bin/*
 ls Generation.S01E0
 ls Generation.S01E0*
 renamesubs
@@ -6581,18 +6520,14 @@ pac hstr
 paru hstr
 hstr
 hstr -h
-cd
 hstr .config/zsh/history
 export HISTFILE=~/.config/zsh/history
 hstr 
 vfm
-sudo snapper -c root list
-sudo snapper -c home list
 wdctl
 alacritty -e nv ~/bin/nv
 v /etc/fstab
 fkill 
-btm
 pipewire-pulse --help
 pipewire-pulse 
 pw-cli --help
@@ -6625,7 +6560,6 @@ pac pipewire pipewire-pulse pipewire-media-session
 ls /etc/pipewire
 systemctl --user enable pipewire pipewire-pulse pipewire-media-session
 rmr ssr/
-pacrepo
 v /etc/pipewire/media-session.d/alsa-monitor.conf
 systemctl --user restart pipewire pipewire-pulse pipewire-media-session
 sinkctrl -h
@@ -6656,19 +6590,13 @@ cat /tmp/current_sink.ziH8
 pactl list sinks short
 sinkctrl -c
 man snap-sync
-vfb
 S status backup.service
 S start backup.timer
 S enable backup.timer
-v /etc/systemd/system/backup.service
 sudo snap-sync -q -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -n -c "root home"
 ncdu -x /
-v /etc/systemd/system/backup.timer
-ls
-S status backup.timer
 journalctl -r -u backup.service
 journalctl -r -u backup.timer
-less .xsession-errors
 mkfifo $HOME/.cache/sxhkd.fifo
 l $HOME/.cache/sxhkd.fifo
 ll $HOME/.cache/sxhkd.fifo
@@ -6678,12 +6606,10 @@ v /usr/bin/reflector
 S edit reflector.timer
 S edit reflector.service
 v /etc/xdg/reflector/reflector.conf
-la
 pac nvidia-dkms
 pac linux-zen-headers linux-hardened-headers
 pac inux-hardened linux-zen
 pac linux-hardened linux-zen
-paru
 grub-mkconfig
 v /etc/mkinitcpio.d/linux.preset
 v /etc/mkinitcpio.d/linux-hardened.preset
@@ -6718,7 +6644,6 @@ ls /etc/systemd/system/piavpn.service.d
 ls /etc/systemd/system/piavpn.service.d/override.conf
 v /etc/systemd/system/piavpn.service.d/override.conf
 systemctl daemon-reload
-uname -r
 v /etc/pam.d/system-login
 reboot
 pacr linux-hardened
@@ -6726,23 +6651,15 @@ sudo pacr linux-hardened
 alias services
 pac apparmor
 S enable apparmor
-v /etc/default/grub
 zgrep CONFIG_LSM= /proc/config.gz
 cat /sys/kernel/security/lsm
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-systemd-analyze blame
 lsmod
 lsmod | grep nvidia
 ls /etc/modules-load.d
-systemd-analyze 
 pac firejail firetools 
 sudo  apparmor_parser -r /etc/apparmor.d/firejail-default\
 
-se
-bb
-su
 v .zshrc
-xprop
 echo $TERMINAL
 pacr xcfe4-terminal
 sudo pacr xcfe4-terminal
@@ -6750,7 +6667,6 @@ sudo pacr xfce4-terminal
 pac xdg-terminal
 pacman -Fy
 sudo pacman -Fy
-pacf xdg-terminal
 pacf mimeopen
 pac extra/perl-file-mimeinfo
 mimeopen --help
@@ -6763,11 +6679,307 @@ alacritty -h
 alacritty -e nvim
 v bin/sinkctrl
 v /usr/bin/vendor_perl/mimeopen
-tail -f .xsession-errors
 v bin/nv
 paru mimeo
 mimeo nvim
 mimeo -c .zshrc
-v bin/opi
+dotu
+which dotu
+v bin/dotu
+v docs/important/gitlab-recovery-codes.txt
+rm ticker.yaml replay-sorcery.conf
+rmr strawberry
+rmr pia/
+ls kusti8
+dots add flameshot/flameshot.ini
+rm bin/rsync_backup.sh
+rm bin/renamesubs
+v bin/snapper-backup
+rm bin/snapper-backup
+ls bin/snapper-backup
+ls bin/
+locate nvim.desktop
+v /usr/share/applications/nvim.desktop
+mimeo -h
+mimeo -c .config/alacritty/alacritty.yml
+mimeo -m .config/alacritty/alacritty.yml
+mimeo --add .config/alacritty/alacritty.yml
+mimeo --show-all .config/alacritty/alacritty.yml
+mimeo --app2desk nvim
+locate nvim-usercreated-1.desktop
+v /home/rob/.local/share/applications/nvim-usercreated-1.desktop
+ mimeo --add application/x-yaml nvim.desktop
+pacr extra/perl-file-mimeinfo
+sudo pacr extra/perl-file-mimeinfo
+sudo pacr perl-file-mimeinfo
+usb
+udb
+locate pac-snap
+pac pac-snap
+locate snap-pac
+v /etc/snap-pac/root.conf.example
+mnt bb
+S status backup.timer
+vf
+v /etc/snapper/configs/root
+v /etc/snapper/configs/home
+sudo snapper -c home list
+sudo snapper -c root list
+man snap-pac
+ls tmp
+s edit clean-temp-dir.service
+systemctl edit --user --force --full clean-temp-dir.service
+v /etc/systemd/system/backup.service
+systemctl edit --user --force --full clean-temp-dir.timer
+v /etc/systemd/system/backup.timer
+s enable clean-temp-dir.timer
+services
+v .local/share/multimc
+paru minecraft-launcher
+minecraft-launcher
+echo $PROMPT
+systemd-analyze blame
+system-backup
+ncdu ./
+vfb
+v bin/system-backup
+v /etc/pacman.d/hooks/boot-backup.hook
+rsync -avzq /boot bb:/data/backups/rob-pc/
+ll home/88/snapshot/rob/
+sudo cp .ssh/config /root/.ssh/
+sudo rsync -avzq --delete /boot bb:/data/backups/rob-pc/
+ll boot
+su
+sufw allow 5353
+pac nss-mdns
+S restart avahi-daemon
+ssh rob@blueberry
+avahi-browse -tl _workstation._tcp
+v /etc/hosts
+avahi-browse --all --ignore-local --resolve --terminate
+avahi-browse --all  --resolve --terminate
+S restart sshd
+ssh blueberry.local
+ssh blueberry
+ssh rob@blueberry.local
+rm -rf .minecraft
+ls .parallel
+discord
+which pacrepo
+v /etc/pacman.d/mirrorlist
+pacrepo
+man rsync
+rm carpet-extra-21w07a-1.4.27.jar
+echo $XDG_CONFIG_HOME/
+v .profile
+pacf task
+paru tmuxp
+mkdir .config/tmux
+pac tmux
+scp bb:~/.config/tmux/tmux.conf ./.config/tmux
+ls ./.config/tmux
+ls .config/simplescreenrecorder
+ls .ssr
+mv .parallel "$XDG_CONFIG_HOME"/parallel
+rm -rf .nv
+rm -rf .pki
+ls .icons
+v /usr/share/icons/default/index.theme
+cat .icons/default/index.theme
+sudo cp .icons/default/index.theme /usr/share/icons/default/index.theme
+rm .icons/default/index.theme
+rmr .icons
+cat /usr/share/icons/default/index.theme
+sudo rm  /etc/systemd/system/obs_cleanup.*
+mkbin mimeterm
+nv .aliases
+sxhkd -s $HOME/.cache/sxhkd.fifo
+mkbin mope
+man setfacl
+basename Ableton\ Live\ 10\ Suite\ v10.1.30\ 64\ Bit\ +\ Plugin\ \[Ita\]\ \[Update\ 18\ 11\ 2020\]
+mkbin xterm
+chx bin/*
+less .xsession-errors
+tar -c --use-compress-program=pigz -f ableton.tar.gz Ableton\ Live\ 10\ Suite\ v10.1.30\ 64\ Bit\ +\ Plugin\ \[Ita\]\ \[Update\ 18\ 11\ 2020\] 
+ll
+ncdu
+xterm -e .zshrc
+xterm .zshrc
+xterm ~/.zshrc
+xterm 'nvim ~/.zshrc'
+xterm nvim ~/.zshrc
+xterm -e nvim ~/.zshrc
+pacf xdg-terminal
+mkbin
+mkbin xdg-terminal
+xdg-terminal --help
+pac i3-sensible-terminal
+pacf i3-sensible-terminal
+rm -rf /etc/i3/
+sudo rm -rf /etc/i3/
+pac i3-wm
+i3-sensible-terminal
+xprop
+i3-sensible-terminal nvim .zshrc
+i3-sensible-terminal -e nvim .zshrc
+v bin/xterm
+sudo pacr i3-wm
+pac html2pdf
+pacf html2pdf
+paru html2pdf
+sudo pacr html2pdf
+rmorphans
+paru -Sc
+pacf wkhtmltopdf
+pac wkhtmltopdf
+wkhtmltopdf https://1337x.to/torrent/4685854/Ableton-Live-10-Suite-v10-1-30-64-Bit-Plugin-Ita-Update-18-11-2020/#description
+wkhtmltopdf "https://1337x.to/torrent/4685854/Ableton-Live-10-Suite-v10-1-30-64-Bit-Plugin-Ita-Update-18-11-2020/#description"
+wkhtmltopdf "https://1337x.to/torrent/4685854/Ableton-Live-10-Suite-v10-1-30-64-Bit-Plugin-Ita-Update-18-11-2020/#description" guide.pdf
+open guide.pdf
+bspc query -D -d 'focused.!occupied'
+uname -r
+v bin/mope
+v .aliases
+mope .zshrc
+mope .zshrc .config/rgconf
+mv .mozilla/firefox/swkflvvd.default-release/chrome/userC* ~/tmp/
+ls ~/tmp/
+mv  ~/tmp/userC* .mozilla/firefox/swkflvvd.default-release/chrome/
+paru
+zip -h
+zip fabric-mods ~/.local/share/multimc/instances/fabric/.minecraft/mods/* 
+ll 
+zip downloads/minecraft/fabric/fabric-mods ~/.local/share/multimc/instances/fabric/.minecraft/mods/* 
+ls downloads/minecraft/fabric/fabric-mods.zip
+ll downloads/minecraft/fabric/fabric-mods.zip
+rm fabric-mods.zip
+zip downloads/minecraft/forge/forge-mods ~/.local/share/multimc/instances/forge/.minecraft/mods/* 
+fd downloads/minecraft/{fabric,forge}/ -e zip
+fd . downloads/minecraft/{fabric,forge}/ -e zip
+ls media/nextcloud
+fd . downloads/minecraft/{fabric,forge}/ -e zip -x cp {} /media/nextcloud/Gaming/Minecraft
+ls /media/nextcloud/Gaming/Minecraft
+ls media/nextcloud/Gaming/Minecraft
+btm
+reboot uefi
+systemd-analyze 
+se 
+ls
+cd
+v bin/mcctrl
+mkbin mcsync
+chx ~/bin/*
+mcsync
+mcsync -m fabric
+mcsync -m 
+mnt nextcloud
+mnt nextcloud && echo true
+mnt nextcloud ; echo true
+mount -h
+mcsync -a
+v bin/mcsync
+ll downloads/minecraft/fabric/*zip
+ll downloads/minecraft/*/*zip
+man zip
+mcsync -z
+man mount
+mount.davfs -h
+findmnt
+chronic -h
+chronic --help
+cat bin/persist
+chronic mnt nextcloud
+rg \> bin
+	2>/dev/null 1>&2 mnt nextcloud
+ls bin
+cat bin/mimeterm 
+cat bin/mope
+rm -rf bin/mimeterm
+mv bin/mope bin/mimeterm
+pbar.sh
+ls /etc
+pacq java
+man ssh
+autoload zkbd && zkbd
+tmux new -s ssh
+tmux new
+while true ; echo true; done
+while true ; echo true; do
+while true ; do echo true; done
+while true ; do echo true && sleep 2; done
+la
+tmux list-sessions
+tmux attach
+man tmux
+v .config/ssh
+v .ssh/config
+bb
+mkbin mimeo
+v bin/mimeterm
+which mimeo
 mimeo .zshrc
+v sxhkdrc
+time mimeo echo true
+time mimeo pics/scrots/test.png 
+time mimeo .zshrc
+time alacritty -e exit
+time alacritty -e echo true
+time termite -e echo true
+$TERMINAL -e "nvim /etc/fstab"
+$TERMINAL -e nvim /etc/fstab
+ta
+v bin/opi
+rm bin/mimeterm
+cat bin/efimgr
+tail -f .xsession-errors
+nv '/etc/fstab'
+opi -e
+opi -e /etc
+/home/rob/bin/nv '/etc/fstab' &
+jobs -l
+fg
+v /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+rm bin/efimgr
+rm bin/check-*
+rm bin/xdg-terminal
+flameshot 
+flameshot --help
+flameshot launcher
+start sxhkd
+mimeo --help
+mimeo --assoc-help
+pac perl-file-mimeinfo
+paru xdg-utils-mimeo
+mv bin/xterm tmp
+xdg-open .config/sxhkd/sxhkdrc
+which xdg-open
+v /usr/bin/xdg-open
+mv tmp/xterm bin
+rm bin/autolock
+cat bin/opout
+rm bin/opout
+mv  bin/pvpn bin/piavpn
+lb
+se
+rm bin/screens.sh
+monctl
+monctl -tv
+nvidia-settings -q CurrentMetaMode
+lb
+cat bin/nv
+rg 'nv' bin
+mv bin/nvfans bin/gpufans
+lb
+diskinfo
+rm bin/diskinfo
+shortinfo
+cat bin/open
+v bin/mimeo
+which chronix
+which chronic
+rg 'open' bin
+rm bin/open
+la
+lb
 dotu

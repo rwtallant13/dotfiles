@@ -8,6 +8,7 @@ Drives {default mount}
 
     laptop		{/media/laptop}
     bb / blueberry	{/media/blueberry}
+	nextcloud	{/media/nextcloud}
     bb-dir		{/media/bb-dir}
     mx100		{/media/mx500}
     ssd			{/media/ssd}

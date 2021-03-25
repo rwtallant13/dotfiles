@@ -36,7 +36,7 @@ export ATOM_HOME="$XDG_DATA_HOME"/atom
 export CCACHE_CONFIGPATH="$XDG_CONFIG_HOME"/ccache.config
 export CCACHE_DIR=$XDG_CACHE_HOME/ccache
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
-#export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export GOPATH="$XDG_DATA_HOME"/go

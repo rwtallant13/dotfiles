@@ -3,7 +3,7 @@
 # Program functions
 
 _picom(){
-	picom --experimental-backends
+	picom --experimental-backends -b
 }
 
 _pbar(){
@@ -11,11 +11,11 @@ _pbar(){
 }
 
 _dunst(){
-	chronic /usr/bin/dunst
+	chronic /usr/bin/dunst &
 }
 
 _sxhkd(){
-	sxhkd -s $HOME/.cache/sxhkd.fifo
+	systemctl --user restart sxhkd.service
 }
 
 _jgmenu(){
@@ -24,24 +24,24 @@ _jgmenu(){
 }
 
 _nm-applet(){
-	/usr/bin/nm-applet
+	/usr/bin/nm-applet &
 }
 
-_pia-vpn(){
-	chronic /opt/piavpn/bin/pia-client --quiet
+_piavpn(){
+	chronic /opt/piavpn/bin/pia-client --quiet &
 
 }
 
 _polkit(){
-	chronic /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
+	chronic /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 }
 
 _obs(){
-    chronic obs --profile Default --minimize-to-tray
+    chronic obs --profile Default --minimize-to-tray &
 }
 
 _ssr(){
-	chronic simplescreenrecorder --start-hidden --settingsfile=/home/rob/.ssr/fullscreen.conf
+	chronic simplescreenrecorder --start-hidden --settingsfile=/home/rob/.ssr/fullscreen.conf &
 }
 
 _pulse(){
@@ -55,5 +55,5 @@ for i in $*; do
 	# Wait until the processes have been shut down
 	while pgrep -x "$i" >/dev/null; do sleep 0.5; done
 
-	_$i &
+	_$i
 done

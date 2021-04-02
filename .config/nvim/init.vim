@@ -21,7 +21,11 @@ call plug#begin('/home/rob/.config/nvim/plugged')
 call plug#end()
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat', }
+	  \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'filename': '%F',
+      \ }
+      \ }
 
 " Basic Mappings
 let mapleader =" "
@@ -49,6 +53,10 @@ xnoremap <Leader>p "_dP
 noremap <C-T> :tabnew<cr>
 nmap <tab> :tabNext<cr>
 nmap <leader><tab> :Buffers<cr>
+
+" move between next/prev files
+nmap <C-PageDown> :previous<cr>
+nmap <C-PageUp> :wn<cr>
 
 " fzf open file
 noremap <leader>f :Files<cr>
@@ -156,6 +164,8 @@ set shortmess=IFA
 "set termguicolors
 set nohlsearch
 
+
+
 let g:limelight_conceal_ctermfg = '8'
 let g:nord_cursor_line_number_background = 1
 hi clear CursorLine
@@ -163,6 +173,7 @@ hi clear CursorLineNR
 augroup CLClear
     autocmd! ColorScheme * hi clear CursorLine
 augroup END
+
 
 " fix alacritty resizing issue
 autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"

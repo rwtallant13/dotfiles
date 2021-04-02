@@ -52,7 +52,7 @@ while getopts ":hwmsl" opt; do
             ;;
         l)
             ANS=$(echo "1. Lock|2. Logout|3. Suspend|4. Reboot|5. Bootup Win|6. Shutdown" | \
-            rofi -sep "|" -dmenu -i -font "Overpass 26" -color-window argb:dd000000  -padding 400 -fullscreen -auto-select -p 'System' "")
+            rofi -sep "|" -dmenu -i -font "Overpass 24" -auto-select -p 'System' "")
                 case "$ANS" in
                     *Lock) betterlockscreen --lock blur --off 30 ;;
                     *Logout) bspc quit ;;

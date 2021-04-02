@@ -53,7 +53,6 @@ export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export RIPGREP_CONFIG_PATH="/home/rob/.config/rgconf"
-export NNN_BMS='h:~/;d:~/downloads/;p:/home/rob/pics/;b:/home/rob/.bin/;c:~/.config/;b:/media/blueberry;e:/etc/'
 
 
 # shortcuts

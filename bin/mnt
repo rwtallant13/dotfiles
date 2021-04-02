@@ -17,27 +17,31 @@ Drives {default mount}
 EOF
 }
 
-case $1 in
-    laptop)
-        sshfs rob@192.168.2.14:/home/rob "${2:-/media/laptop}"
-        ;;
-    bb|blueberry)
-        sshfs -o reconnect,follow_symlinks,ServerAliveInterval=30,ServerAliveCountMax=3 rob@192.168.2.21:/data/ "${2:-/media/blueberry}"
-        ;;
-    bb-dir)
-        sshfs -o reconnect,ServerAliveInterval=30,ServerAliveCountMax=3 bb:"$2" "${2:-/media/bb-dir}"        ;;
-    mx500)
-        sudo mount UUID=06281093281083B9 "${2:-/media/mx500}"
-        ;;
-    ssd)
-        sudo mount UUID=CE7A626D7A6251EF "${2:-/media/ssd}"
-        ;;
-    win|windows)
-        sudo mount UUID=903A3D9F3A3D8370 "${2:-/media/windows}"
-        ;;
-	nextcloud) mount /media/nextcloud
-		;;
-    *)
-        _help
-        ;;
-esac
+for arg in "$@"; do
+	shift
+
+	case "$arg" in
+		laptop)
+			sshfs rob@192.168.2.14:/home/rob "${2:-/media/laptop}"
+			;;
+		bb|blueberry)
+			sshfs -o reconnect,follow_symlinks,ServerAliveInterval=30,ServerAliveCountMax=3 bb:/data/ "${2:-/media/blueberry}"
+			;;
+		bb-dir)
+			sshfs -o reconnect,ServerAliveInterval=30,ServerAliveCountMax=3 bb:"$2" "${2:-/media/bb-dir}"        ;;
+		mx500)
+			sudo mount UUID=06281093281083B9 "${2:-/media/mx500}"
+			;;
+		ssd)
+			sudo mount UUID=CE7A626D7A6251EF "${2:-/media/ssd}"
+			;;
+		win|windows)
+			sudo mount UUID=903A3D9F3A3D8370 "${2:-/media/windows}"
+			;;
+		nextcloud) mount /media/nextcloud
+			;;
+		*)
+			_help
+			;;
+	esac
+done

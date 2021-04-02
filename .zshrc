@@ -22,19 +22,18 @@ source ~/.zkbd/$TERM*
 
 
 # -- plugins ------------------------------------------------------------------
+declare -A ZINIT
 
-ADOTDIR=$HOME/.config/zsh/antigen
+ZINIT[HOME_DIR]="$HOME"/.config/zsh/zinit
+ZINIT[ZCOMPDUMP_PATH]="$HOME"/.config/zsh/zinit/
 
-# make sure antigen is installed
-[[ -e "$HOME"/.config/zsh/antigen.zsh ]] && \
-   source "$HOME"/.config/zsh/antigen.zsh || curl -L git.io/antigen > "$HOME"/.config/zsh/antigen.zsh
 
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
+source ~/.config/zsh/zinit/bin/zinit.zsh
 
-antigen apply
-
+zinit ice wait lucid atload'_zsh_autosuggest_start'
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-syntax-highlighting
 
 # -- syntax highlighting ------------------------------------------------------
 

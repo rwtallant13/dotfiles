@@ -792,7 +792,6 @@ bindkey -e
 compinit
 compinsta;;
 compinstall
-v .zshr
 locate zsh-auto
 pacf zsh-autosuggestions
 touch .bin/sinkctrl2
@@ -884,7 +883,6 @@ ls docs/dotfiles
 sudo rm -rf docs/dotfiles
 less .config/Trolltech.conf
 less .config/QtProject.conf
-ls -la
 ls -la ls -la
 ls docs/backup_logs
 less docs/backup_logs/latest
@@ -1273,13 +1271,11 @@ cat .bin/notes
 notes im tryna do a thing
 ls docs/notes
 less docs/notes/2020-05.txt
-date
 date --help
 grep date .bin
 grep date .bin/*
 date +%F-%H-%M
 date +%F
-date +%D
 notes
 cat docs/notes/*
 rm docs/notes/*
@@ -1493,7 +1489,6 @@ unset a b sum
 pac pandoc
 pac pandoc-bin
 yay pandoc-bin
-neofetch
 ll .bin/thing
 sudo chown rob:rob .bin/*
 v .bin/thing
@@ -2049,7 +2044,6 @@ journalctl -eu lightdm
 v /home/rob/.local/share/keyrings/login.keyring
 pacr alacritty
 sudo pacr alacritty
-v .config/sxhkd/sxhkdrc
 ll /usr/bin/xterm
 /usr/bin/termite -e bash --rcfile /home/rob/.bashrc -c 'vifm /home/rob/downloads /media/blueberry/'
 bash --rcfile
@@ -2273,7 +2267,6 @@ ls /usr/share/zsh/plugins/zsh-autocomplete
 ls /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 sudo pacr gconf
 journalctl -r -b 1
-journalctl -r -b
 last -x shutdown
 rg -h
 rg -e shutdown -e reboot /var/log
@@ -2535,7 +2528,6 @@ ls .nv
 rg -C 3case .bin
 upower --dump
 ssh bb echo true
-echo $BROWSER
 rg $BROWSER
 rg --hidden $BROWSER
 sudo pacr gnome-desktop
@@ -2569,7 +2561,6 @@ xev -event keyboard
 locate .sw
 man hyperfine
 z etc
-v ~/.zshrc
 fd -H -I | wc -l
 time fd -H -I | wc -l
 time fd -H | wc -l
@@ -3454,7 +3445,6 @@ v temp.c[[
 v temp.cpp
 gcp temp.cpp
 rm a.out temp.cpp
-hist
 v .config/zsh/history
 man bc
 yay discord-arch-electron
@@ -3594,7 +3584,6 @@ mkdir docs/logs
 mv .rsync_backup/2020-10-28-121435.log docs/logs
 rmr .rsync_backup
 date -d "${1:0:10} ${1:11:2}:${1:13:2}:${1:15:2}" +%s
-man date
 grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-10-28-123938.log\
 '
 grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-10-28-123938.log'
@@ -3754,7 +3743,6 @@ piactl set region && echo true
 pia.sh -r dc
 piactl get regions
 piactl background disable
-piactl get pubip
 piactl get vpnip
 piactl get pubip && echo true
 bspc rule -a privateinternetaccess -o hidden=on && /opt/piavpn/bin/pia-client
@@ -3917,7 +3905,6 @@ multimc -l
 multimc -l -h
 multimc -l 1.16.4
 archlinux-java status
-pac minecraft-launcher
 rmr .local/share/multimc
 journalctl -r
 v /opt/piavpn/etc/settings.json
@@ -4205,7 +4192,6 @@ locate qbittorrent
 v /usr/share/applications/org.qbittorrent.qBittorrent.desktop
 fd -i rar -E mkv -E mp4
 cd ../movies
-fd -i rar 
 shortinfo ./TheMandalorian_S02E01.mkv
 shortinfo ./the.mandalorian.s02e05.1080p.web.h264-ggwp.mkv
 v .bin/wall.sh
@@ -4238,7 +4224,6 @@ fzpac
 less .zshrc.zwc
 mv .antigen .config/antigen
 mv .config/antigen .config/zsh
-la .config
 echo ${(o)color}
 sudo rmr microsoft-edge-dev vidcutter transmission nwg-launchers plex.tv LosslessCut 
 rmr .zshrc.zwc /home/rob/.config/zsh/antigen/*.zwc
@@ -4316,7 +4301,6 @@ ls /usr/share/fonts
 fc-cache
 git clone https://github.com/skywind3000/z.lua.git
 mv z.lua .local/share/
-caps2esc
 sudo rm /etc/systemd/system/betterautolock.service
 sudo rm /etc/xdg/picom.conf.example
 v docs/yay-pkgs
@@ -4363,7 +4347,6 @@ rg --hidden capitaine
 nullify /opt/piavpn/bin/pia-client --quiet
 piactl set region auto
 /opt/piavpn/bin/pia-client --quiet
-v /etc/environment
 v ~/.config/Trolltech.conf\
 v /etc/xdg/Trolltech.conf
 pac gtk2
@@ -4702,7 +4685,6 @@ mv .ssr/* .config/simplescreenrecorder
 rmr test
 la .cache
 killall sxhkd
-man sxhkd
 ll vids/bankai-or-rasengan-2020-12-28_14.06.31.mp4 
 echo $DESKTOP_SESSION
 sudo pacman -Sy xorg-xrandr feh cronie
@@ -4761,7 +4743,6 @@ watch time
 watch date
 yay bitwarden
 pac apcupsd 
-b
 S enable --now apcupsd.service
 man hdparm
 find dark
@@ -4810,7 +4791,6 @@ xset dpms force suspend
 man xset
 rg cat .bin
 v .bin/ncodr
-rg case .bin
 v .bin/reboot
 scrot -h
 v .bin/scrot
@@ -4855,8 +4835,6 @@ rg -e '--bf-tab-selected-bg'
 .mozilla/firefox/ocdc4cz2.default-release/chrome/parts
 ../..
 rmr chrome
-mkdir chrome
-chrome
 .mozilla
 cd firefox/ocdc4cz2.default-release/chrome
 cd .mozzila/firefox/ocdc4cz2.default-release/chrome
@@ -4881,7 +4859,6 @@ dots add .bin/*
 dots add .mozilla/firefox/ocdc4cz2.default-release/chrome/*
 ls .config/
 dots add .config/vifm/*
-xcolor
 v userContent.css
 pac micro
 micro
@@ -4890,7 +4867,6 @@ bspc node -B
 bspc node -E
 ~/.bin
 mv bspscripts bspctl
-v bspctl
 v extract_canvas
 v induce_rules
 bspc wm -d
@@ -4989,7 +4965,6 @@ ncdu -x ./
 fd -t d torrents
 fd -t d torrents -x ls {};
 v docs/backup_exclude.txt
-S restart NetworkManager
 scp docs/important/backup-peach-2021-01-11.tar.gz peach:/tmp
 xfce4-terminal
 dig youtube.com
@@ -5003,7 +4978,6 @@ pac udisks2
 gcc -march=native -v -Q --help=target
 v /etc/makepkg.conf
 z chrome
-v userChrome.css
 cat /sys/block/sdd/queue/scheduler
 ll /media
 ll /media/mx500
@@ -5063,8 +5037,6 @@ adb push downloads/android/crDroidAndroid-11.0-20210108-taimen-v7.2.zip /sdcard
 adb push downloads/android/Magisk-* /sdcard
 adb push downloads/android/open_gapps-arm64-11.0-nano-20210110-TEST.zip /sdcard
 downloads/android/taimen-rp1a.201005.004.a1
-./flash-all.sh
-sudo ./flash-all.sh
 adb push {lineage-18.1-20210107-UNOFFICIAL-taimen.zip,open_gapps-arm64-11.0-nano-20201121.zip} /sdcard
 picom --experimental-backends
 yay picom-git
@@ -5075,7 +5047,6 @@ xdg-open
 pvpn toggle
 v .bin/pvpn
 piactl get connectionstate
-piactl --help
 fd -e txt
 shortinfo The-Dark-Knight.mp4
 man qbittorrent
@@ -5229,7 +5200,6 @@ ls pkg
 ls pkg/webull-desktop
 v PKGBUILD
 man bspx
-man bspwm
 rm -rf webull-desktop
 bspc config single_monocle false
 bspc config single_monocle true
@@ -5241,7 +5211,6 @@ v /etc/login.defs
 v /etc/pam.d/login
 sudo rg fail /etc/pam.d
 sudo rg fail /etc/pam.d/system-auth
-v /etc/pam.d/system-auth
 rg faildelay /etc/pam.d/ 
 rg faildelay /etc/pam.d/*
 sudo rg faildelay /etc/pam.d/*
@@ -5278,7 +5247,6 @@ S enable dyn-wall-rs.service
 locate udb
 locate dyn-wall-rs.service
 v config.toml
-cat .fehbg
 systemctl --user enable dyn-wall-rs.service
 systemctl --user status dyn-wall-rs.service
 which dyn-wall-rs
@@ -5390,7 +5358,6 @@ media/nextcloud
 ls InstantUpload
 v /etc/davfs2/davfs2.conf
 mv InstantUpload/Camera/PXL_20210201_161857358.mp4 Photos/Uploads/Camera/2021/01/
-which v
 v .bin/nv
 ssh-copy-id pi
 v /etc/ssh/config
@@ -5475,7 +5442,6 @@ cat calc
 rm calc
 rofer calc
 pkill -USR1 -x sxhkd
-v .bin/persist
 persist
 persist -h
 zenity --help
@@ -5488,7 +5454,6 @@ cat sxhkd .bin/start
 grep sxhkd .bin/start
 persist sxhkd -s $HOME/.cache/sxhkd.fifo
 rg --hidden persist
-man rg
 rg --hidden --iglob firefox persist
 rg --hidden --iglob persist
 rg --hidden --iglob \!firefox persist
@@ -5503,7 +5468,6 @@ ext/mx500
 sudo mount UUID=06281093281083B9 "${2:-/media/mx500}"
 ls ext/mx500
 mv downloads/minecraft/Enhanced\ Default\ v1.12.zip .minecraft/shaderpacks
-xrandr
 xrandr | grep connected
 which mclog
 mclog
@@ -5515,7 +5479,6 @@ mkdir .config/paru
 cp /etc/paru.conf .config/paru
 ll .config/paru/paru.conf
 v .config/paru/paru.conf
-adb devices
 adb reboot bootloader
 z andriod
 z android
@@ -5552,7 +5515,6 @@ apcaccess status
 sudo ufw allow 3551
 v /etc/apcupsd/apcupsd.conf
 sudo apcaccess status
-vifm
 minecraft-launcher --help
 ((620/60))
 echo ((620/60))
@@ -5662,7 +5624,6 @@ sudo
 sudo ln -s /home/rob/.zshrc /root/.zshrc
 ls /root/.zshrc
 sudo ln -s /home/rob/.aliases /root/.aliases
-echo $ENV
 sudo -i
 \su
 ln -s /root/.zkbd/ /root/.zkbd/
@@ -5702,14 +5663,11 @@ recode --help
 recode -l
 node -i
 bspc node -i
-man bspc
 bspc subscribe desktop
-pac jgmenu
 ls /usr/share/icons/*/16x16/legacy
 ls /usr/share/icons/
 man moreutils
 rg termite 
-sudo rm .jgmenu-lockfile
 whicih jgmenu
 which jgmenu
 rm .node_repl_history
@@ -5727,7 +5685,6 @@ chronic firefox --incognito
 firefox --help
 firefox --private-window
 chronic firefox --private-window
-ls .config/autostart
 se /etc
 cat /sys/firmware/efi/fw_platform_size
 ls /etc/pacman.d/hooks
@@ -5819,7 +5776,6 @@ chmod +x ./downloads/pia-linux-2.6.1-05824.run
 ./downloads/pia-linux-2.6.1-05824.run
 ls /opt/piavpn
 sudo ufw allow 21211
-nvtop
 pac strawberry
 sudo pacr strawberry
 extract se
@@ -5833,7 +5789,6 @@ rm *.md
 rmr sampler* pc* Makefile src include examples 
 .bin
 v wall.sh
-tmp
 ls ~
 cd ~/downloads/telegram/sampler.tar
 ~/downloads/telegram/
@@ -5910,7 +5865,6 @@ paru -S linux linux-lts
 ssh pi
 paru -S f2
 mkdir docs/bars
-aur-pkgs
 aureport
 man aureport
 pacr replay-sorcery-git
@@ -5930,7 +5884,6 @@ pac -S noto
 sudo pacman -S noto
 sudo pacman -Ss noto
 paru noto
-sudo pacdiff
 media/
 pac pipewire
 sudo rm -rf /opt/piavpn/
@@ -6023,7 +5976,6 @@ chx .bin/*
 pac amixer
 rm ./bin/volnotify
 v bin
-bin
 cat check-
 cat check-swap
 alacritty vifm
@@ -6041,7 +5993,6 @@ qbittorrent -v
 qbittorrent -vv
 thunar
 v /etc/pipewire/pipewire.conf
-pkglist
 pacman -Syu < docs/pacman-pkgs
 sudo pacman -Syu < docs/pacman-pkgs
 nano docs/pacman-pkgs
@@ -6058,7 +6009,6 @@ paru -S (cat docs/aur-pkgs)
 paru -S $(cat docs/aur-pkgs)
 paru -S $(cat ~/docs/aur-pkgs)
 sudo grub-mkconfig
-..
 mount /dev/sdb2 /mnt
 sudo mount /dev/sdb2 /mnt
 os-prober
@@ -6071,7 +6021,6 @@ ls /etc/fstab
 pac networkmanager
 pacman -Sy
 nmcli general reload
-ping archlinux.org
 sudo pacman -Sy
 pac network-manager-applet
 paru -S polybar multimc qt5-styleplugins
@@ -6170,7 +6119,6 @@ fzaux
 caffeinate --timer 7200
 sudo snap-sync -r 192.168.2.11
 ssh 192.168.2.11
-ssh bb
 sudo snap-sync -r bb
 sudo snap-sync -r blueberry
 ssh
@@ -6190,11 +6138,7 @@ v bin/autolock
 s enable --now xidlehook
 sufw list
 sufw show
-sufw status
 sufw disable 21211
-sufw status numbered
-sufw delete 18
-sufw delete 9
 cfdisk
 sudo cfdisk /dev/sde
 sudo fdisk /dev/sde
@@ -6202,8 +6146,6 @@ sudo dd bs=4M if=/home/rob/downloads/clonezilla-live-2.7.1-22-amd64.iso of=/dev/
 mkdir {blueberry,rob-pc,rob-laptop}
 sudo mkdir {blueberry,rob-pc,rob-laptop}
 pac ofono
-myip
-ip a
 hue_ui
 efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | sed s/.$//
 efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 
@@ -6233,7 +6175,6 @@ snapper sync
 snapper --help
 snapper -c home delete 16
 snapper -c root list
-snapper -c home list
 snapper -c home list --single
 snapper -c home list -t single
 snapper -c root list -t single
@@ -6243,7 +6184,6 @@ sudo grep ucode /boot/grub/grub.cfg
 sudo bootctl install
 sudo bootctl update
 v /etc/pacman.d/hooks/100-systemd-boot.hook
-ssh laptop
 cp /boot/loader/entries/arch-lts.conf /boot/loader/entries/arch.conf
 sudo cp /boot/loader/entries/arch-lts.conf /boot/loader/entries/arch.conf
 v /boot/loader/loader.conf
@@ -6292,7 +6232,6 @@ v
 ~
 nvim bin/nv
 v /etc
-v bin/caps2esc
 sudoedit /etc/pacman.conf
 mnt 
 mnt ssd
@@ -6316,13 +6255,11 @@ ls .fontconfig
 rmr .fontconfig
 ls .java
 rg Djava .profile
-ls .config
 simplescreenrecorder -v
 simplescreenrecorder --version
 rmr ~/.config/simplescreenrecorder
 mkdir ~/.config/simplescreenrecorder
 ls ~/.config/simplescreenrecorder
-rmr .ssr
 la .ssr
 git clone https://github.com/MaartenBaert/ssr.git
 ssr
@@ -6451,7 +6388,6 @@ v /boot/loader/entries/arch-lts.conf
 sudo timedatectl --systohc
 hwclock --systohc
 sudo hwclock --systohc
-man fd
 fd -t d -x zip {} {/}.zip;
 fd -t d -d 1 -x zip {} {/}.zip;
 zip armored\ elytra\ v1.0.3 
@@ -6475,7 +6411,6 @@ minecraft/bukkit
 /opt/piavpn/bin/
 start 
 cat bin/start
-v bin/start
 sudo systemctl disable NetworkManager-wait-online.service
 S disable ufw.service
 ufw -h
@@ -6511,7 +6446,6 @@ hstr -h
 hstr .config/zsh/history
 export HISTFILE=~/.config/zsh/history
 hstr 
-vfm
 wdctl
 alacritty -e nv ~/bin/nv
 v /etc/fstab
@@ -6577,7 +6511,6 @@ pactl info
 cat /tmp/current_sink.ziH8
 pactl list sinks short
 sinkctrl -c
-man snap-sync
 S status backup.service
 S start backup.timer
 S enable backup.timer
@@ -6622,18 +6555,15 @@ sudo  mkinitcpio -P
 pac linux linux-lts
 pac linux linux-lts linux-hardened linux-zen nvidia-dkms
 sudo rm /etc/grub.d/31_hold_shift
-journalctl -r -p warning
 pac grub-customizer
 S edit piavpn.service
 ls /tmp
-echo $EDITOR
 sudo -u root echo $EDITOR
 ls /etc/systemd/system/piavpn.service.d
 ls /etc/systemd/system/piavpn.service.d/override.conf
 v /etc/systemd/system/piavpn.service.d/override.conf
 systemctl daemon-reload
 v /etc/pam.d/system-login
-reboot
 pacr linux-hardened
 sudo pacr linux-hardened
 alias services
@@ -6647,7 +6577,6 @@ ls /etc/modules-load.d
 pac firejail firetools 
 sudo  apparmor_parser -r /etc/apparmor.d/firejail-default\
 
-echo $TERMINAL
 pacr xcfe4-terminal
 sudo pacr xcfe4-terminal
 sudo pacr xfce4-terminal
@@ -6699,27 +6628,20 @@ pacr extra/perl-file-mimeinfo
 sudo pacr extra/perl-file-mimeinfo
 sudo pacr perl-file-mimeinfo
 usb
-udb
 locate pac-snap
 pac pac-snap
 locate snap-pac
 v /etc/snap-pac/root.conf.example
-mnt bb
 S status backup.timer
-vf
 v /etc/snapper/configs/root
-v /etc/snapper/configs/home
-sudo snapper -c home list
 sudo snapper -c root list
 man snap-pac
 ls tmp
 s edit clean-temp-dir.service
 systemctl edit --user --force --full clean-temp-dir.service
-v /etc/systemd/system/backup.service
 systemctl edit --user --force --full clean-temp-dir.timer
 v /etc/systemd/system/backup.timer
 s enable clean-temp-dir.timer
-services
 v .local/share/multimc
 paru minecraft-launcher
 minecraft-launcher
@@ -6727,15 +6649,12 @@ echo $PROMPT
 systemd-analyze blame
 system-backup
 ncdu ./
-vfb
-v bin/system-backup
 v /etc/pacman.d/hooks/boot-backup.hook
 rsync -avzq /boot bb:/data/backups/rob-pc/
 ll home/88/snapshot/rob/
 sudo cp .ssh/config /root/.ssh/
 sudo rsync -avzq --delete /boot bb:/data/backups/rob-pc/
 ll boot
-su
 sufw allow 5353
 pac nss-mdns
 S restart avahi-daemon
@@ -6757,7 +6676,6 @@ pacrepo
 man rsync
 rm carpet-extra-21w07a-1.4.27.jar
 echo $XDG_CONFIG_HOME/
-v .profile
 pacf task
 paru tmuxp
 mkdir .config/tmux
@@ -6781,13 +6699,11 @@ mkbin mimeterm
 nv .aliases
 sxhkd -s $HOME/.cache/sxhkd.fifo
 mkbin mope
-man setfacl
 basename Ableton\ Live\ 10\ Suite\ v10.1.30\ 64\ Bit\ +\ Plugin\ \[Ita\]\ \[Update\ 18\ 11\ 2020\]
 mkbin xterm
 chx bin/*
 tar -c --use-compress-program=pigz -f ableton.tar.gz Ableton\ Live\ 10\ Suite\ v10.1.30\ 64\ Bit\ +\ Plugin\ \[Ita\]\ \[Update\ 18\ 11\ 2020\] 
 ll
-ncdu
 xterm -e .zshrc
 xterm .zshrc
 xterm ~/.zshrc
@@ -6843,22 +6759,16 @@ ls media/nextcloud
 fd . downloads/minecraft/{fabric,forge}/ -e zip -x cp {} /media/nextcloud/Gaming/Minecraft
 ls /media/nextcloud/Gaming/Minecraft
 ls media/nextcloud/Gaming/Minecraft
-btm
 reboot uefi
 systemd-analyze 
 se 
-v bin/mcctrl
 mkbin mcsync
-chx ~/bin/*
 mcsync
-mcsync -m fabric
 mcsync -m 
-mnt nextcloud
 mnt nextcloud && echo true
 mnt nextcloud ; echo true
 mount -h
 mcsync -a
-v bin/mcsync
 ll downloads/minecraft/fabric/*zip
 ll downloads/minecraft/*/*zip
 man zip
@@ -6877,7 +6787,6 @@ cat bin/mimeterm
 cat bin/mope
 rm -rf bin/mimeterm
 mv bin/mope bin/mimeterm
-pbar.sh
 ls /etc
 pacq java
 man ssh
@@ -6892,7 +6801,6 @@ tmux list-sessions
 tmux attach
 man tmux
 v .config/ssh
-v .ssh/config
 mkbin mimeo
 v bin/mimeterm
 which mimeo
@@ -6922,8 +6830,6 @@ rm bin/xdg-terminal
 flameshot 
 flameshot --help
 flameshot launcher
-mimeo --help
-mimeo --assoc-help
 pac perl-file-mimeinfo
 paru xdg-utils-mimeo
 mv bin/xterm tmp
@@ -6951,34 +6857,21 @@ which chronix
 which chronic
 rg 'open' bin
 rm bin/open
-la
-lb
-dotu
-tail -f .xsession-errors
 cp redshift.conf dim.conf
 v dim.conf
 xbacklight -set 50
 killall redshift
 redshift -c .config/redshift/dim.conf 
-start sxhkd
 exit
 cd ~
 realpath
 zsh
-cd
 jobs -l
 fg
-cd -
 echo $HOME
 killall 65034
-fkill
 z
 z mods
-ls
-pwd
-se
-bb
-paru
 sudo pacr linux-hardened-headers-5.11.9.hardened1-1 linux-hardened
 sudo pacr linux-hardened-headers linux-hardened
 sudo pacr linux-hardened-headers 
@@ -6998,9 +6891,363 @@ pacman -Qqe | fzf -d ' '
 pacman -Qqe | fzf --print0
 pacman -Qqe | fzf --print0 | tr "\0" " "
 pacman -Qqe | fzf +m --print0 | tr "\0" " "
-less .xsession-errors
-xprop
-v .zshrc
 pacman -Qqe | fzf -m --print0 | tr "\0" " "
 su
+dotu
+ssh-copy-id rob-laptop
+ssh-copy-id laptop
+ssh-copy-id -f laptop
+pacr jgmenu
+sudo pacr jgmenu
+sudo rm .jgmenu-lockfile
+pkglist
+pac jgmenu
+pac xcape
+man xcape
+setxkbmap -option escape:caps
+setxkbmap -option
+setxkbmap -query
+xcape -e 'Caps_Lock=Escape'
+caps2esc
+caps2esc &
+man sxhkd
+udevadm trigger --subsystem-match=input --action=change
+sudo udevadm trigger --subsystem-match=input --action=change
+v /etc/default/keyboard
+rm /etc/default/keyboard
+sudo rm /etc/default/keyboard
+v bin/caps2esc
+mount /media/ssd
+sudo mount /media/ssd
+sudo umount /media/ssd
+sudo umount /media/blueberry
+mnt bb
+ls /media/blueberry
+bspc config pointer_motion_interval 5
+bspc config pointer_motion_interval 100
+v .ssh/config
+v rob@192.168.2.11
+ssh rob@192.168.2.11
+b
+ssh bb
+infocmp > alacritty.terminfo
+TERM=xterm-256color bb
+echo $ZLS_COLORS
+nvtop
+rm netherite-plus-mod-1.4.2-1.16.5-fabric.jar
+mcsync -m fabric
+aur-pkgs
+man bspwm
+man bspc
+persist --help
+locate sxhkd.service
+systemctl edit --user --force --full sxhkd.service
+s edit sxhkd.service
+v bin/start
+services
+systemctl list-units --type=target
+ systemctl get-default
+systemctl status sxhkd
+v .config/sxhkd/sxhkdrc
+micro .config/sxhkd/sxhkdrc
+echo $ENV
+printenv
+cat /etc/environment
+s enable --now sxhkd.service
+journalctl -r -u sxhkd.service
+journalctl --user -u sxhkd.service
+nvim ~/.config/environment.d/env.conf
+mkdir .config/environment
+mv .config/environment .config/environment.d
+v /home/rob/.config/systemd/user/sxhkd.service
+s daemon-reload
+s status sxhkd.service
+hist
+systemctl --user show-environment
+ls .local/share/fonts
+s start sxhkd.service
+s disable sxhkd.service
+mv .config/environment.d/env.conf tmp
+mv tmp/env.conf .config/environment.d/
+v .config/environment.d/env.conf
+nv .config/environment.d/env.conf
+bin/nv .config/environment.d/env.conf
+which v
+bin/nv /etc/pam.d/system-auth
+echo $EDITOR
+echo $TERMINAL
+rg '$TERMINAL'
+rg --hidden '$TERMINAL'
+rg --hidden '\$TERMINAL'
+nvim /etc/environment
+sudo nvim /etc/environment
+v /etc/environment
+sudo pacdiff
+which pacdiff
+sudo rg fail /etc/pam.d/*
+sudo rg 3 /etc/pam.d/*
+v /etc/pam.d/system-auth
+ssh laptop
+bspc config pointer_motion_interval 20
+rm alacritty.terminfo
+ls .config
+rmr .ssr
+cat .config/Trolltech.conf
+cat .lesshst
+rm .lesshst
+la .config
+piactl --help
+piactl --help | grep connect
+vfm
+s restart sxhkd.service
+systemctl status sxhkd.service
+systemctl --user status sxhkd.service
+journalctl --user -r -u sxhkd.service
+mnt nextcloud
+less /etc/mtab
+rg awk bin
+cat /etc/mtab | awk '{print $1}'
+vifm
+bspc config pointer_motion_interval 50
+bspc config pointer_motion_interval 80
+bspc config pointer_motion_interval 60
+bspc config pointer_motion_interval 75
+man rg
+lb
+ls .config/autostart
+v bin/persist
+rg persist --hidden 
+rg persist 
+rg persist bin
+rg persist .config
+rg persist .config/sxhkd
+xdg-open /media/blueberry/other/takeouts/Google/Other/.hidden/[RKPrime] Kay Carter - I Take the Front, You Take the Back (02.03.2021) rq.mp4
+xdg-open "/media/blueberry/other/takeouts/Google/Other/.hidden/[RKPrime] Kay Carter - I Take the Front, You Take the Back (02.03.2021) rq.mp4"
+mimeo "/media/blueberry/other/takeouts/Google/Other/.hidden/[RKPrime] Kay Carter - I Take the Front, You Take the Back (02.03.2021) rq.mp4"
+ls /srv
+echo $BROWSER
+/bin/bash
+ping archlinux.org
+sufw status
+sufw delete 18
+sufw delete 9
+sufw delete 94
+sufw delete 4
+sufw delete 11
+sufw status numbered
+sufw allow 25565
+sufw allow 25562
+sufw allow 25563
+sufw allow 25564
+S restart NetworkManager
+bin
+v *
+v .zshr
+v bspctl
+scp bb:.config/nvim/init.vim .config/nvim/init.vim 
+sudo snapper -c home list
+vfb
+sudo pacr mbuffer
+reboot
+J -u backup.service
+J -u backup.service -r
+man snap-sync
+v /etc/systemd/system/backup.service
+v bin/system-backup
+snapper list-configs
+snapper -c home list
+ls /home
+la /home
+v /etc/snapper/configs/home
+v bin/mcctrl
+v bin/dockermc
+man setfacl
+rg case .bin
+rg case bin
+v bin/mcsync
+rg shift bin
+v bin/mnt
+rg yn bin
+paru jre-openj9-bin
+paru jdk-openj9-bin jre-openj9
+paru -S jdk-openj9-bin jre-openj9
+paru jdk-openj9-bin 
+sudo pacr jdk-openj9-bin 
+pac jre-openj9
+pac  	jdk8-openjdk
+mkdir Episode{1..6}
+piactl get pubip
+ping pass.rwt13.xyz
+fd -i rar 
+fd -i rar -E txt -E exe
+fd -i rar -E mp4 -E mkv -E srt -E idx
+fd -i rar -E '*.mp4' -E '*.mkv' -E '*.srt' -E '*.idx'
+fd -i rar -E '*.mp4' -E '*.mkv' -E '*.srt' -E '*.idx' -E '*.sub' -X rm {};
+fd -i rar -E '*.mp4' -E '*.mkv' -E '*.srt' -E '*.idx' -E '*.sub'
+bspc config normal_border_color '#505050'
+bspc config normal_border_color '#3d3d3d'
+bspc config normal_border_color '#666666'
+bspc config normal_border_color '#666669'
+bspc config normal_border_color '#404050\
+'
+bspc config normal_border_color '#404050'
+bspc config normal_border_color '#404048'
+.mozilla/firefox/swkflvvd.default-release/
+../kcgegi6h.default
+mv chrome chrome.backup
+mkdir chrome
+git pull https://github.com/rafamadriz/dotfiles.git
+git clone https://github.com/rafamadriz/dotfiles.git
+cd dotfiles
+mv .config/mozifire/chrome/* /home/rob/.mozilla/firefox/swkflvvd.default-release/chrome/
+ll /home/rob/.mozilla/firefox/swkflvvd.default-release/chrome/
+chx ~/bin/*
+ls ~/.config/rofi
+powermenu
+v ~/bin/powermenu
+rm ~/bin/powermenu
+v ~/.zshrc
+man fd
+colored git help clone
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zdharma/zinit.git ~/.config/zsh/zinit/bin
+ls ~/.config/zsh/zinit/bin
+;s
+chrome
+v userColors.css
+v ../user.js
+v userChrome.css
+rmr .config/zsh/antigen
+rmr -f .config/zsh/antigen
+sudo rm -rf .antigen
+udb
+locate antigen
+sudo rm /home/rob/.config/zsh/antigen.zsh
+paru nordic-theme nordic-darker-theme
+paru -S nordic-theme nordic-darker-theme
+sudo pacr nordic-theme nordic-darker-theme
+v .profile
+rm .zinit/ .zcompdump
+rm -rf .zinit/ .zcompdump
+mv local/bin/statusbar ../.local/bin/
+ls config
+ls config/polybar
+mv ../.config/polybar ../.config/polybar.backup
+mv config/polybar/ ../.config/polybar
+ls ../.config/polybar
+../.config/polybar/launch.sh
+v config
+v .config/polybar.backup/config
+ip a
+bspc config top_padding         24
+./.config/polybar/launch.sh
+fkill
+tail -f .xsession-errors
+xrandr
+pbar.sh
+start sxhkd
+xprop
+v materialdark.theme
+ncdu
+local/share/wall
+vw nord.jpg
+wall.sh -U ./nord.jpg
+wall.sh -U ./the-great-wave.png
+.local/bin
+ls statusbar
+v statusbar/upgradepkg
+rm statusbar/upgradepkg
+tmp
+v default.rasi
+mv .config/rofi .config/rofi-bak
+mv dotfiles/config/rofi .config
+v .config/rofi/config.rasi
+rm default.rasi
+grep print dotfiles/config/sxhkd/sxhkdrc 
+grep Print dotfiles/config/sxhkd/sxhkdrc 
+grep -C3 Print dotfiles/config/sxhkd/sxhkdrc 
+grep -C3 Print .config/sxhkd/sxhkdrc 
+sleep 2s && flameshot screen -c
+v config/sxhkd/sxhkdrc
+appmenu
+..
+.local/bin/statusbar
+cd -
+dot
+dotfiles
+rg appmenu
+v local/bin/scripts/appmenu
+./local/bin/scripts/appmenu
+v $HOME/.config/rofi/styles/appmenu.rasi
+mimeo --assoc-help
+mimeo --help
+font-0 = "Overpass:size=15;4"\
+font-1 = "Overpass Nerd Font:size=16;6"\
+
+bspc config top_padding         28
+bspc config top_padding         30
+cat .fehbg
+mv dotfiles/local/share/wall/* pics/backgrounds/abstract
+wall.sh -U pics/backgrounds/abstract/the-great-wave.png 
+thunar pics/backgrounds/abstract/
+v ../config.rasi
+ls -la
+v .bin/persist
+v bin/ncodr
+la
+pwd
+vf
+journalctl -r -b
+less .xsession-errors
+systemctl --user restart sxhkd.service &
+/home/rob/bin/pbar.sh &
+/home/rob/bin/caps2esc &
+jobs
+journalctl -r -p warning
+paru
+cd
+date
+man date
+date +%c
+date +%D
+date +%r
+neofetch
+xcolor
+v .zshrc
+ls -a
+myip
+pac minecraft-launcher
+rm worldedit-bukkit-7.2.0-dist.jar CoreProtect-19.3.jar LuckPerms-Bukkit-5.2.47.jar
+rm AutoCraft.jar assassin-1.2.1.jar
+rm Dynmap-3.1-beta5-spigot.jar
+scp * bb:/opt/dockermc/paper/plugins
+la ~
+cat ~/.als
+cat ~/.alsoftrc
+free
+top
+btm
+bb
+cd android
+unzip taimen-rp1a.201005.004.a1-factory-2f5c4987.zip
+cd taimen-rp1a.201005.004.a1
+adb reboot recovery
+adb devices
+./flash-all.sh
+sudo ./flash-all.sh
+bspc config normal_border_color '#2e3440'
+bspc config active_border_color '#d8dee9'
+bspc config focused_border_color '#d8dee9'
+bspc config active_border_color '#b48ead'
+bspc config normal_border_color '#b48ead'
+bspc config focused_border_color '#eceff4'
+bspc config normal_border_color '#d8dee9'
+bspc config normal_border_color '#4c566a'
+bspc config active_border_color '#4c566a'
+se
+z d
+z default
+ls
+v user.js
+sleep 4 && echo true
 dotu

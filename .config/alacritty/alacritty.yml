@@ -186,7 +186,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x000000'
+    background: '0x101318'
     foreground: '0xEEFFFF'
 
     # Bright and dim foreground colors
@@ -220,7 +220,7 @@ colors:
    red:     '0xF07178'
    green:   '0xC3E88D'
    yellow:  '0xFFCB6B'
-   blue:    '0x82AAFF'
+   blue:    '0x67adf7'
    magenta: '0xC792EA'
    cyan:    '0x89DDFF'
    white:   '0xEEFFFF'
@@ -231,7 +231,7 @@ colors:
    red:     '0xDB6C72'
    green:   '0x97DB84'
    yellow:  '0xE6B965'
-   blue:    '0x7094E0'
+   blue:    '0x67adf7'
    magenta: '0xB682D9'
    cyan:    '0x6BC8ED'
    white:   '0xDAE5E6'
@@ -290,7 +290,7 @@ bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.8
+background_opacity: 0.85
 
 selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

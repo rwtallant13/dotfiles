@@ -17,9 +17,6 @@ super + Escape
 alt + F10
 	notify-send -t 3000 "OBS" "Clip Captured"
 
-# caps lock
-shift + Escape
-	xdotool key Caps_Lock
 
 
 # reload bspwm config file
@@ -36,31 +33,31 @@ super + {_,alt + }a
 	mimeo /home/rob/.{aliases,zshrc}
 
 super + shift + a
-	"$bin"/caps2esc
+	/home/rob/bin/caps2esc
 
 # rofi logout script
 super + BackSpace
-	"$bin"/rofer -l
+	/home/rob/bin/rofer -l
 
 # open files
 super  + space
-	"$bin"/opi -o
+	/home/rob/bin/opi -o
 
 # open dir
 super + alt + f
-	"$bin"/opi -d
+	/home/rob/bin/opi -d
 
 # edit files
 super  + alt + space
-	"$bin"/opi -o /etc /home/rob
+	/home/rob/bin/opi -o /etc /home/rob
 
 # ask opi which dir to search
 super + ctrl + space
-	"$bin"/opi -a
+	/home/rob/bin/opi -a
 
 # copy file name
 super + alt + c
-	"$bin"/opi -c
+	/home/rob/bin/opi -c
 
 # move to blueberry
 super + m
@@ -130,7 +127,7 @@ super + alt + b
 
 # terminal emulator
 {alt,super} + Return
-	chronic /usr/bin/termite
+	chronic /usr/bin/alacritty
 
 # alt terminal emulator
 super + shift + Return
@@ -141,19 +138,15 @@ super + alt + Return
 
 # vim
 super + v
-	/usr/bin/alacritty -e nvim
+	clipmenu -p Copy -i
 
 # Pulseaudio sound manager
 super + p
 	pavucontrol
 
-# clipboard popup
-super + alt + v
-	clipmenu -p Copy -i
-
 # toggle redshift
 super {_,shift + } F1
-	"$bin"/redshift.sh -t /home/rob/.config/redshift/{dim.conf,redshift.conf}
+	/home/rob/bin/redshift.sh -t /home/rob/.config/redshift/{dim.conf,redshift.conf}
 
 ####################
 # Volume Control   #
@@ -161,23 +154,23 @@ super {_,shift + } F1
 ####################
 
 XF86AudioLowerVolume
-	/usr/bin/pamixer -d 2 && "$bin"/sinkctrl -v
+	/usr/bin/pamixer -d 2 && /home/rob/bin/sinkctrl -v
 
 XF86AudioRaiseVolume
-	/usr/bin/pamixer -i 2 && "$bin"/sinkctrl -v
+	/usr/bin/pamixer -i 2 && /home/rob/bin/sinkctrl -v
 
 shift + XF86AudioLowerVolume
-	/usr/bin/pamixer -d 1 && "$bin"/sinkctrl -v
+	/usr/bin/pamixer -d 1 && /home/rob/bin/sinkctrl -v
 
 shift + XF86AudioRaiseVolume
-	/usr/bin/pamixer -i 1 && "$bin"/sinkctrl -v
+	/usr/bin/pamixer -i 1 && /home/rob/bin/sinkctrl -v
 
 XF86AudioMute
-	/usr/bin/pamixer --toggle-mute && "$bin"/sinkctrl -v
+	/usr/bin/pamixer --toggle-mute && /home/rob/bin/sinkctrl -v
 
 # switch audio outputs
 super + Insert
-	"$bin"/sinkctrl -c
+	/home/rob/bin/sinkctrl -c
 
 
 ####################
@@ -188,14 +181,18 @@ super + Insert
 
 #rofi help menu
 control + alt + h
-	"$bin"/bspctl rofi_help
+	/home/rob/bin/bspctl rofi_help
 
-# resize left/right
-super + r : {Left,Right}
-	INC={-10,+10}; bspc node @east -r $INC || bspc node @west -r $INC
-# resize up/down
-super + r : {Down,Up}
-	INC={+10,-10}; bspc node @north -r $INC || bspc node @south -r $INC
+# Smart resize, will grow or shrink depending on location.
+# Will always grow for floating nodes.
+super + ctrl + alt + {Left,Down,Up,Right}
+  n=20; \
+  { d1=left;   d2=right;  dx=-$n; dy=0;   \
+  , d1=bottom; d2=top;    dx=0;   dy=$n;  \
+  , d1=top;    d2=bottom; dx=0;   dy=-$n; \
+  , d1=right;  d2=left;   dx=$n;  dy=0;   \
+  } \
+  bspc node --resize $d1 $dx $dy || bspc node --resize $d2 $dx $dy
 
 
 # close and kill
@@ -255,7 +252,7 @@ super + {_,shift} + i
 
 # receptacle thing
 super + alt + i
-	"$bin"/bspctl receptacle
+	/home/rob/bin/bspctl receptacle
 
 # toggle node states
 super + {F9,F10,F11}
@@ -267,11 +264,11 @@ super + F12
 
 # hide nodes
 super +{_,alt +} h
-	"$bin"/bspctl {_,un}hide
+	/home/rob/bin/bspctl {_,un}hide
 
 # equalize nodes
 super + e
-	"$bin"/bspctl equal
+	/home/rob/bin/bspctl equal
 
 #cycle through nodes
 alt +{_,shift+} Tab

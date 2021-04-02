@@ -33,6 +33,10 @@ set dotdirs=
 " nitems or size shown for directories
 set dirsize=size
 
+" Default sort
+windo set sort=name
+
+
 " Selected color scheme
 colorscheme Default
 
@@ -40,8 +44,8 @@ colorscheme Default
 set timefmt=%m/%d\ %H:%M
 
 " Custom column layout
-windo set viewcolumns=-10.5{size},-{name}..,12{atime}
-""windo set viewcolumns=10{size},-{name}..,15{atime}
+windo set viewcolumns=-85%{name}..,15%{}
+"windo set viewcolumns=-10{},{#|},-{name}..,12{atime}
 
 " Show list of matches on tab completion in command-line mode
 set wildmenu
@@ -75,8 +79,15 @@ set scrolloff=4
 " Set custom status line look
 set statusline="%A %8u:%-7g %5E %15d "
 
+" What should be saved automatically between vifm sessions.
+set vifminfo=dhistory,chistory,tui,dhistory,dirstack,registers,bookmarks
+
 " slowfs for network drives
 set slowfs+=rob@192.168.2.21:/data/
+set slowfs+=bb:/data/
+set slowfs+=https://cloud.rwt13.xyz/remote.php/dav/files/rob/
+
+
 
 
 " ------------------------------------------------------------------------------
@@ -94,23 +105,22 @@ mark t /home/rob/downloads/torrents
 mark e /etc
 
 
-" What should be saved automatically between vifm sessions.
-set vifminfo=dhistory,chistory,tui,dhistory,dirstack,registers,bookmarks
+
+" Edit and reload VIFMRC
+nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
 
 " my basic mappings
-nnoremap <c-f> :fzf<cr>
 nmap q ZZ
 nmap ; :
 nmap ~ 'h
 nnoremap R :restart<cr>
 nmap . za
-map <delete> DD
+nnoremap <delete> :!ls -ald %f; echo -n "remove these files? "; vifm-pause; rm -rf %f<cr>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
-" basics
+nnoremap $ :!$TERMINAL %i &<cr>
 nnoremap ? =
 nnoremap | zR
 nnoremap T tj
@@ -119,29 +129,33 @@ nnoremap s :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 nnoremap o :file &<cr>l
+nnoremap cc cw<c-u>
+map SS :invert o <cr>
+nnoremap <C-a> :%select<cr>
+
+
+" Find Files
+nnoremap <c-f> :fzfind<cr>
+nnoremap <m-c> :fzfhome<cr>
+nnoremap <c-f> :fzf<cr>
+
+set locateprg="fd --hidden | rg -i %a"
+nnoremap // :locate<space>
+
 
 " Tabs
 nnoremap <Insert> :tabnew<cr>
 nnoremap <PageUp> :tabnext<cr>
 nnoremap <PageDown> :tabprev<cr>
 
-
-" invert sorting
-map SS :invert o <cr>
-
 "Custom split commands
 map <C-h> <C-w>s
 map <C-v> <C-w>v
 map <C-s> <C-w>o
 
-
 " remap increment number
 noremap Q <C-a>
 noremap A <C-x>
-
-" select all
-nnoremap <C-a> ggVG<cr>
-
 
 " substitute in all files
 nnoremap ca :%s/
@@ -152,29 +166,20 @@ nnoremap J :jobs<cr>
 " put in background
 nnoremap P :put! &<cr>
 
-" yank current directory path into the clipboard
+
+" ------------------------------------------------------------------------------
+"Clipboard
+
 nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
 
-" yank current file path into the clipboard
 nnoremap yp :!echo -n %c:p | xclip -selection clipboard %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
 
-" yank current filename without path into the clipboard
 nnoremap yn :!echo -n %c | xclip -selection clipboard %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
 
-" yank root of current file's name into the clipboard
 nnoremap yb :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:t') "is yanked to clipboard"<cr>
 
-" yank basename of current file's name into the clipboard
 nnoremap yr :!echo -n %c:r | xclip -selection clipboard %i<cr>:echo expand('%"c:r') "is yanked to clipboard"<cr>
 
-" Mappings for faster renaming
-nnoremap cc cw<c-u>
-
-" Open terminal in current directory
-nnoremap $ :!$TERMINAL %i &<cr>
-
-" Open editor to edit vifmrc and apply settings after returning to vifm
-nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
 
 " F keys remapping
 
@@ -191,19 +196,7 @@ set grepprg='rg %i %a %s'
 
 
 " ------------------------------------------------------------------------------
-" File Defaults
-
-" :com[mand][!] command_name action
-" The following macros can be used in a command
-" %a is replaced with the user arguments.
-" %c the current file under the cursor.
-" %C the current file under the cursor in the other directory.
-" %f the current selected file, or files.
-" %F the current selected file, or files in the other directory.
-" %b same as %f %F.
-" %d the current directory name.
-" %D the other window directory name.
-" %m run the command in a menu window
+" Commands
 
 command! df df -h %m 2> /dev/null
 command! diff vim -d %f %F
@@ -220,11 +213,23 @@ command! fzfhome :execute 'cd "'.system('fd -t d -H -a . $HOME ./ | fzf 2>/dev/t
 
 command! fzfind :set noquickview | :execute 'goto' fnameescape(term('fd . $HOME ./ -H -a | fzf  --height 10 --layout=default 2>/dev/tty'))
 
-nnoremap <c-f> :fzfind<cr>
-nnoremap <m-c> :fzfhome<cr>
-
-
 command findfiles fd . -t f%u
+
+
+" ------------------------------------------------------------------------------
+" File Defaults
+
+" :com[mand][!] command_name action
+" The following macros can be used in a command
+" %a is replaced with the user arguments.
+" %c the current file under the cursor.
+" %C the current file under the cursor in the other directory.
+" %f the current selected file, or files.
+" %F the current selected file, or files in the other directory.
+" %b same as %f %F.
+" %d the current directory name.
+" %D the other window directory name.
+" %m run the command in a menu window
 
 " Open all other defaults
 filetype * xdg-open %f 2>/dev/null 1>&2

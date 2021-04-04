@@ -1,0 +1,19 @@
+configuration {
+	width: 25;
+	lines: 6;
+	font: "Overpass 16";
+	bw: 0;
+	location: 0;
+	padding: 30;
+	yoffset: -100;
+	show-icons: false;
+	eh: 1;
+	separator-style: "solid";
+	hide-scrollbar: true;
+	fullscreen: false;
+	dpi: 96;
+	color-normal: "argb:00000000, #eeeeee, argb:00000000, argb:aa98beff, #eeeeee";
+	color-urgent: "argb:00000000, #eeeeee, argb:00303541, argb:aa98beff, #8e4ceb";
+	color-active: "argb:00000000, #eeeeee, argb:00000000, argb:aa98beff, #8e4ceb";
+	color-window: "argb:aa000000, #cbcbcb, #98beff";
+}

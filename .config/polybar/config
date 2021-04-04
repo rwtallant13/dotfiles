@@ -1,0 +1,251 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = #2e344080
+foreground = #fff
+accent = ${xrdb:color6}
+
+black = ${xrdb:color0}
+grey = ${xrdb:color7}
+red = ${xrdb:color9}
+yellow = ${xrdb:color3}
+green = ${xrdb:color2}
+blue = #005faf
+pink = ${xrdb:color13}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[bar/pbar]
+monitor = ${env:MONITOR:DP-0}
+width = 99%
+height = 24
+offset-x = 0.5%
+offset-y = 0.5%
+radius = 0.0
+fixed-center = true
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = ${colors.accent}
+
+border-size = 2
+border-color = ${colors.blue}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Overpass Nerd Font:size=13;4"
+font-1 = "OverpassMono Nerd Font:size=13;4"
+
+modules-left = spacer bspwm spacer xwindow
+modules-center =
+modules-right = date updates memory pulseaudio
+
+tray-position = ${env:TRAY_POS:none}
+tray-padding = 8
+tray-background = ${colors.background}
+
+wm-restack = bspwm
+
+override-redirect = true
+
+scroll-up = bspwm-deskprev
+scroll-down = bspwm-desknext
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:40:...%
+label-padding = 2
+
+[module/spacer]
+type = custom/text
+content = |
+
+[module/updates]
+type = custom/script
+exec = pacman -Qu | wc -l
+label = %output%
+label-padding = 2
+label-font = 2
+interval = 60
+click-left = upgradepkg
+format-prefix = "  "
+format-background = #d08770
+initial = 1
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = #eceff4
+label-focused-foreground = #2e3440
+label-focused-padding = 2
+label-focused-font = 2
+
+label-occupied = %index%
+label-occupied-background = ${colors.background}
+label-occupied-foreground = #8fbcbb
+label-occupied-underline  = #8fbcbb
+label-occupied-overline   = #8fbcbb
+label-occupied-padding = 2
+label-occupied-font = 2
+
+
+label-urgent = %index%
+label-urgent-background = ${colors.background}
+label-urgent-foreground = #bf616a
+label-urgent-underline  = #bf616a
+label-urgent-overline   = #bf616a
+label-urgent-padding = 2
+label-urgent-font = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.grey}
+label-empty-padding = 2
+label-empty-font = 2
+
+label-separator = |
+
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format-prefix = " "
+format-background = #81a1c1
+label = %percentage%%
+
+
+[module/memory]
+
+type = internal/memory
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 5
+
+
+format = <label>
+format-prefix = " "
+format-background = #88c0d0
+
+label = " %gb_used% "
+label-font = 2
+
+
+
+[module/date]
+type = internal/date
+interval = 1
+
+date =   %r
+date-alt =   %a %b %d %Y
+
+format-background = #434c5e
+
+label = %date%
+label-font = 2
+
+label-padding = 2
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_07_00.6.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 2
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = #5e81ac
+format-volume-padding = 2
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-muted = <label-muted>
+format-muted-prefix = 婢
+format-muted-background = ${colors.yellow}
+format-muted-padding = 2
+
+; Available tokens:
+;   %percentage% (default)
+label-volume = %percentage%%
+label-volume-font = 2
+
+; Available tokens:
+;   %percentage% (default
+label-muted = " Muted"
+label-muted-foreground = ${color.4}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <label>
+format-underline = #f50a4d
+format-warn = <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+label-padding = 2
+
+label-font = 2
+
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini

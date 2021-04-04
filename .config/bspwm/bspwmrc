@@ -11,7 +11,7 @@ bspc config remove_disabled_monitors true
 
 bspc config border_width         2
 bspc config window_gap          10
-bspc config top_padding         30
+bspc config top_padding         32
 bspc config ignore_ewmh_struts true
 bspc config ignore_ewmh_focus  true
 

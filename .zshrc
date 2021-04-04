@@ -30,7 +30,6 @@ ZINIT[ZCOMPDUMP_PATH]="$HOME"/.config/zsh/zinit/
 
 source ~/.config/zsh/zinit/bin/zinit.zsh
 
-zinit ice wait lucid atload'_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting

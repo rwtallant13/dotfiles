@@ -1631,7 +1631,6 @@ sudo mv /etc/pacman.d/mirrorlist.pacnew /etc/pacman.d/mirrorlist
 yay -Syyuu
 date -d "${1:0:10} ${1:11:2}:${1:13:2}"
 sudo pacman -U /home/rob/downloads/ungoogled-chromium-81.0.4044.138-1-x86_64.pkg.tar.xz
-pac chromium
 pac tesseract
 pac tesseract-data-eng
 head -2 .zshrc
@@ -4995,14 +4994,11 @@ sudo service udev restart
 udev-reload
 S restart udev
 fastboot -l devices
-fastboot devices
-sudo fastboot devices
 adb push downloads/android/* sdcard/Download/
 adb sideload
 adb sideload downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip
 sudo adb sideload downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip
 pac mtpfs
-sudo adb devices
 adb push downloads/android/* /data/media
 adb push downloads/android/* /data/
 ls downloads/android/*
@@ -5479,7 +5475,6 @@ mkdir .config/paru
 cp /etc/paru.conf .config/paru
 ll .config/paru/paru.conf
 v .config/paru/paru.conf
-adb reboot bootloader
 z andriod
 z android
 adb push lineage-18.1-20210203-UNOFFICIAL-taimen.zip /sdcard/
@@ -5960,7 +5955,6 @@ bin/rofer -l
 rg .bin 
 rg \.bin 
 rg '.bin'
-rg --help
 rg -F .bin 
 sudo loginctl list-sessions
 sudo loginctl kill-session 5
@@ -6239,7 +6233,6 @@ ls /media
 mv /media/mx100 /media/mx500
 sudo mv /media/mx100 /media/mx500
 ll /media/
-mnt mx500
 fd -h
 find -mtime 30d
 find -mtime 30
@@ -6893,7 +6886,6 @@ pacman -Qqe | fzf --print0 | tr "\0" " "
 pacman -Qqe | fzf +m --print0 | tr "\0" " "
 pacman -Qqe | fzf -m --print0 | tr "\0" " "
 su
-dotu
 ssh-copy-id rob-laptop
 ssh-copy-id laptop
 ssh-copy-id -f laptop
@@ -6990,12 +6982,10 @@ v /etc/pam.d/system-auth
 ssh laptop
 bspc config pointer_motion_interval 20
 rm alacritty.terminfo
-ls .config
 rmr .ssr
 cat .config/Trolltech.conf
 cat .lesshst
 rm .lesshst
-la .config
 piactl --help
 piactl --help | grep connect
 vfm
@@ -7144,7 +7134,6 @@ bspc config top_padding         24
 fkill
 tail -f .xsession-errors
 xrandr
-pbar.sh
 start sxhkd
 xprop
 v materialdark.theme
@@ -7170,7 +7159,6 @@ grep -C3 Print .config/sxhkd/sxhkdrc
 sleep 2s && flameshot screen -c
 v config/sxhkd/sxhkdrc
 appmenu
-..
 .local/bin/statusbar
 cd -
 dot
@@ -7194,7 +7182,6 @@ v ../config.rasi
 ls -la
 v .bin/persist
 v bin/ncodr
-la
 pwd
 vf
 journalctl -r -b
@@ -7204,8 +7191,6 @@ systemctl --user restart sxhkd.service &
 /home/rob/bin/caps2esc &
 jobs
 journalctl -r -p warning
-paru
-cd
 date
 man date
 date +%c
@@ -7213,9 +7198,7 @@ date +%D
 date +%r
 neofetch
 xcolor
-v .zshrc
 ls -a
-myip
 pac minecraft-launcher
 rm worldedit-bukkit-7.2.0-dist.jar CoreProtect-19.3.jar LuckPerms-Bukkit-5.2.47.jar
 rm AutoCraft.jar assassin-1.2.1.jar
@@ -7226,15 +7209,9 @@ cat ~/.als
 cat ~/.alsoftrc
 free
 top
-btm
-bb
 cd android
 unzip taimen-rp1a.201005.004.a1-factory-2f5c4987.zip
-cd taimen-rp1a.201005.004.a1
 adb reboot recovery
-adb devices
-./flash-all.sh
-sudo ./flash-all.sh
 bspc config normal_border_color '#2e3440'
 bspc config active_border_color '#d8dee9'
 bspc config focused_border_color '#d8dee9'
@@ -7244,10 +7221,72 @@ bspc config focused_border_color '#eceff4'
 bspc config normal_border_color '#d8dee9'
 bspc config normal_border_color '#4c566a'
 bspc config active_border_color '#4c566a'
-se
 z d
-z default
-ls
 v user.js
 sleep 4 && echo true
 dotu
+bspc config top_padding         35
+bspc config top_padding         32
+rm open_gapps-arm64-11.0-nano-20210130-TEST.zip
+adb sideload NikGapps-basic-arm64-11-20210130-signed.zip
+sudo fastboot flash boot lineage-18.1-20210402-recovery-taimen.img
+rm NikGapps-basic-arm64-11-20210130-signed.zip
+adb sideload NikGapps-omni-arm64-11-20210130-signed.zip
+sudo ./taimen-rp1a.201005.004.a1/flash-all.sh
+./taimen-rp1a.201005.004.a1/
+rm NikGapps-omni-arm64-11-20210130-signed.zip
+sudo fastboot flash boot twrp-3.5.1_9-0-taimen.img
+cd taimen-rp1a.201005.004.a1
+./flash-all.sh
+sudo ./flash-all.sh
+..
+sudo fastboot flash recovery twrp-3.5.1_9-0-taimen.img
+sudo fastboot boot twrp-3.5.1_9-0-taimen.img
+adb sideload lineage-18.1-20210402-nightly-taimen-signed.zip 
+sudo adb sideload lineage-18.1-20210402-nightly-taimen-signed.zip 
+sudo adb devices
+adb d
+adb push lineage-18.1-20210402-nightly-taimen-signed.zip /sdcard
+adb push MindTheGapps-11.0.0-arm64-20210328_143848.zip /sdcard
+adb reboot sideload
+adb sideload MindTheGapps-11.0.0-arm64-20210328_143848.zip
+la ~/media/nextcloud
+pac chromium
+adb reboot bootloader
+adb devices
+fastboot devies
+fastboot devices
+sudo fastboot devices
+sudo chromium
+sudo chromium --no-sandbox
+mnt mx500
+paru
+pacman -Qu | wc -l
+pbar.sh
+v chrome/userChrome.css
+btm
+myip
+ls .config/polybar.backup
+mv .config/polybar.backup/config .config/polybar/config.backup
+rmr .config/polybar.backup
+ls .config
+rmr .config/jgmenu
+mv .config/rofi-bak/config.rasi .config/rofi/config.rasi.old
+rmr .config/rofi-bak
+la
+la .config
+v .zshrc
+z default
+ls
+rg -i drm user.js
+rg --help
+rg --help | grep -i
+rg --help | grep \-i
+rg --help | grep '-i'
+rg --help | grep '\-i'
+rg -i drm chrome
+rg -i drm chrome/
+cd
+se
+bb
+dotu add .config/rofi/*

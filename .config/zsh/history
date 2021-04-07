@@ -7361,3 +7361,9 @@ v ../user.js
 dots add .mozilla/firefox/swkflvvd.default-release/chrome/*
 dots add .mozilla/firefox/swkflvvd.default-release/user.js
 dotu
+dots --help
+man yadm
+which dots
+man yadm
+yadm rm .config/vifm/vifminfo*
+dotu

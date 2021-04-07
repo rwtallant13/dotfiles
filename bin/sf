@@ -1,0 +1,21 @@
+#!/bin/bash
+
+search="$1"
+
+if [[ $1 ]]; then
+	search="$1"
+else
+	read -p "Enter term to search files for: " -r search
+fi
+
+ret=$(ag "$search" | fzf --query="$search" --color=16)
+file=$(echo "$ret" | cut -d":" -f1)
+line=$(echo "$ret" | cut -d":" -f2)
+
+[[ $file ]] || echo "No File Selected" && exit
+
+if [[ "$EDITOR" = *nvim ]]; then
+	nvim +$line $file
+else
+	nano +$line "$file"
+fi

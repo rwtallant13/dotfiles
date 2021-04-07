@@ -3056,7 +3056,6 @@ yay eclipse
 sudo paccache
 sudo paccache -r
 rm ~/bitwarden_export_20201006141233.csv
-v /etc/systemd/journald.conf
 S enable systemd-journald.service
 factor {2..1000} | awk 'NF==2{print $2}'
 factor {2..1000}
@@ -3136,7 +3135,6 @@ history -h
 history --help
 history yadm
 v .config/systemd/user/yadm.service
-dots-tracked
 chx .bin/dotu
 la .bin/*
 v .bin/set-dpms
@@ -4459,8 +4457,6 @@ v /etc/passwd
 S restart shadow.service
 journalctl -r -u shadow.service
 S status shadow.service
-pacman -Scc
-sudo pacman -Scc
 rmlint
 /home/rob/rmlint.sh -h
 /home/rob/rmlint.sh n
@@ -4858,7 +4854,6 @@ dots add .bin/*
 dots add .mozilla/firefox/ocdc4cz2.default-release/chrome/*
 ls .config/
 dots add .config/vifm/*
-v userContent.css
 pac micro
 micro
 micro .config/micro/settings.json
@@ -4959,7 +4954,6 @@ sudo pacman -Sc
 yay -Sc
 pac linux
 trash-list
-man ncdu
 ncdu -x ./
 fd -t d torrents
 fd -t d torrents -x ls {};
@@ -5122,7 +5116,6 @@ yay yadm
 rm plot.svg
 rg 2 .bin
 mnt -h
-cat .bash_logout
 rmr .bash_logout
 pac mop
 curl -o ticker.sh https://raw.githubusercontent.com/pstadler/ticker.sh/master/ticker.sh
@@ -5486,7 +5479,6 @@ touch --help
 man local
 bspc subscribe node
 bspc subscribe desktop | grep layout
-man read
 bspc subscribe desktop | grep layout | cut -f1- read
 bspc subscribe desktop | grep layout | cut -f1- |read
 man cut
@@ -5526,7 +5518,6 @@ pacu
 pacman -Syyu
 sudo pacman -Syyu
 mclog -a
-man pacman
 ls school
 z school/HLT110
 v InternetResources.txt
@@ -6109,7 +6100,6 @@ S disable obs_cleanup.timer
 systemctl list-unit-files | grep enabled
 less /etc/fstab
 cargo install --git https://github.com/rschmukler/caffeinate
-fzaux
 caffeinate --timer 7200
 sudo snap-sync -r 192.168.2.11
 ssh 192.168.2.11
@@ -6155,7 +6145,6 @@ v .ssh/known_hosts
 sudo ssh rob@192.168.2.21
 snap-sync -r 192.168.2.21 --sudo 
 sudo snap-sync -r 192.168.2.21 --sudo 
-ncdu / -x
 ncdu /home -x
 man 
 sudo snap-sync -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -n -c "root home"
@@ -6310,7 +6299,6 @@ sudo lsbtr
 btrbk ls -L /
 sudo btrbk ls -L /
 lsbkl
-lsblk
 mount -s subvolid=5 /dev/nvme0n1p3 /mnt/btr_pool
 sudo mount -s subvolid=5 /dev/nvme0n1p3 /mnt/btr_pool
 mount
@@ -6324,7 +6312,6 @@ ls /mnt/btr_pool
 ls /mnt/btr_pool/@
 ls /etc/btrbk/ssh
 sudo /usr/bin/btrbk -q -c /etc/btrbk/btrbk.conf run
-btrfs filesystem df /
 sudo pacr btrbk
 sudo snapper delete 1-100000
 sudo snapper delete 1-123
@@ -6502,7 +6489,6 @@ pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
 pactl set-default-sink 41
 pactl info
 cat /tmp/current_sink.ziH8
-pactl list sinks short
 sinkctrl -c
 S status backup.service
 S start backup.timer
@@ -6540,7 +6526,6 @@ v /etc/pacman.d/hooks/grub.hook
 mkinitcpio
 sudo rm -rf /boot/*fallback*
 ls /boot/
-df -h
 ls /boot
 v /etc/mkinitcpio.conf
 v /etc/pacman.d/hooks/nvidia.hook
@@ -6627,7 +6612,6 @@ locate snap-pac
 v /etc/snap-pac/root.conf.example
 S status backup.timer
 v /etc/snapper/configs/root
-sudo snapper -c root list
 man snap-pac
 ls tmp
 s edit clean-temp-dir.service
@@ -6847,7 +6831,6 @@ shortinfo
 cat bin/open
 v bin/mimeo
 which chronix
-which chronic
 rg 'open' bin
 rm bin/open
 cp redshift.conf dim.conf
@@ -6860,7 +6843,6 @@ cd ~
 realpath
 zsh
 jobs -l
-fg
 echo $HOME
 killall 65034
 z
@@ -6877,7 +6859,6 @@ qbittorrent-nox\
 rofi-calc\
 stress\
 valgrind
-man fzf
 pacman -Qqe | fzf --print-query
 pacman -Qqe | fzf --read0
 pacman -Qqe | fzf -d ' ' 
@@ -6936,7 +6917,6 @@ locate sxhkd.service
 systemctl edit --user --force --full sxhkd.service
 s edit sxhkd.service
 v bin/start
-services
 systemctl list-units --type=target
  systemctl get-default
 systemctl status sxhkd
@@ -6966,7 +6946,6 @@ nv .config/environment.d/env.conf
 bin/nv .config/environment.d/env.conf
 which v
 bin/nv /etc/pam.d/system-auth
-echo $EDITOR
 echo $TERMINAL
 rg '$TERMINAL'
 rg --hidden '$TERMINAL'
@@ -7030,7 +7009,6 @@ sufw allow 25562
 sufw allow 25563
 sufw allow 25564
 S restart NetworkManager
-bin
 v *
 v .zshr
 v bspctl
@@ -7053,7 +7031,6 @@ v bin/mcctrl
 v bin/dockermc
 man setfacl
 rg case .bin
-rg case bin
 v bin/mcsync
 rg shift bin
 v bin/mnt
@@ -7091,7 +7068,6 @@ git clone https://github.com/rafamadriz/dotfiles.git
 cd dotfiles
 mv .config/mozifire/chrome/* /home/rob/.mozilla/firefox/swkflvvd.default-release/chrome/
 ll /home/rob/.mozilla/firefox/swkflvvd.default-release/chrome/
-chx ~/bin/*
 ls ~/.config/rofi
 powermenu
 v ~/bin/powermenu
@@ -7103,14 +7079,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/zdharma/zinit.git ~/.config/zsh/zinit/bin
 ls ~/.config/zsh/zinit/bin
 ;s
-chrome
 v userColors.css
-v ../user.js
-v userChrome.css
 rmr .config/zsh/antigen
 rmr -f .config/zsh/antigen
 sudo rm -rf .antigen
-udb
 locate antigen
 sudo rm /home/rob/.config/zsh/antigen.zsh
 paru nordic-theme nordic-darker-theme
@@ -7131,7 +7103,6 @@ v .config/polybar.backup/config
 ip a
 bspc config top_padding         24
 ./.config/polybar/launch.sh
-fkill
 tail -f .xsession-errors
 xrandr
 start sxhkd
@@ -7181,11 +7152,9 @@ thunar pics/backgrounds/abstract/
 v ../config.rasi
 ls -la
 v .bin/persist
-v bin/ncodr
 pwd
 vf
 journalctl -r -b
-less .xsession-errors
 systemctl --user restart sxhkd.service &
 /home/rob/bin/pbar.sh &
 /home/rob/bin/caps2esc &
@@ -7222,9 +7191,7 @@ bspc config normal_border_color '#d8dee9'
 bspc config normal_border_color '#4c566a'
 bspc config active_border_color '#4c566a'
 z d
-v user.js
 sleep 4 && echo true
-dotu
 bspc config top_padding         35
 bspc config top_padding         32
 rm open_gapps-arm64-11.0-nano-20210130-TEST.zip
@@ -7260,24 +7227,15 @@ sudo fastboot devices
 sudo chromium
 sudo chromium --no-sandbox
 mnt mx500
-paru
-pacman -Qu | wc -l
-pbar.sh
 v chrome/userChrome.css
-btm
 myip
 ls .config/polybar.backup
 mv .config/polybar.backup/config .config/polybar/config.backup
 rmr .config/polybar.backup
-ls .config
 rmr .config/jgmenu
 mv .config/rofi-bak/config.rasi .config/rofi/config.rasi.old
 rmr .config/rofi-bak
-la
 la .config
-v .zshrc
-z default
-ls
 rg -i drm user.js
 rg --help
 rg --help | grep -i
@@ -7287,9 +7245,119 @@ rg --help | grep '\-i'
 rg -i drm chrome
 rg -i drm chrome/
 cd
-se
-bb
 dotu add .config/rofi/*
 dots add .config/rofi/*
 dots add .config/polybar/*
+dotu
+dots-tracked
+ls .config
+sudo snapper -c root list
+ncdu /.snapshots
+ncdu / -x
+man ncdu
+ncdu /var
+pacman -Scc
+sudo pacman -Scc
+v /etc/systemd/journald.conf
+ncdu /home
+btrfs filesystem df /
+btrfs filesystem du -sh /
+btrfs filesystem du -s /
+sudo btrfs filesystem du -s /
+btrfs filesystem du --help
+btrfs filesystem --help
+btrfs filesystem usage --help
+btrfs filesystem usage /
+sudo btrfs filesystem usage /
+S restart journalctl
+S restart journald
+services
+journalctl --vacuum-time=20d
+sudo journalctl --vacuum-time=20d
+pacman -Qu | wc -l\
+
+pacman -Qu | wc -l
+paru -Qu 
+la
+cat .bash_logout
+paru -Qu
+paru -SQu
+paru -Sy && paru -Qu
+man pacman
+paru -Sy -q && paru -Qu
+paru -Sy > /dev/null  && paru -Qu
+pactl list-sinks
+pactl list sinks short
+pbar.sh
+lsblk
+df -h
+v .zshrc
+rg '\|\|' bin
+[[ -f ~/.config/sxhkd/sxhkdrc ]] && echo true || echo false
+[[ -f ~/.config/sxhkd/sxhkdrc1 ]] && echo true || echo false
+echo true $([[ -f .config/rgconf&& echo true)
+echo true $([[ -f .config/rgconf ]] && echo true)
+echo true $([[ -f .config/rgconf1 ]] && echo true)
+echo ~/.config/sxhkd/sxhkdrc
+echo true `[[ -f .config/rgconf1 ]] && echo true`
+echo true `[[ -f .config/rgconf ]] && echo true`
+scp bb:~/bin/xsed bin
+chx ~/bin/*
+v bin/xsed
+echo $EDITOR
+fzf --help
+pca ack
+pac ack
+rg case bin
+ack
+which ack
+udb
+locate ack
+locate ack | grep bin
+locate ack | grep bin | grep perl
+/usr/bin/vendor_perl/ack case bin
+pac ag
+paru ag
+pacf ag
+pac community/the_silver_searcher
+time /usr/bin/vendor_perl/ack case bin
+time ag case bin
+echo editor
+fkill
+man fzf
+bin
+rf | fzf --color=16
+rf | fzf --color='hl:8'
+xsed case
+sg
+fg
+man fg
+ig
+mv bin/xsed bin/sf
+sf this
+v bin/sf
+man read
+read --help
+rg read bin
+v bin/ncodr
+sf 
+paru
+sf
+fzaux
+which chronic
+v /usr/bin/chronic
+less .xsession-errors
+tail -f .config/picom/log  
+se
+btm
+bb
+z default
+v user.js
+chrome
+ls
+v userContent.css
+v userChrome.css
+v ../user.js
+dots add .mozilla/firefox/swkflvvd.default-release/chrome/*
+dots add .mozilla/firefox/swkflvvd.default-release/user.js
 dotu

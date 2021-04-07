@@ -22,7 +22,7 @@ window {
     border:							0px;
     border-color:					@ac;
     border-radius:                  0px;
-    width:							33%;
+    width:							28%;
     location:                       center;
     x-offset:                       0;
     y-offset:                       -100;
@@ -62,7 +62,7 @@ listview {
     cycle:                          true;
     background-color:               @al;
     padding:                        10px;
-    lines:                          8;
+    lines:                          6;
     spacing:                        0%;
     dynamic:                        true;
     layout:                         vertical;

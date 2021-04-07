@@ -98,8 +98,7 @@ exec = pacman -Qu | wc -l
 label = %output%
 label-padding = 2
 label-font = 2
-interval = 60
-click-left = upgradepkg
+interval = 1500
 format-prefix = "  "
 format-background = #d08770
 initial = 1
@@ -183,7 +182,7 @@ type = internal/pulseaudio
 
 ; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
 ; If not, uses default sink
-sink = alsa_output.pci-0000_07_00.6.analog-stereo
+;sink = alsa_output.pci-0000_07_00.6.analog-stereo
 
 ; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
 ; Default: true

@@ -154,19 +154,19 @@ super {_,shift + } F1
 ####################
 
 XF86AudioLowerVolume
-	/usr/bin/pamixer -d 2 && /home/rob/bin/sinkctrl -v
+	/usr/bin/pamixer -d 2
 
 XF86AudioRaiseVolume
-	/usr/bin/pamixer -i 2 && /home/rob/bin/sinkctrl -v
+	/usr/bin/pamixer -i 2
 
 shift + XF86AudioLowerVolume
-	/usr/bin/pamixer -d 1 && /home/rob/bin/sinkctrl -v
+	/usr/bin/pamixer -d 1
 
 shift + XF86AudioRaiseVolume
-	/usr/bin/pamixer -i 1 && /home/rob/bin/sinkctrl -v
+	/usr/bin/pamixer -i 1
 
 XF86AudioMute
-	/usr/bin/pamixer --toggle-mute && /home/rob/bin/sinkctrl -v
+	/usr/bin/pamixer --toggle-mute
 
 # switch audio outputs
 super + Insert

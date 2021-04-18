@@ -15,7 +15,7 @@ _dunst(){
 }
 
 _sxhkd(){
-	systemctl --user restart sxhkd.service
+	keepup /usr/bin/sxhkd -s $HOME/.cache/sxhkd.fifo &
 }
 
 _jgmenu(){

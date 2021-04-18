@@ -109,4 +109,4 @@ user_pref("beacon.enabled", false);
 
 user_pref("plugin.scan.plid.all", false);
 user_pref("privacy.resistFingerprinting", true);
-user_pref("media.eme.enabled", false);
+//user_pref("media.eme.enabled", false);

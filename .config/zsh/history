@@ -174,7 +174,6 @@ mv .bin/blocks1 .bin/colorblocks
 mv .bin/panes .bin/colorpanes
 pac hostname
 pac core/inetutils
-hostname
 pacf hostname
 sudo pacr filebot
 ls .java/
@@ -360,10 +359,8 @@ source .zshrc
 echo this is a thing
 echo "this is a thing"
 pac spectrewm
-pac spectrwm
 mkdir -p .config/spectrwm
 cp /etc/spectrwm
-cp /etc/spectrwm.conf .config/spectrwm
 ll .config/spectrwm/spectrwm.conf
 man keepassxc
 keepassxc
@@ -621,7 +618,6 @@ betterlockscreen -r 1920x1080 -u pictures/backgrounds/landscapes/macOS/10-15-2-M
 man betterlockscreen
 rm Ducky\ One\ 2\ SF\ Usermanual.pdf
 unzip nerd-fonts-hack.tar.gz
-which extract
 extract butt
 extract nerd-fonts-hack.tar.gz
 ls nerd-fonts-hack
@@ -713,7 +709,6 @@ pac clipnotify
 pacr dmenu
 sudo pacr dmenu
 ls .b
-bspc quit
 clipmenu -p copy
 sleep 2s && flameshot gui
 less .bin/nv
@@ -1079,7 +1074,6 @@ pac gotop
 less tmux-client-141336.log
 rm tmux-client-141336.log
 atom school/ITE170/finalProject
-ls pics
 ls GPUCache
 less GPUCache/index
 pac xwallpaper
@@ -1220,8 +1214,6 @@ open twerkingbaby.mp4
 rm twerking.mp4
 v itp-cheetsheet.txt
 pac lsd
-pac exa
-exa -a
 flameshot -h
 sleep 3s && flameshot screen
 sleep 3s && flameshot screen -c
@@ -1407,7 +1399,6 @@ sudo vim /etc/ssh/sshd_config
 rm -rf .cache/zsh/zcompdump
 rm -rf GPUCache minecraft_compass
 less .Xauthority
-rm -rf tmp
 v .bin/rofi-scripts
 command=help
 unset command
@@ -1562,7 +1553,6 @@ man xtitle
 xtitle -h
 xtitle ---help
 xtitle --help
-ssh 192.168.2.21 -L 8888:localhost:32400
 rg sed .bin
 dots commit
 dots commit -a
@@ -1706,7 +1696,6 @@ yay vdhcoapp-bin
 pacr vdhcoapp-bin
 sudo pacr vdhcoapp-bin
 v .bin/ocr_sel
-nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=20
 nimv .bin/nv
 nvim .bin/nv
 nv file
@@ -1771,7 +1760,6 @@ systemctl disable --user caps2esc
 v .bin/caps2esc
 dmesg
 man dmesg
-man journalctl
 journalctl -g opotimus
 journalctl -g boondocc
 journalctl --grep="boondoc"
@@ -1801,7 +1789,6 @@ sudo mkdir /boot/EFI/refind/themes/
 ls /boot/EFI/refind/themes/
 v /boot/EFI/refind/refind.conf
 yay xbps-git
-ping google.com
 sudo pacr amidstd
 sudo pacr amidst
 sudo pacr admist
@@ -2141,7 +2128,6 @@ sudo pacr gl-sync-demo
 pac nvidia
 sudo pacr gl-gsync-demo
 rg calc .bin
-ping 192.168.2.21
 aptu
 downloads/torrents/Doom.Patrol.S02.PROPER.WEBRip.x264-ION10
 fd -e srt
@@ -2290,7 +2276,6 @@ xiccd
 colormgr
 locate xiccd.desktop
 colormgr get-devices
-v /etc/X11/xorg.conf
 find /media/blueberry/backups/rob-pc -maxdepth 1 -type d -name \"????-??-??-????\" -prune | sort -r
 find /media/blueberry/backups/rob-pc/ -maxdepth 1 -type d -name \"????-??-??-????\" -prune | sort -r
 find /media/blueberry/backups/rob-pc/ -maxdepth 1 -type d -name \"????-??-??-????\"
@@ -2478,7 +2463,6 @@ less error_log.2020-09-07T03:56:40-04:00.data
 sudo rm -rf rob-pc
 /usr/bin/ssh -t rob@192.168.2.21 tmux new -A ssh
 /usr/bin/ssh -t rob@192.168.2.21 tmux new -A
-sudo pacr transmission-gtk
 sudo ufw status numbered
 sudo ufw remove 5
 sudo ufw delete 5
@@ -2494,7 +2478,6 @@ locate rofi-sensible-terminal
 termite --exec ssh bb
 termite --exec="ssh bb"
 v /usr/bin/rofi-sensible-terminal
-command -v termite
 xfce4-terminal ssh bb
 xfce4-terminal -e ssh bb
 xfce4-terminal --exec ssh bb
@@ -2554,8 +2537,6 @@ ITP132
 v Example\ Erroneous\ Programs.txt
 gcc 16.cpp -o 16
 gcc 16.cpp -lstdc++ -o 16
-v ~/.aliases
-scrot win
 xev -event keyboard
 locate .sw
 man hyperfine
@@ -2638,7 +2619,6 @@ pacr transmission
 sudo pacr transmission
 ssr.sh launch
 flameshot qui
-flameshot gui
 bandwhich
 cpu-speed
 zz
@@ -2787,7 +2767,6 @@ fd RARBG* . -e exe -e txt
 shortinfo JoJo-S04E01-GoldenWind.mp4
 mv downloads/minecraft/BSL_v7.2.zip .minecraft/shaderpacks
 mv downloads/minecraft/SEUS-Renewed-v1.0.1.zip .minecraft/shaderpacks
-compgen -c | fzf
 v /usr/share/fzf/key-bindings.zsh
 eval compgen
 compgen
@@ -2819,7 +2798,6 @@ v 16.cpp
 ./16
 v  ~/.config/gtk-3.0/gtk.css
 find
-lla
 rm netdata-bb.pdf
 rm .config/zhistory_bad
 rm -rf Bitwarden bashtop Mousepad massren transmission compton.conf
@@ -2947,8 +2925,6 @@ sudo mv fz.sh /home/rob/.local/etc/bash_completion.d/
 realpath /home/rob/.local/etc/bash_completion.d/fz.sh
 systemd-analyze time
 open plot.svg
-yay -S ungoogled-chromium
- sudo pacman-key --lsign-key 8A9E14A07010F7E3
 yay -S ungoogled-chromium-bin
 pacman -S chaotic-aur/ungoogled-chromium-bin
 sudo pacman -S chaotic-aur/ungoogled-chromium-bin
@@ -2987,7 +2963,6 @@ sudo ln -s /home/rob/.config/nvim/init.vim /etc/xdg/nvim/sysinit.vim
 reflector --help
 yadm push
 yadm -h
-man yadm
 ls .config/nvim
 ls .config/nvim/nvim.d
 rm -rf .config/nvim/nvim.d
@@ -3105,7 +3080,6 @@ mv ~/pexels-eberhard-grossgasteiger-1303502.jpg ../mountain.jpg
 wall.sh -u pics/backgrounds/landscapes/mountain.jpg
 mv ~/macos ./
 sleep 5s && flameshot full
-flameshot
 flameshot full -c
 sleep 5s && flameshot full -c
 ls current
@@ -3234,11 +3208,9 @@ less pacreport.txt
 paccache
 paccache -h
 man pacreport
-ls /usr/share/pixmaps
 realpath /usr/share/pixmaps/big-sur-8-top.jpg
 betterlockscreen -r 1920x1200 -u /usr/share/pixmaps/big-sur-8-top.jpg
 ncdu pics
-mnt
 cd Season4
 fd ~/downloads/torrents -e mkv
 fd . ~/downloads/torrents -e mkv
@@ -3288,7 +3260,6 @@ v .config/rgconf
 rg appendpath /etc
 less .xsession-errorsq
 pacf /etc/profile
-v /etc/profile
 vim
 v .config/vifm/colors/Default.vifm
 v .config/vifm/vifmrc
@@ -3619,8 +3590,6 @@ ip
 tail -f .xsession-errors\\
 v .bin/pbar.sh
 journalctl -xe NM_CONNECTION=78d739f7-09c2-4577-8199-b6cdc561902b + NM_DEVICE=enp0s25
-ls /etc/NetworkManager/system-connections
-sudo ls /etc/NetworkManager/system-connections
 sudo rm /etc/NetworkManager/system-connections/US_East.nmconnection
 sudo ls /etc/NetworkManager/system-connections/US_East.nmconnection
 vpn-toggle Canada_Toronto
@@ -3646,7 +3615,6 @@ rmr .avidemux6
 pac wireguard
 pac wireguard-tools wireguard-dkms
 yay networkmanager-wireguard
-less .xsession-errors.old
 ls .bin/nullify
 mkdir Season{01..22}
 for i in 01..22; echo $i; done
@@ -3686,7 +3654,6 @@ start obs
 obs --profile Default
 pac simplescreenrecorder
 mkdir -p $XDG_CONFIG_HOME/simplescreenrecorder/
-l
 fd -d 1
 sudo rm -rf 2020-10-28-123936 2020-10-28-124441 2020-10-28-124654 2020-10-28-124929
 simplescreenrecorder
@@ -3875,7 +3842,6 @@ wall.sh -u pics/backgrounds/macOS/ColorBurst2-tall.jpg
 sudo rm blurred_*
 sudo rm big-sur-*
 sudo rm 10-1*
-v .fehbg
 downloads/minecraft
 ls *.heic
 mkdir downloads/pics
@@ -3903,18 +3869,16 @@ multimc -l -h
 multimc -l 1.16.4
 archlinux-java status
 rmr .local/share/multimc
-journalctl -r
 v /opt/piavpn/etc/settings.json
 feh --bg-scale pics/backgrounds/macOS/ColorBurst2.jpg
 feh --no-fehbg --bg-scale '/home/rob/pics/backgrounds/macOS/ColorBurst2-tall.jpg'
 kill -9 picom
 man picom
 pkill -9 picom
-picom --experimental-backends -b
 kill -6 picom
 pkill -6 picom
 start pbar
-pactree -r 
+pactree -r
 pactree -r fd
 pactree fd
 ll /etc/shadow
@@ -3922,8 +3886,8 @@ locate chk_p
 locate chk
 ll /usr/bin/unix_chkpwd
 rmr Takeout javasharedresources
-unzip downloads/minecraft/takeout-20201112T194436Z-001.zip 
-rmr Takeout 
+unzip downloads/minecraft/takeout-20201112T194436Z-001.zip
+rmr Takeout
 man docker-compose
 less ./.fehbg
 wall.sh
@@ -3944,7 +3908,7 @@ yay -S --rebuild picom-git
 yay --rebuild picom-git
 pkill picom
 pac  xcompmgr
-unoconv -f pdf school/ITE221/10\ -\ Pheripheral\ Devices.pptx 
+unoconv -f pdf school/ITE221/10\ -\ Pheripheral\ Devices.pptx
 school/ITE221/10\ -\ Pheripheral\ Devices.pptx
 school/ITE221/
 open 10\ -\ Pheripheral\ Devices.pptx
@@ -3952,7 +3916,6 @@ open 10\ -\ Pheripheral\ Devices.pdf
 yay microsoft-edge-dev-bin
 sudo tail -f /var/log/syslog
 rm ~/.config/picom/log
-less .config/picom/log
 killall start
 less ~/.config/picom/log
 tail -f ~/.config/picom/log
@@ -3965,8 +3928,8 @@ heif-convert CatalinaSilhouette.heic CatalinaSilhouette.jpg
 mks persist
 fd $HOME -H -a -t d -t l
 z | cut -f2
-z | cut -d' ' -f2 
-z | cut -d'\t' -f2 
+z | cut -d' ' -f2
+z | cut -d'\t' -f2
 z | awk ${print 2}
 z | awk {print $2}
 z | awk '{print $2}'
@@ -4037,12 +4000,10 @@ cd /media/blueberry/media/movies
 cd shows
 cd /media/mx100
 cd .config
-cd /etc
 jc
 autojump --help
-autojump --complete 
+autojump --complete
 man autojump
-j
 j --stat
 /home/rob/.bin/start picom dunst nm-applet dpms obs polkit pia-client
 nm-applet
@@ -4050,7 +4011,7 @@ fd movies -i rar
 fd movies . -i rar
 fd -i rar movies -E mkv
 fd -i rar movies -E mkv -E mp4
-fd -i rar movies -e 
+fd -i rar movies -e
 fd -i rar movies
 fd -i rar movies | wc -l
 find -iname rar
@@ -4060,9 +4021,8 @@ fd rarbg.txt -e rm {}
 fd rarbg.txt -E rm {}
 fd rarbg.txt --exec rm {}
 fd rarbg.txt
-fd '.' -t d --min-depth 1 
+fd '.' -t d --min-depth 1
 fd  -t d --min-depth 1  '.'
-fd  -t d --min-depth 1 '\.'
 fd  -t d --min-depth 1 '\.' | qmv
 man qmv
 fd  -t d --min-depth 1 '\.' | qmv -i
@@ -4075,9 +4035,9 @@ fd  -t d --min-depth 1 '\.' | vidir
 man vidir
 vidir --help
 fd  -t d --min-depth 1 '\.' | vidir -
-fd  -t d --min-depth 1 '\.' 
-fd  --min-depth 1 '\.' 
-fd  --min-depth 1 '264' 
+fd  -t d --min-depth 1 '\.'
+fd  --min-depth 1 '\.'
+fd  --min-depth 1 '264'
 fd  --min-depth 1 '264' | vidir -
 xcompmgr -c -l0 -t0 -r0 -o.00
 less docs/important/pword
@@ -4099,30 +4059,26 @@ realpath .bin/dpms.sh
 rmr .bin/start
 logout
 persist "picom --experimental-backends" &
-rg persist
 rg -H persist
 rg -h persist
 rg --hidden "persist picom"
 yay picom-tryone-git
-fd --help
-fd . $HOME ./ 
+fd . $HOME ./
 ssh root@192.168.2.41
 ssh -vvv pi
-less .config/picom/log 
+less .config/picom/log
 ll .config/picom/log
 rm .config/picom/log
-unoconv -f pdf school/ITE221/11\ -\ Computer\ OS\ Functions\ I.pptx 
-unoconv -f pdf school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pptx 
-open school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pdf 
+unoconv -f pdf school/ITE221/11\ -\ Computer\ OS\ Functions\ I.pptx
+unoconv -f pdf school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pptx
+open school/ITE221/12\ -\ Computer\ OS\ Functions\ II.pdf
 pac newsboat
 btm --theme
 btm -h
 btm --color --help
 btm --color default-light
 btm --color gruvbox
-btm 
 picom
-picom --experimental-backends 
 ls /var/cache/pacman/pkg/qt
 ls /var/cache/pacman/pkg/qt*
 pacman -U /var/cache/pacman/pkg/qt5-base-5.15.2-1-x86_64.pkg.tar.zst
@@ -4146,14 +4102,13 @@ ls /home/rob/.local/share/data/qBittorrent/
 sudo rm -rf /home/rob/.local/share/data/qBittorrent/
 pacr transmission-gtk tranmission-cli
 sudo pacr transmission-gtk tranmission-cli
-sudo pacr transmission-gtk 
+sudo pacr transmission-gtk
 sudo pacr transmission-cli
 wall.sh -U pics/backgrounds/macOS/ColorBurst5-tall.jpg
 ndu $media/shows/
 fd pword
 rm docs/important/pword
 lr docs
-lr
 touch receipts/"this test thing.txt"
 ls receipts
 which remove_spaces
@@ -4183,7 +4138,6 @@ rm git
 rmr git
 y
 rm gad
-systemd-analyze
 locate qbittorrent.desktop
 locate qbittorrent
 v /usr/share/applications/org.qbittorrent.qBittorrent.desktop
@@ -4211,10 +4165,9 @@ zsh --version
 shortinfo Tenet.mkv
 du -h
 [[ -e "$HOME"/.config/zsh/antigen.zsh ]] && \\
-   source "$HOME"/.config/zsh/antigen.zsh || curl -L git.io/antigen > "$HOME"/.config/zsh/antigen.zsh 
+   source "$HOME"/.config/zsh/antigen.zsh || curl -L git.io/antigen > "$HOME"/.config/zsh/antigen.zsh
 sudo pacr autojump-rs
 fzp
-fzpkgs 
 antigen bundle zsh-users/zsh-syntax-highlighting
 sudo pacr $(fzpkgs )
 fzpac
@@ -4222,7 +4175,7 @@ less .zshrc.zwc
 mv .antigen .config/antigen
 mv .config/antigen .config/zsh
 echo ${(o)color}
-sudo rmr microsoft-edge-dev vidcutter transmission nwg-launchers plex.tv LosslessCut 
+sudo rmr microsoft-edge-dev vidcutter transmission nwg-launchers plex.tv LosslessCut
 rmr .zshrc.zwc /home/rob/.config/zsh/antigen/*.zwc
 ls /home/rob/.config/zsh/antigen/*.zwc
 locate zwc
@@ -4260,7 +4213,6 @@ yay -S - < /home/rob/docs/pacman-pkgs
 ls /etc/etc
 mv /etc/etc/* /etc
 sudo mv -f /etc/etc/* /etc/
-man mv
 sudo mv -f /etc/etc/ /etc/
 realpath PKGBUILD
 cd yay
@@ -4271,12 +4223,11 @@ pacman -Syy
 sudo pacman -Syy
 pacman-key --init
 yay -S - < ../docs/pacman-pkgs
-v 
 v docs/pacman-pkgs
 pacman -S - < ../docs/pacman-pkgs
 sudo pacman -S - < docs/pacman-pkgs
 v /etc/pacman.d/gnupg/gpg.conf
-sudo rm -rf /etc/pacman.d/gnupg 
+sudo rm -rf /etc/pacman.d/gnupg
 sudo pacman --init
 sudo pacman-keys --init
 sudo pacman-key --init
@@ -4290,7 +4241,7 @@ pac lua
 S enable --now NetworkManager
 sudo rm /etc/pam.d/i3lock
 unzip --help
-unzip downloads/Overpass.zip 
+unzip downloads/Overpass.zip
 mkdir overpass
 mv Overpass* overpass
 sudo mv overpass /usr/share/fonts
@@ -4314,7 +4265,7 @@ sudo chown -R rob:rob /media
 umount -a
 mount -a
 uid
-id 
+id
 ll /media/mx100
 sudo umount /media/mx100
 pac sshfs
@@ -4405,7 +4356,6 @@ fd -e mp4
 fd -e mkv | wc -l
 fd  | wc -l
 fd -t f | wc -l
-fd -t f 
 fd -e png
 fd -e png -x rm {}
 fd -t f -X mv ./
@@ -4414,9 +4364,7 @@ fd -t f -x mv {} ./
 man mkdir
 mkszn 22
 ndu $media/movies
-ssh root@192.168.2.21
 man ssh-copy-id
-ssh-copy-id root@192.168.2.21
 /home/rob/.bin/rsync_backup.sh / root@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt
 last-backup
 grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-12-09-142948.log'
@@ -4437,10 +4385,9 @@ start picom &
 /home/rob/.bin/start picom &
 persist picom --experimental-backends
 killall picom
-rmr LosslessCut microsoft-edge-dev nwg-launchers plex.tv QtProject transmission vidcutter 
+rmr LosslessCut microsoft-edge-dev nwg-launchers plex.tv QtProject transmission vidcutter
 pac rmlint
 rmlint -h
-rmlint 
 v /home/rob/.config/rmlint.json
 v /etc/shadow
 journalctl -u shadow.service
@@ -4462,7 +4409,7 @@ rmlint
 /home/rob/rmlint.sh n
 sudo find / -xtype l -print
 sudo find /home -xtype l -print -
-sudo find /home -xtype l -print 
+sudo find /home -xtype l -print
 rmr .steam
 ls .steam
 journalctl -p 3 -xb
@@ -4531,11 +4478,11 @@ sudo pacr nvidia-dkms wireguard-dkms
 pacu nvidia nvidia-lts wireguard wireguard-lts
 pacu nvidia nvidia-lts wireguard-tools wireguard-lts
 mv downloads/bitwarden_export_20201214180450.json docs/important/
-rm docs/important/bitwarden_export_20200806143919.csv 
+rm docs/important/bitwarden_export_20200806143919.csv
 pia-client --help
 piactl client
-yay -S chromium 
-yay -S ungoogled-chromium 
+yay -S chromium
+yay -S ungoogled-chromium
 pacman -Syu
 sudo pacman -Syu
 pacr ungoogled-chromium
@@ -4545,7 +4492,7 @@ sudo pacman -U /var/cache/pacman/pkg/re2-1:20201101-1-x86_64.pkg.tar.zst
 pf
 pfetch
 pacq ungoogled-chromium
-pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst 
+pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst
 man pacman.conf
 ls school/other
 mv school/other school/todo
@@ -4564,8 +4511,7 @@ adb sideload /home/rob/downloads/twrp-installer-3.4.0-1-taimen.zip
 adb push downloads/proton-aosp_taimen_11.3.0-gapps.zip /sdcard
 adb push downloads/proton-aosp_taimen_11.3.0-gapps.zip /
 adb push downloads/twrp-installer-3.4.0-1-taimen.zip /sdcard
-docker ps
-sudo pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst 
+sudo pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst
 filecount .cache
 mkdir ~/.local/share/pki/
 mv .pki/nssdb/ ~/.local/share/pki/
@@ -4580,8 +4526,6 @@ mv .java/fonts /home/rob/.config/java
 ls /home/rob/.config/java
 ls .cert
 start pia
-start pia-client
-fd -e mkv -X mv {} ./ ;
 mkszn 6
 dirname
 dirname docs
@@ -4595,24 +4539,20 @@ ls /var/cache/pacman/pkg/linux-*
 ls /var/log/pacman.log
 less /var/log/pacman.log
 less -R /var/log/pacman.log
-man less
 yay -S qt5-styleplugins --rebuild
 yay -S --rebuild qt5-styleplugins
-qbittorrent
 yay ungoogled-chromium
 pacman -Sc
 pacr steam
 sudo pacr steam
 alias pacr
 fzpacr
-cd ..
-rmr plexmediaplayer task Valve\ Corporation epiphany flatpak autojump calcurse Colossal\ Order cod Meltytech nemo autojump* mc 
+rmr plexmediaplayer task Valve\ Corporation epiphany flatpak autojump calcurse Colossal\ Order cod Meltytech nemo autojump* mc
 ls G
-rmr kvibes 
+rmr kvibes
 ls data
 la data
 ls composer
-fd
 pac plocte
 pac plocate
 S enable plocate-updatedb.service
@@ -4640,7 +4580,7 @@ locate DS_Store
 killall -9 bleachbit
 sudo bleachbit
 bleachbit
-rmr bleachbit lf epiphany matplotlib rmlint.* 
+rmr bleachbit lf epiphany matplotlib rmlint.*
 filecount .local
 filecount .local/share
 filecount projects
@@ -4667,7 +4607,7 @@ rg -C3 case .bin
 echo /media/blueberry/media/shows
 hue
 hue --help
-mvmedia show downloads/torrents/The\ Batman\ DVDrip\ Xvid\ Complete\ Series\ 2004-2008 
+mvmedia show downloads/torrents/The\ Batman\ DVDrip\ Xvid\ Complete\ Series\ 2004-2008
 man bash
 pacman p -Qo i3
 pacman -Qo i3
@@ -4680,7 +4620,7 @@ mv .ssr/* .config/simplescreenrecorder
 rmr test
 la .cache
 killall sxhkd
-ll vids/bankai-or-rasengan-2020-12-28_14.06.31.mp4 
+ll vids/bankai-or-rasengan-2020-12-28_14.06.31.mp4
 echo $DESKTOP_SESSION
 sudo pacman -Sy xorg-xrandr feh cronie
 sudo pacman -Sy  cronie
@@ -4737,9 +4677,8 @@ grep -E 'rsync:|rsync error:' '/home/rob/docs/logs/rsync_backup/2020-12-30-01455
 watch time
 watch date
 yay bitwarden
-pac apcupsd 
+pac apcupsd
 S enable --now apcupsd.service
-man hdparm
 find dark
 fd dark
 nnn -C -T a
@@ -4773,13 +4712,13 @@ sudo smartctl -A /dev/sdd
 diskinfo /dev/sdd
  sudo pacman-key --keyserver hkp://keyserver.ubuntu.com -r 3056513887B78AEB 8A9E14A07010F7E3
  sudo pacman-key --lsign-key 3056513887B78AEB
- sudo pacman-key --lsign-key 8A9E14A07010F7E3 
+ sudo pacman-key --lsign-key 8A9E14A07010F7E3
 alias udev-reload
 S stop backup.timer
 timers
 less .bin/start
 xset -h
-xset dpms force off 
+xset dpms force off
 mks monctl
 xset dpms force standby
 xset dpms force suspend
@@ -4789,15 +4728,15 @@ v .bin/ncodr
 v .bin/reboot
 scrot -h
 v .bin/scrot
-scrot 
+scrot
 man eval
-vw pics/scrots/scrot_2021-01-03-14-08-46.png 
+vw pics/scrots/scrot_2021-01-03-14-08-46.png
 man maim
 man tee
-scrot win 
+scrot win
 scrot screen
 scrot screen save
-vw pics/scrots/scrot_2021-01-03-14-27-18.png 
+vw pics/scrots/scrot_2021-01-03-14-27-18.png
 vw pics/scrots/scrot_2021-01-03-14-28-23.png
 rm tee -g1920x1080+1920+120 +%F-%H-%M-%S\)\".png
 rm tee \-g1920x1080+1920+120 +%F-%H-%M-%S\)\".png
@@ -4816,10 +4755,8 @@ bash -s -- stable
 locate chrome
 fd -t d chrome
 fd -t d -H chrome
-fd -t d 
 fd -t d -H
 fd -t d -H | grep chrome
-cat .fdignore
 ls .mozilla/firefox/ocdc4cz2.default-release/chrome/userChrome.css
 v .mozilla/firefox/ocdc4cz2.default-release/chrome/userChrome.css
 v .mozilla/firefox/ocdc4cz2.default-release/chrome/parts/urlbar.css
@@ -4844,15 +4781,14 @@ bspc node --state "~"pseudo_tiled
 chown rob:rob *
 sudo chown rob:rob *
 man cp
-cp -b .config/vifm/colors/Default.vifm 
+cp -b .config/vifm/colors/Default.vifm
 locate *.bak
-mkbak .config/vifm/colors/Default.vifm 
+mkbak .config/vifm/colors/Default.vifm
 ls .config/vifm/colors/Default.vifm
 ls .config/vifm/colors/Default.vifm*
 yadm upgrade
 dots add .bin/*
 dots add .mozilla/firefox/ocdc4cz2.default-release/chrome/*
-ls .config/
 dots add .config/vifm/*
 pac micro
 micro
@@ -4864,7 +4800,7 @@ mv bspscripts bspctl
 v extract_canvas
 v induce_rules
 bspc wm -d
-bspc wm -d > .config/bspwm/extract_canvas 
+bspc wm -d > .config/bspwm/extract_canvas
 chx .config/bspwm/extract_canvas
 ll .config/bspwm/extract_canvas
 ll .config/bspwm/
@@ -4895,16 +4831,14 @@ sudo cat /etc/modules-load.d/*
 sysctl -a | grep NV
 sysctl -a | grep watchdog
 sysctl -a | grep Preserve
-sudo sysctl -a
 sudo sysctl -a | grep Preserve
 sudo sysctl -a | grep nvidia
 mv /etc/modprobe.d/nowatchdog.conf /etc/modprobe.d/blacklist.conf
 sudo mv /etc/modprobe.d/nowatchdog.conf /etc/modprobe.d/blacklist.conf
 ls /etc/modprobe.d/
 cat /etc/modprobe.d/*
-sudo 
 sudo sysctl -a | grep Nvidia
-sudo sysctl -a 
+sudo sysctl -a
 sudo sysctl -a | grep watchdog
 v /etc/modprobe.d/nvidia.conf
 modinfo nvidia
@@ -4923,22 +4857,16 @@ yay bottom
 fd . downloads projects
 fd . downloads projects | less
 fd . downloads docs | less
-S status lightdm
 journalctl -u lightdm
-journalctl -u lightdm -r
 S start lightdm
 ls .cache/
 autoload -Uz compinit && compinit -i -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 ls "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
-mkdir .cache/zsh
 ls .zcompcache
-man compinit
 echo  $ZSH_CACHE_DIR\
 echo $XDG_CACHE_HOME
 rm -r .zcompcache
-ls .cache/zsh
 v /etc/vimrc
-nv
 sudo nv
 v /etc/modprobe.d/blacklist.conf
 sudo rm /etc/modprobe.d/blacklist.conf
@@ -4960,7 +4888,6 @@ fd -t d torrents -x ls {};
 v docs/backup_exclude.txt
 scp docs/important/backup-peach-2021-01-11.tar.gz peach:/tmp
 xfce4-terminal
-dig youtube.com
 mkdir {1,2,3}
 pac gsmartcontrol
 mnt mx100
@@ -4998,7 +4925,6 @@ adb push downloads/android/* /data/
 ls downloads/android/*
 adb push downloads/android/* /sdcard
 fastboot boot downloads/android/twrp-3.5.0_9-0-taimen.img
-adb shell 
 v docs/important/bitwarden_recovery_code.txt
 ls docs/important/
 shortinfo AvengersAgeofUltron.mp4
@@ -5008,8 +4934,8 @@ fd -e sub -x ls -lh {};
 fd -I android
 ls downloads/android
 ll downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip
-fastboot boot downloads/twrp-3.4.0-1-taimen.img 
-sudo fastboot boot downloads/twrp-3.4.0-1-taimen.img 
+fastboot boot downloads/twrp-3.4.0-1-taimen.img
+sudo fastboot boot downloads/twrp-3.4.0-1-taimen.img
 adb push downloads/android/lineage-18.1-20210107-UNOFFICIAL-taimen.zip /tmp
 adb push downloads/android/open_gapps-arm64-10.0-micro-20210116.zip /tmp
 downloads/android
@@ -5044,9 +4970,8 @@ qbittorrent --help
 adb push Magisk-* /sdcard
 sudo ufw allow 51413
 ln -s /media ./media
-mkdir media 
+mkdir media
 ln -s /media/* media
-ls 
 source .profile
 fd blueberry
 cd media/blueberry
@@ -5075,7 +5000,7 @@ pw-cli dump | grep sound
 pw-cli dump short all
 pw-cli dump  Device
 pw-cli
-pw-cli set-param 
+pw-cli set-param
 pw-cli set-param 41 device.product.name "Nvidia"
 man pw-cli
 man 2 pw-cli
@@ -5200,7 +5125,7 @@ v /etc/login.defs
 v /etc/pam.d/login
 sudo rg fail /etc/pam.d
 sudo rg fail /etc/pam.d/system-auth
-rg faildelay /etc/pam.d/ 
+rg faildelay /etc/pam.d/
 rg faildelay /etc/pam.d/*
 sudo rg faildelay /etc/pam.d/*
 ps -o user $(pgrep Xorg
@@ -5208,7 +5133,6 @@ ps -o user $(pgrep Xorg)
 sudo groupadd -r autologin
 sudo gpasswd -a rob autologin
 cat .dmrc
-v /etc/lightdm/lightdm.conf
 /home/rob/.bin/start picom dunst nm-applet dpms polkit pia-client
 /home/rob/.fehbg\
 v /home/rob/.fehbg
@@ -5231,7 +5155,6 @@ dyn-wall-rs -d /home/rob/pics/backgrounds/dynamic -p betterlockscreen
 dyn-wall-rs -h
 v ~/.config/dyn-wall-rs/config.toml
 dyn-wall-rs -c
-dyn-wall-rs 
 S enable dyn-wall-rs.service
 locate udb
 locate dyn-wall-rs.service
@@ -5240,26 +5163,23 @@ systemctl --user enable dyn-wall-rs.service
 systemctl --user status dyn-wall-rs.service
 which dyn-wall-rs
 v $HOME/.config/systemd/user/dyn-wall-rs.service
-systemctl --user daemon-reload
 systemctl --user start dyn-wall-rs.service
 feh --no-fehbg  --bg-fill 'pics/backgrounds/macOS/Dome-2-dragged.jpg'
 systemctl --user start --now dyn-wall-rs.service
 dyn-wall-rs
-rm .config/systemd/user/dyn-wall-rs.service 
+rm .config/systemd/user/dyn-wall-rs.service
 cat .bin/op
 cat .bin/open
 rm .bin/trimvid
 rm .bin/nmvpn
 v .bin/autowall
-ll pics/backgrounds/dynamic 
-ls pics/backgrounds/dynamic 
-man ls
-ls -1 pics/backgrounds/dynamic 
+ll pics/backgrounds/dynamic
+ls pics/backgrounds/dynamic
+ls -1 pics/backgrounds/dynamic
 wall.sh -U pics/backgrounds/macOS/Dome-2-dragged.jpg
-feh --bg-scale pics/backgrounds/macOS/Dome-2-dragged.jpg 
-feh --no-fehbg --bg-scale pics/backgrounds/macOS/Dome-2-dragged.jpg 
+feh --bg-scale pics/backgrounds/macOS/Dome-2-dragged.jpg
+feh --no-fehbg --bg-scale pics/backgrounds/macOS/Dome-2-dragged.jpg
 ls .fehbg
-./.fehbg
 cat ./.fehbg
 feh --no-fehbg '/home/rob/pics/backgrounds/macOS/Dome-2-dragged.jpg'
 feh --no-fehbg --bg-fill '/home/rob/pics/backgrounds/macOS/Dome-2-dragged.jpg'
@@ -5267,26 +5187,26 @@ pics/backgrounds
 feh --no-fehbg --bg-fill 'macOS/Tree-2-dragged.jpg '
 realpath 'macOS/Tree-2-dragged.jpg '
 feh --no-fehbg --bg-fill /home/rob/pics/backgrounds/macOS/Tree-2-dragged.jpg
-feh --no-fehbg --bg-fill macOS/Peak-2-dragged.jpg 
-feh --no-fehbg --bg-fill macOS/Big_Sur_Night_Succulents.jpg 
-feh --no-fehbg --bg-fill macOS/Big_Sur_Shore_Rocks.jpg 
-feh --no-fehbg --bg-fill macOS/Wave.jpg 
-feh --no-fehbg --bg-fill macOS/Wave-1.jpg 
-feh --no-fehbg --bg-fill macOS/Mac-Pro-macOS-Catalina-Wallpaper.jpg 
-feh --no-fehbg --bg-fill macOS/iMacPro2.png 
-feh --no-fehbg --bg-fill macOS/Iridescence-2.jpg 
+feh --no-fehbg --bg-fill macOS/Peak-2-dragged.jpg
+feh --no-fehbg --bg-fill macOS/Big_Sur_Night_Succulents.jpg
+feh --no-fehbg --bg-fill macOS/Big_Sur_Shore_Rocks.jpg
+feh --no-fehbg --bg-fill macOS/Wave.jpg
+feh --no-fehbg --bg-fill macOS/Wave-1.jpg
+feh --no-fehbg --bg-fill macOS/Mac-Pro-macOS-Catalina-Wallpaper.jpg
+feh --no-fehbg --bg-fill macOS/iMacPro2.png
+feh --no-fehbg --bg-fill macOS/Iridescence-2.jpg
 sudo pacr re2
-feh --no-fehbg --bg-fill macOS/Wave-2.jpg 
-feh --no-fehbg --bg-fill macOS/Big_Sur_Night_Grasses.jpg 
-feh --no-fehbg --bg-fill macOS/MBA2020.png 
-feh --no-fehbg --bg-fill macOS/Light\ Stream\ Pink.JPG 
-feh --no-fehbg --bg-scale macOS/Light\ Stream\ Pink.JPG 
-feh --no-fehbg --bg-scale macOS/Dome-2-dragged.jpg 
-feh --no-fehbg --bg-fill macOS/Dome-2-dragged.jpg 
+feh --no-fehbg --bg-fill macOS/Wave-2.jpg
+feh --no-fehbg --bg-fill macOS/Big_Sur_Night_Grasses.jpg
+feh --no-fehbg --bg-fill macOS/MBA2020.png
+feh --no-fehbg --bg-fill macOS/Light\ Stream\ Pink.JPG
+feh --no-fehbg --bg-scale macOS/Light\ Stream\ Pink.JPG
+feh --no-fehbg --bg-scale macOS/Dome-2-dragged.jpg
+feh --no-fehbg --bg-fill macOS/Dome-2-dragged.jpg
 back
 backgrounds
 mv lr abstract
-wall.sh -U pics/backgrounds/abstract/alpha-cloud-1920Ãƒ·1200.jpg 
+wall.sh -U pics/backgrounds/abstract/alpha-cloud-1920Ãƒ·1200.jpg
 mv alpha-cloud-1920Ãƒ·1200.jpg alpha-cloud-right
 mv alpha-cloud-right alpha-cloud-right.jpg
 mogrify -format png *.jpg
@@ -5295,17 +5215,17 @@ vw alpha-cloud-left.jpg
 rm Appearance_*
 rm *.jpg
 man feh
-feh --bg-fill pics/backgrounds/abstract/alpha-cloud-left.png --bg-fill pics/backgrounds/abstract/alpha-cloud-right.png 
-feh --bg-fill pics/backgrounds/abstract/alpha-cloud-right.png --bg-fill pics/backgrounds/abstract/alpha-cloud-left.png 
+feh --bg-fill pics/backgrounds/abstract/alpha-cloud-left.png --bg-fill pics/backgrounds/abstract/alpha-cloud-right.png
+feh --bg-fill pics/backgrounds/abstract/alpha-cloud-right.png --bg-fill pics/backgrounds/abstract/alpha-cloud-left.png
 rm alpha-cloud-*
 feh --bg-fill alpha-cloud-rotate.png
 feh --bg-fill alpha-cloud.png
-wall.sh -U pics/backgrounds/abstract/generated-v.png 
-wall.sh -U pics/backgrounds/abstract/mtfuji.jpg 
-wall.sh -U pics/backgrounds/abstract/Sweet-S5.png 
-wall.sh -U pics/backgrounds/abstract/Sweet-S4.png 
-wall.sh -U pics/backgrounds/abstract/Sweet-space.png 
-pac svg2png 
+wall.sh -U pics/backgrounds/abstract/generated-v.png
+wall.sh -U pics/backgrounds/abstract/mtfuji.jpg
+wall.sh -U pics/backgrounds/abstract/Sweet-S5.png
+wall.sh -U pics/backgrounds/abstract/Sweet-S4.png
+wall.sh -U pics/backgrounds/abstract/Sweet-space.png
+pac svg2png
 yay svg2png
 pac cairosvg
 yay cairosvg
@@ -5315,7 +5235,7 @@ ls downloads
 rmr downloads/Design\ *
 wall.sh -U thing.png
 mv thing.png pics/backgrounds/abstract/source.png
-wall.sh -U pics/backgrounds/abstract/Infinity-Plasma.jpg 
+wall.sh -U pics/backgrounds/abstract/Infinity-Plasma.jpg
 wall.sh -U pics/backgrounds/abstract/source.png
 fd . $HOME -t d -H -a $HOME ./
 fd . $HOME -t d -H -a ./ $HOME
@@ -5326,7 +5246,6 @@ open Study\ Guide\ -\ Exam\ 1.doc
 yay-pkgs
 pac davfs2
 mkdir /media/nextcloud
-sudo mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /media/nextcloud
 mkdir ~/.davfs2
 cp  /etc/davfs2/secrets ~/.davfs2/secrets
 sudo cp  /etc/davfs2/secrets ~/.davfs2/secrets
@@ -5335,8 +5254,8 @@ sudo chown rob:rob ~/.davfs2/secrets
 chmod 600 ~/.davfs2/secrets
 mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /media/nextcloud rob Sp8ceisEndle55
 sudo mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /media/nextcloud rob Sp8ceisEndle55
-sudo mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /media/nextcloud 
-sudo mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /home/rob/media/nextcloud 
+sudo mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /media/nextcloud
+sudo mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /home/rob/media/nextcloud
 v .davfs2/secrets
 sudo groupadd -r network
 sudo gpasswd -a rob network
@@ -5353,12 +5272,11 @@ v /etc/ssh/config
 v /etc/ssh/_config
 v /etc/ssh/ssh_config
 v .ssh/id_rsa
-v /etc/ssh/sshd_config
 mv media ext
 sensors
 bspc -r
 bspc wm -r
-./.config/bspwm/autostart.sh 
+./.config/bspwm/autostart.sh
 bspc config ignore_ewmh_struts true
 bspc config top_padding         10
 bspc config top_padding         18
@@ -5388,9 +5306,8 @@ ticker.sh
 ticker.sh GME
 yay ticker
 rm .bin/ticker.sh
-ticker
 ticker -w ETH
-ticker 
+ticker
 v .config/ticker.yaml
 pacf vipe
 pac moreutils
@@ -5460,7 +5377,6 @@ mv downloads/minecraft/Enhanced\ Default\ v1.12.zip .minecraft/shaderpacks
 xrandr | grep connected
 which mclog
 mclog
-bb 
 yay paru
 pacr yay
 sudo pacr yay
@@ -5483,7 +5399,7 @@ bspc subscribe desktop | grep layout | cut -f1- read
 bspc subscribe desktop | grep layout | cut -f1- |read
 man cut
 bspc subscribe desktop | grep layout | cut -d' ' -f4 |read
-bspc subscribe desktop | grep layout | cut -d' ' -f4 
+bspc subscribe desktop | grep layout | cut -d' ' -f4
 bspc subscribe desktop | grep layout | cut -d' ' -f 3
 ls /etc/mtab
 v /etc/mtab
@@ -5521,9 +5437,9 @@ mclog -a
 ls school
 z school/HLT110
 v InternetResources.txt
-feh --bg-fill downloads/simplePlanet.webp 
-mv downloads/simplePlanet.webp pics/backgrounds/abstract/ 
-wall.sh -U pics/backgrounds/abstract/simplePlanet.webp 
+feh --bg-fill downloads/simplePlanet.webp
+mv downloads/simplePlanet.webp pics/backgrounds/abstract/
+wall.sh -U pics/backgrounds/abstract/simplePlanet.webp
 pac libwebp
 cd pics/backgrounds/abstract
 ll source.png
@@ -5532,7 +5448,7 @@ du simplePlanet.webp
 pac picom
 z hlt
 for i in *.ppt; do unoconv -f pdf "$i"; done
-rmr Bitwarden dyn-wall-rs Nextcloud Popcorn-Time 
+rmr Bitwarden dyn-wall-rs Nextcloud Popcorn-Time
 gsmartcontrol
 sudo pacr gsmartcontrol
 rmr gsmartcontrol
@@ -5555,11 +5471,8 @@ sudo reflector --latest 10 --country US --protocol https --sort rate --save /etc
 rofi --help | grep font
 rofi -font "Overpass 24"
 rofi -font "Overpass 24" -show run
-ssh peach
 scp laptop:pics/backgrounds/abstract/simplePlanet.png pics/backgrounds/abstract
-wall.sh -U pics/backgrounds/abstract/simplePlanet.png 
 start nm-applet
-start picom
 monctl dpms
 /home/rob/.bin/sinkctrl -r -d
 v .minecraft/options.txt
@@ -5570,8 +5483,7 @@ pac multimc
 ls downloads/minecraft
 ./downloads/minecraft/OptiFine_1.16.4_HD_U_G5.jar
 java -jar downloads/minecraft/OptiFine_1.16.4_HD_U_G5.jar
-ls downloads/minecraft/
-thunar downloads/minecraft/OptiFine_1.16.4_HD_U_G5_MOD.jar 
+thunar downloads/minecraft/OptiFine_1.16.4_HD_U_G5_MOD.jar
 thunar downloads/minecraft/
 thunar .minecraft
 thunar downloads/minecraft
@@ -5603,7 +5515,6 @@ for file in find . -type f ; do\
 	path="${file%/*}"\
 echo $path $ext\
 done
-bash
 sudo pacr nvidia
 nano
 sudo
@@ -5653,12 +5564,12 @@ bspc subscribe desktop
 ls /usr/share/icons/*/16x16/legacy
 ls /usr/share/icons/
 man moreutils
-rg termite 
+rg termite
 whicih jgmenu
 which jgmenu
 rm .node_repl_history
 rm .yarnrc
-/usr/bin/jgmenu --at-pointer -vsimple 
+/usr/bin/jgmenu --at-pointer -vsimple
 chronic /usr/bin/jgmenu --at-pointer --hide-on-startup --simple
 rm .jgmenu-lockfile
 fkil
@@ -5671,7 +5582,6 @@ chronic firefox --incognito
 firefox --help
 firefox --private-window
 chronic firefox --private-window
-se /etc
 cat /sys/firmware/efi/fw_platform_size
 ls /etc/pacman.d/hooks
 ls /etc/pacman.d/hooks/nvidia.hook
@@ -5707,8 +5617,8 @@ locate ofi.desktop
 ofi
 opi
 opi -o
-rg opi .config/sxhkd/sxhkdrc 
-rg -C2 opi .config/sxhkd/sxhkdrc 
+rg opi .config/sxhkd/sxhkdrc
+rg -C2 opi .config/sxhkd/sxhkdrc
 ls /home/rob/.local/share/applications/
 rm /home/rob/.local/share/applications/chromium.desktop
 v /home/rob/.local/share/applications/ofi.desktop
@@ -5765,14 +5675,14 @@ sudo ufw allow 21211
 pac strawberry
 sudo pacr strawberry
 extract se
-extract downloads/telegram/sampler.tar 
+extract downloads/telegram/sampler.tar
 man tar
-rm moc_waveform.cpp moc_window.cpp 
+rm moc_waveform.cpp moc_window.cpp
 rm *.o
 rm *.h
 rm *.wav
 rm *.md
-rmr sampler* pc* Makefile src include examples 
+rmr sampler* pc* Makefile src include examples
 .bin
 v wall.sh
 ls ~
@@ -5785,7 +5695,6 @@ rmr sampler
 extract ~/downloads/telegram/sampler.tar
 sampler
 make install
-make 
 cat Makefile
 make
 ./sampler
@@ -5828,7 +5737,6 @@ obs --startreplaybuffer
 frm
 vrm
 shortinfo *
-shortinfo 
 shortinfo -l
 shortinfo -s
 shortinfo -l ./
@@ -5837,25 +5745,22 @@ sudo pacr minecraft-launcher
 \cp -TRv .minecraft /home/rob/.local/share/multimc/instances/1.16.5/.minecraft/
 pacr rsnapshot
 sudo pacr rsnapshot
-cat tmp| sort
-v tmp2 
+v tmp2
 mv tmp\! tmp
 cat tmp2| sort > tmp
-cat tmp| sort 
+cat tmp| sort
 cat tmp| sort > tmp2
 pacu linux linux-lts
 ld downloads/torrents
 ls downloads/torrents
 paru linux linux-lts
 paru -S linux linux-lts
-ssh pi
 paru -S f2
 mkdir docs/bars
 aureport
 man aureport
 pacr replay-sorcery-git
 sudo pacr replay-sorcery-git
-mkdir tmp
 yay
 pac linux-lts-headers
 cat /sys/block/sdX/../../../../../../idVendor
@@ -5873,7 +5778,6 @@ paru noto
 media/
 pac pipewire
 sudo rm -rf /opt/piavpn/
-ping youtube.com
 man paru
 sudo rm -rf /etc/NetworkManager/conf.d/wgpia.conf /usr/local/bin/piactl /usr/share/applications/piavpn.desktop /usr/share/pixmaps/pia.png
 paru -S piavpn-bin
@@ -5895,9 +5799,8 @@ pactl list short sinks| wc -l
 pactl list short sinks
 pactl list --help
 pactl list sink-inputs,
-pactl list sink-inputs
 pactl list sink-inputs | grep index
-pactl list sink-inputs 
+pactl list sink-inputs
 pactl list sink-inputs | grep "Sink Input"
 pactl list sink-inputs | grep "Sink Input" | cut -f2 -d'#'
 pactl move-sink-input 62 43
@@ -5915,13 +5818,12 @@ pamixer --list-sources | grep hdmi | cut -d' ' -f1
 pamixer --list-sources
 pamixer --list-sources | grep hdmi
 pactl list-sinks | grep '*' -A60 | grep 'device.description' | cut -d '=' -f 2 | tr -d \"
-pactl list-sinks | grep '*' -A60 | grep 'device.description' 
+pactl list-sinks | grep '*' -A60 | grep 'device.description'
 pactl list sinks | grep '*' -A60 | grep 'device.description' | cut -d '=' -f 2 | tr -d \"
-pactl list sinks 
 pactl list sinks | grep default
 pactl list sinks | grep Default
 pactl stat
-pactl list sinks | grep -A1 alsa_output.usb-Logitech_PRO_X_000000000000-00.analog-stereo 
+pactl list sinks | grep -A1 alsa_output.usb-Logitech_PRO_X_000000000000-00.analog-stereo
 pactl list sinks | grep -A1 "Name: $sink" |grep "Description:" |cut -f2 -d' '
 time sinkctrl -v
 pactl list sinks | grep -A1 "Name: alsa_output.usb-Logitech_PRO_X_000000000000-00.analog-stereo" |grep "Description:" |cut -f2 -d' '
@@ -5943,10 +5845,10 @@ rofer
 bin/rofer
 bin/rofer --help
 bin/rofer -l
-rg .bin 
-rg \.bin 
+rg .bin
+rg \.bin
 rg '.bin'
-rg -F .bin 
+rg -F .bin
 sudo loginctl list-sessions
 sudo loginctl kill-session 5
 sudo loginctl kill-session 7
@@ -5965,7 +5867,7 @@ cat check-
 cat check-swap
 alacritty vifm
 alacritty -e vifm
-alacritty -e vifm downloads/minecraft/forge 
+alacritty -e vifm downloads/minecraft/forge
 cd downloads/minecraft/forge
 rm OptiFine_1.16.4_HD_U_G5_MOD.jar
 sufw allow 25569
@@ -5973,7 +5875,7 @@ sufw reload
 killall dunst
 sudo pacr element
 sudo pacr element-desktop
-qbittorrent 
+qbittorrent
 qbittorrent -v
 qbittorrent -vv
 thunar
@@ -5982,7 +5884,6 @@ pacman -Syu < docs/pacman-pkgs
 sudo pacman -Syu < docs/pacman-pkgs
 nano docs/pacman-pkgs
 sudo pacman -S $(cat docs/pacman-pkgs)
-S enable lightdm
 ls /root
 sudo ls /root
 sudo mv /root/paru ./
@@ -6028,7 +5929,6 @@ pac alacritty
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \\
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ls .config/nvim/autoload
-nvim
 sudo ln -sf /home/rob/.config/nvim /root/.config/nvim
 nano /etc/xdg/nvim/sysinit.vim
 cp -R .config/nvim/autoload /etc/xdg/nvim/
@@ -6037,13 +5937,9 @@ ls .local/share/nvim/site/autoload/plug.vim
 nvim --version
 v $VIM/sysinit.vim
 nano $VIM/sysinit.vim
-ls /etc/xdg/nvim
 sudo cp -R .config/nvim/plugged /etc/xdg/nvim/
 sudo v
-v .config/nvim/init.vim
-v /etc/xdg/nvim/sysinit.vim
 sudo nvim
-v /etc/lightdm/lightdm-gtk-greeter.conf
 wall.sh -U pics/backgrounds/abstract/simplePlanet.png
 sudo ln -s /home/rob/.zshrc /root
 sudo unlink /root/.zshrc
@@ -6054,7 +5950,6 @@ btrfs check
 btrfs filesystem du
 btrfs filesystem du --gbytes
 btrfs filesystem du --gbytes /
-btrfs filesystem df
 umount /.snapshots
 v /etc/mkinitcpio.d/linux-lts.preset
 pac stress
@@ -6069,7 +5964,6 @@ pac pv
 mount /dev/sda1 /mnt
 sudo mount /dev/sda1 /mnt
 ls /mnt/EFI
-ls /boot/EFI
 sudo cp /mnt/EFI/Microsoft /boot/EFI/
 sudo cp -r /mnt/EFI/Microsoft /boot/EFI/
 umount /mnt
@@ -6107,13 +6001,10 @@ sudo snap-sync -r bb
 sudo snap-sync -r blueberry
 ssh
 ssh-keygen
-sudo ssh-keygen
 rm -rf y*
-sudo ssh-keygen 
-sudo ssh-copy-id rob@192.168.2.21
+sudo ssh-keygen
 sudo snap-sync -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a
 ssh bbroot
-ssh rob@192.168.2.21
 rmr docs/logs/rsync_backup
 umount media/nextcloud
 cat bin/autolock
@@ -6132,21 +6023,16 @@ sudo mkdir {blueberry,rob-pc,rob-laptop}
 pac ofono
 hue_ui
 efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | sed s/.$//
-efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 
-sudo snap-sync 
 sudo snap-sync -h
 systemctl edit snapper-timeline.service
-S edit snapper-timeline.service 
+S edit snapper-timeline.service
 sudo snapper -c home create -c timeline --description FirstHomeBackup
 snapper -c home create -c timeline --description FirstHomeBackup
 snap-sync
-sudo snap-sync -r 192.168.2.21
-v .ssh/known_hosts
-sudo ssh rob@192.168.2.21
-snap-sync -r 192.168.2.21 --sudo 
-sudo snap-sync -r 192.168.2.21 --sudo 
+snap-sync -r 192.168.2.21 --sudo
+sudo snap-sync -r 192.168.2.21 --sudo
 ncdu /home -x
-man 
+man
 sudo snap-sync -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -n -c "root home"
 sudo rm -rf /media/blueberry/backups/rob-pc/*
 snapper delete 28
@@ -6180,22 +6066,19 @@ systemctl status backup.service
 S enable backup.service
 systemctl status backup.timer
 v bin/s
-echo $FZF_DEFAULT_OPTS
 ls -l .Xauthority
 chmod 0600 ~/.Xauthority
 echo $XAUTHORITY
-reboot windows
 v bin/reboot
 efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2
-efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | 
-efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 
+efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 |
+efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1
 efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr '*' ''
 efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr -d '*'
 efibootmgr | grep linux | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr -d '*'
 efibootmgr | grep GRUb | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr -d '*'
 efibootmgr | grep G | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr -d '*'
 efiboot
-efibootmgr
 systemd-analyze critical-chain
 btrfs qgroup show /
 sudo btrfs qgroup show /
@@ -6211,18 +6094,16 @@ v etc/conf.d/minecraft
 ([[ ! "./.zshrc" ]] || [[ ! -f "./.zshrc" ]]) && echo true || echo false
 v /etc/conf.d/minecraft
 /etc
-v
 ~
 nvim bin/nv
 v /etc
 sudoedit /etc/pacman.conf
-mnt 
+mnt
 mnt ssd
 ls /media
 mv /media/mx100 /media/mx500
 sudo mv /media/mx100 /media/mx500
 ll /media/
-fd -h
 find -mtime 30d
 find -mtime 30
 find -mtime +30
@@ -6263,14 +6144,11 @@ sudo pacr nbted
 paru nbted
 nbted 7fa4497c-7f1d-4636-a0f7-380bbba4f93b.dat
 rm 7fa4497c-7f1d-4636-a0f7-380bbba4f93b.dat
-locate snap-sync
-ls .cache
 snapper  list -t single
 snapper -c home delete 107
 snapper -c root delete 107
 sudo snap-sync -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -c "root home"
 sudo snap-sync
-sudo snap-sync -r 192.168.2.21  -c "root home"
 paru btrbk
 locate btrbk*conf*
 locate btrbk
@@ -6292,8 +6170,6 @@ sudo ssh-copy-id -i /etc/btrbk/ssh/id_rsa root@192.168.2.21
 pac mbuffer
 paru mbuffer
 v /etc/btrbk/btrbk.conf
-btrfs subvolume list /
-sudo btrfs subvolume list /
 lsbtr
 sudo lsbtr
 btrbk ls -L /
@@ -6318,8 +6194,8 @@ sudo snapper delete 1-123
 ls /.snapshots
 sudo snapper -c home delete 1-123
 sudo snapper -c home delete 1-84
-snap-sync -r 192.168.2.21 
-sudo snap-sync -r 192.168.2.21 
+snap-sync -r 192.168.2.21
+sudo snap-sync -r 192.168.2.21
 pacr hdparm
 pac hdparm
 hdparm -Tt /dev/nvme0n1
@@ -6329,7 +6205,7 @@ grep true $(echo true)
 echo true|grep true
 rm .tmux.conf
 tmux kill-server
-tmux new-session minecraft 
+tmux new-session minecraft
 ls /etc/conf.d/snapper
 v /etc/conf.d/snapper
 ls .local/share/multimc/instances/Forge/.minecraft/mods
@@ -6370,7 +6246,7 @@ hwclock --systohc
 sudo hwclock --systohc
 fd -t d -x zip {} {/}.zip;
 fd -t d -d 1 -x zip {} {/}.zip;
-zip armored\ elytra\ v1.0.3 
+zip armored\ elytra\ v1.0.3
 fd -t d -d 1 -x zip  {/}.zip {};
 find . -name "* *" -type f | /usr/bin/vendor_perl/rename s/
 which rename
@@ -6381,7 +6257,7 @@ do\
     mv "$file" "${file//[[:space:]]}"\
 done
 rmspaces
-ls | grep v 
+ls | grep v
 ls downloads/minecraft/forge
 thunar downloads/minecraft/datapacks
 ls downloads/minecraft/datapacks
@@ -6389,7 +6265,7 @@ which rmspaces
 downloads
 minecraft/bukkit
 /opt/piavpn/bin/
-start 
+start
 cat bin/start
 sudo systemctl disable NetworkManager-wait-online.service
 S disable ufw.service
@@ -6403,7 +6279,7 @@ v /etc/modprobe.d/nowatchdog.conf
 v /etc/sysctl.d/80-nowatchdog.conf
 ufw status
 sufw enable now
-sufw enable 
+sufw enable
 S enable ufw.service
 sudo ufw status
 systemctl --failed
@@ -6421,29 +6297,23 @@ ls Generation.S01E0*
 renamesubs
 pac hstr
 paru hstr
-hstr
 hstr -h
 hstr .config/zsh/history
 export HISTFILE=~/.config/zsh/history
-hstr 
+hstr
 wdctl
 alacritty -e nv ~/bin/nv
-v /etc/fstab
-fkill 
 pipewire-pulse --help
-pipewire-pulse 
+pipewire-pulse
 pw-cli --help
-systemctl --user restart pipewire.service
 shu[F
-shutdown now
 journalctl -r -p err
 pactl
 pactl exit
-systemctl --user restart pipewire-pulse.service
 pac strace
 strace -f -o /tmp/pipe.txt pactl info
 sudo strace -f -o /tmp/pipe.txt pactl info
-snapper rollback 
+snapper rollback
 journalctl -r -p warn
 S status pipewire
 systemctl --user restart pipewire
@@ -6456,7 +6326,6 @@ sudo rfkill unblock 1
 s status pipewire-pulse
 s status pipewire
 less +F /var/log/pacman.log
-pacdiff
 sudo mv /etc/pipewire /tmp
 pac pipewire pipewire-pulse pipewire-media-session
 ls /etc/pipewire
@@ -6477,13 +6346,13 @@ pactl list k
 pactl list | grep default
 pactl list | grep Default
 pactl -h
-pactl list 
+pactl list
 pactl list sinks
 pamixer -h
 pamixer ---list-sinks
 pamixer --list-sinks
 pactl info | grep "Default Sink"
-pactl set-default-sink 
+pactl set-default-sink
 pactl set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo
 pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
 pactl set-default-sink 41
@@ -6491,9 +6360,7 @@ pactl info
 cat /tmp/current_sink.ziH8
 sinkctrl -c
 S status backup.service
-S start backup.timer
 S enable backup.timer
-sudo snap-sync -q -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -n -c "root home"
 ncdu -x /
 journalctl -r -u backup.service
 journalctl -r -u backup.timer
@@ -6519,14 +6386,12 @@ chmod a+x /etc/grub.d/31_hold_shift
 sudo chmod a+x /etc/grub.d/31_hold_shift
 v /etc/default/grub-btrfs/config
 asd
-journalctl -r 
 pacr nvidia nvidia-lts
 sudo pacr nvidia nvidia-lts
 v /etc/pacman.d/hooks/grub.hook
 mkinitcpio
 sudo rm -rf /boot/*fallback*
 ls /boot/
-ls /boot
 v /etc/mkinitcpio.conf
 v /etc/pacman.d/hooks/nvidia.hook
 sudo  mkinitcpio -P
@@ -6535,7 +6400,6 @@ pac linux linux-lts linux-hardened linux-zen nvidia-dkms
 sudo rm /etc/grub.d/31_hold_shift
 pac grub-customizer
 S edit piavpn.service
-ls /tmp
 sudo -u root echo $EDITOR
 ls /etc/systemd/system/piavpn.service.d
 ls /etc/systemd/system/piavpn.service.d/override.conf
@@ -6552,7 +6416,7 @@ cat /sys/kernel/security/lsm
 lsmod
 lsmod | grep nvidia
 ls /etc/modules-load.d
-pac firejail firetools 
+pac firejail firetools
 sudo  apparmor_parser -r /etc/apparmor.d/firejail-default\
 
 pacr xcfe4-terminal
@@ -6568,7 +6432,6 @@ mimeopen .zshrc
 mimeopen --ask
 mimeopen --ask .zshrc
 which mimeopen
-alacritty nvim
 alacritty -h
 alacritty -e nvim
 v bin/sinkctrl
@@ -6610,14 +6473,11 @@ locate pac-snap
 pac pac-snap
 locate snap-pac
 v /etc/snap-pac/root.conf.example
-S status backup.timer
 v /etc/snapper/configs/root
 man snap-pac
-ls tmp
 s edit clean-temp-dir.service
 systemctl edit --user --force --full clean-temp-dir.service
 systemctl edit --user --force --full clean-temp-dir.timer
-v /etc/systemd/system/backup.timer
 s enable clean-temp-dir.timer
 v .local/share/multimc
 paru minecraft-launcher
@@ -6626,7 +6486,6 @@ echo $PROMPT
 systemd-analyze blame
 system-backup
 ncdu ./
-v /etc/pacman.d/hooks/boot-backup.hook
 rsync -avzq /boot bb:/data/backups/rob-pc/
 ll home/88/snapshot/rob/
 sudo cp .ssh/config /root/.ssh/
@@ -6640,16 +6499,12 @@ avahi-browse -tl _workstation._tcp
 v /etc/hosts
 avahi-browse --all --ignore-local --resolve --terminate
 avahi-browse --all  --resolve --terminate
-S restart sshd
 ssh blueberry.local
-ssh blueberry
 ssh rob@blueberry.local
 rm -rf .minecraft
 ls .parallel
 discord
 which pacrepo
-v /etc/pacman.d/mirrorlist
-pacrepo
 man rsync
 rm carpet-extra-21w07a-1.4.27.jar
 echo $XDG_CONFIG_HOME/
@@ -6674,13 +6529,11 @@ cat /usr/share/icons/default/index.theme
 sudo rm  /etc/systemd/system/obs_cleanup.*
 mkbin mimeterm
 nv .aliases
-sxhkd -s $HOME/.cache/sxhkd.fifo
 mkbin mope
 basename Ableton\ Live\ 10\ Suite\ v10.1.30\ 64\ Bit\ +\ Plugin\ \[Ita\]\ \[Update\ 18\ 11\ 2020\]
 mkbin xterm
 chx bin/*
-tar -c --use-compress-program=pigz -f ableton.tar.gz Ableton\ Live\ 10\ Suite\ v10.1.30\ 64\ Bit\ +\ Plugin\ \[Ita\]\ \[Update\ 18\ 11\ 2020\] 
-ll
+tar -c --use-compress-program=pigz -f ableton.tar.gz Ableton\ Live\ 10\ Suite\ v10.1.30\ 64\ Bit\ +\ Plugin\ \[Ita\]\ \[Update\ 18\ 11\ 2020\]
 xterm -e .zshrc
 xterm .zshrc
 xterm ~/.zshrc
@@ -6688,7 +6541,6 @@ xterm 'nvim ~/.zshrc'
 xterm nvim ~/.zshrc
 xterm -e nvim ~/.zshrc
 pacf xdg-terminal
-mkbin
 mkbin xdg-terminal
 xdg-terminal --help
 pac i3-sensible-terminal
@@ -6705,8 +6557,6 @@ pac html2pdf
 pacf html2pdf
 paru html2pdf
 sudo pacr html2pdf
-rmorphans
-paru -Sc
 pacf wkhtmltopdf
 pac wkhtmltopdf
 wkhtmltopdf https://1337x.to/torrent/4685854/Ableton-Live-10-Suite-v10-1-30-64-Bit-Plugin-Ita-Update-18-11-2020/#description
@@ -6716,32 +6566,27 @@ open guide.pdf
 bspc query -D -d 'focused.!occupied'
 uname -r
 v bin/mope
-v .aliases
 mope .zshrc
 mope .zshrc .config/rgconf
 mv .mozilla/firefox/swkflvvd.default-release/chrome/userC* ~/tmp/
 ls ~/tmp/
 mv  ~/tmp/userC* .mozilla/firefox/swkflvvd.default-release/chrome/
 zip -h
-zip fabric-mods ~/.local/share/multimc/instances/fabric/.minecraft/mods/* 
-ll 
-zip downloads/minecraft/fabric/fabric-mods ~/.local/share/multimc/instances/fabric/.minecraft/mods/* 
+zip fabric-mods ~/.local/share/multimc/instances/fabric/.minecraft/mods/*
+zip downloads/minecraft/fabric/fabric-mods ~/.local/share/multimc/instances/fabric/.minecraft/mods/*
 ls downloads/minecraft/fabric/fabric-mods.zip
 ll downloads/minecraft/fabric/fabric-mods.zip
 rm fabric-mods.zip
-zip downloads/minecraft/forge/forge-mods ~/.local/share/multimc/instances/forge/.minecraft/mods/* 
+zip downloads/minecraft/forge/forge-mods ~/.local/share/multimc/instances/forge/.minecraft/mods/*
 fd downloads/minecraft/{fabric,forge}/ -e zip
 fd . downloads/minecraft/{fabric,forge}/ -e zip
 ls media/nextcloud
 fd . downloads/minecraft/{fabric,forge}/ -e zip -x cp {} /media/nextcloud/Gaming/Minecraft
 ls /media/nextcloud/Gaming/Minecraft
 ls media/nextcloud/Gaming/Minecraft
-reboot uefi
-systemd-analyze 
-se 
 mkbin mcsync
 mcsync
-mcsync -m 
+mcsync -m
 mnt nextcloud && echo true
 mnt nextcloud ; echo true
 mount -h
@@ -6759,8 +6604,7 @@ cat bin/persist
 chronic mnt nextcloud
 rg \> bin
 	2>/dev/null 1>&2 mnt nextcloud
-ls bin
-cat bin/mimeterm 
+cat bin/mimeterm
 cat bin/mope
 rm -rf bin/mimeterm
 mv bin/mope bin/mimeterm
@@ -6784,7 +6628,7 @@ which mimeo
 mimeo .zshrc
 v sxhkdrc
 time mimeo echo true
-time mimeo pics/scrots/test.png 
+time mimeo pics/scrots/test.png
 time mimeo .zshrc
 time alacritty -e exit
 time alacritty -e echo true
@@ -6799,14 +6643,11 @@ nv '/etc/fstab'
 opi -e
 opi -e /etc
 /home/rob/bin/nv '/etc/fstab' &
-v /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 rm bin/efimgr
 rm bin/check-*
 rm bin/xdg-terminal
-flameshot 
-flameshot --help
-flameshot launcher
+flameshot
 pac perl-file-mimeinfo
 paru xdg-utils-mimeo
 mv bin/xterm tmp
@@ -6837,19 +6678,18 @@ cp redshift.conf dim.conf
 v dim.conf
 xbacklight -set 50
 killall redshift
-redshift -c .config/redshift/dim.conf 
+redshift -c .config/redshift/dim.conf
 exit
 cd ~
 realpath
 zsh
 jobs -l
-echo $HOME
 killall 65034
 z
 z mods
 sudo pacr linux-hardened-headers-5.11.9.hardened1-1 linux-hardened
 sudo pacr linux-hardened-headers linux-hardened
-sudo pacr linux-hardened-headers 
+sudo pacr linux-hardened-headers
 fzpkgs
 sudo pacr bleachbit\
 bmon\
@@ -6861,7 +6701,7 @@ stress\
 valgrind
 pacman -Qqe | fzf --print-query
 pacman -Qqe | fzf --read0
-pacman -Qqe | fzf -d ' ' 
+pacman -Qqe | fzf -d ' '
 pacman -Qqe | fzf --print0
 pacman -Qqe | fzf --print0 | tr "\0" " "
 pacman -Qqe | fzf +m --print0 | tr "\0" " "
@@ -6881,8 +6721,6 @@ setxkbmap -option escape:caps
 setxkbmap -option
 setxkbmap -query
 xcape -e 'Caps_Lock=Escape'
-caps2esc
-caps2esc &
 man sxhkd
 udevadm trigger --subsystem-match=input --action=change
 sudo udevadm trigger --subsystem-match=input --action=change
@@ -6894,19 +6732,15 @@ mount /media/ssd
 sudo mount /media/ssd
 sudo umount /media/ssd
 sudo umount /media/blueberry
-mnt bb
 ls /media/blueberry
 bspc config pointer_motion_interval 5
 bspc config pointer_motion_interval 100
-v .ssh/config
 v rob@192.168.2.11
 ssh rob@192.168.2.11
 b
-ssh bb
 infocmp > alacritty.terminfo
 TERM=xterm-256color bb
 echo $ZLS_COLORS
-nvtop
 rm netherite-plus-mod-1.4.2-1.16.5-fabric.jar
 mcsync -m fabric
 aur-pkgs
@@ -6931,14 +6765,11 @@ journalctl --user -u sxhkd.service
 nvim ~/.config/environment.d/env.conf
 mkdir .config/environment
 mv .config/environment .config/environment.d
-v /home/rob/.config/systemd/user/sxhkd.service
-s daemon-reload
 s status sxhkd.service
 hist
 systemctl --user show-environment
 ls .local/share/fonts
 s start sxhkd.service
-s disable sxhkd.service
 mv .config/environment.d/env.conf tmp
 mv tmp/env.conf .config/environment.d/
 v .config/environment.d/env.conf
@@ -6953,12 +6784,10 @@ rg --hidden '\$TERMINAL'
 nvim /etc/environment
 sudo nvim /etc/environment
 v /etc/environment
-sudo pacdiff
 which pacdiff
 sudo rg fail /etc/pam.d/*
 sudo rg 3 /etc/pam.d/*
 v /etc/pam.d/system-auth
-ssh laptop
 bspc config pointer_motion_interval 20
 rm alacritty.terminfo
 rmr .ssr
@@ -6967,8 +6796,6 @@ cat .lesshst
 rm .lesshst
 piactl --help
 piactl --help | grep connect
-vfm
-s restart sxhkd.service
 systemctl status sxhkd.service
 systemctl --user status sxhkd.service
 journalctl --user -r -u sxhkd.service
@@ -6982,11 +6809,10 @@ bspc config pointer_motion_interval 80
 bspc config pointer_motion_interval 60
 bspc config pointer_motion_interval 75
 man rg
-lb
 ls .config/autostart
 v bin/persist
-rg persist --hidden 
-rg persist 
+rg persist --hidden
+rg persist
 rg persist bin
 rg persist .config
 rg persist .config/sxhkd
@@ -7008,44 +6834,36 @@ sufw allow 25565
 sufw allow 25562
 sufw allow 25563
 sufw allow 25564
-S restart NetworkManager
 v *
 v .zshr
 v bspctl
-scp bb:.config/nvim/init.vim .config/nvim/init.vim 
+scp bb:.config/nvim/init.vim .config/nvim/init.vim
 sudo snapper -c home list
 vfb
 sudo pacr mbuffer
-reboot
 J -u backup.service
-J -u backup.service -r
-man snap-sync
-v /etc/systemd/system/backup.service
-v bin/system-backup
 snapper list-configs
 snapper -c home list
 ls /home
 la /home
-v /etc/snapper/configs/home
 v bin/mcctrl
 v bin/dockermc
 man setfacl
 rg case .bin
-v bin/mcsync
 rg shift bin
 v bin/mnt
 rg yn bin
 paru jre-openj9-bin
 paru jdk-openj9-bin jre-openj9
 paru -S jdk-openj9-bin jre-openj9
-paru jdk-openj9-bin 
-sudo pacr jdk-openj9-bin 
+paru jdk-openj9-bin
+sudo pacr jdk-openj9-bin
 pac jre-openj9
 pac  	jdk8-openjdk
 mkdir Episode{1..6}
 piactl get pubip
 ping pass.rwt13.xyz
-fd -i rar 
+fd -i rar
 fd -i rar -E txt -E exe
 fd -i rar -E mp4 -E mkv -E srt -E idx
 fd -i rar -E '*.mp4' -E '*.mkv' -E '*.srt' -E '*.idx'
@@ -7065,7 +6883,6 @@ mv chrome chrome.backup
 mkdir chrome
 git pull https://github.com/rafamadriz/dotfiles.git
 git clone https://github.com/rafamadriz/dotfiles.git
-cd dotfiles
 mv .config/mozifire/chrome/* /home/rob/.mozilla/firefox/swkflvvd.default-release/chrome/
 ll /home/rob/.mozilla/firefox/swkflvvd.default-release/chrome/
 ls ~/.config/rofi
@@ -7088,11 +6905,9 @@ sudo rm /home/rob/.config/zsh/antigen.zsh
 paru nordic-theme nordic-darker-theme
 paru -S nordic-theme nordic-darker-theme
 sudo pacr nordic-theme nordic-darker-theme
-v .profile
 rm .zinit/ .zcompdump
 rm -rf .zinit/ .zcompdump
 mv local/bin/statusbar ../.local/bin/
-ls config
 ls config/polybar
 mv ../.config/polybar ../.config/polybar.backup
 mv config/polybar/ ../.config/polybar
@@ -7100,13 +6915,8 @@ ls ../.config/polybar
 ../.config/polybar/launch.sh
 v config
 v .config/polybar.backup/config
-ip a
 bspc config top_padding         24
 ./.config/polybar/launch.sh
-tail -f .xsession-errors
-xrandr
-start sxhkd
-xprop
 v materialdark.theme
 ncdu
 local/share/wall
@@ -7117,16 +6927,15 @@ wall.sh -U ./the-great-wave.png
 ls statusbar
 v statusbar/upgradepkg
 rm statusbar/upgradepkg
-tmp
 v default.rasi
 mv .config/rofi .config/rofi-bak
 mv dotfiles/config/rofi .config
 v .config/rofi/config.rasi
 rm default.rasi
-grep print dotfiles/config/sxhkd/sxhkdrc 
-grep Print dotfiles/config/sxhkd/sxhkdrc 
-grep -C3 Print dotfiles/config/sxhkd/sxhkdrc 
-grep -C3 Print .config/sxhkd/sxhkdrc 
+grep print dotfiles/config/sxhkd/sxhkdrc
+grep Print dotfiles/config/sxhkd/sxhkdrc
+grep -C3 Print dotfiles/config/sxhkd/sxhkdrc
+grep -C3 Print .config/sxhkd/sxhkdrc
 sleep 2s && flameshot screen -c
 v config/sxhkd/sxhkdrc
 appmenu
@@ -7144,16 +6953,13 @@ font-0 = "Overpass:size=15;4"\
 font-1 = "Overpass Nerd Font:size=16;6"\
 
 bspc config top_padding         28
-bspc config top_padding         30
 cat .fehbg
 mv dotfiles/local/share/wall/* pics/backgrounds/abstract
-wall.sh -U pics/backgrounds/abstract/the-great-wave.png 
+wall.sh -U pics/backgrounds/abstract/the-great-wave.png
 thunar pics/backgrounds/abstract/
 v ../config.rasi
 ls -la
 v .bin/persist
-pwd
-vf
 journalctl -r -b
 systemctl --user restart sxhkd.service &
 /home/rob/bin/pbar.sh &
@@ -7166,14 +6972,11 @@ date +%c
 date +%D
 date +%r
 neofetch
-xcolor
-ls -a
 pac minecraft-launcher
 rm worldedit-bukkit-7.2.0-dist.jar CoreProtect-19.3.jar LuckPerms-Bukkit-5.2.47.jar
 rm AutoCraft.jar assassin-1.2.1.jar
 rm Dynmap-3.1-beta5-spigot.jar
 scp * bb:/opt/dockermc/paper/plugins
-la ~
 cat ~/.als
 cat ~/.alsoftrc
 free
@@ -7209,8 +7012,8 @@ sudo ./flash-all.sh
 ..
 sudo fastboot flash recovery twrp-3.5.1_9-0-taimen.img
 sudo fastboot boot twrp-3.5.1_9-0-taimen.img
-adb sideload lineage-18.1-20210402-nightly-taimen-signed.zip 
-sudo adb sideload lineage-18.1-20210402-nightly-taimen-signed.zip 
+adb sideload lineage-18.1-20210402-nightly-taimen-signed.zip
+sudo adb sideload lineage-18.1-20210402-nightly-taimen-signed.zip
 sudo adb devices
 adb d
 adb push lineage-18.1-20210402-nightly-taimen-signed.zip /sdcard
@@ -7228,7 +7031,6 @@ sudo chromium
 sudo chromium --no-sandbox
 mnt mx500
 v chrome/userChrome.css
-myip
 ls .config/polybar.backup
 mv .config/polybar.backup/config .config/polybar/config.backup
 rmr .config/polybar.backup
@@ -7244,23 +7046,17 @@ rg --help | grep '-i'
 rg --help | grep '\-i'
 rg -i drm chrome
 rg -i drm chrome/
-cd
 dotu add .config/rofi/*
 dots add .config/rofi/*
 dots add .config/polybar/*
-dotu
 dots-tracked
-ls .config
 sudo snapper -c root list
 ncdu /.snapshots
-ncdu / -x
 man ncdu
 ncdu /var
 pacman -Scc
 sudo pacman -Scc
-v /etc/systemd/journald.conf
 ncdu /home
-btrfs filesystem df /
 btrfs filesystem du -sh /
 btrfs filesystem du -s /
 sudo btrfs filesystem du -s /
@@ -7277,8 +7073,6 @@ sudo journalctl --vacuum-time=20d
 pacman -Qu | wc -l\
 
 pacman -Qu | wc -l
-paru -Qu 
-la
 cat .bash_logout
 paru -Qu
 paru -SQu
@@ -7289,9 +7083,7 @@ paru -Sy > /dev/null  && paru -Qu
 pactl list-sinks
 pactl list sinks short
 pbar.sh
-lsblk
 df -h
-v .zshrc
 rg '\|\|' bin
 [[ -f ~/.config/sxhkd/sxhkdrc ]] && echo true || echo false
 [[ -f ~/.config/sxhkd/sxhkdrc1 ]] && echo true || echo false
@@ -7302,7 +7094,6 @@ echo ~/.config/sxhkd/sxhkdrc
 echo true `[[ -f .config/rgconf1 ]] && echo true`
 echo true `[[ -f .config/rgconf ]] && echo true`
 scp bb:~/bin/xsed bin
-chx ~/bin/*
 v bin/xsed
 echo $EDITOR
 fzf --help
@@ -7311,7 +7102,6 @@ pac ack
 rg case bin
 ack
 which ack
-udb
 locate ack
 locate ack | grep bin
 locate ack | grep bin | grep perl
@@ -7323,9 +7113,6 @@ pac community/the_silver_searcher
 time /usr/bin/vendor_perl/ack case bin
 time ag case bin
 echo editor
-fkill
-man fzf
-bin
 rf | fzf --color=16
 rf | fzf --color='hl:8'
 xsed case
@@ -7335,35 +7122,857 @@ man fg
 ig
 mv bin/xsed bin/sf
 sf this
-v bin/sf
 man read
 read --help
 rg read bin
 v bin/ncodr
-sf 
-paru
-sf
 fzaux
 which chronic
 v /usr/bin/chronic
-less .xsession-errors
-tail -f .config/picom/log  
-se
+tail -f .config/picom/log
 btm
-bb
-z default
-v user.js
 chrome
-ls
 v userContent.css
 v userChrome.css
 v ../user.js
 dots add .mozilla/firefox/swkflvvd.default-release/chrome/*
 dots add .mozilla/firefox/swkflvvd.default-release/user.js
-dotu
 dots --help
-man yadm
 which dots
 man yadm
 yadm rm .config/vifm/vifminfo*
+dotu
+pacnew
+sudo pacdiff
+v /etc/pacman.d/mirrorlist
+xcolor
+scp laptop:docs/*pkgs ./
+scp rob@192.168.2.132:docs/*pkgs ./
+sudo fdisk /dev/sdd
+sudo dd bs=4M if=/home/rob/downloads/torrents/archlinux-2021.04.01-x86_64.iso  of=/dev/sdd status=progress oflag=sync
+rg widevine
+v prefs.js
+rg -i drm
+ timedatectl list-timezones
+ssh rob@192.168.2.223
+pacq | grep overpass
+pacq | grep picom
+ncdu / -x
+ncdu /var -x
+btrfs subvolume list -h
+btrfs subvolume list -t
+btrfs subvolume list -t /
+sudo btrfs subvolume list -t /
+btrfs
+btrfs subvolume -list /
+btrfs subvolume list /
+sudo btrfs subvolume list /
+btrfs subvolume -h
+btrfs filesystem df
+btrfs filesystem df /
+sudo btrfs subvolume show /
+ls /media/blueberry/backups/inspiron
+pacq | grep ttf
+pacq | grep font
+eval
+IFS=$'\r\n' GLOBIGNORE='*' command eval  'XYZ=($(cat /etc/passwd))'
+if [[ 1 -eq 1 ]] && [[ -e .zshrc ]]; then echo true;fi
+if [[ 0 -eq 1 ]] && [[ -e .zshrc ]]; then echo true;fi
+if [[ 1=1 ]] && [[ -e .zshrc ]]; then echo true;fi
+if [[ 0=1 ]] && [[ -e .zshrc ]]; then echo true;fi
+pac bat
+v bin/rfv
+rm bin/sf
+rfv
+rfv case
+v bin/rfv2
+chx ~/bin/*
+rfv2
+mv bin/rfv bin/sf
+mv bin/rfv2 bin/rfv
+pacrepo
+v /etc/default/grub
+pac pkgfile
+sudo pkgfile -u
+filelight
+systemd-analyze
+v .config/nvim/init.vim
+nvim
+bootctl remove
+sudo pacr linux
+mv downloads/minecraft/bukkit downloads/minecraft/plugins
+ls downloads/minecraft/
+docker ps
+bspc config focused_border_color '#8fbcbb'
+bspc config presel_feedback_color '#8fbcbb'
+man fzf
+fzf
+fzf "--color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D" "--color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C" "--color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D"
+export FZF_DEFAULT_OPTS=--preview-window noborder --reverse --exact --multi --cycle --border=sharp --height=50% --no-info  --color=fg:#B2CCD6,header:#82AAFF,info:#FFCB6B,pointer:#89DDFF --color=marker:#89DDFF,fg+:#EEFFFF,prompt:#FFCB6B,hl+:#82AAFF
+export FZF_DEFAULT_OPTS="--preview-window noborder --reverse --exact --multi --cycle --border=sharp --height=50% --no-info  --color=fg:#B2CCD6,header:#82AAFF,info:#FFCB6B,pointer:#89DDFF --color=marker:#89DDFF,fg+:#EEFFFF,prompt:#FFCB6B,hl+:#82AAFF"
+_gen_fzf_default_opts
+v tmp/genfzf
+chx tmp/genfzf
+./tmp/genfzf
+cat tmp/genfzf| bash
+cat tmp/genfzf
+color00='#263238'\
+color01='#2E3C43'\
+color02='#314549'\
+color03='#546E7A'\
+color04='#B2CCD6'\
+color05='#EEFFFF'\
+color06='#EEFFFF'\
+color07='#FFFFFF'\
+color08='#F07178'\
+color09='#F78C6C'\
+color0A='#FFCB6B'\
+color0B='#C3E88D'\
+color0C='#89DDFF'\
+color0D='#82AAFF'\
+color0E='#C792EA'\
+color0F='#FF5370'\
+\
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\\
+" --color=spinner:$color0C,hl:$color0D"\\
+" --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C"\\
+" --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D"
+echo $FZF_DEFAULT_OPTS
+ssh peach
+myip
+bspc config normal_border_color '#606060'
+bspc config normal_border_color '#4c5050'
+v /etc/profile
+ssh laptop
+compgen -c | grep autosuggest
+compgen -c | grep autosuggest | grep strat
+compgen -c | grep autosuggest | grep start
+rm pacman-pkgs yay-pkgs latest.log
+ls .cache
+mkdir .cache/zsh
+ls .cache/zsh
+v /etc/snapper/configs/home
+nano /etc/snapper/configs/home
+sudo nano /etc/snapper/configs/home
+chmod a+rx /home/.snapshots
+sudo chmod a+rx /home/.snapshots
+sudo chown :rob /home/.snapshots
+sudo chown :users /home/.snapshots
+/home/.snapshots/
+ls /etc/NetworkManager/system-connections
+sudo ls /etc/NetworkManager/system-connections
+ v /etc/NetworkManager/system-connections/Peach.nmconnection
+ping 192.168.1.1
+wget https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info
+rm alacritty.info
+setdns google
+S restart NetworkManager
+ping google.com
+setdns
+cat bin/setdns
+setdns -p
+ping youtube.com
+dig youtube.com
+ls .config
+man ls
+ls -A
+rm -rf .cache/zsh/zcompdump-5.8
+l
+ls pics
+[[ -d "$XDG_CACHE_HOME/zsh" ]] || mkdir "$XDG_CACHE_HOME/zsh"
+ls "$XDG_CACHE_HOME/zsh"
+ls $XDG_CONFIG_HOME/zsh
+rm -rf $XDG_CONFIG_HOME/zsh/pure
+man compinit
+compinit --help
+echo $fpath
+hostname
+host
+sudo dd bs=4M if=/home/rob/downloads/torrents/debian-live-10.9.0-amd64-xfce.iso of=/dev/sdd status=progress oflag=sync
+sudo dd bs=4M if=/home/rob/downloads/torrents/debian-live-10.9.0-amd64-standard.iso of=/dev/sdd status=progress oflag=sync
+ssh -f rob@192.168.2.21
+ssh-copy-id rob@192.168.2.21
+ssh pi
+grep lua .zshrc
+ssh rob@192.168.2.21 -L 32400:192.168.2.21:32400 -N
+ssh 192.168.2.21 -L 8888:localhost:32400
+paru chromium-widevine
+ll /etc/xdg/nvim/sysinit.vim
+v /etc/xdg/nvim/sysinit.vim
+v /etc/fstab
+ls /etc/xdg/nvim
+scp bb:~/blueberry.ovpn docs/
+z default
+v user.js
+ping 192.168.1.5
+ping 192.168.2.21
+ssh rob@192.168.2.21
+v
+se 
+bspc config top_padding         30
+ssh-agent
+pac keychain
+ssh-add ~/.ssh/id_rsa
+v ~/.config/systemd/user/ssh-agent.service
+ssh-copy-id root@192.168.2.21
+man journalctl
+S start backup.timer
+S status backup.timer
+J -u backup.service -r
+ssh blueberry
+v bin/system-backup
+v .ssh/known_hosts
+v /root/.ssh/known_hosts
+sudo ssh rob@192.168.2.21
+eval $(ssh-agent)
+ssh-add /root/.ssh/id_rsa
+sudo ssh-add /root/.ssh/id_rsa
+pacf ssh-askpass
+sudo snap-sync -q -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -n -c "root home"
+snap-sync --sudo -q -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -n -c "root home"
+S restart sshd
+ssh-copy-id -f root@192.168.2.21
+ssh root@192.168.2.21
+sudo ssh root@192.168.2.21
+sudo ssh-copy-id rob@192.168.2.21
+sudo ssh-copy-id rob@192.168.2.21 -f
+sudo ssh-copy-id -f rob@192.168.2.21 
+ssh bb
+sudo ssh-copy-id -f root@192.168.2.21 
+sudo snap-sync --sudo -q -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -n -c "root home"
+sudo snap-sync --sudo -q -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -c "root home"
+sudo ssh 192.168.2.21
+sudo snap-sync  -q -r 192.168.2.21 -u 8e15542e-b313-401b-9c75-8e5629750b2a -c "root home"
+ip a
+ssh test 192.168.2.21:/data/backups
+ssh bb test 192.168.2.21:/data/backups
+ssh bb test -f 192.168.2.21:/data/backups
+ssh bb test -f 192.168.2.21:/data/backups || echo true
+sudo snap-sync -r 192.168.2.21 -c "root home"
+man snap-sync
+locate snap-sync
+snapper list -a
+snapper list -a | grep uuid
+sudo snapper delete 201
+sudo snapper delete 421
+sudo snapper -c home delete 201
+sudo snap-sync --sudo -r 192.168.2.21 -c "root home"
+sudo usermod -a -G systemd-journal $USER
+v /etc/systemd/journald.conf
+v bin/ddgs
+which mkbin
+mkbin bin/ddgs
+ll bin/ddgs
+v bin/sf
+mkbin
+ls bin/thing
+rm -rf bin/thing
+mkbin ddgs
+rm -rf bin/ddgs
+v bin/mcsync
+paru leftwm
+command -v termite
+command -v polybar
+ls .config/leftwm
+udb
+locate config.toml | grep leftwm
+locate config.toml 
+pac neovide
+paru neovide
+neovide .zshrc
+neovide
+neovide --multigrid
+neovide --multiGrid
+neovide --multiGrid .zshrc
+pacr neovide
+sudo pacr neovide
+paru -Sc
+j
+journalctl 
+lsblk
+systemctl --user stop sxhkd
+leftwm-theme update
+leftwm-theme apply dracula
+leftwm-theme install "Dracula Rounded"
+leftwm-theme apply "Dracula Rounded"
+xprop
+pacman -S spectrwm
+pac spectrwm
+sudo pacr leftwm leftwm-theme
+sudo pacr leftwm leftwm-themes
+pacq | grep leftwm
+sudo pacr leftwm leftwm-theme-git
+rm -rf .config/leftwm
+cp /etc/spectrwm.conf .config/spectrwm
+ll .config/spectrwm
+journalctl -r
+wall.sh -U pics/backgrounds/abstract/the-great-wave.png 
+pac lightdm-gtk-greeter
+journalctl -p warning -r
+systemctl --user daemon-reload
+journalctl -u sxhkd
+journalctl --user -u sxhkd
+S restart sxhkd
+S restart --user sxhkd
+journalctl --user -u sxhkd -r
+s daemon-reload
+s restart sxhkd.service
+journalctl --user -u sxhkd -f
+v /home/rob/.config/systemd/user/sxhkd.service
+pac exa
+exa -h
+exa --help
+pac procs
+exa -hN
+ls --help
+exa -t
+exa -T
+gre -i manpager .profile
+grep -i manpager .profile
+export MANPAGER="/usr/bin/bat"
+man man
+export MANPAGER="/usr/bin/bat -l man -p"
+v .profile
+export MANPAGER="/usr/bin/nvim -c 'set ft=man' -"
+man less
+pac awesome
+exa -a
+la -a
+la 
+which la
+man mv
+fd --hidden nnf
+rm -rf .local/bin/nnf
+tb
+ls -@
+ll -@
+ll 
+COLUMNS=80 exa
+COLUMNS=80 exa -l
+COLUMNS=40 exa -l
+COLUMNS=5 exa -l
+fzcd
+compgen -c | fzf
+cd .minecraft
+rmorphans
+pacdiff
+v /etc/ssh/sshd_config
+ssh -X bb
+v .ssh/config
+which extract
+mv bin/system-backup bin/sysbackup
+ls bin
+touch file
+mv -v file filenew
+mv filenew ~/
+rm ~/filenew
+ls genfzf
+v genfzf
+rm genfzf
+sudo rm .w3m
+sudo rmr .w3m
+v /etc/systemd/system/backup.service
+v bin/sysbackup
+v /etc/systemd/system/backup.timer
+cat bin/system-backup
+cat bin/sysbackup
+EXA_GRID_ROWS=2 lb
+EXA_GRID_ROWS=2 exa -l bin
+EXA_GRID_ROWS=2 exa -l --geid bin
+EXA_GRID_ROWS=2 exa -l --grid bin
+ll
+lla
+\ls
+exa
+exa -l
+exa -laG
+exa -laG --icons
+man hdparm
+cd /etc
+fd . -H ./ ~
+fd . -H ./ ~ | fzf
+source .aliases
+scp bb:.aliases ./aliases
+nvim -d ./aliases .aliases
+time la
+man exa
+lr -T
+which lr
+exa --tree -T --level=3
+exa --tree -f --level=3
+tree -f
+exa --tree --level=3
+exa --tree --level=3 | bat
+man bat
+exa --tree --level=3 | bat --color always
+exa --tree --level=3 | less -r
+exa --tree --level=3 --color always | less -r
+man df
+lb
+bb
+git pull https://github.com/JavaCafe01/dotfiles.git
+git clone https://github.com/JavaCafe01/dotfiles.git ~/tmp
+~/tmp/.config
+mv awesome ~/.config
+v /home/rob/.config/awesome/rc.lua
+v /home/rob/.config/awesome/configuration/picom.conf
+v /home/rob/.config/awesome/configuration/keys.lua
+lightdm disable autologin
+v ~/.xinitrc
+mkbin keepup
+s disable sxhkd.service
+se /etc
+time fd ./
+time fd . ./
+time fd . ./ $HOME
+time fd . ./ | wc -l
+time fd . ./ $HOME | wc -l
+v .aliases
+s stop sxhkd
+procs
+/home/rob/bin/start picom
+S disable lightdm
+v .config/awesome/configuration/autostart.lua
+bin
+v start
+S stop lightdm
+xinit bspwm
+pac xorg-xinit
+cp /etc/X11/xinit/xinitrc ~./xinitrc2
+cp /etc/X11/xinit/xinitrc ~/xinitrc2
+cat .xinitrc >> ~/xinitrc2
+v ~/xinitrc2
+xinit awesome
+v .config/awesome/configuration/init.lua
+v .config/awesome/configuration/ruled.lua
+v .config/awesome/configuration/window.lua
+v .config/awesome/configuration/scratchpad.lua
+v .config/awesome/ui/init.lua
+sudo loginctl kill-session 8
+mkdir .cache/awesome
+sudo loginctl kill-session 11
+startx awesome
+sudo loginctl kill-session 12
+bspc quit
+pkill xinit
+grep bspwm .local/share/xorg/Xorg.0.log
+grep tty .local/share/xorg/Xorg.0.log
+less .local/share/xorg/Xorg.0.log
+startx bspwm
+awesome &
+v .config/awesome/rc.lua
+firefox &!
+ls .config/awesome/theme
+v .config/awesome/configuration/keys.lua 
+pac luarocks
+git clone --recurse-submodules https://github.com/JavaCafe01/dotfiles.git
+mv dotfiles/ tmp
+tmp
+cd dotfiles
+git submodule update --remote --merge
+sudo luarocks --lua-version 5.3 install awestore
+paru -Sy ttf-sarasa-gothic nerd-fonts-fira-code noto-fonts-emoji-blob
+ls -a
+mv .config/awesome/ ~/.config/
+paru -Sy awesome-git
+pac imagemagick giph farge-git colorpicker-ym1234-git lm_sensors acpid pulseaudio inotify-tools
+paru -S giph farge-git
+git clone https://github.com/Nooo37/bling.git ~/.config/awesome/bling
+git clone https://github.com/xinhaoyuan/layout-machi.git ~/.config/awesome/layout-machi
+sudo luarocks --lua-version 5.3 install bling
+sudo luarocks --lua-version 5.3 install layout-machi
+ls ~/.config/awesome/layout-machi
+startx ~/.xinitrc awesome
+sf "module.bling"
+fd
+rg hotkeys
+rg firefox 
+rg firefox -C2
+vw images/bg.png
+rg bar
+cd .config/awesome/ui
+v widgets/pacman_taglist.lua
+rg logout
+rg out
+rg sign
+rg exit
+rg "exit screen" -C2
+ls -d
+fd -t d
+fd -t d | fd -e mkv
+fd -e mkv -X mv {} ./ ;
+las
+rm xinitrc2
+ select server in $(sed -n "s/^Host \(.*\)/\1/p" ~/.ssh/config) ; do [[ $server ]] && ssh $server ; break ; done
+ select wm in (bspwm awesome) ; do [[ $wm ]] && startx ~/.xinitrc $wm ; done
+ select wm in ( bspwm awesome ) ; do [[ $wm ]] && startx ~/.xinitrc $wm ; done
+select wm in  bspwm awesome ; do [[ $wm ]] && startx ~/.xinitrc $wm ; done
+v /usr/bin/startx
+sudo bootctl remove
+bootctl --help
+sudo bootctl status
+efibootmgr
+ls /boot/EFI
+sudo rm /etc/pacman.d/hooks/100-systemd-boot.hook
+ls /etc/pacman.d/hooks/
+ls /etc/pacman.d/hooks/boot-backup.hook
+v /etc/pacman.d/hooks/boot-backup.hook
+ls /boot
+pip3 install --user pynvim
+rm tmp/*
+la tmp
+rm -rf /tmp
+rm -rf tmp
+nv
+fd -e py
+v projects/python/code_guessing/test.py
+start sxhkd
+sxhkd -s $HOME/.cache/sxhkd.fifo
+startx ~/.xinitrc bspwm
+v .zshrc
+exec bspwm
+less .xsession-errors.old
+v .fehbg
+./.fehbg
+cd .config/sxhkd
+sf rofi
+sf useless
+cp pics/backgrounds/abstract/the-great-wave.png .config/awesome/images 
+ls tmp
+mkdir tmp
+tail -f .xsession-errors
+flameshot launcher
+flameshot screen --help
+giph
+giph -s -t 5
+giph -s -t 3 panel.gif
+cat bin/gpufans
+bash
+nvidia-xconfig --cool-bits=4
+sudo nvidia-xconfig --cool-bits=4
+gpufans 
+pip3 install  pynvim
+sudo pip3 install  pynvim
+sf keys
+fd keys
+v bin/gpufans
+fkill
+nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=20
+mv ui/bar/wibar.lua ui/bar/wibar.lua.old
+tail -f .cache/awesome
+v ui/bar/wibar.lua
+sf file
+sf manager
+sf filemanager
+sf editor_cmd
+fd windwo
+fd window
+v configuration/window.lua
+sf layou
+v ~/.aliases
+which se
+fd --help
+fd /home /etc
+fd . /home /etc
+[[ $(pwd) == $HOME ]] && true
+[[ $(pwd) == $HOME ]] ||  true
+[[ $(pwd) == $(echo $HOME) ]] ||  true
+[[ $(pwd) == $(echo $HOME) ]] && true
+[[ "$(pwd)" == "$(echo $HOME)" ]] && true
+pwd
+echo $HOME
+if [[ $(pwd)" == "$(echo $HOME)" ]]; then echo true; fi
+if [[ "$(pwd)" == "$(echo $HOME)" ]]; then echo true; fi
+rm panel.gif aliases
+sf pacman_taglist
+mv .config/awesome .config/awesome-old
+git clone https://gitlab.com/noaccOS/dotfiles.git ~/.config/awesome
+la ~/.config/awesome
+mv -f ~/.config/awesome/.config/awesome ~/.config/awesome
+ls ~/.config/awesome
+mv .config/awesome/awesome .config
+mv .config/awesome/awesome tmp
+rm .config/awesome
+rmr .config/awesome
+rm -rf .config/awesome
+mv tmp/awesome .config
+cd
+cd .config/awesme
+cd .config/awesome-old
+sf
+less .xsession-errors
+start picom
+v ~/bin/start
+v autorun.sh
+v kaomoji.txt
+rm kaomoji.txt
+sf kaomoji
+sf reload\.lck
+ls theme/ghosts
+sf mywibar
+sf mywiibar
+ls ui
+ls ui/bar
+sf wibar\.lua
+sf wibar
+la ~
+alacritty nvim
+gpufans &!
+sudo nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=20
+v /etc/X11/xorg.conf
+nvtop
+awesome-client --help
+z awesome old
+v .xinitrc
+less ~/.xsession-errors
+z aweso
+S enable lightdm
+cat .xinitrc
+/home/rob/bin/caps2esc &\
+xsetroot -cursor_name left_ptr &\
+/home/rob/bin/gpufans &\
+/home/rob/bin/monctl dpms &
+paru
+journalctl --user -u lightdm
+journalctl -u lightdm -r
+less /var/log/lightdm
+ls /var/log/lightdm
+sudo 
+sudo ls /var/log/lightdm
+ls /etc/lightdm/lightdm-gtk-greeter.conf
+v /etc/lightdm/lightdm-gtk-greeter.conf
+sudo mv /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf.old
+sudo pacr lightdm-gtk-greeter
+pac lightdm-webkit2-greeter lightdm-webkit-theme-litarvan
+ls /usr/share/pixmaps
+ls /usr/share/xsessions
+sudo pac leftwm 
+paru leftwm 
+loginctl
+sudo loginctl kill-session 2
+sudo loginctl
+reboot
+shutdown now
+reboot uefi
+mv /etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf.old
+sudo mv /etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf.old
+v /etc/lightdm/lightdm.conf
+sudo less /var/log/lightdm/lightdm.log
+sudo less /var/log/lightdm/sea*
+sudo ls /var/log/lightdm/
+sudo ls /var/log/lightdm/seat0-greeter.log
+ls -a /var/lib/lightdm/
+sudo ls -a /var/lib/lightdm/
+sudo chown lightdm:lightdm /var/lib/lightdm/
+sudo mv /etc/lightdm/lightdm.conf.old /etc/lightdm/lightdm.conf
+S status lightdm
+sudo less /var/log/lightdm/seat0-greeter.log
+sudo ls -la /var/lib/lightdm/
+sudo chown -R lightdm:lightdm /var/lib/lightdm/
+fd -h
+sudo fd -o avahi:avahi / > avahi-owned.txt
+sudo fd -o avahi:avahi . / > avahi-owned.txt
+cat .fdignore
+sudo fd --hidden -o avahi:avahi . / > avahi-owned.txt
+less avahi-owned.txt
+rm avahi-owned.txt
+vfm
+mnt bb
+z awe
+ls configuration
+v configuration/picom.conf
+v configuration/keys.lua
+start pia-client
+start piavpn
+piavpn toggle
+flameshot gui
+pac colorpicker
+paru colorpicker
+farge --notify
+sudo pacr farge
+sudo pacr farge-git
+picom --experimental-backends -b
+reboot windows
+sudo ln -s /usr/share/backgrounds/rob /home/rob/pics/backgrounds/
+ls /usr/share/backgrounds/ro
+ls /usr/share/backgrounds/rob
+ls /usr/share/backgrounds
+ls pics/backgrounds
+rm pics/backgrounds/rob
+S restart lightdm
+v /etc/lightdm/lightdm-webkit2-greeter.conf
+systemctl --user restart pipewire.service
+systemctl --user restart pipewire-pulse.service
+cat autorun.sh
+ls themes
+ls assets
+vw assets/kbd.svg
+sf kbd.svg
+flameshot --help
+flameshot screen -c
+caps2esc
+caps2esc &
+xrandr
+mv .config/awesome/ tmp/awesome
+git clone https://gitlab.com/drahenprofi/dotfiles  ~/.config/awesome
+git clone https://gitlab.com/drahenprofi/dotfiles.git  ~/.config/awesome
+git clone https://github.com/drahenprofi/dotfiles.git ~/.config/awesome
+cd ~/.config/awesome
+la
+mv .config/awesome/ ../
+mv .config/awesome/ ../awesome2
+mv ~/.config/awesome/ /tmp
+ls /tmp
+rm -rf /tmp/awesome
+ls .config/
+cd ..
+ls awesome
+la awesome
+rm -rf awesome
+git clone https://github.com/drahenprofi/dotfiles.git ~/tmp
+git clone https://github.com/drahenprofi/dotfiles.git ~/tmp/awesome-git
+cd ~/tmp/awesome-git
+mv .config/awesome ~/.config
+~/.config/awesome
+sf reload
+sf terminal
+cp ~/pics/backgrounds/abstract/alpha-cloud.png ./wallpaper.png
+cp ~/pics/backgrounds/abstract/nord.jpg ./wallpaper.png
+sf picom
+sf next
+sf launcher
+sf layout
+sf scroll
+sf wheel
+sf firefox
+sf browsere
+sf browser
+v config/keys.lua
+cd .config/awesome
+v config/notifications.lua
+z awe old
+cd ~/tmp/awesome
+sf telegram
+se
+v config/autorun.sh
+sf floating
+cd tmp/awesome
+sf sloppy
+ls config
+ls rc.lua
+v  rc.lua
+v config/rules.lua
+v config/layout.lua 
+sf request::activate
+lr
+ls
+sf volume
+vf
+z awesome
+cd ../awesome
+sf battery
+less ~/.cache/awesome/stderr
+less ~/.cache/awesome/stdout
+wget https://github.com/drahenprofi/dotfiles/blob/master/.config/awesome/widgets/topbar/battery.lua ./widgets/topbar/battery.lua
+ls ./widgets/topbar/battery.lua
+ls 
+mv battery.lua ./widgets/topbar/battery.lua
+v ./widgets/topbar/battery.lua
+v widgets/topbar/taglist.lua
+grep pia ~/bin/start
+runse
+v rc.lua
+cd ~/tmp/awesome
+sf sloppy
+v ~/bin/start
+v .xinitrc
+se
+./autorun.sh
+fkill
+./autorun.sh
+se
+cd .config/awesome
+ls
+ls icons
+ls
+v widgets/topbar/init.lua
+ls widgets
+v widgets/popup/popup.lua
+v widgets/dashboard/avatar.lua
+widgets
+ls
+v topbar/session.lua
+cd tmp/awesome
+sf beautiful\.layout
+sf beautiful.layout
+ls
+ls ~/.config/awesome2
+ls ~/.config/awesome-old
+ls
+ls ~/.config/awesome
+rm -rf ~/.config/awesome2
+mv ~/.config/awesome-old/ /tmp
+ls
+..
+ls
+mv /tmp/awesome-old ./
+ls
+cd awesome-old
+sf beautiful.layout
+sf get_icon
+ls
+ls icons
+ls icons/notif-center
+ls icons/ghosts
+sf layoutbox
+ls topbar/
+v topbar/layoutbox.lua
+cd .config/awesome
+ls widgets/topbar
+widgets/topbar
+v clock.lua
+v init.lua
+cd .config/awesome
+widgets/topbar
+v clock.lua
+v battery.lua
+v launcher.lua
+v clock.lua
+ls
+v init.lua
+z old
+sf 55
+v taglist.lua
+v session.lua
+sf systray
+..
+sf connect_for_each_screen
+..
+se
+ls
+widgets/dashboard/
+ls
+v weather/init.lua
+v avatar.lua
+sf parndt
+ls
+v avatar.lua
+ls background
+ls ../
+ls ../../
+ls ../../icons/avatar.png
+vw ../../icons/avatar.png
+../../
+fd avatar.png
+cd widgets/
+v topbar/session.lua
+v topbar/init.lua
+v widgets/topbar/layoutbox.lua
+v widgets/topbar/clock.lua
+sf margin
+widgets/topbar/
+sf margin
+../../
+sf firefox
+ls
 dotu

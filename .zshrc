@@ -1,16 +1,17 @@
 # -- general ------------------------------------------------------------------
 
+[[ -d "$XDG_CONFIG_HOME/zsh" ]] || mkdir "$XDG_CONFIG_HOME/zsh"
 HISTFILE=~/.config/zsh/history
 HISTSIZE=100000
 SAVEHIST=100000
 
-PROMPT='%B%F{33}%n%f %F{white}%(3~|…/%2~|%~)%f %B%F{33}%# '
-#PROMPT="%(5~|%-1~/…/%3~|%4~)"
-
+PROMPT='%B%F{33}%n%f %F{white}%(3~|…/%2~|%~)%f %B%F{33}%#%F{white} '
 
 # source aliases and functions
 [[ -e ~/.aliases ]] && \
    . ~/.aliases
+
+[[ -d "$XDG_CACHE_HOME/zsh" ]] || mkdir "$XDG_CACHE_HOME/zsh"
 
 autoload -Uz compinit && compinit -C -d "$XDG_CACHE_HOME"/zsh/zcompdump-$ZSH_VERSION
 autoload bashcompinit && bashcompinit
@@ -20,37 +21,26 @@ bindkey -e
 
 source ~/.zkbd/$TERM*
 
-
 # -- plugins ------------------------------------------------------------------
 declare -A ZINIT
 
 ZINIT[HOME_DIR]="$HOME"/.config/zsh/zinit
 ZINIT[ZCOMPDUMP_PATH]="$HOME"/.config/zsh/zinit/
 
-
 source ~/.config/zsh/zinit/bin/zinit.zsh
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-syntax-highlighting
-
-# -- syntax highlighting ------------------------------------------------------
-
-ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan,underline'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,underline'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan,bold'
-ZSH_HIGHLIGHT_STYLES[redirection]='fg=yellow'
-ZSH_HIGHLIGHT_STYLES[bracket-error]='fg=red,bold,underline'
-ZSH_HIGHLIGHT_STYLES[cursor-matchingbracket]='fg=green,bold,underline'
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f6569,bg=bold,underline"
+zinit light zdharma/fast-syntax-highlighting
 
 # -- autosuggestions ----------------------------------------------------------
 
 ZSH_AUTOSUGGEST_STRATEGY=(history)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
-ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char})
+#ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char})
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f6569,bg=bold,underline"
 
 # -- completion ---------------------------------------------------------------
 
@@ -89,8 +79,6 @@ setopt PROMPT_CR
 setopt PROMPT_SP
 export PROMPT_EOL_MARK=""
 
-
-
 # -- keybinds ---------------------------------------------------------
 
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
@@ -104,9 +92,6 @@ export PROMPT_EOL_MARK=""
 [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
-
-bindkey '^[[1;5B' autosuggest-clear
-bindkey '^[[1;5A' autosuggest-execute
 
 bindkey '5~' kill-whole-line
 bindkey '^[u' undo
@@ -132,26 +117,13 @@ backward-kill-dir () {
 zle -N backward-kill-dir
 bindkey '^H' backward-kill-dir
 
-function expand-or-complete-or-list-files() {
-    if [[ $#BUFFER == 0 ]]; then
-        BUFFER="ls "
-        CURSOR=3
-        zle list-choices
-        zle backward-kill-word
-    else
-        zle expand-or-complete
-    fi
-}
-zle -N expand-or-complete-or-list-files
-bindkey '^I' expand-or-complete-or-list-files
-
 exit_zsh() { exit }
 zle -N exit_zsh
 bindkey '^D' exit_zsh
 
 # -- exports -------------------------------------------------------
 
-export FZF_DEFAULT_OPTS="--preview-window noborder --reverse --exact --no-color --multi --cycle --border=sharp --height=50% --no-info"
+export FZF_DEFAULT_OPTS="--preview-window noborder --no-color --reverse --exact --multi --cycle --border=sharp --height=50% --no-info --color=spinner:#89DDFF,hl:#82AAFF --color=fg:#d6d6d6,header:#82AAFF,info:#FFCB6B,pointer:#89DDFF --color=marker:#89DDFF,fg+:#EEFFFF,prompt:#FFCB6B,hl+:#82AAFF"
 #export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50' --exact"
 export FZF_CTRL_T_COMMAND="fd . --hidden"
 export FZF_ALT_C_COMMAND='fd . --hidden -t d -t l'
@@ -164,4 +136,21 @@ export _ZL_ECHO=1
 
 source /usr/share/fzf/key-bindings.zsh
 #source /usr/share/fzf/completion.zsh
+source /usr/share/doc/pkgfile/command-not-found.zsh
 eval "$(lua ~/.local/share/z.lua/z.lua --init zsh enhanced once)"
+
+
+#startx
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -lt 3 ]; then
+	PS3='Session to Launch: '
+	wm=("bspwm" "awesome" "none")
+	select session in  "${wm[@]}"
+	do
+		case $session in
+			awesome) startx ~/.xinitrc awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr;;
+			bspwm) startx bspwm;;
+			none) break;;
+			*) break;;
+		esac
+	done
+fi

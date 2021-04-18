@@ -3,20 +3,20 @@
 _sync-mods(){
 
     if [ "$1" == "fabric" ]; then
-        rsync -avz --delete ~/.local/share/multimc/instances/fabric/.minecraft/mods/ bb:/opt/minecraft/fabric/mods/
+        rsync -avz --delete ~/.local/share/multimc/instances/fabric/.minecraft/mods/ bb:/opt/dockermc/fabric/mods/
     elif [ "$1" == "forge" ]; then
-        rsync -avz --delete ~/.local/share/multimc/instances/forge/.minecraft/mods/ bb:/opt/minecraft/forge/mods/
+        rsync -avz --delete ~/.local/share/multimc/instances/forge/.minecraft/mods/ bb:/opt/dockermc/forge/mods/
 	else
         for i in forge fabric; do
-            rsync -avz --delete ~/.local/share/multimc/instances/"$i"/.minecraft/mods/ bb:/opt/minecraft/"$i"/mods/
+            rsync -avz --delete ~/.local/share/multimc/instances/"$i"/.minecraft/mods/ bb:/opt/dockermc/"$i"/mods/
         done
     fi
 }
 
 _sync-zip(){
-	zip -q downloads/minecraft/forge/forge-mods ~/.local/share/multimc/instances/forge/.minecraft/mods/*
-	zip -q downloads/minecraft/fabric/fabric-mods ~/.local/share/multimc/instances/fabric/.minecraft/mods/*
-	2>/dev/null 1>&2 mnt nextcloud ; fd . downloads/minecraft/{fabric,forge}/ -e zip -x cp {} /media/nextcloud/Gaming/Minecraft
+	zip -q ~/downloads/minecraft/forge/forge-mods ~/.local/share/multimc/instances/forge/.minecraft/mods/*
+	zip -q ~/downloads/minecraft/fabric/fabric-mods ~/.local/share/multimc/instances/fabric/.minecraft/mods/*
+	2>/dev/null 1>&2 mnt nextcloud ; fd . ~/downloads/minecraft/{fabric,forge}/ -e zip -x cp {} /media/nextcloud/Gaming/Minecraft
 }
 
 _help(){

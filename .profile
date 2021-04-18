@@ -3,6 +3,7 @@ export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_CONFIG_HOME="$HOME"/.config
 
 export PAGER=/usr/bin/less
+export MANPAGER="/usr/bin/nvim -c 'set ft=man' -"
 export NNN_USE_EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
@@ -48,6 +49,7 @@ export TERMINFO="$XDG_DATA_HOME"/terminfo
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export PARALLEL_HOME="$XDG_CONFIG_HOME"/parallel
 export SCREENRC="$XDG_CONFIG_HOME"/screen/screenrc
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export TASKDATA="$XDG_DATA_HOME"/task
 export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo

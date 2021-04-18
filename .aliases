@@ -13,6 +13,7 @@ alias myip='curl http://ipecho.net/plain; echo'
 alias S='sudo systemctl'
 alias s='systemctl --user'
 alias sudo='sudo '
+alias ufw='sudo ufw'
 alias sufw='sudo ufw'
 alias su='sudo -i'
 alias timers='systemctl list-timers'
@@ -26,41 +27,38 @@ alias pacdiff='sudo -E pacdiff'
 alias pacf='sudo pacman -F'
 alias pacl='sudo pacman -Ql'
 alias pacq='sudo pacman -Qs'
-alias pacrepo='sudo reflector --latest 25 --country US --protocol https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
+alias pacrepo='sudo reflector --latest 15 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
 alias pacr='SNAP_PAC_SKIP=y pacman -Rncs'
 alias pacs='sudo pacman -Ss'
 alias pac='sudo SNAP_PAC_SKIP=y pacman -S'
+alias paru='SNAP_PAC_SKIP=y paru'
 alias pacu='sudo pacman -Syu'
 alias pacy='sudo pacman -Syy'
+alias pacdiff='sudo pacdiff'
 alias rmorphans='sudo pacman -Rns $(pacman -Qtdq)'
 
 #ls
-alias l='ls -hN --color=auto --group-directories-first'
-alias la='ls -hNa --color=auto --group-directories-first'
-alias lla='ls -hlNa --color=auto --group-directories-first'
-alias ll='ls -hlN --color=auto --group-directories-first'
-alias ls='ls -hN --color=auto --group-directories-first'
-alias lr='ls -RhN --color=auto --group-directories-first'
-alias lb='ls -hN --color=auto --group-directories-first /home/rob/bin/'
+alias l='exa --group-directories-first'
+alias la='exa -a --group-directories-first'
+alias lla='exa -la --grid --group-directories-first'
+alias ll='exa -l --grid --group-directories-first'
+alias ls='exa --group-directories-first'
+alias lr='exa -T --level=3 --color always| less -R'
+alias lb='EXA_GRID_ROWS=2 exa -la --grid --no-time /home/rob/bin/'
 
 #commands
-alias cmd='compgen -c | fzf'
 alias cpuspeed='watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
+alias fdh='fd --hidden'
 alias df='df -h'
 alias gcp='g++'
 alias hb='HandBrakeCLI'
-alias hist='history'
-alias iftop='sudo iftop -b'
 alias m='micro'
-alias ndu='nnf -C -T a'
-alias n='nnf'
+alias mv='mv -iv'
 alias pb='curl -F "f:1=<-" ix.io'
 alias rf='rg --files --hidden'
-alias rm-empty='fd -t d -x rmdir --ignore-fail-on-non-empty {}'
 alias rm='rm -I'
 alias rmr='rm -rfI'
 alias tb='nc termbin.com 9999'
-alias ticker='ticker --show-fundamentals --show-separator --config $HOME/.config/ticker.yaml'
 alias vfb='vifm /media/blueberry/backups/rob-pc /home/rob'
 alias vfm='vifm /media/blueberry/ /home/rob/downloads/torrents/ '
 alias vf='vifm'
@@ -86,10 +84,6 @@ mclog () {
 # functions
 #
 
-fzcd() {
-	$(__fzf_cd__)
-}
-
 rmspaces(){
 	IFS="\n"
 	for file in *;
@@ -107,7 +101,7 @@ aur-pkgs(){
 	pacman -Qqme | tee /home/rob/docs/aur-pkgs
 }
 
-backup(){
+mkbackup(){
 	cp -b ${1} ${1}.bak
 }
 
@@ -126,12 +120,18 @@ mkcd(){
 }
 
 mkbin(){
-	p=/home/rob/bin/${1##*/}
 	if [[ -n "$1" ]]; then
-		printf '#!/bin/bash\n\n' > "$p" && chmod +x "$p" && nv "$p"
+		p=/home/rob/bin/${1##*/}
+		if [[ -f "$p" ]]; then
+			nvim "$p"
+			exit 0
+		else
+			printf '#!/bin/bash\n\n' > "$p" && chmod +x "$p" && nv "$p" "+3"
+		fi
 	else
-		nv
+		(cd /home/rob/bin && nv)
 	fi
+
 }
 
 chx(){
@@ -143,11 +143,20 @@ vw(){
 }
 
 se(){
-    dir="${@:-"$HOME"}"
-    sel="$(fd . -H "$dir"| fzf)"
+	if [[ $1 ]]; then
+		dir=${@}
+	else
+		if [[ "$(pwd)" == "$(echo $HOME)" ]]; then
+			dir=(./)
+		else
+			dir=($HOME ./)
+		fi
+	fi
+    sel="$(fd . -H $dir[@]| fzf)"
     if [[ -d "$sel" ]] ; then
         cd "$sel"
     elif [[ -f "$sel" ]]; then
+		echo "$sel"
         /home/rob/bin/nv "$sel"
     fi
 }

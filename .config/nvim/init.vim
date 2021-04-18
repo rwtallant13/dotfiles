@@ -8,6 +8,7 @@ endif
 call plug#begin('/home/rob/.config/nvim/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'kovetskiy/sxhkd-vim'
+	Plug 'mhinz/vim-startify'
     Plug 'itchyny/lightline.vim'
     Plug 'preservim/nerdtree'
 	Plug 'luochen1990/rainbow'
@@ -18,8 +19,13 @@ call plug#begin('/home/rob/.config/nvim/plugged')
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
+    Plug 'greymd/oscyank.vim'
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+	Plug 'Shougo/neco-syntax'
 call plug#end()
 
+let g:deoplete#enable_at_startup = 1
 let g:lightline = {
 	  \ 'colorscheme': 'wombat',
       \ 'component': {
@@ -109,6 +115,8 @@ autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 autocmd BufNewFile,BufRead vifmrc :set filetype=vifm
 autocmd BufNewFile,BufRead /home/rob/.vifm/colors/* :set filetype=vifm
 
+au BufReadPost *xinit* :set filetype=bash
+
 " Auto-resize splits when Vim gets resized.
 autocmd VimResized * wincmd =
 
@@ -125,21 +133,9 @@ nmap <leader>t :NERDTreeToggle
 
 let g:rainbow_active = 1
 
-" Takes the contents of register " (which is essentially the vim clipboard)
-" and puts them into the system clipboard. Handles the case when the server
-" is being accessed over ssh
-let g:clipboard_sync_command =
-      \  " if [[ -z $SSH_CONNECTION ]]; then                "
-      \. "   ( pbcopy || xsel -i ) 2> /dev/null;            "
-      \. " else                                             "
-      \. "   ssh $(echo $SSH_CONNECTION | cut -d' ' -f1) \  "
-      \. "     '( pbcopy || xsel -i ) 2> /dev/null';        "
-      \. " fi                                               "
-command! SyncClipboard :echo system(g:clipboard_sync_command, @")
-nnoremap <F3> :SyncClipboard<cr>
-
 syntax on
 colorscheme nord
+hi Visual term=reverse cterm=reverse guibg=Grey
 filetype plugin on
 set wildmode=longest,list,full
 set noshowmode
@@ -163,8 +159,6 @@ set splitbelow splitright
 set shortmess=IFA
 "set termguicolors
 set nohlsearch
-
-
 
 let g:limelight_conceal_ctermfg = '8'
 let g:nord_cursor_line_number_background = 1

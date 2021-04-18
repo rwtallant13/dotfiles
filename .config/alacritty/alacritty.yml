@@ -148,7 +148,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 13.0
+  size: 13
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -201,11 +201,10 @@ colors:
   #
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
-  #cursor:
-  #  text: '0x000000'
-  #  cursor: '0xffffff'
-
-  # Selection colors
+  cursor:
+    text: '0x263238'
+    cursor: '0xeeffff'
+# Selection colors
   #
   # Colors which should be used to draw the selection area. If selection
   # background is unset, selection color will be the inverse of the cell colors.
@@ -216,25 +215,33 @@ colors:
 
   # Normal colors
   normal:
-   black:   '0x777F83'
-   red:     '0xF07178'
-   green:   '0xC3E88D'
-   yellow:  '0xFFCB6B'
-   blue:    '0x67adf7'
-   magenta: '0xC792EA'
-   cyan:    '0x89DDFF'
-   white:   '0xEEFFFF'
+    black:   '0x263238'
+    red:     '0xf07178'
+    green:   '0xc3e88d'
+    yellow:  '0xffcb6b'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x89ddff'
+    white:   '0xeeffff'
 
   # Bright colors
   bright:
-   black:   '0x5F6569'
-   red:     '0xDB6C72'
-   green:   '0x97DB84'
-   yellow:  '0xE6B965'
-   blue:    '0x67adf7'
-   magenta: '0xB682D9'
-   cyan:    '0x6BC8ED'
-   white:   '0xDAE5E6'
+    black:   '0x546e7a'
+    red:     '0xf07178'
+    green:   '0xc3e88d'
+    yellow:  '0xffcb6b'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x89ddff'
+    white:   '0xffffff'
+
+  indexed_colors:
+    - { index: 16, color: '0xf78c6c' }
+    - { index: 17, color: '0xff5370' }
+    - { index: 18, color: '0x2e3c43' }
+    - { index: 19, color: '0x314549' }
+    - { index: 20, color: '0xb2ccd6' }
+    - { index: 21, color: '0xeeffff' }
 
   # Dim colors
   #

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#!/bin/bash
+while ! "$@"
+do
+  sleep 2
+  echo "Restarting program..."
+done

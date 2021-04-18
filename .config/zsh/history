@@ -7976,3 +7976,5 @@ sf margin
 sf firefox
 ls
 dotu
+dots add ~/.config/awesome
+dotu

@@ -34,10 +34,10 @@ _M.settings = {
 }
 
 -- Create a wibox to contain all the client-widgets
-_M.preview_wbox = wibox({ 
+_M.preview_wbox = wibox({
     shape = function(cr, width, height)
         gears.shape.rounded_rect(cr, width, height, beautiful.border_radius)
-    end, 
+    end,
 })
 _M.preview_wbox.border_width = 0
 _M.preview_wbox.ontop = true
@@ -186,7 +186,7 @@ function _M.preview()
 	local cols = 3
 	if #_M.altTabTable == 4 then
 		cols = 2
-	end 
+	end
 
 	-- Make the wibox the right size, based on the number of clients
     local w = 150 -- widget width
@@ -195,10 +195,10 @@ function _M.preview()
 	local outerMargin = 10
 	local spacing = 10
 	local textboxHeight = w * 0.125
-	local W = (w + 2 * innerMargin) * math.min(cols, #_M.altTabTable) 
-		+ (math.min(cols, #_M.altTabTable) - 1) * spacing 
+	local W = (w + 2 * innerMargin) * math.min(cols, #_M.altTabTable)
+		+ (math.min(cols, #_M.altTabTable) - 1) * spacing
 		+ 2 * outerMargin
-	local H = (h + textboxHeight + 2 * (innerMargin)) * math.ceil(#_M.altTabTable / cols) 
+	local H = (h + textboxHeight + 2 * (innerMargin)) * math.ceil(#_M.altTabTable / cols)
 		+ spacing * (math.ceil(#_M.altTabTable / cols) - 1)
 		+ 2 * outerMargin
 
@@ -242,7 +242,7 @@ function _M.preview()
 		preview_img.draw = function(preview_img, preview_wbox, cr, width, height)
 			local cg = c:geometry()
 			local tx, ty, sx, sy
-			tx = 0 
+			tx = 0
 			ty = 0
 			if cg.width > cg.height then
 				sx = w / cg.width
@@ -267,44 +267,44 @@ function _M.preview()
 		if c == _M.altTabTable[_M.altTabIndex].client then
 			bg = beautiful.bg_very_light
 		end
-        
+
         local client_widget = wibox.widget {
 			{
 				{
-					preview_img, 
+					preview_img,
 					{
 						{
-							image = c.icon, 
+							image = c.icon,
 							widget = wibox.widget.imagebox
-						}, 
+						},
 						{
-							font = "Roboto Bold 10", 
-							markup = c.class, 
+							font = "Roboto Bold 10",
+							markup = c.class,
 							widget = wibox.widget.textbox
-						}, 
-						spacing = 5, 
-						forced_width = w, 
-						forced_height = textboxHeight, 
+						},
+						spacing = 5,
+						forced_width = w,
+						forced_height = textboxHeight,
 						layout = wibox.layout.fixed.horizontal
-					}, 
+					},
 					layout = wibox.layout.fixed.vertical
-				}, 
-				margins = innerMargin, 
+				},
+				margins = innerMargin,
 				widget = wibox.container.margin
-			}, 
-			bg = bg, 
+			},
+			bg = bg,
 			widget = wibox.container.background
 		}
 
 		local container = wibox.widget {
-			client_widget, 
+			client_widget,
 			shape = function(cr, width, height)
 				gears.shape.rounded_rect(cr, width, height, beautiful.border_radius)
-			end, 
+			end,
 			widget = wibox.container.background
 		}
-		
-		container:connect_signal("widget::updated", function() 
+
+		container:connect_signal("widget::updated", function()
 			bg = beautiful.bg_light
 
 			if c == _M.altTabTable[_M.altTabIndex].client then
@@ -312,7 +312,7 @@ function _M.preview()
 			end
 			client_widget.bg = bg
 		end)
-		
+
         _M.preview_widgets[i] = container
 
 	end
@@ -327,12 +327,12 @@ function _M.preview()
 	end
 
 	_M.preview_wbox:set_widget(wibox.widget {
-		popupLib.separator(), 
+		popupLib.separator(),
 		{
 			preview_layout,
-			margins = outerMargin, 
+			margins = outerMargin,
 			widget = wibox.container.margin
-		}, 
+		},
 		layout = wibox.layout.fixed.vertical
 	})
 end
@@ -405,7 +405,7 @@ function _M.switch(dir, mod_key1, release_key, mod_key2, key_switch)
 					end
 
 					keygrabber.stop()
-				
+
 				elseif key == key_switch and event == "press" then
 					if gears.table.hasitem(mod, mod_key2) then
 						-- Move to previous client on Shift-Tab

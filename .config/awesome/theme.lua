@@ -6,26 +6,25 @@ local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
-local themes_path = "~/.config/awesome/" 
+local themes_path = "~/.config/awesome/"
 local gears = require("gears")
 
 local icon_path = "~/.config/awesome/icons/"
 
 local theme = {}
 
-theme.font          = "Roboto Medium 9"
-theme.titlefont          = "Roboto Bold 9"
-theme.fontname          = "Roboto Medium 9"
-
+theme.font          = "Roboto Medium 10"
+theme.titlefont          = "Roboto Bold 10"
+theme.fontname          = "Roboto Medium 10"
 
 theme.bg_normal     = "#1C1E26"
 theme.bg_focus      = theme.bg_normal
 theme.bg_urgent     = theme.bg_normal
 theme.bg_minimize   = "#aaaaaa"--theme.bg_normal
-theme.bg_systray    = theme.bg_normal
+theme.bg_systray    = "#29343d"
 theme.bg_light      = "#232530"
 theme.bg_very_light = "#2E303E"
-theme.bg_dark       = "#1A1C23" 
+theme.bg_dark       = "#1A1C23"
 
 theme.fg_normal     = "#dddddd"
 theme.fg_dark       = "#cccccc"
@@ -54,21 +53,50 @@ theme.red_light = "#EC6A88"
 theme.yellow = "#FAB795"
 theme.yellow_light = "#FBC3A7"
 
+theme.bg_dark = "#29343d"
+theme.bg_normal = "#1a2026"
+theme.bg_focus = "#29343d"
+theme.bg_urgent = "#3b4b58"
+theme.bg_minimize = "#3b4b58"
 
-theme.useless_gap   = dpi(8)
-theme.border_width  = dpi(0)
-theme.border_normal = theme.bg_very_light
-theme.border_focus  = theme.bg_very_light
-theme.border_marked = theme.bg_very_light
+-- Foreground Colors
+
+theme.fg_normal = "#ffffff"
+theme.fg_focus = "#a3b8ef"
+theme.fg_urgent = "#fbdf90"
+theme.fg_minimize = "#3b4b58"
+theme.button_close = "#f9929b"
+
+-- Tabbed
+
+theme.tabbar_style = "default"           -- ("default", "boxes" or "modern")
+
+-- Borders
+
+theme.border_width = dpi(2)
+theme.oof_border_width = dpi(0)
+theme.border_normal = "#29343d"
+theme.border_focus = "#d8dee9"
+theme.border_radius = dpi(12)
+theme.client_radius = dpi(12)
+theme.widget_border_width = dpi(2)
+theme.widget_border_color =  "#29343d"
+
+--wibar
+
+theme.wibar_height = dpi(38) + theme.widget_border_width
+theme.wibar_margin = dpi(15)
+theme.wibar_spacing = dpi(15)
+theme.wibar_bg = "#1a2026"
+theme.systray_icon_size = 20
+theme.systray_icon_spacing = 3
+theme.tasklist_plain_task_name = true
+theme.tasklist_bg_normal = "#29343d"
+theme.tasklist_fg_focus = "#ccaced"
+
+theme.useless_gap   = dpi(5)
 theme.rounded_corners = true
 theme.border_radius = dpi(6) -- set roundness of corners
-
-
--- bar config
-theme.bar_position = "top"
-theme.bar_height = dpi(28)
-theme.bar_item_radius = dpi(10)
-theme.bar_item_padding = dpi(3)
 
 -- regular
 theme.titlebar_close_button_normal = icon_path.."titlebar/close/close_1.png"

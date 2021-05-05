@@ -8,8 +8,8 @@ local apply_borders = require("lib.borders")
 
 local createPopup = function(color)
     local icon = wibox.widget {
-        font = "Fira Mono 28",
-        align = "center", 
+        font = "OverpassMono Nerd 24",
+        align = "center",
         valign = "center",
         widget = wibox.widget.textbox
     }
@@ -35,26 +35,26 @@ local createPopup = function(color)
     local widget = apply_borders({
         {
             {
-                nil, 
+                nil,
                 progressbar_container,
-                nil, 
+                nil,
                 expand = "none",
                 layout = wibox.layout.align.horizontal
-            }, 
+            },
             icon,
             spacing = dpi(4),
             layout = wibox.layout.fixed.vertical,
         },
         top = dpi(16),
-        left = dpi(8), 
-        right = dpi(8),
+        left = dpi(4),
+        right = dpi(4),
         widget  = wibox.container.margin
     }, 30, 176, 6)
 
     local popup = awful.popup {
         widget = widget,
-        y            = awful.screen.focused().geometry.height / 2 - 72,
-        x            = awful.screen.focused().geometry.width - 48,
+        y            = mouse.screen.geometry.height / 2 - 72,
+        x            = mouse.screen.geometry.width - 48,
         shape        = function(cr, width, height)
             gears.shape.rounded_rect(cr, width, height, beautiful.border_radius)
         end,
@@ -73,7 +73,7 @@ local createPopup = function(color)
         else
             timer_die:start()
         end
-        
+
         popup.visible = true
     end
 

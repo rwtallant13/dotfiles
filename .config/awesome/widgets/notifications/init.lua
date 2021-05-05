@@ -34,12 +34,12 @@ local urgency_color = {
 -- ===================================================================
 naughty.connect_signal("request::display", function(n)
     local custom_notification_icon = wibox.widget {
-        font = "Fira Mono 28",
+        font = "OverpassMono Nerd 28",
         align = "right",
         valign = "center",
         widget = wibox.widget.textbox
     }
-    
+
     local color = urgency_color[n.urgency]
 
     local icon, title_visible
@@ -129,18 +129,18 @@ naughty.connect_signal("request::display", function(n)
                                 actions,
                                 visible = n.actions and #n.actions > 0,
                                 layout  = wibox.layout.fixed.vertical,
-                                forced_width = dpi(220),
+                                forced_width = dpi(250),
                             },
                             spacing = dpi(4),
                             layout  = wibox.layout.fixed.vertical,
                         },
-                        nil, 
+                        nil,
                         expand = "none",
                         layout = wibox.layout.align.vertical
                     },
                     margins = dpi(8),
                     widget  = wibox.container.margin,
-                }, 
+                },
                 layout  = wibox.layout.fixed.horizontal,
             },
             bg = beautiful.bg_normal,
@@ -184,31 +184,6 @@ function notifications.notify_dwim(args, notif)
     return n
 end
 
-notifications.screenshot = function(filename)
-    local open = naughty.action {
-        name = "Open"
-    }
-
-    open:connect_signal("invoked", function(n)
-        awful.spawn("feh "..filename, false)
-    end)
-
-    local show = naughty.action {
-        name = "Show in folder"
-    }
-
-    show:connect_signal("invoked", function(n)
-        awful.spawn("thunar "..filename.."/..", false)
-    end)
-
-    naughty.notify({
-        title = "Screenshot captured!",
-        app_name = "screenshot",
-        actions = { open, show },
-        timeout = 10,
-        urgency = "normal"
-    })
-end
 
 local battery_notification
 notifications.battery = function(charge)

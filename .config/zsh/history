@@ -371,7 +371,6 @@ bspc node --state ~tiled
 du .xsession-errors
 tail .xsession-errors
 pacs gnome-keyring
-pac libgnome-keyring
 sudo pacr picom-tryone-git
 ls .cache/yay
 sudo rm -rf .cache/yay/picom-tryone-git
@@ -786,7 +785,6 @@ bindkey -v
 bindkey -e
 compinit
 compinsta;;
-compinstall
 locate zsh-auto
 pacf zsh-autosuggestions
 touch .bin/sinkctrl2
@@ -823,7 +821,6 @@ V /root/.aliases
 sudo ll /root
 sudo la sudo ll /root
 sudo la /root
-sudo ln -s /home/rob/.profile /root/.profile
 ls '"$HOME"/.zshrc'
 ll pics/backgrounds/landscapes/macOS/catalina-phone-night*
 viewnoir
@@ -1311,7 +1308,6 @@ xtitle $(bspc query -N)
 xtitle
 xtitle -i
 xtitle -s
-cd docs
 pac unbuffer
 pacf unbuffer
 pac expect
@@ -1884,7 +1880,6 @@ man deluge
 deluge-console info
 man deluge-console
 deluge-console connect
-cd ~/downloads
 cd torrents/\[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(01-066\ +\ Extras\)\ \[BD\ 1080p\]\[Dual\ Audio\]
 vf ~/downloads/torrents/\[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(01-066\ +\ Extras\)\ \[BD\ 1080p\]\[Dual\ Audio\]
 cd ~/downloads/torrents/\[InoBestGirl\]\ Boruto\ -\ Naruto\ Next\ Generations\ \(01-066\ +\ Extras\)\ \[BD\ 1080p\]\[Dual\ Audio\]
@@ -1949,7 +1944,6 @@ locate big-sur
 .bin/wall.sh update /home/rob/pics/backgrounds/landscapes/macOS/big-sur-3.jpg
 .bin/wall.sh update /home/rob/pics/backgrounds/landscapes/macOS/big-sur-2.jpg
 .bin/wall.sh update /home/rob/pics/backgrounds/landscapes/macOS/big-sur-2-top.jpg
- $TERMINAL -e vifm
  $TERMINAL -e vifm /home/rob
 rofi_dmenu='rofi -i -dmenu -lines 8 -width 40 -padding 20 -format q -multi-select'
 fd . $dir -H -a -t d -t l | $rofi_dmenu -p "Dir"
@@ -1965,7 +1959,6 @@ v /home/rob/.bin/pkglist
 cat /home/rob/.bin/pkglist
 rm -rf .bin/pkglist
 s systemctl daemon-reload
-S daemon-reload
 locate pacnew
 locate pacsave
 mv /home/rob/.config/zhistory /home/rob/.config/zhistory_bad
@@ -2016,8 +2009,6 @@ pacman -Qi neovim
 v .bin/pkglist
 v .bin/pkgclear
 pacman -Qq|grep lib
-pacman -Qqm
-pacman -Qqn
 pacman -Qqn|grep lib
 pacman -Qqe|grep lib
 chxbin
@@ -2537,7 +2528,6 @@ ITP132
 v Example\ Erroneous\ Programs.txt
 gcc 16.cpp -o 16
 gcc 16.cpp -lstdc++ -o 16
-xev -event keyboard
 locate .sw
 man hyperfine
 z etc
@@ -3029,7 +3019,6 @@ pac qt-creator
 pac qtcreator
 yay eclipse
 sudo paccache
-sudo paccache -r
 rm ~/bitwarden_export_20201006141233.csv
 S enable systemd-journald.service
 factor {2..1000} | awk 'NF==2{print $2}'
@@ -3090,7 +3079,6 @@ rmr night
 mv landscapes/macOS ./
 macOS
 cp *{left,right}* ../
-ls ../
 mkdir ../lr
 mv ../Appearance_Dark-left.png ../Appearance_Dark-right.png ../Appearance_Light-left.png ../Appearance_Light-right.png ../lr
 ls ../lr
@@ -3183,8 +3171,6 @@ polybar dvi &
 xset q
 echo - -e
 v ~/.local/share/applications/chromium.desktop
-pac libpam-gnome-keyring
-pacf libpam-gnome-keyring
 ls /lib/x86_64-linux-gnu/security/pam_gnome_keyring.so
 pac libgnome-keyring libsevret gnome-keyring
 pac libgnome-keyring libsecret gnome-keyring
@@ -3260,7 +3246,6 @@ v .config/rgconf
 rg appendpath /etc
 less .xsession-errorsq
 pacf /etc/profile
-vim
 v .config/vifm/colors/Default.vifm
 v .config/vifm/vifmrc
 v /etc/pam.d/lightdm-autologin
@@ -3578,7 +3563,6 @@ ll .bin
 v .bin/system-backup
 ls .bin/rsync_backup.sh
 rsync_backup.sh
-sudo systemctl daemon-reload
 n
 rg NNN .zsh
 rg NN
@@ -3650,7 +3634,6 @@ ssh pi@192.168.2.41 sh
 ssh pi@192.168.2.41 mv .bashrc .f
 ssh pi@192.168.2.41
 fd -H | wc -l
-start obs
 obs --profile Default
 pac simplescreenrecorder
 mkdir -p $XDG_CONFIG_HOME/simplescreenrecorder/
@@ -3948,7 +3931,6 @@ z -I
 z -I $HOME
 z -I .
 z -I it
-z -h
 z -l | cut -f2
 z -l | cut -d' ' -f10
 z -l | cut  -f1-
@@ -3957,7 +3939,6 @@ z -l | cut  -d' ' -f1-
 z -l | cut  -d' ' -f1
 z -l | cut  -d' ' -f2
 z -l | awk '{print $2}'
-which z
 _zlua
 zsh "_zlua"
 zsh -e "_zlua"
@@ -3984,22 +3965,17 @@ ls /usr/share/autojump/autojump.zsh
 echo "source /usr/share/autojump/autojump.zsh" >> ~/.zshrc
 rm ~/.zhrc
 autojump
-cd pics
 cd pics/backgrounds/macOS
 cd /media/blueberry/backups
 cd ~/.bin
 cd ~/downloads/torrents
-cd /etc/systemd/system/
-cd school
 cd ITE221
 cd ITP132
-z -l
 cd /home/rob/projects
 cd /media/blueberry
 cd /media/blueberry/media/movies
 cd shows
 cd /media/mx100
-cd .config
 jc
 autojump --help
 autojump --complete
@@ -4057,7 +4033,6 @@ echo "$(echo "scale=1; 100 * $(pacman -Qi $(pacman -Qq) | grep Felix | wc -l) / 
 mks dpms.sh
 realpath .bin/dpms.sh
 rmr .bin/start
-logout
 persist "picom --experimental-backends" &
 rg -H persist
 rg -h persist
@@ -4373,7 +4348,6 @@ yay xidlehook
 ls /home/rob/.local/share/cargo/registry/src/
 ls /home/rob/.local/share/cargo/registry/src/github.com-1ecc6299db9ec823/iovec-0.1.4/src
 sudo /home/rob/.bin/rsync_backup.sh / root@192.168.2.21:/data/backups/rob-pc /home/rob/docs/backup_exclude.txt
-cd .config/vifm
 v colors/Default.vifm
 sudo mkdir -p /etc/opt/chrome/policies/managed/ && echo '{ "URLWhitelist": ["magnet://*"] }' |sudo tee /etc/opt/chrome/policies/managed/whitelist.json
 ps aux
@@ -4489,8 +4463,6 @@ pacr ungoogled-chromium
 sudo pacr ungoogled-chromium
 yay -S --rebuild ungoogled-chromium
 sudo pacman -U /var/cache/pacman/pkg/re2-1:20201101-1-x86_64.pkg.tar.zst
-pf
-pfetch
 pacq ungoogled-chromium
 pacman -U downloads/re2-1\ 20201001-1-x86_64.pkg.tar.zst
 man pacman.conf
@@ -4546,7 +4518,6 @@ pacman -Sc
 pacr steam
 sudo pacr steam
 alias pacr
-fzpacr
 rmr plexmediaplayer task Valve\ Corporation epiphany flatpak autojump calcurse Colossal\ Order cod Meltytech nemo autojump* mc
 ls G
 rmr kvibes
@@ -4601,7 +4572,6 @@ rg .bin set
 rg .bin "\-e"
 man ffmpeg
 mv .bin/tmp .bin/2mp4
-df
 mks mvmedia
 rg -C3 case .bin
 echo /media/blueberry/media/shows
@@ -4715,7 +4685,6 @@ diskinfo /dev/sdd
  sudo pacman-key --lsign-key 8A9E14A07010F7E3
 alias udev-reload
 S stop backup.timer
-timers
 less .bin/start
 xset -h
 xset dpms force off
@@ -4765,7 +4734,6 @@ rg --bf-tab-selected-bg
 rg '--bf-tab-selected-bg'
 rg -e '--bf-tab-selected-bg'
 .mozilla/firefox/ocdc4cz2.default-release/chrome/parts
-../..
 rmr chrome
 .mozilla
 cd firefox/ocdc4cz2.default-release/chrome
@@ -4773,7 +4741,6 @@ cd .mozzila/firefox/ocdc4cz2.default-release/chrome
  .mozilla/firefox/ocdc4cz2.default-release/chrome
 xclip
 man xclip
-filecount
 v .fdignore
 cd .mozilla/firefox/ocdc4cz2.default-release/chrome
 pacs dejavu
@@ -4810,7 +4777,6 @@ ll .config/
 [[ -w ./ ]] && echo yes
 [[ -w ./ ]] || echo yes
 [[ ! -w ./ ]] && echo yes
-cd /
 v /home/rob/.bin
 v /home/rob/.bin/rmspaces
 realpath $(dirname docs)
@@ -4878,7 +4844,6 @@ sudo chmod -x /etc/systemd/system/piavpn.service
 ll /etc/systemd/system/piavpn.service
 pacr libva-vdpau-driver-chromium
 sudo pacr libva-vdpau-driver-chromium
-sudo pacman -Sc
 yay -Sc
 pac linux
 trash-list
@@ -4896,7 +4861,6 @@ diskinfo /dev/sdc
 pac udisk
 pac udisks2
 gcc -march=native -v -Q --help=target
-v /etc/makepkg.conf
 z chrome
 cat /sys/block/sdd/queue/scheduler
 ll /media
@@ -4985,7 +4949,6 @@ vw plot.svg
 S disable ntpdate.service
 S enable Systemd-timesyncd
 S enable systemd-timesyncd
-echo $TERM
 pac linux linux-lts nvidia nvidia-lts
 pacmd
 pac pacmd
@@ -5097,7 +5060,6 @@ mkdir HLT110
 z MUS121
 bspc node newest.marked.local -n newest.
 bspc node newest.marked.local -n newest.\!automatic
-xev
 bspc node -p cancel
 which bash
 sxhkd
@@ -5256,7 +5218,6 @@ mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /media/nextclou
 sudo mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /media/nextcloud rob Sp8ceisEndle55
 sudo mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /media/nextcloud
 sudo mount -t davfs https://cloud.rwt13.xyz/remote.php/dav/files/rob/ /home/rob/media/nextcloud
-v .davfs2/secrets
 sudo groupadd -r network
 sudo gpasswd -a rob network
 mount -v ./media/nextcloud
@@ -5463,7 +5424,6 @@ rmr chromium-flags.conf
 ls pipewire-media-session
 rmr pipewire-media-session
 task
-.config
 rmr task
 qalc
 man reflector
@@ -5527,7 +5487,6 @@ ln -s /root/.zkbd/ /root/.zkbd/
 sudo ln -s /root/.zkbd/ /root/.zkbd/
 sudo ln -s /root/.zkbd/ /root/
 ls /root/
-ls .config/zsh
 grep PS1 .zshrc
 mediainfo Captain.America.Civil.War.2016.REMASTERED.1080p.BluRay.x265-RARBG.mp4
 ndu
@@ -5647,7 +5606,6 @@ sudo pacr popcorntime
 /usr/share/applications
 .local/share/applications
 rm appimagekit-littleweeb.desktop
-ls .con
 paru replaysorcery
 paru -Ss replaysorcery
 paru  replay-sorcery-git
@@ -5718,7 +5676,6 @@ sudo pacr booster
 sudo rm /etc/booster.yaml
 sudo rm /boot/booster-linux*
 sudo rm /boot/loader/entries/booster.conf
-comm -12 <(pacman -Qq | sort) <(pacman -Sql chaotic-aur | sort)
 pacman-pkgs
 pac systemd-swap
 S enable --now systemd-swap
@@ -5810,7 +5767,6 @@ pactl info | grep "Default Sink" | cut -f2 -d' '
 pactl info | grep "Default Sink" | cut -f2 -d':'
 pactl info | grep "Default Sink" | cut -f2 -d': '
 pamixer
-pamixer --get-volume-human
 man pamixer
 pamixer --help
 pamixer --default-source "$(pamixer --list-sources | grep hdmi | cut -d' ' -f1)"
@@ -5841,7 +5797,6 @@ nv .profile
 nvim .profile
 nvim .aliases
 v bin/rofer
-rofer
 bin/rofer
 bin/rofer --help
 bin/rofer -l
@@ -5992,7 +5947,6 @@ S disable --now backup.timer
 ls /etc/systemd/system/timers.target.wants/
 S disable obs_cleanup.timer
 systemctl list-unit-files | grep enabled
-less /etc/fstab
 cargo install --git https://github.com/rschmukler/caffeinate
 caffeinate --timer 7200
 sudo snap-sync -r 192.168.2.11
@@ -6079,7 +6033,6 @@ efibootmgr | grep linux | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr -d '*'
 efibootmgr | grep GRUb | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr -d '*'
 efibootmgr | grep G | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr -d '*'
 efiboot
-systemd-analyze critical-chain
 btrfs qgroup show /
 sudo btrfs qgroup show /
 btrfs subvolume list -ts / | wc -l
@@ -6093,7 +6046,6 @@ v etc/conf.d/minecraft
 ([[ ! "./.zshrc" ]] || [[ ! -f "./.zshrc" ]]) && echo true
 ([[ ! "./.zshrc" ]] || [[ ! -f "./.zshrc" ]]) && echo true || echo false
 v /etc/conf.d/minecraft
-/etc
 ~
 nvim bin/nv
 v /etc
@@ -6177,7 +6129,6 @@ sudo btrbk ls -L /
 lsbkl
 mount -s subvolid=5 /dev/nvme0n1p3 /mnt/btr_pool
 sudo mount -s subvolid=5 /dev/nvme0n1p3 /mnt/btr_pool
-mount
 mkdir /mnt/btr_pool
 sudo mkdir /mnt/btr_pool
 sudo mount /dev/nvme0n1p3 -s subvolid=5 /mnt/btr_pool
@@ -6212,7 +6163,6 @@ ls .local/share/multimc/instances/Forge/.minecraft/mods
 snapper get-config home | grep TIMELINE_CLEANUP
 snapper get-config  | grep TIMELINE_CLEANUP
 ls /etc/cron.hourly/snapper
-v /etc/pacman.conf
 sudo rm -rf /etc/cron.*/snapper
 ls /etc/cron.daily
 ls /etc/cron.hourly
@@ -6331,7 +6281,6 @@ pac pipewire pipewire-pulse pipewire-media-session
 ls /etc/pipewire
 systemctl --user enable pipewire pipewire-pulse pipewire-media-session
 rmr ssr/
-v /etc/pipewire/media-session.d/alsa-monitor.conf
 systemctl --user restart pipewire pipewire-pulse pipewire-media-session
 sinkctrl -h
 sinkctrl -R
@@ -6358,9 +6307,7 @@ pactl set-default-sink alsa_output.pci-0000_00_1f.3.analog-stereo
 pactl set-default-sink 41
 pactl info
 cat /tmp/current_sink.ziH8
-sinkctrl -c
 S status backup.service
-S enable backup.timer
 ncdu -x /
 journalctl -r -u backup.service
 journalctl -r -u backup.timer
@@ -6434,7 +6381,6 @@ mimeopen --ask .zshrc
 which mimeopen
 alacritty -h
 alacritty -e nvim
-v bin/sinkctrl
 v /usr/bin/vendor_perl/mimeopen
 v bin/nv
 paru mimeo
@@ -6507,7 +6453,6 @@ discord
 which pacrepo
 man rsync
 rm carpet-extra-21w07a-1.4.27.jar
-echo $XDG_CONFIG_HOME/
 pacf task
 paru tmuxp
 mkdir .config/tmux
@@ -6580,7 +6525,6 @@ rm fabric-mods.zip
 zip downloads/minecraft/forge/forge-mods ~/.local/share/multimc/instances/forge/.minecraft/mods/*
 fd downloads/minecraft/{fabric,forge}/ -e zip
 fd . downloads/minecraft/{fabric,forge}/ -e zip
-ls media/nextcloud
 fd . downloads/minecraft/{fabric,forge}/ -e zip -x cp {} /media/nextcloud/Gaming/Minecraft
 ls /media/nextcloud/Gaming/Minecraft
 ls media/nextcloud/Gaming/Minecraft
@@ -6626,7 +6570,6 @@ mkbin mimeo
 v bin/mimeterm
 which mimeo
 mimeo .zshrc
-v sxhkdrc
 time mimeo echo true
 time mimeo pics/scrots/test.png
 time mimeo .zshrc
@@ -6636,7 +6579,6 @@ time termite -e echo true
 $TERMINAL -e "nvim /etc/fstab"
 $TERMINAL -e nvim /etc/fstab
 ta
-v bin/opi
 rm bin/mimeterm
 cat bin/efimgr
 nv '/etc/fstab'
@@ -6680,12 +6622,10 @@ xbacklight -set 50
 killall redshift
 redshift -c .config/redshift/dim.conf
 exit
-cd ~
 realpath
 zsh
 jobs -l
 killall 65034
-z
 z mods
 sudo pacr linux-hardened-headers-5.11.9.hardened1-1 linux-hardened
 sudo pacr linux-hardened-headers linux-hardened
@@ -6732,7 +6672,6 @@ mount /media/ssd
 sudo mount /media/ssd
 sudo umount /media/ssd
 sudo umount /media/blueberry
-ls /media/blueberry
 bspc config pointer_motion_interval 5
 bspc config pointer_motion_interval 100
 v rob@192.168.2.11
@@ -6743,7 +6682,6 @@ TERM=xterm-256color bb
 echo $ZLS_COLORS
 rm netherite-plus-mod-1.4.2-1.16.5-fabric.jar
 mcsync -m fabric
-aur-pkgs
 man bspwm
 man bspc
 persist --help
@@ -6784,7 +6722,6 @@ rg --hidden '\$TERMINAL'
 nvim /etc/environment
 sudo nvim /etc/environment
 v /etc/environment
-which pacdiff
 sudo rg fail /etc/pam.d/*
 sudo rg 3 /etc/pam.d/*
 v /etc/pam.d/system-auth
@@ -6799,7 +6736,6 @@ piactl --help | grep connect
 systemctl status sxhkd.service
 systemctl --user status sxhkd.service
 journalctl --user -r -u sxhkd.service
-mnt nextcloud
 less /etc/mtab
 rg awk bin
 cat /etc/mtab | awk '{print $1}'
@@ -6809,7 +6745,6 @@ bspc config pointer_motion_interval 80
 bspc config pointer_motion_interval 60
 bspc config pointer_motion_interval 75
 man rg
-ls .config/autostart
 v bin/persist
 rg persist --hidden
 rg persist
@@ -6847,11 +6782,9 @@ snapper -c home list
 ls /home
 la /home
 v bin/mcctrl
-v bin/dockermc
 man setfacl
 rg case .bin
 rg shift bin
-v bin/mnt
 rg yn bin
 paru jre-openj9-bin
 paru jdk-openj9-bin jre-openj9
@@ -6889,7 +6822,6 @@ ls ~/.config/rofi
 powermenu
 v ~/bin/powermenu
 rm ~/bin/powermenu
-v ~/.zshrc
 man fd
 colored git help clone
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -6930,7 +6862,6 @@ rm statusbar/upgradepkg
 v default.rasi
 mv .config/rofi .config/rofi-bak
 mv dotfiles/config/rofi .config
-v .config/rofi/config.rasi
 rm default.rasi
 grep print dotfiles/config/sxhkd/sxhkdrc
 grep Print dotfiles/config/sxhkd/sxhkdrc
@@ -6966,12 +6897,10 @@ systemctl --user restart sxhkd.service &
 /home/rob/bin/caps2esc &
 jobs
 journalctl -r -p warning
-date
 man date
 date +%c
 date +%D
 date +%r
-neofetch
 pac minecraft-launcher
 rm worldedit-bukkit-7.2.0-dist.jar CoreProtect-19.3.jar LuckPerms-Bukkit-5.2.47.jar
 rm AutoCraft.jar assassin-1.2.1.jar
@@ -7009,7 +6938,6 @@ sudo fastboot flash boot twrp-3.5.1_9-0-taimen.img
 cd taimen-rp1a.201005.004.a1
 ./flash-all.sh
 sudo ./flash-all.sh
-..
 sudo fastboot flash recovery twrp-3.5.1_9-0-taimen.img
 sudo fastboot boot twrp-3.5.1_9-0-taimen.img
 adb sideload lineage-18.1-20210402-nightly-taimen-signed.zip
@@ -7037,7 +6965,6 @@ rmr .config/polybar.backup
 rmr .config/jgmenu
 mv .config/rofi-bak/config.rasi .config/rofi/config.rasi.old
 rmr .config/rofi-bak
-la .config
 rg -i drm user.js
 rg --help
 rg --help | grep -i
@@ -7081,7 +7008,6 @@ man pacman
 paru -Sy -q && paru -Qu
 paru -Sy > /dev/null  && paru -Qu
 pactl list-sinks
-pactl list sinks short
 pbar.sh
 df -h
 rg '\|\|' bin
@@ -7130,7 +7056,6 @@ fzaux
 which chronic
 v /usr/bin/chronic
 tail -f .config/picom/log
-btm
 chrome
 v userContent.css
 v userChrome.css
@@ -7141,11 +7066,8 @@ dots --help
 which dots
 man yadm
 yadm rm .config/vifm/vifminfo*
-dotu
 pacnew
-sudo pacdiff
 v /etc/pacman.d/mirrorlist
-xcolor
 scp laptop:docs/*pkgs ./
 scp rob@192.168.2.132:docs/*pkgs ./
 sudo fdisk /dev/sdd
@@ -7157,7 +7079,6 @@ rg -i drm
 ssh rob@192.168.2.223
 pacq | grep overpass
 pacq | grep picom
-ncdu / -x
 ncdu /var -x
 btrfs subvolume list -h
 btrfs subvolume list -t
@@ -7169,7 +7090,6 @@ btrfs subvolume list /
 sudo btrfs subvolume list /
 btrfs subvolume -h
 btrfs filesystem df
-btrfs filesystem df /
 sudo btrfs subvolume show /
 ls /media/blueberry/backups/inspiron
 pacq | grep ttf
@@ -7196,13 +7116,11 @@ pac pkgfile
 sudo pkgfile -u
 filelight
 systemd-analyze
-v .config/nvim/init.vim
 nvim
 bootctl remove
 sudo pacr linux
 mv downloads/minecraft/bukkit downloads/minecraft/plugins
 ls downloads/minecraft/
-docker ps
 bspc config focused_border_color '#8fbcbb'
 bspc config presel_feedback_color '#8fbcbb'
 man fzf
@@ -7239,7 +7157,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\\
 " --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D"
 echo $FZF_DEFAULT_OPTS
 ssh peach
-myip
 bspc config normal_border_color '#606060'
 bspc config normal_border_color '#4c5050'
 v /etc/profile
@@ -7249,8 +7166,6 @@ compgen -c | grep autosuggest | grep strat
 compgen -c | grep autosuggest | grep start
 rm pacman-pkgs yay-pkgs latest.log
 ls .cache
-mkdir .cache/zsh
-ls .cache/zsh
 v /etc/snapper/configs/home
 nano /etc/snapper/configs/home
 sudo nano /etc/snapper/configs/home
@@ -7273,10 +7188,8 @@ cat bin/setdns
 setdns -p
 ping youtube.com
 dig youtube.com
-ls .config
 man ls
 ls -A
-rm -rf .cache/zsh/zcompdump-5.8
 l
 ls pics
 [[ -d "$XDG_CACHE_HOME/zsh" ]] || mkdir "$XDG_CACHE_HOME/zsh"
@@ -7285,30 +7198,23 @@ ls $XDG_CONFIG_HOME/zsh
 rm -rf $XDG_CONFIG_HOME/zsh/pure
 man compinit
 compinit --help
-echo $fpath
 hostname
 host
 sudo dd bs=4M if=/home/rob/downloads/torrents/debian-live-10.9.0-amd64-xfce.iso of=/dev/sdd status=progress oflag=sync
 sudo dd bs=4M if=/home/rob/downloads/torrents/debian-live-10.9.0-amd64-standard.iso of=/dev/sdd status=progress oflag=sync
 ssh -f rob@192.168.2.21
 ssh-copy-id rob@192.168.2.21
-ssh pi
 grep lua .zshrc
 ssh rob@192.168.2.21 -L 32400:192.168.2.21:32400 -N
 ssh 192.168.2.21 -L 8888:localhost:32400
 paru chromium-widevine
 ll /etc/xdg/nvim/sysinit.vim
 v /etc/xdg/nvim/sysinit.vim
-v /etc/fstab
 ls /etc/xdg/nvim
 scp bb:~/blueberry.ovpn docs/
-z default
-v user.js
 ping 192.168.1.5
 ping 192.168.2.21
 ssh rob@192.168.2.21
-v
-se 
 bspc config top_padding         30
 ssh-agent
 pac keychain
@@ -7316,7 +7222,6 @@ ssh-add ~/.ssh/id_rsa
 v ~/.config/systemd/user/ssh-agent.service
 ssh-copy-id root@192.168.2.21
 man journalctl
-S start backup.timer
 S status backup.timer
 J -u backup.service -r
 ssh blueberry
@@ -7374,7 +7279,6 @@ paru leftwm
 command -v termite
 command -v polybar
 ls .config/leftwm
-udb
 locate config.toml | grep leftwm
 locate config.toml 
 pac neovide
@@ -7389,13 +7293,11 @@ sudo pacr neovide
 paru -Sc
 j
 journalctl 
-lsblk
 systemctl --user stop sxhkd
 leftwm-theme update
 leftwm-theme apply dracula
 leftwm-theme install "Dracula Rounded"
 leftwm-theme apply "Dracula Rounded"
-xprop
 pacman -S spectrwm
 pac spectrwm
 sudo pacr leftwm leftwm-theme
@@ -7454,14 +7356,10 @@ COLUMNS=5 exa -l
 fzcd
 compgen -c | fzf
 cd .minecraft
-rmorphans
-pacdiff
 v /etc/ssh/sshd_config
 ssh -X bb
-v .ssh/config
 which extract
 mv bin/system-backup bin/sysbackup
-ls bin
 touch file
 mv -v file filenew
 mv filenew ~/
@@ -7472,15 +7370,12 @@ rm genfzf
 sudo rm .w3m
 sudo rmr .w3m
 v /etc/systemd/system/backup.service
-v bin/sysbackup
-v /etc/systemd/system/backup.timer
 cat bin/system-backup
 cat bin/sysbackup
 EXA_GRID_ROWS=2 lb
 EXA_GRID_ROWS=2 exa -l bin
 EXA_GRID_ROWS=2 exa -l --geid bin
 EXA_GRID_ROWS=2 exa -l --grid bin
-ll
 lla
 \ls
 exa
@@ -7488,7 +7383,6 @@ exa -l
 exa -laG
 exa -laG --icons
 man hdparm
-cd /etc
 fd . -H ./ ~
 fd . -H ./ ~ | fzf
 source .aliases
@@ -7508,8 +7402,6 @@ exa --tree --level=3 | bat --color always
 exa --tree --level=3 | less -r
 exa --tree --level=3 --color always | less -r
 man df
-lb
-bb
 git pull https://github.com/JavaCafe01/dotfiles.git
 git clone https://github.com/JavaCafe01/dotfiles.git ~/tmp
 ~/tmp/.config
@@ -7527,7 +7419,6 @@ time fd . ./
 time fd . ./ $HOME
 time fd . ./ | wc -l
 time fd . ./ $HOME | wc -l
-v .aliases
 s stop sxhkd
 procs
 /home/rob/bin/start picom
@@ -7577,7 +7468,6 @@ mv .config/awesome/ ~/.config/
 paru -Sy awesome-git
 pac imagemagick giph farge-git colorpicker-ym1234-git lm_sensors acpid pulseaudio inotify-tools
 paru -S giph farge-git
-git clone https://github.com/Nooo37/bling.git ~/.config/awesome/bling
 git clone https://github.com/xinhaoyuan/layout-machi.git ~/.config/awesome/layout-machi
 sudo luarocks --lua-version 5.3 install bling
 sudo luarocks --lua-version 5.3 install layout-machi
@@ -7620,23 +7510,18 @@ v /etc/pacman.d/hooks/boot-backup.hook
 ls /boot
 pip3 install --user pynvim
 rm tmp/*
-la tmp
 rm -rf /tmp
 rm -rf tmp
-nv
 fd -e py
 v projects/python/code_guessing/test.py
 start sxhkd
 sxhkd -s $HOME/.cache/sxhkd.fifo
 startx ~/.xinitrc bspwm
-v .zshrc
 exec bspwm
-less .xsession-errors.old
 v .fehbg
 ./.fehbg
 cd .config/sxhkd
 sf rofi
-sf useless
 cp pics/backgrounds/abstract/the-great-wave.png .config/awesome/images 
 ls tmp
 mkdir tmp
@@ -7653,10 +7538,8 @@ sudo nvidia-xconfig --cool-bits=4
 gpufans 
 pip3 install  pynvim
 sudo pip3 install  pynvim
-sf keys
 fd keys
 v bin/gpufans
-fkill
 nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=20
 mv ui/bar/wibar.lua ui/bar/wibar.lua.old
 tail -f .cache/awesome
@@ -7679,7 +7562,6 @@ fd . /home /etc
 [[ $(pwd) == $(echo $HOME) ]] ||  true
 [[ $(pwd) == $(echo $HOME) ]] && true
 [[ "$(pwd)" == "$(echo $HOME)" ]] && true
-pwd
 echo $HOME
 if [[ $(pwd)" == "$(echo $HOME)" ]]; then echo true; fi
 if [[ "$(pwd)" == "$(echo $HOME)" ]]; then echo true; fi
@@ -7689,20 +7571,15 @@ mv .config/awesome .config/awesome-old
 git clone https://gitlab.com/noaccOS/dotfiles.git ~/.config/awesome
 la ~/.config/awesome
 mv -f ~/.config/awesome/.config/awesome ~/.config/awesome
-ls ~/.config/awesome
 mv .config/awesome/awesome .config
 mv .config/awesome/awesome tmp
 rm .config/awesome
 rmr .config/awesome
 rm -rf .config/awesome
 mv tmp/awesome .config
-cd
 cd .config/awesme
 cd .config/awesome-old
-sf
-less .xsession-errors
 start picom
-v ~/bin/start
 v autorun.sh
 v kaomoji.txt
 rm kaomoji.txt
@@ -7714,17 +7591,13 @@ sf mywiibar
 ls ui
 ls ui/bar
 sf wibar\.lua
-sf wibar
 la ~
 alacritty nvim
 gpufans &!
 sudo nvidia-settings -a [gpu:0]/GPUFanControlState=1 -a [fan-0]/GPUTargetFanSpeed=20
 v /etc/X11/xorg.conf
 nvtop
-awesome-client --help
 z awesome old
-v .xinitrc
-less ~/.xsession-errors
 z aweso
 S enable lightdm
 cat .xinitrc
@@ -7732,7 +7605,6 @@ cat .xinitrc
 xsetroot -cursor_name left_ptr &\
 /home/rob/bin/gpufans &\
 /home/rob/bin/monctl dpms &
-paru
 journalctl --user -u lightdm
 journalctl -u lightdm -r
 less /var/log/lightdm
@@ -7751,7 +7623,6 @@ paru leftwm
 loginctl
 sudo loginctl kill-session 2
 sudo loginctl
-reboot
 shutdown now
 reboot uefi
 mv /etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf.old
@@ -7776,8 +7647,6 @@ cat .fdignore
 sudo fd --hidden -o avahi:avahi . / > avahi-owned.txt
 less avahi-owned.txt
 rm avahi-owned.txt
-vfm
-mnt bb
 z awe
 ls configuration
 v configuration/picom.conf
@@ -7792,7 +7661,6 @@ farge --notify
 sudo pacr farge
 sudo pacr farge-git
 picom --experimental-backends -b
-reboot windows
 sudo ln -s /usr/share/backgrounds/rob /home/rob/pics/backgrounds/
 ls /usr/share/backgrounds/ro
 ls /usr/share/backgrounds/rob
@@ -7800,9 +7668,6 @@ ls /usr/share/backgrounds
 ls pics/backgrounds
 rm pics/backgrounds/rob
 S restart lightdm
-v /etc/lightdm/lightdm-webkit2-greeter.conf
-systemctl --user restart pipewire.service
-systemctl --user restart pipewire-pulse.service
 cat autorun.sh
 ls themes
 ls assets
@@ -7817,15 +7682,12 @@ mv .config/awesome/ tmp/awesome
 git clone https://gitlab.com/drahenprofi/dotfiles  ~/.config/awesome
 git clone https://gitlab.com/drahenprofi/dotfiles.git  ~/.config/awesome
 git clone https://github.com/drahenprofi/dotfiles.git ~/.config/awesome
-cd ~/.config/awesome
-la
 mv .config/awesome/ ../
 mv .config/awesome/ ../awesome2
 mv ~/.config/awesome/ /tmp
 ls /tmp
 rm -rf /tmp/awesome
 ls .config/
-cd ..
 ls awesome
 la awesome
 rm -rf awesome
@@ -7839,88 +7701,42 @@ sf terminal
 cp ~/pics/backgrounds/abstract/alpha-cloud.png ./wallpaper.png
 cp ~/pics/backgrounds/abstract/nord.jpg ./wallpaper.png
 sf picom
-sf next
-sf launcher
 sf layout
 sf scroll
 sf wheel
-sf firefox
 sf browsere
-sf browser
-v config/keys.lua
-cd .config/awesome
-v config/notifications.lua
 z awe old
-cd ~/tmp/awesome
-sf telegram
-se
 v config/autorun.sh
-sf floating
-cd tmp/awesome
-sf sloppy
-ls config
 ls rc.lua
-v  rc.lua
 v config/rules.lua
-v config/layout.lua 
 sf request::activate
-lr
-ls
-sf volume
-vf
-z awesome
 cd ../awesome
 sf battery
-less ~/.cache/awesome/stderr
-less ~/.cache/awesome/stdout
 wget https://github.com/drahenprofi/dotfiles/blob/master/.config/awesome/widgets/topbar/battery.lua ./widgets/topbar/battery.lua
 ls ./widgets/topbar/battery.lua
 ls 
 mv battery.lua ./widgets/topbar/battery.lua
 v ./widgets/topbar/battery.lua
-v widgets/topbar/taglist.lua
 grep pia ~/bin/start
 runse
-v rc.lua
 cd ~/tmp/awesome
 sf sloppy
 v ~/bin/start
 v .xinitrc
-se
-./autorun.sh
 fkill
 ./autorun.sh
-se
-cd .config/awesome
-ls
-ls icons
-ls
-v widgets/topbar/init.lua
-ls widgets
-v widgets/popup/popup.lua
 v widgets/dashboard/avatar.lua
-widgets
-ls
-v topbar/session.lua
 cd tmp/awesome
 sf beautiful\.layout
-sf beautiful.layout
-ls
 ls ~/.config/awesome2
 ls ~/.config/awesome-old
-ls
 ls ~/.config/awesome
 rm -rf ~/.config/awesome2
 mv ~/.config/awesome-old/ /tmp
-ls
-..
-ls
 mv /tmp/awesome-old ./
-ls
 cd awesome-old
 sf beautiful.layout
 sf get_icon
-ls
 ls icons
 ls icons/notif-center
 ls icons/ghosts
@@ -7928,53 +7744,609 @@ sf layoutbox
 ls topbar/
 v topbar/layoutbox.lua
 cd .config/awesome
-ls widgets/topbar
 widgets/topbar
-v clock.lua
-v init.lua
-cd .config/awesome
-widgets/topbar
-v clock.lua
 v battery.lua
 v launcher.lua
 v clock.lua
-ls
-v init.lua
 z old
 sf 55
-v taglist.lua
 v session.lua
-sf systray
-..
 sf connect_for_each_screen
-..
-se
-ls
 widgets/dashboard/
-ls
 v weather/init.lua
-v avatar.lua
 sf parndt
-ls
 v avatar.lua
 ls background
 ls ../
 ls ../../
 ls ../../icons/avatar.png
 vw ../../icons/avatar.png
-../../
 fd avatar.png
 cd widgets/
 v topbar/session.lua
-v topbar/init.lua
-v widgets/topbar/layoutbox.lua
 v widgets/topbar/clock.lua
-sf margin
 widgets/topbar/
-sf margin
 ../../
-sf firefox
-ls
-dotu
 dots add ~/.config/awesome
+dotu
+ls .con
+ls ~/.config
+rm -rf ~/.config/leftwm
+rm -rf ~/.config/spectrwm
+giph -h
+v widgets/dashboard/background
+v widgets/dashboard/settings.lua
+v widgets/dashboard/drawBox.lua
+v widgets/dashboard/background/change_check.txt 
+rofer
+rofer -p
+vw icons/avatar.png
+sleep 3 && flameshot screen -c
+sf auto_dpi
+reboot windows
+v /etc/lightdm/lightdm-webkit2-greeter.conf
+rm thunar.lua
+rm left.lua
+v config/keys.lua
+sf launcher
+sf browser
+sf wallpaper
+v widgets/dashboard/background/init.lua
+sf screen.primary
+sf taglist
+sf awful.tag
+pac laxrandr
+pac lxrandr
+sf volume
+amixer -D pulse sget Master
+v bin/sinkctrl
+pamixer --get-volume-human
+v widgets/popup/volume-popup.lua
+v widgets/popup/popup.lua
+widgets/popup
+xev | grep -i page
+cd ~/tmp
+sf page
+sf Page
+xev -event keyboard
+sf screen.count
+v widgets/topbar/layoutbox.lua
+sf firefox
+rm decorations/top-alternate.lua
+v widgets/dashboard
+sf Fira
+sf Fira Mono
+fc-list  | cut -d : -f1
+fc-list  | awk -F : '{print $1}'
+fc-list  | awk -F : '{print $1}' | grep Overpass
+fc-list  | awk -F : '{print $1}' | grep Fira
+fc-list | column
+fc-list  | awk -F : '{print $2}' 
+fc-list  | awk -F : '{print $2}'  | grep Overpass
+fc-list  | awk -F : '{print $2}'  | grep Fira
+fc-list
+fc-list | grep Fira Mono
+fc-list | grep Fira\ Mono
+fc-list 
+fc-list | grep Fira
+cp awesome awesome.b4
+cp -r awesome awesome.b4
+find . -name '*.lua' -exec sed -i -e 's/Fira\ Mono/OverpassMono\ Nerd/g' {} \;
+sf Overpass
+v layoutbox.lua
+v taglist.lua
+../..
+sf next
+sf viewnext
+sf screen
+se keys
+sf resize
+sf mouse.screen
+sleep 2 && flameshot screen -c
+sf  placement
+ls config/notifications.lua
+v config/notifications.lua
+giph -s -t 5 bouncing.gif
+less ~/.cache/awesome/stdout
+less ~/.cache/awesome/stderr
+less .xsession-errors
+v widgets/dashboard/init.lua
+ls widgets/dock
+mv widgets/dock widgets/dockold
+v widgets/dockold/dock
+v widgets/dockold/dock.lua
+v widgets/dockold/dockbox.lua
+rm -rf widgets/dockold/
+rm -rf widgets/dashboard/docks/*
+v widgets/dashboard/docks/*
+rm -rf widgets/dashboard/docks
+v in
+v
+z default
+v user.js
+sf incmhfact
+sf incmwfact
+sf incnmaser
+sf incnmaster
+paru ttf-ms-win10
+sf floating.terminal
+sf wb
+sf change cursor
+sf old.cursor
+sf  snap
+v config/apps.lua
+sf settings
+sf apps.settings
+sf fileexplorer
+lxrandr
+monctl 2
+monctl -tv off
+cat ~/bin/monctl
+nvidia-settings --assign CurrentMetaMode="DPY-2: 1920x1080_144 @1920x1080 +1920+120 {ViewPortIn=1920x1080, ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On, ForceFullCompositionPipeline=On}, DPY-0: 1920x1200_75 @1920x1200 +0+0 {ViewPortIn=1920x1200, ViewPortOut=1920x1200+0+0, ForceCompositionPipeline=On, ForceFullCompositionPipeline=On} DPY-1:1920x1080 @1920x1080 +3840+0 {ViewPortIn=1920x1080,ViewPortOut=1920x1080+0+0, ForceCompositionPipeline=On,ForceFullCompositionPipeline=On}"
+date
+rmorphans
+sudo pacman -Sc
+ls decorations/bottom.lua
+v decorations/bottom.lua
+rofer -l
+xev
+swap .config/rofi/config.rasi .config/rofi/config.rasi.old
+v .config/rofi/config.rasi
+rm -rf tmp/awesome*
+btrfs filesystem df /
+ncdu / -x
+ncdu /.snapshots -x
+sf thunar
+awesome-client --help
+awesome-client get
+awesome-client get screen.clients
+awesome-client get screen.clients end
+awesome-client function() get screen.clients end
+awesome-client function() print screen.clients end
+vfmn
+systemctl disable ldconfig.service\
+systemctl stop ldconfig.service
+fzpacr
+S disable upower
+git clone https://github.com/Litarvan/lightdm-webkit-theme-litarvan.git ~/tmp
+~/tmp
+sf DisableFade
+sf FadeDisable
+sf fade
+rm -rf tmp/
+mkdir tmp/
+paru -Syu --rebuild qt5-styleplugins
+paru qt5-styleplugins
+sudo pacr chaotic-aur/qt5-styleplugins
+paru lain-git
+clipmenu -p Copy -i
+locate lain
+locate lain.icons
+locate lain/icons
+locate centerwork.png
+vw /usr/share/lua/5.3/lain/icons/layout/zenburn/centerwork.png\
+
+sf useless.gaps
+sf useless
+systemd-analyze critical-chain
+systemd-analyze 
+awesome-client notifications.notify_dwim({ title = "good", message = "bye" }, my_notif)
+awesome-client naughty.notify
+notify-send "something"
+awesome-client             notif = notifications.notify_dwim({ title = "Volume", message = message, icon = icon, timeout = timeout, app_name = "volume" }, notif)
+awesome-client notifications.notify_dwim({ title = "Volume", message = message, icon = icon, timeout = timeout, app_name = "volume" }, notif)
+awesome-client
+sf notif
+sf remote
+echo -e 'notifications.notify_dwim({ title = "Volume", message = message, icon = icon, timeout = timeout, app_name = "volume" }, notif)' awesome-client
+echo -e 'notifications.notify_dwim({ title = "Volume", message = message, icon = icon, timeout = timeout, app_name = "volume" }, notif)' | awesome-client
+ls no
+ls widgets/notifications
+sf setTitlebar
+sf request..titlebar
+less .xsession-errors.old
+sf property..floating
+ls decorations/
+sf urgent
+sf alt.tab
+ls popup
+v popup/init.lua
+v alt-tab/init.lua
+sf switcher
+v alt-tab/init.lua 
+sf preferred
+sf focused
+git clone https://github.com/Nooo37/bling.git ~/.config/awesome/bling
+mv ls lib
+sf beautiful.init
+v ls
+ls bling
+ll
+pac playerctl
+ls widgets/topbar
+awesome
+./awesome
+mv topbar topbar.old
+mkdir topbar
+ls topbar.old
+awesome -k 
+v topbar/init.lua
+sf gears
+v widgets/topbar/init.lua
+v helpers.lua
+git clone https://github.com/JavaCafe01/dotfiles.git ~/tmp/awesome-git-javacafe
+~/tmp/awesome-git-javacafe
+sf wibar_height
+cp tmp/awesome-git-javacafe/.config/awesome/theme/ghosts/theme.lua .config/awesome
+ls .config/awesome
+sf ghost
+mv /home/.snapshots/376/snapshot/rob/.config/awesome/theme.lua .config/awesome/theme.lua
+cp /home/.snapshots/376/snapshot/rob/.config/awesome/theme.lua .config/awesome/theme.lua
+v theme
+tmp/awesome-git-javacafe/
+v theme/ghosts
+v widgets/topbar/wibar.lua
+v widgets/topbar.old/init.lua
+v widgets/topbar.old/taglist.lua
+cp widgets/topbar.old/taglist.lua widgets/topbar/taglist.lua
+ls widgets/topbar/taglist.lua
+awesome-git-javacafe
+fd pacman
+v ui/widgets/pacman_taglist.lua
+z awesome tmp
+sf pac.taglist
+mv topbar/taglist.lua topbar/taglist.lua2
+mv topbar/taglist.lua2 topbar/taglist.lua
+rm topbar.old
+rm -r topbar.old
+v topbar/wibar.lua
+sf color
+sf wibar.bg
+sf systray
+giph -s -t 8 vol\&bar.gif
+sudo pacdiff
+echo $DIFFPROG
+sudo nvim -d /etc/makepkg.conf /etc/makepkg.conf.pacnew
+sudo --help
+sudo echo $DIFFPROG
+sudo -E echo $DIFFPROG
+\pacdiff
+sudo ln -s /home/rob/.profile /root/.profile
+\sudo \pacdiff 
+which pacdiff
+which \pacdiff
+v /usr/bin/pacdiff
+vim
+nv
+v /etc/makepkg.conf
+v /etc/makepkg.conf.pacnew
+pacdiff
+ssh pi
+v /etc/pacman.conf
+paccache -r
+sudo paccache -r
+ls decorations
+ls decorations/top.lua
+sf bg.systray
+sf Create
+echo -e "\e]2;New Title\007";sleep 100
+opi -f
+v bin/opi
+$TERMINAL -e vifm
+opi -d
+sf icon.spacing
+sf prompt
+sf wibar
+z ~/.zshrc
+echo $TERM
+echo $PROMPT_COMMAND
+print -n '\e]2;My xterm title\a'
+sleep 20s
+echo -e "\033];this is the title\007"
+.config
+/etc
+pwd
+.config/awesome
+sf height
+sf container.margin
+which su
+sf telegram
+sf dock
+sf margin
+sf wibar.spacing
+sf wibar.margin
+z sx
+v sxhkdrc
+ls bin
+man chmod
+pac libpam-gnome-keyring
+pacf libpam-gnome-keyring
+pac lib32-libgnome-keyring
+pac libgnome-keyring
+vf
+v widgets/topbar/taglist.lua
+v .davfs2/davfs2.conf
+v bin/mnt
+v /etc/fstab
+\
+    sudo usermod -a -G davfs2\
+
+v .davfs2/secrets
+mnt nextcloud
+ls media/nextcloud
+less /etc/fstab
+pf
+pfetch
+paru pfetch
+pacman -Sii rust
+pacman -Qii rust
+pactree rust
+ls .cargo
+ls .cargo/registry
+ls .cargo/registry/index
+ls .cargo/registry/src
+ls .cargo/registry/src/github.com-1ecc6299db9ec823
+paru radarr
+sudo systemctl daemon-reload
+sudo systemctl enable --now radarr
+S daemon-reload
+S start backup.timer
+S enable backup.timer
+timers
+btm
+sudo systemctl disable --now radarr
+lsblk
+sf libre
+redshift.sh -h
+redshift.sh 
+v bin/redshift.sh
+redshift.sh -t
+lb
+v bin/keepup
+v bin/dockermc
+rm bin/dockermc
+sf misc1
+neofetch
+docker ps
+pac arc-gtk-theme
+paru zorin-desktop-themes
+pacr zorin-desktop-themes
+sudo pacr zorin-desktop-themes
+sudo pacr arc-gtk-theme
+z aw
+sf overlap
+awesome-client 'next_tag()'
+sf function
+awesome-client 'tag_back_and_forth()'
+awesome-client 'helpers.tag_back_and_forth()'
+awesome-client 'awesome.emit_signal("test::notify", "foobar")'
+awesome-client 'awesome.emit_signal("movetag::next", "foobar")'
+awesome-client 'awesome.emit_signal("tag::move", "foobar")'
+awesome-client 'awesome.emit_signal("tag::move", "next")'
+awesome-client 'awesome.emit_signal("tag::move", "viewnext")'
+awesome-client 'awesome.emit_signal("tag::next,)'
+awesome-client 'awesome.emit_signal("tag::next)'
+awesome-client 'awesome.emit_signal("tag::next")'
+sf
+awesome-client 'awesome.emit_signal("tag::movenext")'
+sf border.marked
+v right.lua
+decorations
+v bottom.lua
+sf client.color
+sudo shutdown now
+rm vol\&bar.gif
+snapper list -a 
+myip
+popup
+v init.lua
+v popup.lua
+v volume-popup.lua
+systemctl --user restart pipewire.service
+systemctl --user restart pipewire-pulse.service
+journalctl -u pipewire -r
+journalctl --user -u pipewire -r
+journalctl --user -u pipewire-pulse -r
+v /etc/pipewire/media-session.d/alsa-monitor.conf
+pactl list sinks short
+sinkctrl -c
+nmcli
+nmcli | column
+rm -rf .config/awesome.b4
+sudo rm -rf .config/discord
+ssh rob@192.168.2.12
+ssh rob@192.168.2.12 -p 8022
+ssh-copy-id rob@192.168.2.12 -p 8022
+ssh-copy-id -p 8022 rob@192.168.2.12 
+v .ssh/config
+la .config
+v bin/sysbackup
+aur-pkgs
+rm -rf hstr radarr
+sudo pacr hstr radarr
+sf lain
+sudo pacr lain-git
+rm -rf tmp/*
+la tmp
+rm -rf tmp/.git*
+sf theme
+rm -rf widgets/dashboard/
+sf dashboard
+ls lib
+v lib/borders.lua
+v lib/border_colors.lua
+v decorations/top.lua
+sf border.width
+sf border.color
+widgets
+sf lib
+ls evil
+ll /media/blueberry/media/shows/JujutsuKaisen/Season 1/Jujutsu Kaisen_S01E22 .mkv
+ll Jujutsu\ Kaisen_S03E22\ .mkv
+filecount
+v rc.lua
+ls config
+sf decorations
+v config/layout.lua 
+sf connect.signal
+sf floating
+sf border
+sf 200
+se 
+sf list.update
+sf keys
+less ~/.xsession-errors
+tail -f ~/.xsession-errors
+reboot
+sf round
+xcolor
+sf #f4e5b5
+sf "#f4e5b5"
+sf clock
+z aweseome
+v theme.lua
+sf widget.border.color
+sf tasklist
+sf time
+sf bar.position
+sf bar.height
+sf font
+se
+xprop
+sf topbar
+sf titlenar
+sf titlebar
+sf maximized
+sf property::maximized
+z awesome
+sf minimized
+ls widgets
+ls widgets/notifications/init.lua
+v widgets/notifications/init.lua
+systemctl --user restart pipewire*
+vfm
+comm -12 <(pacman -Qq | sort) <(pacman -Sql chaoticc-aur | sort)
+pacman -Qqn
+comm -12 <(pacman -Qq | sort) <(pacman -Sql chaotic-aur | sort)
+pacman -Qqm
+comm -23 <(pacman -Qq | sort) <(pacman -Sql chaotic-aur | sort) | grep awesome
+comm -23 <(pacman -Qq | sort) <(pacman -Sqnl chaotic-aur | sort) | grep better
+comm -23 <(pacman -Qq | sort) <(pacman -Sql chaotic-aur | sort) | grep better
+fzfpac
+df
+rg clip .config/nvim/init.vim 
+v .config/nvim/init.vim
+rm -rf .config/zlua
+rm -rf .local/share/z.lua
+ls .config/configstore
+ls .config/autostart
+paru
+v .aliases
+ls .config/z.db
+v .config/z.db
+z conf
+v ~/.zshrc
+less z.db
+rm z.db
+echo $XDG_CONFIG_HOME/
+cd .config
+mkdir .local/share/zsh-z
+mv .config/z.db .local/share/zsh-z/z
+cd /etcx
+cd /etc
+cd downloads
+cd pics
+cd docs
+cd /etc/systemd/system/
+less /home/.snapshots/455/snapshot/rob/.config/zlua 
+cat /home/.snapshots/455/snapshot/rob/.config/zlua |  cut -f1 -d'|' |  awk '{ printf "\"%s\"\n", $0 }'
+for dir in $(cat /home/.snapshots/455/snapshot/rob/.config/zlua |  cut -f1 -d'|' |  awk '{ printf "\"%s\"\n", $0 }' ) ; do cd $dir ; done
+cd "/home/rob/tmp"
+for dir in $(cat /home/.snapshots/455/snapshot/rob/.config/zlua |  cut -f1 -d'|' ; do cd $dir ; done
+for dir in $(cat /home/.snapshots/455/snapshot/rob/.config/zlua |  cut -f1 -d'|' ; do echo $dir; done
+for dir in $(cat /home/.snapshots/455/snapshot/rob/.config/zlua |  cut -f1 -d'|' ); do echo $dir; done
+for dir in $(cat /home/.snapshots/455/snapshot/rob/.config/zlua |  cut -f1 -d'|' ); do cd $dir; done
+for dir in $(cat /home/.snapshots/455/snapshot/rob/.config/zlua |  cut -f1 -d'|' ); do cd $dir; sleep 1; done
+z -l
+cat /home/.snapshots/455/snapshot/rob/.config/zlua |  cut -f1 -d'|' 
+cd /
+v ~/.fdignore
+cd ~/.config/awesome
+cd config
+cd widgets
+cd .config/vifm
+cd ..
+cd sxhkd
+cd bspwm
+polybar
+./polybar
+cd /media
+cd blueberry
+cd media
+cd backups
+cd other
+cd ~/downloads
+..
+cd bin
+cd .mozilla/firefox/swkflvvd.default-release/chrome
+cd school
+cd 
+cd .local/share/Trash
+lr
+cd /opt
+ls
+cd /home/.snapshots
+cd /.snapshots
+z -e
+z -h
+z lo sh
+rmr .zcompdump
+z
+rm -rf .cache/zsh/zcompdump-5.8
+z 
+udb
+locate zsh-z.plugin.zsh
+v .z
+ls .cache/zsh
+echo $fpath
+ compinstall
+z -c 
+z -x
+cd ~
+z -c
+which z
+z pics
+tb .zshrc
+giph -s -t 8 zsh-z-tabcomplete.gif
+giph -s -t 15 zsh-z-tabcomplete.gif
+z config
+cat .zshrc | tb
+v bin/ssr.sh
+start obs
+man zshbuiltins
+rm .zcompdump
+ls .config
+rm -rf .cache/zsh/
+rm -rf .config/zcompdump
+mkdir .cache/zsh
+rm -rf .cache/zsh
+rm -rf .cache/zcompdump-5.8
+z /home/rob/.config/awesome/widgets/alt-tab
+z /home/rob/.config
+z /home/rob/.local/share/Trash
+logout
+kill -9 -1
+z /media
+cd
+bb
+v /etc/systemd/system/backup.timer
+ls /media/blueberry
+mount
+sudo umount bb:/data/
+mnt bb
+la
+ls .config/zsh
+zinit update
+zinit self-update
+v .zshrc
 dotu

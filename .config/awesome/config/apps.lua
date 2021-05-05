@@ -1,20 +1,20 @@
 local apps = {
-    terminal = "alacritty",
-    launcher = "rofi -show run",
+    terminal = "alacritty ",
+    launcher = "rofi -show run ",
     switcher = require("widgets.alt-tab"),
     xrandr = "lxrandr",
-    screenshot = "flameshot gui",
+    screenshot = "flameshot ",
     volume = "pavucontrol",
     appearance = "lxappearance",
-    browser = "firefox",
-    fileexplorer = "thunar",
+    browser = "firefox ",
+	incognito_browser = "firefox --new-window --private-window",
+    fileexplorer = "thunar ",
     musicplayer = "pragha",
-    settings = "code /home/parndt/awesome/"
 }
 
 user = {
-    terminal = "alacritty",
-    floating_terminal = "alacritty"
+    terminal = "alacritty ",
+    floating_terminal = "alacritty "
 }
 
 return apps

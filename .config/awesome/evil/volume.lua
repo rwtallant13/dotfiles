@@ -1,7 +1,7 @@
 local awful = require("awful")
 local watch = require("awful.widget.watch")
 
-local GET_VOLUME_CMD = 'amixer -D pulse sget Master'
+local GET_VOLUME_CMD = 'pamixer --get-volume-human'
 
 local handleVolume = function(stdout)
     local mute = string.match(stdout, "%[(o%D%D?)%]")   -- \[(o\D\D?)\] - [on] or [off]
@@ -12,9 +12,9 @@ local handleVolume = function(stdout)
 
     if mute == 'off' then
         icon = ""
-    elseif volume > 50 then
+    elseif volume > 66 then
         icon = ""
-    elseif volume > 5 then 
+    elseif volume > 33 then
         icon = ""
     else
         icon = ""

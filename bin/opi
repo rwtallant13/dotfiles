@@ -12,7 +12,8 @@ _opiOpen(){
 _opiDir(){
     dir="${*:-"/home/rob/"}"
     file=$( fd . $dir -H -a -t d -t l | $rofi_dmenu -p "Dir")
-    [[ -z $file ]] || $TERMINAL -e vifm $file
+	echo $file
+    [[ -z $file ]] || $TERMINAL -e "vifm $file"
 }
 
 _opiEdit(){

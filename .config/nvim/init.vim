@@ -20,7 +20,9 @@ call plug#begin('/home/rob/.config/nvim/plugged')
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
     Plug 'greymd/oscyank.vim'
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	if has('nvim')
+	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	endif
 	Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 	Plug 'Shougo/neco-syntax'
 call plug#end()
@@ -159,6 +161,11 @@ set splitbelow splitright
 set shortmess=IFA
 "set termguicolors
 set nohlsearch
+
+" Update term title but restore old title after leaving Vim
+set title
+set titleold=
+
 
 let g:limelight_conceal_ctermfg = '8'
 let g:nord_cursor_line_number_background = 1

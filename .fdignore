@@ -5,6 +5,7 @@
 *[Cc]hromium*
 *[Ll]ib*
 *[Nn]pm*
+**.snapshots*
 *zkbd*
 **/nvim/swap/*
 **/.local/lib/*

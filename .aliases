@@ -33,7 +33,6 @@ alias pacs='sudo pacman -Ss'
 alias pac='sudo SNAP_PAC_SKIP=y pacman -S'
 alias paru='SNAP_PAC_SKIP=y paru'
 alias pacu='sudo pacman -Syu'
-alias pacy='sudo pacman -Syy'
 alias pacdiff='sudo pacdiff'
 alias rmorphans='sudo pacman -Rns $(pacman -Qtdq)'
 
@@ -99,6 +98,12 @@ pacman-pkgs(){
 
 aur-pkgs(){
 	pacman -Qqme | tee /home/rob/docs/aur-pkgs
+}
+
+fzfpac(){
+	pkg="$(pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse)"
+	test $pkg || return 1
+	sudo pacman -Syu $pkg
 }
 
 mkbackup(){

@@ -5,7 +5,7 @@
 
 # edit bspwm files
 super + {_,alt + ,shift + }o
-	mimeo ~/.config/{sxhkd/sxhkdrc,bspwm/autostart.sh,bspwm/bspwmrc}
+	mimeterm ~/.config/{sxhkd/sxhkdrc,bspwm/autostart.sh,bspwm/bspwmrc}
 
 # reload sxhkd
 super + Escape
@@ -30,7 +30,7 @@ super + shift + Escape
 
 # open functions file
 super + {_,alt + }a
-	mimeo /home/rob/.{aliases,zshrc}
+	mimeterm /home/rob/.{aliases,zshrc}
 
 super + shift + a
 	/home/rob/bin/caps2esc

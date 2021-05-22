@@ -4,7 +4,7 @@ HISTFILE="$HOME"/.config/zsh/history
 HISTSIZE=100000
 SAVEHIST=100000
 
-PROMPT='%B%F{33}%n%f %F{white}%(3~|…/%2~|%~)%f %B%F{33}%# '
+PROMPT='%B%F{33}%n@%m%f %F{white}%(3~|…/%2~|%~)%f %B%F{33}%# '
 
 # source aliases and functions
 [[ -e "$HOME"/.aliases ]] && \
@@ -15,25 +15,6 @@ bindkey -e
 
 source "$HOME"/.zkbd/$TERM*
 
-# -- plugins ------------------------------------------------------------------
-declare -A ZINIT
-
-ZINIT[HOME_DIR]="$HOME"/.config/zsh/zinit
-ZINIT[ZCOMPDUMP_PATH]="$XDG_CACHE_HOME"/zcompdump-$ZSH_VERSION
-
-source "$HOME"/.config/zsh/zinit/bin/zinit.zsh
-
-zinit load agkozak/zsh-z
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-zinit light zdharma/fast-syntax-highlighting
-
-# -- compinit ------------------------------------------------------
-
-autoload -Uz compinit && compinit -C -d "$XDG_CACHE_HOME"/zcompdump-$ZSH_VERSION
-autoload bashcompinit && bashcompinit
-
-zinit cdreplay -q
 
 # -- autosuggestions ----------------------------------------------------------
 
@@ -47,7 +28,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f6569,bg=bold,underline"
 # -- completion ---------------------------------------------------------------
 
 # The following lines were added by compinstall
-#zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' insert-tab false
 zstyle ':completion:*' rehash true
@@ -63,19 +44,20 @@ zstyle :compinstall filename '/home/rob/.zshrc'
 
 # -- setopts ------------------------------------------------------------------
 
-setopt extended_glob
-setopt nonomatch
-setopt auto_cd
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_expire_dups_first
-setopt inc_append_history
+setopt   extended_glob \
+		 nonomatch \
+		 auto_cd \
+		 hist_ignore_all_dups \
+		 hist_save_no_dups \
+		 hist_expire_dups_first \
+		 inc_append_history \
+		 automenu \
+		 always_to_end \
+		 complete_in_word \
+		 PROMPT_CR \
+		 PROMPT_SP
 unsetopt menucomplete
-setopt automenu
-setopt always_to_end
-setopt complete_in_word
-setopt PROMPT_CR
-setopt PROMPT_SP
+
 export PROMPT_EOL_MARK=""
 DISABLE_AUTO_TITLE="true"
 
@@ -127,16 +109,48 @@ zle -N exit_zsh
 bindkey '^D' exit_zsh
 
 
-# -- exports -------------------------------------------------------
+# -- fzf
 
 export FZF_DEFAULT_OPTS="--preview-window noborder --no-color --reverse --exact --multi --cycle --border=sharp --height=50% --no-info --color=spinner:#89DDFF,hl:#82AAFF --color=fg:#d6d6d6,header:#82AAFF,info:#FFCB6B,pointer:#89DDFF --color=marker:#89DDFF,fg+:#EEFFFF,prompt:#FFCB6B,hl+:#82AAFF"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50' --exact"
 export FZF_CTRL_T_COMMAND="fd . --hidden"
 export FZF_ALT_C_COMMAND='fd . --hidden -t d -t l'
 export FZF_CTRL_R_OPTS='--exact'
-export ZSHZ_DATA='/home/rob/.local/share/zsh-z/z'
 
-# -- source --------------------------------------------------------
+# -- zsh-z
+export ZSHZ_DATA='/home/rob/.local/share/zsh-z/z'
+export ZSHZ_KEEP_DIRS=( /drives/blueberry )
+export ZSHZ_ECHO=1
+
+# -- source -------------------------------------------------
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/doc/pkgfile/command-not-found.zsh
+
+# -- plugins -------------------------------------------------
+declare -A ZINIT
+
+ZINIT[HOME_DIR]="$HOME"/.config/zsh/zinit
+ZINIT[ZCOMPDUMP_PATH]="$XDG_CACHE_HOME"/zcompdump-$ZSH_VERSION
+
+source "$HOME"/.config/zsh/zinit/bin/zinit.zsh
+
+# Load using the for-syntax
+zinit wait lucid for \
+	agkozak/zsh-z
+zinit wait lucid for \
+    zsh-users/zsh-autosuggestions
+zinit wait lucid for \
+    zsh-users/zsh-completions
+zinit wait lucid for \
+	NullSense/fuzzy-sys
+
+zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
+    zdharma/fast-syntax-highlighting
+
+# -- compinit -------------------------------------------------
+
+autoload -Uz compinit && compinit -C -d "$XDG_CACHE_HOME"/zcompdump-$ZSH_VERSION
+autoload bashcompinit && bashcompinit
+
+zinit cdreplay -q

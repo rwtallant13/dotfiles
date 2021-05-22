@@ -69,6 +69,8 @@ hide_table_gap = true
 # macOS default Terminal does NOT like custom colours and it will glitch out.
 [colors]
 
+color="nord"
+
 # Represents the colour of table headers (processes, CPU, disks, temperature).
 #table_header_color="LightBlue"
 
@@ -103,10 +105,10 @@ hide_table_gap = true
 #text_color="Gray"
 
 # Represents the colour of text that is selected.
-selected_text_color="white"
+#selected_text_color="white"
 
 # Represents the background colour of text that is selected.
-selected_bg_color="black"
+#selected_bg_color="black"
 
 # Represents the colour of the lines and text of the graph.
 #graph_color="Gray"

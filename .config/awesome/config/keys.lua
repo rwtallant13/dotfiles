@@ -88,7 +88,7 @@ keys.globalkeys = gears.table.join(
 	),
 
 	awful.key({ modkey }, "m",
-		function () awful.spawn(apps.terminal .. "-e zsh -ic 'vifm /home/rob/downloads/torrents /media/blueberry/'", false) end,
+		function () awful.spawn(apps.terminal .. "-e zsh -ic 'vifm /home/rob/downloads/torrents /drives/blueberry/'", false) end,
 		{description = "Vifm for media", group = "launcher"}
 	),
 
@@ -131,14 +131,20 @@ keys.globalkeys = gears.table.join(
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
     awful.key({ altkey,           }, "Tab",
-      function ()
-          apps.switcher.switch( 1, "Mod1", "Alt_L", "Shift", "Tab")
-      end),
+		function ()
+            awful.client.focus.history.previous()
+            if client.focus then
+                client.focus:raise()
+            end
+        end),
 
     awful.key({ altkey, "Shift"   }, "Tab",
       function ()
-          apps.switcher.switch(-1, "Mod1", "Alt_L", "Shift", "Tab")
-      end),
+            awful.client.focus.history.next()
+            if client.focus then
+                client.focus:raise()
+            end
+        end),
 
 	-- tabbed layout
 	awful.key({"Mod1"}, "a",
@@ -166,6 +172,36 @@ keys.globalkeys = gears.table.join(
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
 
+
+
+	awful.key({ modkey, "Shift"}, "Left",
+      function ()
+        -- get current tag
+        local t = client.focus and client.focus.first_tag or nil
+        if t == nil then
+            return
+        end
+        -- get previous tag (modulo 9 excluding 0 to wrap from 1 to 9)
+        local tag = client.focus.screen.tags[(t.name - 2) % 9 + 1]
+        client.focus:move_to_tag(tag)
+    end,
+        {description = "move client to previous tag", group = "layout"}),
+
+
+	awful.key({ modkey, "Shift" }, "Right",
+      function ()
+        -- get current tag
+        local t = client.focus and client.focus.first_tag or nil
+        if t == nil then
+            return
+        end
+        -- get next tag (modulo 9 excluding 0 to wrap from 9 to 1)
+        local tag = client.focus.screen.tags[(t.name % 9) + 1]
+        client.focus:move_to_tag(tag)
+    end,
+        {description = "move client to next tag", group = "layout"}),
+
+
 	awful.key({ modkey, altkey }, "Left",
       function ()
         -- get current tag
@@ -175,10 +211,11 @@ keys.globalkeys = gears.table.join(
         end
         -- get previous tag (modulo 9 excluding 0 to wrap from 1 to 9)
         local tag = client.focus.screen.tags[(t.name - 2) % 9 + 1]
-        awful.client.movetotag(tag)
+        client.focus:move_to_tag(tag)
         awful.tag.viewprev()
     end,
         {description = "move client to previous tag and switch to it", group = "layout"}),
+
 
 	awful.key({ modkey, altkey }, "Right",
       function ()
@@ -189,7 +226,7 @@ keys.globalkeys = gears.table.join(
         end
         -- get next tag (modulo 9 excluding 0 to wrap from 9 to 1)
         local tag = client.focus.screen.tags[(t.name % 9) + 1]
-        awful.client.movetotag(tag)
+        client.focus:move_to_tag(tag)
         awful.tag.viewnext()
     end,
         {description = "move client to next tag and switch to it", group = "layout"}),

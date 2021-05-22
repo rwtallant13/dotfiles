@@ -58,9 +58,9 @@ export RIPGREP_CONFIG_PATH="/home/rob/.config/rgconf"
 
 
 # shortcuts
-export bb=/media/blueberry
-export media=/media/blueberry/media
-export backups=/media/blueberry/backups/rob-pc
-export mx100=/media/mx100/
-export ssd=/media/ssd/
+export bb=/drives/blueberry
+export media=/drives/blueberry/media
+export backups=/drives/blueberry/backups/rob-pc
+export mx100=/drives/mx100/
+export ssd=/drives/ssd/
 export bin=/home/rob/bin

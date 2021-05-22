@@ -7,13 +7,13 @@ else
 fi
 
 IFS=: read -ra selected < <(
-  rg --color=always --line-number --no-heading --smart-case "${search}" |
+  rg --hidden --color=always --line-number --no-heading --smart-case "${search}" |
     fzf --ansi \
 		--height 80% \
 		--color dark \
         --color "hl:-1:underline,hl+:-1:underline:reverse" \
         --delimiter : \
-        --preview 'bat --color=always {1} --highlight-line {2}' \
+        --preview 'bat --color=always {1} --line-range=:800 --highlight-line {2}' \
         --preview-window 'up,60%,border-bottom,+{2}+3/3,~3'
 )
 [ -n "${selected[0]}" ] && nvim "${selected[0]}" "+${selected[1]}"

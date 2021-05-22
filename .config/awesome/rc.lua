@@ -40,6 +40,7 @@ require("widgets.popup")
 
 require("config.notifications")
 require("awful.autofocus")
+require("awful.permissions")
 
 require("widgets.notifications")
 

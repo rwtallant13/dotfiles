@@ -16,7 +16,7 @@ _sync-mods(){
 _sync-zip(){
 	zip -q ~/downloads/minecraft/forge/forge-mods ~/.local/share/multimc/instances/forge/.minecraft/mods/*
 	zip -q ~/downloads/minecraft/fabric/fabric-mods ~/.local/share/multimc/instances/fabric/.minecraft/mods/*
-	2>/dev/null 1>&2 mnt nextcloud ; fd . ~/downloads/minecraft/{fabric,forge}/ -e zip -x cp {} /media/nextcloud/Gaming/Minecraft
+	2>/dev/null 1>&2 mnt nextcloud ; fd . ~/downloads/minecraft/{fabric,forge}/ -e zip -x cp {} /drives/nextcloud/Gaming/Minecraft
 }
 
 _help(){

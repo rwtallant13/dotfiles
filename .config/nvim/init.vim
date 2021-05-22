@@ -118,6 +118,7 @@ autocmd BufNewFile,BufRead vifmrc :set filetype=vifm
 autocmd BufNewFile,BufRead /home/rob/.vifm/colors/* :set filetype=vifm
 
 au BufReadPost *xinit* :set filetype=bash
+au BufReadPost *.aliases* :set filetype=bash
 
 " Auto-resize splits when Vim gets resized.
 autocmd VimResized * wincmd =

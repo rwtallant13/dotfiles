@@ -90,8 +90,8 @@ set slowfs+=https://cloud.rwt13.xyz/remote.php/dav/files/rob/
 
 "-------------------------------------------------------------------------------
 " sort per dir
-autocmd DirEnter /media/blueberry/media/movies setlocal sort=-mtime
-autocmd DirEnter /media/blueberry/media/shows setlocal sort=-mtime
+autocmd DirEnter /drives/blueberry/media/movies setlocal sort=-mtime
+autocmd DirEnter /drives/blueberry/media/shows setlocal sort=-mtime
 
 
 
@@ -100,12 +100,12 @@ autocmd DirEnter /media/blueberry/media/shows setlocal sort=-mtime
 " bookmarks
 " :mark mark /full/directory/path [filename]
 mark h ~/
-mark B /media/blueberry/backups/rob-pc/latest
-mark M /media/blueberry/media/movies
-mark s /media/blueberry/media/shows
-mark m /media/blueberry/media
+mark B /drives/blueberry/backups/rob-pc/latest
+mark M /drives/blueberry/media/movies
+mark s /drives/blueberry/media/shows
+mark m /drives/blueberry/media
 mark c /home/rob/.config
-mark b /media/blueberry
+mark b /drives/blueberry
 mark d /home/rob/downloads
 mark t /home/rob/downloads/torrents
 mark e /etc
@@ -145,8 +145,6 @@ nnoremap <m-c> :fzfhome<cr>
 nnoremap <c-f> :fzf<cr>
 
 set locateprg="fd --hidden | rg -i %a"
-nnoremap // :locate<space>
-
 
 " Tabs
 nnoremap <Insert> :tabnew<cr>
@@ -154,13 +152,16 @@ nnoremap <PageUp> :tabnext<cr>
 nnoremap <PageDown> :tabprev<cr>
 
 "Custom split commands
-map <C-h> <C-w>s
-map <C-v> <C-w>v
-map <C-s> <C-w>o
+map <C-S> :vsplit!<cr>
+map <C-s> :split!<cr>
 
 " remap increment number
 noremap Q <C-a>
 noremap A <C-x>
+
+" split pane and view
+nnoremap w :if layoutis('only') | vsplit | endif | view!<cr>
+
 
 " substitute in all files
 nnoremap ca :%s/
@@ -203,6 +204,7 @@ set grepprg='rg %i %a %s'
 " ------------------------------------------------------------------------------
 " Commands
 
+command link ln %d/%f %D
 command! df df -h %m 2> /dev/null
 command! diff vim -d %f %F
 command! zip zip -r %f.zip %f

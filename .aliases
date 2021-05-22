@@ -27,7 +27,7 @@ alias pacdiff='sudo -E pacdiff'
 alias pacf='sudo pacman -F'
 alias pacl='sudo pacman -Ql'
 alias pacq='sudo pacman -Qs'
-alias pacrepo='sudo reflector --latest 15 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
+alias pacrepo='sudo reflector --latest 25 --protocol https --sort age --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
 alias pacr='SNAP_PAC_SKIP=y pacman -Rncs'
 alias pacs='sudo pacman -Ss'
 alias pac='sudo SNAP_PAC_SKIP=y pacman -S'
@@ -39,8 +39,8 @@ alias rmorphans='sudo pacman -Rns $(pacman -Qtdq)'
 #ls
 alias l='exa --group-directories-first'
 alias la='exa -a --group-directories-first'
-alias lla='exa -la --grid --group-directories-first'
-alias ll='exa -l --grid --group-directories-first'
+alias lla='exa -la --group --grid --group-directories-first'
+alias ll='exa -l --group --grid --group-directories-first'
 alias ls='exa --group-directories-first'
 alias lr='exa -T --level=3 --color always| less -R'
 alias lb='EXA_GRID_ROWS=2 exa -la --grid --no-time /home/rob/bin/'
@@ -48,6 +48,7 @@ alias lb='EXA_GRID_ROWS=2 exa -la --grid --no-time /home/rob/bin/'
 #commands
 alias cpuspeed='watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
 alias fdh='fd --hidden'
+alias fzsys='fuzzy-sys'
 alias df='df -h'
 alias gcp='g++'
 alias hb='HandBrakeCLI'
@@ -58,8 +59,8 @@ alias rf='rg --files --hidden'
 alias rm='rm -I'
 alias rmr='rm -rfI'
 alias tb='nc termbin.com 9999'
-alias vfb='vifm /media/blueberry/backups/rob-pc /home/rob'
-alias vfm='vifm /media/blueberry/ /home/rob/downloads/torrents/ '
+alias vfb='vifm /drives/blueberry/backups/rob-pc /home/rob'
+alias vfm='vifm /drives/blueberry/ /home/rob/downloads/torrents/ '
 alias vf='vifm'
 alias v='/home/rob/bin/nv'
 alias xc='xclip -selection clipboard'
@@ -83,6 +84,12 @@ mclog () {
 # functions
 #
 
+f() {
+    sels=( "${(@f)$(fd "${fd_default[@]}" "${@:2}"| fzf)}" )
+    test -n "$sels" && print -z -- "$1 ${sels[@]:q:q}"
+}
+
+
 rmspaces(){
 	IFS="\n"
 	for file in *;
@@ -101,7 +108,7 @@ aur-pkgs(){
 }
 
 fzfpac(){
-	pkg="$(pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse)"
+	local pkg="$(pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse)"
 	test $pkg || return 1
 	sudo pacman -Syu $pkg
 }
@@ -126,7 +133,7 @@ mkcd(){
 
 mkbin(){
 	if [[ -n "$1" ]]; then
-		p=/home/rob/bin/${1##*/}
+		local p=/home/rob/bin/${1##*/}
 		if [[ -f "$p" ]]; then
 			nvim "$p"
 			exit 0
@@ -136,6 +143,40 @@ mkbin(){
 	else
 		(cd /home/rob/bin && nv)
 	fi
+
+}
+
+cdsnap(){
+	case "${1:-"home"}" in
+
+		-l)
+			if [[ -z $2 ]] ||  [[ $2 = "home" ]] ; then
+				local snapdir="/home/.snapshots"
+				local dir="rob"
+				local snapnum="$(/bin/ls -t $snapdir | head -n1)"
+
+			elif [[ $2 = "root" ]]; then
+				local snapdir="/.snapshots"
+				local snapnum="$(/bin/ls -t $snapdir | head -n1)"
+
+			fi
+			;;
+		root)
+			local snapdir="/.snapshots"
+			local prompt="root snap >"
+			local snapnum="$(/bin/ls -t $snapdir | fzf --prompt=$prompt )"
+			;;
+		home)
+			local snapdir="/home/.snapshots"
+			local dir="rob"
+			local prompt="home snap >"
+			local snapnum="$(/bin/ls -t $snapdir | fzf --prompt=$prompt )"
+			;;
+
+	esac
+
+	[[ $snapnum ]] || return
+	cd "$snapdir"/"$snapnum"/snapshot/"${dir:-}" && pwd
 
 }
 
@@ -149,15 +190,16 @@ vw(){
 
 se(){
 	if [[ $1 ]]; then
-		dir=${@}
+		local dir=${@}
 	else
 		if [[ "$(pwd)" == "$(echo $HOME)" ]]; then
-			dir=(./)
+			local dir=(./)
 		else
-			dir=($HOME ./)
+			local dir=($HOME ./)
 		fi
 	fi
-    sel="$(fd . -H $dir[@]| fzf)"
+
+    local sel="$(fd . -H $dir[@]| fzf)"
     if [[ -d "$sel" ]] ; then
         cd "$sel"
     elif [[ -f "$sel" ]]; then

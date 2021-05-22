@@ -4,32 +4,32 @@ local beautiful = require("beautiful")
 local bling = require("bling")
 
 
--- Table of layouts to cover with awful.layout.inc, order matters.
-awful.layout.layouts = {
+tag.connect_signal("request::default_layouts", function()
+    awful.layout.append_default_layouts({
 	awful.layout.suit.tile,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.fair,
-	bling.layout.centered,
     awful.layout.suit.tile.top,
+    awful.layout.suit.fair,
+    awful.layout.suit.magnifier,
+    awful.layout.suit.max,
     --awful.layout.suit.corner.nw,
+    --awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.floating,
     --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
-    --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.magnifier,
     --awful.layout.suit.corner.ne,
     --awful.layout.suit.corner.sw,
     --awful.layout.suit.corner.se,
 -- bling layouts
+	--bling.layout.centered,
 	--bling.layout.mstab,
 	--bling.layout.vertical,
 	--bling.layout.horizontal,
 	--bling.layout.equalarea,
-
-}
+    })
+end)
 
 --[[ Rounded corners
 client.connect_signal("manage", function (c, startup)
@@ -74,7 +74,7 @@ awesome.connect_signal("tag::movenext", function ()
         end
         -- get next tag (modulo 9 excluding 0 to wrap from 9 to 1)
         local tag = client.focus.screen.tags[(t.name % 9) + 1]
-        awful.client.movetotag(tag)
+        client.focus:move_to_tag(tag)
         awful.tag.viewnext()
     end)
 
@@ -87,13 +87,13 @@ awesome.connect_signal("tag::moveprev", function ()
         end
         -- get next tag (modulo 9 excluding 0 to wrap from 9 to 1)
         local tag = client.focus.screen.tags[(t.name % 9) - 1]
-        awful.client.movetotag(tag)
+        client.focus:move_to_tag(tag)
         awful.tag.viewprev()
     end)
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
-    c:emit_signal("request::activate", "mouse_enter", {raise = false})
+     c:activate { context = "mouse_enter", raise = false }
 end)
 
 awful.screen.set_auto_dpi_enabled( true )

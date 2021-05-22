@@ -1,0 +1,33 @@
+#!/bin/bash
+eval $(xdotool getmouselocation --shell)
+echo $X $Y
+x1=$X
+y1=$Y
+COUNTER=1
+COUNTEND=100000
+#REPEAT= 0.09s
+while [ $COUNTER -lt $COUNTEND ]; do
+
+  xdotool click 1
+    #this sleep works for repetition rate
+  sleep 0.11s
+
+  xdotool mousemove --screen 0 3172 813
+  sleep 0.1s
+  xdotool click 1
+  xdotool mousemove --screen 0 $x1 $y1
+
+
+
+  sleep 0.11s
+  eval $(xdotool getmouselocation --shell)
+  # cancel if mouse moved
+  if [ $x1 != $X ] || [ $y1 != $Y ]; then
+    echo Mouse moved - script terminated
+    exit 1
+  fi
+
+
+  let COUNTER=COUNTER+1
+#  xdotool click --delay 90 --repeat 1000 1
+done

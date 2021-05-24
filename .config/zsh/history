@@ -4553,7 +4553,6 @@ find ./ -name *.webm
 find -name *.webm
 la | parallel echo {} && echo 2
 la | parallel (echo {} && echo 2)
-man find
 rg .bin set
 rg .bin "\-e"
 man ffmpeg
@@ -7079,7 +7078,6 @@ pac pkgfile
 sudo pkgfile -u
 filelight
 systemd-analyze
-nvim
 bootctl remove
 sudo pacr linux
 mv downloads/minecraft/bukkit downloads/minecraft/plugins
@@ -7523,7 +7521,6 @@ mv .config/awesome/awesome .config
 mv .config/awesome/awesome tmp
 rm .config/awesome
 rmr .config/awesome
-mv tmp/awesome .config
 cd .config/awesme
 cd .config/awesome-old
 start picom
@@ -7989,7 +7986,6 @@ sf margin
 sf wibar.spacing
 sf wibar.margin
 z sx
-v sxhkdrc
 ls bin
 man chmod
 pac libpam-gnome-keyring
@@ -8237,7 +8233,6 @@ sudo umount bb:/data/
 ls .config/zsh
 zinit update
 zinit self-update
-dotu
 dots add bin/*
 zmodload zsh/zprof
 xprof
@@ -8505,7 +8500,6 @@ sleep 2 ;xdotool getmouselocation
 sleep 5 ;xdotool getmouselocation
 sleep 8 && autoclick
 tree
-tail -f .xsession-errors
 locate nvim.desktop
 v /usr/share/applications/nvim.desktop
 mv bin/t bin/xterm
@@ -8540,7 +8534,6 @@ sf ghost
 su -
 bin
 sf 0
-cd
 f
 sudo pacdiff
 reboot uefi
@@ -8575,7 +8568,6 @@ pacrepo
 zinit self-update && zinit update
 dmenu_run
 b
-se 
 man paru
 z aweseome
 ffmpeg -hide_banner -i vids/chemical-laced-2021-05-21_15.53.20.mkv  -c copy chemical-laced-water.mp4
@@ -8585,12 +8577,10 @@ btm
 ssh pi
 sf firefox
 sf
-z awes
 sf focus
 z awesom
 scp bb:/opt/docker/openvpn/blueberry.ovpn docs/blueberry.ovpn 
 sf ewmh
-z awe
 neofetch
 locate rc.lua
 cp /usr/share/awesome/lib/awful/autofocus.lua ~/.config/awesome/lib/autofocus_custom.lua
@@ -8604,9 +8594,7 @@ $backups
 ..
 bb
 vf
-se
 docker ps
-paru
 snapper list -a 
 la
 vfm
@@ -8616,19 +8604,15 @@ sf mouse::enter
 z awesome
 ls
 ls widgets
-sf mouse::move
 ls .config
 mv .config/awesome .config/awesome.bak
-mkdir .config/awesome
 mv /etc/xdg/awesome/rc.lua .config/awesome
 cp /etc/xdg/awesome/rc.lua .config/awesome/rc.lua
-v .config/awesome/rc.lua
 ssr.sh open
 mv .config/awesome.bak .config/awesome
 mv .config/awesome/awesome.bak ../awesome
 mv .config/awesome/awesome.bak ../
 mv .config/awesome/awesome.bak ./
-rm -rf .config/awesome
 mv awesome.bak .config/awesome
 cd
 cat bin/* | wc -l
@@ -8644,3 +8628,28 @@ find .config/awesome -type f -exec cat {} \+ >(wc -l)
 find .config/awesome -type f -exec cat {} \+ | tee --output-error=exit-nopipe >(wc -l)
 find .config/awesome -type f -exec cat {} \+ | tee --output-error=exit-nopipe >(wc -l) > /dev/null
 dotu
+mv bin/redshift.sh bin/red.sh
+v sxhkdrc
+red.sh -t
+ps axco command | grep -w '^[r]edshift' | grep -v "redshift.sh"
+ps axco command | grep -w '^[r]edshift' 
+se
+mv .config/awesome tmp
+mkdir .config/awesome
+v .config/awesome/rc.lua
+rm -rf .config/awesome
+mv tmp/awesome .config
+se 
+tail -f .xsession-errors
+z awes
+sf mouse
+z awe
+sf mouse::move
+paru
+S start docker
+sudo docker run -e TERM -e COLORTERM -w /root -it --rm alpine sh -uec '\
+  apk add zsh curl tmux\
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"'
+nvim
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"'
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"

@@ -146,7 +146,7 @@ super + p
 
 # toggle redshift
 super {_,shift + } F1
-	/home/rob/bin/redshift.sh -t /home/rob/.config/redshift/{dim.conf,redshift.conf}
+	/home/rob/bin/red.sh -t /home/rob/.config/redshift/{dim.conf,redshift.conf}
 
 ####################
 # Volume Control   #

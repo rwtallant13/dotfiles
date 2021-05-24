@@ -99,16 +99,16 @@ keys.globalkeys = gears.table.join(
 	),
 
 	awful.key({ modkey }, "BackSpace",
-		function () awful.spawn("rofer -l" , false) end,
+		function () awful.spawn("rofer -l") end,
 		{description = "Rofi Power menu ", group = "launcher"}
 
 	),
 
-	awful.key({ modkey }, "Home",
-		function() awesome.emit_signal("dashboard::toggle") end,
-			{description = "Toggle Dashboard ", group = "launcher"}
+	awful.key({ modkey }, "F1",
+		function () awful.spawn("/home/rob/bin/red.sh -t" ) end,
+		{description = "Rofi Power menu ", group = "launcher"}
 
-		),
+	),
 
 
 

@@ -1,156 +1,123 @@
-# -- general ------------------------------------------------------------------
+# Personal Zsh configuration file. It is strongly recommended to keep all
+# shell customization and configuration (including exported environment
+# variables such as PATH) in this file or in files source by it.
+#
+# Documentation: https://github.com/romkatv/zsh4humans/blob/v5/README.md.
 
-HISTFILE="$HOME"/.config/zsh/history
-HISTSIZE=100000
-SAVEHIST=100000
+# Periodic auto-update on Zsh startup: 'ask' or 'no'.
+# You can manually run `z4h update` to update everything.
+zstyle ':z4h:' auto-update      'no'
+# Ask whether to auto-update this often; has no effect if auto-update is 'no'.
+zstyle ':z4h:' auto-update-days '28'
 
-PROMPT='%B%F{33}%n@%m%f %F{white}%(3~|…/%2~|%~)%f %B%F{33}%# '
+# Automaticaly wrap TTY with a transparent tmux ('integrated'), or start a
+# full-fledged tmux ('system'), or disable features that require tmux ('no').
+zstyle ':z4h:' start-tmux       'integrated'
+# Move prompt to the bottom when zsh starts up so that it's always in the
+# same position. Has no effect if start-tmux is 'no'.
+zstyle ':z4h:' prompt-at-bottom 'no'
 
-# source aliases and functions
-[[ -e "$HOME"/.aliases ]] && \
-   . "$HOME"/.aliases
+# Keyboard type: 'mac' or 'pc'.
+zstyle ':z4h:bindkey' keyboard  'pc'
 
-# emacs mode
-bindkey -e
+# Right-arrow key accepts one character ('partial-accept') from
+# command autosuggestions or the whole thing ('accept')?
+zstyle ':z4h:autosuggestions' forward-char 'accept'
 
-source "$HOME"/.zkbd/$TERM*
+# Enable ('yes') or disable ('no') automatic teleportation of z4h over
+# ssh when connecting to these hosts.
+zstyle ':z4h:ssh:example-hostname1'   enable 'yes'
+zstyle ':z4h:ssh:*.example-hostname2' enable 'no'
+# The default value if none of the overrides above match the hostname.
+zstyle ':z4h:ssh:*'                   enable 'no'
 
+# Send these files over to the remote host when connecting over ssh to the
+# enabled hosts.
+zstyle ':z4h:ssh:*' send-extra-files '~/.nanorc' '~/.env.zsh'
 
-# -- autosuggestions ----------------------------------------------------------
+# Clone additional Git repositories from GitHub.
+#
+# This doesn't do anything apart from cloning the repository and keeping it
+# up-to-date. Cloned files can be used after `z4h init`. This is just an
+# example. If you don't plan to use Oh My Zsh, delete this line.
+#z4h install ohmyzsh/ohmyzsh || return
+z4h install agkozak/zsh-z
 
-ZSH_AUTOSUGGEST_STRATEGY=(history)
-ZSH_AUTOSUGGEST_USE_ASYNC=true
-ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c50,)"
-#ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS:#forward-char})
-ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f6569,bg=bold,underline"
+# Install or update core components (fzf, zsh-autosuggestions, etc.) and
+# initialize Zsh. After this point console I/O is unavailable until Zsh
+# is fully initialized. Everything that requires user interaction or can
+# perform network I/O must be done above. Everything else is best done below.
+z4h init || return
 
-# -- completion ---------------------------------------------------------------
+# Extend PATH.
+path=(~/bin $path)
 
-# The following lines were added by compinstall
-zstyle ':completion:*' completer _complete _ignored
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' insert-tab false
-zstyle ':completion:*' rehash true
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*:(ssh|scp|ftp|sftp):*' hosts $hosts
-zstyle ':completion:*:(ssh|scp|ftp|sftp):*' users $users
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
-zstyle ':completion:*' use-cache true
-zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zcompcache
-zstyle :compinstall filename '/home/rob/.zshrc'
+# Export environment variables.
+export GPG_TTY=$TTY
 
-# -- setopts ------------------------------------------------------------------
+# Source additional local files if they exist.
+z4h source ~/.env.zsh
 
-setopt   extended_glob \
-		 nonomatch \
-		 auto_cd \
-		 hist_ignore_all_dups \
-		 hist_save_no_dups \
-		 hist_expire_dups_first \
-		 inc_append_history \
-		 automenu \
-		 always_to_end \
-		 complete_in_word \
-		 PROMPT_CR \
-		 PROMPT_SP
-unsetopt menucomplete
+z4h source $Z4H/agkozak/zsh-z/zsh-z.plugin.zsh
 
-export PROMPT_EOL_MARK=""
-DISABLE_AUTO_TITLE="true"
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]='fg=5'
+ZSH_HIGHLIGHT_STYLES[comment]='fg=8'
+ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg=9'
+ZSH_HIGHLIGHT_STYLES[named-fd]='fg=9'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=6'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=6'
+typeset -A ZSH_HIGHLIGHT_PATTERNS
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 
-function precmd () {
-  window_title="\033]0;${PWD##*/}\007"
-  echo -ne "$window_title"
-}
-
-# -- keybinds ---------------------------------------------------------
-
-[[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
-[[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
-[[ -n ${key[Home]} ]] && bindkey "${key[Home]}" beginning-of-line
-[[ -n ${key[PageUp]} ]] && bindkey "${key[PageUp]}" up-line-or-history
-[[ -n ${key[Delete]} ]] && bindkey "${key[Delete]}" delete-char
-[[ -n ${key[End]} ]] && bindkey "${key[End]}" end-of-line
-[[ -n ${key[PageDown]} ]] && bindkey "${key[PageDown]}" down-line-or-history
-[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
-[[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
-[[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
-[[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
-
-bindkey '5~' kill-whole-line
-bindkey '^[u' undo
-bindkey '^[r' redo
-
-bindkey '\e.' insert-last-word
-
-insert-first-word () { zle insert-last-word -- -1 1 }
-zle -N insert-first-word
-bindkey '^[,' insert-first-word
-
-autoload -U copy-earlier-word
-zle -N copy-earlier-word
-bindkey "^[/" copy-earlier-word
-
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-
-backward-kill-dir () {
-    local WORDCHARS=${WORDCHARS/\/}
-    zle backward-kill-word
-}
-zle -N backward-kill-dir
-bindkey '^H' backward-kill-dir
-
-exit_zsh() { exit }
-zle -N exit_zsh
-bindkey '^D' exit_zsh
-
-
-# -- fzf
-
-export FZF_DEFAULT_OPTS="--preview-window noborder --no-color --reverse --exact --multi --cycle --border=sharp --height=50% --no-info --color=spinner:#89DDFF,hl:#82AAFF --color=fg:#d6d6d6,header:#82AAFF,info:#FFCB6B,pointer:#89DDFF --color=marker:#89DDFF,fg+:#EEFFFF,prompt:#FFCB6B,hl+:#82AAFF"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50' --exact"
-export FZF_CTRL_T_COMMAND="fd . --hidden"
-export FZF_ALT_C_COMMAND='fd . --hidden -t d -t l'
-export FZF_CTRL_R_OPTS='--exact'
+# Source aliases
+source ~/.aliases
 
 # -- zsh-z
 export ZSHZ_DATA='/home/rob/.local/share/zsh-z/z'
 export ZSHZ_KEEP_DIRS=( /drives/blueberry )
 export ZSHZ_ECHO=1
 
-# -- source -------------------------------------------------
+# -- fzf
+export FZF_DEFAULT_OPTS="--preview-window noborder --no-color --reverse --exact --multi --cycle --border=sharp --height=50% --no-info --color=spinner:#89DDFF,hl:#82AAFF --color=fg:#d6d6d6,header:#82AAFF,info:#FFCB6B,pointer:#89DDFF --color=marker:#89DDFF,fg+:#EEFFFF,prompt:#FFCB6B,hl+:#82AAFF"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -50' --exact"
+export FZF_CTRL_T_COMMAND="fd . --hidden"
+export FZF_ALT_C_COMMAND='fd . --hidden -t d -t l'
+export FZF_CTRL_R_OPTS='--exact'
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/doc/pkgfile/command-not-found.zsh
+# Use additional Git repositories pulled in with `z4h install`.
+#
+# This is just an example that you should delete. It does nothing useful.
+#fpath+=($Z4H/ohmyzsh/ohmyzsh/plugins/supervisor)
 
-# -- plugins -------------------------------------------------
-declare -A ZINIT
+# Define key bindings.
+z4h bindkey z4h-backward-kill-word  Ctrl+Backspace Ctrl+H
+z4h bindkey z4h-backward-kill-zword Ctrl+Alt+Backspace
 
-ZINIT[HOME_DIR]="$HOME"/.config/zsh/zinit
-ZINIT[ZCOMPDUMP_PATH]="$XDG_CACHE_HOME"/zcompdump-$ZSH_VERSION
+z4h bindkey undo Ctrl+/  # undo the last command line change
+z4h bindkey redo Alt+/   # redo the last undone command line change
 
-source "$HOME"/.config/zsh/zinit/bin/zinit.zsh
+z4h bindkey z4h-cd-back    Alt+Left   # cd into the previous directory
+z4h bindkey z4h-cd-forward Alt+Right  # cd into the next directory
+z4h bindkey z4h-cd-up      Alt+Up     # cd into the parent directory
+z4h bindkey z4h-cd-down    Alt+Down   # cd into a child directory
 
-# Load using the for-syntax
-zinit wait lucid for \
-	agkozak/zsh-z
-zinit wait lucid for \
-    zsh-users/zsh-autosuggestions
-zinit wait lucid for \
-    zsh-users/zsh-completions
-zinit wait lucid for \
-	NullSense/fuzzy-sys
+# Autoload functions.
+autoload -Uz zmv
 
-zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
-    zdharma/fast-syntax-highlighting
+# Define functions and completions.
+function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
+compdef _directories md
 
-# -- compinit -------------------------------------------------
+# Define named directories: ~w <=> Windows home directory on WSL.
+[[ -n $z4h_win_home ]] && hash -d w=$z4h_win_home
 
-autoload -Uz compinit && compinit -C -d "$XDG_CACHE_HOME"/zcompdump-$ZSH_VERSION
-autoload bashcompinit && bashcompinit
-
-zinit cdreplay -q
+# Set shell options: http://zsh.sourceforge.net/Doc/Release/Options.html.
+setopt glob_dots     # no special treatment for file names with a leading dot
+setopt no_auto_menu  # require an extra TAB press to open the completion menu
+setopt auto_cd
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_expire_dups_first
+setopt inc_append_history

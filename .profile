@@ -55,12 +55,3 @@ export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export RIPGREP_CONFIG_PATH="/home/rob/.config/rgconf"
-
-
-# shortcuts
-export bb=/drives/blueberry
-export media=/drives/blueberry/media
-export backups=/drives/blueberry/backups/rob-pc
-export mx100=/drives/mx100/
-export ssd=/drives/ssd/
-export bin=/home/rob/bin

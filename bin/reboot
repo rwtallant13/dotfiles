@@ -1,9 +1,8 @@
 #!/usr/bin/env sh
 
-reboot=/usr/bin/reboot
 
 if [[ -z $1 ]]; then
-    $reboot
+    command reboot
 fi
 
 case $1 in
@@ -13,7 +12,8 @@ case $1 in
     uefi)
         systemctl reboot --firmware-setup
         ;;
-    *)
-        echo "'win[dows]' or 'uefi'"
-        ;;
+	*)
+		echo "'win[dows]' or 'uefi'"
+		;;
+
 esac

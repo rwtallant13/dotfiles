@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-zcompile ~/.zshrc
+zcompile ${ZDOTDIR:-$HOME}/.zshrc
 
 rm -f $ZSH/**.zwc
 

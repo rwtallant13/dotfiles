@@ -24,7 +24,7 @@ source "$HOME"/.zkbd/$TERM*
 
 declare -A ZINIT
 
-ZINIT[HOME_DIR]="$HOME"/.config/zsh/zinit
+ZINIT[HOME_DIR]="$HOME"/.zsh/zinit
 ZINIT[ZCOMPDUMP_PATH]="$XDG_CACHE_HOME"/zcompdump-$ZSH_VERSION
 
 # check zinit is installed
@@ -54,10 +54,12 @@ autoload -Uz compinit && compinit -C -d "$XDG_CACHE_HOME"/zcompdump-$ZSH_VERSION
 
 zinit cdreplay -q
 
-# -- source --------------------------------------------------------
+# -- misc --------------------------------------------------------
+
+setopt nonomatch
 
 # Load all of your custom configurations from custom/
-for config_file ($MYZSH/*.zsh(N)); do
+for config_file ($ZSH/*.zsh(N)); do
   source $config_file
 done
 unset config_file

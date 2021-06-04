@@ -8,7 +8,7 @@ tag.connect_signal("request::default_layouts", function()
     awful.layout.append_default_layouts({
 	awful.layout.suit.tile,
     awful.layout.suit.tile.top,
-	bling.layout.equalarea,
+	bling.layout.centered,
     awful.layout.suit.max,
     --awful.layout.suit.fair,
     --awful.layout.suit.magnifier,
@@ -23,7 +23,7 @@ tag.connect_signal("request::default_layouts", function()
     --awful.layout.suit.corner.sw,
     --awful.layout.suit.corner.se,
 -- bling layouts
-	--bling.layout.centered,
+	--bling.layout.equalarea,
 	--bling.layout.mstab,
 	--bling.layout.vertical,
 	--bling.layout.horizontal,

@@ -9,6 +9,7 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
+local lain = require("lain")
 
 local systray_margin = (beautiful.wibar_height - beautiful.systray_icon_size) / 2
 
@@ -123,6 +124,10 @@ local time_pill = wibox.widget {
     widget = wibox.container.margin
 }
 
+-- Volume widget --------------------------------
+
+local volume = lain.widget.pulsebar()
+
 -- Systray Widget -------------------------------------------------------------
 
 local mysystray = wibox.widget.systray()
@@ -210,6 +215,16 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		shape = helpers.rrect(beautiful.border_radius - 3),
         widget = wibox.container.background
     }
+
+	s.mywibox:buttons{
+		awful.button({}, 5, function(t)
+        	awful.tag.viewnext(t.screen)
+        end),
+
+		awful.button({}, 4, function(t)
+            awful.tag.viewprev(t.screen)
+        end)
+	}
 
     -- Add widgets to the wibox
     s.mywibox:setup{

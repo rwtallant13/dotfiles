@@ -7,22 +7,17 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
 local get_taglist = function(s)
-    -- Taglist buttons
+
+--	Taglist buttons
     local taglist_buttons = gears.table.join(
         awful.button({}, 1,
             function(t) t:view_only()
 		end),
 
---[[        awful.button({modkey}, 1, function(t)
-            if client.focus then client.focus:move_to_tag(t) end
-        end),
---]]
-		awful.button({}, 3, awful.tag.viewtoggle),
+		awful.button({}, 3, awful.tag.viewtoggle))
 
---[[        awful.button({modkey}, 3, function(t)
-            if client.focus then client.focus:toggle_tag(t) end
-        end),
---]]
+--[[ mouse wheel handled by main bar
+
 		awful.button({}, 5, function(t)
         	awful.tag.viewnext(t.screen)
         end),
@@ -30,8 +25,7 @@ local get_taglist = function(s)
 		awful.button({}, 4, function(t)
             awful.tag.viewprev(t.screen)
         end))
-
-
+--]]
 local markup = function(tag) return "<span foreground='#aaaaaa'>  "..tag.name.."  </span>" end
 local markup_hover = function(tag) return "<span foreground='#ffffff'>  "..tag.name.."  </span>" end
 

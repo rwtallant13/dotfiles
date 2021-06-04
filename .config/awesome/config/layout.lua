@@ -8,10 +8,10 @@ tag.connect_signal("request::default_layouts", function()
     awful.layout.append_default_layouts({
 	awful.layout.suit.tile,
     awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.magnifier,
+	bling.layout.equalarea,
     awful.layout.suit.max,
-    --awful.layout.suit.corner.nw,
+    --awful.layout.suit.fair,
+    --awful.layout.suit.magnifier,
     --awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.floating,
     --awful.layout.suit.tile.left,
@@ -27,7 +27,6 @@ tag.connect_signal("request::default_layouts", function()
 	--bling.layout.mstab,
 	--bling.layout.vertical,
 	--bling.layout.horizontal,
-	--bling.layout.equalarea,
     })
 end)
 

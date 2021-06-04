@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+zcompile ~/.zshrc
+
+rm -f $ZSH/**.zwc
+
+for config_file ($ZSH/*.zsh(N)); do zcompile $config_file; done

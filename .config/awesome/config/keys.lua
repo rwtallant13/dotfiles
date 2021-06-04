@@ -284,35 +284,27 @@ keys.globalkeys = gears.table.join(
               {description = "jump to urgent client", group = "client"}),
 
     -- master control
-    awful.key({ modkey,           }, "l",
+    awful.key({ modkey,           }, ".",
 		function () awful.tag.incmwfact( 0.05) end,
               {description = "increase master width factor", group = "layout"}),
 
-    awful.key({ modkey,           }, "h",
+    awful.key({ modkey,           }, ",",
 		function () awful.tag.incmwfact(-0.05) end,
               {description = "decrease master width factor", group = "layout"}),
 
-    awful.key({ modkey,           }, "k",
-		function () awful.tag.incmhfact( 0.05) end,
-              {description = "increase master height factor", group = "layout"}),
-
-    awful.key({ modkey,           }, "j",
-		function () awful.tag.incmhfact(-0.05) end,
-              {description = "decrease master height factor", group = "layout"}),
-
-    awful.key({ modkey, "Shift"   }, "h",
+    awful.key({ modkey, "Shift"   }, ",",
 		function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
 
-    awful.key({ modkey, "Shift"   }, "l",
+    awful.key({ modkey, "Shift"   }, ".",
 		function () awful.tag.incnmaster(-1, nil, true) end,
               {description = "decrease the number of master clients", group = "layout"}),
 
-    awful.key({ modkey, "Control" }, "h",
+    awful.key({ modkey, "Control" }, ",",
 		function () awful.tag.incncol( 1, nil, true)    end,
               {description = "increase the number of columns", group = "layout"}),
 
-    awful.key({ modkey, "Control" }, "l",
+    awful.key({ modkey, "Control" }, ".",
 		function () awful.tag.incncol(-1, nil, true)    end,
               {description = "decrease the number of columns", group = "layout"}),
 
@@ -348,21 +340,10 @@ keys.globalkeys = gears.table.join(
 
 	awful.key({modkey}, "Insert", function ()
         awful.spawn.easy_async_with_shell("/home/rob/bin/sinkctrl -c")
-    end),
-
-
-    -- Brightness
-   awful.key({ }, "XF86MonBrightnessDown", function ()
-       awful.spawn.easy_async_with_shell("brightnessctl set 3%- > /dev/null", function(stdout)
-           awesome.emit_signal("popup::brightness", {amount = -3})
-       end)
-   end),
-   awful.key({ }, "XF86MonBrightnessUp", function ()
-       awful.spawn.easy_async_with_shell("brightnessctl set +3% > /dev/null", function(stdout)
-            awesome.emit_signal("popup::brightness", {amount = 3})
-        end)
     end)
 )
+
+
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
@@ -386,10 +367,23 @@ for i = 1, 9 do
                           local tag = client.focus.screen.tags[i]
                           if tag then
                               client.focus:move_to_tag(tag)
+						  end
+                     end
+                  end,
+                  {description = "move focused client to tag #"..i, group = "tag"}),
+		-- move client to tag and focus
+		awful.key({ modkey, altkey }, "#" .. i + 9,
+                  function ()
+                      if client.focus then
+                          local tag = client.focus.screen.tags[i]
+                          if tag then
+                              client.focus:move_to_tag(tag)
+							  tag:view_only()
                           end
                      end
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"})
+
     )
 end
 

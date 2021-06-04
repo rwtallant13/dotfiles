@@ -67,7 +67,7 @@ rules = {
       properties = {screen = "DP-0", tag = "2",}},
 
     { rule = { instance = "Minecraft"},
-      properties = {screen = "DP-0", requests_no_titlebar = true, maximized = true, tag = "8", switch_to_tags = "true", }},
+      properties = {screen = "DP-0", tag = "8", switch_to_tags = "true", }},
 
     { rule = { name = "Media Viewer"},
       properties = {screen = "DP-0", tag = "2",}},

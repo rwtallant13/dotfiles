@@ -27,13 +27,13 @@ alias pacdiff='sudo -E pacdiff'
 alias pacf='sudo pacman -F'
 alias pacl='sudo pacman -Ql'
 alias pacq='sudo pacman -Qs'
-alias pacrepo='sudo reflector --latest 25 --protocol https --sort age --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
+alias pacrepo='sudo reflector --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy'
 alias pacr='SNAP_PAC_SKIP=y pacman -Rncs'
 alias pacs='sudo pacman -Ss'
 alias pac='sudo SNAP_PAC_SKIP=y pacman -S'
 alias paru='SNAP_PAC_SKIP=y paru'
 alias pacu='sudo pacman -Syu'
-alias pacdiff='sudo pacdiff'
+alias pacdiff='sudo -i pacdiff'
 alias rmorphans='sudo pacman -Rns $(pacman -Qtdq)'
 
 #ls
@@ -58,6 +58,7 @@ alias pb='curl -F "f:1=<-" ix.io'
 alias rf='rg --files --hidden'
 alias rm='rm -I'
 alias rmr='rm -rfI'
+alias rmrf='rm -rf'
 alias tb='nc termbin.com 9999'
 alias vfb='vifm /drives/blueberry/backups/rob-pc /home/rob'
 alias vfm='vifm /drives/blueberry/ /home/rob/downloads/torrents/ '
@@ -199,7 +200,7 @@ se(){
 		fi
 	fi
 
-    local sel="$(fd . -H $dir[@]| fzf)"
+    local sel="$(fd . -H $dir[@] --no-ignore-vcs | fzf)"
     if [[ -d "$sel" ]] ; then
         cd "$sel"
     elif [[ -f "$sel" ]]; then
@@ -214,6 +215,7 @@ swap(){
 }
 
 open(){
+	test $1 || echo "file needed" && return 1
     nohup xdg-open "$@" >/dev/null 2>&1 & disown
 }
 

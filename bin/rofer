@@ -55,7 +55,7 @@ while getopts ":hwmsl" opt; do
             rofi -sep "|" -dmenu -i -font "Overpass 24" -auto-select -p 'System' "")
                 case "$ANS" in
                     *Lock) betterlockscreen --lock blur --off 30 ;;
-                    *Logout) bspc quit ;;
+                    *Logout) loginctl kill-session self ;;
                     *Suspend) betterlockscreen --suspend blur ;;
                     *Reboot) systemctl reboot ;;
                     *"Bootup Win") /home/rob/bin/bootup windows ;;

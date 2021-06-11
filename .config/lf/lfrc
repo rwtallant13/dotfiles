@@ -1,0 +1,152 @@
+set hidden true
+set mouse
+
+set previewer ~/.config/lf/pv.sh
+map i $~/dotfiles/lf/pv.sh $f | less -RX
+
+%{{
+    w=$(tput cols)
+    if [ $w -le 85 ]; then
+        lf -remote "send $id set nopreview"
+        lf -remote "send $id set info size:time"
+        lf -remote "send $id set ratios 1"
+    else
+		lf -remote "send $id set preview"
+        lf -remote "send $id set ratios 1:2"
+    fi
+}}
+
+# keybindings
+map . set hidden!
+map f fzf_jump
+map md mkdir
+map <c-a> select-files
+map o open_config
+map au unarchive
+map dd delete
+map <delete> delete
+map <f-2> $printf '%s\n' $fx | vidir -
+map <c-z> $ kill -STOP $PPID
+
+# mouse
+
+
+#sorting
+map sn :{{ set sortby natural; set info size; set preview; }}
+map sa :{{ set sortby natural; set info size; set nopreview; set ratios 3:5; }}
+map ss :{{ set sortby size; set info size; set preview; }}
+map st :{{ set sortby time; set info time; set preview; }}
+
+# bookmarks
+map ~ cd ~/
+map bb cd ~/bin
+map bD cd ~/downloads
+map bP cd ~/pics
+map bm cd /drives/blueberry/media
+map be cd /etc
+map ba cd ~/.config/awesome
+map bs cd /home/.snapshots
+map bS cd /.snapshots
+map bM cd /home/rob/.local/share/multimc/instances
+map bMd cd /home/rob/downloads/minecraft
+
+# Custom Functions
+
+#dynamic columns
+cmd recol &{{
+    w=$(tput cols)
+    if [ $w -le 85 ]; then
+        lf -remote "send $id set nopreview"
+        lf -remote "send $id set info size:time"
+        lf -remote "send $id set ratios 1"
+    else
+        lf -remote "send $id set ratios 1:2"
+    fi
+}}
+
+cmd mkdir %mkdir "$@"
+
+cmd touch %touch "$@"
+
+cmd search_open ${{
+
+
+}}
+
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd bulk-rename ${{
+    old="$(mktemp)"
+    new="$(mktemp)"
+    [ -n "$fs" ] && fs="$(ls)"
+    printf '%s\n' "$fs" >"$old"
+    printf '%s\n' "$fs" >"$new"
+    $EDITOR "$new"
+    [ "$(wc -l "$new")" -ne "$(wc -l "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
+}}
+
+cmd select-files ${{
+    { echo "$fs"; find -L "$(pwd)" -mindepth 1 -maxdepth 1 -type f; } |
+        if [ "$lf_hidden" = "false" ]; then
+          # remove any hidden files so you only select files you can see.
+          grep -v '/\.[^/]\+$'
+        else
+          cat
+        fi |
+        sed '/^$/d' | sort | uniq -u |
+        xargs -d '\n' -r -I{} lf -remote "send $id toggle {}"
+}}
+
+cmd select-dirs ${{
+    { echo "$fs"; find -L "$(pwd)" -mindepth 1 -maxdepth 1 -type d; } |
+        if [ "$lf_hidden" = "false" ]; then
+          grep -v '/\.[^/]\+$'
+        else
+          cat
+        fi |
+        sed '/^$/d' | sort | uniq -u |
+        xargs -d '\n' -r -I{} lf -remote "send $id toggle {}"
+}}
+
+cmd fzf_jump ${{
+  res="$(find . | fzf --reverse --header='Jump to location')"
+  if [ -f "$res" ]; then
+    cmd="select"
+  elif [ -d "$res" ]; then
+    cmd="cd"
+  fi
+  lf -remote "send $id $cmd \"$res\""
+}}
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.xz) tar -xvf ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}

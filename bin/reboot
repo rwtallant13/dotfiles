@@ -1,13 +1,13 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 
 if [[ -z $1 ]]; then
-    command reboot
+    /bin/reboot
 fi
 
 case $1 in
     windows|win)
-        sudo efibootmgr --bootnext $(efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr -d '*' ) && $reboot
+        sudo efibootmgr --bootnext $(efibootmgr | grep Windows | tail -n1 | cut -d' ' -f1 | cut -d't' -f2 | tr -d '*' ) && /bin/reboot
         ;;
     uefi)
         systemctl reboot --firmware-setup

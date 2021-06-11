@@ -2,6 +2,7 @@
 # ~/.aliases
 #
 
+alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc'
 
 # system
 alias dots-tracked='yadm list -a|less'
@@ -19,7 +20,6 @@ alias su='sudo -i'
 alias timers='systemctl list-timers'
 alias udb='sudo updatedb'
 alias udev-reload='sudo udevadm control --reload-rules && sudo udevadm trigger'
-
 
 # pacman
 alias fzpacr='sudo pacman -Rncs $(fzpkgs)'
@@ -45,20 +45,19 @@ alias ls='exa --group-directories-first'
 alias lr='exa -T --level=3 --color always| less -R'
 alias lb='EXA_GRID_ROWS=2 exa -la --grid --no-time /home/rob/bin/'
 
+# interactive
+alias rm='rm -Iv'
+alias rmr='rm -rfIv'
+alias cp='cp -iv'
+alias mv='mv -iv'
+
 #commands
 alias cpuspeed='watch -n.1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
-alias fdh='fd --hidden'
-alias fzsys='fuzzy-sys'
 alias df='df -h'
-alias gcp='g++'
+alias md='mkdir -p'
+alias n='nnn'
 alias hb='HandBrakeCLI'
-alias m='micro'
-alias mv='mv -iv'
 alias pb='curl -F "f:1=<-" ix.io'
-alias rf='rg --files --hidden'
-alias rm='rm -I'
-alias rmr='rm -rfI'
-alias rmrf='rm -rf'
 alias tb='nc termbin.com 9999'
 alias vfb='vifm /drives/blueberry/backups/rob-pc /home/rob'
 alias vfm='vifm /drives/blueberry/ /home/rob/downloads/torrents/ '
@@ -66,20 +65,10 @@ alias vf='vifm'
 alias v='/home/rob/bin/nv'
 alias xc='xclip -selection clipboard'
 
-
 # bb/pi
 alias bb='ssh -X bb'
 alias pilog='ssh -t pi pihole -t'
 alias mcctrl='ssh -t bb /home/rob/bin/mcctrl'
-
-mclog () {
-	if [ $1 == '-a' ]
-	then
-		ssh bb journalctl -r -u minecraft@vanilla.service|less
-	else
-		ssh bb journalctl -f -u minecraft@vanilla.service
-	fi
-}
 
 #
 # functions
@@ -119,8 +108,8 @@ mkbackup(){
 }
 
 pkglist(){
-	pacman -Qqme > /home/rob/docs/aur-pkgs
-	pacman -Qqne > /home/rob/docs/pacman-pkgs
+	pacman -Qqme >! /home/rob/docs/aur-pkgs
+	pacman -Qqne >! /home/rob/docs/pacman-pkgs
 	pacman -Qqe | less
 }
 
@@ -139,7 +128,7 @@ mkbin(){
 			nvim "$p"
 			exit 0
 		else
-			printf '#!/bin/bash\n\n' > "$p" && chmod +x "$p" && nv "$p" "+3"
+			printf '#!/bin/bash\n\n' >! "$p" && chmod +x "$p" && nv "$p" "+3"
 		fi
 	else
 		(cd /home/rob/bin && nv)
@@ -149,29 +138,16 @@ mkbin(){
 
 cdsnap(){
 	case "${1:-"home"}" in
-
-		-l)
-			if [[ -z $2 ]] ||  [[ $2 = "home" ]] ; then
-				local snapdir="/home/.snapshots"
-				local dir="rob"
-				local snapnum="$(/bin/ls -t $snapdir | head -n1)"
-
-			elif [[ $2 = "root" ]]; then
-				local snapdir="/.snapshots"
-				local snapnum="$(/bin/ls -t $snapdir | head -n1)"
-
-			fi
-			;;
 		root)
 			local snapdir="/.snapshots"
 			local prompt="root snap >"
-			local snapnum="$(/bin/ls -t $snapdir | fzf --prompt=$prompt )"
+			local snapnum="$(/bin/ls -l --sort=time $snapdir | awk '{print $9 "\t", $6,$7,$8}' | fzf --prompt=$prompt | awk '{print $1}' )"
 			;;
 		home)
 			local snapdir="/home/.snapshots"
 			local dir="rob"
 			local prompt="home snap >"
-			local snapnum="$(/bin/ls -t $snapdir | fzf --prompt=$prompt )"
+			local snapnum="$(/bin/ls -l --sort=time $snapdir | awk '{print $9 "\t", $6,$7,$8}' | fzf --prompt=$prompt | awk '{print $1}' )"
 			;;
 
 	esac

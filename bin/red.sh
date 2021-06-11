@@ -3,7 +3,7 @@
 
 _toggle() {
     msgId="999"
-    STATUS="$(ps axco command | grep -w '^[r]edshift' | grep -v "redshift.sh" | wc -l)"
+    STATUS="$(ps axco command | grep -w '^[r]edshift' | grep -v "red.sh" | wc -l)"
     ps axco command | grep -w '^[r]edshift' | grep -v "redshift.sh"
     if [[ $STATUS -eq 0 ]]; then
         dunstify -a "redshift" -r "$msgId" "Redshift" "<b>On</b>"

@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+RUNNING="$(ps -a -o cmd | grep -w '^bash.*.gpufans$' | wc -l)"
+
+if [ ${RUNNING} -gt 1 ]; then
+  echo "${0} is still running."
+  exit 1
+fi
 
 while sleep 1; do
     for i in {1..5}; do

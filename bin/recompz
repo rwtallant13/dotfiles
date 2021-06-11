@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
+rm -f ${ZDOTDIR:-$HOME}/.**zwc
+
 zcompile ${ZDOTDIR:-$HOME}/.zshrc
 
-rm -f $ZSH/**.zwc
-
-for config_file ($ZSH/*.zsh(N)); do zcompile $config_file; done
+for config_file (${ZDOTDIR:-$HOME}/.**zsh(N)); do zcompile $config_file; done

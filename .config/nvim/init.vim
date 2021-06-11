@@ -58,9 +58,9 @@ xnoremap <Leader>d "_d
 xnoremap <Leader>p "_dP
 
 " buffers / tabs
-noremap <C-T> :tabnew<cr>
-nmap <tab> :tabNext<cr>
-nmap <leader><tab> :Buffers<cr>
+"noremap <C-T> :tabnew<cr>
+"nmap <tab> :tabNext<cr>
+"nmap <leader><tab> :Buffers<cr>
 
 " move between next/prev files
 nmap <C-PageDown> :previous<cr>

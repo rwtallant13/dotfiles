@@ -10,24 +10,18 @@ call plug#begin('/home/rob/.config/nvim/plugged')
     Plug 'kovetskiy/sxhkd-vim'
 	Plug 'mhinz/vim-startify'
     Plug 'itchyny/lightline.vim'
-    Plug 'preservim/nerdtree'
 	Plug 'luochen1990/rainbow'
+	Plug 'inkarkat/vim-ReplaceWithRegister'
     Plug 'arcticicestudio/nord-vim'
-    Plug 'nelstrom/vim-visual-star-search'
     Plug 'Lenovsky/nuake'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
     Plug 'greymd/oscyank.vim'
-	if has('nvim')
-	  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	endif
-	Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-	Plug 'Shougo/neco-syntax'
+	"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
 let g:lightline = {
 	  \ 'colorscheme': 'wombat',
       \ 'component': {
@@ -127,13 +121,6 @@ autocmd VimResized * wincmd =
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufWritepre * %s/\n\+\%$//e
 
-" nerd tree
-let g:NERDTreeShowHidden=1
-let g:NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeQuitOnOpen=0
-" Open nerd tree at the current file or close nerd tree if pressed again.
-nmap <leader>t :NERDTreeToggle
-
 let g:rainbow_active = 1
 
 syntax on
@@ -166,7 +153,6 @@ set nohlsearch
 " Update term title but restore old title after leaving Vim
 set title
 set titleold=
-
 
 let g:limelight_conceal_ctermfg = '8'
 let g:nord_cursor_line_number_background = 1

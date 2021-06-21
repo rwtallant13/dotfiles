@@ -55,3 +55,5 @@ export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export RIPGREP_CONFIG_PATH="/home/rob/.config/rgconf"
+
+source /home/rob/.config/broot/launcher/bash/br

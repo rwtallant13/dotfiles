@@ -9,39 +9,6 @@ local helpers = require("helpers")
 
 local systray_margin = (beautiful.wibar_height - beautiful.systray_icon_size) / 2
 
--- Awesome Panel -----------------------------------------------------------
-
-local icon1 = wibox.widget {
-    widget = wibox.widget.imagebox,
-    resize = true
-}
-
-local awesome_icon = wibox.widget {
-    {
-        icon1,
-        top = dpi(5),
-        bottom = dpi(5),
-        left = dpi(10),
-        right = dpi(5),
-        widget = wibox.container.margin
-    },
-    bg = "#29343d",
-    widget = wibox.container.background
-}
-
-awesome_icon:buttons(gears.table.join(awful.button({}, 1, function()
-    awesome.emit_signal("widgets::start::toggle", mouse.screen)
-end)))
-
---[[ awesome.connect_signal("widgets::start::status", function(status)
-    if not status then
-        icon1.image = unclicked
-    else
-        icon1.image = clicked
-    end
-end)
---]]
-
 -- Taglist
 local get_taglist = function(s)
 
@@ -91,13 +58,13 @@ end
             {
                 nil,
                 {
-                    font = "Roboto Medium 12",
+                    font = "OverpassMono Nerd 12",
                     id = "text_tag",
                     widget = wibox.widget.textbox,
                 },
                 {
                     {
-                        bg = beautiful.red,
+                        bg = beautiful.blue,
                         id = "selected_indicator",
                         widget = wibox.container.background
                     },
@@ -256,8 +223,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
         screen = s,
-	    font = "OverpassMono Nerd 12",
-        filter = awful.widget.tasklist.filter.currenttags,
+	    font = beautiful.tasklist,
+        filter = awful.widget.tasklist.filter.focused,
         buttons = tasklist_buttons,
         style = {
             shape = helpers.rrect(beautiful.border_radius - 3),
@@ -288,8 +255,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         widget = wibox.container.background
     }
 
-
-
     -- Add widgets to the wibox
     s.mywibox:setup{
         layout = wibox.layout.align.vertical,
@@ -302,7 +267,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 {
                     {
                         {
-                            --awesome_icon,
                             s.mytaglist,
                             spacing = 15,
                             spacing_widget = {
@@ -355,7 +319,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
                     right = dpi(5),
                     widget = wibox.container.margin
                 },
-
                 {
                     {
                         date_pill,
@@ -377,7 +340,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                     right = dpi(5),
                     widget = wibox.container.margin
                 },
-                {
+				{
                     {
                         {
                             s.mylayoutbox,
@@ -397,7 +360,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
                     right = dpi(10),
                     widget = wibox.container.margin
                 },
-
                 layout = wibox.layout.fixed.horizontal
             }
         }

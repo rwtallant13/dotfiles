@@ -46,3 +46,5 @@ export FZF_CTRL_R_OPTS='--exact'
 export NNN_PLUG='r:renamer;m:-mediainfo;p:-_less -iR $nnn*'
 export NNN_BMS='h:~/;d:~/downloads/;p:/home/rob/pics/;b:/home/rob/.bin/;c:~/.config/;b:/media/blueberry;e:/etc/'
 export PF_INFO="ascii title os wm kernel uptime pkgs memory"
+
+source /home/rob/.config/broot/launcher/bash/br

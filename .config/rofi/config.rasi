@@ -1,7 +1,7 @@
 configuration {
-	width: 25;
-	lines: 6;
-	font: "Overpass 16";
+	width: 30;
+	lines: 8;
+	font: "OverpassMono 18";
 	bw: 0;
 	location: 0;
 	padding: 30;

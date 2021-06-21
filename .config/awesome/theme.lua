@@ -17,8 +17,19 @@ theme.font          = "Roboto Medium 10"
 theme.titlefont          = "Roboto Bold 10"
 theme.fontname          = "Roboto Medium 10"
 
+theme.hotkeys_font = "OverpassMono Nerd 11"
+theme.hotkeys_description_font = "Roboto 11"
+theme.hotkeys_modifiers_fg = "#ebcb8b"
+theme.hotkeys_group_margin = dpi(30)
+
+-- general
+theme.notification_width = 200
+theme.notification_opacity = 0.75
+theme.useless_gap   = dpi(5)
+theme.rounded_corners = false
+
 -- terminal colors
-theme.blue = "#26BBD9"
+theme.blue = "#88c0d0"
 theme.blue_light = "#3FC6DE"
 theme.cyan = "#59E3E3"
 theme.cyan_light = "#6BE6E6"
@@ -31,22 +42,21 @@ theme.red_light = "#EC6A88"
 theme.yellow = "#FAB795"
 theme.yellow_light = "#FBC3A7"
 
+-- Background colors
 theme.bg_dark = "#29343d"
 theme.bg_normal = "#1a2026"
 theme.bg_focus = "#29343d"
-theme.bg_urgent = "#29343d"
+theme.bg_urgent = "#3b4b58"
 theme.bg_minimize = "#3b4b58"
 
 -- Foreground Colors
-
 theme.fg_normal = "#ffffff"
 theme.fg_focus = "#a3b8ef"
-theme.fg_urgent = "#db5360"
+theme.fg_urgent = "#bf616a"
 theme.fg_minimize = "#3b4b58"
 theme.button_close = "#f9929b"
 
 -- Borders
-
 theme.border_width = dpi(2)
 theme.border_normal = "#29343d"
 theme.border_focus = "#d8dee9"
@@ -55,32 +65,29 @@ theme.border_radius = dpi(12)
 theme.client_radius = dpi(12)
 theme.widget_border_width = dpi(2)
 theme.widget_border_color =  "#29343d"
-
-theme.useless_gap   = dpi(5)
-theme.rounded_corners = false
 theme.border_radius = dpi(6)
 
 -- wibar
-
 theme.wibar_height = dpi(38) + theme.widget_border_width
 theme.wibar_margin = dpi(15)
 theme.wibar_spacing = dpi(15)
 theme.wibar_bg = "#1a2026"
-theme.bg_systray    = "#29343d"
+theme.bg_systray = "#29343d"
 theme.systray_icon_size = 20
 theme.systray_icon_spacing = 3
+
+--tasklist
+theme.tasklist_font = "Roboto 11"
 theme.tasklist_plain_task_name = true
 theme.tasklist_bg_normal = "#29343d"
-theme.tasklist_fg_focus = "#7ecfe5"
-
--- notifications
-theme.notification_width = dpi(10)
+theme.tasklist_fg_focus = "#ffffff"
+theme.tasklist_bg_urgent = "#29343d"
 
 -- regular
 theme.titlebar_close_button_normal = icon_path.."titlebar/close/close_1.png"
 theme.titlebar_close_button_focus = icon_path.."titlebar/close/close_2.png"
---theme.titlebar_maximized_button_normal_inactive = icon_path.."titlebar/maximize/maximize_1.png"
---theme.titlebar_maximized_button_focus_inactive  = icon_path.."titlebar/maximize/maximize_2.png"
+theme.titlebar_maximized_button_normal_inactive = icon_path.."titlebar/maximize/maximize_1.png"
+theme.titlebar_maximized_button_focus_inactive  = icon_path.."titlebar/maximize/maximize_2.png"
 theme.titlebar_maximized_button_normal_active = icon_path.."titlebar/maximize/maximize_3.png"
 theme.titlebar_maximized_button_focus_active  = icon_path.."titlebar/maximize/maximize_3.png"
 theme.titlebar_minimize_button_normal = icon_path.."titlebar/minimize/minimize_1.png"
@@ -89,8 +96,8 @@ theme.titlebar_minimize_button_focus  = icon_path.."titlebar/minimize/minimize_2
 -- hover
 theme.titlebar_close_button_normal_hover = icon_path.."titlebar/close/close_3.png"
 theme.titlebar_close_button_focus_hover = icon_path.."titlebar/close/close_3.png"
---theme.titlebar_maximized_button_normal_inactive_hover = icon_path.."titlebar/maximize/maximize_3.png"
---theme.titlebar_maximized_button_focus_inactive_hover  = icon_path.."titlebar/maximize/maximize_3.png"
+theme.titlebar_maximized_button_normal_inactive_hover = icon_path.."titlebar/maximize/maximize_3.png"
+theme.titlebar_maximized_button_focus_inactive_hover  = icon_path.."titlebar/maximize/maximize_3.png"
 theme.titlebar_maximized_button_normal_active_hover = icon_path.."titlebar/maximize/maximize_3.png"
 theme.titlebar_maximized_button_focus_active_hover  = icon_path.."titlebar/maximize/maximize_3.png"
 theme.titlebar_minimize_button_normal_hover = icon_path.."titlebar/minimize/minimize_3.png"

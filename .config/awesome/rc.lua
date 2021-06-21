@@ -17,6 +17,10 @@ local naughty = require("naughty")
 local ruled = require("ruled")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+package.loaded["awful.hotkeys_popup.keys.tmux"] = {}
+package.loaded["awful.hotkeys_popup.keys.vim"] = {}
+package.loaded["awful.hotkeys_popup.keys.firefox"] = {}
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -71,17 +75,18 @@ screen.connect_signal("property::geometry", set_wallpaper)
 tag.connect_signal("request::default_layouts", function()
     awful.layout.append_default_layouts({
         awful.layout.suit.tile,
-		awful.layout.suit.tile.bottom,
-		awful.layout.suit.max,
-		awful.layout.suit.fair,
-		--awful.layout.suit.magnifier,
+		awful.layout.suit.floating,
+		awful.layout.suit.magnifier,
+		awful.layout.suit.fair.horizontal,
+		--awful.layout.suit.fair,
+		--awful.layout.suit.tile.bottom,
+		--awful.layout.suit.max,
 		--awful.layout.suit.spiral.dwindle,
-		--awful.layout.suit.floating,
 		--awful.layout.suit.tile.left,
 		--awful.layout.suit.tile.top,
-		--awful.layout.suit.fair.horizontal,
 		--awful.layout.suit.spiral,
 		--awful.layout.suit.max.fullscreen,
+		--awful.layout.suit.corner.nw,
 		--awful.layout.suit.corner.ne,
 		--awful.layout.suit.corner.sw,
 		--awful.layout.suit.corner.se,
@@ -245,7 +250,7 @@ awful.rules.rules = {
         c.height = 550
         awful.placement.top_right(c, {
           margins = {
-            top = beautiful.bar_height + 5,
+            top = beautiful.wibar_height + 5,
             right = 5
           }
         })
@@ -261,18 +266,56 @@ awful.rules.rules = {
 
 -- {{{ Titlebars
 
+-- Toggle titlebar on or off depending on s. Creates titlebar if it doesn't exist
+local function setTitlebar(client, s)
+    if s then
+        if client.titlebar == nil then
+            client:emit_signal("request::titlebars", "rules", {})
+        end
+        awful.titlebar.show(client)
+    else
+        awful.titlebar.hide(client)
+    end
+end
 
+--Toggle titlebar on floating status change
+client.connect_signal("property::floating", function(c)
+    setTitlebar(c, c.floating)
+end)
+
+-- Hook called when a client spawns
+client.connect_signal("manage", function(c)
+    setTitlebar(c, c.floating or c.first_tag.layout == awful.layout.suit.floating)
+end)
+
+-- Show titlebars on tags with the floating layout
+tag.connect_signal("property::layout", function(t)
+    -- New to Lua ?
+    -- pairs iterates on the table and return a key value pair
+    -- I don't need the key here, so I put _ to ignore it
+    for _, c in pairs(t:clients()) do
+        if t.layout == awful.layout.suit.floating then
+            setTitlebar(c, true)
+        else
+            setTitlebar(c, false)
+        end
+    end
+end)
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
     -- buttons for the titlebar
     local buttons = {
         awful.button({ }, 1, function()
-            c:activate { context = "titlebar", action = "mouse_move"  }
+            client.focus = c
+            awful.mouse.client.move(c)
+            c:raise()
         end),
         awful.button({ }, 3, function()
-            c:activate { context = "titlebar", action = "mouse_resize"}
-        end),
+            client.focus = c
+            c:raise()
+            awful.mouse.client.resize(c)
+        end)
     }
 
     awful.titlebar(c).widget = {
@@ -284,6 +327,7 @@ client.connect_signal("request::titlebars", function(c)
         { -- Middle
             { -- Title
                 align  = "center",
+				font = beautiful.font,
                 widget = awful.titlebar.widget.titlewidget(c)
             },
             buttons = buttons,
@@ -291,7 +335,8 @@ client.connect_signal("request::titlebars", function(c)
         },
         { -- Right
 --            awful.titlebar.widget.floatingbutton (c),
---            awful.titlebar.widget.maximizedbutton(c),
+            awful.titlebar.widget.maximizedbutton(c),
+			awful.titlebar.widget.minimizebutton(c),
 --            awful.titlebar.widget.stickybutton   (c),
 --            awful.titlebar.widget.ontopbutton    (c),
             awful.titlebar.widget.closebutton    (c),
@@ -328,12 +373,12 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus",
 	function(c)
-	--if awful.client.marked then
-	--	c.border_color = beautiful.border_marked
-	--else
-	--	c.border_color = beautiful.border_normal
-	--end
+	if awful.client.marked then
+		c.border_color = beautiful.border_marked
+	else
 		c.border_color = beautiful.border_normal
+	end
+		--c.border_color = beautiful.border_normal
 
 	end
 )
